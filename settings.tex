@@ -1,0 +1,242 @@
+\usepackage{etex,tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage[heading]{ctex}
+\usepackage{manfnt}
+\usepackage{indentfirst}
+\usepackage{zhnumber}
+\usepackage[T1]{fontenc}
+\renewcommand\rmdefault{ptm}
+\usepackage[centering,
+           top=2.54cm,bottom=2.54cm,right=2.9cm,left=2.9cm,
+           headsep=25pt,headheight=20pt]{geometry}
+\usepackage[complete,amssymbols,amsbb,eufrak,nofontinfo,
+             subscriptcorrection,zswash,mtpscr]{mtpro2}
+%\usepackage{amssymb}
+\usepackage{amsmath,mathrsfs}
+\usepackage{caption}
+
+\usepackage{extarrows}
+\usepackage{graphicx}
+
+\setmainfont{Times New Roman}
+
+\usepackage{pifont}
+\usepackage{imakeidx}
+\makeindex[
+title={名词索引},
+intoc=true,
+columns=2,
+columnsep=1cm,
+columnseprule=true,
+program=makeindex,
+options={-s mkind.ist},
+noautomatic=false
+]
+\indexsetup{
+toclevel=chapter,
+headers={名词索引}{名词索引},
+othercode={
+\renewcommand{\indexspace}{\smallskip}
+}
+}
+
+\usepackage[hyperindex]{hyperref}
+\hypersetup{bookmarksopen=true,bookmarksopenlevel=1,bookmarksnumbered=true,
+  pdftitle={复变函数-史济怀},pdfauthor={史济怀 \& 刘太顺（向禹重排）},linktoc=all,CJKbookmarks=true,unicode,
+  colorlinks,linkcolor=blue,citecolor=red,urlcolor=blue,anchorcolor=green}
+\usepackage[Symbol]{upgreek}
+\renewcommand{\pi}{\uppi}
+
+\DeclareSymbolFont{ugmL}{OMX}{yhex}{m}{n}
+\DeclareMathAccent{\wideparen}{\mathord}{ugmL}{"F3}
+
+\setCJKmainfont[BoldFont={方正黑体_GBK},ItalicFont={方正楷体_GBK}]{方正书宋_GBK}
+
+\defaultfontfeatures{Mapping=tex-text}
+\XeTeXlinebreaklocale ”zh”
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\setCJKfamilyfont{song}{方正书宋_GBK}
+\newcommand{\song}{\CJKfamily{song}}
+\setCJKfamilyfont{hei}{方正黑体_GBK}
+\newcommand{\hei}{\CJKfamily{hei}}
+\setCJKfamilyfont{kai}{方正楷体_GBK}
+\newcommand{\kai}{\CJKfamily{kai}}
+\setCJKfamilyfont{fs}{方正仿宋_GBK}
+\newcommand{\fs}{\CJKfamily{fs}}
+\setCJKfamilyfont{fzxk}{方正行楷_GBK}
+\newcommand{\fzxk}{\CJKfamily{fzxk}}
+\setCJKfamilyfont{fzqt}{方正启体简体}
+\newcommand{\fzqt}{\CJKfamily{fzqt}}
+%\newenvironment{Proof}{\par\indent{\hei 证}\hspace{1em}}{\hfill\ding73\par}
+%\newenvironment{solve}{\par\indent{\hei 解}\hspace{1em}}{\par}
+
+
+\usepackage{tasks}
+\settasks{
+label = (\arabic*),
+item-indent = 1.7em,
+label-width = 0.5em,
+label-offset = 1.2em,
+column-sep=10pt,
+label-align=left,
+after-item-skip=0pt
+}
+\usepackage{multicol}
+
+\everymath{\displaystyle}
+
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+
+\allowdisplaybreaks[4]
+
+
+\newcommand\OR{\overrightarrow}
+
+
+
+\usepackage{fancyhdr,tikz}
+\usetikzlibrary{shapes.callouts,arrows.meta,calc,shadings}
+\renewcommand{\Re}{\operatorname{\textrm{Re}}}
+\renewcommand{\Im}{\operatorname{\textrm{Im}}}
+\newcommand{\ii}{\textrm i}
+\ctexset{punct=kaiming}
+\renewcommand\thempfootnote{\ding{45}}
+\newenvironment{note}{\par\CJKfamily{note}\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}
+\textdbend\quad}\textbf{提示:}}}{\par}
+
+
+
+\ctexset {
+  chapter = {
+  beforeskip = 0pt,
+  fixskip = true,
+  format = \Huge\bfseries,
+  nameformat = \rule{\linewidth}{1bp}\par\bigskip\hfill\label{chap\thechapter}\chapternamebox,
+  number = \arabic{chapter},
+  aftername = \par\medskip,
+  aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
+},
+  section = {
+    titleformat+  = \label{sec\thesection}\raggedright
+  }
+}
+\newcommand\chapternamebox[1]{%
+\parbox{\ccwd}{\linespread{1}\selectfont\centering #1}}
+
+
+
+\usepackage{enumitem}
+\newenvironment{enum}{\begin{enumerate}[label=\textbf{\arabic*.},ref=\arabic*,left=0cm]}
+{
+\end{enumerate}}
+\DeclareMathOperator{\ee}{\!\!\;\textrm e}
+\newcommand{\MR}{\mathbb R}
+\newcommand{\MC}{\mathbb C}
+\newcommand{\MF}{\mathbb F}
+\newcommand{\MZ}{\mathbb Z}
+\newcommand{\MN}{\mathbb N}
+\newcommand{\MCF}{\mathscr F}
+
+\newenvironment{eenum}{\begin{enumerate}[label=(\arabic*),left=0.85cm]}
+{
+\end{enumerate}}
+\newenvironment{enuma}{\begin{enumerate}[label=(\arabic*),leftmargin=0.71cm]}
+{
+\end{enumerate}}
+\newcommand\quan[1]{
+\tikz[baseline=(a.base)]\node(a)[inner sep=0.5pt,draw,circle]{$#1$};
+}
+\newcommand\closure[1]{%
+{}\mkern2mu\overline{\mkern-2mu#1}
+}
+\renewcommand\bar{\closure}
+
+
+
+\newcounter{definition}
+\counterwithin{definition}{section}
+\newcommand{\defname}{定义}
+\newenvironment{definition}{\par%
+  \refstepcounter{definition}%
+  \textbf{\defname\thedefinition}\quad
+}{\par}
+
+\newcommand{\theoremname}{定理}
+\newenvironment{theorem}[1][]{\par%
+  \refstepcounter{definition}%
+  \textbf{\theoremname\thedefinition}#1\quad
+}{\par}
+
+\newcommand{\propname}{命题}
+\newenvironment{prop}{\par%
+  \refstepcounter{definition}%
+  \textbf{\propname\thedefinition}\quad
+}{\par}
+
+%\newcounter{example}
+%\counterwithin{example}{section}
+\newcommand{\examplename}{例}
+\newenvironment{example}{\par%
+  \refstepcounter{definition}%
+  \textbf{\examplename\thedefinition}\quad
+}{\par}
+
+\newcommand{\lemmaname}{引理}
+\newenvironment{lemma}[1][]{\par%
+  \refstepcounter{definition}%
+  \textbf{\lemmaname\thedefinition}#1\quad
+}{\par}
+
+\newcommand{\corname}{推论}
+\newenvironment{corollary}{\par%
+  \refstepcounter{definition}%
+  \textbf{\corname\thedefinition}\quad
+}{\par}
+
+\newenvironment{xiti}{\par%
+\centerline{\textbf{习\quad 题\quad \thesection}}
+\begin{enum}
+}{\end{enum}}
+
+\usepackage[amsmath,thmmarks]{ntheorem}
+{
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\bfseries}
+\theorembodyfont{\normalfont}
+\theoremsymbol{\mbox{$\Box$}}
+\newtheorem{proof}{\indent 证\,}
+\newtheorem{solution}{\indent 解\,}
+}
+
+\setlist{itemsep=0pt}
+
+
+\catcode`\。=\active
+\newcommand{。}{.}
+\newcommand\pp[2]{\frac{\partial #1}{\partial #2}}
+\newcommand\ppp[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand\pppp[3]{\frac{\partial^2 #1}{\partial #2\partial #3}}
+\newcommand\dd[2]{\frac{\textrm d#1}{\textrm d#2}}
+\newcommand\ddd[2]{\frac{\textrm d^2#1}{\textrm d#2^2}}
+\newcommand\dx{\textrm dx}
+\newcommand\dy{\textrm dy}
+\newcommand\dz{\textrm dz}
+\newcommand\dzz{\textrm d\bar z}
+\usepackage[subrefformat=parens]{subcaption}
+\DeclareMathOperator{\Arg}{Arg}
+\usepackage{tkz-euclide}
+
+\catcode`\;=\active
+\newcommand{;}{\text{；}}
+\numberwithin{equation}{section}
+\DeclareMathOperator\diam{diam}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator*{\Res}{Res}
+\newcommand\DD{D}
+
+

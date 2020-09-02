@@ -1,0 +1,597 @@
+\setcounter{chapter}{7}
+\chapter{调和函数与次调和函数\label{chap8}}
+\section{平均值公式与极值原理\label{sec8.1}}
+在第 \ref{chap2} 章 \ref{sec2.2} 节中，我们已经介绍过调和函数的概念.设$u$是域$D$上的实值函数，如果$u\in C^2(D)$，且对任意$z\in D$，有
+\[\Delta u(z)=\ppp{u(z)}x+\ppp{u(z)}y=0,\]
+就称$u$是$D$中的\textbf{调和函数}.\index{T!调和函数}
+
+我们知道，$D$中全纯函数$f=u+\ii v$的实部$u$和虚部$v$都是$D$中的调和函数，而且构成一对共轭调的和函数. 反过来，单连通域$D$上的任意调和函数$u$一定是$D$上某个全纯函数的实部.由于全纯函数有任意阶导数，因而$u\in C^\infty(D)$.
+
+由于调和函数与全纯函数有密切的关系，全纯函数的某些性质对调和函数也成立.
+
+设$f$在圆盘$B(a,R)$中全纯，根据Cauchy积分公式，对任意$0<r<R$，有
+\begin{equation}\label{eq8.1.1}
+f(a)=\frac1{2\pi\ii}\int\limits_{|\zeta-a|=r}\frac{f(\zeta)}{\zeta-a}\textrm d\zeta
+=\frac1{2\pi}\int_0^{2\pi}f(a+r\ee^{\ii\theta})\textrm d\theta.
+\end{equation}
+这表明$f$在圆周$|\zeta-a|=r$上的平均值就等于$f$在圆心的值.因此，\eqref{eq8.1.1} 式称为全纯函数的\textbf{平均值公式}\index{G!公式!平均值公式}.全纯函数的这一性质对调和函数也成立.
+
+\begin{theorem}\label{thm8.1.1}
+设$u$是圆盘$B(a,R)$中的调和函数，那么对任意$0<r<R$，有平均值公式
+\begin{equation}\label{eq8.1.2}
+u(a)=\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta.
+\end{equation}
+\end{theorem}
+\begin{proof}
+因为$u$是$B(a,R)$中的调和函数，故必存在函数$f\in\big(B(0,1)\big)$，使得$u=\Re f$.对于$f$，\eqref{eq8.1.1} 式成立，在 \eqref{eq8.1.1} 式的两端取实部即得 \eqref{eq8.1.2} 式.
+\end{proof}
+
+调和函数平均值公式的一个重要应用是由它可以推出\textbf{调和函数的极值原理}.\index{D!定理!调和函数的极值原理}
+
+\begin{theorem}\label{thm8.1.2}
+设$u$是域$D$中非常数的调和函数，那么$u$在$D$中的最大值和最小值都不能在$D$的内点取到.
+\end{theorem}
+\begin{proof}
+先证明$u$不能在$D$中取到最大值.设$M=\sup_{z\in D}u(z)$.如果$M=\infty$，那么定理成立.今设$M$是一有限数，如果存在$a\in D$，使得$u(a)=M$，则取$r>0$，使得$B(a,r)\subset D$，我们证明$u$在$B(a,r)$中恒等于$M$.若不然，必有$0<\rho\le r$及某个实数$\theta_0$，使得$u(a+\rho\ee^{\ii\theta_0})<M$.由$u$的连续性，必存在$\delta>0$，使得$u(a+\rho\ee^ {\ii\theta})<M$在$\theta\in(\theta_0-\delta,\theta_0+\delta)$中成立.于是，由平均值公式，有
+\begin{align*}
+M=u(a)&=\frac1{2\pi}\int_0^{2\pi}u(a+\rho\ee^{\ii\theta})\textrm d\theta\\
+&=\frac1{2\pi}\int_{\theta_0-\delta}^{\theta_0+\delta}u(a+\rho\ee^{\ii\theta})
+\textrm d\theta+\frac1{2\pi}\int\limits_{|\theta-\theta_0|>\delta}
+u(a+\rho\ee^ {\ii\theta})\textrm d\theta\\
+&<\frac1{2\pi}[2\delta M+(2\pi-2\delta)M]\\
+&=M.
+\end{align*}
+这个矛盾说明$u$在$B(a,r)$中恒等于$M$.
+
+现在证明对任意$b\in D,u(b)=M$.用$D$中的曲线$\gamma$连接$a$和$b$，记$\eta=d(\gamma,\partial D)>0$.在$\gamma$上依次取点$a,z_1,\cdots,z_n=b$，使得$z_1\in B(a,r)$，其他各点之间的距离都小于$\eta$，作圆盘$B(z_j,\eta),j=1,\cdots,n$.由于$z_1\in B(a,r)$，所以$u(z_1)=M$，由此即知$u$在$B(z_1,\eta)$中恒等于$M$，因而$u(z_2)=M$.继续往下推，即知$u(b)=M$.这就证明了$u$在$D$上恒等于常数，与假设矛盾.
+
+因为$u$是调和函数，所以$-u$也是调和函数，根据刚才的证明，$-u$不能在$D$的内点取到最大值，因而$u$不能在$D$的内点取到最小值.
+\end{proof}
+
+\begin{definition}\label{def8.1.3}
+设$u$是域$D$上的实值连续函数，如果对任意$B(a,r)\subset D$，均有
+\[u(a)=\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta\]
+成立，就称$u$在$D$上具有\textbf{平均值性质}.\index{P!平均值性质}
+\end{definition}
+
+显然，$D$上的调和函数具有平均值性质，下面我们将证明（定理 \ref{thm8.2.4}），具有平均值性质的函数也一定是调和函数.
+
+由于在定理 \ref{thm8.1.2} 的证明中只用到了$u$的连续性和平均值性质，因而有如下的
+\begin{prop}\label{prop8.1.4}
+如果$u$在$D$上具有平均值性质，那么极值原理对$u$成立，即$u$不能在$D$的内点取到它的最大值或最小值.
+\end{prop}
+
+设$u$是$B(0,R)$中的调和函数，且在$\bar{B(0,R)}$上连续，由平均值公式，得
+\begin{equation}\label{eq8.1.3}
+u(0)=\frac1{2\pi}\int_0^{2\pi}u(R\ee^{\ii\theta})\textrm d\theta,
+\end{equation}
+即$u$用它在圆周$|z|=R$上的值表示出了它在圆心的值.一个自然的问题是，$u$能否用它在圆周上的值表示出圆内任意点的值?
+
+任取$a\in B(0,R)$，容易知道
+\begin{equation}\label{eq8.1.4}
+w=\psi_a(z)=R^2\frac{z-a}{R^2-\bar az}
+\end{equation}
+是圆盘$B(0,R)$的一个自同构，且$\psi_a(a)=0$. 如果记$u_1(w)=u\big(\psi_a^{-1}(w)\big)$，那么
+\begin{equation}\label{eq8.1.5}
+u_1(0)=u(a),
+\end{equation}
+而且$u_1$仍是$B(0,R)$中的调和函数，在$\bar{B(0,R)}$上连续，因而由 \eqref{eq8.1.3} 式可得
+\begin{equation}\label{eq8.1.6}
+u_1(0)=\frac1{2\pi}\int_0^{2\pi}u_1(R\ee^{\ii\tau})\textrm d\tau.
+\end{equation}
+
+由于 \eqref{eq8.1.4} 式把圆周上的点变为圆周上的点，即$\psi_a(R\ee^{\ii\varphi})=R\ee^{\ii\tau}$，或者
+\[\ee^{\ii\tau}=\frac{R\ee^{\ii\varphi}-a}{R-\bar a\ee^{\ii\varphi}}.\]
+两边微分后取绝对值，即得
+\begin{equation}\label{eq8.1.7}
+\textrm d\tau=\frac{R^2-|a|^2}{|R\ee^{\ii\varphi}-a|^2}\textrm d\varphi.
+\end{equation}
+且易知
+\begin{equation}\label{eq8.1.8}
+u_1(R\ee^{\ii\tau})=u_1\big(\psi_a(R\ee^{\ii\varphi})\big)=u(R\ee^{\ii\varphi}).
+\end{equation}
+现在把 \eqref{eq8.1.5} 式、\eqref{eq8.1.7} 式和 \eqref{eq8.1.8} 式代入 \eqref{eq8.1.6} 式，即得
+\begin{equation}\label{eq8.1.9}
+u(a)=\frac1{2\pi}\int_0^{2\pi}\frac{R^2-|a|^2}{|R\ee^{\ii\varphi}-a|^2}
+u(R\ee^{\ii\varphi})\textrm d\varphi.
+\end{equation}
+这个公式称为\textbf{Poisson积分公式}\index{G!公式!Poisson积分公式}，它用$u$在圆周$|z|=R$上的值表示出了$u$在圆内任意点$a$的值.这样，我们已经证明了
+\begin{theorem}\label{thm8.1.5}
+设$u$是圆盘$B(0,R)$中的调和函数，且在$\bar{B(0,R)}$上连续，那么对任意$r\in[0,R)$，有
+\begin{equation}\label{eq8.1.10}
+u(r\ee^{\ii\theta})=\frac1{2\pi}\int_0^{2\pi}
+\frac{R^2-r^2}{R^2-2rR\cos(\varphi-\theta)+r^2}u(R\ee^{\ii\varphi})\textrm d\varphi.
+\end{equation}
+\end{theorem}
+\begin{proof}
+只要在 \eqref{eq8.1.9} 式中令$a=r\ee^{\ii\theta}$，即得公式 \eqref{eq8.1.10}.
+\end{proof}
+
+称
+\begin{equation}\label{eq8.1.11}
+P(a,R\ee^{\ii\varphi})=\frac1{2\pi}\frac{R^2-|a|^2}{|R\ee^{\ii\varphi}-a|^2}
+\end{equation}
+为圆盘$B(0,R)$的\textbf{Poisson核}\index{P!Poisson核}. 这样，\eqref{eq8.1.9} 式可写成
+\begin{equation}\label{eq8.1.12}
+u(a)=\int_0^{2\pi}P(a,R\ee^{\ii\varphi})u(R\ee^{\ii\varphi})\textrm d\varphi.
+\end{equation}
+
+由 \eqref{eq8.1.7} 式知道，$B(0,R)$的Poisson核恰好是圆周的弧长元素在自同构变换下的Jacobian.这一简单事实启发人们把Poisson积分的理论推广到多个复变数的函数论中去.
+
+Poisson 核具有一些重要性质，它们使得Poisson积分成为解决Dirichlet问题的有效工具.
+
+\begin{prop}\label{prop8.1.6}
+$B(0,R)$的Poisson核$P(z,R\ee^{\ii\varphi})$具有下列性质：
+\begin{eenum}
+\item \label{prop8.1.6.1} $P(z,R\ee^{\ii\varphi})>0,z\in B(0,R)$；
+\item \label{prop8.1.6.2} $\int_0^{2\pi}P(z,R\ee^{\ii\varphi})\textrm d\varphi=1$，对任意$z\in B(0,R)$成立；
+\item \label{prop8.1.6.3} $P(z,R\ee^{\ii\varphi})$是$z\in B(0,R)$中的调和函数.
+\end{eenum}
+\end{prop}
+\begin{proof}(1) 从Poisson核的定义 \eqref{eq8.1.11} 式即知.
+
+(2) 在 \eqref{eq8.1.12} 式中令$u\equiv1$即得.
+
+(3) 记$\zeta=R\ee^{\ii\varphi}$，那么
+\[P(z,\zeta)=\frac1{2\pi}\frac{R^2-|z|^2}{|\zeta-z|^2}=\frac1{2\pi}
+\bigg(\frac\zeta{\zeta-z}+\frac{\bar z}{\bar \zeta-\bar z}\bigg).\]
+于是
+\[\Delta P(z,\zeta)=4\pppp{}z{\bar z}P(z,\zeta)=0,\]
+即$P(z,\zeta)$是$z$的调和函数.
+\end{proof}
+
+\begin{xiti}
+\item 证明：若$u$是域$D$上的调和函数，则$\frac{\partial^{j+k}u}{\partial x^j
+\partial y^k}$也是$D$上的调和函数（$j,k=0,1,2,\cdots$）.
+\item 证明：若$u$是域$D$上的调和函数，则$\pp uz$是$D$上的全纯函数.
+\item 设$f(z)$是域$D$上非常数的全纯函数，并且在$D$上不取零值.证明：
+\begin{enuma}
+ \item $\log|f(z)|$在$D$上调和；
+ \item $|f(z)|^p$在$D$上不调和，$p>0$.
+\end{enuma}
+\item 证明：若域$D$上的调和函数列$\{u_n(z)\}$在$D$上内闭一致收敛于$u(z)$，则$u(z)$也是$D$上的调和函数，并且$\bigg\{\frac{\partial^{j+k}u_n(z)}{\partial x^j\partial y^k}\bigg\}$在$D$上内闭一致收敛于$\bigg\{\frac{\partial^{j+k}u(z)}{\partial x^j\partial y^k}\bigg\}$.
+\item 证明：若$u$是域$D$上非常数的调和函数，则$u(D)$是开区间.
+\item 利用上题的结论证明：若$u$是域$D$上非常数的调和函数，则$u$不能在$D$内部取得极大值和极小值，自然不能在$D$内部取得最大值和最小值.
+\item 设$u(z)$在$B(0,1)$上调和，并且对任意$z_0\in\partial B(0,1)$，成立$\lim_{r\to1}u(rz_0)=0$，是否可以断言$u(z)\equiv0$?\\
+（\textbf{提示}：举例说明答案是否定的.）
+\item 设$u$是$B(0,1)$上的非负调和函数，$u(0)=1$，给出$u\bigg(\frac12\bigg)$的最佳估计.
+\item 设$D$是域，$E\subset D$是紧集，$a\in E$.证明：若$u$是$D$上的非负调和函数，则必存在仅与$a,E,D$有关的常数$\varepsilon\in(0,1)$，使得
+    \[\varepsilon u(a)\le u(z)\le\frac1\varepsilon u(a).\]
+\item （\textbf{Harnack定理}\index{D!定理!Harnack定理}）设$\{u_n\}$是域$D$上单调增加的调和函数列. 证明：若存在$z_0\in D$，使得$\{u_n(z_0)\}$有界，则$\{u_n\}$在$D$上内闭一致收敛.
+\item 设$D$是由有限条光滑简单闭曲线围成的域，$\boldsymbol n$是$\partial D$的单位法向量场，指向$D$的外部，$u,v$在$\bar D$上调和. 证明：
+\begin{enuma}
+  \item $\int\limits_{\partial D}\pp{v(z)}{\boldsymbol n}|\dz|=0$；
+  \item $\int\limits_{\partial D}u(z)\pp{v(z)}{\boldsymbol n}|\dz|=\int\limits_{\partial D}v(z)\pp{u(z)}{\boldsymbol n}|\dz|$；
+  \item $\iint\limits_D\bigg[\bigg(\pp{u(z)}x\bigg)^2+\bigg(\pp{u(z)}y\bigg)^2\bigg]
+  \dx\dy=\int\limits_{\partial D}u(z)\pp{u(z)}{\boldsymbol n}|\dz|$.
+\end{enuma}
+\item 设$u_1,u_2,\cdots,u_n$是域$D$上的调和函数. 证明：若$|u_1(z)|+|u_2(z)|+\cdots+|u_n(z)|$能在$D$内部取得极大值，则$u_1,u_2,\cdots,u_n$全部都是常值函数.
+\item （\textbf{调和函数的Hadamard三圆定理}\index{D!定理!调和函数的Hadamard三圆定理}）
+设$0<r_1<r_2<\infty,D=\{z\in\MC:r_1<|z|<r_2\},u$在$D$上调和，在$\bar D$上连续，$A(r)=\max_{|z|=r}u(z)$（$r_1\le r\le r_2$）.证明：$A(r)$在$[r_1,r_2]$上是$\log r$的凸函数，即
+\[A(r)\le\frac{\log r_2-\log r}{\log r_2-\log r_1}A(r_1)+\frac{\log r-\log r_1}
+{\log r_2-\log r_1}A(r_2).\]
+\item 设$\varphi\in C^2\big((0,1)\big)$. 证明：$\varphi(|z|)$在$B(0,1)\backslash\{0\}$上调和，当且仅当存在实数$a$和$b$，使得$\varphi(|z|)=a\log|z|+b$.
+\item 设$D$是凸域，$u$是$D$上的调和函数.证明：若当$z\in D$时总有$u(z)\ge0$，则必存在$D$上的双全纯映射$f$，使得$\Re f'(z)=u(z)$.
+\item 设$\gamma_1,\gamma_2,\cdots,\gamma_n$是$n$条可求长曲线，$u$是域$D$上的连续函数. 若$u$在开集$D\backslash\big(\operatorname*{\cup}_{k=1}^n\gamma_k\big)$上调和，问$u$是否在$D$上调和?\\
+（\textbf{提示}：举例说明答案是否定的.）
+\item 设$a_1,a_2,\cdots,a_n$是实数. 证明：若$p(\theta)=\sum_{k=1}^n\cos k\theta$在$[0,\pi]$上单调减少，则
+    \[\sum_{k=1}^n a_k\sin k\theta\ge0,\;\forall \theta\in[0,\pi].\]
+（\textbf{提示}：注意$g(r,\theta)=\sum_{k=1}^nka_kr^k\sin k\theta$是单位圆盘中的调和函数.）
+\item 设$D$是域，$a\in D$.证明：若$u$在$D$上连续，在$D\backslash\{a\}$上调和，则$u$在$D$上调和.
+\item （\textbf{Jensen公式}\index{G!公式!Jensen公式}）设$f\in H\big(\bar{B(0,r)}\big),a_1,\cdots,a_m$是$f$在$B(0,r)$中的零点，重零点按重数重复计算，但$f(0)\ne0$. 证明：
+\[\log|f(0)|=-\sum_{k=1}^m\log\frac r{|a_k|}+\frac1{2\pi}\int_0^{2\pi}
+\log|f(r\ee^{\ii\theta})|\textrm d\theta.\]
+（\textbf{提示}：考虑函数$g(z)=f(z)\prod_{k=1}^m\frac{r^2-\bar{a_k}z}{r(z-a_k)}$.）
+\end{xiti}
+
+\section{圆盘上的Dirichlet问题\label{sec8.2}}
+许多数学物理问题往往归结为这样一个问题：求出域$D$上的调和函数，它在$\bar D$上连续，且在$D$的边界$\partial D$上等于一个事先给定的连续函数.这个问题称为\textbf{Dirichlet问题}\index{D!Dirichlet问题}.但在实际应用中，要求事先给定的那个函数在边界上连续，条件过分苛刻.比较接近实际的是要求它除了在有限个点处有第一类间断点外处处连续，我们把这样一类函数称为\textbf{逐段连续函数}\index{Z!逐段连续函数}.这样，Dirichlet问题的准确提法为：
+
+在区域$D$的边界$\partial D$上，给定一个连续或逐段连续的函数$u(\zeta)$，要求出$D$内的有界调和函数，使其在$u$的连续点$\zeta$处等于$u(\zeta)$.
+
+这里要求调和函数有界，是为了保证解的唯一性.
+
+根据Riemann映射定理，任何单连通域（除去整个复平面$\MC$）都可共形映射为单位圆盘，而调和函数经过共形映射后仍为调和函数，因此，只要讨论圆盘上的Dirichlet问题就行了.
+
+设$u$是圆周$|z|=R$上的逐段连续函数，称
+\begin{equation}\label{eq8.2.1}
+P[u](z)=\int_0^{2\pi}P(z,R\ee^{\ii\theta})u(R\ee^{\ii\theta})\textrm d\theta
+\end{equation}
+为$u$在圆盘$B(0,R)$中的Poisson积分.
+\begin{theorem}\label{thm8.2.1}
+设$u$是圆周$|z|=R$上的逐段连续函数，那么$P[u](z)$是圆盘$B(0,R)$中的有界调和函数，且在$u$的连续点$R\ee^{\ii\varphi_0}$处有
+\begin{equation}\label{eq8.2.2}
+\lim_{z\to R\ee^{\ii\varphi_0}}P[u](z)=u(R\ee^{\ii\varphi_0}).
+\end{equation}
+\end{theorem}
+\begin{proof}
+由命题 \ref{prop8.1.6} 的 \ref{prop8.1.6.3} 即知$P[u](z)$是$B(0,R)$中的调和函数. 因为$u$有界，设$|u(R\ee^{\ii\varphi})|\le M,0\le\varphi\le2\pi$. 由命题 \ref{prop8.1.6} 的 \ref{prop8.1.6.1} 和 \ref{prop8.1.6.2} 即得
+\[|P[u](z)|\le\int_0^{2\pi}P(z,R\ee^{\ii\varphi})|u(R\ee^{\ii\varphi})|\textrm d\varphi\le M.\]
+这就证明了$P[u](z)$是$B(0,R)$中的有界调和函数.
+
+下面证明等式 \eqref{eq8.2.2}. 因为$u$在$R\ee^{\ii\varphi_0}$处连续，故对任意$\varepsilon>0$，存在$\delta>0$，当$|\varphi-\varphi_0|\le\delta$时，有
+\begin{equation}\label{eq8.2.3}
+|u(R\ee^{\ii\varphi})-u(R\ee^{\ii\varphi_0})|<\varepsilon.
+\end{equation}
+由命题 \ref{prop8.1.6} 的 \ref{prop8.1.6.2}，可得
+\[u(R\ee^{\ii\varphi_0})=\int_0^{2\pi}P(z,R\ee^{\ii\varphi})u(R\ee^{\ii\varphi_0})
+\textrm d\varphi,\]
+因而
+\begin{align*}
+|P[u](z)-u(R\ee^{\ii\varphi_0})|&\le\int_0^{2\pi}P(z,R\ee^{\ii\varphi})|u(R\ee^{\ii\varphi})-u(R\ee^{\ii\varphi_0})|
+\textrm d\varphi\\
+&=\int\limits_{|\varphi-\varphi_0|\le\delta}P(z,R\ee^{\ii\varphi})|u(R\ee^{\ii\varphi})
+-u(R\ee^{\ii\varphi_0})|\textrm d\varphi\\
+&\phantom{=}+\int\limits_{|\varphi-\varphi_0|>\delta}P(z,R\ee^{\ii\varphi})|u(R\ee^{\ii\varphi})
+-u(R\ee^{\ii\varphi_0})|\textrm d\varphi\\
+&=I_1+I_2.
+\end{align*}
+由 \eqref{eq8.2.3} 式立刻可得
+\begin{equation}\label{eq8.2.4}
+\begin{aligned}
+I_1&=\int\limits_{|\varphi-\varphi_0|\le\delta}P(z,R\ee^{\ii\varphi})|u(R\ee^{\ii\varphi})
+-u(R\ee^{\ii\varphi_0})|\textrm d\varphi\\
+&<\varepsilon\int_0^{2\pi}P(z,R\ee^{\ii\varphi})\textrm d\varphi=\varepsilon.
+\end{aligned}
+\end{equation}
+若令$z=r\ee^{\ii\theta}$，则
+\[P(z,R\ee^{\ii\varphi})=\frac1{2\pi}\frac{R^2-r^2}{R^2-2rR\cos(\theta-\varphi)+r^2}.\]
+当$z=r\ee^{\ii\theta}\to R\ee^{\ii\varphi_0}$时，由于$r\to R,\theta\to\varphi_0$，因而$R^2-r^2\to0,R^2-2rR\cos(\theta-\varphi)+r^2\to2R^2\big(1-\cos(\varphi_0-\varphi)\big)$. 而当$|\varphi-\varphi_0|>\delta$时，$2R^2\big(1-\cos(\varphi_0-\varphi)\big)>2R^2(1-\cos\delta)$.故对于任意的$\varepsilon>0$及固定的$\delta>0$，必存在$\eta>0$，使得当$|z-R\ee^{\ii\varphi_0}|<\eta$且$|\varphi-\varphi_0|>\delta$时，有
+\begin{align*}
+&R^2-2rR\cos(\theta-\varphi)+r^2>2R^2(1-\cos\delta),\\
+&R^2-r^2<\frac{R^2}M(1-\cos\delta)\varepsilon.
+\end{align*}
+于是
+\begin{equation}\label{eq8.2.5}
+\begin{aligned}
+I_2&=\frac1{2\pi}\int\limits_{|\varphi-\varphi_0|>\delta}\frac{R^2-r^2}{R^2-2rR
+\cos(\theta-\varphi)+r^2}\cdot|u(R\ee^{\ii\varphi})-u(R\ee^{\ii\varphi_0})|\textrm d\varphi\\
+&<\frac1{2\pi}\cdot2M\cdot\frac{R^2}M\cdot\frac{(1-\cos\delta)\varepsilon}
+{2R^2(1-\cos\delta)}\cdot2\pi\\
+&=\varepsilon.
+\end{aligned}
+\end{equation}
+由 \eqref{eq8.2.4} 式和 \eqref{eq8.2.5} 式即知 \eqref{eq8.2.2} 式成立.
+\end{proof}
+
+定理 \ref{thm8.2.1} 说明$u$的Poisson积分$P[u](z)$就是$u$在圆盘$B(0,R)$中Dirichlet问题的解.问题是除了这个解以外还有没有别的解?如果$u$是$|z|=R$上的连续函数，那么由调和函数的极值原理，立刻可以断言，这个解是唯一的.对于有间断点的$u$，要证明解的唯一性，还需要下面的
+\begin{prop}\label{prop8.2.2}
+设$u$是圆周$|z|=R$上的逐段连续函数，$E$是$u$的全体连续点的集合. 如果
+\[M=\sup_{\zeta\in D}u(\zeta),\quad m=\inf_{\zeta\in E}u(\zeta),\]
+那么$u$在$B(0,R)$中Dirichlet问题的有界解$h$满足
+\[m\le h(z)\le M,z\in B(0,R).\]
+\end{prop}
+\begin{proof}
+设$u$在$|z|=R$上的第一类间断点为$\zeta_1,\cdots,\zeta_n$. 令
+\[v(z)=M+\varepsilon\sum_{k=1}^n\log\frac{2R}{|z-\zeta_k|},\]
+这里，$\varepsilon$是任意一个正数. 容易知道$v$是$B(0,R)$中的调和函数，且对任意$z\in B(0,R)$，有$v(z)>M$. 取充分小的$r>0$，令$D_k=B(\zeta_k,r)\cap B(0,R)$，记
+\[G_r=B(0,R)\backslash\big(\operatorname*{\cup}_{k=1}^nD_k\big).\]
+显然，$v(z)-h(z)$是$G_r$中的调和函数，而且在$\bar{G_r}$上连续. 当$\zeta\in\partial G_r\cap\partial B(0,R)$时，有
+\[v(\zeta)-h(\zeta)\ge M-h(\zeta)=M-u(\zeta)\ge0.\]
+当$\zeta\in\partial G_r\cap B(0,R)$时，令$r\to0$，则$\zeta\to \zeta_k,v(\zeta)\to\infty$，而$h$是一个有界函数，因而也有$v(\zeta)-h(\zeta)>0$.总之，当$\zeta\in\partial G_r$时，$v(\zeta)-h(\zeta)\ge0$.于是，由调和函数的极值原理，当$z\in G_r$，时，有$v(z)-h(z)\ge0$.因为$r$可以任意小，所以这个不等式对任意$z\in B(0,R)$成立.固定$z$，让$\varepsilon\to0$，即得$h(z)\le M$.因为$-h$也是调和函数，类似地可以证得$-h(z)\le -m$.因而$m\le h(z)\le M$.
+\end{proof}
+
+现在可以证明
+\begin{theorem}\label{thm8.2.3}
+设$u$是圆周$|z|=R$上的逐段连续函数，那么$u$的Poisson积分$P[u](z)$是Dirichlet问题的唯一解.
+\end{theorem}
+\begin{proof}
+$P[u](z)$是Dirichlet问题的解已由定理 \ref{thm8.2.1} 证明.如果另外还有一个解$h$，那么$P[u](z)-h(z)$是$B(0,R)$中的有界调和函数，且在$u$的连续点处取零值.由命题 \ref{prop8.2.2}，在$B(0,R)$中有$P[u](z)\equiv h(z)$.这就证明了解的唯一性.
+\end{proof}
+
+作为圆盘上Dirichlet问题解的一个应用，我们来证明定理 \ref{thm8.1.1} 的逆命题.
+\begin{theorem}\label{thm8.2.4}
+域$D$上具有平均值性质的函数一定是调和函数.
+\end{theorem}
+\begin{proof}
+设$u$是域$D$上具有平均值性质的函数，因而对任意$B(z_0,r)\subset D$，平均值性质成立.根据定理 \ref{thm8.2.3}，存在$B(z_0,r)$中的调和函数$v$，它在$\bar{B(z_0,r)}$上连续，在圆周$|z-z_0|=r$上与$u$相等.由于$u,v$在$B(z_0,r)$中都有平均值性质，因而$h=u-v$也有平均值性质.由命题 \ref{prop8.1.4}，极值原理对$h$成立.由于$h$在圆周$|z-z_0|=r$上恒等于零，因而在$B(z_0,r)$中$u(z)\equiv v(z)$，故$u$是$B(z_0,r)$中的调和函数.由于$B(z_0,r)$是包含在$D$中的任意圆盘，故$u$是$D$中的调和函数.
+\end{proof}
+
+综合定理 \ref{thm8.1.1} 和 \ref{thm8.2.4} 可知，平均值性质是调和函数的特征性质.
+\begin{xiti}\hypertarget{xiti8.2}{}
+\item 设$D$是异于$\MC$的单连通域. 证明：对于任意$\zeta\in D$，若$f_\zeta(z)$是将$D$映为$B(0,1)$的双全纯映射，$f_\zeta(\zeta)=0,f_\zeta'(\zeta)>0$，则
+\begin{enuma}
+  \item $\log|f_\zeta(z)|=\log|f_z(\zeta)|,\forall\zeta,z\in D$；
+  \item $\lim_{z\to z_0}\log|f_\zeta(z)|=0,\forall z_0\in\partial D,\zeta\in D$；
+  \item 对于固定的$\zeta\in D$，$\log|f_\zeta(z)|-\log|z-\zeta|$作为$z$的函数在$D$上调和.
+\end{enuma}
+\item 设$D$是域，若$g:\bar D\times \bar D\to\MR$满足
+\begin{enuma}
+  \item $g(z,\zeta)=g(\zeta,z),\forall (z,\zeta)\in\bar D\times\bar D$；
+  \item $g$在$(\bar D\times\partial D)\cup(\partial D\times\bar D)$上恒为零；
+  \item 对于固定的$\zeta\in\bar D,g(z,\zeta)+\log|z-\zeta|$作为$z$的函数在$D$上调和，在$\bar D$上连续，
+\end{enuma}
+则称$g$是域$D$的\textbf{Green函数}\index{G!Green函数}. 证明：异于$\MC$的单连通域必有Green函数，并且是唯一的.
+\item 证明：若$g$是$B(0,R)$的Green函数，则
+\[P(z,R\ee^{\ii\theta})=-\frac1{2\pi}\lim_{r\to1}\pp{g(z,rR\ee^{\ii\theta})}r
+,\;z\in B(0,R).\]
+由此也可得到$B(0,R)$的Poisson积分公式和Dirichlet问题的解.
+\item 证明：$B(0,1)\backslash\{0\}$的Dirichlet问题不可解.
+\item （\textbf{Weierstrass 一致逼近定理}\index{D!定理!Weierstrass 一致逼近定理}）
+设$f$是$\partial B(0,R)$上的复连续函数. 证明：对于任意$n\in\MN$，必存在$z$的$n$次多项式$P_n(z)$和$\bar z$的$n$次多项式$Q_n(\bar z)$，使得$\{P_n(z)+Q_n(\bar z)\}$在$\partial B(0,R)$上一致收敛于$f(z)$.
+\item \hypertarget{xiti8.2.6}{} 设$\gamma_1$和$\gamma_2$为$\partial B(0,R)$上两段互余的开圆弧，试求$B(0,R)$中的调和函数$u$，使得当$\zeta\in\gamma_1$时，$u(\zeta)=0$；当$\zeta\in\gamma_2$时，$u(\zeta)=1$.并由此证明存在$f\in H\big(B(0,R)\big)$，使得当$\zeta\in\gamma_1$时，$|f(\zeta)|=1$；当$\zeta\in\gamma_2$时，$|f(\zeta)|=\ee$.
+\end{xiti}
+
+\section{上半平面的Dirichlet问题\label{sec8.3}}
+前面曾经提到过，一般域的Dirichlet问题可以通过共形映射化为圆盘上的Dirichlet问题.这一节以上半平面为例，来说明这一转化过程.
+
+设$u(t)$是定义在实轴上的逐段连续函数，它在$t_1,\cdots,t_n$处有第一类间断点.因为$\infty$在实轴上也看作普通的点，因此要求$\pm\infty$是$u$的连续点或第一类间断点，即要假定$\lim_{t\to\infty}u(t)$和$\lim_{t\to-\infty}u(t)$都存在且有限.我们要求一上半平面中的有界调和函数，其在实轴上$u$的连续点$t$处等于$u(t)$.
+
+在上半平面中任取一点$z_0$，分式线性变换
+\[w=\varphi(z)=\frac{z-z_0}{z-\bar{z_0}}\]
+把上半平面一一地映为$|w|<1$，把实轴一一地映为单位圆周$|w|=1$. 通过这一映射，$u(t)$变成了$|\zeta|=1$上的函数$u_1(\zeta)=u\big(\varphi^{-1}(\zeta)\big)$，它在$|\zeta|=1$上除了有限个第一类间断点外处处连续.根据定理 \ref{thm8.2.3}，可以得到$|w|<1$中唯一的有界调和函数$u_1(w)$，使其在$|\zeta|=1$上$u_1$的连续点处取值$u_1(\zeta)$.于是
+\[u(z)=u_1\big(\varphi(z)\big)\]
+便是要求的函数.
+
+现在来求$u(z)$的具体表达式.因为$u_1$是$|w|<1$中的调和函数，且在$|\zeta|=1$上除去有限个点外取值$u_1(\zeta)$，故有
+\begin{equation}\label{eq8.3.1}
+u_1(0)=\frac1{2\pi}\int_0^{2\pi}u_1(\ee^{\ii\varphi})\textrm d\varphi.
+\end{equation}
+其中
+\begin{equation}\label{eq8.3.2}
+u_1(0)=u(z_0),\quad u_1(\ee^{\ii\varphi})=u(t),
+\end{equation}
+且
+\[\ee^{\ii\varphi}=\frac{t-z_0}{t-\bar{z_0}}.\]
+上式两边取对数后求微分，即得
+\begin{equation}\label{eq8.3.3}
+\textrm d\varphi=\frac{2y_0\textrm dt}{(t-x_0)^2+y_0^2},z_0=x_0+\ii y_0.
+\end{equation}
+把 \eqref{eq8.3.2} 式和 \eqref{eq8.3.3} 式代入 \eqref{eq8.3.1} 式，即得$u(z)$的表达式为
+\begin{equation}\label{eq8.3.4}
+u(z_0)=\frac1\pi\int_{-\infty}^\infty\frac{y_0}{(t-x_0)^2+y_0^2}u(t)\textrm dt,\;\Im z_0>0.
+\end{equation}
+由于
+\[\Re\frac1{\ii(t-z_0)}=\frac{y_0}{(t-x_0)^2+y_0^2},\]
+故 \eqref{eq8.3.4} 式也可改写为
+\begin{equation}\label{eq8.3.5}
+u(z_0)=\Re\frac1{\pi\ii}\int_{-\infty}^\infty\frac{u(t)}{t-z_0}\textrm dt,\;\Im z_0>0.
+\end{equation}
+
+把上面的结果写成定理的形式，有
+\begin{theorem}\label{thm8.3.1}
+设$u$是定义在实轴上的逐段连续函数，如果$\lim_{t\to\infty}u(t)$和$\lim_{t\to-\infty}u(t)$都存在且有限，那么以$u(t)$为边值的上半平面的Dirichlet问题的解可以写成 \eqref{eq8.3.4} 式或 \eqref{eq8.3.5} 式.
+\end{theorem}
+
+作为公式 \eqref{eq8.3.5} 的一个应用，下面我们给出Schwarz-Christoffel公式（定理 \ref{thm7.4.3}）的一个简单的证明.
+
+设$w=f(z)$是把上半平面$D$一一地映为多角形域$G$，且在$\bar D$上连续的双全纯函数.如果$G$在其顶点$w_k$（$k=1,\cdots,n$）处的顶角为$\alpha_k\pi$（$0<\alpha_k<2$），实轴上与$w_k$对应的点为$a_k$（$k=1,\cdots,n$），$-\infty<a_1<\cdots<a_n<\infty$，我们要证明
+\begin{equation}\label{eq8.3.6}
+f(z)=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz+C_1,
+\end{equation}
+其中，$z_0,C,C_1$是三个常数.
+
+因为$f'(z)$在上半平面中处处不为零，所以$\log f'(z)$在上半平面中能分出单值的全纯分支.今取定一个分支，有
+\[\log f'(z)=\log|f'(z)|+\ii\arg f'(z).\]
+记$v(z)=\arg f'(z)$，它是上半平面中的调和函数，我们看它在实轴上满足什么条件.当$z\in(a_k,a_{k+1})$（$k=1,\cdots,n-1$）时，$f(z)$在线段$w_kw_{k+1}$上，根据导数辐角的几何意义，这时有
+\[v(z)=\arg f'(z)=\arg (w_{k+1}-w_k),k=1,\cdots,n-1.\]
+若记$a_0=-\infty,a_{n+1}=\infty$，则当$z\in(a_0，a_1)$或$(a_n,a_{n+1})$时，$f(z)$在线段$w_nw_1$上，所以此时
+\[v(z)=\arg f'(z)=\arg(w_1-w_n).\]
+如果记
+\begin{equation}\label{eq8.3.7}
+\theta_k=\begin{cases}
+\arg(w_{k+1}-w_k),&k=1,\cdots,n-1;\\
+\arg(w_1-w_n),&k=0,n,
+\end{cases}
+\end{equation}
+那么$v$在实轴上应满足条件
+\[v(t)=\theta_k,a_k<t<a_{k+1},k=0,1,\cdots,n.\]
+根据上半平面Dirichlet问题解的公式 \eqref{eq8.3.5}，有
+\begin{align*}
+v(z)&=\Re\frac1{\pi\ii}\int_{-\infty}^\infty\frac{v(t)}{t-z}\textrm dt
+=\sum_{k=0}^n\Re\frac1{\pi\ii}\int_{a_k}^{a_{k+1}}\frac{\theta_k}{t-z}\textrm dt\\
+&=\sum_{k=0}^n\Re\frac{\theta_k}{\pi\ii}\log\frac{z-a_{k+1}}{z-a_k}
+=\frac1\pi\sum_{k=0}^n\theta_k\arg\frac{z-a_{k+1}}{z-a_k}.
+\end{align*}
+容易知道，当$z$在上半平面时，有
+\begin{equation}\label{eq8.3.8}
+\begin{aligned}
+&\arg(z-a_0)=0,\\
+&\arg(z-a_{n+1})=\pi.
+\end{aligned}
+\end{equation}
+记
+\[S_k=\sum_{j=0}^k\arg\frac{z-a_{j+1}}{z-a_j}=\arg(z-a_{k+1}),\]
+应用Abel变换和 \eqref{eq8.3.8} 式，有
+\begin{align*}
+v(z)&=\frac1\pi\sum_{k=0}^{n-1}(\theta_k-\theta_{k+1})\arg(z-a_{k+1})+\theta_n\\
+&=\frac1\pi\sum_{k=1}^n(\theta_{k-1}-\theta_k)\arg(z-a_k)+\theta_n.
+\end{align*}
+但从 \eqref{eq8.3.7} 式容易直接验证
+\[\theta_{k+1}-\theta_k=(\alpha_k-1)\pi,\;k=1,\cdots,n,\]
+因而有
+\[\arg f'(z)=v(z)=\sum_{k=1}^n(\alpha_k-1)\arg(z-a_k)+\theta_n.\]
+现在令
+\[F(z)=\sum_{k=1}^n(\alpha_k-1)\log(z-a_k)+\ii\theta_n,\]
+它与$\log f'(z)$有相同的虚部，所以
+\[\log f'(z)=\log C'+\ii\theta_n+\sum_{k=1}^n\log(z-a_k)^{\alpha_k-1},\]
+由此即得
+\begin{equation*}
+f(z)=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz+C_1.
+\end{equation*}
+这就是要证明的公式 \eqref{eq8.3.6}.
+
+\begin{xiti}
+\item 求出上半平面$D$的Green函数$g$，并证明：若
+\[P(z,t)=\frac1{2\pi}\lim_{s\to0}\pp{g(z,t+s\ii)}s,z\in D,t\in\MR,\]
+则
+\[u(z)=\int_{-\infty}^\infty P(z,t)f(t)\textrm dt\]
+是上半平面以$f(t)$为边界值的Dirichlet问题的解.
+\item 设$D$是由简单闭曲线围成的单连通域.证明：$D$的Dirichlet问题可解，并且解是唯一的.
+\item 求出解上半单位圆盘Dirichlet问题的具体公式.
+\end{xiti}
+
+\section{次调和函数\label{sec8.4}}
+上面我们已经看到，平均值性质是调和函数的特征性质（定理 \ref{thm8.1.1} 和定理 \ref{thm8.2.4}），这一节我们要讨论具有次平均值性质的函数.
+\begin{definition}\label{def8.4.1}
+设$D$是$\MC$中的域，如果$D$上的实值函数$u:D\to\MR\cup\{-\infty\}$（$u\not\equiv-\infty$）满足
+\begin{eenum}
+  \item $u$是上半连续的；
+  \item 对任意以$a$为中心、$r$为半径的闭圆盘$\bar{B(a,r)}\subset D$，有不等式
+  \begin{equation}\label{eq8.4.1}
+    u(a)\le\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta,
+  \end{equation}
+\end{eenum}
+就称$u$是$D$上的\textbf{次调和函数}.\index{C!次调和函数}.
+\end{definition}
+
+所谓$u$在$D$中上半连续，是指对$D$中的每一点$a$，有
+\[\varlimsup_{z\to a}u(z)\le u(a).\]
+满足不等式 \eqref{eq8.4.1} 的函数称为具有\textbf{次平均值性质}.\index{C!次平均值性质}
+
+由定义 \ref{def8.4.1} 马上知道，每个调和函数一定是次调和的.因此，次调和函数是比调和函数更宽的一类函数，但它仍具有调和函数的一些优良性质，下面的极值特征便是其中之一.
+
+\begin{theorem}\label{thm8.4.2}
+设$D$是$\MC$中的域，$u$是$D$上的连续实值函数. $u$是$D$上的次调和函数的充分必要条件是，对任意域$G\subset\subset D$及任意在$\bar G$上连续、在$G$内调和的函数$h$，如果$u(z)\le h(z)$在$G$上成立，那么在$G$内也有$u(z)\le h(z)$.
+\end{theorem}
+\begin{proof}
+先证必要性.如果$u(z_0)>h(z_0)$对某个$z_0\in G$成立，令$u_1=u-h$，则$u_1(z_0)>0$.因为$u$在$G$上连续，故在$G$上达到它的最大值$M$.记
+\[E=\{z\in\bar G:u_1(z)=M\}.\]
+因为在$G$的边界上$u_1\le0$，所以$u_1$的最大值只能在$G$中取到，因此$E$是$G$中的紧子集.今设$a$是$E$的一个边界点，于是有$r>0$，使得$\bar{B(a,r)}\subset G$.但$\bar{B(a,r)}$的边界上必有某段弧不在$E$中，因而
+\begin{equation}\label{eq8.4.2}
+u_1(a)=M>\frac1{2\pi}\int_0^{2\pi}u_1(a+r\ee^{\ii\theta})\textrm d\theta.
+\end{equation}
+令一方面，$u$和$h$分别在$G$中次调和与调和，因而有
+\begin{align*}
+&u(a)\le\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta,\\
+&h(a)=\frac1{2\pi}\int_0^{2\pi}h(a+r\ee^{\ii\theta})\textrm d\theta.
+\end{align*}
+由此即得
+\[u_1(a)\le\frac1{2\pi}\int_0^{2\pi}u_1(a+r\ee^{\ii\theta})\textrm d\theta.\]
+这和 \eqref{eq8.4.2} 式矛盾.
+
+再证充分性.任取$\bar{B(a,r)}\subset D$，那么存在$B(a,r)$中的调和函数$h$，它在圆周上和$u$一致.于是由假定，$u(z)\le h(z)$在圆内成立.这样
+\[u(a)\le h(a)=\frac1{2\pi}\int_0^{2\pi}h(a+r\ee^{\ii\theta})\textrm d\theta
+=\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta.\]
+这正好说明$u$是次调和函数.
+\end{proof}
+
+从定理 \ref{thm8.4.2} 可以看出，次调和函数是凸函数概念在平面上的推广.事实上，如果把$\ddd ux=0$看作一维的Laplace方程，那么这个方程的解$u=ax+b$便是一维的调和函数.而凸函数是在任一区间的两个端点处与一线性函数有相同的值，在区间内部，它不超过这个线性函数.把区间换成平面上的区域，线性函数换成二维调和函数，那么凸函数就是这里定义的次调和函数.
+
+作为这个定理的一个应用，我们有
+\begin{theorem}\label{thm8.4.3}
+设$u$是单位圆盘$u$中的次调和函数，令
+\[m(r)=\frac1{2\pi}\int_0^{2\pi}u(r\ee^{\ii\theta})\textrm d\theta,\;0\le r<1,\]
+那么$m(r)$是$r$的非降函数.
+\end{theorem}
+\begin{proof}
+设$0<r_1<r_2<1$.存在圆盘$B(0,r_2)$上的调和函数$h$，它在圆周上和$u$一致.由定理 \ref{thm8.4.2}，在$B(0,r_2)$中有$u\le h$，因而
+\begin{align*}
+m(r_1)&=\frac1{2\pi}\int_0^{2\pi}u(r_1\ee^{\ii\theta})\textrm d\theta
+\le\frac1{2\pi}\int_0^{2\pi}h(r_1\ee^{\ii\theta})\textrm d\theta\\
+&=h(0)=\frac1{2\pi}\int_0^{2\pi}h(r_2\ee^{\ii\theta})\textrm d\theta
+=\frac1{2\pi}\int_0^{2\pi}u(r_2\ee^{\ii\theta})\textrm d\theta\\
+&=m(r_2).
+\end{align*}
+\end{proof}
+
+下面给出两个具体的次调和函数.为此，先证明
+\begin{prop}\label{prop8.4.4}
+设$u$是域$D$上的次调和函数，$\varphi$是$(-\infty,\infty)$上递增的凸函数，那么$\varphi\circ u$也是$D$上的次调和函数.
+\end{prop}
+\begin{proof}
+因为$u$是次调和函数，故对任意$\bar{B(a,r)}\subset D$，有
+\[u(a)\le\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta.\]
+又因为$\varphi$是递增的凸函数，所以
+\begin{align*}
+\varphi\big(u(a)\big)&\le\varphi\bigg(\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta\bigg)\\
+&\le\frac1{2\pi}\int_0^{2\pi}\varphi\big(u(a+r\ee^{\ii\theta})\big)\textrm d\theta
+\end{align*}
+因而$\varphi\circ u$也是次调和函数.
+\end{proof}
+
+\begin{prop}\label{prop8.4.5}
+设$f$是域$D$上的全纯函数，$f\not\equiv 0$，那么$\log|f|$和$|f|^p$（$0<p<\infty$）都是$D$上的的次调和函数.
+\end{prop}
+\begin{proof}
+容易知道，$\log|f|$是上半连续的. 任取圆盘$\bar{B(a,r)}\subset D$，我们要证明
+\begin{equation}\label{eq8.4.3}
+\log|f(a)|\le\frac1{2\pi}\int_0^{2\pi}\log|f(a+r\ee^{\ii\theta})|\textrm d\theta.
+\end{equation}
+如果$f(a)=0$，那么$\log|f(a)|=-\infty$，\eqref{eq8.4.3} 式显然成立.今设$f(a)\ne0$，$f$在$\bar{B(a,r)}$中也没有其他零点，那么通过直接计算知道，$\log|f|$是$B(a,r)$中的调和函数，因而它是次调和的.现若$f$在$B(a,r)$中有零点$z_1,\cdots,z_m$，重零点按重数重复计算，根据Jensen公式，有
+\begin{align*}
+\log|f(a)|&=-\sum_{k=1}^m\log\frac r{|a-z_k|}+\frac1{2\pi}\int_0^{2\pi}\log|f(a+r\ee^{\ii\theta}|\textrm d\theta\\
+&\le\frac1{2\pi}\int_0^{2\pi}\log|f(a+r\ee^{\ii\theta}|\textrm d\theta.
+\end{align*}
+这就是 \eqref{eq8.4.3} 式.这就证明了$\log|f|$的次调和性.
+
+因为$\varphi(t)=\ee^{pt}$是递增的凸函数，而
+\[|f|^p=\ee^{p\log|f|}=\varphi(\log|f|),\]
+故由命题 \ref{prop8.4.4}，$|f|^p$（$0<p<\infty$）是次调和的.
+\end{proof}
+
+利用定理 \ref{thm8.4.3} 和命题 \ref{prop8.4.5}，立刻可得
+\begin{prop}\label{prop8.4.6}
+设$f\in H(U)$，那么对任意$0<p<\infty$，积分平均
+\[M_p(r,f)=\bigg(\frac1{2\pi}\int_0^{2\pi}|f(r\ee^{\ii\theta})|^p\textrm d\theta\bigg)^{\frac1p}\]
+是$r$的非降函数.
+\end{prop}
+
+证明留给读者作练习.
+
+对于二次连续可微的函数，次调和性有更简单的特征.先证明下面的
+\begin{prop}\label{prop8.4.7}
+设$u\in C^2(D)$是一实值函数，如果对任意$z\in D,\Delta u(z)\ge0$，那么对任意域$G\subset\subset D$，$u$在$G$上的最大值必在$\partial G$上取到.
+\end{prop}
+\begin{proof}
+先设对每点$z\in D$，有$\Delta u(z)>0$. 如果$u$在$G$上的最大值在$G$的内点$z_0$取到，记$z_0=x_0+\ii y_0,g(t)=u(x_0,t)$，那么$g$在$t=y_0$处有极大值，因而$\ppp{u(z_0)}y
+=g''(y_0)\le0$.同理，$\ppp{u(z_0)}x\le0$. 所以$\Delta u(z_0)\le0$，这与假设$\Delta u(z_0)>0$矛盾.
+
+现设$\Delta u(z)\ge0$. 令
+\[u_\varepsilon(z)=u(z)+\varepsilon|z|^2,\;\varepsilon>0,\]
+于是，$\Delta u_\varepsilon(z)=\Delta u(z)+\varepsilon>0$. 因而$u_\varepsilon$在$\bar G$上的最大值必在$\partial G$上取到，即$u_\varepsilon(z)\le\sup_{\zeta\in\partial G}u_\varepsilon(\zeta)$. 让$\varepsilon\to0$，即得$u(z)\le\sup_{\zeta\in\partial G}u(\zeta)$. 这就是要证明的.
+\end{proof}
+
+现在很容易证明下面的
+\begin{theorem}\label{eq8.4.8}
+设$u\in C^2(D)$是一实值函数，那么$u$是$D$上的次调和函数的充分必要条件是，对任意$z\in D$，有
+$\Delta u(z)\ge0$.
+\end{theorem}
+\begin{proof}
+充分性.设$\Delta u\ge0$在$D$内处处成立.对于$G\subset\subset D$上的调和函数$h$，如果$u\le h$在$\partial G$上成立，我们要证明$u\le h$在$G$内也成立.令$u_1=u-h$，那么
+\[\Delta u_1(z)=\Delta(u-h)(z)=\Delta u(z)\ge0.\]
+而在$\partial G$上$u_1\le0$，于是由命题 \ref{prop8.4.7}，在$G$内也有$u_1\le0$，即$u\le h$在$G$内成立. 故由定理 \ref{thm8.4.2} 知道，$u$是$D$上的次调和函数.
+
+必要性.设$u$是$D$上的次调和函数.如果存在$a\in D$，使得$\Delta u(a)<0$，那么有$a$的一个邻域$B(a,\varepsilon)$，$\Delta u(z)<0$对于任意$z\in B(a,\varepsilon)$成立，即$-\Delta u(z)>0$在$B(a,\varepsilon)$中成立.由充分性证明的结果，$-u$是$B(a,\varepsilon)$上的次调和函数，因而$u$的平均值公式在$B(a,\varepsilon)$中的任意小圆盘上成立.故由定理 \ref{thm8.2.4} 知道，$u$是$B(a,\varepsilon)$中的调和函数，因而$\Delta u(a)=0$，这与假定$\Delta u(a)<0$矛盾.
+所以，$\Delta u\ge0$在$D$中处处成立.
+\end{proof}
+
+次调和函数概念在多复变数空间$\MC^n$（$n>1$）中的推广——多次调和函数，在多复变函数论中扮演着重要的角色.
+\begin{xiti}
+\item 证明：若$u$在域$D$上次调和，则对于任意$z_0\in D$，成立
+\[\varlimsup_{z\to z_0}u(z)=u(z_0).\]
+\item 证明：域$D$上非常数的次调和函数不能在$D$内部取得最大值.举例说明，域$D$上非常数的次调和函数能在$D$内部取得极大值.
+\item 证明：若$u$是域$D$上非常数的连续次调和函数，则$u(D)$是右开的区间.
+\item 证明：若$u$是$B(0,R)$上的连续次调和函数，则
+\[m(r)=\frac1{\pi r^2}\iint\limits_{B(0,r)}u(z)\dx\dy\]
+是$(0,R)$上的增加函数.
+\item 举例说明，存在域$D$上的上半连续函数$u$，其不能在$D$内部取得最大值，但它不是$D$上的次调和函数.这表明，最大值原理不是次调和函数的特征性质.
+\item 证明：域$D$上有限个次调和函数的和仍然是$D$上的次调和函数.
+\item 证明：若$\{u_n\}$是域$D$上单调减少的次调和函数列，并且$\lim_{n\to\infty}u_n=u\ne-\infty$，则$u$也是$D$上的次调和函数.
+\item 设${u_n}$是域$D$上的次调和函数列.证明：若$\sup_{n\ge1}u_n=u\ne\infty$，并且$u$是$D$上的上半连续函数，则$u$也是$D$上的次调和函数.
+\item 证明：若$u$在域$D$上调和，则对于任意$p\ge1,|u|^p$在$D$上次调和.
+\item （\textbf{次调和函数的Hadamard三圆定理}\index{D!定理!次调和函数的Hadamard三圆定理}）
+设$0<r_1<r_2<\infty,D=\{z\in\MC:r_1<|z|<r_2\},u$在$D$上次调和，在$\bar D$上连续，$A(r)=\max_{|z|=r}u(z)$（$r_1\le r\le r_2$）.证明：$A(r)$在$[r_1,r_2]$上是$\log r$的凸函数，即
+\[A(r)\le\frac{\log r_2-\log r}{\log r_2-\log r_1}A(r_1)+\frac{\log r-\log r_1}
+{\log r_2-\log r_1}A(r_2).\]
+\item 设$D,G$是域，$u$是$G$上的次调和函数. 证明：若$\varphi:D\to G$全纯，则$u\circ \varphi$是$D$上的次调和函数.
+\item 设$D$是凸域，$f\in H(D)$.证明：若$\Re\bar zf(z)$是$D$上的次调和函数，则或者$f$是常值函数，或者$f$是$D$上的双全纯映射.
+\item 设$\gamma_1,\gamma_2,\cdots,\gamma_n$是$n$条可求长曲线，$u$是域$D$上的连续函数.若$u$在开集$D\backslash\big(\operatorname*{\cup}_{k=1}^n\gamma_k\big)$上次调和，问$u$是否在$D$上次调和?\\
+（\textbf{提示}：举例说明答案是否定的.）
+\item 设$v$是有界域$D$上的次调和函数，$u$是$D$上的调和函数.证明：若存在$z_1,z_2,\cdots,z_n\in\partial D $，使得
+\begin{align*}
+&\varlimsup_{z\to z_0}[v(z)-u(z)]\le0,\;\forall z_0\in\partial D\backslash\{z_1,z_2,\cdots,z_n\};\\
+&\varlimsup_{z\to z_k}[v(z)-u(z)]<\infty,\;k=1,2,\cdots,n,
+\end{align*}
+则
+\[v(z)\le u(z),\;\forall z\in D.\]
+\item （\textbf{两常数定理}\index{D!定理!两常数定理}）设$\gamma,\Gamma$是$\partial B(0,1)$上两段不相交的开圆弧，其长度分别为$2\alpha\pi$和$2(1-\alpha)\pi$，$f$是$B(0,1)$上的有界全纯函数.证明：若存在$m,M>0$，使得
+    \begin{align*}
+    &\varlimsup_{z\to z_0}|f(z)|\le m,\;\forall z_0\in\gamma;\\
+    &\varlimsup_{z\to z_0}|f(z)|\le M,\;\forall z_0\in\Gamma,
+    \end{align*}
+则
+\[|f(0)|\le m^\alpha M^{1-\alpha}.\]
+由此可得到$|f(z)|$的什么样的估计?\\
+（\textbf{提示}：参考习题 \hyperlink{xiti8.2}{8.2} 的第 \hyperlink{xiti8.2.6}{6} 题.）
+\end{xiti} 

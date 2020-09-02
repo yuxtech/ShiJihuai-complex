@@ -1,0 +1,1331 @@
+\setcounter{chapter}{3}
+\chapter{全纯函数的Taylor展开及其应用\label{chap4}}
+在第 \ref{chap3} 章中，我们已经得到了全纯函数的一种积分表示，即Cauchy 积分公式，利用这种表示，我们证明了全纯函数的一系列重要性质.在这一章及下一章中，我们要利用这种积分表示证明全纯函数也可以用级数来表示：圆盘中的全纯函数可以用Taylor级数来表示，圆环中的全纯函数可以用Laurent级数来表示，从这种级数表示又可得到全纯函数理论的一系列重要应用.
+
+\section{Weierstrass定理\label{sec4.1}}
+设$z_1,z_2,\cdots$是$\MC$中的一列复数，称
+\begin{equation}\label{eq4.1.1}
+\sum_{n=1}^\infty z_n=z_1+z_2+\cdots+z_n+\cdots
+\end{equation}
+为一个\textbf{复数项级数}\index{F!复数项级数}.级数 \eqref{eq4.1.1} 称为是\textbf{收敛}\index{F!复数项级数!收敛}的，如果它的部分和数列$S_n=\sum_{k=1}^nz_k$收敛.如果$\{S_n\}$的极限为$S$，就说级数 \eqref{eq4.1.1} 的和为$S$，记为$\sum_{n=1}^\infty z_n=S$.
+
+从数列的Cauchy收敛准则马上可得级数的Cauchy收敛准则：
+
+级数 \eqref{eq4.1.1} 收敛的充要条件是对任意$\varepsilon>0$，存在正整数$N$，使得当$n>N$时，不等式
+\[|z_{n+1}+z_{n+2}+\cdots+z_{n+p}|<\varepsilon\]
+对任意自然数$p$成立.
+
+从收敛准则即得$\sum_{n=1}^\infty z_n$收敛的必要条件是$\lim_{n\to\infty}z_n=0$.
+
+如果级数$\sum_{n=1}^\infty|z_n|$收敛，就说级数$\sum_{n=1}^\infty z_n$\textbf{绝对收敛}\index{F!复数项级数!绝对收敛}.从Cauchy收敛准则立刻知道，绝对收敛的级数一定收敛.反过来当然不成立.
+
+设$E$是$\MC$中的一个点集，$f_n:E\to\MC$是定义在$E$上的一个函数列，如果对于每一个$z\in E$，级数
+\begin{equation}\label{eq4.1.2}
+ \sum_{n=1}^\infty f_n(z)=f_1(z)+\cdots+f_n(z)+\cdots
+\end{equation}
+收敛到$f(z)$，就说级数 \eqref{eq4.1.2} 在$E$上收敛，其和函数为$f$，记为$\sum_{n=1}^\infty f_n(z)=f(z)$.
+
+下面引进级数一致收敛的概念：
+\begin{definition}\label{def4.1.1}
+设$\sum_{n=1}^\infty f_n(z)$是定义在点集$E$上的级数，我们说$\sum_{n=1}^\infty f_n(z)$在$E$上\textbf{一致收敛}\index{F!复数项级数!一致收敛}到$f(z)$，是指对任意$\varepsilon>0$，存在正整数$N$，当$n>N$时，不等式
+\[|S_n(z)-f(z)|<\varepsilon\]
+对所有$z\in E$成立，这里，$S_n(z)=\sum_{k=1}^nf_k(z)$是级数的部分和.
+\end{definition}
+
+我们有下面的\textbf{Cauchy收敛准则}：\index{Y!一致收敛!Cauchy收敛准则}
+\begin{theorem}\label{thm4.1.2}
+级数$\sum_{n=1}^\infty f_n(z)$在$E$上一致收敛的充要条件是对任意$\varepsilon>0$，存在正整数$N$，当$n>N$时，不等式
+\begin{equation}\label{eq4.1.3}
+  |f_{n+1}(z)+\cdots+f_{n+p}(z)|<\varepsilon
+\end{equation}
+对所有$z\in E$及任意自然数$p$成立.
+\end{theorem}
+\begin{proof}
+设$\sum_{n=1}^\infty f_n(z)$在$E$上一致收敛到$f(z)$，那么按定义，对任意$\varepsilon>0$，存在$N$，使得当$n>N$时，不等式
+\begin{align*}
+&|S_n(z)-f(z)|<\frac\varepsilon2,\\
+&|S_{n+p}(z)-f(z)|<\frac\varepsilon2
+\end{align*}
+在$E$上成立，这里，$p$是任意自然数.因而
+\begin{align*}
+|f_{n+1}(z)+\cdots+f_{n+p}(z)|&=|S_{n+p}(z)-S_n(z)|\\
+&\le|S_{n+p}(z)-f(z)|+|S_n(z)-f(z)|\\
+&<\varepsilon
+\end{align*}
+在$E$上成立，这就是不等式 \eqref{eq4.1.3}.
+
+反之，如果不等式 \eqref{eq4.1.3} 对任意自然数$p$在$E$上成立，那么$\sum_{n=1}^\infty f_n(z)$在$E$上收敛，设其和为$f(z)$.在不等式
+\[|S_{n+p}(z)-S_n(z)|<\varepsilon\]
+中令$p\to\infty$，即得
+\[|f(z)-S_n(z)|<\varepsilon.\]
+按定义，$\sum_{n=1}^\infty f_n(z)$在$E$上一致收敛到$f(z)$.
+\end{proof}
+
+由此可得下面的\textbf{Weierstrass一致收敛判别法}：\index{Y!一致收敛!Weierstrass判别法}
+\begin{theorem}\label{thm4.1.3}
+设$f_n:E\to\MC$是定义在$E$上的函数列，且在$E$上$|f_n(z)|\le a_n,n=1,2,\cdots$.
+如果$\sum_{n=1}^\infty a_n$收敛，那么$\sum_{n=1}^\infty f_n(z)$在$E$上一致收敛.
+\end{theorem}
+\begin{proof}
+因为$\sum_{n=1}^\infty a_n$收敛，故对任意$\varepsilon>0$，存在正整数$N$，使得当$n>N$时，不等式
+\[a_{n+1}+\cdots+a_{n+p}<\varepsilon\]
+对任意自然数$p$成立.于是，当$n>N$时，不等式
+\[|f_{n+1}(z)+\cdots+f_{n+p}(z)|\le a_{n+1}+\cdots+a_{n+p}<\varepsilon\]
+对任意$z\in E$及任意自然数$p$成立.故由定理 \ref{thm4.1.2} 知道，级数$\sum_{n=1}^\infty f_n(z)$在$E$上一致收敛.
+\end{proof}
+
+一致收敛级数的和函数有一些良好的性质.
+\begin{theorem}\label{thm4.1.4}
+设级数$\sum_{n=1}^\infty f_n(z)$在点集$E$上一致收敛到$f(z)$，如果每个$f_n$（$n=1,2,\cdots$）都是$E$上的连续函数，那么$f$也是$E$上的连续函数.
+\end{theorem}
+\begin{proof}
+任取$a\in E$，只要证明$f$在$a$处连续就可以了. 因为$\sum_{n=1}^\infty f_n(z)$在$E$上一致收敛到$f(z)$，故对任意$\varepsilon>0$，存在正整数$N$，当$n>N$时，不等式
+\[|f(z)-S_n(z)|<\frac\varepsilon3\]
+对所有$z\in E$成立.取定$n_0>N$，则因$S_{n_0}(z)=\sum_{k=1}^{n_0}f_k(z)$在$a$点连续，故对任意$\varepsilon>0$，存在$\delta>0$，当$z\in E\cap B(a,\delta)$时，有
+\[|S_{n_0}(z)-S_{n_0}(a)|<\frac\varepsilon3.\]
+于是，当$z\in E\cap B(z_0,\delta)$时，有
+\begin{align*}
+|f(z)-f(a)|&\le|f(z)-S_{n_0}(z)|+|S_{n_0}(z)-S_{n_0}(a)|+|S_{n_0}(a)-f(a)|\\
+&<\frac\varepsilon3+\frac\varepsilon3+\frac\varepsilon3=\varepsilon.
+\end{align*}
+这就证明了$f$在$a$处连续.
+\end{proof}
+
+\begin{theorem}\label{thm4.1.5}
+设级数$\sum_{n=1}^\infty f_n(z)$在可求长曲线$\gamma$上一致收敛到$f(z)$，如果每个$f_n$（$n=1,2,\cdots$）都在$\gamma$上连续，那么
+\begin{equation}\label{eq4.1.4}
+\int\limits_\gamma f(z)\dz=\sum_{n=1}^\infty\int\limits_\gamma f_n(z)\dz.
+\end{equation}
+\end{theorem}
+\begin{proof}
+由定理 \ref{thm4.1.4}，$f$在$\gamma$上连续. 因为$\sum_{n=1}^\infty f_n(z)$在$\gamma$上一致收敛到$f(z)$，所以对任意$\varepsilon>0$，存在正整数$N$，当$n>N$时，不等式
+\[\bigg|\sum_{k=1}^nf_k(z)-f(z)\bigg|<\varepsilon\]
+对任意$z\in\gamma$成立. 于是，当$n>N$时，由长大不等式得
+\[\bigg|\sum_{k=1}^n\int\limits_\gamma f_k(z)\dz-\int\limits_\gamma f(z)\dz\bigg|
+=\bigg|\int\limits_\gamma\bigg(\sum_{k=1}^nf_k(z)-f(z)\bigg)\dz\bigg|
+<\varepsilon|\gamma|.\]
+因而等式 \eqref{eq4.1.4} 成立.
+\end{proof}
+
+注意，定理 \ref{thm4.1.5} 实际上证明了在上述的条件下，级数$\sum_{n=1}^\infty f_n(z)$可以沿$\gamma$逐项积分.
+
+定理 \ref{thm4.1.4} 和定理 \ref{thm4.1.5} 是微积分中相应定理的平行推广，甚至连证明的方法都是一样的，原因是我们只涉及到复变数的连续函数.一旦涉及到复变函数的导数，就会产生一些与实变函数在本质上不同的东西.下面介绍的Weierstrass定理是讨论级数逐项求导的问题，得到的结果与微积分中的结果是根本不同的.
+
+\begin{definition}\label{def4.1.6}
+如果级数$\sum_{n=1}^\infty f_n(z)$在域$D$的任意紧子集上一致收敛，就称$\sum_{n=1}^\infty f_n(z)$在$D$中\textbf{内闭一致收敛}\index{Y!一致收敛!内闭一致收敛}.
+\end{definition}
+
+显然，如果$\sum_{n=1}^\infty f_n(z)$在域$D$上内闭一致收敛，那么它在$D$中的每一点都收敛，但不一定一致收敛.例如，级数$1+\sum_{k=1}^\infty(z^k-z^{k-1})$，它的部分和
+\[S_{n+1}(z)=1+(z-1)+\cdots+(z^n-z^{n-1})=z^n,\]
+显然它在单位圆盘中是内闭一致收敛的，但不一致收敛.
+
+当然，如果$\sum_{n=1}^\infty f_n(z)$在$D$中一致收敛，那么它一定内闭一致收敛.因此，内闭一致收敛比一致收敛要求低.
+\begin{definition}\label{def4.1.7}
+如果$D$的子集$G$满足
+\begin{eenum}
+  \item $\bar G\subset D$；
+  \item $\bar G$是紧的，
+\end{eenum}
+就说\textbf{$G$相对于$D$是紧的}\index{X!相对紧集}，记为$G\subset\subset D$.
+\end{definition}
+\begin{lemma}\label{lemma4.1.8}
+  设$D$是$\MC$中的域，$K$是$D$中的紧子集，且包含在相对于$D$是紧的开集$G$中，即$K\subset G\subset\subset D$，那么对任意$f\in H(D)$，均有
+\begin{equation}\label{eq4.1.5}\sup\{|f^{(k)}(z)|,z\in K\}\le C\sup\{|f(z)|:z\in G\},
+\end{equation}
+这里，$k$是任意自然数，$C$是与$k,K,G$有关的常数.
+\end{lemma}
+\begin{proof}
+由定理 \ref{thm1.5.6}，$\rho=d(K,\partial G)>0$.所以，以$K$中任意点$a$为中心、$\rho$为半径的圆盘都包含在$G$中.对圆盘$B(a,\rho)$用Cauchy不等式，得
+\[
+|f^{(k)}(a)|\le\frac{k!}{\rho^k}\sup\{|f(z)|:z\in B(a,\rho)\}\le\frac{k!}{\rho^k}
+\sup\{|f(z)|:z\in G\}.
+\]
+对$K$中的$a$取上确界，即得不等式 \eqref{eq4.1.5}.
+\end{proof}
+
+这个引理告诉我们，$f^{(k)}$（$k$是任意自然数）在紧集$K$上的上确界可用$f$在$K$的邻域$G$上的上确界来控制.
+\begin{theorem}[（\textbf{Weierstrass}）]\label{thm4.1.9}\index{D!定理!Weierstrass定理}
+设$D$是$\MC$中的域，如果
+\begin{eenum}
+  \item $f_n\in H(D),n=1,2,\cdots$；
+  \item $\sum_{n=1}^\infty f_n(z)$在$D$中内闭一致收敛到$f(z)$，
+\end{eenum}
+那么
+\begin{eenum}
+  \item $f\in H(D)$；
+  \item 对任意自然数$k$，$\sum_{n=1}^\infty f^{(k)}_n(z)$ 在$D$中内闭一致收敛到$f^{(k)}(z)$.
+\end{eenum}
+\end{theorem}
+\begin{proof}
+任取$z_0\in D$，只要证明$f$在$z_0$的一个邻域中全纯就行了.选取$r>0$，使得$\bar{B(z_0,r)}\subset D$，由定理 \ref{thm4.1.4}，$f$在$B(z_0,r)$中连续.在$B(z_0,r)$中任取一可求长闭曲线$\gamma$，由定理 \ref{thm4.1.5} 和C9auchy积分定理，得
+\[\int\limits_\gamma f(z)\dz=\sum_{n=1}^\infty \int\limits_\gamma f_n(z)\dz=0.\]
+由Morera定理，即知$f$在$B(z_0,r)$中全纯，所以$f$在$D$中全纯.
+
+为了证明第二个结论，任取$D$中的紧子集$K$，记$\rho=d(K,\partial D)>0$.令
+\[G=\cup\bigg\{B\bigg(z,\frac\rho2\bigg),z\in K\bigg\},\]
+则$K\subset G\subset\subset D$.由于$\bar G$是紧集，所以$\sum_{n=1}^\infty f_n(z)$在$\bar G$上一致收敛到$f(z)$. 因而对任意$\varepsilon>0$，存在正整数$N$，当$n>N$时，不等式$|S_n(z)-f(z)|<\varepsilon$对$\bar G$上所有的$z$成立，这里，$S_n(z)=\sum_{j=1}^nf_j(z)$. 于是由引理 \ref{lemma4.1.8}，对任意的自然数$k$，有
+\[\sup\{|S_n^{(k)}(z)-f^{(k)}(z)|:z\in K\}\le C\sup\{|S_n(z)-f(z)|:z\in G\}\le C\varepsilon,\]
+这就证明了$\sum_{n=1}^\infty f^{(k)}_n(z)$ 在$K$上一致收敛到$f^{(k)}(z)$. 由于$K$是$D$的任意紧子集，所以$\sum_{n=1}^\infty f_n^{(k)}(z)$在$D$上内闭一致收敛到$f^{(k)}(z)$.
+\end{proof}
+
+从Weierstrass定理我们看到，由全纯函数构成的级数只要在域中内闭一致收敛，它的和函数就一定是域中的全纯函数，而且可以逐项求导任意次.这样的结果在实变函数中当然不成立.
+\begin{example}\label{exam4.1.10}
+研究函数$\zeta(z)=\sum_{n=1}^\infty\frac1{n^z}$.
+\end{example}
+\begin{solution}
+因为$n^z=\ee^{z\log n}$，若记$z=x+\ii y$，则
+\[|n^z|=|\ee^{x\log n}\cdot\ee^{\ii y\log n}|=n^x.\]
+当$\Re z=x\ge x_0>1$时，$\bigg|\frac1{n^z}\bigg|\le\frac1{n^{x_0}}$，故级数$\sum_{n=1}^\infty\frac1{n^z}$在$\Re z>1$中内闭一致收敛. 由Weierstrass定理，$\zeta$是半平面$\Re z>1$上的全纯函数.
+\end{solution}
+
+\begin{xiti}
+\item 证明：复数项级数$\sum_{n=1}^\infty z_n$收敛，当且仅当$\sum_{n=1}^\infty \Re  z_n$和$\sum_{n=1}^\infty \Im z_n$同时收敛.
+\item 证明：若$\{a_n\}$和$\{b_n\}$满足条件
+\begin{enuma}
+  \item $\bigg\{\sum_{k=1}^n a_k\bigg\}$有界；
+  \item $\lim_{n\to\infty}b_n=0$；
+  \item $\sum_{n=1}^\infty|b_n-b_{n+1}|<\infty$，
+\end{enuma}
+则级数$\sum_{n=1}^\infty a_nb_n$收敛，并验证这是\textbf{Dirichlet判别法}\index{P!判别法!Dirichlet判别法}和\textbf{Abel判别法}\index{P!判别法!Abel判别法}的推广.
+\item 设$\sum_{n=1}^\infty f_n(z)$是非空点集$E$上的函数项级数.证明：
+$\sum_{n=1}^\infty f_n(z)$在$E$上一致收敛，当且仅当$\sum_{n=1}^\infty\Re f_n(z)$和$\sum_{n=1}^\infty\Im f_n(z)$都在$E$上一致收敛.
+\item 设$0<\alpha<\frac\pi2,-\alpha\le\arg z_n\le\alpha,\forall n\in \MN$.证明：级数$\sum_{n=1}^\infty z_n,\sum_{n=1}^\infty\Re z_n$和$\sum_{n=1}^\infty|z_n|$具有相同的敛散性.
+\item 设$\Re z_n\ge0,\forall n\in \MN$.证明：若$\sum_{n=1}^\infty z_n$和$\sum_{n=1}^\infty z_n^2$都收敛，则$\sum_{n=1}^\infty|z_n|^2$也收敛.
+\item 设$\sum_{n=1}^\infty z_n$是复数项级数，且$\varlimsup_{n\to\infty}\sqrt[\leftroot{-1}\uproot{2}n]{|z_n|}=q$.证明：
+    \begin{enuma}
+      \item 若$q<1$，则$\sum_{n=1}^\infty z_n$绝对收敛；
+      \item 若$q>1$，则$\sum_{n=1}^\infty z_n$发散.
+    \end{enuma}
+\item 求下列函数项级数的收敛点集：
+    \begin{enuma}
+      \item $\sum_{n=1}^\infty\frac{\cos nz}{n^2}$；
+      \item $\sum_{n=1}^\infty\frac{z^n}{1-z^n}$.
+    \end{enuma}
+\item 设$z_n\in\MC\backslash\{0\},\forall n\in \MN$，且$\varlimsup_{n\to\infty}\bigg|\frac{z_{n+1}}{z_n}\bigg|=q$.证明：
+    \begin{enuma}
+      \item 若$q<1$，则$\sum_{n=1}^\infty z_n$绝对收敛；
+      \item 若$q>1$，则$\sum_{n=1}^\infty z_n$可能收敛也可能发散.
+    \end{enuma}
+\item （\textbf{Raabe判别法}\index{P!判别法!Raabe判别法}）设$z_n\in\MC\backslash\{0\},\forall n\in \MN$，且$\lim_{n\to\infty}\bigg|\frac{z_{n+1}}{z_n}\bigg|=1$.证明：若$\varlimsup_{n\to\infty}n\bigg(\bigg|\frac{z_{n+1}}{z_n}\bigg|-1\bigg)<-1$，则$\sum_{n=1}^\infty z_n$绝对收敛.
+\item 判别下列级数的敛散性：
+    \begin{enuma}
+      \item $\sum_{n=1}^\infty\frac{\ee^{\ii nz}}n,\Im z>0$；
+      \item $\sum_{n=1}^\infty\frac{\alpha(\alpha+1)\cdots
+          (\alpha+n-1)\beta(\beta+1)\cdots(\beta+n-1)}{n!\gamma(\gamma+1)
+          \cdots(\gamma+n-1)}$，$\Re(\alpha+\beta-\gamma)<0,\gamma\ne0,-1,-2,\cdots$.
+    \end{enuma}
+\item 证明：$\sum_{n=1}^\infty(-1)^{n-1}\frac1{n-z}$在$\MC\backslash\MN$上内闭一致收敛.
+\item 设$\sum_{n=1}^\infty f_n(z)$是域$D$上的全纯函数项级数. 证明：若$\sum_{n=1}^\infty\Re f_n(z)$在$D$上内闭一致收敛，则$\sum_{n=1}^\infty \Im f_n(z)$，或者在$D$上内闭一致收敛或者在$D$上处处发散.
+\item 证明：若域$D$上的全纯函数列$\{f_n(z)\}$在$D$上内闭一致收敛于$f(z)$，则$f(z)$在$D$上全纯，并且$\{f_n^{(k)}(z)\}$在$D$上内闭一致收敛于$f^{(k)}(z),\forall k\in\MN$.
+\item 若$\{\lambda_n\}$是严格单调增加，并且以$\infty$为极限的正数列，则称$\sum_{n=1}^\infty a_n\ee^{-\lambda_n z}$为\textbf{Dirichlet级数}\index{D!Dirichlet级数}.证明：
+    \begin{enuma}
+      \item 若该级数在$z_0=x_0+\ii y_0$处收敛，则它在半平面$\{z\in\MC:\Re z>x_0\}$上内闭一致收敛；
+      \item 若该级数在$z_0=x_0+\ii y_0$处绝对收敛，则它在闭半平面$\{z\in\MC:\Re z\ge x_0\}$上绝对一致收敛.
+    \end{enuma}
+\end{xiti}
+
+\section{幂级数\label{sec4.2}}
+全纯函数最重要的性质之一是可以展开成收敛的幂级数，收敛的幂级数在它的收敛圆内确定一个全纯函数.由于幂级数的通项是幂函数，所以全纯函数的幂级数表示是全纯函数的一种最简明的分析表达式，它自然成为研究全纯函数性质的有力工具.
+
+所谓\textbf{幂级数}\index{M!幂级数}，是指形如
+\begin{equation}\label{eq4.2.1}
+\sum_{n=0}^\infty a_n(z-z_0)^n=a_0+a_1(z-z_0)+\cdots+a_n(z-z_0)^n+\cdots
+\end{equation}
+的级数，它的通项是幂函数，这里，$a_0,\cdots,a_n,\cdots$和$z_0$都是复常数.
+
+为讨论简便起见，不妨假定$z_0=0$，这时级数 \eqref{eq4.2.1} 成为
+\begin{equation}\label{eq4.2.2}
+\sum_{n=0}^\infty a_nz^n=a_0+a_1z+\cdots+a_nz^n+\cdots.
+\end{equation}
+通常，只要作变换$w=z-z_0$，就能把级数 \eqref{eq4.2.1} 化为级数 \eqref{eq4.2.2}.
+
+对于级数 \eqref{eq4.2.2}，我们首先需要知道的是它在哪些点收敛，在哪些点发散.
+\begin{definition}\label{def4.2.1}
+如果存在常数$R$，使得当$|z|<R$时，级数 \eqref{eq4.2.2} 收敛；当$|z|>R$时，级数 \eqref{eq4.2.2} 发散，就称$R$为级数 \eqref{eq4.2.2} 的\textbf{收敛半径}\index{M!幂级数!收敛半径}，$\{z:|z|<R\}$称为级数 \eqref{eq4.2.2} 的\textbf{收敛圆}\index{M!幂级数!收敛圆}.
+\end{definition}
+
+级数 \eqref{eq4.2.2} 是否存在收敛半径呢?
+\begin{theorem}\label{thm4.2.2}
+级数  \eqref{eq4.2.2} 存在收敛半径
+\[R=\frac1{\varlimsup\limits_{n\to\infty}\sqrt[\leftroot{-1}\uproot{2}n]{|a_n|}}.\]
+\end{theorem}
+\begin{proof}
+我们要证明下列三件事：
+\begin{eenum}
+  \item \label{thm4.2.2.1}当$R=0$时，$\sum_{n=0}^\infty a_nz^n$只在$z=0$处收敛；
+  \item \label{thm4.2.2.2}当$R=\infty$时，$\sum_{n=0}^\infty a_nz^n$在$\MC$中处处收敛；
+  \item \label{thm4.2.2.3}当$0<R<\infty$时，$\sum_{n=0}^\infty a_nz^n$在$\{z:|z|<R\}$中收敛，在$\{z:|z|>R\}$中发散.
+\end{eenum}
+
+先证 \ref{thm4.2.2.1}. 级数$\sum_{n=0}^\infty a_nz^n$在$z=0$处收敛是显然的. 现固定$z\ne0$，由于$\varlimsup\limits_{n\to\infty}\sqrt[\leftroot{-1}\uproot{2}n]{|a_n|}=\infty$，故必有子列$n_k$，使得$
+\sqrt[\leftroot{-3}\uproot{8}n_k]{|a_{n_k}|}>\frac1{|z|}$，于是$|a_{n_k}z^{n_k}|>1$. 所以，级数$\sum_{n=0}^\infty a_nz^n$发散.
+
+再证 \ref{thm4.2.2.2}. 任取$z\ne0$，因为$\varlimsup\limits_ {n\to\infty}\sqrt[\leftroot{-1}\uproot{2}n]{|a_n|}=0$，对于$\varepsilon=\frac1{2|z|}$，存在正整数$N$，当$n>N$时，$\sqrt[\leftroot{-1}\uproot{2}n]{|a_n|}<\frac1{2|z|}$，于是$|a_nz^n|<\frac1{2^n}$. 所以级数$\sum_{n=0}^\infty a_nz^n$收敛.
+
+最后证 \ref{thm4.2.2.3}. 取定$z\ne0,z\in B(0,R)$. 选取$\rho$，使得$|z|<\rho<R$.于是
+$\varlimsup\limits_ {n\to\infty}\sqrt[\leftroot{-1}\uproot{2}n]{|a_n|}=\frac1R<\frac1\rho$，因而存在$N$，当$n>N$时，$\sqrt[\leftroot{-1}\uproot{2}n]{|a_n|}<\frac1\rho$，即$|a_nz^n|<\bigg(
+\frac{|z|}\rho\bigg)^n$. 所以$\sum_{n=0}^\infty|a_nz^n|<\infty$.
+
+再设$|z|>R$，选取$r$，使得$|z|>r>R$. 因而$\varlimsup\limits_ {n\to\infty}\sqrt[\leftroot{-1}\uproot{2}n]{|a_n|}=\frac1R>\frac1r$，故有$\{n_k\}$，使得$
+\sqrt[\leftroot{-3}\uproot{8}n_k]{|a_{n_k}|}>\frac1r$，即$|a_{n_k}z^{n_k}|>\bigg(\frac{|z|}r\bigg)^{n_k}>1$.故级数$\sum_{n=0}^\infty a_nz^n$发散.
+\end{proof}
+
+设$\sum_{n=0}^\infty a_nz^n$的收敛半径为$R$，那么它在收敛圆$B(0,R)$中确定一个函数$f(z)$，它是不是$B(0,R)$中的全纯函数呢?
+\begin{theorem}[（\textbf{Abel}）]\label{thm4.2.3}\index{D!定理!Abel定理}
+如果$\sum_{n=0}^\infty a_nz^n$在$z=z_0\ne0$处收敛，则必在$\{z:|z|<|z_0|\}$中内闭绝对一致收敛.
+\end{theorem}
+\begin{proof}
+设$K$是$\{z:|z|<|z_0|\}$中的一个紧集，选取$r<|z_0|$，使得$K\subset B(0,r)$. 于是，当$z\in K$时，有$|z|<r$. 因为$\sum_{n=0}^\infty a_nz_0^n$收敛，所以$|a_nz_0^n|<M$，这里，$M$是一个常数. 于是，当$z\in K$时，有
+\[|a_nz^n|=\bigg|a_nz_0^n\frac{z^n}{z_0^n}\bigg|\le M\frac{|z|^n}{|z_0|^n}\le
+M\bigg(\frac r{|z_0|}\bigg)^n.\]
+因为$r<|z_0|$，所以由Weierstrass判别法，$\sum_{n=0}^\infty|a_nz^n|$在$K$中一致收敛.
+\end{proof}
+
+由定理 \ref{thm4.2.3} 和Weierstrass定理即得
+\begin{theorem}\label{thm4.2.4}
+幂级数在其收敛圆内确定一个全纯函数.
+\end{theorem}
+\begin{proof}
+由定理 \ref{thm4.2.3} 知道，幂级数在其收敛圆内是内闭一致收敛的.根据Weierstrass定理，它的和函数是收敛圆内的全纯函数.
+\end{proof}
+
+幂级数在其收敛圆周上的收敛性如何呢?从下面这些例子可以看出，它在收敛圆周上的情况是不确定的.
+
+\begin{example}\label{exam4.2.5}
+级数$\sum_{n=0}^\infty z^n$的收敛半径为$1$，它在收敛圆周$|z|=1$上处处发散.
+\end{example}
+\begin{example}\label{exam4.2.6}
+级数$\sum_{n=0}^\infty \frac{z^n}{n^2}$的收敛半径为$1$，它在收敛圆周$|z|=1$上处处收敛.
+\end{example}
+\begin{example}
+级数$\sum_{n=0}^\infty \frac{z^n}{n}$的收敛半径为$1$，它在$z=1$处是发散的，但在收敛圆周的其他点$z=\ee^{\ii\theta}$（$0<\theta<2\pi$）处则是收敛的. 则是因为
+\[\sum_{n=1}^\infty\frac{z^n}n=\sum_{n=1}^\infty \frac{\ee^{\ii n\theta}}n=\sum_{n=1}^\infty\frac{\cos n\theta}n+\ii\sum_{n=1}^\infty\frac{\sin n\theta}n,\]
+由Dirichlet判别法知道，实部和虚部的两个级数都是收敛的.
+\end{example}
+
+设$\sum_{n=0}^\infty a_n(z-z_0)^n$的收敛半径为$R$，由定理 \ref{thm4.2.4}，和函数
+\[f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\]
+是圆盘$B(z_0,R)$中的全纯函数.再由Weierstrass定理，得
+\begin{align*}
+&f'(z)=\sum_{n=1}^\infty na_n(z-z_0)^{n-1},\\
+&\cdots,\\
+&f^{(k)}(z)=\sum_{n=k}^\infty n(n-1)\cdots(n-k+1)a_n(z-z_0)^{n-k}.
+\end{align*}
+
+现若$\sum_{n=0}^\infty a_n(z-z_0)^n$在收敛圆周$|z-z_0|=R$上某点$\zeta$处收敛，那么$\sum_{n=0}^\infty a_n(\zeta-z_0)^n$和$f$有什么关系呢?为了简化问题的讨论，作变换$w=\frac{z-z_0}{\zeta-z_0}$，那么
+\[\sum_{n=0}^\infty a_n(z-z_0)^n=\sum_{n=0}^\infty a_n(\zeta-z_0)^nw^n=\sum_{n=0}^\infty b_nw^n,\]
+这里，$b_n=a_n(\zeta-z_0)^n$. $\sum_{n=0}^\infty b_nw^n$的收敛半径为
+\[\frac1{\varlimsup\limits_{n\to\infty}\sqrt[\leftroot{-1}\uproot{2}n]{|b_n|}}
+=\frac1{\zeta-z_0}\frac1{\varlimsup\limits_{n\to\infty}\sqrt[\leftroot{-1}
+\uproot{2}n]{|a_n|}}=\frac1R\cdot R=1,\]
+且在$w=1$处收敛.因此，不妨就收敛半径为$1$，且在$z=1$处收敛的幂级数$\sum_{n=0}^\infty a_nz^n$来讨论.
+
+\begin{definition}\label{def4.2.8}
+设$g$是定义在单位圆中的函数，$\ee^{\ii\theta_0}$是单位圆周上一点，$S_\alpha(\ee^{\ii\theta_0})$如图 \ref{fig4.1} 所示，其中$\alpha<\frac\pi2$.如果当$z$在$S_\alpha(\ee^ {\ii\theta_0})$中趋于$\ee^{\ii\theta_0}$时，$g(z)$有极限$l$，就称$g$在$\ee^{\ii\theta_0}$处有\textbf{非切向极限}\index{F!非切向极限}$l$，记为
+\[\lim_{\substack{z\to\ee^{\ii\theta_0}\\z\in S_\alpha(\ee^ {\ii\theta_0})}}g(z)=l.\]
+\end{definition}
+\begin{figure}[!ht]
+\centering
+\begin{minipage}{0.48\linewidth}
+\centering
+\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.1,
+>={Stealth[width=3pt]}]
+\draw(0,0)node[below left]{$O$}circle(2);
+\begin{scope}[rotate=30]
+\draw(0,0)--(2,0)node[above right,inner sep=1pt]{$\textrm e^{\textrm i\theta_0}$};
+\tkzDefPoints{1.5/-0.9/A,1.5/0.9/B}
+\draw(0,0)--(A)--(2,0)--(B)--cycle;
+\begin{scope}
+\clip(0,0)--(2,0)--(A);
+\draw(2,0)circle(0.2);
+\end{scope}
+\begin{scope}
+\clip(0,0)--(2,0)--(B);
+\draw(2,0)circle(0.22);
+\end{scope}
+\end{scope}
+\draw(36:1.7)node{$\alpha$}(24:1.7)node{$\alpha$};
+\draw[->](1,-0.4)node[below]{$S_\alpha(\textrm e^{\textrm i\theta_0})$}--++(0,0.7);
+\end{tikzpicture}
+\caption{\label{fig4.1}}
+\end{minipage}\hfill
+\begin{minipage}{0.48\linewidth}
+\centering
+\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.1,
+>={Stealth[width=3pt]}]
+\draw(0,0)node[left]{$O$}circle(2);
+\draw(0,0)--(2,0)node[right,inner sep=1pt]{$1$};
+\tkzDefPoints{1.5/-0.9/A,1.5/0.9/B,1.3/0.5/z}
+\draw(0,0)--(A)--(2,0)--(B)--cycle;
+\draw(0,0)--(z)node[above right,inner sep=0pt]{$z$}--(2,0);
+\begin{scope}
+\clip(0,0)--(2,0)--(z);
+\draw(2,0)circle(0.25);
+\end{scope}
+\draw[->](70:1)node[above]{$r$}[bend left=7]to(23:0.7);
+\draw[->](15:2.2)node[right]{$\rho$}[bend right=7]to(10:1.63);
+\node at(6:1.53){$\theta$};
+\end{tikzpicture}\caption{\label{fig4.2}}
+\end{minipage}
+\end{figure}
+
+\begin{theorem}[（\textbf{Abel第二定理}）]\label{thm4.2.9}\index{D!定理!Abel第二定理}
+设$f(z)=\sum_{n=0}^\infty a_nz^n$的收敛半径
+$R=1$，且级数在$z=1$处收敛于$S$，那么$f$在$z=1$处有非切向极限$S$，即
+\begin{equation}\label{eq4.2.3}
+\lim_{\substack{z\to1\\z\in S_\alpha(1)}}f(z)=S.
+\end{equation}
+\end{theorem}
+\begin{proof}
+如图 \ref{fig4.2} 所示，只要能证明级数$\sum_{n=0}^\infty a_nz^n$在$S_\alpha(1)\cap B(1,\delta)$（这里，$\delta=\cos\alpha$）的闭包上一致收敛，那么$f(z)$便在$z=1$处连续，因而 \eqref{eq4.2.3} 式成立.
+
+记
+\[\sigma_{n,p}=a_{n+1}+\cdots+a_{n+p}.\]
+因为$\sum_{n=0}^\infty a_nz^n$在$z=1$处收敛，即$\sum_{n=0}^\infty a_n$收敛，故对任给的$\varepsilon>0$，存在正整数$N$，当$n>N$时，$|\sigma_{n,p}|<\varepsilon$对任意自然数$p$成立.注意
+\begin{align*}
+&a_{n+1}z^{n+1}+\cdots+a_{n+p}z^{n+p}\\
+={}&\sigma_{n,1}z^{n+1}+
+(\sigma_{n,2}-\sigma_{n,1})z^{n+2}+\cdots+(\sigma_{n,p}-\sigma_{n,p-1})z^{n+p}\\
+={}&\sigma_{n,1}z^{n+1}(1-z)+\sigma_{n,2}z^{n+2}(1-z)+\cdots+\sigma_{n,p-1}z^{n+p-1}(1-z)
++\sigma_{n,p}z^{n+p}\\
+={}&z^{n+1}(1-z)(\sigma_{n,1}
++\sigma_{n,2}z+\cdots+\sigma_{n,p-1}z^{p-2})+\sigma_{n,p}z^{n+p},
+\end{align*}
+因而当$|z|<1,p=1,2,\cdots,n>N$时，便有
+\begin{equation}\label{eq4.2.4}
+|a_{n+1}z^{n+1}+\cdots+a_{n+p}z^{n+p}|<\varepsilon|1-z|(1+|z|+\cdots)+\varepsilon
+=\varepsilon\bigg(\frac{|1-z|}{1-|z|}+1\bigg).
+\end{equation}
+现在任取$z\in S_\alpha(1)\cap B(1,\delta)$，记$|z|=r,|1-z|=\rho$，那么
+\[r^2=1+\rho^2-2\rho\cos\theta,\]
+故有
+\[\frac{|1-z|}{1-|z|}=\frac\rho{1-r}=\frac{\rho(1+r)}{1-r^2}\le
+\frac{2\rho}{2\rho\cos\theta-\rho^2}=\frac2{2\cos\theta-\rho}.\]
+因为$z\in B(1,\delta)$，所以$\rho=|1-z|<\delta=\cos\alpha$. 又因$\theta<\alpha$，所以
+\[\frac{|1-z|}{1-|z|}\le\frac2{2\cos\alpha-\rho}<\frac2{\cos\alpha}.\]
+由 \eqref{eq4.2.4} 式便可得
+\[|a_{n+1}z^{n+1}+\cdots+a_{n+p}z^{n+p}|<\varepsilon\bigg(\frac2{\cos\alpha}+1\bigg).\]
+又当$z=1$时，有
+\[|a_{n+1}z^{n+1}+\cdots+a_{n+p}z^{n+p}|=|\sigma_{n,p}|<\varepsilon.\]
+这样，我们就证明了级数$\sum_{n=0}^\infty a_nz^n$在$S_\alpha(1)\cap B(1,\delta)$的闭包上一致收敛，因而 \eqref{eq4.2.3} 式成立.
+\end{proof}
+
+\begin{example}\label{exam4.2.10}
+计算级数$\sum_{n=1}^\infty\frac{z^n}n$的和.
+\end{example}
+\begin{solution}
+容易知道该级数的收敛半径为$1$，所以它的和$f(z)$是单位圆盘中的全纯函数，因而有
+\[f(z)=\sum_{n=1}^\infty\frac{z^n}n,\quad f'(z)=\sum_{n=1}^\infty z^{n-1}=\frac1{1-z}.\]
+由此得
+\[f(z)=-\log(1-z).\]
+即
+\begin{equation*}
+\sum_{n=1}^\infty\frac{z^n}n=-\log(1-z),|z|<1.
+\end{equation*}
+\end{solution}
+
+这个级数在收敛圆周上除了点$z=1$外都收敛，故由Abel第二定理，当$z=\ee^{\ii\theta}$（$0<\theta<2\pi$）时，有
+\begin{equation}\label{eq4.2.5}
+\sum_{n=1}^\infty\frac{\ee^{\ii n\theta}}n=-\log(1-\ee^{\ii\theta})
+=-\log|1-\ee^{\ii\theta}|-\ii\arg(1-\ee^{\ii\theta}).
+\end{equation}
+
+\begin{figure}[!ht]
+\centering
+\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.1,
+>={Stealth[width=3pt]}]
+\draw(0,0)node[below left]{$O$}circle(2);
+\draw[->](0,0)--(2,0)--(3.2,0);
+\draw[->](0,0)--(80:2)node[above]{$\;\textrm e^{\textrm i\theta}$}
+(80:2)--(2,0)node[above right]{$1$}--([turn]0:1.2);
+\draw(0,0)--(40:{2*cos(40)});
+\draw(0.3,0)arc(0:40:0.3)(2.2,0)arc(0:-50:0.2);
+\draw(17:0.7)node{$\theta/2$}(2.35,-0.17)node{$\varphi$};
+\end{tikzpicture}
+\caption{\label{fig4.3}}
+\end{figure}
+\noindent 从图 \ref{fig4.3} 容易看出
+\begin{align*}
+&|1-\ee^{\ii\theta}|=2\sin\frac\theta2,\\
+&\arg(1-\ee^{\ii\theta})=-\varphi,
+\end{align*}
+当$2\varphi=\pi-\theta,\varphi=\frac{\pi-\theta}2$. 这样，由 \eqref{eq4.2.5} 式便可得
+\begin{align*}
+&\sum_{n=1}^\infty\frac{\cos n\theta}n=-\log\bigg(2\sin\frac\theta2\bigg),\\
+&\sum_{n=1}^\infty\frac{\sin n\theta}n=\frac{\pi-\theta}2.
+\end{align*}
+上面两个等式都在$0<\theta<2\pi$中成立.特别地，当$\theta=\pi$时，得
+\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}n=\log2;\]
+当$\theta=\frac\pi2$时，由于
+\[\sin\frac{n\pi}2=\begin{cases}
+0,&n=2k;\\
+(-1)^k,&n=2k+1,
+\end{cases}\]
+所以得
+\[\sum_{k=0}^\infty\frac{(-1)^k}{2k+1}=\frac\pi4.\]
+\begin{xiti}
+\item 设$\sum_{n=0}^\infty a_nz^n$和$\sum_{n=0}^\infty b_nz^n$的收敛半径分别为$R_1$和$R_2$. 证明：
+\begin{enuma}
+  \item $\sum_{n=0}^\infty(a_n\pm b_n)z^n$的收敛半径$R\ge\min\{R_1,R_2\}$；
+  \item $\sum_{n=0}^\infty a_nb_nz^n$的收敛半径$R\ge R_1R_2$；
+  \item $\sum_{n=0}^\infty\bigg(\sum_{k=0}^na_kb_{n-k}\bigg)z^n$的收敛半径$R\ge\min\{R_1,R_2\}$.
+\end{enuma}
+\item 求下列幂级数的收敛半径：
+\begin{enuma}
+  \item $\sum_{n=1}^\infty z^{n!}$；
+  \item $\sum_{n=0}^\infty\frac1{2^{n^2}}z^n$；
+  \item $\sum_{n=0}^\infty[3+(-1)^n]^nz^n$；
+  \item $\sum_{n=0}^\infty\frac{n^n}{n!}z^n$.
+\end{enuma}
+\item 证明：若$\sum_{n=0}^\infty a_nz^n$在$z_0\ne0$处绝对收敛，则它在$\bar{B(0,|z_0|)}$上绝对一致收敛.
+\item 设正数列$\{a_n\}$单调收敛于零.证明：
+\begin{enuma}
+  \item $\sum_{n=1}^\infty a_nz^n$的收敛半径$R\ge1$；
+  \item $\sum_{n=1}^\infty a_nz^n$在$\partial B(0,R)\backslash\{R\}$上处处收敛.
+\end{enuma}
+\item 证明（Abel第二定理的又一说法）：若幂级数$f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n$在多角形域$G$的每个顶点处都收敛，则它必在$\bar G$上一致收敛.特别地，$f$在$\bar G$上连续.
+\item 证明：$\sum_{n=1}^\infty \frac{(-1)^{[\sqrt n]}}nz^n$在其收敛圆周$\partial B(0,1)$上处处收敛，但不绝对收敛.
+\item 证明：若$f(z)=\sum_{n=0}^\infty a_nz^n$是$B(0,1)$上的有界全纯函数，则$\sum_{n=0}^\infty|a_n|^2<\infty$.
+\item 设$\sum_{n=0}^\infty a_nz^n$的收敛半径$R>0$. 证明：
+\begin{enuma}
+  \item $\varphi(z)=\sum_{n=0}^\infty\frac{a_n}{n!}z^n$是整函数；
+  \item 存在正数$M$，使得
+  \[|\varphi^{(n)}(z)|\le\frac{M\ee^{\frac{|z|}R}}{R^n},z\in\MC,n\in\MN.\]
+\end{enuma}
+\item 举例说明Abel第二定理的逆不成立.
+\item 设$f(z)=\sum_{n=0}^\infty a_nz^n$将$B(0,R)$一一地映为域$G$. 证明：$G$的面积为$\pi\sum_{n=1}^\infty n|a_n^2|R^{2n}$.
+\item 证明：幂级数$\sum_{n=0}^\infty a_n(z-z_0)^n$在域$D$上一致收敛，当且仅当它在$\bar D$上一致收敛.
+\item 设幂级数$f(z)=\sum_{n=0}^\infty a_nz^n$的收敛半径为$1,z_0\in\partial B(0,1)$.证明：若$\lim_{n\to\infty}na_n=0$，并且$\lim_{r\to1}f(rz_0)$存在，则$\sum_{n=0}^\infty a_nz_0^n$收敛于$\lim_{r\to1}f(rz_0)$.
+\end{xiti}
+
+\section{全纯函数的Taylor展开\label{sec4.3}}
+前面已经证明，幂级数在它的收敛圆内表示一个全纯函数.现在反过来问，在一个圆内全纯的函数是否一定可以展开成幂级数?答案是肯定的.
+\begin{theorem}\label{thm4.3.1}
+若$f\in H\big(B(z_0,R)\big)$，则$f$可以在$B(z_0,R)$中展开成幂级数：
+\begin{equation}\label{eq4.3.1}
+f(z)=\sum_{n=0}^\infty \frac{f^{(n)}(z_0)}{n!}(z-z_0)^n,z\in B(z_0,R).
+\end{equation}
+右端的级数称为$f$的\textbf{Taylor级数}.\index{T!Taylor级数}
+\end{theorem}
+\begin{proof}
+任意取定$z\in B(z_0,R)$，再取$\rho<R$，使得$|z-z_0|<\rho$（见图 \ref{fig4.4}）.记$\gamma_\rho=\{\zeta:|\zeta-z_0|=\rho\}$，根据Cauchy积分公式，得
+\[f(z)=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta.\]
+把$\frac1{\zeta-z}$展开成级数，为
+
+\noindent\begin{minipage}{0.7\textwidth}
+\begin{align*}
+\frac1{\zeta-z}&=\frac1{(\zeta-z_0)-(z-z_0)}\\
+&=\frac1{\zeta-z_0}\bigg(1-\frac{z-z_0}{\zeta-z_0}\bigg)^{-1}
+=\frac1{\zeta-z_0}\sum_{n=0}^\infty\bigg(\frac{z-z_0}{\zeta-z_0}\bigg)^n,
+\end{align*}
+最后一个等式成立是因为$\bigg|\frac{z-z_0}{\zeta-z_0}\bigg|=\frac{|z-z_0|}\rho<1$的缘故.现在可得
+\begin{equation}\label{eq4.3.2}
+\frac{f(\zeta)}{\zeta-z}=\sum_{n=0}^\infty f(\zeta)\frac{(z-z_0)^n}{(\zeta-z_0)^{n+1}}.
+\end{equation}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+>={Stealth[width=3pt]}]
+\draw(0,0)node[below]{$z_0$}circle(2.2)(0,0)circle(2);
+\fill(30:1.4)circle(1pt)node[right]{$z$}(0,0)circle(1pt);
+\draw(0,0)--node[above]{$\rho$}(160:2);
+\draw(0,0)--node[below]{$R$}(185:2.2);
+\end{tikzpicture}
+\captionof{figure}{\label{fig4.4}}
+\end{minipage}\\[1mm]
+因为$f$在$\gamma_\rho$上连续，记$M=\sup\{|f(\zeta)|:\zeta\in\gamma_\rho\}$，于是当$\zeta\in\gamma_\rho$时，有
+\[\bigg|\frac{f(\zeta)(z-z_0)^n}{(\zeta-z_0)^{n+1}}\bigg|\le\frac M\rho\bigg(
+\frac{|z-z_0|}\rho\bigg)^n.\]
+右端是一收敛级数，故由Weierstrass判别法，级数 \eqref{eq4.3.2} 在$\gamma_\rho$上一致收敛，故可逐项积分：
+\begin{align*}
+f(z)&=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\sum_{n=0}^\infty f(\zeta)\frac{(z-z_0)^n}{(\zeta-z_0)^{n+1}}\textrm d\zeta\\
+&=\sum_{n=0}^\infty\bigg(\frac1{2\pi\ii}\int\limits_{\gamma_\rho}
+\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\textrm d\zeta\bigg)(z-z_0)^n\\
+&=\sum_{n=0}^\infty \frac{f^{(n)}(z_0)}{n!}(z-z_0)^n.
+\end{align*}
+由于$z$是$B(z_0,R)$中的任意点，所以上式在$B(z_0,R)$中成立.
+\end{proof}
+
+$f$的展开式 \eqref{eq4.3.1} 是唯一的.因为若有展开式
+\[f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n,\]
+那么
+\[f^{(k)}(z)=\sum_{n=k}^\infty n(n-1)\cdots(n-k+1)a_n(z-z_0)^{n-k}.\]
+在上式中令$z=z_0$，即得$f^{(k)}(z_0)=k!a_k$，或者$a_k=\frac{f^{(k)}(z_0)}{k!}$，所以
+\begin{equation*}
+f(z)=\sum_{n=0}^\infty \frac{f^{(n)}(z_0)}{n!}(z-z_0)^n,
+\end{equation*}
+这就是展开式 \eqref{eq4.3.1}.
+
+综合定理 \ref{thm4.3.1} 和定理 \ref{thm4.2.4}，我们得到
+\begin{theorem}\label{thm4.3.2}
+$f$在点$z_0$处全纯的充分必要条件是$f$在$z_0$的邻域内可以展开成幂级数：
+\begin{equation*}
+f(z)=\sum_{n=0}^\infty \frac{f^{(n)}(z_0)}{n!}(z-z_0)^n.
+\end{equation*}
+\end{theorem}
+
+从全纯函数的Taylor展开又可得到全纯函数的另外一些重要性质.
+
+\begin{definition}\label{def4.3.3}
+  设$f$在$z_0$点全纯且不恒为零，如果
+  \[f(z_0)=0,f'(z_0)=0,\cdots,f^{(m-1)}(z_0)=0,f^{(m)}(z_0)\ne0,\]
+则称$z_0$是$f$的\textbf{$m$阶零点}.\index{M!$m$阶零点}
+\end{definition}
+\begin{prop}\label{prop4.3.4}
+$z_0$为$f$的$m$阶零点的充分必要条件是$f$在$z_0$的邻域内可以表示为
+\begin{equation}\label{eq4.3.3}
+f(z)=(z-z_0)^mg(z),
+\end{equation}
+这里，$g$在$z_0$点全纯，且$g(z_0)\ne0$.
+\end{prop}
+\begin{proof}
+如果$z_0$是$f$的$m$阶零点，则从$f$的Taylor展开可得
+\begin{align*}
+f(z)&=\sum_{n=0}^\infty \frac{f^{(n)}(z_0)}{n!}(z-z_0)^n\\
+&=\sum_{n=m}^\infty \frac{f^{(n)}(z_0)}{n!}(z-z_0)^n\\
+&=(z-z_0)^m\bigg\{\frac{f^{(m)}(z_0)}{m!}+\frac{f^{(m+1)}(z_0)}{(m+1)!}
+(z-z_0)+\cdots\bigg\}\\
+&=(z-z_0)^mg(z).
+\end{align*}
+这里，$g(z)$就是花括弧中的幂级数，它当然在$z_0$处全纯，而且
+\[g(z_0)=\frac{f^{(m)}(z_0)}{m!}\ne0.\]
+
+反之，如果 \eqref{eq4.3.3} 式成立，$f$当然在$z_0$处全纯，通过直接计算即知$z_0$是$f$的$m$阶零点.
+\end{proof}
+
+\begin{prop}\label{prop4.3.5}
+设$D$是$\MC$中的域，$f\in H(D)$，如果$f$在$D$中的小圆盘$B(z_0,\varepsilon)$上恒等于零，那么$f$在$D$上恒等于零.
+\end{prop}
+\noindent\begin{minipage}{0.65\textwidth}\parindent=2em
+\begin{proof}
+在$D$中任取一点$a$，我们证明$f(a)=0$.用$D$中的曲线$\gamma$连接$z_0$和$a$，由第 \ref{chap1} 章 \ref{sec1.5} 节的定理 \ref{thm1.5.6}，$\rho=d(\gamma,\partial D)>0$.在$\gamma$上依次取点$z_0,z_1,z_2,\cdots,z_n=a$，使得$z_1\in B(z_0,\varepsilon)$，其他各点之间的距离都小于$\rho$，作圆盘$B(z_j,\rho),j=1,\cdots,n$（图 \ref{fig4.5}）. 由于$f$在$B(z_0,\varepsilon)$中恒为零，所以$f^{(n)}(z_1)=0,n=0,1,\cdots$.于是，$f$在$B(z_1,\rho)$中的Taylor展开式的系数全为零，所以$f$在$B(z_1,\rho)$中恒为零.由于$z_2\in B(z_1,\rho)$，所以$f^{(n)}(z_2)=0,n=0,1,\cdots$，用同样的方法推理，$f$在$B(z_2,\rho)$中恒为零.再往下推，即知$f$在$B(a,\rho)$中恒为零，所以$f(a)=0$.
+\end{proof}
+\end{minipage}
+\begin{minipage}{0.36\textwidth}
+\centering
+\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.4,
+>={Stealth[width=3pt]}]
+\draw(0,0)[bend right=30]to(63:4)
+[bend right=58]to(82:4.2)arc(120:190:0.4)
+arc(10:-50:1)arc(130:160:2)[bend right=35]to(-0.3,0.08)
+[bend right=38]to(0,0)--cycle;
+\begin{scope}[shift={(-2.8,3.2)}]
+\draw(-45:3.8)node[below=0pt]{$z_0$}arc(-45:5:3.8);
+\foreach \x in {-45,-40,-36,-20,-15,5}
+{\fill(\x:3.8)circle(0.6pt);\draw(\x:3.8)circle(0.39);}
+\draw[->,shorten >=1pt,shorten <=1pt](12.5:3.84)node{$z_n=a$}--(5:3.8);
+\draw[->,shorten >=1pt,shorten <=6pt](-40:3.2)node{$z_1$}--(-40:3.8);
+\draw[->,shorten >=1pt,shorten <=6pt](-36:3.2)node{$z_2$}--(-36:3.8);
+\end{scope}
+\end{tikzpicture}
+\captionof{figure}{\label{fig4.5}}
+\end{minipage}\\[1mm]
+
+\begin{prop}\label{prop4.3.6}
+设$D$是$\MC$中的域，$f\in H(D)$，$f(z)\not\equiv0$，那么$f$在$D$中的零点是\textbf{孤立}\index{L!零点孤立}的.即若$z_0$为$f$的零点，则必存在$z_0$的邻域$B(z_0,\varepsilon)$，使得$f$在$B(z_0,\varepsilon)$中除了$z_0$外不再有其他的零点.
+\end{prop}
+\begin{proof}
+由命题 \ref{prop4.3.5} 知，$f$在$z_0$的邻域中不能恒等于零，故不妨设$z_0$为$f$的$m$阶零点.由命题 \ref{prop4.3.4} 知，$f$在$z_0$的邻域中可表示为$f(z)=(z-z_0)^mg(z)$，因$g$在$z_0$处连续，且$g(z_0)\ne0$，故存在$z_0$的邻域$B(z_0,\varepsilon)$，使得$g$在$B(z_0,\varepsilon)$中处处不为零，因而$f$在$B(z_0,\varepsilon)$中除了$z_0$外不再有其他的零点.
+\end{proof}
+
+这一事实导致了一个重要的结果：
+\begin{theorem}[（\textbf{唯一性定理}）]\label{thm4.3.7}\index{D!定理!唯一性定理}
+设$D$是$\MC$中的域，$f_1,f_2\in H(D)$. 如果存在$D$中的点列$\{z_n\}$，使得$f_1(z_n)=f_2(z_n),n=1,2,\cdots$，且$\lim_{n\to\infty}z_n=a\in D$，那么在$D$中有$f_1(z)\equiv f_2(z)$.
+\end{theorem}
+\begin{proof}
+令$g(z)=f_1(z)-f_2(z)$，则$g(z_n)=0,n=1,2,\cdots$.由于$g\in H(D)$，所以$g(a)=\lim_{n\to\infty}g(z_n)=0$，即$a$是$g$的一个零点. 由于$\{z_n\}$也是$g$的零点，而且$z_n\to a$，因而零点$a$不是孤立的. 由命题 \ref{prop4.3.5}，得$g(z)\equiv 0$，即$f_1(z)\equiv f_2(z)$.
+\end{proof}
+
+这个定理说明，全纯函数由极限在域中的一列点上的值所完全确定，这是一个非常深刻的结果.
+
+必须注意，$\lim_{n\to\infty}z_n=a,a\in D$这个条件是不能去掉的，否则结果不成立.例如，$f(z)=\sin\frac1{1-z}$在单位圆盘中全纯，令$z_n=1-\frac1{n\pi}$，
+则$f(z_n)=0,n=1,2,\cdots$，但$f(z)\not\equiv0$，原因是$z_n\to1$，而$1$不在单位圆盘中.
+
+现在给出几个常用的初等函数的Taylor展开式.
+
+先看指数函数$f(z)=\ee^z$，它是一个整函数，所以可以在圆盘$B(0,R)$中展开成幂级数，其中，$R$是任意正数.由于$f^{(n)}(z)=\ee^z,f^{(n)}(0)=1$，所以
+\begin{equation}\label{eq4.3.4}
+\ee^z=\sum_{n=0}^\infty\frac{z^n}{n!},z\in \MC.
+\end{equation}
+公式 \eqref{eq4.3.4} 也可以由全纯函数的唯一性定理得到.由直接计算知道，幂级数$\sum_{n=0}^\infty\frac{z^n}{n!}$的收敛半径$R=\infty$，所以$\varphi(z)=\sum_ {n=0}^\infty\frac{z^n}{n!}$是一个整函数. 已知$\ee^z$是一个整函数，这两个整函数在实轴上相等，即
+\[\ee^x=\sum_{n=0}^\infty \frac{x^n}{n!},x\in \MR,\]
+故由唯一性定理知道这两个整函数在$\MC$上处处相等，这就是公式 \eqref{eq4.3.4}.
+
+用同样的方法可得
+\begin{align*}
+&\cos z=\sum_{n=0}^\infty(-1)^n\frac{z^{2n}}{(2n)!},\\
+&\sin z=\sum_{n=0}^\infty(-1)^n\frac{z^{2n+1}}{(2n+1)!},
+\end{align*}
+对所有$z\in \MC$成立.
+
+由例 \ref{exam4.2.10} 我们已经得到
+\[-\log(1-z)=\sum_{n=1}^\infty \frac{z^n}n,|z|<1,\]
+在上式中用$-z$代替$z$，立刻得到
+\[\log(1+z)=\sum_{n=1}^\infty(-1)^{n-1}\frac{z^n}n,|z|<1.\]
+
+再看函数$f(z)=(1+z)^\alpha$，$\alpha$不是整数，我们考虑它的主支$f(z)=\ee^{\alpha\log(1+z)}$在$z=0$处的Taylor展开式.这个分支在$z=0$处的值为$1$，它的各阶导数在$z=0$处的值为
+\[f^{(n)}(0)=\alpha(\alpha-1)\cdots(\alpha-n+1),n=1,2,\cdots.\]
+如果记
+\begin{align*}
+  &\binom\alpha n=\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!},n=1,2,\cdots,\\
+  &\binom\alpha0=1,
+\end{align*}
+那么
+\[\ee^{\alpha\log(1+z)}=\sum_{n=0}^\infty\binom\alpha nz^n,|z|<1.\]
+也可通过直接计算得到右端级数的收敛半径为$1$.上式对整数$\alpha$当然也成立，特别当$\alpha$为正整数时，右端为一多项式.
+
+\begin{xiti}
+\item 设$D$是域，$a\in D$，函数$f$在$D\backslash\{a\}$上全纯.证明：若$\lim_{z\to a}(z-a)f(z)=0$，则$f$在$D$上全纯.
+\item 将$\ee^{\frac z{1-z}}$在$z=0$处展开为幂级数.
+\item 证明：
+  \begin{enuma}
+    \item $|\ee^z-1|\le\ee^{|z|}-1\le|z|\ee^{|z|},\forall z\in \MC$；
+    \item $(3-\ee)|z|<|\ee^z-1|<(\ee-1)|z|,0<|z|<1$.
+  \end{enuma}
+\item 设$f\in H\big(B(0,R)\big)\cap C\big(\bar{B(0,R)}\big),S_n(z)=\sum_{k=0}^n
+\frac{f^{(k)}(0)}{k!}z^k$.证明：
+\begin{enuma}
+  \item $S_n(z)=\frac1{2\pi\ii}\int\limits_{|\zeta|=R}f(\zeta)\frac{\zeta^{n+1}-z^{n+1}}
+      {(\zeta-z)\zeta^{n+1}}\textrm d\zeta,\forall z\in B(0,R)$；
+  \item $f(z)-S_n(z)=\frac{z^{n+1}}{2\pi\ii}\int\limits_{|\zeta|=R}
+  \frac{f(\zeta)}{\zeta^{n+1}(\zeta-z)}\textrm d\zeta,\forall z\in B(0,R)$.
+\end{enuma}
+\item 是否存在$f\in H\big(B(0,1)\big)$，使得下述条件之一成立：
+\begin{enuma}
+  \item $f\bigg(\frac1n\bigg)=\frac n{n+1},n=2,3,4\cdots$；
+  \item $f\bigg(\frac1{2n}\bigg)=0,f\bigg(\frac1{2n-1}\bigg)=1,n=1,2,3,\cdots$；
+  \item $f\bigg(\frac1n\bigg)=f\bigg(-\frac1n\bigg)=\frac1{n^2},n=2,3,4,\cdots$；
+  \item $f\bigg(\frac1n\bigg)=f\bigg(-\frac1n\bigg)=\frac1{n^3},n=2,3,4,\cdots$.
+\end{enuma}
+\item 设$f(z)=\sum_{n=0}^\infty a_nz^n$的收敛半径$R>0,0<r<R,A(r)=\max_{|z|=r}
+\Re f(z)$. 证明：
+\begin{enuma}
+  \item $a_nr^n=\frac1\pi\int_0^{2\pi}[\Re f(r\ee^{\ii\theta})]\ee^{-\ii n\theta}\textrm d\theta,\forall n\in \MN$；
+  \item $|a_n|r^n\le 2A(r)-2\Re f(0),\forall n\in \MN$.
+\end{enuma}
+\item 设$f(z)=1+\sum_{n=1}^\infty a_nz^n$在$B(0,1)$上全纯，并且$\Re f(z)\ge0,\forall z\in B(0,1)$.证明：
+\begin{enuma}
+   \item $|a_n|\le2,\forall n\in \MN$；
+   \item $\frac{1-|z|}{1+|z|}\le\Re f(z)\le|f(z)|\le\frac{1+|z|}{1-|z|},\forall
+   z\in B(0,1)$；
+   \item $|a_1^2-a_2|\le2,|2a_1a_2-a_1^3-a_3|\le2$.
+\end{enuma}
+\item 证明：所有实变量的三角恒等式在复变量时也成立.
+\item 证明：所有实变量的初等函数的幂级数展开式在复变量时也成立.
+\item 证明：若函数$\frac1{\cos z}$在$z=0$处的Taylor级数为$\sum_{n=0}^\infty(-1)^n\frac{E_{2n}}{(2n)!}z^{2n}$，则\textbf{Euler数}
+    \index{S!数!Euler数}$E_{2n}$满足关系式
+    \begin{align*}
+      &E_0=1,\\
+      &\sum_{k=0}^n\binom{2n}{2k}E_{2k}=0.
+    \end{align*}
+\item 证明：若$\frac z{\ee^z-1}$在$z=0$处的Taylor级数为$\sum_{n=0}^\infty \frac{B_n}{n!}z^n$，则\textbf{Bernoulli数}$B_n$\index{S!数!Bernoulli数}满足关系式
+    \begin{align*}
+    &B_0=1,\\
+    &\sum_{k=0}^n\binom{n+1}kB_k=0.
+    \end{align*}
+特别地，$B_1=-\frac12,B_{2n+1}=0,\forall n\in \MN$.
+\item 证明：若$\frac1{1-z-z^2}$在$z=0$处的Taylor级数为$\sum_{n=0}^\infty a_nz^n$，则\textbf{Fibonacci数}\index{S!数!Fibonacci数} $a_n$满足关系式
+    \begin{align*}
+    &a_0=a_1=1,\\
+    &a_n=a_{n-1}+a_{n-2},\forall n\ge2.
+    \end{align*}
+\item 设$D$是有界域，$f\in H(D)\cap C(\bar D)$.证明：若$f$在$\partial D$上不取零值，则$f$在$D$中只有有限个零点.
+\item 设$D$是域，$a\in D,f\in H(D)$，并且$\sum_{n=0}^\infty f^{(n)}(a)$收敛. 证明：
+\begin{enuma}
+  \item $f$是整函数；
+  \item $\sum_{n=0}^\infty f^{(n)}(z)$在$\MC$上内闭一致收敛.
+\end{enuma}
+\item 设$f(x)$是$(-R,R)$上的$C^\infty$实函数. 证明： $f(x)$能在$(-R,R)$上展开为它在$x=0$处的Taylor级数，当且仅当存在$[0,R)$上的正值函数$M(r)$，使得当$n\ge0,|x|<r<R$时，成立不等式
+    \[|f^{(n)}(x)|\le\frac{M(r)n!}{(r-|x|)^{n+1}}.\]
+由此可见，实变量的函数能展开为Taylor级数的条件是多么苛刻.
+\end{xiti}
+
+\section{辐角原理和Rouch\'e定理\label{sec4.4}}
+设$f$是域$D$中不恒为零的全纯函数，$\gamma$是$D$中一条可求长的简单闭曲线，由唯一性定理知道，$f$在$\gamma$内部只能有有限个零点.如何计算$f$在$\gamma$中零点的个数呢?下面的定理提供了一个计算公式.
+
+\begin{theorem}\label{thm4.4.1}
+设$f\in H(D)$，$\gamma$是$D$中一条可求长的简单闭曲线，$\gamma$的内部位于$D$中.如果$f$在$\gamma$上没有零点，在$\gamma$内部有零点
+\[a_1,a_2,\cdots,a_n,\]
+它们的阶数分别为
+\[\alpha_1,\alpha_2,\cdots,\alpha_n,\]
+那么
+\begin{equation}\label{eq4.4.1}
+\frac1{2\pi\ii}\int\limits_{\gamma}\frac{f'(z)}{f(z)}\dz=\sum_{k=1}^n\alpha_k.
+\end{equation}
+\end{theorem}
+\begin{proof}
+取充分小的$\varepsilon>0$，作圆盘$B(a_k,\varepsilon),k=1,\cdots,n$，使得这$n$个圆盘都在$\gamma$内部，且两两不相交.于是，$\frac{f'(z)}{f(z)}$在$D\backslash
+\operatorname*{\cup}_{k=1}^nB(a_k,\varepsilon)$中全纯.应用多连通域的Cauchy积分定理（定理 \ref{thm3.2.5}），得
+\begin{equation}\label{eq4.4.2}
+\frac1{2\pi\ii}\int\limits_{\gamma}\frac{f'(z)}{f(z)}\dz
+=\frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f'(z)}{f(z)}\dz+\cdots+
+\frac1{2\pi\ii}\int\limits_{\gamma_n}\frac{f'(z)}{f(z)}\dz,
+\end{equation}
+其中，$\gamma_k=\partial B(a_k,\varepsilon),k=1,\cdots,n$.
+
+因为$a_k$是$f$的$\alpha_k$阶零点，由命题 \ref{prop4.3.4} 知道，$f$在$a_k$的邻域中可以写成
+\[f(z)=(z-a_k)^{\alpha_k}g_k(z),\]
+
+这里，$g_k$在$a_k$的邻域中全纯，且$g_k(a_k)\ne0$.于是
+\begin{align*}
+&f'(z)=\alpha_k(z-a_k)^{\alpha_k-1}g_k(z)+(z-a_k)^{\alpha_k}g_k'(z),\\
+&\frac{f'(z)}{f(z)}=\frac{\alpha_k}{z-a_k}+\frac{g_k'(z)}{g_k(z)}.
+\end{align*}
+因为$\frac{g_k'}{g_k}$在$\bar{B(a_k,\varepsilon)}$中全纯，于是由Cauchy积分定理及例 \ref{exam3.1.4} 得
+\[\frac1{2\pi\ii}\int\limits_{\gamma_k}\frac{f'(z)}{f(z)}\dz=\alpha_k,k=1,\cdots,n.\]
+把它代入 \eqref{eq4.4.2} 式，即得公式 \eqref{eq4.4.1}.
+\end{proof}
+
+公式 \eqref{eq4.4.1} 有明确的几何意义.我们先作一个自然的约定：如果$a$是$f$的$m$阶零点，我们就把$a$看成是$f$的$m$个重合的$1$阶零点.这样，公式 \eqref{eq4.4.1} 右边就表示$f$在$\gamma$内部的零点个数的总和，我们记之为$N$.于是，公式 \eqref{eq4.4.1} 可写为
+\begin{equation}\label{eq4.4.3}
+\frac1{2\pi\ii}\int\limits_{\gamma}\frac{f'(z)}{f(z)}\dz=N.
+\end{equation}
+
+现在来阐明 \eqref{eq4.4.3} 式左端积分的几何意义.设$\Gamma$是$w$平面上一段不通过原点的连续曲线，它的方程记为$w=\lambda(t),a\le t\le b$.对于每个$t$，选取$\lambda(t)$的一个辐角$\theta(t)$，使得$\theta(t)$是$t$的连续函数，我们称$\theta(b)-\theta(a)$为$w$沿曲线$\Gamma$的辐角的变化，记为
+\[\Delta_\Gamma\Arg w=\theta(b)-\theta(a).\]
+今设$\Gamma$是一条不通过原点的可求长简单闭曲线，显然有
+\[\frac1{2\pi}\Delta_\Gamma\Arg w=\begin{cases}
+1,&\mbox{如果原点在$\Gamma$内部};\\
+0,&\mbox{如果原点不在$\Gamma$内部}.
+\end{cases}\]
+另一方面，我们早就知道
+\[\frac1{2\pi\ii}\int\limits_\Gamma \frac1w\textrm dw=\begin{cases}
+1,&\mbox{如果原点在$\Gamma$内部};\\
+0,&\mbox{如果原点不在$\Gamma$内部}.
+\end{cases}\]
+于是得到
+\begin{equation}\label{eq4.4.4}
+\frac1{2\pi\ii}\int\limits_\Gamma \frac{\textrm dw}w=\frac1{2\pi}\Delta_\Gamma\Arg w.
+\end{equation}
+一般来说，当$\Gamma$是一条不通过原点的任意可求长闭曲线时，$\frac1{2\pi\ii}\int\limits_\Gamma \frac{\textrm dw}w$等于$\Gamma$绕原点的圈数，称为$\Gamma$关于原点的\textbf{环绕指数}\index{H!环绕指数}，因而 \eqref{eq4.4.4} 式对于一般的不通过原点的可求长闭曲线都是成立的.
+
+现在让$z$在$z$平面上沿曲线$\gamma$的正方向走一圈，相应的函数$w=f(z)$的值在$w$平面上画出一条相应的闭曲线$\Gamma$（见图 \ref{fig4.6}）.根据 \eqref{eq4.4.4} 式，我们有
+\begin{equation}\label{eq4.4.5}
+\frac1{2\pi\ii}\int\limits_{\gamma}\frac{f'(z)}{f(z)}\dz=
+\frac1{2\pi}\Delta_\gamma\Arg f(z).
+\end{equation}
+\begin{figure}[!ht]
+\centering
+\subcaptionbox{\label{fig4.6a}}[0.48\textwidth]
+{
+\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+>={Stealth[width=3pt]}]
+\draw[->](-1.7,0)--(0,0)node[below right]{$O$}--(2.3,0);
+\draw[->](0,-2)--(0,2);
+\begin{scope}[rotate=60]
+\draw(0,-0.3)ellipse(1.6 and 0.8);
+\draw[very thin,->](0,-1.1)arc(-90:-30:1.6 and 0.8);
+\draw[very thin,->](-1.6,-0.3)arc(-180:-115:1.6 and 0.8);
+\end{scope}
+\end{tikzpicture}
+}
+\subcaptionbox{\label{fig4.6b}}[0.48\textwidth]
+{
+\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+>={Stealth[width=3pt]}]
+\draw[->](-2,0)--(0,0)node[below right]{$O$}--(3,0);
+\draw[->](0,-2)--(0,2);
+\draw(-0.2,-1.7)coordinate(A)[bend right=50]to(0.2,-1.2)[bend right=75]to(-0.3,-1.2)coordinate(B)[bend right=30]to(A)
+[bend right=50]to(1.2,-1.5)coordinate(C)arc(-32:5:3.2)node[right]{$\Gamma$}
+[bend right=55]to(0.2,1.4)coordinate(D)[bend right=50]to(-0.1,0.7)
+arc(-150:-50:0.2)coordinate(E)[bend right=60]to(D)
+[bend right=50]to(-1,1)coordinate(F)[bend right=35]to(-0.7,-1.5)coordinate(G)
+[bend right=20]to(A);
+\begin{scope}[very thin]
+\draw[->](B)--++(-105:0.07);
+\draw[->](1.585,-0.6)--++(78:0.05);
+\draw[->](0.34,0.8)--++(58:0.05);
+\draw[->](-1.136,0.7)--++(-113:0.05);
+\draw[->](G)--++(-48:0.05);
+\end{scope}
+\end{tikzpicture}
+}
+\caption{\label{fig4.6}}
+\end{figure}
+由此可知，积分$\frac1{2\pi\ii}\int\limits_\gamma\frac{f'(z)}{f(z)}\dz$就表示当$z$沿着$\gamma$的正方向走一圈时，函数$f(z)$在$\Gamma$上的辐角变化再除以$2\pi$.由 \eqref{eq4.4.3} 式和 \eqref{eq4.4.5} 式，我们得到
+\begin{equation}\label{eq4.4.6}
+\frac1{2\pi}\Delta_\gamma\Arg f(z)=N.
+\end{equation}
+由此即得下面的
+\begin{theorem}[（\textbf{辐角原理}）]\label{thm4.4.2}\index{D!定理!辐角原理}
+设$f\in H(D)$，$\gamma$是$D$中的可求长简单闭曲线，$\gamma$的内部位于$D$中.如果$f$在$\gamma$上没有零点，那么当$z$沿着$\gamma$的正方向转动一圈时，函数$f(z)$在相应的曲线$\Gamma$上绕原点
+转动的总圈数恰好等于$f$在$\gamma$内部的零点的个数.
+\end{theorem}
+
+例如，设$f(z)=(z^2+1)(z-1)^5$，则当$z$沿着圆周$\{z:|z|=3\}$的正方向转动一圈时，$f(z)$在$w$平面上绕原点转动$7$圈.这是因为$f$在$B(0,3)$中共有$7$个零点，其中，$\pm\ii$是$1$阶零点，而$1$则是$5$阶零点.
+
+从辐角原理可以导出下面的Rouch\'e定理，它在研究全纯函数的零点分布时颇为有用。
+\begin{theorem}[（\textbf{Rouch\'e}）]\label{thm4.4.3}\index{D!定理!Rouch\'e定理}
+设$f,g\in H(D)$，$\gamma$是$D$中可求长的简单闭曲线，$\gamma$的内部位于$D$中.如果当$z\in\gamma$时，有不等式
+\begin{equation}\label{eq4.4.7}
+|f(z)-g(z)|<|f(z)|,
+\end{equation}
+那么$f$和$g$在$\gamma$内部的零点个数相同.
+\end{theorem}
+\begin{proof}
+由 \eqref{eq4.4.7} 式知道，$f$和$g$在$\gamma$上都没有零点.用$|f(z)|$去除 \eqref{eq4.4.7} 式的两端，得
+\[\bigg|1-\frac{g(z)}{f(z)}\bigg|<1.\]
+若记$w=\frac gf$，则有$|w-1|<1$. 这说明当$z$在$\gamma$上变动时，$w$落在以$1$为中心、半径为$1$的圆内，因而$\Delta_\Gamma\Arg w=0$，即
+\[\Delta_\gamma\Arg f(z)=\Delta_\gamma\Arg g(z).\]
+由辐角原理即知$f$和$g$在$\gamma$内部的零点个数相同.
+\end{proof}
+
+Rouch\'e 定理有一系列重要的应用.
+\begin{theorem}\label{thm4.4.4}
+设$f$是域$D$中的全纯函数，$z_0\in D$，记$w_0=f(z_0)$，如果$z_0$是$f(z)-w_0$的$m$阶零点，那么对于充分小的$\rho>0$，必存在$\delta>0$，使得对于任意$a\in B(w_0,\delta)$，$f(z)-a$在$B(z_0,\rho)$中恰有$m$个零点.
+\end{theorem}
+\begin{proof}
+根据全纯函数零点的孤立性，必存在充分小的$\rho>0$，使得$f(z)-w_0$在$\bar{B(z_0,\rho)}$中除$z_0$外没有其他的零点.记
+\[\min\{|f(z)-w_0|:|z-z_0|=\rho\}=\delta>0,\]
+于是当$|z-z_0|=\rho$时，$|f(z)-w_0|\ge\delta$. 今任取$a\in B(w_0,\delta)$，则当$z$在圆周$|z-z_0|=\rho$上时，有
+\begin{equation}\label{eq4.4.8}
+|f(z)-w_0|\ge\delta>|w_0-a|.
+\end{equation}
+若记$F(z)=f(z)-w_0,G(z)=f(z)-a$，则 \eqref{eq4.4.8} 式可写成
+\[|F(z)|>|F(z)-G(z)|.\]
+由Rouch\'e定理，$F$和$G$在$B(z_0,\rho)$中的零点个数相同，因而$G(z)=f(z)-a$在$B(z_0,\rho)$中恰有$m$个零点.
+\end{proof}
+
+注意，这个定理实际上证明了
+\begin{corollary}\label{cor4.4.5}
+设$f\in H(D),z_0\in D,w_0=f(z_0)$，则对充分小的$\rho>0$，一定存在$\delta>0$，使得
+\[f\big(B(z_0,\rho)\big)\supset B(w_0,\delta).\]
+\end{corollary}
+
+定理 \ref{thm4.4.4} 本身又有许多重要的应用.
+
+如果$f$是域$D$上非常数的连续函数，那么$f(D)$未必是一个域.例如，函数$f(z)=|z|$是单位圆盘上的连续函数，它把单位圆盘映为线段$[0,1)$.域$D$上非常数的全纯函数则一定把域映为域.
+
+\begin{theorem}\label{thm4.4.6}
+设$f$是域$D$上非常数的全纯函数，那么$f(D)$也是$\MC$中的域.
+\end{theorem}
+\begin{proof}
+我们证明$f(D)$是$\MC$中的连通开集.先证$f(D)$是开集.任取$w_0\in f(D)$，由推论 \ref{cor4.4.5} 知，存在$\delta>0$，使得$B(w_0,\delta)\subset f(D)$，这说明$w_0$是$f(D)$的内点，所以$f(D)$是开集.
+
+再证$f(D)$是连通的.任取$w_1,w_2\in f(D)$，则存在$z_1,z_2\in D$，使得$f(z_1)=w_1,f(z_2)=w_2$. 因为$D$是连通的，故在$D$中存在连续曲线$z=\gamma(t)$（$\alpha\le t\le \beta$）连接$z_1$和$z_2$，于是$w=f\big(\gamma(t)\big)$（$\alpha\le t\le \beta$）是$f(D)$中连接$w_1,w_2$的曲线，因而$f(D)$是连通的.
+\end{proof}
+
+这个定理说明非常数的全纯函数把开集映为开集，因此称为\textbf{开映射定理}\index{D!定理!开映射定理}.
+
+在定义 \ref{def2.4.1} 中定义过单叶函数的概念，我们说$f:D\to\MC$在$D$中是单叶的，是指对$D$中任意两点$z_1\ne z_2$，有$f(z_1)\ne f(z_2)$.单叶的全纯函数有下面的重要性质：
+\begin{theorem}\label{thm4.4.7}
+如果$f$是域$D$中单叶的全纯函数，那么对于$D$内每一点$z$，有$f'(z)\ne0$.
+\end{theorem}
+\begin{proof}
+用反证法.如果存在$z_0\in D$，使得$f'(z_0)=0$，那么$z_0$是$f(z)-f(z_0)$的$m$级零点，这里，$m\ge2$.取$\rho$充分小，使得$f'(z)$在$B(z_0,\rho)$中除了$z_0$外不再有其他的零点.由定理 \ref{thm4.4.4}，对于$0<\eta<\rho$，存在$\delta>0$，使得对任意$a\in B\big((f(z_0),\delta\big)$，$f(z)-a$在$B(z_0,\eta)$中至少有两个零点，设为$z_1,z_2$.由于$f'(z_1)\ne0,f'(z_2)\ne0$，故$z_1,z_2$都是$f(z)-a$的$1$阶零点.这就是说，存在$z_1\ne z_2$，使得$f(z_1)=f(z_2)=a$，这与$f$的单叶性相矛盾.
+\end{proof}
+
+这个定理的逆定理是不成立的，即若$f'$在$D$中处处不为零，$f$未必是$D$中的单叶函数. $f(z)=\ee^z$就是最简单的例子. 但是，我们有下面的
+\begin{theorem}\label{thm4.4.8}
+设$f$是域$D$中的全纯函数，如果对于$z_0\in D,f'(z_0)\ne0$，那么$f$在$z_0$的邻域中是单叶的.
+\end{theorem}
+\begin{proof}
+因为$f'(z_0)\ne0$，所以$z_0$是$f(z)-f(z_0)$的$1$阶零点.由定理 \ref{thm4.4.4}，存在$\rho>0$和$\delta>0$，使得对于任意的$a\in B\big(f(z_0),\delta\big)$，$f(z)-a$在$B(z_0,\rho)$中只有一个零点.由$f$的连续性，可取$\rho_1<\rho$，使得
+\[f\big(B(z_0,\rho_1)\big)\subset B\big(f(z_0),\delta\big).\]
+因而$f$在$B(z_0,\rho_1)$中是单叶的.
+\end{proof}
+
+如果$f$是域$D$上的单叶全纯函数，记$f(D)=G$，那么$f$把$D$一一地映为$G$，因而$f^{-1}$也把$G$一一地映为$D$.问题是$f^{-1}$在$G$上是不是全纯的呢?对此，我们有
+\begin{theorem}\label{thm4.4.9}
+设$f$是域$D$上的单叶全纯函数，那么它的反函数$f^{-1}$是$G=f(D)$上的全纯函数，而且
+\[(f^{-1})'(w)=\frac1{f'(z)},w\in G,\]
+其中，$w=f(z)$.
+\end{theorem}
+\begin{proof}
+先证明$f^{-1}$在$G$上连续.任取$w_0\in G$，则存在$z_0\in D$，使得$f(z_0)=w_0$.由定理 \ref{thm4.4.4}，对于充分小的$\rho>0$，存在$\delta>0$，使得
+当$|w-w_0|<\delta$时，相应的$z$满足$|z-z_0|<\rho$，即$|f^{-1}(w)-f^{-1}(w_0)|<\rho$，这说明$f^{-1}$在$w_0$处是连续的. 现在
+\[\lim_{w\to w_0}\frac{f^{-1}(w)-f^{-1}(w_0)}{w-w_0}=\lim_{z\to z_0}\frac{z-z_0}{f(z)-f(z_0)}=\frac1{f'(z_0)},\]
+即
+\[(f^{-1})'(w_0)=\frac1{f'(z_0)}.\]
+这里，我们已经利用了定理 \ref{thm4.4.7} 的结果.
+\end{proof}
+
+因此，单叶全纯函数也称为\textbf{双全纯函数}\index{Q!全纯函数!双全纯函数}或\textbf{双全纯映射}\index{Q!全纯映射!双全纯映射}.
+
+利用Rouch\'e定理，还可以证明下面的
+\begin{theorem}[（\textbf{Hurwitz}）]\label{thm4.4.10}\index{D!定理!Hurwitz定理}
+设$\{f_n\}$是域$D$中的一列全纯函数，它在$D$中内闭一致收敛到不恒为零的函数$f$.设$\gamma$是$D$中一条可求长简单闭曲线，它的内部属于$D$，且不经过$f$的零点.那么必存在正整数$N$，当$n\ge N$时，$f_n$与$f$在$\gamma$内部的零点个数相同.
+\end{theorem}
+\begin{proof}
+由Weierstrass定理，$f$在$D$中是全纯的.因为$f$在$\gamma$上没有零点，所以
+\[\min\{|f(z)|:z\in \gamma\}=\varepsilon>0.\]
+另一方面，对于上面的$\varepsilon>0$，存在正整数$N$，当$n\ge N$时，$|f_n(z)-f(z)|<\varepsilon
+$在$\gamma$上成立.于是，当$n\ge N$时，在$\gamma$上有不等式
+\[|f(z)|\ge\varepsilon>|f_n(z)-f(z)|\]
+根据Rouch\'e定理，$f$和$f_n$在$\gamma$内有相同个数的零点.
+\end{proof}
+
+作为Hurwitz定理的应用，我们有
+\begin{theorem}\label{thm4.4.11}
+设$\{f_n\}$是域$D$上一列单叶的全纯函数，它在$D$上内闭一致收敛到$f$，如果$f$不是常数，那么$f$在$D$中也是单叶的全纯函数.
+\end{theorem}
+\begin{proof}
+由Weierstrass定理，$f$是$D$上的全纯函数. 如果$f$在$D$上不是单叶的，那么一定存在$z_1,z_2,z_1\ne z_2$，使得$f(z_1)=f(z_2)$. 令
+\[F(z)=f(z)-f(z_1),\]
+那么$F$在$D$中有两个零点$z_1$和$z_2$. 因为$F\not\equiv 0$，故$z_1$和$z_2$是孤立的. 选取充分小的$\varepsilon>0$，使得$B(z_1,\varepsilon)\cap B(z_2,\varepsilon)=\varnothing$，且$F$在$B(z_1,\varepsilon)$和$B(z_2,\varepsilon)$中除去$z_1$和$z_2$外不再有其他的零点.令
+\[F_n(z)=f_n(z)-f(z_1),\]
+则$F_n$在$D$中内闭一致收敛到$F$.由Hurwitz定理，存在正整数$N$，当$n>N$时，$F_n$在$B(z_1,\varepsilon)$和$ B(z_2,\varepsilon)$中各有一个零点，设为$z_1'$和$z_2'$.显然$z_1'\ne z_2' $，由此即得
+\[f_n(z_1')=f_n(z_2')=f(z_1).\]
+这与$f_n$在$D$内的单叶性相矛盾.
+\end{proof}
+
+这个定理在证明Riemann映射定理时将要用到.
+
+Rouch\'e定理的另一方面应用是可以确定某些函数在一定范围内的零点的个数，下面通过例子来说明.
+\begin{example}\label{exam4.4.12}
+求方程$z^8-4z^5+z^2-1=0$在单位圆内的零点个数.
+\end{example}
+\begin{solution}
+令
+\begin{align*}
+&f(z)=-4z^5,\\
+&g(z)=z^8-4z^5+z^2-1.
+\end{align*}
+在单位圆周上，$|f(z)|=4$，于是
+\[
+|f(z)-g(z)|=|z^8+z^2-1|\le|z|^8+|z|^2+1=3<|f(z)|.
+\]
+\end{solution}
+根据Rouch\'e定理，$g$和$f$在$|z|<1$中的零点个数相同. 而$f$在$z=0$处有$1$个$5$阶零点，因而原方程在$|z|<1$中有$5$个零点.
+
+\begin{example}\label{exam4.4.13}
+试求方程$z^4-6z+3=0$在圆环$\{z:1<|z|<2\}$中根的个数.
+\end{example}
+\begin{solution}
+我们只需分别算出它在圆盘$|z|\le1$和$|z|<2$中根的个数，二者之差即为在圆环$1<|z|<2$中根的个数.
+
+利用例 \ref{exam4.4.12} 中的方法，容易知道原方程在$|z|<1$中只有$1$个根.而在圆周$|z|=1$上，由于
+\[|z^2-6z+3|\ge 6-|z^4+3|\ge2,\]
+故在圆周$|z|=1$上不可能有零点.所以，在$|z|\le1$中只有$1$个根.
+
+为了计算$|z|<2$中根的个数，令$f(z)=z^4,g(z)=z^4-6z+3$，于是在圆周$|z|=2$上，有
+\[|f(z)-g(z)|\le|6z|+3=15<16=|f(z)|.\]
+故由Rouch\'e定理，$g(z)=z^4-6z+3$和$f(z)=z^4$在$|z|<2$中的零点个数相同，因而原方程在$|z|<2$中有$4$个根.由此即知原方程在圆环$1<|z|<2$中有$3$个根.
+\end{solution}
+
+\begin{example}\label{exam4.4.14}
+证明：方程$z^4+2z^3-2z+10=0$在每个象限内各有一个根.
+\end{example}
+\begin{proof}
+记
+\[P(z)=z^4+2z^3-2z+10,\]
+\begin{minipage}{0.7\textwidth}
+我们直接用辐角原理来证明它在第一象限内只有一个零点.为此，取围道如图 \ref{fig4.7} 所示，为了应用辐角原理，我们要证明$P$在$\gamma_1,\gamma_2,\gamma_3$上都没有零点.当$R$充分大时，$P$在$\gamma_2$上没有零点是显然的.当$z\in\gamma_1$时，$z=x>0$，于是
+\begin{align*}
+P(z)&=P(x)=x^4+2x^3-2x+10\\
+&=(x^2-1)(x+1)^2+11.
+\end{align*}
+故当$x>1$时，$P(x)>11$；当$0\le x\le1$时，$P(x)\ge-2+11=9$.因此，$P$在$\gamma_1$上取正值.当$z\in \gamma_3$时，$z=\ii y,y>0$，显然
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=0.8,
+>={Stealth[width=3pt]}]
+\draw(4,0)node[below]{$R$}--(0,0)node[below left]{$O$}--(0,4)node[left]{$R\textrm i$};
+\draw[->](4,0)--(5,0);
+\draw[->](0,4)--(0,5);
+\draw[-Stealth,thin](0,0)--(2,0)node[below]{$\gamma_1$};
+\draw[-Stealth,thin](0,4)--(0,2)node[left]{$\gamma_3$};
+\draw(4,0)arc(0:90:4);\draw[-Stealth,thin](4,0)arc(0:45:4)node[above right]{$\gamma_2$};
+\end{tikzpicture}
+\captionof{figure}{\label{fig4.7}}
+\end{minipage}
+\[P(\ii y)=y^4+10-2\ii y(y^2+1)\ne0.\]
+
+现在来计算$P$在$\gamma=\gamma_1\cup\gamma_2\cup\gamma_3$上辐角的变化.由于$P$在$\gamma_1$上取正值，所以
+\begin{equation}\label{eq4.4.9}
+\Delta_{\gamma_1}\Arg P(z)=0.
+\end{equation}
+当$z\in\gamma_2$时，有
+\[P(z)=z^4\bigg(1+\frac{2z^3-2z+10}{z^4}\bigg)=z^4Q(z),\]
+这里，$Q(z)=1+\frac{2z^3-2z+10}{z^4}$. 当$|z|$充分大时，有
+\[|Q(z)-1|=\bigg|\frac{2z^3-2z+10}{z^4}\bigg|<1,\]
+即$Q(z)$落在以$1$为中心、半径为$1$的圆内，所以$\Delta_{\gamma_2}\Arg Q(z)=0$，于是
+\begin{equation}\label{eq4.4.10}
+\Delta_{\gamma_2}\Arg P(z)=4\Delta_{\gamma_2}\Arg z+\Delta_{\gamma_2}\Arg Q(z)=2\pi.
+\end{equation}
+当$z\in\gamma_3$时，有
+\begin{equation}\label{eq4.4.11}
+\begin{aligned}
+\Delta_{\gamma_3}\Arg P(z)&=\Arg P(0)-\Arg P(\ii R)\\
+&=-\Arg\{R^4+10-2\ii R(R^2+1)\}\\
+&=-\Arg(R^4+10)\bigg(1-\frac{2\ii R(R^2+1)}{R^4+10}\bigg)\\
+&=-\Arg \bigg(1-\frac{2\ii R(R^2+1)}{R^4+10}\bigg)=0\;\mbox{（$R$充分大时）}.
+\end{aligned}
+\end{equation}
+由 \eqref{eq4.4.9}，\eqref{eq4.4.10} 和 \eqref{eq4.4.11}式即得
+\[\frac1{2\pi}\Delta_\gamma\Arg P(z)=\frac1{2\pi}\Delta_{\gamma_2}\Arg P(z)=1.\]
+根据辐角原理，$P$在第一象限内只有一个零点.
+
+由于$P$是实系数多项式，它的零点是共轭出现的，故在第四象限内也有一个零点.
+
+用与前面相同的方法，可以证明$P$在负实轴上没有零点，因此剩下的两个零点当然就在第二、第三象限中了.
+\end{proof}
+
+\begin{xiti}\hypertarget{xiti4.4}{}
+\item 设$D$是由有限条可求长简单闭曲线围成的域.证明：若$f,g\in H(\bar D)$，$f$在$\partial D$上没有零点，$f$在$D$中的全部彼此不同的零点为$z_1,z_2,\cdots,z_n$，其相应的阶数分别为$k_1,k_2,\cdots,k_n$，则
+    \[\frac1{2\pi\ii}\int\limits_{\partial D}g(z)\frac{f'(z)}{f(z)}\dz=\sum_{j=1}^nk_jg(z_j).\]
+（\textbf{说明}：这是Cauchy积分公式和辐角原理的推广.）
+\item 利用辐角原理证明代数学的基本定理.
+\item 设$\lambda>1$.证明：方程$z=\lambda-\ee^{-z}$在右半平面$\{z\in\MC:\Re z>0\}$
+中恰有一个根，并且是正实根.
+\item 设$0<a_0<a_1<\cdots<a_n$. 证明：三角多项式
+\[a_0+a_1\cos\theta+a_2\cos2\theta+\cdots+a_n\cos n\theta\]
+在$(0,2\pi)$中有$2n$个不同的零点.\\
+（\textbf{提示}：首先证明$P_n(z)=\sum_{k=0}^n a_kz^k$在$B(0,1)$中有$n$个根.）
+\item 利用Rouch\'e定理证明代数学的基本定理.
+\item 设$0<r<1$.证明：当$n$充分大时，多项式
+\[1+2z+3z^2+\cdots+nz^{n-1}\]
+在$B(0,r)$中没有根.
+\item 设$r>0$. 证明：当$n$充分大时，多项式
+   \[1+z+\frac1{2!}z^2+\cdots+\frac1{n!}z^n\]
+在$B(0,r)$中没有根.
+\item 设$f(z)$在$\bar{B(0,1)}$上全纯，并且$f'(z)$在$\partial B(0,1)$上无零点. 证明：当$n$充分大时，$F_n(z)=n\bigg[f\bigg(z+\frac1n\bigg)-f(z)\bigg]$与$f'(z)$在$B(0,1)$中的零点个数相等.
+\item 设$D$是域，$f_n:D\to\MC\backslash\{0\}$是全纯映射，$\forall n\in \MN$. 证明：若$\{f_n\}$在$D$上内闭一致收敛于$f$，则或者$f(D)=\{0\}$，或者$f(D)\subset\MC\backslash\{0\}$.
+\item 利用上题的结论证明：若域$D$上的单叶全纯函数列$\{f_n\}$在$D$上内闭一致收敛于$f$，则或者$f$是常数，或者$f$也是$D$上的单叶全纯函数.
+\item 求下列全纯函数在$B(0,1)$中的零点个数：
+\begin{enuma}
+  \item $z^9-2z^6+z^2-8z-2$；
+  \item $2z^5-z^3+3z^2-z+8$；
+  \item $z^7-5z^4+z^2-2$；
+  \item $\ee^z-4z^n+1$.
+\end{enuma}
+\item 证明：若$f\in H\big(B(0,1)\big)\cap C\big(\bar{B(0,1)}\big),
+f\big(\bar{B(0,1)}\big)\subset B(0,1)$，则$f(z)$在$B(0,1)$中有唯一的不动点.
+\item 设$a_1,a_2,\cdots,a_n\in B(0,1),f(z)=\prod_{k=1}^n\frac{a_k-z}{1-\bar a_kz}$. 证明：
+\begin{enuma}
+  \item 若$b\in B(0,1)$，则$f(z)=b$在$B(0,1)$中恰有$n$个根；
+  \item 若$b\in B(\infty,1)$，则$f(z)=b$在$B(\infty,1)$中恰有$n$个根.
+\end{enuma}
+\item 设$f\in H\big(\bar{B(0,R)}\big),f$在$\partial B(0,R)$上没有零点，在$B(0,R)$中的零点个数为$N$. 证明：
+    \[\max_{|z|=R}\Re\bigg(z\frac{f'(z)}{f(z)}\bigg)\ge N.\]
+\item 设$f$是域$D$上非常数的全纯函数.证明：存在在$D$中无极限点的点列$\{z_n\}$，使得对每个$z\in D\backslash\{z_n\}$，有$f'(z)\ne0$.
+\item 设$D$是由可求长简单闭曲线围成的单连通域，$f\in H(D)\cap C(\bar D)$.证明：若$f$在$\partial D$上取实值，则$f$为常值函数.举例说明，对于一般的单连通域$D$，结论不再成立.
+\item \hypertarget{xiti4.4.17}{}（边界对应原理的特例）设$D$是由可求长简单闭曲线$\gamma$围成的单连通域，$f\in H(D)\cap C(\bar D)$.证明：若$f$将$\gamma$一一地映为简单闭曲线$\Gamma$，则$f$将$D$双全纯地映为由$\Gamma$围成的单连通域$G$.
+\item （辐角原理）设$D$是由有限条可求长简单闭曲线围成的域，$f\in H(D)\cap C(\bar D)$.证明：若$f$在$\partial D$上不取零值，则$f$在$D$中的零点个数为
+    \[\frac1{2\pi}\Delta_{\partial D}\Arg f(z),\]
+其中，$n$阶零点视为$n$个零点.
+\end{xiti}
+
+\section{最大模原理和Schwarz引理\label{sec4.5}}
+本节介绍的\textbf{最大模原理}\index{D!定理!最大模原理}是全纯函数的重要性质之一.
+\begin{theorem}\label{thm4.5.1}
+设$f$是域$D$中非常数的全纯函数，那么$|f(z)|$不可能在$D$中取到最大值.
+\end{theorem}
+\begin{proof}
+因为$f$是$D$上非常数的全纯函数，由定理 \ref{thm4.4.6}，$G=f(D)$是一个域.如果$|f(z)|$在$D$中某点$z_0$处取到最大值，记$w_0=f(z_0)$，则$w_0$是$G$的一个内点，即有$\varepsilon>0$，使得$B(w_0,\varepsilon)\subset G$.故必有$w_1\in G$，使得$|w_1|>|w_0|$.于是存在$z_1\in D$，使得$|f(z_1)|=|w_1|>|w_0|=|f(z_0)|$.这与$|f(z_0)|$是$|f(z)|$在$D$中的最大值相矛盾.
+\end{proof}
+
+从定理 \ref{thm4.5.1} 马上可以得到下面的
+\begin{theorem}\label{thm4.5.2}
+设$D$是$\MC$中的有界域，如果非常数的函数$f$在$\bar D$上连续，在$D$内全纯，那么$f$的最大模在$D$的边界上而且只在$D$的边界上达到.
+\end{theorem}
+\begin{proof}
+因为$\bar D$是紧集，其上的连续函数$|f|$一定有最大值，即存在$z_0\in\bar D$，使得$|f(z_0)|$是$|f(z)|$在$D$上的最大值.由定理 \ref{thm4.5.1} 知道，$z_0$不能属于$D$，因此只能有$z_0\in\partial D$.
+\end{proof}
+
+注意，定理 \ref{thm4.5.2} 中$D$的有界性条件不能去掉，否则定理可能不成立.例如，设
+\begin{align*}
+&D=\bigg\{z:|\Im z|<\frac\pi2\bigg\},\\
+&f(z)=\ee^{\ee^z}.
+\end{align*}
+当然$f$在$D$中全纯，在$\bar D$上连续，但它的最大模并不能在$\partial D$上达到. 事实上，当$z\in \partial D$时，$z=x\pm\frac\pi2\ii$，这时， $\ee^z=\ee^x\ee^ {\pm\frac\pi2\ii}=\pm\ii\ee^x$，所以$|\ee^{\ee^z}|=|\ee^{\pm\ii\ee^x}|=1$. 而当$z\in D$时，取$z=x$，即有$\ee^{\ee^x}\to\infty$（$x\to\infty$），故定理 \ref{thm4.5.2} 不成立.
+
+最大模原理的一个重要应用是可以用它来证明下面\textbf{Schwarz引理}.\index{D!定理!Schwarz引理}
+\begin{theorem}\label{thm4.5.3}
+设$f$是单位圆盘$B(0,1)$中的全纯函数，且满足条件
+\begin{eenum}
+  \item 当$z\in B(0,1)$时，$|f(z)|\le1$；
+  \item $f(0)=0$，
+\end{eenum}
+那么下列结论成立：
+\begin{eenum}
+  \item \label{thm4.5.3.1} 对于任意$z\in B(0,1)$，均有$|f(z)|\le |z|$；
+  \item \label{thm4.5.3.2} $|f'(0)|\le1$；
+  \item \label{thm4.5.3.3} 如果存在某点$z_0\in B(0,1),z_0\ne0$，使得$|f(z_0)|=|z_0|$，或者$|f'(0)|=1$成立，那么存在实数$\theta$，使得对$B(0,1)$中所有的$z$，都有$f(z)=\ee^{\ii\theta}z$.
+\end{eenum}
+\end{theorem}
+\begin{proof}
+因为$f\in H\big(B(0,1)\big)$，且$f(0)=0$，故$f$在$B(0,1)$中可展开为
+\[
+  f(z)=a_1z+a_2z^2+\cdots=z(a_1+a_2z+\cdots)=zg(z),
+\]
+这里，$g(0)=a_1=f'(0)$. 取$0<r<1$，当$|z|=r$时，有
+\[|g(z)|=\frac{|f(z)|}{|z|}\le\frac1r,\]
+故由最大模原理，在圆盘$B(0,r)$中也有
+\[|g(z)|\le\frac1r\;\mbox{（当$|z|<r$时）}.\]
+让$r\to1$，即得$|g(z)|\le1$（$z\in B(0,1)$），即$|f(z)|\le|z|$，结论 \ref{thm4.5.3.1} 成立.
+
+从$|g(0)|\le1$即得$|f'(0)|\le1$，结论 \ref{thm4.5.3.2} 成立.
+
+现若有$z_0\in B(0,1),z_0\ne0$，使得$|f(z_0)|=|z_0|$，即$|g(z_0)|=1$.这说明全纯函数$g$在内点$z_0$处取到了最大模$1$，根据最大模原理，$g$必须是常数.设$g(z)\equiv c$，由$|g(z_0)|=1$，得$|c|=1$，所以$c=\ee^{\ii\theta}$，因而$f(z)=\ee^ {\ii\theta}z$.如果$|f'(0)|=1$，即$|g(0)|=1$，与上面一样讨论，即得$f(z)=\ee^ {\ii\theta}z$. 结论 \ref{thm4.5.3.3} 成立.
+\end{proof}
+
+\begin{definition}\label{def4.5.4}
+设$D$是$\MC$中的域，如果$f$是$D$上的单叶全纯函数，且$f(D)=D$，就称$f$是$D$上的一个\textbf{全纯自同构}\index{Q!全纯自同构}. $D$上全纯自同构的全体记为$\Aut(D)$.
+\end{definition}
+
+设$f,g\in \Aut(D)$，那么$f\circ g\in \Aut(D)$，且复合运算满足结合律.对于每个$f\in\Aut(D)$，由定理 \ref{thm4.4.9}，$f^{-1}\in\Aut(D)$. $f(z)=z$在复合运算下起着单位元素的作用.因而$\Aut D$在复合运算下构成一个群，称为$D$的\textbf{全纯自同构群}\index{Q!全纯自同构!全纯自同构群}.
+
+对于一般的域$D$，要确定$\Aut(D)$是很困难的.但对于单位圆盘$B(0,1)$，应用Schwarz引理不难定出其上的全纯自同构群.
+
+对于$|a|<1$，记
+\[\varphi_a(z)=\frac{a-z}{1-\bar az},\]
+由例 \ref{exam2.5.16} 知道，它把$B(0,1)$一一地映为$B(0,1)$，因而$\varphi_a\in\Aut\big(B(0,1)\big)$. 如果记$\rho_\theta(z)=\ee^{\ii\theta}z$，它是一个旋转变换，当然有$\rho_\theta\in\Aut\big(B(0,1)\big)$. 下面我们将证明，$\Aut\big(B(0,1)\big)$中除了$\varphi_a,\rho_\theta$以及它们的复合外，不再有其他的变换.
+\begin{theorem}\label{thm4.5.5}
+设$f\in \Aut\big(B(0,1)\big)$，且$f^{-1}(0)=a$，则必存在$\theta\in\MR$，使得
+\[f(z)=\ee^{\ii\theta}\frac{a-z}{1-\bar az}.\]
+\end{theorem}
+\begin{proof}
+记$w=\varphi_a(z)$，直接计算可得
+\[z=\varphi_a^{-1}(w)=\frac{a-w}{1-\bar aw}=\varphi_a(w).\]
+令$g(w)=f\circ \varphi_a(w)$，则$g\in\Aut\big(B(0,1)\big)$，而且
+\[g(0)=f\big(\varphi_a(0)\big)=f(a)=0,\]
+故由Schwarz引理得
+\begin{equation}\label{eq4.5.1}
+|g'(0)|\le1.
+\end{equation}
+
+由于$g^{-1}\in\Aut\big(B(0,1)\big)$，且$g^{-1}(0)=0$，故对$g^{-1}$用Schwarz引理，得$|(g^{-1})'(0)|\le1$. 但由定理 \ref{thm4.4.9}，有
+\[|(g^{-1})'(0)|=\frac1{|g'(0)|},\]
+由此即得
+\[|g'(0)|\ge1.\]
+与 \eqref{eq4.5.1} 式比较，即得$|g'(0)|=1$. 根据Schwarz引理的结论 \ref{thm4.5.3.3}，存在实数$\theta$，使得$g(w)=\ee^{\ii\theta}w$，即$f\circ\varphi_a(w)=\ee^{\ii\theta}w$.令$w=\varphi_a(z)$，即得
+\begin{equation*}
+f(z)=\ee^{\ii\theta}\frac{a-z}{1-\bar az}.
+\end{equation*}
+\end{proof}
+
+Schwarz引理还可推广为下面的
+
+\begin{theorem}[（\textbf{Schwarz-Pick}）]\label{thm4.5.6}\index{D!定理!Schwarz-Pick引理}
+设$f:B(0,1)\to B(0,1)$是全纯函数，对于$a\in B(0,1)$，  $f(a)=b$.那么
+\begin{eenum}
+  \item \label{thm4.5.6.1} 对任意$z\in B(0,1)$，有$\big|\varphi_b\big(f(z)\big)\big|
+  \le|\varphi_a(z)|$；
+  \item \label{thm4.5.6.2} $|f'(a)|\le\frac{1-|b|^2}{1-|a|^2}$；
+  \item \label{thm4.5.6.3} 如果存在某点$z_0\in B(0,1),z_0\ne a$，使得$\big|\varphi_b\big(f(z_0)\big)\big|
+  =|\varphi_a(z_0)|$，或者$|f'(a)|=\frac{1-|b|^2}{1-|a|^2}$成立，那么$f\in\Aut\big(B(0,1)\big)$.
+\end{eenum}
+\end{theorem}
+\begin{proof}
+令$g=\varphi_b\circ f\circ \varphi_a$，则$g\in H\big(B(0,1)\big)$，且
+\[g\big(B(0,1)\big)
+\subset B(0,1),g(0)=\varphi_b\circ f\circ \varphi_a(0)=0.\]
+对$g$用Schwarz引理，
+\begin{equation}\label{eq4.5.2}
+|\varphi_b\circ f\circ\varphi_a(\zeta)|\le|\zeta|,\zeta\in B(0,1)
+\end{equation}
+和
+\begin{equation}\label{eq4.5.3}
+|(\varphi_b\circ f\circ\varphi_a)'(0)|\le1.
+\end{equation}
+令$z=\varphi_a(\zeta)$，则$\zeta=\varphi_a(z)$，于是 \eqref{eq4.5.2} 式变成
+\begin{equation}\label{eq4.5.4}
+\big|\varphi_b\big(f(z)\big)\big|\le|\varphi_a(z)|.
+\end{equation}
+这就是 \ref{thm4.5.6.1}.
+
+由于
+\begin{align*}
+&\varphi_a'(0)=-\big(1-|a|^2\big),\\
+&\varphi_b'(b)=-\frac1{1-|b|^2},
+\end{align*}
+由 \eqref{eq4.5.3} 式即得
+\begin{equation}\label{eq4.5.5}
+|f'(a)|\le\frac{1-|b|^2}{1-|a|^2}.
+\end{equation}
+这就是 \ref{thm4.5.6.2}.
+
+如果存在$z_0\in B(0,1),z_0\ne a$，使得 \eqref{eq4.5.4} 式中的等号成立，令
+$\zeta_0=\varphi_a(z_0)$，则$\zeta_0\ne0$，且$\zeta_0$使 \eqref{eq4.5.2} 式中的等号成立.于是由Schwarz引理，$g(z)=\ee^{\ii\theta}z$，即$g\in \Aut\big(B(0,1)\big)$，于是
+$f=\varphi_b\circ g\circ\varphi_a\in \Aut\big(B(0,1)\big)$.用同样的方法可以证明，\eqref{eq4.5.5} 式中的等号成立时也有$f\in\Aut\big(B(0,1)\big)$.
+\end{proof}
+
+\begin{xiti}
+\item 设$D$是域，$f_n\in H(D)\cap C(\bar D),\forall n\in \MN$. 证明：若$\sum_{n=1}^\infty f_n(z)$在$\partial D$上一致收敛，则必在$\bar D$上一致收敛.
+\item 设$f\in H\big(B(0,R)\big)\cap C\big(\bar{B(0,R)}\big),M=\max_{|z|=R}|f(z)|$. 证明：若$z_0\in B(0,R)\backslash\{0\}$是$f(z)$的零点，则
+    \[R|f(0)|\le\big(M+|f(0)|\big)|z_0|.\]
+\item 设$z_1,z_2,\cdots,z_n\in B(\infty,1)$. 证明：存在$z_0\in \partial B(0,1)$，使得$\prod_{k=1}^n|z_0-z_k|>1$.
+\item 设$f\in H\big(B(0,1)\big)$. 证明：$M(r)=\max_{|z|=r}|f(z)|$是$[0,R)$上的增函数.
+\item 利用最大模原理证明代数学的基本定理.
+\item 设$f\in H\big(B(\infty,R)\big)\cap C\big(\bar{B(\infty,R)}\big)$，并且$\lim_{z\to\infty}f(z)$存在.证明：若$f$非常数，则$M(r)=\max_{|z|=r}|f(z)|$是$[R,\infty)$上的严格减函数.
+\item 设$f$是域$D$上非常数的全纯函数.证明：若$f$在$D$中没有零点，则$|f(z)|$在$D$内不能取得最小值.
+\item 设$f\in H\big(B(0,1)\big),f(0)=0$.证明：$\sum_{n=1}^\infty f(z^n)$在$B(0,1)$上绝对且内闭一致收敛.
+\item （\textbf{全纯函数的Hadamard三圆定理}\index{D!定理!Hadamard三圆定理}）设$0<r_1<r_2<\infty,D=\{z\in \MC:r_1<|z|<r_2\},f\in H(D)\cap C(\bar D),M(r)=
+    \max_{|z|=r}|f(z)|$（$r_1\le r\le r_2$）.证明：$\log M(r)$在$[r_1,r_2]$上是$\log r$的凸函数，即
+    \[\log M(r)\le\frac{\log r_2-\log r}{\log r_2-\log r_1}\log M(r_1)
+    +\frac{\log r-\log r_1}{\log r_2-\log r_1}\log M(r_2).\]
+\item 设$f\in H\big(B(0,R)\big),f\big(B(0,R)\big)\subset B(0,M),f(0)=0$. 证明：
+\begin{enuma}
+  \item $|f(z)\le\frac MR|z|,|f'(0)|\le \frac MR,\forall z\in B(0,R)\backslash\{0\}$；
+  \item 等号成立当且仅当$f(z)=\frac MR\ee^{\ii\theta}z$（$\theta\in\MR$）.
+\end{enuma}
+\item 设$f\in H\big(B(0,1)\big),f(0)=0$，并且存在$A>0$，使得$\Re f(z)\le A,\forall z\in B(0,1)$. 证明：
+    \[|f(z)|\le\frac{2A|z|}{1-|z|},\;\forall z\in B(0,1).\]
+\item （\textbf{Carath\'eodory不等式}\index{B!不等式!Carath\'eodory不等式}）
+设$f\in H\big(B(0,R)\big)\cap C\big(\bar{B(0,R)}\big),M(r)=\max_{|z|=r}|f(z)|,A(r)=\max_{|z|=r}\Re f(z)$（$0\le r\le R$）.证明：
+\[M(r)\le\frac{2r}{R-r}A(R)+\frac{R+r}{R-r}|f(0)|,\;\forall r\in[0,R).\]
+\item 设$f\in H\big(B(0,1)\big),f(0)=1$，并且$\Re f(z)\ge0,\forall z\in B(0,1)$. 利用Schwarz引理证明：
+\begin{enuma}
+  \item $\frac{1-|z|}{1+|z|}\le\Re f(z)\le |f(z)|\le\frac{1+|z|}{1-|z|},\forall
+  z\in B(0,1)$；
+  \item 等号在$z$异于零时成立，当且仅当
+  \[f(z)=\frac{1+\ee^{\ii\theta}z}{1-\ee^{\ii\theta}z}\;\mbox{（$\theta\in \MR$）}.\]
+\end{enuma}
+\item 设$f\in H\big(B(0,1)\big)$. 证明：存在$z_0\in \partial B(0,1)$和收敛于$z_0$的点列$\{z_n\}$，使得$\lim_{n\to\infty}f(z_n)$存在.
+\item 求出所有满足条件``$|f(z)=1|,\forall z\in\partial B(0,1)$''的整函数.
+\item 设$P_n(z)$是$n$次多项式，$P_n^\ast(z)=z^nP_n\bigg(\frac1{\bar z}\bigg)$. 证明：若$P_n(z)$的所有零点都在$B(\infty,1)$中，则$P_n(z)+\ee^{\ii\theta}P_n^\ast(z)$（$\theta\in\MR$）的零点都在$\partial B(0,1)$上.
+\item 设$f\in H\big(B(0,1)\big),f\big(B(0,1)\big)\subset B(0,1)$. 证明：若$z_1,z_2,\cdots,z_n$是$f$在$B(0,1)$中的所有彼此不同的零点，其阶数分别为$k_1,k_2,\cdots,k_n$，则
+    \[|f(z)|\le\prod_{j=1}^{n}\bigg|\frac{z_j-z}{1-\bar z_jz}\bigg|^{k_j},
+    \forall z\in B(0,1).\]
+特别地，有
+\[|f(0)|\le\prod_{j=1}^n|z_j|^{k_j}.\]
+\item 设$f\in H\big(B(0,1)\big),f\big(B(0,1)\big)\subset B(0,1)$. 证明：
+\[\frac{\big||f(0)|-|z|\big|}{1-|f(0)|\,|z|}\le|f(z)|\le
+\frac{|f(0)|+|z|}{1+|f(0)|\,|z|}.\]
+\item 设$f\in H\big(B(0,1)\big),f\big(B(0,1)\big)\subset B(0,M)$. 证明：
+\[M|f'(0)|\le M^2-|f(0)|^2.\]
+\item 设$f\in H\big(B(0,1)\big),f(0)=0,f\big(B(0,1)\big)\subset B(0,1)$. 证明：若存在$z_1,z_2\in B(0,1)$，使得$z_1\ne z_2,|z_1|=|z_2|,f(z_1)=f(z_2)$，则
+    \[|f(z_1)|=|f(z_2)|\le|z_1|^2=|z_2|^2.\]
+（\textbf{提示}：考虑$\bigg(\frac{f(z_1)-f(z)}{1-\bar{f(z_1)}f(z)}\bigg)
+\bigg(\frac{1-\bar z_1z}{z_1-z}\bigg)\bigg(\frac{1-\bar z_2z}{z_2-z}\bigg)$.）
+\item 设$f\in H\big(B(0,1)\big),f(0)=0,f\big(B(0,1)\big)\subset B(0,1)$.证明：
+\[|z|\frac{\big||f'(0)|-|z|\big|}{1-|f'(0)|\,|z|}\le|f(z)|\le|z|
+\frac{|f'(0)|+|z|}{1+|f'(0)|\,|z|}.\]
+\item 设$f\in H\big(B(0,1)\big),f\big(B(0,1)\big)\subset B(0,1)$.证明：
+\[\bigg|f(z)-\frac{f(0)\big(1-|z|^2\big)}{1-|f(0)|^2|z|^2}\bigg|
+\le\frac{|z|\big(1-|f(0)|^2\big)}{1-|f(0)|^2|z|^2}.\]
+\item 设$\varphi\in\Aut(\MC_\infty)$，并且将$\MC_\infty$中的圆周$\gamma$仍映为圆周. 证明：$\varphi$是分式线性变换.
+\item 求出上半平面$\MC^+=\{z\in \MC:\Im z>0\}$的全纯自同构群$\Aut(\MC^+)$.
+\item 设$\varphi$将$B(0,1)$双全纯地映为域$D$，$\psi$将$B(0,1)$双全纯地映为域$G$.证明：若$f:D\to G$是全纯映射，$f\big(\varphi(0)\big)=\psi(0)$，则$f\big[\varphi\big(B(0,r)\big)\big]
+    \subset \psi\big(B(0,r)\big)$（$0<r<1$）.
+\item 设$f\in H\big(B(0,1)\big),f\big(B(0,1)\big)\subset B(0,1)$.证明：
+\[|f(z)-f(0)|\le|z|\frac{1-|f(0)|^2}{1-|f(0)|\,|z|}.\]
+\item 设$D$是以原点$O$为中心、以$z_1,z_2,z_3,z_4$为顶点的正方形域，$f\in H(D)\cap C(\bar D)$，$M$是$|f(z)|$在$\bar D$上的最大值，$m$是$|f(z)|$在线段$[z_1,z_2]$上的最大值.证明：
+\begin{enuma}
+  \item $|f(0)|\le m^{\frac14}M^{\frac34}$；
+  \item 在闭三角形$\triangle Oz_1z_2$上也有$|f(z)|\le m^{\frac14}M^{\frac34}$.
+\end{enuma}
+\item 设$D$是下面所述的域，$f\in H(D)\cap C(\bar D)$，并且在$\bar D$上有界.证明：
+\begin{enuma}
+  \item 若$D=\{z\in\MC:0<\Im z<1\},\lim_{\substack{\Re z\to\infty\\\Im z=0}}f(z)=A$，则
+      \[\lim_{\substack{\Re z\to\infty\\0\le\Im z\le r}}f(z)=A\;\mbox{（$0<r<1$）};\]
+  \item 若$D=\{z\in \MC:\theta_1<\arg z<\theta_2\}$（$-\pi<\theta_1<\theta_2<\pi$），$\lim_{\substack{|z|\to\infty\\
+      \arg z=\theta_1}}f(z)=A$，则
+      \[\lim_{\substack{|z|\to\infty\\\theta_1\le\arg z\le\theta}}f(z)=A\;\mbox{（$\theta_1<\theta<\theta_2$）};\]
+  \item $D=\{z\in \MC:\theta_1<\arg z<\theta_2\}$（$-\pi<\theta_1<\theta_2<\pi$），$\lim_{\substack{|z|\to0\\
+      \arg z=\theta_1}}f(z)=A$，则
+      \[\lim_{\substack{|z|\to0\\\theta_1\le\arg z\le\theta}}f(z)=A\;\mbox{（$\theta_1<\theta<\theta_2$）}.\]
+\end{enuma}
+\item 设$D$是有界域，$f\in H(D),z_0\in D$. 证明：若$f(z_0)=z_0,f(D)\subset D,f'(z_0)=1$，则$f(z)\equiv z$.
+\item 设$f\in H\big(B(0,1)\big),f(0)=0$，并且$|\Re f(z)|<1,\forall z\in B(0,1)$. 证明：
+\begin{enuma}
+  \item $|\Re f(z)|\le\frac4\pi\arctan|z|,\forall z\in B(0,1)$；
+  \item $|\Im f(z)|\le\frac2\pi\log\bigg(\frac{1+|z|}{1-|z|}\bigg),\forall z\in B(0,1)$.
+\end{enuma}
+\item 设$f$在$B(0,1)\cup\{1\}$上全纯，$f(0)=0,f(1)=1,f\big(B(0,1)\big)\subset B(0,1)$.证明：$f'(1)\ge1$.
+\item 设$P$是一个$k$次多项式，在单位圆周上满足$|P(\ee^{\ii\theta})|\le1$. 证明：对任意单位圆盘外的$z$，有
+    \[|P(z)|\le |z|^k.\]
+\end{xiti} 
