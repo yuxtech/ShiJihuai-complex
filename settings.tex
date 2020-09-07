@@ -93,11 +93,14 @@ after-item-skip=0pt
 
 
 
+\usepackage{tocloft}
+\renewcommand\cftchapfont{\CJKfontspec{汉仪大宋简}}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \ctexset {
   chapter = {
   beforeskip = 0pt,
   fixskip = true,
-  format = \Huge\bfseries,
+  format = \Huge\CJKfontspec{汉仪大宋简},
   nameformat = \rule{\linewidth}{1bp}\par\bigskip\hfill\label{chap\thechapter}\chapternamebox,
   number = \arabic{chapter},
   aftername = \par\medskip,
@@ -105,7 +108,8 @@ after-item-skip=0pt
 },
   section = {
     titleformat+  = \label{sec\thesection}\raggedright
-  }
+  },
+  contentsname = \CJKfontspec{汉仪大宋简}{目 录}
 }
 \newcommand\chapternamebox[1]{%
 \parbox{\ccwd}{\linespread{1}\selectfont\centering #1}}
