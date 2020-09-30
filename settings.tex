@@ -4,6 +4,8 @@
 \IfFontExistsTF{FZShuSong-Z01}{
   \PassOptionsToPackage{ctex}{fontset=founder}
 }{}
+\usepackage{xeCJK}
+\defaultCJKfontfeatures{Mapping=fullwidth-stop}
 \usepackage[heading]{ctex}
 \usepackage{manfnt}
 \usepackage{indentfirst}
@@ -14,9 +16,9 @@
            top=2.54cm,bottom=2.54cm,right=2.9cm,left=2.9cm,
            headsep=25pt,headheight=20pt]{geometry}
 \IfFileExists{mtpro2.sty}{
-  \usepackage[lite,zswash]{mtpro2}
+  \usepackage[zswash,mtpbb]{mtpro2}
 }{}
-\usepackage{amssymb}
+
 \usepackage{amsmath,mathrsfs}
 \usepackage{caption}
 
@@ -102,9 +104,9 @@ after-item-skip=0pt
 \usepackage{fancyhdr}
 \usepackage{tkz-euclide}
 \usetikzlibrary{shapes.callouts,arrows.meta,calc,shadings}
-\renewcommand{\Re}{\operatorname{\textrm{Re}}}
-\renewcommand{\Im}{\operatorname{\textrm{Im}}}
-\newcommand{\ii}{\textrm i}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\ii}{\mathrm i}
 \ctexset{punct=kaiming}
 \renewcommand\thempfootnote{\ding{45}}
 \newenvironment{note}{\par\CJKfamily{note}\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}
@@ -139,7 +141,7 @@ after-item-skip=0pt
 \newenvironment{enum}{\begin{enumerate}[label=\textbf{\arabic*.},ref=\arabic*,left=0cm]}
 {
 \end{enumerate}}
-\DeclareMathOperator{\ee}{\!\!\;\textrm e}
+\DeclareMathOperator{\ee}{\!\!\;\mathrm e}
 \newcommand{\MR}{\mathbb R}
 \newcommand{\MC}{\mathbb C}
 \newcommand{\MF}{\mathbb F}
@@ -221,17 +223,16 @@ after-item-skip=0pt
 \setlist{itemsep=0pt}
 
 
-\catcode`\。=\active
-\newcommand{。}{.}
+
 \newcommand\pp[2]{\frac{\partial #1}{\partial #2}}
 \newcommand\ppp[2]{\frac{\partial^2 #1}{\partial #2^2}}
 \newcommand\pppp[3]{\frac{\partial^2 #1}{\partial #2\partial #3}}
-\newcommand\dd[2]{\frac{\textrm d#1}{\textrm d#2}}
-\newcommand\ddd[2]{\frac{\textrm d^2#1}{\textrm d#2^2}}
-\newcommand\dx{\textrm dx}
-\newcommand\dy{\textrm dy}
-\newcommand\dz{\textrm dz}
-\newcommand\dzz{\textrm d\bar z}
+\newcommand\dd[2]{\frac{\mathop{}\!\mathrm d#1}{\mathop{}\!\mathrm d#2}}
+\newcommand\ddd[2]{\frac{\mathop{}\!\mathrm d^2#1}{\mathop{}\!\mathrm d#2^2}}
+\newcommand\dx{\mathop{}\!\mathrm dx}
+\newcommand\dy{\mathop{}\!\mathrm dy}
+\newcommand\dz{\mathop{}\!\mathrm dz}
+\newcommand\dzz{\mathop{}\!\mathrm d\bar z}
 \usepackage[subrefformat=parens]{subcaption}
 \DeclareMathOperator{\Arg}{Arg}
 \usepackage{tkz-euclide}
