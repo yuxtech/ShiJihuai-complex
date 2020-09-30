@@ -1,5 +1,9 @@
 \usepackage{etex,tabularx}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{fontspec}
+\IfFontExistsTF{FZShuSong-Z01}{
+  \PassOptionsToPackage{ctex}{fontset=founder}
+}{}
 \usepackage[heading]{ctex}
 \usepackage{manfnt}
 \usepackage{indentfirst}
@@ -9,7 +13,9 @@
 \usepackage[centering,
            top=2.54cm,bottom=2.54cm,right=2.9cm,left=2.9cm,
            headsep=25pt,headheight=20pt]{geometry}
-\usepackage[lite,zswash]{mtpro2}
+\IfFileExists{mtpro2.sty}{
+  \usepackage[lite,zswash]{mtpro2}
+}{}
 \usepackage{amssymb}
 \usepackage{amsmath,mathrsfs}
 \usepackage{caption}
@@ -49,7 +55,19 @@ othercode={
 \DeclareSymbolFont{ugmL}{OMX}{yhex}{m}{n}
 \DeclareMathAccent{\wideparen}{\mathord}{ugmL}{"F3}
 
-\setCJKmainfont[BoldFont={方正黑体_GBK},ItalicFont={方正楷体_GBK}]{方正书宋_GBK}
+\IfFontExistsTF{FZShuSong-Z01}{
+  \setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong-Z01}
+}{}
+\IfFontExistsTF{Microsoft YaHei}{
+  \newCJKfontfamily\wryh{Microsoft YaHei}
+}{
+  \let\wryh\sffamily
+}
+\IfFontExistsTF{汉仪大宋简}{
+  \newCJKfontfamily\hyds{汉仪大宋简}
+}{
+  \let\hyds\rmfamily
+}
 
 \defaultfontfeatures{Mapping=tex-text}
 \XeTeXlinebreaklocale ”zh”
@@ -81,7 +99,8 @@ after-item-skip=0pt
 
 
 
-\usepackage{fancyhdr,tikz}
+\usepackage{fancyhdr}
+\usepackage{tkz-euclide}
 \usetikzlibrary{shapes.callouts,arrows.meta,calc,shadings}
 \renewcommand{\Re}{\operatorname{\textrm{Re}}}
 \renewcommand{\Im}{\operatorname{\textrm{Im}}}
@@ -94,13 +113,13 @@ after-item-skip=0pt
 
 
 \usepackage{tocloft}
-\renewcommand\cftchapfont{\CJKfontspec{汉仪大宋简}}
+\renewcommand\cftchapfont{\hyds}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \ctexset {
   chapter = {
   beforeskip = 0pt,
   fixskip = true,
-  format = \Huge\CJKfontspec{汉仪大宋简},
+  format = \Huge\hyds,
   nameformat = \rule{\linewidth}{1bp}\par\bigskip\hfill\label{chap\thechapter}\chapternamebox,
   number = \arabic{chapter},
   aftername = \par\medskip,
@@ -109,7 +128,7 @@ after-item-skip=0pt
   section = {
     titleformat+  = \label{sec\thesection}\raggedright
   },
-  contentsname = \CJKfontspec{汉仪大宋简}{目 录}
+  contentsname = \hyds{目 录}
 }
 \newcommand\chapternamebox[1]{%
 \parbox{\ccwd}{\linespread{1}\selectfont\centering #1}}
@@ -227,5 +246,3 @@ after-item-skip=0pt
 \DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator*{\Res}{Res}
 \newcommand\DD{D}
-
-
