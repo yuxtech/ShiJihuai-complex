@@ -17,7 +17,7 @@
            headsep=25pt,headheight=20pt]{geometry}
 \IfFileExists{mtpro2.sty}{
   \usepackage[zswash,mtpbb]{mtpro2}
-}{}
+}{\usepackage{amssymb}}
 
 \usepackage{amsmath,mathrsfs}
 \usepackage{caption}
@@ -90,7 +90,7 @@ after-item-skip=0pt
 \usepackage{multicol}
 
 \everymath{\displaystyle}
-\lineskiplimit=2.5pt  
+\lineskiplimit=2.5pt
 \lineskip=2.5pt plus .5pt
 
 \renewcommand{\le}{\leqslant}
