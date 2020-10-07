@@ -67,7 +67,7 @@ f(z_0+\Delta z)-f(z_0)=f'(z_0)\Delta z+o(|\Delta z|).
 \item 设域$G$和域$D$关于实轴对称.证明：如果$f(z)$是$D$上的全纯函数，那么$\bar{f(\bar z)}$是$G$上的全纯函数.
 \end{xiti}
 
-\section{Cauchy-Riemann方程\label{sec2.2}}
+\section{Cauchy--Riemann方程\label{sec2.2}}
 现在讨论$f$在某点$z_0$可微的充分必要条件，为此先引入$f$在$z_0$处实可微的概念.
 \begin{definition}
 设$f(z)=u(x,y)+\ii v(x,y)$是定义在域$D$上的函数，$z_0=x_0+\ii y_0\in D$.我们说$f$在$z_0$处\textbf{实可微}\index{Q!全纯函数!实可微}，是指$u$和$v$作为$x,y$的二元函数在$(x_0,y_0)$处可微.
@@ -135,13 +135,13 @@ v(x_0+\Delta x,y_0+\Delta y)-v(x_0,y_0)=\pp vx(x_0,y_0)\Delta x+\pp vy(x_0,y_0)\
 由此即知$f$在$z_0$处可微，而且$f'(z_0)=\pp fz(z_0)$.
 \end{proof}
 
-$\pp f{\bar z}=0$称为\textbf{Cauchy-Riemann 方程}\index{G!公式!Cauchy-Riemann 方程}，从这个方程可以得到$f$的实部和虚部应满足的条件. 设$f=u+\ii v$，则由 \eqref{eq2.2.3} 式得
+$\pp f{\bar z}=0$称为\textbf{Cauchy--Riemann 方程}\index{G!公式!Cauchy--Riemann 方程}，从这个方程可以得到$f$的实部和虚部应满足的条件. 设$f=u+\ii v$，则由 \eqref{eq2.2.3} 式得
 \begin{align*}
   \pp f{\bar z}&=\pp u{\bar z}+\ii\pp v{\bar z}=\frac12\bigg(\pp ux+\ii \pp uy\bigg)
   +\frac{\ii}2\bigg(\pp vx+\ii\pp vy\bigg)\\
   &=\frac12\bigg(\pp ux-\pp vy\bigg)+\frac{\ii}2\bigg(\pp uy+\pp vx\bigg).
 \end{align*}
-因此，Cauchy-Riemann 方程$\pp f{\bar z}=0$就等价于
+因此，Cauchy--Riemann 方程$\pp f{\bar z}=0$就等价于
 \begin{equation}\label{eq2.2.5}
 \left\{\begin{aligned}
 &\pp ux=\pp vy,\\
@@ -165,7 +165,7 @@ $\pp f{\bar z}=0$称为\textbf{Cauchy-Riemann 方程}\index{G!公式!Cauchy-Riem
 这里的偏导数都在$(x_0,y_0)$处取值.
 \end{theorem}
 
-最后这个$f'(z_0)$的表达式是从$f'(z_0)=\pp fz(z_0)$和 Cauchy-Riemann 方程 \eqref{eq2.2.5} 得到的.
+最后这个$f'(z_0)$的表达式是从$f'(z_0)=\pp fz(z_0)$和 Cauchy--Riemann 方程 \eqref{eq2.2.5} 得到的.
 
 设$D$是$\MC$中的域，我们用$C(D)$记$D$上连续函数的全体，用$H(D)$记$D$上全纯函数的全体.命题 \ref{prop2.1.2} 告诉我们，$H(D)\subset C(D)$.
 
@@ -215,7 +215,7 @@ $\pp f{\bar z}=0$称为\textbf{Cauchy-Riemann 方程}\index{G!公式!Cauchy-Riem
   设$f=u+\ii v\in H(D)$，那么$u$和$v$都是$D$上的调和函数.
 \end{theorem}
 \begin{proof}
-因为$f\in H(D)$，由 Cauchy-Riemann 方程，有
+因为$f\in H(D)$，由 Cauchy--Riemann 方程，有
 \[\pp f{\bar z}=0,\quad \pp{\bar f}z=0.\]
 所以
 \[\pppp fz{\bar z}=\pppp{\bar f}z{\bar z}=0.\]
@@ -225,7 +225,7 @@ $\pp f{\bar z}=0$称为\textbf{Cauchy-Riemann 方程}\index{G!公式!Cauchy-Riem
 同理可证$\Delta v=0$.
 \end{proof}
 \begin{definition}\label{def2.2.10}
-设$u$和$v$是一对调和函数，如果他们还满足 Cauchy-Riemann 方程
+设$u$和$v$是一对调和函数，如果他们还满足 Cauchy--Riemann 方程
 \[\left\{\begin{aligned}
 &\pp ux=\pp vy,\\
 &\pp uy=-\pp vx,
@@ -268,8 +268,8 @@ $\pp f{\bar z}=0$称为\textbf{Cauchy-Riemann 方程}\index{G!公式!Cauchy-Riem
   \item $\Re f(z)=\big(\Im f(z)\big)^2,z\in D$，
 \end{enuma}
 那么$f$是一常数.
-\item 设$z=x+\ii y$，证明$f(z)=\sqrt{xy}$在$z=0$处满足 Cauchy-Riemann 方程，但$f$在$z=0$处不可微.
-\item \hypertarget{xiti2.2.4}{}设$z=r(\cos\theta+\ii\sin\theta),f(z)=u(r,\theta)+\ii v(r,\theta)$，证明 Cauchy-Riemann 方程为
+\item 设$z=x+\ii y$，证明$f(z)=\sqrt{xy}$在$z=0$处满足 Cauchy--Riemann 方程，但$f$在$z=0$处不可微.
+\item \hypertarget{xiti2.2.4}{}设$z=r(\cos\theta+\ii\sin\theta),f(z)=u(r,\theta)+\ii v(r,\theta)$，证明 Cauchy--Riemann 方程为
     \[\left\{\begin{aligned}
       &\pp ur=\frac1r\pp v{\theta},\\
       &\pp vr=-\frac1r\pp u{\theta}.
@@ -486,7 +486,7 @@ arc(170:100:2)coordinate(D)node[above]{$w$}arc(100:90:2);
 \item $\ee^z$是$\MC$上的全纯函数，而且
   \[(\ee^z)'=\ee^z.\]
 
-  $\ee^z$在$\MC$上每点实可微是显然的, 今验证它满足 Cauchy-Riemann 方程. 因为$u(x,y)=\ee^x\cos y,v(x,y)=\ee^x\sin y$，所以
+  $\ee^z$在$\MC$上每点实可微是显然的, 今验证它满足 Cauchy--Riemann 方程. 因为$u(x,y)=\ee^x\cos y,v(x,y)=\ee^x\sin y$，所以
   \begin{align*}
   &\pp ux=\ee^x\cos y=\pp vy,\\
   &\pp uy=-\ee^x\sin y=-\pp vx.
@@ -1519,4 +1519,4 @@ $\{z:0<\Im z<1\}$映为条形域$\{w:0<\Im w<1\}$，其中，$a$是实数，$0<h
 \[\{z\in\MC:\Re z>0,|z-a|>r\}\]
 映为同心圆环
 \[\{w\in\MC:\rho<|w|<1\}.\]
-\end{xiti} 
+\end{xiti}

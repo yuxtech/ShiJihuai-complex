@@ -2,7 +2,7 @@
 \chapter{共形映射\label{chap7}}
 本章的主题是要对复平面上所有的单连通域在全纯等价的意义下进行分类.两个域$D_1$和$D_2$称为是\textbf{全纯等价}\index{Q!全纯等价}的，如果存在单叶的全纯函数$f:D_1\to\MC$，使得$f(D_1)=D_2$，即$f$一一地把$D_1$映为$D_2$.显然，这是一个等价关系. Riemann首先发现，所有的单连通域中只有两个等价类：一类仅由一个元素组成，那就是复平面$\MC$；另一类是除$\MC$以外的全部单连通域.换句话说，任何单连通域，只要不是整个复平面$\MC$，都是相互全纯等价的.这就是本章要证明的主要定理——Riemann映射定理. Riemann映射定理在复变函数论中具有十分重要的地位.在单连通域内研究保角变换下的某些不变量时，只需在最简单的单连通域——单位圆盘上研究就行了.另外，有些物理量的某些性质在保角变换下保持不变，应用Riemann映射定理讨论这类问题时，可把域尽量化简.
 
-本章先介绍全纯函数的正规族理论，然后用它来证明Riemann映射定理，最后，作为Riemann映射定理的应用，我们给出把上半平面映射为多角形的Schwarz-Christoffel公式.
+本章先介绍全纯函数的正规族理论，然后用它来证明Riemann映射定理，最后，作为Riemann映射定理的应用，我们给出把上半平面映射为多角形的Schwarz--Christoffel公式.
 
 \section{正规族\label{sec7.1}}
 我们从正规族的定义开始.
@@ -23,14 +23,14 @@
 对每个$f\in\MCF$都成立，就$\MCF$说在$D$上是\textbf{等度连续}\index{D!等度连续}的.
 \end{definition}
 
-关于一致有界且等度连续的函数列，有下面的\textbf{Arzela-Ascoli定理}\index{D!定理!Arzela-Ascoli定理}：
+关于一致有界且等度连续的函数列，有下面的\textbf{Arzela--Ascoli定理}\index{D!定理!Arzela--Ascoli定理}：
 \begin{theorem}\label{thm7.1.4}
 设$K$是$\MC$中的紧集，$\{f_n\}$是在$K$上一致有界且等度连续的函数列，那么$\{f_n\}$必有子列在$K$上一致收敛.
 \end{theorem}
 \begin{proof}
 令$A\subset K$是可数集，且在$K$中稠密.记
 \[A=\{\zeta_1,\zeta_2,\cdots\}.\]
-由于$\{f_n(\zeta_1)\}$是有界数列，根据Bolzano-Weierstrass定理，从中可以取出收敛的子列，即有
+由于$\{f_n(\zeta_1)\}$是有界数列，根据Bolzano--Weierstrass定理，从中可以取出收敛的子列，即有
 \[f_{n_1}^{(1)}(z),f_{n_2}^{(1)}(z),\cdots\]
 在$z=\zeta_1$处收敛；因为$\{f_{n_j}^{(1)}(\zeta_2)\}$有界，故有
 \[f_{n_1}^{(2)}(z),f_{n_2}^{(2)}(z),\cdots\]
@@ -413,7 +413,7 @@ node[below right]{$z_2$};
 \caption{\label{fig7.4}}
 \end{figure}
 
-后面我们将应用边界对应定理来推导把上半平面映为多角形域的Schwarz-Christoffel公式.
+后面我们将应用边界对应定理来推导把上半平面映为多角形域的Schwarz--Christoffel公式.
 
 在实际应用中，下面的边界对应定理的逆定理很有用.
 \begin{theorem}\label{thm7.3.2}
@@ -468,8 +468,8 @@ $\{z\in\MC:R_1<|z|<R_2\}$，则$f$将闭圆环$\{z\in\MC:r_1\le|z|\le r_2\}$同�
 \item 设$f\in H\big(B(0,1)\big),f(0)=0,f'(0)=a>0$. 证明：若$f\big(B(0,1)\big)\subset B(0,1)$，则$f$在$B\bigg(0,\frac a{1+\sqrt{1-a^2}}\bigg)$上双全纯.
 \end{xiti}
 
-\section{Schwarz-Christoffel公式\label{sec7.4}}
-Riemann映射定理断言，任意两个异于$\MC$的单连通域都可通过双全纯映射把一个变成另一个，但是具体写出这个映射却不是一件容易的事.本节介绍的Schwarz-Christoffel公式给出了把上半平面映为多角形域的变换.
+\section{Schwarz--Christoffel公式\label{sec7.4}}
+Riemann映射定理断言，任意两个异于$\MC$的单连通域都可通过双全纯映射把一个变成另一个，但是具体写出这个映射却不是一件容易的事.本节介绍的Schwarz--Christoffel公式给出了把上半平面映为多角形域的变换.
 
 设$G$是$w$平面上以$w_1,\cdots,w_n$为顶点的多角形域，$w=f(z)$是把$z$平面的上半平面$D$一一地映为$G$的双全纯映射.为了求得$f$的具体表达式，我们必须了解$f$的一些简单性质.
 \begin{lemma}\label{lemma7.4.1}
@@ -515,7 +515,7 @@ f(z)&=w_0+\big(\eta(z)\big)^\alpha\\
 \end{proof}
 
 现在可以证明本节的主要定理：
-\begin{theorem}[（\textbf{Schwarz-Christoffel}）]\label{thm7.4.3}\index{D!定理!Schwarz-Christoffel定理}
+\begin{theorem}[（\textbf{Schwarz--Christoffel}）]\label{thm7.4.3}\index{D!定理!Schwarz--Christoffel定理}
 设双全纯函数$w=f(z)$把上半平面$D$一一地映为多角形域$G$，且$f$在$\bar D$上连续.如果$G$在其顶点$w_k$（$k=1,\cdots,n$）处的顶角是$\alpha_k\pi$（$0<\alpha_k<2$），实轴上与$w_k$对应的点是$a_k$（$k=1,\cdots,n$），那么$f$可表示为
 \begin{equation}\label{eq7.4.5}
 f(z)=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz+C_1,
@@ -638,7 +638,7 @@ g(z)=\frac{f''(z)}{f'(z)}=\frac{\alpha_k-1}{z-a_k}+\frac{q'(z)}{q(z)}.
 这就是所要证明的.
 \end{proof}
 
-在Schwarz-Christoffel公式中，用以表达$f$的是$z$平面实轴上的点$a_1,\cdots,a_n$.但在具体问题中，通常给出的是多角形的顶点$w_k$（$k=1,\cdots,n$），而$a_k$却是未知的，如何确定$a_k$是解决问题的关键.在实际解题时，我们往往在实轴上任取三点$a_1<a_2<a_3$，使其与多角形的三个顶点$w_1,w_2,w_3$相对应，而其他的$a_4,\cdots,a_n$及$C,C_1$则由具体问题中的条件来确定.之所以能这样做，其依据是下面的定理：
+在Schwarz--Christoffel公式中，用以表达$f$的是$z$平面实轴上的点$a_1,\cdots,a_n$.但在具体问题中，通常给出的是多角形的顶点$w_k$（$k=1,\cdots,n$），而$a_k$却是未知的，如何确定$a_k$是解决问题的关键.在实际解题时，我们往往在实轴上任取三点$a_1<a_2<a_3$，使其与多角形的三个顶点$w_1,w_2,w_3$相对应，而其他的$a_4,\cdots,a_n$及$C,C_1$则由具体问题中的条件来确定.之所以能这样做，其依据是下面的定理：
 
 \begin{theorem}\label{thm7.4.4}
  对于实轴上任意三点$a_1<a_2<a_3$，一定存在唯一的$f$，它在上半平面$D$中单叶且全纯，在$\bar D$上连续，把$D$一一地映为多角形域$G$，且把$a_1,a_2,a_3$分别映为$G$的三个顶点$w_1,w_2,w_3$.
@@ -733,10 +733,10 @@ f(z)&=F\big(T(z)\big)\\
 \dz+C_1.\]
 这里的$\alpha_k\pi$是顶点在无穷远处的两条边在有限点处的交角乘以$-1$.综上所述，我们得到了
 \begin{theorem}\label{thm7.4.6}
-设$G$是有一个或几个顶点在无穷远处的多角形，如果把在$\infty$处那个顶点的顶角规定为过$\infty$点的两条边在有限点处的夹角乘以$-1$，那么Schwarz-Christoffel公式仍然成立.
+设$G$是有一个或几个顶点在无穷远处的多角形，如果把在$\infty$处那个顶点的顶角规定为过$\infty$点的两条边在有限点处的夹角乘以$-1$，那么Schwarz--Christoffel公式仍然成立.
 \end{theorem}
 
-下面通过例子来说明Schwarz-Christoffel公式的用法.
+下面通过例子来说明Schwarz--Christoffel公式的用法.
 \begin{example}\label{thm7.4.7}
 设$G$是以$w_1,w_2,w_3$为顶点，相应的顶角为$\alpha_1\pi,\alpha_2\pi,\alpha_3\pi$（$\alpha_1+\alpha_2+\alpha_3=1$）的三角形域，求出把上半平面映为$G$的保角变换.
 \end{example}
@@ -954,4 +954,4 @@ f(\zeta)&=\frac h\pi\int_{-1}^\zeta\frac{\sqrt{z+1}}z\dz+\ii h\\
 \[\varphi(z)=C\frac{\prod_{k=1}^n(z-a_k)^{\alpha_k}}{(z-a_0)(z-\bar{a_0})},\]
 其中，$a_1,a_2,\cdots,a_n\in\MR;\alpha_1,\alpha_2,\cdots,\alpha_n>0$，并且$\sum_{k=1}^n\alpha_k=2$.
 
-\end{xiti} 
+\end{xiti}

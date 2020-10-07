@@ -181,7 +181,7 @@ $\gamma$的参数方程为$z=a+r\ee^{\ii t},0\le t\le2\pi$. 由公式 \eqref{eq3
 \[\int\limits_\gamma f(z)\dz=0.\]
 \end{theorem}
 \begin{proof}
-由$\gamma$围成的域记为$G$，因为$f'$连续，即$\pp ux,\pp vx,\pp uy,\pp vy$连续，故可用Green公式. 又因$f$在$D$中全纯，故Cauchy-Riemann 方程成立. 于是
+由$\gamma$围成的域记为$G$，因为$f'$连续，即$\pp ux,\pp vx,\pp uy,\pp vy$连续，故可用Green公式. 又因$f$在$D$中全纯，故Cauchy--Riemann 方程成立. 于是
 \begin{align*}
 &\int\limits_\gamma u\dx-v\dy=\iint\limits_G\bigg(-\pp vx-\pp uy\bigg)\dx\dy=0,\\
 &\int\limits_\gamma v\dx+u\dy=\iint\limits\bigg(\pp ux-\pp vy\bigg)\dx\dy=0.
@@ -222,7 +222,7 @@ Cauchy于1825年得到的积分定理就是定理 \ref{thm3.2.1} 这种形式，
 \end{proof}
 
 现在可以证明
-\begin{theorem}[（\textbf{Cauchy-Goursat}）]\label{thm3.2.3}\index{D!定理!Cauchy-Goursat定理}
+\begin{theorem}[（\textbf{Cauchy--Goursat}）]\label{thm3.2.3}\index{D!定理!Cauchy--Goursat定理}
 设$D$是$\MC$中的单连通域，如果$f\in H(D)$，那么对$D$中任意的可求长闭曲线$\gamma$，均有
 \[\int\limits_\gamma f(z)\dz=0.\]
 \end{theorem}
@@ -597,7 +597,7 @@ F(z)-F(a)&=\int_{z_0}^zf(\zeta)\textrm d\zeta-\int_{z_0}^af(\zeta)\textrm d\zeta
 在定理的假定下，由Cauchy积分定理知道，$f$沿$D$中任意可求长闭曲线的积分为零，由定理 \ref{thm3.3.2} 即得本定理.
 \end{proof}
 
-类似于微积分中的Newton-Leibniz公式，我们有
+类似于微积分中的Newton--Leibniz公式，我们有
 \begin{theorem}\label{thm3.3.4}
 设$D$是$\MC$中的单连通域，$f\in H(D),\varPhi$是$f$的任一原函数，那么
 \[\int_{z_0}^zf(\zeta)\textrm d\zeta=\varPhi(z)-\varPhi(z_0).\]
@@ -1015,7 +1015,7 @@ f'(z_0),&z=z_0.
 \end{xiti}
 
 \section{非齐次Cauchy积分公式\label{sec3.6}}
-设$f=u+\ii v$，如果$u,v$作为$x,y$的二元函数是可微的，而且$u,v$满足Cauchy-Riemann方程，那么$f$就是全纯函数.我们已经看到，全纯函数有一系列良好的性质.这一节中，我们只假定$u,v$具有一阶连续偏导数，但不一定满足Cauchy-Riemann方程，这就是第 \ref{chap2} 章 \ref{sec2.2} 节中提到的$C^1$函数类.我们要把Cauchy积分公式推广到这一函数类，用到的工具主要是微积分中的Green公式，但要把它写成复变数的形式.
+设$f=u+\ii v$，如果$u,v$作为$x,y$的二元函数是可微的，而且$u,v$满足Cauchy--Riemann方程，那么$f$就是全纯函数.我们已经看到，全纯函数有一系列良好的性质.这一节中，我们只假定$u,v$具有一阶连续偏导数，但不一定满足Cauchy--Riemann方程，这就是第 \ref{chap2} 章 \ref{sec2.2} 节中提到的$C^1$函数类.我们要把Cauchy积分公式推广到这一函数类，用到的工具主要是微积分中的Green公式，但要把它写成复变数的形式.
 
 把$z,\bar z$看成独立变量，定义微分$\dz,\dzz$的外积为
 \begin{align*}
@@ -1200,7 +1200,7 @@ f(z)=\frac1{2\pi\ii}\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\textrm d\ze
 在等式 \eqref{eq3.6.13} 两端令$\eta\to0$，并利用 \eqref{eq3.6.14} 式和 \eqref{eq3.6.15} 式，即得所要证明的公式 \eqref{eq3.6.11}.
 \end{proof}
 
-如果$f\in H(D)$，那么由Cauchy-Riemann方程，$\pp f{\bar \zeta}=0$，这时公式 \eqref{eq3.6.11} 右端的第二项就消失了，公式 \eqref{eq3.6.11} 就是Cauchy积分公式.所以，公式 \eqref{eq3.6.11} 是Cauchy积分公式在$C^1$函数类中的推广，有时也称为\textbf{非齐次Cauchy积分公式}\index{G!公式!非齐次Cauchy积分公式}.
+如果$f\in H(D)$，那么由Cauchy--Riemann方程，$\pp f{\bar \zeta}=0$，这时公式 \eqref{eq3.6.11} 右端的第二项就消失了，公式 \eqref{eq3.6.11} 就是Cauchy积分公式.所以，公式 \eqref{eq3.6.11} 是Cauchy积分公式在$C^1$函数类中的推广，有时也称为\textbf{非齐次Cauchy积分公式}\index{G!公式!非齐次Cauchy积分公式}.
 
 公式 \eqref{eq3.6.11} 首先是由Pompeiu在1912年证明的（所以有时也称之为\textbf{Pompeiu公式}\index{G!公式!Pompeiu公式}），但长期以来似乎被人们遗忘了.直到1950年，Grothendieck和Dolbeault用它来解$\bar\partial$方程时，人们才发现它的意义所在.这就是我们在下一节中要讨论的内容.
 \begin{xiti}
@@ -1313,7 +1313,7 @@ f(z)=\frac1{2\pi\ii}\int\limits_{B(a,r)}\pp{(\varphi f)}{\bar\zeta}
 
 在上面的证明中，容易看出，如果$f\in C^\infty(D)$，那么$\bar\partial$问题的解$u\in C^\infty(D)$.
 
-在多复变数函数论中，$\bar\partial$问题解的存在性以及解的可微性质是一个十分重要的研究课题，它有许多重要的应用.这里讨论的一维$\bar\partial$问题的解在证明一般域上的Mittag-Leffler定理（定理 \ref{thm5.6.2}）、Weierstrass 因子分解定理（定理 \ref{thm5.6.3}）和插值定理（定理
+在多复变数函数论中，$\bar\partial$问题解的存在性以及解的可微性质是一个十分重要的研究课题，它有许多重要的应用.这里讨论的一维$\bar\partial$问题的解在证明一般域上的Mittag--Leffler定理（定理 \ref{thm5.6.2}）、Weierstrass 因子分解定理（定理 \ref{thm5.6.3}）和插值定理（定理
  \ref{thm5.6.4}）时将要用到.
 \begin{xiti}
 \item 设$D$是域，$K\subset D$是紧集. 证明：存在开集$G$和函数$\varphi\in C^\infty(D)$，满足：
@@ -1326,4 +1326,4 @@ f(z)=\frac1{2\pi\ii}\int\limits_{B(a,r)}\pp{(\varphi f)}{\bar\zeta}
 \item 设$D$是域，$f\in C^\infty(D)$. 证明：若$u_0\in C^\infty(D)$是非齐次$\bar\partial$方程的解，即$\pp{u_0}{\bar z}=f$，则该方程的解的全体为$u_0+H(D)$.
 \item 设$D$是域，$a\in D,B(a,R)\subset D,f$在$B(a,R)\backslash\{a\}$上全纯. 证明：存在$D\backslash\{a\}$上的全纯函数$F$，使得$\lim_{z\to a}[F(z)-f(z)]=0$，因此$F-f\in H\big(B(a,R)\big)$.
 \item 举例说明，存在$f\in C^\infty(\MC)$，$\supp f$是紧集，但非齐次$\bar\partial$方程$\pp u{\bar z}=f$的任意解没有紧支集.
-\end{xiti} 
+\end{xiti}
