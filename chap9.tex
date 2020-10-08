@@ -102,11 +102,11 @@ f(z)=\sum_\alpha c_\alpha(z-a)^\alpha
 \[f(z)=\sum_{\alpha_1=0}^\infty\bigg\{\sum_{\alpha_2=0}^\infty\cdots
 \sum_{\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}(z_2-a_2)^{\alpha_2}\cdots(z_n-a_n)^{\alpha_n}\bigg\}
 (z_1-a_1)^{\alpha_1},\]
-那么当$z_2,\cdots,z_n$固定时，上式是$f(z_1,z_2,\cdots,z_n)$关于$z_1$在$a_1$附近的幂级数展开式，因此它是$z_1$的全纯函数.一般来说，如果$f$在$a$点附近全纯，那么当$z_1,\cdots,z_{j-1},z_{j+1}$， $\cdots,z_n$固定时，$f$便是单变数$z_j$的全纯函数，因而有Cauchy-Riemann方程
+那么当$z_2,\cdots,z_n$固定时，上式是$f(z_1,z_2,\cdots,z_n)$关于$z_1$在$a_1$附近的幂级数展开式，因此它是$z_1$的全纯函数.一般来说，如果$f$在$a$点附近全纯，那么当$z_1,\cdots,z_{j-1},z_{j+1}$， $\cdots,z_n$固定时，$f$便是单变数$z_j$的全纯函数，因而有Cauchy--Riemann方程
 \begin{equation}\label{eq9.1.3}
 \pp f{\bar{z_j}}=0,\;j=1,\cdots,n.
 \end{equation}
-这$n$个方程称为$f$的\textbf{Cauchy-Riemann方程组}\index{C!Cauchy-Riemann方程组}.
+这$n$个方程称为$f$的\textbf{Cauchy--Riemann方程组}\index{C!Cauchy--Riemann方程组}.
 
 一个自然的问题是，如果 \eqref{eq9.1.3} 式在$a$点附近成立，能否断言$f$在$a$点附近全纯呢?答案是肯定的，但证明起来很困难，这里略去它的证明.
 \begin{theorem}[（\textbf{Hartogs}）]\label{thm9.1.3}\index{D!定理!Hartogs定理}
@@ -531,7 +531,7 @@ F'(z)=\begin{pmatrix}
 &\pp{h_j}{z_l}=\sum_{s=1}^n\bigg(\pp{g_j}{w_s}\pp{w_s}{z_l}
 +\pp{g_j}{\bar{w}_s}\pp{\bar{w}_s}{z_l}\bigg).\label{eq9.4.4}
 \end{align}
-由Cauchy-Riemann方程组，有
+由Cauchy--Riemann方程组，有
 \begin{align*}
 &\pp{w_s}{\bar{z}_l}=0,s=1,\cdots,n\\
 &\pp{g_j}{\bar{w}_s}=0,s=1,\cdots,n.

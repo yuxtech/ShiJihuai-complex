@@ -585,7 +585,7 @@ $\{y_n\}$都是实的Cauchy列，因而从实数域中的Cauchy收敛准则立�
 我们希望能找到紧集的特征.
 
 集$E$称为是\textbf{有界}的，如果存在$R>0$，使得$E\subset B(0,R)$.
-\begin{theorem}[（\textbf{Heine-Borel}）]\index{D!定理!Heine-Borel定理}\label{thm1.5.5}
+\begin{theorem}[（\textbf{Heine--Borel}）]\index{D!定理!Heine--Borel定理}\label{thm1.5.5}
 在$\MC$中，$E$是紧集的充要条件为$E$是有界闭集；在$\MC_\infty$中，$E$是紧集的充要条件为$E$是闭集.
 \end{theorem}
 \begin{proof}
@@ -634,12 +634,12 @@ $\{y_n\}$都是实的Cauchy列，因而从实数域中的Cauchy收敛准则立�
 \[d(E,F)=\inf \{|z_1-z_2|:z_1\in E,z_2\in F\}\ge\delta>0.\]
 \end{proof}
 
-下面是另一个运用Heine-Borel定理的例子，读者不妨用证明Cantor定理的方法给出另一个证明.
-\begin{theorem}[（\textbf{Bolzano-Weierstrass}）]\index{D!定理!Bolzano-Weierstrass定理}
+下面是另一个运用Heine--Borel定理的例子，读者不妨用证明Cantor定理的方法给出另一个证明.
+\begin{theorem}[（\textbf{Bolzano--Weierstrass}）]\index{D!定理!Bolzano--Weierstrass定理}
 任意无穷点集至少有一个极限点.\label{thm1.5.7}
 \end{theorem}
 \begin{proof}
-设$E$是一个无穷点集，如果$E$是无界集，那么无穷远点便是它的极限点.今设$E$是有界集，如果它没有极限点，那么它是一个闭集.任取$z\in E$，由于它不是$E$的极限点，故必存在$\varepsilon>0$，使得$B(z,\varepsilon)$中除$z$外不再有$E$中的点.由这种$B(z,\varepsilon)$构成的开集族便是$E$的一个开覆盖，由Heine-Borel定理，能从中选出有限个来覆盖$E$.因为每个开集只包含$E$的一个点，这说明$E$是一个有限集，与$E$是无穷点集的假定矛盾，因而$E$必有极限点.
+设$E$是一个无穷点集，如果$E$是无界集，那么无穷远点便是它的极限点.今设$E$是有界集，如果它没有极限点，那么它是一个闭集.任取$z\in E$，由于它不是$E$的极限点，故必存在$\varepsilon>0$，使得$B(z,\varepsilon)$中除$z$外不再有$E$中的点.由这种$B(z,\varepsilon)$构成的开集族便是$E$的一个开覆盖，由Heine--Borel定理，能从中选出有限个来覆盖$E$.因为每个开集只包含$E$的一个点，这说明$E$是一个有限集，与$E$是无穷点集的假定矛盾，因而$E$必有极限点.
 \end{proof}
 \begin{xiti}
 \item 证明：一个平面点集的孤立点的全体至多可列.
@@ -849,4 +849,4 @@ f(z)&z\in D;\\
 \end{enuma}
 \item 设$f$是域$D$上的复变函数，$z_0\in\partial D$.若$\lim_{z\to z_0}f(z)=A$存在，
 则称$A$是$f$在$z_0$处的\textbf{边界值}\index{B!边界值}，记为$f(z_0)=A$.举例说明，存在开正方形$G$上的同胚映射，其不能在$G$上处处都有边界值.
-\end{xiti} 
+\end{xiti}
