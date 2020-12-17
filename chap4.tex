@@ -157,12 +157,12 @@
 \end{eenum}
 \end{theorem}
 \begin{proof}
-任取$z_0\in D$，只要证明$f$在$z_0$的一个邻域中全纯就行了.选取$r>0$，使得$\bar{B(z_0,r)}\subset D$，由定理 \ref{thm4.1.4}，$f$在$B(z_0,r)$中连续.在$B(z_0,r)$中任取一可求长闭曲线$\gamma$，由定理 \ref{thm4.1.5} 和C9auchy积分定理，得
+任取$z_0\in D$，只要证明$f$在$z_0$的一个邻域中全纯就行了.选取$r>0$，使得$\bar{B(z_0,r)}\subset D$，由定理 \ref{thm4.1.4}，$f$在$B(z_0,r)$中连续.在$B(z_0,r)$中任取一可求长闭曲线$\gamma$，由定理 \ref{thm4.1.5} 和Cauchy积分定理，得
 \[\int\limits_\gamma f(z)\dz=\sum_{n=1}^\infty \int\limits_\gamma f_n(z)\dz=0.\]
 由Morera定理，即知$f$在$B(z_0,r)$中全纯，所以$f$在$D$中全纯.
 
 为了证明第二个结论，任取$D$中的紧子集$K$，记$\rho=d(K,\partial D)>0$.令
-\[G=\cup\bigg\{B\bigg(z,\frac\rho2\bigg),z\in K\bigg\},\]
+\[G=\bigcup\bigg\{B\bigg(z,\frac\rho2\bigg),z\in K\bigg\},\]
 则$K\subset G\subset\subset D$.由于$\bar G$是紧集，所以$\sum_{n=1}^\infty f_n(z)$在$\bar G$上一致收敛到$f(z)$. 因而对任意$\varepsilon>0$，存在正整数$N$，当$n>N$时，不等式$|S_n(z)-f(z)|<\varepsilon$对$\bar G$上所有的$z$成立，这里，$S_n(z)=\sum_{j=1}^nf_j(z)$. 于是由引理 \ref{lemma4.1.8}，对任意的自然数$k$，有
 \[\sup\{|S_n^{(k)}(z)-f^{(k)}(z)|:z\in K\}\le C\sup\{|S_n(z)-f(z)|:z\in G\}\le C\varepsilon,\]
 这就证明了$\sum_{n=1}^\infty f^{(k)}_n(z)$ 在$K$上一致收敛到$f^{(k)}(z)$. 由于$K$是$D$的任意紧子集，所以$\sum_{n=1}^\infty f_n^{(k)}(z)$在$D$上内闭一致收敛到$f^{(k)}(z)$.
