@@ -556,10 +556,10 @@ $\{y_n\}$都是实的Cauchy列，因而从实数域中的Cauchy收敛准则立�
     \item \label{thm1.5.3.1} $F_1\supset F_2\supset\cdots\supset F_n\supset\cdots$；
     \item \label{thm1.5.3.2} $\diam F_n\to 0$（当$n\to\infty$时），
   \end{eenum}
-  那么$\operatorname*{\cap}_{n=1}^\infty F_n$是一个独点集.
+  那么$\bigcap_{n=1}^\infty F_n$是一个独点集.
 \end{theorem}
 \begin{proof}
-在每一个$F_n$中任取一点$z_n$，我们证明$\{z_n\}$是一个Cauchy点列.由于$\lim_{n\to\infty}\diam F_n$ $=0$，所以对任意$\varepsilon>0$，可取充分大的$N$，使得 $\diam F_N<\varepsilon$.今取$m,n>N$，由条件 \ref{thm1.5.3.1}，$z_m,z_n\in F_N$，所以$|z_n-z_m|\le\diam F_N<\varepsilon$.因而$\{z_n\}$是一Cauchy序列，设其收敛于$z_0$.我们证明$z_0\in\operatorname*{\cap}_{n=1}^\infty F_n$.事实上，任取$F_k$，则当$n>k$时，$z_n$便全部落入$F_k$中，因为$F_k$是闭的，由命题 \ref{prop1.5.2} 的 \hyperlink{prop1.5.2.3}{(3)}，$\{z_n\}$的极限$z_0\in F_k$，所以$z_0\in\operatorname*{\cap}_{n=1}^\infty F_n$.如果还有另一点$z_1$也属于$\operatorname*{\cap}_{n=1}^\infty F_n$，那么必有$|z_0-z_1|\le\diam F_n\to0$（$n\to\infty$），因而$z_1=z_0$.
+在每一个$F_n$中任取一点$z_n$，我们证明$\{z_n\}$是一个Cauchy点列.由于$\lim_{n\to\infty}\diam F_n$ $=0$，所以对任意$\varepsilon>0$，可取充分大的$N$，使得 $\diam F_N<\varepsilon$.今取$m,n>N$，由条件 \ref{thm1.5.3.1}，$z_m,z_n\in F_N$，所以$|z_n-z_m|\le\diam F_N<\varepsilon$.因而$\{z_n\}$是一Cauchy序列，设其收敛于$z_0$.我们证明$z_0\in\bigcap_{n=1}^\infty F_n$.事实上，任取$F_k$，则当$n>k$时，$z_n$便全部落入$F_k$中，因为$F_k$是闭的，由命题 \ref{prop1.5.2} 的 \hyperlink{prop1.5.2.3}{(3)}，$\{z_n\}$的极限$z_0\in F_k$，所以$z_0\in\bigcap_{n=1}^\infty F_n$.如果还有另一点$z_1$也属于$\bigcap_{n=1}^\infty F_n$，那么必有$|z_0-z_1|\le\diam F_n\to0$（$n\to\infty$），因而$z_1=z_0$.
 \end{proof}
 
 这个定理是实数域中的区间套定理在复数域中的推广.
