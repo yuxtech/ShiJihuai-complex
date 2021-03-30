@@ -477,7 +477,7 @@ $\{y_n\}$都是实的Cauchy列，因而从实数域中的Cauchy收敛准则立�
 
 \begin{xiti}
   \item 设$z_0\notin(-\infty,0],z_n\ne0,\forall n\in\MN$.证明：复数列$\{z_n\}$收敛到$z_0$的充要条件是$\lim_{n\to\infty}|z_n|=|z_0|$和$\lim_{n\to\infty}\arg z_n=\arg z_0$.
-  \item 设$z=x+\ii y\in\MC$,证明：
+  \item 设$z=x+\ii y\in\MC$，证明：
      \[\lim_{n\to\infty}\bigg(1+\frac zn\bigg)^n=\ee^x(\cos y+\ii\sin y).\]
   \item 证明：如果$\lim_{n\to\infty}z_n=z_0$，则
      \[\lim_{n\to\infty}\frac{z_1+z_2+\cdots+z_n}n=z_0.\]
@@ -573,7 +573,7 @@ $\{y_n\}$都是实的Cauchy列，因而从实数域中的Cauchy收敛准则立�
 便是$E$的一个开覆盖.
 
 我们说点集$E$具有\textbf{有限覆盖性质}\index{J!集!有限覆盖性质}，是指从$E$的任一个开覆盖中必能选出有限个开集$G_1,\cdots,G_n$，使得这有限个开集的并就能覆盖$E$，即
-\[E\subset\operatorname*{\cup}_{j=1}^nG_j.\]
+\[E\subset\bigcup_{j=1}^nG_j.\]
 \begin{definition}\label{def1.5.4}
 具有有限覆盖性质的集称为\textbf{紧集}\index{J!集!紧集}.
 \end{definition}
@@ -600,10 +600,10 @@ $\{y_n\}$都是实的Cauchy列，因而从实数域中的Cauchy收敛准则立�
  \item  \label{thm1.5.5.3}不能从$\mathscr F$中取出有限个开集来覆盖$F_n$；
  \item  \label{thm1.5.5.4}当$n\to\infty$时, $\diam F_n\le\frac M{2^n}\sqrt2\to0$.
 \end{eenum}
-由 \ref{thm1.5.5.1}， \ref{thm1.5.5.2}， \ref{thm1.5.5.4}知道$\{F_n\}$满足Cantor定理的条件,因而存在复数$z_0$,使得$\operatorname*{\cap}_{n=1}^\infty F_n=\{z_0\}$.由于$z_0\in F_n\subset E$，故在$\mathscr F$中必有一个开集$G_0$，使得$z_0\in G_0$.由于$z_0$是$G_0$的内点，故有$z_0$的邻域$B(z_0,\varepsilon)\subset G_0$.由于$\diam F_n\to0$，故当$n$充分大时， $F_n\subset B(z_0,\varepsilon)\subset G_0$，这就是说$G_0$覆盖了$F_n$，这与 \ref{thm1.5.5.3} 矛盾. 因此$E$是紧集.
+由 \ref{thm1.5.5.1}， \ref{thm1.5.5.2}， \ref{thm1.5.5.4}知道$\{F_n\}$满足Cantor定理的条件,因而存在复数$z_0$,使得$\bigcap_{n=1}^\infty F_n=\{z_0\}$.由于$z_0\in F_n\subset E$，故在$\mathscr F$中必有一个开集$G_0$，使得$z_0\in G_0$.由于$z_0$是$G_0$的内点，故有$z_0$的邻域$B(z_0,\varepsilon)\subset G_0$.由于$\diam F_n\to0$，故当$n$充分大时， $F_n\subset B(z_0,\varepsilon)\subset G_0$，这就是说$G_0$覆盖了$F_n$，这与 \ref{thm1.5.5.3} 矛盾. 因此$E$是紧集.
 
-现在证明必要性.只要对扩充平面的情形来证明就够了，因为如果一个集对扩充平面是闭的，它又不包含无穷远点，那么它必然是有界的.设$E$是一个紧集，我们要证明它是闭集，只要证明$E$是开集即可.为此，任取$a\in E^{\textrm c}$，只要证明$a$是$E^{\textrm c}$的内点就行了.取这样的开集族$\mathscr F$：凡是闭包不包含$a$点的开集都属于$\mathscr F$. 因为$a\in E^{\textrm c}$，因此对$E$中每一点$z$，都能找到它的邻域$B(z,\varepsilon)$，使得$a\notin \overline{B(z,\varepsilon)}$，所以$B(z,\varepsilon)\in\mathscr F$.这就是说，$\mathscr F$是$E$的一个开覆盖。由于$E$是紧集，故能从中取出有限个开集$G_1,\cdots,G_n$，使得$E\subset\operatorname*{\cup}_{j=1}^nG_j$.但$a\notin \bar G_j,j=1,\cdots,n$，所以$a\in\operatorname*{\cap}_{j=1}^n(\bar G_j)^{\textrm c}$.显然，$\operatorname*{\cap}_{j=1}^n(\bar G_j)^{\textrm c}$是一个开集，而且从命题 \ref{prop1.5.1} 的 \ref{prop1.5.1.2} 得
-\[\operatorname*{\cap}_{j=1}^n(\bar G_j)^{\textrm c}=\operatorname*{\cap}_{j=1}^n(G_j^{\textrm c})^\circ\subset\operatorname*{\cap}_{j=1}^nG_j^{\textrm c}=\left(\operatorname*{\cup}_{j=1}^nG_j\right)^{\textrm c}\subset E^{\textrm c},\]
+现在证明必要性.只要对扩充平面的情形来证明就够了，因为如果一个集对扩充平面是闭的，它又不包含无穷远点，那么它必然是有界的.设$E$是一个紧集，我们要证明它是闭集，只要证明$E$是开集即可.为此，任取$a\in E^{\textrm c}$，只要证明$a$是$E^{\textrm c}$的内点就行了.取这样的开集族$\mathscr F$：凡是闭包不包含$a$点的开集都属于$\mathscr F$. 因为$a\in E^{\textrm c}$，因此对$E$中每一点$z$，都能找到它的邻域$B(z,\varepsilon)$，使得$a\notin \overline{B(z,\varepsilon)}$，所以$B(z,\varepsilon)\in\mathscr F$.这就是说，$\mathscr F$是$E$的一个开覆盖。由于$E$是紧集，故能从中取出有限个开集$G_1,\cdots,G_n$，使得$E\subset\bigcup_{j=1}^nG_j$.但$a\notin \bar G_j,j=1,\cdots,n$，所以$a\in\bigcap_{j=1}^n(\bar G_j)^{\textrm c}$.显然，$\bigcap_{j=1}^n(\bar G_j)^{\textrm c}$是一个开集，而且从命题 \ref{prop1.5.1} 的 \ref{prop1.5.1.2} 得
+\[\bigcap_{j=1}^n(\bar G_j)^{\textrm c}=\bigcap_{j=1}^n(G_j^{\textrm c})^\circ\subset\bigcap_{j=1}^nG_j^{\textrm c}=\left(\bigcup_{j=1}^nG_j\right)^{\textrm c}\subset E^{\textrm c},\]
 这就证明了$a$是$E^{\textrm c}$的内点，即$E^{\textrm c}$是开集.
 \end{proof}
 
@@ -660,18 +660,18 @@ $\{y_n\}$都是实的Cauchy列，因而从实数域中的Cauchy收敛准则立�
 \begin{enuma}
   \item $\MZ=\{k:k\text{为整数}\}$；
   \item $E$为有限集；
-  \item $D=\{z\in\MC:\Im z>0\}\backslash\big(\operatorname*{\cup}_{k=-\infty}^{\infty}F_k\big)$，其中，$F_k=\{z\in\MC:z=k+\textrm  iy,0\le y\le1\}$；
+  \item $D=\{z\in\MC:\Im z>0\}\backslash\big(\bigcup_{k=-\infty}^{\infty}F_k\big)$，其中，$F_k=\{z\in\MC:z=k+\textrm  iy,0\le y\le1\}$；
   \item $G=B(0,1)\backslash\left\{\frac1{k+1}:k\text{为自然数}\right\}$；
   \item $\MC\backslash B(\infty,R)$.
 \end{enuma}
 \item 证明：若$D$为开集，则$D'=\bar D=\partial D\cup D$.
-\item 设$\varLambda$是指标集，$\{D_\alpha\}_{\alpha\in\varLambda}$是开集族，$\{F_\alpha\}_{\alpha\in\varLambda}$是闭集族. 证明：$\operatorname*{\cup}_{\alpha\in\varLambda}D_\alpha$是开集，$\operatorname*{\cap} _{\alpha\in\varLambda}F_\alpha$是闭集.
+\item 设$\varLambda$是指标集，$\{D_\alpha\}_{\alpha\in\varLambda}$是开集族，$\{F_\alpha\}_{\alpha\in\varLambda}$是闭集族. 证明：$\bigcup_{\alpha\in\varLambda}D_\alpha$是开集，$\bigcap _{\alpha\in\varLambda}F_\alpha$是闭集.
 \item 证明：有限个开集的交是开集，有限个闭集的并是闭集.
 \item 设$D$是开集，$F\subset D$是非空紧集.证明：
 \begin{enuma}
   \item $d(F,\partial D)>0$；
-  \item 对任意$0<\delta<d(F,\partial D)$，存在$F$中的点$z_1,z_2,\cdots,z_n$，使得$F\subset\operatorname*{\cup}_{k=1}^nB(z_k,\delta)\subset D$，并且
-  \[d\left(\operatorname*{\cup}_{k=1}^nB(z_k,\delta),\partial D\right)\ge d(F,\partial D)-\delta.\]
+  \item 对任意$0<\delta<d(F,\partial D)$，存在$F$中的点$z_1,z_2,\cdots,z_n$，使得$F\subset\bigcup_{k=1}^nB(z_k,\delta)\subset D$，并且
+  \[d\left(\bigcup_{k=1}^nB(z_k,\delta),\partial D\right)\ge d(F,\partial D)-\delta.\]
 \end{enuma}
 \item 证明：若$E$是闭集，$F$是紧集，则存在$z_0\in E,w_0\in F$，使得$d(E,F)=|z_0-w_0|$.将$F$换成闭集后是否还存在这样的$z_0$和$w_0$?
 \item 证明：若$E\subset \MC$既是开集，又是闭集，则$E$是空集或$E=\MC$.
