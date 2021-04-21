@@ -1720,7 +1720,7 @@ P_n(z)=\sum_{j=0}^{k_n}b_{n,j}(z-a_n)^j\;\mbox{（$n=1,2,\cdots$）}
 \begin{equation}\label{eq5.6.7}
 u(z)=\begin{cases}
 \varphi_n(z)\frac{P_n(z)}{g(z)},&z\in B(a_n,3\varepsilon_n)\backslash\{a_n\},n\in\MN;\\
-0,&z\in D\backslash\operatorname*{\cup}_{n=1}^\infty\big(B(a_n,3\varepsilon_n)\backslash
+0,&z\in D\backslash\bigcup_{n=1}^\infty\big(B(a_n,3\varepsilon_n)\backslash
 \{a_n\}\big),
 \end{cases}
 \end{equation}
@@ -1779,7 +1779,7 @@ Weierstrass因子分解定理和Blaschke 乘积\label{sec5.7}}
 \begin{eenum}
   \item $f$的全部互不相同的极点$\{a_n\}$都是$f$的$1$阶极点，记$c_n=\Res(f,a_n)$；
   \item 原点$O$不是$f$的极点；
-  \item $f$在$\operatorname*{\cup}_{n=1}^\infty\gamma_n$上有界，
+  \item $f$在$\bigcup_{n=1}^\infty\gamma_n$上有界，
 \end{eenum}
 则
 \begin{equation}\label{eq5.7.1}
@@ -1803,7 +1803,7 @@ z\in B(0,R)\backslash\{a_n:n\in\MN\}.\]
 \[|zI_m|\le R\frac1{2\pi}\int\limits_{\gamma_m}\frac{|f(\zeta)|}{|\zeta|\,
 \big||\zeta|-|z|\big|}|\textrm d\zeta|\le\frac{R}{2\pi}\frac{Ml_m}{d_m(d_m-R)}
 \to0\;\mbox{（$m\to\infty$）},\]
-其中，$M=\sup_{\zeta\in\operatorname*{\cup}\limits_{n=1}^\infty\gamma_n}|f(\zeta)|<\infty$，便知
+其中，$M=\sup_{\zeta\in\bigcup\limits_{n=1}^\infty\gamma_n}|f(\zeta)|<\infty$，便知
 \[f(0)+\sum_{n=1}^\infty c_n\bigg(\frac1{z-a_n}+\frac1{a_n}\bigg)\]
 在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛于$f(z)$.
 \end{proof}
@@ -1813,7 +1813,7 @@ z\in B(0,R)\backslash\{a_n:n\in\MN\}.\]
 \begin{eenum}
   \item $f$的全部互不相同的零点集为$\{a_n\}$，在每个$a_n$处的零点阶数为$k_n$；
   \item $f(0)\ne0$；
-  \item $\frac{f'(z)}{f(z)}$在$\operatorname*{\cup}_{n=1}^\infty\gamma_n$上有界，
+  \item $\frac{f'(z)}{f(z)}$在$\bigcup_{n=1}^\infty\gamma_n$上有界，
 \end{eenum}
 则
 \begin{equation}\label{eq5.7.2}
@@ -1899,7 +1899,7 @@ $f(z)=\cot z-\frac1z$的全部极点$\pm n\pi$（$n\in\MN$）都是$1$阶的，�
 &\le\frac{\ee^{(2n-1)\pi}+1}{\ee^{(2n-1)\pi}-1}\le\frac{\ee^\pi+1}{\ee^\pi-1},
 \end{aligned}
 \end{align*}
-因而$\cot z-\frac1z$在$\operatorname*{\cup}_{n=1}^\infty\gamma_n$上有界. 故由定理 \ref{thm5.7.2} 得
+因而$\cot z-\frac1z$在$\bigcup_{n=1}^\infty\gamma_n$上有界. 故由定理 \ref{thm5.7.2} 得
 \[
 \cot z-\frac1z=\sum_{n=1}^\infty\bigg[\bigg(\frac1{z-n\pi}+\frac1{n\pi}\bigg)+
 \bigg(\frac1{z+n\pi}-\frac1{n\pi}\bigg)\bigg]
@@ -1917,7 +1917,7 @@ $f(z)=\cot z-\frac1z$的全部极点$\pm n\pi$（$n\in\MN$）都是$1$阶的，�
 \begin{solution}
 整函数$f(z)=\frac{\sin z}z$的全部零点$\pm n\pi$（$n\in\MN$）都是$1$阶的，且$f(0)=1$. 设$\{\gamma_n\}$是例 \ref{exam5.7.5} 中给出的正则曲线列，则
 \[\frac{f'(z)}{f(z)}=\cot z-\frac1z\]
-在$\operatorname*{\cup}_{n=1}^\infty\gamma_n$上有界. 故由定理 \ref{thm5.7.3} 得
+在$\bigcup_{n=1}^\infty\gamma_n$上有界. 故由定理 \ref{thm5.7.3} 得
 \[\frac{\sin z}z=\prod_{n=1}^\infty\bigg[\bigg(1-\frac z{n\pi}\bigg)\ee^{
 \frac z{n\pi}}\bigg]\bigg[\bigg(1+\frac z{n\pi}\bigg)\ee^{-\frac z{n\pi}}\bigg]
 =\prod_{n=1}^\infty\bigg(1-\frac{z^2}{n^2\pi^2}\bigg),\]

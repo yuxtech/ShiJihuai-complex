@@ -18,7 +18,7 @@
 \section{Schwarz对称原理\label{sec6.1}}
 先证明下面的Painlev\'e连续开拓原理：
 \begin{theorem}[（\textbf{Painlev\'e原理}）]\label{thm6.1.1}\index{D!定理!Painlev\'e原理}
-设$D$是域，$\gamma_1,\cdots,\gamma_n$是$\MC$中的$n$条可求长曲线.如果$f$在$D$上连续，在开集$D\backslash\big(\operatorname*{\cup}_{k=1}^n\gamma_k\big)$上全纯，那么$f$必在$D$上全纯.
+设$D$是域，$\gamma_1,\cdots,\gamma_n$是$\MC$中的$n$条可求长曲线.如果$f$在$D$上连续，在开集$D\backslash\big(\bigcup_{k=1}^n\gamma_k\big)$上全纯，那么$f$必在$D$上全纯.
 \end{theorem}
 \begin{proof}
 任取圆盘$B(a,r)\subset D$，只须证明$f$在$B(a,r)$上全纯即可.由Morera定理，只须证明对$B(a,r)$中任意可求长简单闭曲线$l$，总有
@@ -110,7 +110,7 @@ Schwarz对称原理可以推广到更一般的情形.为了叙述方便，对$\M
 
 下面看两个用Schwarz对称原理来构造双全纯映射的例子.
 \begin{example}\label{exam6.1.5}
-设$0<a<\infty,L_k=\bigg\{z=k\pi+\frac\pi2+\ii y:0\le y\le a\bigg\},D=\{z\in\MC:\Im z>0\}\backslash\big(\operatorname*{\cup}_{k=-\infty}^\infty L_k\big)$（图 \ref{fig6.2}），求一双全纯映射，把$D$映为上半平面.
+设$0<a<\infty,L_k=\bigg\{z=k\pi+\frac\pi2+\ii y:0\le y\le a\bigg\},D=\{z\in\MC:\Im z>0\}\backslash\big(\bigcup_{k=-\infty}^\infty L_k\big)$（图 \ref{fig6.2}），求一双全纯映射，把$D$映为上半平面.
 \end{example}
 \begin{figure}[!ht]
 \centering
@@ -256,7 +256,7 @@ B(a,r)\big)\subset\partial B(A,R)$.证明：若$z_0,w_0\in D$关于$\partial B(a
 \item 设$0<a<\infty,L_k=\bigg\{z=k\pi+\frac\pi2+\ii y,-a\le y\le a\bigg\},D=
 \bigg(\MC\backslash\bigg(\bigg(-\infty,-\frac\pi2\bigg]
 \cup\bigg[\frac\pi2,\infty\bigg)\bigg)\bigg)\backslash
-\big(\operatorname*{\cup}_{k=-\infty}^\infty L_k\big)$是如图 \ref{fig6.6} 所示的单连通域，将$D$双全纯地映为上半平面.
+\big(\bigcup_{k=-\infty}^\infty L_k\big)$是如图 \ref{fig6.6} 所示的单连通域，将$D$双全纯地映为上半平面.
 \begin{figure}[!ht]
 \centering
 \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},xscale=0.6,
@@ -400,9 +400,9 @@ f(z)=\sum_{n=0}^\infty\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n.
 如果$\partial B(0,R)$上没有$f$的奇点，那么对每个$\zeta\in\partial(0,R)$，存在$B(\zeta,r_\zeta)$及$B(\zeta,r_\zeta)$上的全纯函数$f_\zeta$，使得当$z\in B(0,R)\cap B(\zeta,r_\zeta)$时，$f(z)=f_\zeta(z)$.显然，$\{B(\zeta,r_\zeta)\}$的全体构成$\partial B(0,R)$的一个开覆盖，由于$\partial B(0,R)$是紧集，故从中可以选出有限个
 \[B(\zeta_1,r_{\zeta_1}),\cdots,B(\zeta_m,r_{\zeta_m})\]
 使得
-\[\partial B(0,R)\subset\operatorname*{\cup}_{n=1}^m B(\zeta_n,r_{\zeta_n}).\]
+\[\partial B(0,R)\subset\bigcup_{n=1}^m B(\zeta_n,r_{\zeta_n}).\]
 记
-\[D=B(0,R)\cup\big(\operatorname*{\cup}_{n=1}^mB(\zeta_n,r_{\zeta_n})\big),\]
+\[D=B(0,R)\cup\big(\bigcup_{n=1}^mB(\zeta_n,r_{\zeta_n})\big),\]
 并在$D$上定义函数
 \[g(z)=\begin{cases}
 f(z),&z\in B(0,R);\\

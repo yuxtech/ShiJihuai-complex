@@ -49,7 +49,7 @@ f_{n_1}^{(1)}(z),\cdots,f_{n_2}^{(2)}(z),\cdots,f_{n_k}^{(k)}(z),\cdots,
 \end{equation}
 它在$A$中的每一点处都收敛.
 
-为符号简单起见，我们把函数列 \eqref{eq7.1.1} 记为$\{f_{n_k}\}$，它是$\{f_n\}$的一个子列，我们证明它在$K$上一致收敛.因为$\{f_n\}$在$K$上等度连续，故对任意$\varepsilon>0$，存在$\delta>0$，当$z_1,z_2\in K$，且$|z_1-z_2|<\delta$时，有$|f_n(z_1)-f_n(z_2)|<\varepsilon$对$n=1,2,\cdots$都成立.显然，$\operatorname*{\cup}_{z\in K}B\bigg(z,\frac\delta2\bigg)$是$K$的一个开覆盖，根据有限覆盖定理，可以选出有限个圆盘，设为
+为符号简单起见，我们把函数列 \eqref{eq7.1.1} 记为$\{f_{n_k}\}$，它是$\{f_n\}$的一个子列，我们证明它在$K$上一致收敛.因为$\{f_n\}$在$K$上等度连续，故对任意$\varepsilon>0$，存在$\delta>0$，当$z_1,z_2\in K$，且$|z_1-z_2|<\delta$时，有$|f_n(z_1)-f_n(z_2)|<\varepsilon$对$n=1,2,\cdots$都成立.显然，$\bigcup_{z\in K}B\bigg(z,\frac\delta2\bigg)$是$K$的一个开覆盖，根据有限覆盖定理，可以选出有限个圆盘，设为
 $B\bigg(z_j,\frac\delta2\bigg),j=1,\cdots,n$来覆盖$K$.今取$\zeta_j\in B\bigg(z_j,\frac\delta2\bigg),j=1,\cdots,n$，由于$\{f_{n_k}(\zeta_j)\},j=1,\cdots,n$收敛，由Cauchy收敛原理，存在$N$，当$l,k>N$时，有
 \begin{equation}\label{eq7.1.2}
 |f_{n_l}(\zeta_j)-f_{n_k}(\zeta_j)|<\varepsilon,j=1,\cdots,n.
@@ -934,7 +934,7 @@ f(\zeta)&=\frac h\pi\int_{-1}^\zeta\frac{\sqrt{z+1}}z\dz+\ii h\\
 
 \begin{xiti}
 \item 设$L_k=\big\{z=r\ee^{\ii\frac{2k\pi}n}:1\le r<\infty\big\},G=\MC\backslash
-\big(\operatorname*{\cup}_{k=1}^nL_k\big)$.求出将上半平面映为$G$的双全纯映射$\varphi$，使得$\varphi(\ii)=0$.
+\big(\bigcup_{k=1}^nL_k\big)$.求出将上半平面映为$G$的双全纯映射$\varphi$，使得$\varphi(\ii)=0$.
 \[\Bigg(\varphi(z)=\frac{z^2+1}{\bigg(\sum_{k=0}^{[\frac n2]}
 (-1)^k\binom n{2k}z^{n-2k}\bigg)^{\frac2n}}\Bigg)\]
 \item 证明：将$B(0,1)$映为$n$角形内部的双全纯映射$\varphi$具有形状
@@ -949,7 +949,7 @@ f(\zeta)&=\frac h\pi\int_{-1}^\zeta\frac{\sqrt{z+1}}z\dz+\ii h\\
 \item 设$G=\MC_\infty\backslash\big([0,1]\cup[0,\ee^{\ii\frac{2\pi}3}]\cup
 [0,\ee^{-\ii\frac{2\pi}3}]\big),\Im z_0>0$.求出将上半平面映为$G$的单叶亚纯映射$\varphi$，使得$\varphi(z_0)=\infty$.
 \[\bigg(\varphi(z)=\frac{[(z-z_0)^3-3y_0^2(z-x_0)]^{\frac23}}{(z-x_0)^2+y_0^2}\bigg)\]
-\item 设$L_1,L_2,\cdots,L_n$是以$O$为端点的$n$条线段，它们彼此仅在$O$处相交，$\Im a_0>0$.证明：将上半平面映为$G=\MC_\infty\backslash\big(\operatorname*{\cup}_{k=1}^n
+\item 设$L_1,L_2,\cdots,L_n$是以$O$为端点的$n$条线段，它们彼此仅在$O$处相交，$\Im a_0>0$.证明：将上半平面映为$G=\MC_\infty\backslash\big(\bigcup_{k=1}^n
     L_k\big)$，并且将$a_0$映为$\infty$的单叶亚纯函数$\varphi$具有形状
 \[\varphi(z)=C\frac{\prod_{k=1}^n(z-a_k)^{\alpha_k}}{(z-a_0)(z-\bar{a_0})},\]
 其中，$a_1,a_2,\cdots,a_n\in\MR;\alpha_1,\alpha_2,\cdots,\alpha_n>0$，并且$\sum_{k=1}^n\alpha_k=2$.

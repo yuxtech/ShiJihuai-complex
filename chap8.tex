@@ -172,7 +172,7 @@ $B(0,R)$的Poisson核$P(z,R\ee^{\ii\varphi})$具有下列性质：
 {\log r_2-\log r_1}A(r_2).\]
 \item 设$\varphi\in C^2\big((0,1)\big)$. 证明：$\varphi(|z|)$在$B(0,1)\backslash\{0\}$上调和，当且仅当存在实数$a$和$b$，使得$\varphi(|z|)=a\log|z|+b$.
 \item 设$D$是凸域，$u$是$D$上的调和函数.证明：若当$z\in D$时总有$u(z)\ge0$，则必存在$D$上的双全纯映射$f$，使得$\Re f'(z)=u(z)$.
-\item 设$\gamma_1,\gamma_2,\cdots,\gamma_n$是$n$条可求长曲线，$u$是域$D$上的连续函数. 若$u$在开集$D\backslash\big(\operatorname*{\cup}_{k=1}^n\gamma_k\big)$上调和，问$u$是否在$D$上调和?\\
+\item 设$\gamma_1,\gamma_2,\cdots,\gamma_n$是$n$条可求长曲线，$u$是域$D$上的连续函数. 若$u$在开集$D\backslash\big(\bigcup_{k=1}^n\gamma_k\big)$上调和，问$u$是否在$D$上调和?\\
 （\textbf{提示}：举例说明答案是否定的.）
 \item 设$a_1,a_2,\cdots,a_n$是实数. 证明：若$p(\theta)=\sum_{k=1}^n\cos k\theta$在$[0,\pi]$上单调减少，则
     \[\sum_{k=1}^n a_k\sin k\theta\ge0,\;\forall \theta\in[0,\pi].\]
@@ -265,7 +265,7 @@ I_2&=\frac1{2\pi}\int\limits_{|\varphi-\varphi_0|>\delta}\frac{R^2-r^2}{R^2-2rR
 设$u$在$|z|=R$上的第一类间断点为$\zeta_1,\cdots,\zeta_n$. 令
 \[v(z)=M+\varepsilon\sum_{k=1}^n\log\frac{2R}{|z-\zeta_k|},\]
 这里，$\varepsilon$是任意一个正数. 容易知道$v$是$B(0,R)$中的调和函数，且对任意$z\in B(0,R)$，有$v(z)>M$. 取充分小的$r>0$，令$D_k=B(\zeta_k,r)\cap B(0,R)$，记
-\[G_r=B(0,R)\backslash\big(\operatorname*{\cup}_{k=1}^nD_k\big).\]
+\[G_r=B(0,R)\backslash\big(\bigcup_{k=1}^nD_k\big).\]
 显然，$v(z)-h(z)$是$G_r$中的调和函数，而且在$\bar{G_r}$上连续. 当$\zeta\in\partial G_r\cap\partial B(0,R)$时，有
 \[v(\zeta)-h(\zeta)\ge M-h(\zeta)=M-u(\zeta)\ge0.\]
 当$\zeta\in\partial G_r\cap B(0,R)$时，令$r\to0$，则$\zeta\to \zeta_k,v(\zeta)\to\infty$，而$h$是一个有界函数，因而也有$v(\zeta)-h(\zeta)>0$.总之，当$\zeta\in\partial G_r$时，$v(\zeta)-h(\zeta)\ge0$.于是，由调和函数的极值原理，当$z\in G_r$，时，有$v(z)-h(z)\ge0$.因为$r$可以任意小，所以这个不等式对任意$z\in B(0,R)$成立.固定$z$，让$\varepsilon\to0$，即得$h(z)\le M$.因为$-h$也是调和函数，类似地可以证得$-h(z)\le -m$.因而$m\le h(z)\le M$.
@@ -576,7 +576,7 @@ $\Delta u(z)\ge0$.
 {\log r_2-\log r_1}A(r_2).\]
 \item 设$D,G$是域，$u$是$G$上的次调和函数. 证明：若$\varphi:D\to G$全纯，则$u\circ \varphi$是$D$上的次调和函数.
 \item 设$D$是凸域，$f\in H(D)$.证明：若$\Re\bar zf(z)$是$D$上的次调和函数，则或者$f$是常值函数，或者$f$是$D$上的双全纯映射.
-\item 设$\gamma_1,\gamma_2,\cdots,\gamma_n$是$n$条可求长曲线，$u$是域$D$上的连续函数.若$u$在开集$D\backslash\big(\operatorname*{\cup}_{k=1}^n\gamma_k\big)$上次调和，问$u$是否在$D$上次调和?\\
+\item 设$\gamma_1,\gamma_2,\cdots,\gamma_n$是$n$条可求长曲线，$u$是域$D$上的连续函数.若$u$在开集$D\backslash\big(\bigcup_{k=1}^n\gamma_k\big)$上次调和，问$u$是否在$D$上次调和?\\
 （\textbf{提示}：举例说明答案是否定的.）
 \item 设$v$是有界域$D$上的次调和函数，$u$是$D$上的调和函数.证明：若存在$z_1,z_2,\cdots,z_n\in\partial D $，使得
 \begin{align*}
