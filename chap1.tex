@@ -144,9 +144,9 @@ $|z|$称为$z$的\textbf{模}\index{F!复数!模}或绝对值，$\bar z$称为$z
 \caption{}\label{fig1.1}
 \end{figure}
 \[a=r\cos\theta,\quad b=r\sin\theta,\]
-因为复数$z=a+b\ii$也可表示为
+因而复数$z=a+b\ii$也可表示为
 \[z=r(\cos\theta+\ii\sin\theta).\]
-这里， $r=|z|=\sqrt{a^2+b^2}$就是前面定义过的$z$的模， $\theta$称为$z$的\textbf{辐角}\index{F!复数!辐角}，记为$\theta=\Arg z$.容易看出，如果$\theta$是$z$的辐角，那么$\theta+2k\pi$也是$z$的辐角，这里，$k$是任意的整数，因此$z$的辐角有无穷多个.但在$\Arg z$中，只有一个满足$-\pi<\theta\le\pi$，称这个$\theta$为$z$的\textbf{辐角的主值}\index{F!复数!辐角主值}，把它记为$\arg z$.因而
+这里， $r=|z|=\sqrt{a^2+b^2}$就是前面定义过的$z$的模， $\theta$称为$z$的\textbf{辐角}\index{F!复数!辐角}，记为$\theta=\Arg z$.容易看出，如果$\theta$是$z$的辐角，那么$\theta+2k\pi$也是$z$的辐角，这里，$k$是任意的整数，因此$z$的辐角有无穷多个.但在$\Arg z$中，只有一个 $\theta$ 满足$-\pi<\theta\le\pi$，称这个$\theta$为$z$的\textbf{辐角的主值}\index{F!复数!辐角主值}，把它记为$\arg z$.因而
 \[\Arg z=\arg z+2k\pi,\quad k\in\MZ,\]
 这里， $\MZ$表示整数的全体. 注意， $0$的辐角没有意义.
 
@@ -470,7 +470,7 @@ x_3=\frac{|z|^2-1}{|z|^2+1}.\]
 \[|z_n-z_0|=\sqrt{(x_n-x_0)^2+(y_n-y_0)^2}\]
 马上可以得到：$\lim_{n\to\infty}z_n=z_0$的充分必要条件是$\{z_n\}$的实部和虚部分别有$\lim_{n\to\infty}x_n=x_0$和$\lim_{n\to\infty}y_n=y_0$.
 
-复数列$\{z_n\}$称为\textbf{Cauchy列}\index{C!Cauchy列}，如果对任给的$\varepsilon>0$，存在正整数$N$，当$m,n>N$时，有$|z_n<z_m|<\varepsilon$.设$z_n=x_n+\ii y_n,z_m=x_m+\ii y_m$，那么从等式
+复数列$\{z_n\}$称为\textbf{Cauchy列}\index{C!Cauchy列}，如果对任给的$\varepsilon>0$，存在正整数$N$，当$m,n>N$时，有$|z_n-z_m|<\varepsilon$.设$z_n=x_n+\ii y_n,z_m=x_m+\ii y_m$，那么从等式
 \[|z_n-z_m|=\sqrt{(x_n-x_m)^2+(y_n-y_m)^2}\]
 知道，$\{z_n\}$是Cauchy列的充分必要条件是它的实部$\{x_n\}$和虚部
 $\{y_n\}$都是实的Cauchy列，因而从实数域中的Cauchy收敛准则立刻得到复数域的\textbf{Cauchy收敛准则}\index{C!Cauchy收敛准则}：$\{z_n\}$收敛的充要条件是$\{z_n\}$为Cauchy列.由此知道$\MC$是\textbf{完备}\index{W!完备}的.
