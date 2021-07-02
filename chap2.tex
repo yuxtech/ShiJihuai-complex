@@ -108,7 +108,7 @@ v(x_0+\Delta x,y_0+\Delta y)-v(x_0,y_0)=\pp vx(x_0,y_0)\Delta x+\pp vy(x_0,y_0)\
 \end{equation}
 容易看出，\eqref{eq2.2.4} 和 \eqref{eq2.2.1}，\eqref{eq2.2.2} 两式等价.因而有下面的
 \begin{prop}
-设$f:D\to\MC$是定义在域$D$上的函数，$z_0\in D$，那么$f$在$z_0$处实可微的充分必要条件是  \eqref{eq2.2.4} 式成立，其中，$\pp{}z$是$\pp{}{\bar z}$和是由 \eqref{eq2.2.3} 式定义的算子.
+设$f:D\to\MC$是定义在域$D$上的函数，$z_0\in D$，那么$f$在$z_0$处实可微的充分必要条件是  \eqref{eq2.2.4} 式成立，其中，$\pp{}z$ 和 $\pp{}{\bar z}$ 是由 \eqref{eq2.2.3} 式定义的算子.
 \end{prop}
 
 为什么要像 \eqref{eq2.2.3} 式那样来定义算子$\pp{}z$和$\pp{}{\bar z}$呢？这是因为如果把复变函数$f(z)$写成
@@ -119,7 +119,7 @@ v(x_0+\Delta x,y_0+\Delta y)-v(x_0,y_0)=\pp vx(x_0,y_0)\Delta x+\pp vy(x_0,y_0)\
 \pp f{\bar z}=\pp fx\pp x{\bar z}+\pp fy\pp y{\bar z}=\frac12\bigg(\pp fx+\ii\pp fy\bigg).
 \end{gather*}
 
-这就是表达式 \eqref{eq2.2.3} 的来源.这说明在进行微分运算时，可以把$z,\bar z$交看成独立的变量.
+这就是表达式 \eqref{eq2.2.3} 的来源.这说明在进行微分运算时，可以把 $z,\bar z$ 看成独立的变量.
 
 现在很容易得到$f$在$z_0$处可微的条件了.
 \begin{theorem}\label{thm2.2.3}
@@ -131,7 +131,7 @@ v(x_0+\Delta x,y_0+\Delta y)-v(x_0,y_0)=\pp vx(x_0,y_0)\Delta x+\pp vy(x_0,y_0)\
 与 \eqref{eq2.2.4} 式比较就知道，$f$在$z_0$处是实可微的，而且$\pp f{\bar z}(z_0)=0,f'(z_0)=\pp fz(z_0)$.
 
 反之，若$f$在$z_0$处实可微，且$\pp f{\bar z}(z_0)=0$，则由 \eqref{eq2.2.4} 得
-\[f(z_0+\Delta z)-f(z_0)=f'(z_0)\Delta z+o(|\Delta z|).\]
+\[f(z_0+\Delta z)-f(z_0)=\pp{f}{z}(z_0)\Delta z+o(|\Delta z|).\]
 由此即知$f$在$z_0$处可微，而且$f'(z_0)=\pp fz(z_0)$.
 \end{proof}
 
@@ -225,7 +225,7 @@ $\pp f{\bar z}=0$称为\textbf{Cauchy--Riemann 方程}\index{G!公式!Cauchy--Ri
 同理可证$\Delta v=0$.
 \end{proof}
 \begin{definition}\label{def2.2.10}
-设$u$和$v$是一对调和函数，如果他们还满足 Cauchy--Riemann 方程
+设$u$和$v$是一对调和函数，如果它们还满足 Cauchy--Riemann 方程
 \[\left\{\begin{aligned}
 &\pp ux=\pp vy,\\
 &\pp uy=-\pp vx,
@@ -511,14 +511,14 @@ arc(170:100:2)coordinate(D)node[above]{$w$}arc(100:90:2);
 
 \item $\ee^z$是以$2\pi\ii$为周期的周期函数，这是实变数指数函数$\ee^x$所没有的性质.证明当然很简单：
 \begin{align*}
-\ee^{z+2\pi\ii}&=\ee^{x+\ii(y+2\pi\ii)}\\
+\ee^{z+2\pi\ii}&=\ee^{x+\ii(y+2\pi)}\\
 &=\ee^x[\cos(y+2\pi)+\ii\sin(y+2\pi)]=\ee^z.
 \end{align*}
 \end{eenum}
 
 下面来研究$w=\ee^z$的映射性质. 先给出
 \begin{definition}\label{def2.4.1}
-设$f:D\to\MC$是一个复变函数，如果对域$D$中任意两点$z_1,z_2$（$z_1\ne z_2$），必有$f(z_1)\ne f(z_2)$，就称$f$在$D$中是\textbf{单叶}\index{D!单叶函数}的，$D$称为$f$的\textbf{单叶性域}.\index{Y!域!单叶性域}.
+设$f:D\to\MC$是一个复变函数，如果对域$D$中任意两点$z_1,z_2$（$z_1\ne z_2$），必有$f(z_1)\ne f(z_2)$，就称$f$在$D$中是\textbf{单叶}\index{D!单叶函数}的，$D$称为$f$的\textbf{单叶性域}.\index{Y!域!单叶性域}
 \end{definition}
 
 如果$f$在$D$中是单叶的，$f(D)=G$，那么$f$是$D$到$G$之上的一一映射.
