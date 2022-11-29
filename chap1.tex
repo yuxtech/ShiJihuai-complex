@@ -155,12 +155,13 @@ $|z|$称为$z$的\textbf{模}\index{F!复数!模}或绝对值，$\bar z$称为$z
 \noindent\begin{minipage}{0.4\textwidth}
 \centering
 \begin{tikzpicture}[>=Stealth,thick,scale=0.7]
-\draw[->](-1,0)--(0,0)node[below left]{$O$}--(5,0)node[below]{$x$};
-\draw[->](0,-0.6)--(0,5)node[right]{$y$};
-\draw[-{Stealth[width=3pt]}](0,0)--(1.4,3)node[above left]{$z_2$};
-\draw[-{Stealth[width=3pt]}](0,0)--(2.8,1)node[below right]{$z_1$};
-\draw[-{Stealth[width=3pt]}](0,0)--(4.2,4)node[above right]{$z_1+z_2$};
-\draw[densely dashed](4.2,4)--(1.4,3)(4.2,4)--(2.8,1);
+  \draw[->](-1,0)--(0,0)node[below left]{$O$}--(5,0)node[below]{$x$};
+  \draw[->](0,-0.6)--(0,5)node[right]{$y$};
+  \draw[-{Stealth[width=3pt]}](0,0)--(1.4,3)coordinate(A) node[above left]{$z_2$};
+  \draw[-{Stealth[width=3pt]}](0,0)--(2.8,1)coordinate(B) node[below right]{$z_1$};
+  \draw[-{Stealth[width=3pt]}](0,0)--(4.2,4)node[above right]{$z_1+z_2$};
+  \draw[densely dashed](4.2,4)--(1.4,3)(4.2,4)--(2.8,1);
+  \draw[-{Stealth[width=3pt]}] (A) --node[above right,pos=0.8]{$z_1-z_2$} (B);
 \end{tikzpicture}
 \captionof{figure}{\label{fig1.2}}
 \end{minipage}
