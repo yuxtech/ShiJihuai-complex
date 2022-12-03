@@ -1,8 +1,15 @@
 \setcounter{chapter}{2}
 \chapter{全纯函数的积分表示\label{chap3}}
-本章将要介绍的Cauchy积分定理和Cauchy积分公式是整个全纯函数理论的基础，由它们可以推出一系列重要的结论，例如全纯函数有任意阶导数，而且可以展开成幂级数等.其中，Cauchy积分定理又是最根本的.
+
+本章将要介绍的Cauchy积分定理和Cauchy积分公式是整个全纯函数理论的基础，由它们可以推出一系列重要的结论，
+例如全纯函数有任意阶导数，而且可以展开成幂级数等. 其中，Cauchy积分定理又是最根本的.
+
+
 \section{复变函数的积分\label{sec3.1}}
-设$z=\gamma(t)$（$a\le t\le b$）是一条可求长曲线，$f$是定义在$\gamma$上的函数，沿$\gamma$的正方向取分点$\gamma(a)=z_0,z_1,z_2,\cdots,z_n=\gamma(b)$，在$\gamma$中从$z_{k-1}$到$z_k$的弧段上任取点$\zeta_k,k=1,\cdots,n$（见图 \ref{fig3.1}），作Riemann和
+
+设$z=\gamma(t)$（$a\le t\le b$）是一条可求长曲线，$f$是定义在$\gamma$上的函数，
+沿$\gamma$的正方向取分点$\gamma(a)=z_0,z_1,z_2,\cdots,z_n=\gamma(b)$，
+在$\gamma$中从$z_{k-1}$到$z_k$的弧段上任取点$\zeta_k$, $k=1,\cdots,n$（见图 \ref{fig3.1}），作Riemann和
 \begin{equation}\label{eq3.1.1}
 \sum_{k=1}^nf(\zeta_k)(z_k-z_{k-1}).
 \end{equation}
@@ -30,66 +37,68 @@ $\gamma$的积分，记为$\int\limits_\gamma f(z)\dz$，即
 \begin{prop}\label{prop3.1.1}
 设$f=u+\ii v$在可求长曲线$\gamma$上连续，则有
 \begin{equation}\label{eq3.1.2}
-\int\limits_\gamma f(z)\dz=\int\limits\limits_\gamma u\dx-v\dy+\ii\int_\gamma v\dx+u\dy.
+\int\limits_\gamma f(z)\dz=\int\limits\limits_\gamma u\dx-v\dy+\ii\int\limits_\gamma v\dx+u\dy.
 \end{equation}
 \end{prop}
 
 这个公式通过下面的形式计算很容易记住：
 \begin{align*}
-f(z)\dz&=(u+\ii v)(\dx+\ii\dy)\\
-&=(u\dx-v\dy)+\ii(v\dx+u\dy).
+f(z)\dz & = (u+\ii v)(\dx+\ii\dy) \\
+        & = (u\dx-v\dy)+\ii(v\dx+u\dy).
 \end{align*}
 
 如果曲线是光滑的，还可以通过曲线的参数方程来计算积分.
 \begin{prop}\label{prop3.1.2}
 如果$z=\gamma(t)$（$a\le t\le b$）是光滑曲线，$f$在$\gamma$上连续，那么
 \begin{equation}\label{eq3.1.3}
-\int\limits_\gamma f(z)\dz=\int_a^bf\big(\gamma(t)\big)\gamma'(t)\textrm dt.
+  \int\limits_\gamma f(z)\dz = \int_a^b f\big(\gamma(t)\big)\gamma'(t)\dif t.
 \end{equation}
 \end{prop}
 \begin{proof}
 设$z=\gamma(t)=x(t)+\ii y(t)$，在所设的条件下，有
 \begin{align*}
-&\int\limits_\gamma u\dx-v\dy=\int_a^b\big[u\big(x(t),y(t)\big)x'(t)-v\big(x(t),y(t)\big)y'(t)\big]\textrm dt,\\
-&\int\limits_\gamma v\dx+u\dy=\int_a^b\big[v\big(x(t),y(t)\big)x'(t)+u\big(x(t),y(t)\big)y'(t)\big]\textrm dt.
+  &\int\limits_\gamma u\dx-v\dy = \int_a^b\big[u\big(x(t),y(t)\big)x'(t)-v\big(x(t),y(t)\big)y'(t)\big]\dif t,\\
+  &\int\limits_\gamma v\dx+u\dy = \int_a^b\big[v\big(x(t),y(t)\big)x'(t)+u\big(x(t),y(t)\big)y'(t)\big]\dif t.
 \end{align*}
 第二式乘$\ii$后与第一式相加，即得
 \begin{align*}
-\int\limits_\gamma f(z)\dz&=\int_a^b\big[u\big(x(t),y(t)\big)+\ii v\big(x(t),y(t)\big)\big]\big(x'(t)+\ii y'(t)\big)\textrm dt\\
-&=\int_a^bf\big(\gamma(t)\big)\gamma'(t)\textrm dt.
+  \int\limits_\gamma f(z)\dz
+  & = \int_a^b \big[u\big(x(t),y(t)\big)+\ii v\big(x(t),y(t)\big)\big]\big(x'(t)+\ii y'(t)\big)\dif t\\
+  & = \int_a^b f\big(\gamma(t)\big)\gamma'(t)\dif t.
 \end{align*}
 \end{proof}
 \begin{example}\label{exam3.1.3}
-设可求长曲线$z=\gamma(t)$（$a\le t\le b$）的起点为$\alpha$，终点为$\beta$，证明：
-\begin{align*}
-  &\int\limits_\gamma\dz=\beta-\alpha,\\
-  &\int\limits_\gamma z\dz=\frac12(\beta^2-\alpha^2).
-\end{align*}
+  设可求长曲线$z=\gamma(t)$（$a\le t\le b$）的起点为$\alpha$，终点为$\beta$，证明：
+  \begin{align*}
+    &\int\limits_\gamma\dz=\beta-\alpha,\\
+    &\int\limits_\gamma z\dz=\frac12(\beta^2-\alpha^2).
+  \end{align*}
 \end{example}
 \begin{proof}
-若$\gamma$是光滑曲线，由公式 \eqref{eq3.1.3}，得
-\begin{align*}
-&\int\limits_\gamma \dz=\int_a^b\gamma'(t)\textrm dt=\gamma(b)-\gamma(a)=\beta-\alpha,\\
-&\int\limits_\gamma z\dz=\int_a^b\gamma(t)\gamma'(t)\textrm dt
-=\frac12\gamma^2(t)\bigg|_a^b=\frac12\big(\gamma^2(b)-\gamma^2(a)\big)
-=\frac12(\beta^2-\alpha^2).
-\end{align*}
-如果$\gamma$不是光滑曲线，可直接按积分的定义计算：
-\begin{align*}
-&\int\limits_\gamma\dz=\lim_{\lambda\to0}\sum_{k=1}^n(z_k-z_{k-1})
-=z_n-z_0=\beta-\alpha.\\
-&\int\limits_\gamma z\dz=\lim_{\lambda\to0}\sum_{k=1}^nz_k(z_k-z_{k-1}),\\
-&\int\limits_\gamma z\dz=\lim_{\lambda\to0}\sum_{k=1}^nz_{k-1}(z_k-z_{k-1}),
-\end{align*}
-把两式加起来，得
-\begin{equation*}
-\int\limits_\gamma z\dz=\frac12\lim_{\lambda\to0}
-\sum_{k=1}^n(z_k^2-z_{k-1}^2)=\frac12(z_n^2-z_0^2)=\frac12(\beta^2-\alpha^2).
-\end{equation*}
+  若$\gamma$是光滑曲线，由公式 \eqref{eq3.1.3}，得
+  \begin{align*}
+    & \int\limits_\gamma \dz = \int_a^b\gamma'(t)\dif t=\gamma(b)-\gamma(a)=\beta-\alpha,\\
+    & \int\limits_\gamma z\dz = \int_a^b\gamma(t)\gamma'(t)\dif t
+      = \frac12\gamma^2(t)\bigg|_a^b = \frac12\big(\gamma^2(b)-\gamma^2(a)\big)
+      = \frac12(\beta^2-\alpha^2).
+  \end{align*}
+  如果$\gamma$不是光滑曲线，可直接按积分的定义计算：
+  \begin{align*}
+  &\int\limits_\gamma\dz=\lim_{\lambda\to0}\sum_{k=1}^n(z_k-z_{k-1})
+  =z_n-z_0=\beta-\alpha.\\
+  &\int\limits_\gamma z\dz=\lim_{\lambda\to0}\sum_{k=1}^nz_k(z_k-z_{k-1}),\\
+  &\int\limits_\gamma z\dz=\lim_{\lambda\to0}\sum_{k=1}^nz_{k-1}(z_k-z_{k-1}),
+  \end{align*}
+  把两式加起来，得
+  \begin{equation*}
+    \int\limits_\gamma z\dz=\frac12\lim_{\lambda\to0}
+    \sum_{k=1}^n(z_k^2-z_{k-1}^2)=\frac12(z_n^2-z_0^2)=\frac12(\beta^2-\alpha^2).
+  \end{equation*}
 \end{proof}
 
 \begin{example}\label{exam3.1.4}
-计算积分$\int\limits_\gamma\frac{\dz}{(z-a)^n}$，这里，$n$是任意整数，$\gamma$是以$a$维中心、以$r$为半径的圆周.
+计算积分$\int\limits_\gamma\frac{\dz}{(z-a)^n}$，这里，$n$是任意整数，
+$\gamma$是以$a$为中心、以$r$为半径的圆周.
 \end{example}
 \begin{solution}
 $\gamma$的参数方程为$z=a+r\ee^{\ii t},0\le t\le2\pi$. 由公式 \eqref{eq3.1.3}，得
@@ -132,37 +141,37 @@ $\gamma$的参数方程为$z=a+r\ee^{\ii t},0\le t\le2\pi$. 由公式 \eqref{eq3
 这个不等式很简单，但很重要，是我们今后估计积分的主要工具，可简称为\textbf{长大不等式}.\index{B!不等式!长大不等式}
 
 \begin{xiti}
-\item 计算积分$\int\limits_\gamma\frac{2z-3}z\dz$，其中，$\gamma$为
-\begin{enuma}
-  \item 沿圆周$\{z:|z|=2\}$的上半圆，从$-2$到$2$；
-  \item 沿圆周$\{z:|z|=2\}$的下半圆，从$-2$到$2$；
-  \item 沿圆周$\{z:|z|=2\}$的正向.
-\end{enuma}
-\item 计算积分$\int\limits_{|z|=1}\frac{\dz}{z+2}$，并证明：
-\[\int_0^\pi\frac{1+2\cos\theta}{5+4\cos\theta}\textrm d\theta=0.\]
-\item 计算积分$\int\limits_{|z|=3}\frac{2z-1}{z(z-1)}\dz$.
-\item 如果多项式$Q(z)$比多项式$P(z)$高两次，试证：
-\[\lim_{R\to\infty}\int\limits_{|z|=R}\frac{P(z)}{Q(z)}\dz=0.\]
-\item 计算积分$\int\limits_{|z|=r}z^n\bar z^k\dz$，其中，$n,k$为整数.
+\item 计算积分 $\int\limits_\gamma\frac{2z-3}z\dz$，其中，$\gamma$为
+  \begin{enuma}
+    \item 沿圆周 $\{z:|z|=2\}$ 的上半圆，从 $-2$ 到 $2$；
+    \item 沿圆周 $\{z:|z|=2\}$ 的下半圆，从 $-2$ 到 $2$；
+    \item 沿圆周 $\{z:|z|=2\}$ 的正向.
+  \end{enuma}
+\item 计算积分 $\int\limits_{|z|=1}\frac{\dz}{z+2}$，并证明：
+\[\int_0^\pi\frac{1+2\cos\theta}{5+4\cos\theta}\dif\theta=0.\]
+\item 计算积分 $\int\limits_{|z|=3}\frac{2z-1}{z(z-1)}\dz$.
+\item 如果多项式 $Q(z)$ 比多项式 $P(z)$ 高两次，试证：
+  \[\lim_{R\to\infty}\int\limits_{|z|=R}\frac{P(z)}{Q(z)}\dz=0.\]
+\item 计算积分$\int\limits_{|z|=r}z^n\bar z^k\dz$，其中，$n$, $k$ 为整数.
 \item 设$f\in C^1(D)$，$\gamma$是域$D$中分别以$a$和$b$为起点和终点的可求长曲线. 证明：
-\[\int\limits_\gamma\bigg\{\pp{f(z)}z\dz+\pp{f(z)}{\bar z}\textrm d\bar z\bigg\}=f(b)-f(a).\]
+  \[\int\limits_\gamma\bigg\{\pp{f(z)}z\dz+\pp{f(z)}{\bar z}\textrm d\bar z\bigg\}=f(b)-f(a).\]
 \item 设$\gamma$是可求长曲线，$\varphi$在$\gamma$上全纯，$\Gamma=\varphi(\gamma)$. 证明：
-\begin{enuma}
-  \item $\Gamma$也是可求长曲线；
-  \item 如果$f$在$\Gamma$上连续，那么
-  \[\int\limits_\Gamma f(w)\textrm dw=\int\limits_\gamma f\big(\varphi(z)\big)\varphi'(z)\dz.\]
-\end{enuma}
+  \begin{enuma}
+    \item $\Gamma$也是可求长曲线；
+    \item 如果$f$在$\Gamma$上连续，那么
+    \[\int\limits_\Gamma f(w)\dif w=\int\limits_\gamma f\big(\varphi(z)\big)\varphi'(z)\dz.\]
+  \end{enuma}
 \item 设$\gamma$是域$D$中以$a$为起点、以$b$为终点的可求长曲线，$f,g\in H(D)\cap C^1(D)$. 证明分部积分公式：
     \[\int\limits_\gamma f(z)g'(z)\dz=f(z)g(z)\bigg|_a^b-\int\limits_\gamma f'(z)g(z)\dz.\]
 \item 设$\gamma$是正向可求长简单闭曲线，证明：$\gamma$内部的面积为
-\[\frac1{2\ii}\int\limits_\gamma\bar z\dz.\]
+  \[\frac1{2\ii}\int\limits_\gamma\bar z\dz.\]
 \item 设单叶全纯映射$f$将可求长简单闭曲线$\gamma$映为正向简单闭曲线$\Gamma$，证明：$\Gamma$内部的面积为
-    \[\frac1{2\ii}\int\limits_\gamma\bar{f(z)}f'(z)\dz.\]
+  \[\frac1{2\ii}\int\limits_\gamma\bar{f(z)}f'(z)\dz.\]
 \item 设$f$在$z_0$处连续，证明：
-\begin{enuma}
-  \item $\lim_{r\to0}\frac1{2\pi}\int_0^{2\pi}f(z_0+r\ee^{\ii\theta})\textrm d\theta=f(z_0)$；
-  \item $\lim_{r\to0}\frac1{2\pi\ii}\int\limits_{|z-z_0|=r}\frac{f(z)}{z-z_0}\dz=f(z_0)$.
-\end{enuma}
+  \begin{enuma}
+    \item $\lim_{r\to0}\frac1{2\pi}\int_0^{2\pi}f(z_0+r\ee^{\ii\theta})\dif\theta=f(z_0)$；
+    \item $\lim_{r\to0}\frac1{2\pi\ii}\int\limits_{|z-z_0|=r}\frac{f(z)}{z-z_0}\dz=f(z_0)$.
+  \end{enuma}
 \item 设$D=\{z\in\MC:\theta_0<\arg(z-a)<\theta_0+\alpha\}$（$0<\alpha\le2\pi$），$f$在$\bar D\backslash\{a\}$上连续. 证明：
 \begin{enuma}
   \item 如果$\lim_{\substack{z\to a\\z\in\bar D\backslash\{a\}}}(z-a)f(z)=A$，那么
@@ -175,41 +184,59 @@ $\gamma$的参数方程为$z=a+r\ee^{\ii t},0\le t\le2\pi$. 由公式 \eqref{eq3
 \end{xiti}
 
 \section{Cauchy积分定理\label{sec3.2}}
-设$D$是$\MC$中的单连通域，$f$是$D$中的连续函数.一般来说，对$D$中任意两条具有相同起点和终点的曲线，$f$在其上的积分是不相等的，即$f$的积分与路径有关.我们问，在什么条件下，$f$的积分与路径无关?这等价于说，在什么条件下，$f$沿任一闭曲线的积分为零? Cauchy定理回答了这个问题.
+设$D$是$\MC$中的单连通域，$f$是$D$中的连续函数.一般来说，对$D$中任意两条具有相同起点和终点的曲线，
+$f$在其上的积分是不相等的，即$f$的积分与路径有关.我们问，在什么条件下，$f$的积分与路径无关?这等价于说，
+在什么条件下，$f$沿任一闭曲线的积分为零? Cauchy定理回答了这个问题.
 \begin{theorem}[（\textbf{Cauchy}）]\label{thm3.2.1}\index{D!定理!Cauchy积分定理}
 设$D$是$\MC$中的单连通域，$f\in H(D)$，且$f'$在$D$中连续，则对$D$中任意的可求长闭曲线$\gamma$，均有
 \[\int\limits_\gamma f(z)\dz=0.\]
 \end{theorem}
 \begin{proof}
-由$\gamma$围成的域记为$G$，因为$f'$连续，即$\pp ux,\pp vx,\pp uy,\pp vy$连续，故可用Green公式. 又因$f$在$D$中全纯，故Cauchy--Riemann 方程成立. 于是
+由$\gamma$围成的域记为$G$，因为$f'$连续，即$\pp ux,\pp vx,\pp uy,\pp vy$连续，故可用Green公式. 
+又因$f$在$D$中全纯，故Cauchy--Riemann 方程成立. 于是
 \begin{align*}
 &\int\limits_\gamma u\dx-v\dy=\iint\limits_G\bigg(-\pp vx-\pp uy\bigg)\dx\dy=0,\\
 &\int\limits_\gamma v\dx+u\dy=\iint\limits\bigg(\pp ux-\pp vy\bigg)\dx\dy=0.
 \end{align*}
 由命题 \ref{prop3.1.1}，即得
-\begin{equation*}\int\limits_\gamma f(z)\dz=0\end{equation*}
+\begin{equation*}
+  \int\limits_\gamma f(z)\dz=0.
+\end{equation*}
 \end{proof}
 
-Cauchy于1825年得到的积分定理就是定理 \ref{thm3.2.1} 这种形式，除了假定$f$全纯外，还要假定$f'$连续.1900年，Goursat 改进了上面的证明，发现不必假定$f'$连续，仍可得到同样的结论，但证明当然要困难得多.
+Cauchy于1825年得到的积分定理就是定理 \ref{thm3.2.1} 这种形式，除了假定$f$全纯外，还要假定$f'$连续.
+1900年，Goursat 改进了上面的证明，发现不必假定$f'$连续，仍可得到同样的结论，但证明当然要困难得多.
 
 为此，我们先证明下面的引理：
 \begin{lemma}\label{lemma3.2.2}
-设$f$是域$D$中的连续函数，$\gamma$是$D$内的可求长曲线.对于任给的$\varepsilon>0$，一定存在一条$D$中的折线$P$，使得
-\begin{eenum}
-  \item $P$和$\gamma$有相同的起点和终点，$P$中其他的顶点都在$\gamma$上；
-  \item $\bigg|\int\limits_\gamma f(z)\dz-\int\limits_Pf(z)\dz\bigg|<\varepsilon$.
-\end{eenum}
+  设$f$是域$D$中的连续函数，$\gamma$是$D$内的可求长曲线.
+  对于任给的$\varepsilon>0$，一定存在一条$D$中的折线$P$，使得
+  \begin{eenum}
+    \item $P$和$\gamma$有相同的起点和终点，$P$中其他的顶点都在$\gamma$上；
+    \item $\bigg|\int\limits_\gamma f(z)\dz-\int\limits_Pf(z)\dz\bigg|<\varepsilon$.
+  \end{eenum}
 \end{lemma}
 \begin{proof}
-因为$\partial D$是一个闭集，$\gamma$是一个紧集，且两者不相交，根据定理 \ref{thm1.5.6}，$d(\gamma,\partial D)=\rho>0$.作域$G$，使得$\gamma\subset\bar G\subset D$.因为$f$在$\bar G$上连续，故必一致连续.于是，对任意$\varepsilon>0$，存在$\delta>0$，当$z',z''\in\bar G,|z'-z''|<\delta$时，$|f(z')-f(z'')|<\frac{\varepsilon}{2L}$，这里，$L$是$\gamma$的长度.现取$\eta=\min\{\rho,\delta\}$.在$\gamma$上取分点$z_0,z_1,\cdots,z_n$，使得每一个弧段$\wideparen{z_{k-1}z_k}$的长度都小于$\eta$，这里，$z_0,z_n$分别记为$\gamma$的起点和终点.连接$z_{k-1}$和$z_k$（$k=1,\cdots,n$），就得到一条折线$P$，它与$\gamma$有相同的起点和终点，且其他顶点都在$\gamma$上.由于$|z_{k-1}-z_k|<\eta\le\rho$，所以线段$\bar{z_{k-1}z_k}$都在$D$内，即折线$P$都在$D$内.
+因为$\partial D$是一个闭集，$\gamma$是一个紧集，且两者不相交，
+根据定理 \ref{thm1.5.6}，$d(\gamma,\partial D)=\rho>0$.
+作域 $G$，使得$\gamma\subset\bar G\subset D$. 因为$f$在$\bar G$上连续，故必一致连续.
+于是，对任意 $\varepsilon>0$，存在 $\delta>0$，当 $z',z''\in\bar G,|z'-z''|<\delta$时，
+$|f(z')-f(z'')|<\frac{\varepsilon}{2L}$，这里，$L$是$\gamma$的长度.
+现取 $\eta=\min\{\rho,\delta\}$. 在 $\gamma$ 上取分点 $z_0,z_1,\cdots,z_n$，
+使得每一个弧段 $\wideparen{z_{k-1}z_k}$ 的长度都小于 $\eta$，这里，$z_0,z_n$分别记为$\gamma$的起点和终点.
+连接$z_{k-1}$和$z_k$（$k=1,\cdots,n$），就得到一条折线$P$，它与$\gamma$有相同的起点和终点，
+且其他顶点都在$\gamma$上.由于$|z_{k-1}-z_k|<\eta\le\rho$，所以线段$\bar{z_{k-1}z_k}$都在$D$内，
+即折线$P$都在$D$内.
 
 现在估计下面的积分差，记$\gamma_k=\wideparen{z_{k-1}z_k},P_k=\bar{z_{k-1}z_k}$，则有
 \begin{align*}
-\bigg|\int\limits_{\gamma_k} f(z)\dz-\int\limits_{P_k}f(z)\dz\bigg|\le{}&\bigg|\int\limits_{\gamma_k} f(z)\dz-f(z_{k-1})(z_k-z_{k-1})\bigg|\\
-&+\bigg|\int\limits_{P_k} f(z)\dz-f(z_{k-1})(z_k-z_{k-1})\bigg|\\
-={}&\bigg|\int\limits_{\gamma_k} f(z)\dz-\int\limits_{\gamma_k} f(z_{k-1})\dz\bigg|+\bigg|\int\limits_{P_k} f(z)\dz-\int\limits_{P_k} f(z_{k-1})\dz\bigg|\\
-&=\bigg|\int\limits_{\gamma_k}\big(f(z)-f(z_{k-1})\big)\dz\bigg|
-+\bigg|\int\limits_{P_k}\big(f(z)-f(z_{k-1})\big)\dz\bigg|.
+  \bigg|\int\limits_{\gamma_k} f(z)\dz-\int\limits_{P_k}f(z)\dz\bigg|\le{}
+      & \bigg|\int\limits_{\gamma_k} f(z)\dz-f(z_{k-1})(z_k-z_{k-1})\bigg| \\
+      & + \bigg|\int\limits_{P_k} f(z)\dz-f(z_{k-1})(z_k-z_{k-1})\bigg| \\
+  ={} & \bigg|\int\limits_{\gamma_k} f(z)\dz-\int\limits_{\gamma_k} f(z_{k-1})\dz\bigg|
+        + \bigg|\int\limits_{P_k} f(z)\dz-\int\limits_{P_k} f(z_{k-1})\dz\bigg| \\
+  ={} & \bigg|\int\limits_{\gamma_k}\big(f(z)-f(z_{k-1})\big)\dz\bigg|
+        + \bigg|\int\limits_{P_k}\big(f(z)-f(z_{k-1})\big)\dz\bigg|.
 \end{align*}
 当$z\in\gamma_k$或$P_k$时，都有$|z-z_{k-1}|<\eta\le\delta$，因而$|f(z)-f(z_{k-1})|
 <\frac{\varepsilon}{2L}$. 对上面两个积分用长大不等式，它们都不超过$\frac{\varepsilon}{2L}|\gamma_k|$，因而
@@ -231,7 +258,8 @@ Cauchy于1825年得到的积分定理就是定理 \ref{thm3.2.1} 这种形式，
 
 （1）\hypertarget{thm3.2.3.1} 先假定$\gamma$是一个三角形的边界.
 
-如果$\bigg|\int\limits_\gamma f(z)\dz\bigg|=M$，我们证明$M=0$.连接三角形三边的中点，把三角形分成四个全等的小三角形（图 \ref{fig3.2}），这四个小三角形%
+如果 $\bigg|\int\limits_\gamma f(z)\dz\bigg|=M$，我们证明 $M=0$.
+连接三角形三边的中点，把三角形分成四个全等的小三角形（图 \ref{fig3.2}），这四个小三角形%
 \begin{figure}[!ht]
 \centering
 \begin{tikzpicture}[thick,>={Stealth[width=3pt]}]
@@ -267,8 +295,8 @@ Cauchy于1825年得到的积分定理就是定理 \ref{thm3.2.1} 这种形式，
 \begin{eenum}
   \item \label{3.2.3.1}$\varDelta\supset\varDelta_1\cdots\supset\varDelta_n\cdots$；
   \item \label{3.2.3.2} $\diam\varDelta_n\to0$（$n\to\infty$）；
-  \item \label{3.2.3.3}$|\gamma_n|=\frac{L}{2^n},n=1,2,\cdots$，这里，$L$为$\gamma$的长度；
-  \item \label{3.2.3.4}$\bigg|\int\limits_{\gamma_n}f(z)\dz\bigg|\ge\frac M{4^n},n=1,2,\cdots$.
+  \item \label{3.2.3.3}$|\gamma_n|=\frac{L}{2^n}$, $n=1,2,\cdots$，这里，$L$为$\gamma$的长度；
+  \item \label{3.2.3.4}$\bigg|\int\limits_{\gamma_n}f(z)\dz\bigg|\ge\frac M{4^n}$, $n=1,2,\cdots$.
 \end{eenum}
 
 由 \ref{3.2.3.1} 和 \ref{3.2.3.2}，根据第 \ref{chap1} 章 \ref{sec1.5} 节中的Cantor定理（定理 \ref{thm1.5.3}），存在唯一的$z_0\in\varDelta_n$（$n=1,2,\cdots$）.因为$D$是单连通的，所以$z_0\in D$. 由于$f$在$z_0$处全纯，故对任意$\varepsilon>0$，存在$\delta>0$，当$0<|z-z_0|<\delta$时，成立
@@ -293,8 +321,8 @@ Cauchy于1825年得到的积分定理就是定理 \ref{thm3.2.1} 这种形式，
 ={}&\int\limits_{\gamma_n}f(z)\dz.
 \end{align*}
 利用 \eqref{eq3.2.2} 式、\ref{3.2.3.3} 和长大不等式，即得
-\[\bigg|\int\limits_{\gamma_n}f(z)\dz\bigg|\le\frac{\varepsilon L}{2^n}=\varepsilon
-\bigg(\frac{L}{2^n}\bigg)^2.\]
+\[\bigg|\int\limits_{\gamma_n}f(z)\dz\bigg|\le\frac{\varepsilon L}{2^n}
+  = \varepsilon\bigg(\frac{L}{2^n}\bigg)^2.\]
 再由 \ref{3.2.3.4}，可得$M\le\varepsilon L^2$.又因为$\varepsilon$是任意小的正数，所以$M=0$.
 
 （2）假定$\gamma$是一个多边形的边界.\\[2mm]
@@ -362,22 +390,23 @@ Cauchy于1825年得到的积分定理就是定理 \ref{thm3.2.1} 这种形式，
 \[z=z_0+\rho\lambda(t),1\le t\le b,\]
 则显然有$\gamma_\rho\subset D$. 由定理 \ref{thm3.2.3}，成立
 \[\int\limits_{\gamma_\rho}f(z)\dz=\int_a^bf\big(z_0+\rho\lambda(t)\big)
-\rho\lambda'(t)\textrm dt=0,\]
+\rho\lambda'(t)\dif t=0,\]
 即
-\[\int_a^bf\big(z_0+\rho\lambda(t)\big)\lambda'(t)\mathrm dt=0.\]
+\[\int_a^bf\big(z_0+\rho\lambda(t)\big)\lambda'(t)\dif t=0.\]
 由于
-\[\big|[z_0+\rho\lambda(t)]-[z_0+\lambda(t)]\big|=(1-\rho)|\lambda(t)|
-\le(1-\rho)p<\delta_0<\delta.\]
+\[\big|[z_0+\rho\lambda(t)]-[z_0+\lambda(t)]\big|
+  = (1-\rho)|\lambda(t)|\le(1-\rho)p<\delta_0<\delta.\]
 所以
 \[\big|f\big(z_0+\lambda(t)\big)-f\big(z_0+\rho\lambda(t)\big)\big|<\varepsilon.\]
 于是
 \begin{align*}
-\bigg|\int\limits_\Gamma f(z)\dz\bigg|&=\bigg|\int_a^bf\big(z_0+\lambda(t)\big)\lambda'(t)\textrm dt\bigg|\\
-&=\bigg|\int_a^b\big[f\big(z_0+\lambda(t)\big)-f\big(z_0+\rho\lambda(t)\big)\big]
-\lambda'(t)\textrm dt\bigg|\\
-&\le\int_a^b\big|f\big(z_0+\lambda(t)\big)-f\big(z_0+
-\rho\lambda(t)\big)\big|\,|\lambda'(t)|\textrm dt\\
-&<\varepsilon q(b-a).
+\bigg|\int\limits_\Gamma f(z)\dz\bigg|
+& = \bigg|\int_a^bf\big(z_0+\lambda(t)\big)\lambda'(t)\dif t\bigg| \\
+& = \bigg|\int_a^b\big[f\big(z_0+\lambda(t)\big)-f\big(z_0+\rho\lambda(t)\big)\big]
+    \lambda'(t)\dif t\bigg| \\
+& \le \int_a^b\big|f\big(z_0+\lambda(t)\big)-f\big(z_0+
+\rho\lambda(t)\big)\big|\,|\lambda'(t)|\dif t \\
+& < \varepsilon q(b-a).
 \end{align*}
 由于$\varepsilon>0$是任意的，所以
 \begin{equation*}
