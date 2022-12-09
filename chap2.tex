@@ -1,4 +1,3 @@
-\setcounter{chapter}{1}
 \chapter{全纯函数\label{chap2}}
 \section{复变函数的导数\label{sec2.1}}
 现在把实变函数中导数的概念推广到复变函数中来.
@@ -130,7 +129,7 @@ v(x_0+\Delta x,y_0+\Delta y)-v(x_0,y_0)=\pp vx(x_0,y_0)\Delta x+\pp vy(x_0,y_0)\
 \[f(z_0+\Delta z)-f(z_0)=f'(z_0)\Delta z+o(|\Delta z|).\]
 与 \eqref{eq2.2.4} 式比较就知道，$f$在$z_0$处是实可微的，而且$\pp f{\bar z}(z_0)=0,f'(z_0)=\pp fz(z_0)$.
 
-反之，若$f$在$z_0$处实可微，且$\pp f{\bar z}(z_0)=0$，则由 \eqref{eq2.2.4} 式得
+反之，若$f$在$z_0$处实可微，且$\pp f{\bar z}(z_0)=0$，则由 \eqref{eq2.2.4} 得
 \[f(z_0+\Delta z)-f(z_0)=\pp{f}{z}(z_0)\Delta z+o(|\Delta z|).\]
 由此即知$f$在$z_0$处可微，而且$f'(z_0)=\pp fz(z_0)$.
 \end{proof}
@@ -180,7 +179,9 @@ $\pp f{\bar z}=0$称为\textbf{Cauchy--Riemann 方程}\index{G!公式!Cauchy--Ri
 \end{example}
 \begin{solution}
   显然，$\pp f{\bar z}=0$，且$f$在整个平面上是实可微的. 因而，$f$是$\MC$上的全纯函数，而且
-  \[f'(z)=\pp fz=nz^{n-1}.\]
+  \[
+    f'(z) = \pp fz = nz^{n-1}. \qedhere
+  \]
 \end{solution}
 
 \begin{example}
@@ -201,12 +202,12 @@ $\pp f{\bar z}=0$称为\textbf{Cauchy--Riemann 方程}\index{G!公式!Cauchy--Ri
 \end{prop}
 \begin{proof}
 由 \eqref{eq2.2.3} 式，有
-\[\pp u{\bar z}=\frac12\bigg(\pp ux-\ii\pp uy\bigg),\]
+\[\pp u{\bar z}=\frac12\bigg(\pp ux+\ii\pp uy\bigg),\]
 所以
 \begin{align*}
-\pppp uz{\bar z}&=\pp {}z\bigg(\pp u{\bar z}\bigg)\\
-&=\frac14\bigg[\pp{}x\bigg(\pp ux+\ii \pp uy\bigg)-\ii\pp{}y\bigg(\pp ux+\ii\pp uy\bigg)\bigg]\\
-&=\frac14\bigg(\ppp ux+\ppp uy\bigg)=\frac14\Delta u.
+  \pppp uz{\bar z} & = \pp {}z\bigg(\pp u{\bar z}\bigg)\\
+  & = \frac14\bigg[\pp{}x\bigg(\pp ux+\ii \pp uy\bigg)-\ii\pp{}y\bigg(\pp ux+\ii\pp uy\bigg)\bigg]\\
+  & = \frac14\bigg(\ppp ux+\ppp uy\bigg)=\frac14\Delta u. \qedhere
 \end{align*}
 \end{proof}
 
@@ -691,7 +692,7 @@ w=z^\mu&=\ee^{(a+b\ii)(\log|z|+\ii\arg z+2k\pi \ii)}\\
 \end{figure}
 成若干个简单的步骤，而每一个步骤都可用我们已知的变换来实现，把这些变换复合起来，就是我们要找的变换.图 \ref{fig2.5} 就是整个变换的分解过程.所以，要找的变换就是
 \begin{equation*}
-w=\sqrt{z_3}=\sqrt{z_2+h^2}=\sqrt{z_1^2+h^2}=\sqrt{(z-a)^2+h^2}.
+  w=\sqrt{z_3}=\sqrt{z_2+h^2}=\sqrt{z_1^2+h^2}=\sqrt{(z-a)^2+h^2}. \qedhere
 \end{equation*}
 \end{solution}
 
@@ -795,7 +796,7 @@ $\sin z=0$当且仅当$\ee^{2\ii z}-1=0$，而这只有当$z=k\pi$（$k=0,\pm1,\
 
 这一小段我们讨论多值函数
 \[w=\sqrt[\leftroot{-2}\uproot{6} n]{(z-a_1)^{\beta_1}\cdots(z-a_m)^{\beta_m}},\]
-这里，$a_1,\cdots,a_m$是复数，$\beta_1,\cdots,\beta_m$是整数，$n$是正整数.在什么样的域中，从它能分出单值的全纯分支呢?任取$z_0\ne a_j,j=1,\cdots,m$，取充分小的简单闭曲线$\gamma_0$，使$z_0$在其内部，$a_1,\cdots,a_m$都在其外部.当$z$沿着$\gamma_0$的正方向走一圈时，$z-a_1,\cdots,z-a_m$的辐角都不变，故$z_0$不是支点.再看$a_j$；是不是支点，以$a_1$为例，记$z-a_j=r_j\ee^{\ii\theta_j},j=1,\cdots,m$，于是$w$可写为
+这里，$a_1,\cdots,a_m$是复数，$\beta_1,\cdots,\beta_m$是整数，$n$是正整数.在什么样的域中，从它能分出单值的全纯分支呢?任取$z_0\ne a_j,j=1,\cdots,m$，取充分小的简单闭曲线$\gamma_0$，使$z_0$在其内部，$a_1,\cdots,a_m$都在其外部.当$z$沿着$\gamma_0$的正方向走一圈时，$z-a_1,\cdots,z-a_m$的辐角都不变，故$z_0$不是支点.再看$a_j$是不是支点，以$a_1$为例，记$z-a_j=r_j\ee^{\ii\theta_j},j=1,\cdots,m$，于是$w$可写为
 \[w=\sqrt[\uproot{6}\leftroot{-2} n]{r_1^{\beta_1}\cdots r_m^{\beta_m}\ee^{\ii(\beta_1\theta_1+\cdots+\beta_m\theta_m)}}.\]
 取简单闭曲线$\gamma_1$，使$a_1$在其内部，$a_2,\cdots,a_m$都在其外部。当$z$沿着$\gamma_1$的正方向走一圈时，$\theta_1$增加$2\pi$，$\theta_2,\cdots,\theta_m$都不变，$w$就变成
 \[w=\sqrt[\leftroot{-2}\uproot{6}n]{r_1^{\beta_1}\cdots r_m^{\beta_m}\ee^{\ii(\beta_1\theta_1+\cdots+\beta_m\theta_m)+2\pi\beta_1\ii}}
@@ -812,7 +813,9 @@ $\sin z=0$当且仅当$\ee^{2\ii z}-1=0$，而这只有当$z=k\pi$（$k=0,\pm1,\
 \end{example}
 \begin{solution}
 由于
-\[w=\sqrt{z^2-1}=\sqrt{(z-1)(z+1)},\]
+\[
+  w=\sqrt{z^2-1}=\sqrt{(z-1)(z+1)},
+\]
 这时$a_1=1,a_2=-1,\beta_1=\beta_2=1,n=2$. 所以$1$和$-1$都是它的支点，但无穷远点不是支点.因而，在除去线段$[-1,1]$的全平面（图 \ref{fig2.7}）上，或者在除去两条割线$\{z:-\infty<z<-1\}$和$\{z:1<z<\infty\}$的全平面（图 \ref{fig2.8}）上，都能分出单值的全纯分支.
 \begin{figure}[!ht]
 \centering
@@ -896,7 +899,7 @@ $\sin z=0$当且仅当$\ee^{2\ii z}-1=0$，而这只有当$z=k\pi$（$k=0,\pm1,\
 \end{enuma}
 \item 证明：$f(z)=z^2+2z+3$在$B(0,1)$中单叶.
 \item 若$\frac pq$（$q>0$）是有理数，证明：$z^{\frac pq}=\big(\sqrt[\leftroot{-1}\uproot{2}q]z\big)^p$.
-\item 验证$\bar{z^\mu}=\bar z^\mu$.
+\item 验证$\bar{z^\mu}=\bar z^{\bar\mu}$.
 \item 验证$z^{2\mu},(z^\mu)^2$和$(z^2)^\mu$是否相等，并说明理由.
 \item 设$f$在$\MC\backslash(-\infty,0]$上全纯，$f(1)=1,\mu>0$.证明：
 \begin{enuma}
@@ -1243,11 +1246,6 @@ node[above right]{$z_3$}(110:1)coordinate(z2)node[above left]{$z_2$}
 \begin{example}\label{exam2.5.11}
 求一分式线性变换，把月牙形域$D=\{z:|z|>1,|z-1|<2\}$变为带状域$G=\{w:0<\Re w<1\}$（见图 \ref{fig2.12}）.
 \end{example}
-\begin{solution}
-先设法把月牙形域$D$边界的两个圆周变为两条平行直线，同时把单位圆周变成虚轴，只要让$-1,\ii,1$分别变为$\infty,\ii,0$，即能达到目的.
-
-这个变换可以用等式 \ref{eq2.5.3} 的办法来做，但下面的方法更简单. 因为$-1$变成$\infty$，$1$变成$0$，所以变换一定是$w=\lambda\frac{z-1}{z+1}$的形式，这里，$\lambda$是待定的常数. 再用$\ii$变成$\ii$代进去，得$\lambda=1$，故得$w=\frac{z-1}{z+1}$.令$z=3$，得$w=\frac12$，所以它把圆周$|z-1|=2$变为$\Re w=\frac12$. 又因为$1$变为$0$，所以它把$|z-1|<2$变为$\Re w<\frac12$. 因而，$w=\frac{z-1}{z+1}$把月牙形域$D$变为带状域$0<\Re w<\frac12$. 于是，变换$w=2\frac{z-1}{z+1}$即把$D$映为$G$.
-\end{solution}
 \begin{figure}[!ht]
 \centering
 \subcaptionbox{\label{fig2.12a}}[0.48\textwidth]
@@ -1269,6 +1267,13 @@ node[above right]{$z_3$}(110:1)coordinate(z2)node[above left]{$z_2$}
 }
 \caption{\label{fig2.12}}
 \end{figure}
+
+\begin{solution}
+先设法把月牙形域$D$边界的两个圆周变为两条平行直线，同时把单位圆周变成虚轴，只要让$-1,\ii,1$分别变为$\infty,\ii,0$，即能达到目的.
+
+这个变换可以用等式 \ref{eq2.5.3} 的办法来做，但下面的方法更简单. 因为$-1$变成$\infty$，$1$变成$0$，所以变换一定是$w=\lambda\frac{z-1}{z+1}$的形式，这里，$\lambda$是待定的常数. 再用$\ii$变成$\ii$代进去，得$\lambda=1$，故得$w=\frac{z-1}{z+1}$.令$z=3$，得$w=\frac12$，所以它把圆周$|z-1|=2$变为$\Re w=\frac12$. 又因为$1$变为$0$，所以它把$|z-1|<2$变为$\Re w<\frac12$. 因而，$w=\frac{z-1}{z+1}$把月牙形域$D$变为带状域$0<\Re w<\frac12$. 于是，变换$w=2\frac{z-1}{z+1}$即把$D$映为$G$.
+\end{solution}
+
 
 
 （3）{\kaishu 对称点及其在分式线性变换下的不变性.}
@@ -1297,41 +1302,42 @@ node[above right]{$z_3$}(110:1)coordinate(z2)node[above left]{$z_2$}
 \[z^\ast=a+\frac{R^2}{\bar z-\bar a}.\]
 由此可见，圆心和无穷远点是关于圆周的一对对称点.
 
+\begin{figure}[!ht]
+  \centering
+    \begin{tikzpicture}[thick,>=Stealth,every node/.style={inner sep=1.5pt}]
+      \draw(0,0)coordinate(O)--(3,0)coordinate(A)--(6,0);
+      \draw(0,0)--(25:5)coordinate(z1)node[right]{$z^\ast$};
+      \draw(3,0)--(3.2,3)coordinate(z)node[above]{$z$};
+      \tkzInterLL(O,z1)(A,z)\tkzGetPoint{a}
+      \tkzDefMidPoint(z,z1)\tkzGetPoint{z2}
+      \draw(z2)--(a)node[above left]{$a$}--([turn]0:2.3)
+        (a)--(z2)--([turn]0:0.8)node[above]{$\gamma$};
+      \draw(0.3,0)arc(0:25:0.3);\node at(12:0.55){$\alpha$};
+      \tkzInterLL(a,z2)(O,A)\tkzGetPoint{B}
+      \begin{scope}
+        \clip(z)--(a)--(z2);
+        \draw(a)circle(0.3);
+        \node at(3.27,1.9){$\varphi$};
+      \end{scope}
+      \begin{scope}
+        \clip(a)--(B)--(A);
+        \draw(B)circle(0.2);
+        \node at(2.43,0.2){$\theta$};
+      \end{scope}
+      \begin{scope}
+        \clip(a)--(A)--(6,0);
+        \draw(A)circle(0.15);
+        \node at(3.25,0.28){$\beta$};
+      \end{scope}
+  \end{tikzpicture}
+   \caption{\label{fig2.13}}
+\end{figure}
 若$\gamma$是过$a$且与实轴夹角为$\theta$的直线，设$z$和$z^\ast$关于$\gamma$对称（图 \ref{fig2.13}），则$|z-a|=|z^\ast-a|$，所以
 \[z^\ast-a=|z^\ast-a|\ee^{\ii \alpha}=|z-a|\ee^{-\ii\beta}\ee^{\ii(\alpha+\beta)}
 =(\bar z-\bar a)\ee^{2\ii\theta}.\]
 因而有
 \[z^\ast=a+(\bar z-\bar a)\ee^{2\ii\theta}.\]
-\begin{figure}[!ht]
-\centering
-\begin{tikzpicture}[thick,>=Stealth,every node/.style={inner sep=1.5pt}]
-\draw(0,0)coordinate(O)--(3,0)coordinate(A)--(6,0);
-\draw(0,0)--(25:5)coordinate(z1)node[right]{$z^\ast$};
-\draw(3,0)--(3.2,3)coordinate(z)node[above]{$z$};
-\tkzInterLL(O,z1)(A,z)\tkzGetPoint{a}
-\tkzDefMidPoint(z,z1)\tkzGetPoint{z2}
-\draw(z2)--(a)node[above left]{$a$}--([turn]0:2.3)
-(a)--(z2)--([turn]0:0.8)node[above]{$\gamma$};
-\draw(0.3,0)arc(0:25:0.3);\node at(12:0.55){$\alpha$};
-\tkzInterLL(a,z2)(O,A)\tkzGetPoint{B}
-\begin{scope}
-\clip(z)--(a)--(z2);
-\draw(a)circle(0.3);
-\node at(3.27,1.9){$\varphi$};
-\end{scope}
-\begin{scope}
-\clip(a)--(B)--(A);
-\draw(B)circle(0.2);
-\node at(2.43,0.2){$\theta$};
-\end{scope}
-\begin{scope}
-\clip(a)--(A)--(6,0);
-\draw(A)circle(0.15);
-\node at(3.25,0.28){$\beta$};
-\end{scope}
-\end{tikzpicture}
-\caption{\label{fig2.13}}
-\end{figure}
+
 
 下面用交比给出两个点关于圆周对称的条件：
 \begin{prop}\label{prop2.5.13}
@@ -1377,7 +1383,9 @@ node[above right]{$z_3$}(110:1)coordinate(z2)node[above left]{$z_2$}
 该分式线性变换一定把实轴变为单位圆周.由于$a$和$\bar a$关于实轴对称，由定理 \ref{thm2.5.14}，这对点一定被变为一对关于单位圆周对称的点.已知$a$变为$0$，所以$\bar a$变为$\infty$.于是，这个变换可写成
 \[w=\lambda\frac{z-a}{z-\bar a}.\]
 为了使它把实轴变为单位圆周，$z=0$应变为单位圆周上的点，即$z=0$时应有$|w|=1$，由此得$\lambda=\ee^{\ii\theta}$.故所求的变换为
-\[w=\ee^{\ii\theta}\frac{z-a}{z-\bar a}.\]
+\[
+  w = \ee^{\ii\theta} \frac{z-a}{z-\bar a}. \qedhere
+\]
 \end{solution}
 
 \begin{example}\label{exam2.5.16}
@@ -1389,7 +1397,9 @@ node[above right]{$z_3$}(110:1)coordinate(z2)node[above left]{$z_2$}
 为了把单位圆周变成单位圆周，即将满足$|z|=1$的$z$变为满足$|w|=1$的$w,\mu$必须满足
 \[1=|w|=|\mu|\frac{|z-a|}{|1-\bar az|}=|\mu|\frac{|z-a|}{|z|\,|\bar z-\bar a|}=|\mu|,\]
 即$\mu=\ee^{\ii\theta}$. 故所求的变换为
-\[w=\ee^{\ii\theta}\frac{z-a}{1-\bar az}.\]
+\[
+  w=\ee^{\ii\theta}\frac{z-a}{1-\bar az}. \qedhere
+\]
 \end{solution}
 
 这个变换十分重要，它是把单位圆盘一一地变为自己的变换，称为单位圆盘的\textbf{全纯自同构}\index{Q!全纯自同构}.以后我们将证明（定理 \ref{thm4.5.5}），把单位圆盘一一地变为自己的全纯映射只能是这种样子，再没有其他的变换.

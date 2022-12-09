@@ -1,4 +1,3 @@
-\setcounter{chapter}{2}
 \chapter{全纯函数的积分表示\label{chap3}}
 
 本章将要介绍的Cauchy积分定理和Cauchy积分公式是整个全纯函数理论的基础，由它们可以推出一系列重要的结论，
@@ -9,7 +8,7 @@
 
 设$z=\gamma(t)$（$a\le t\le b$）是一条可求长曲线，$f$是定义在$\gamma$上的函数，
 沿$\gamma$的正方向取分点$\gamma(a)=z_0,z_1,z_2,\cdots,z_n=\gamma(b)$，
-在$\gamma$中从$z_{k-1}$到$z_k$的弧段上任取点$\zeta_k$, $k=1,\cdots,n$（见图 \ref{fig3.1}），作Riemann和
+在$\gamma$中从$z_{k-1}$到$z_k$的弧段上任取点$\zeta_k$， $k=1,\cdots,n$（见图 \ref{fig3.1}），作Riemann和
 \begin{equation}\label{eq3.1.1}
 \sum_{k=1}^nf(\zeta_k)(z_k-z_{k-1}).
 \end{equation}
@@ -152,7 +151,7 @@ $\gamma$的参数方程为$z=a+r\ee^{\ii t},0\le t\le2\pi$. 由公式 \eqref{eq3
 \item 计算积分 $\int\limits_{|z|=3}\frac{2z-1}{z(z-1)}\dz$.
 \item 如果多项式 $Q(z)$ 比多项式 $P(z)$ 高两次，试证：
   \[\lim_{R\to\infty}\int\limits_{|z|=R}\frac{P(z)}{Q(z)}\dz=0.\]
-\item 计算积分$\int\limits_{|z|=r}z^n\bar z^k\dz$，其中，$n$, $k$ 为整数.
+\item 计算积分$\int\limits_{|z|=r}z^n\bar z^k\dz$，其中，$n,k$ 为整数.
 \item 设$f\in C^1(D)$，$\gamma$是域$D$中分别以$a$和$b$为起点和终点的可求长曲线. 证明：
   \[\int\limits_\gamma\bigg\{\pp{f(z)}z\dz+\pp{f(z)}{\bar z}\textrm d\bar z\bigg\}=f(b)-f(a).\]
 \item 设$\gamma$是可求长曲线，$\varphi$在$\gamma$上全纯，$\Gamma=\varphi(\gamma)$. 证明：
@@ -192,7 +191,7 @@ $f$在其上的积分是不相等的，即$f$的积分与路径有关.我们问�
 \[\int\limits_\gamma f(z)\dz=0.\]
 \end{theorem}
 \begin{proof}
-由$\gamma$围成的域记为$G$，因为$f'$连续，即$\pp ux,\pp vx,\pp uy,\pp vy$连续，故可用Green公式. 
+由$\gamma$围成的域记为$G$，因为$f'$连续，即$\pp ux,\pp vx,\pp uy,\pp vy$连续，故可用Green公式.
 又因$f$在$D$中全纯，故Cauchy--Riemann 方程成立. 于是
 \begin{align*}
 &\int\limits_\gamma u\dx-v\dy=\iint\limits_G\bigg(-\pp vx-\pp uy\bigg)\dx\dy=0,\\
@@ -295,7 +294,7 @@ $|f(z')-f(z'')|<\frac{\varepsilon}{2L}$，这里，$L$是$\gamma$的长度.
 \begin{eenum}
   \item \label{3.2.3.1}$\varDelta\supset\varDelta_1\cdots\supset\varDelta_n\cdots$；
   \item \label{3.2.3.2} $\diam\varDelta_n\to0$（$n\to\infty$）；
-  \item \label{3.2.3.3}$|\gamma_n|=\frac{L}{2^n}$, $n=1,2,\cdots$，这里，$L$为$\gamma$的长度；
+  \item \label{3.2.3.3}$|\gamma_n|=\frac{L}{2^n},n=1,2,\cdots$，这里，$L$为$\gamma$的长度；
   \item \label{3.2.3.4}$\bigg|\int\limits_{\gamma_n}f(z)\dz\bigg|\ge\frac M{4^n}$, $n=1,2,\cdots$.
 \end{eenum}
 
