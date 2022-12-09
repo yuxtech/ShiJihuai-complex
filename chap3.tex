@@ -101,7 +101,7 @@ $\gamma$是以$a$为中心、以$r$为半径的圆周.
 \end{example}
 \begin{solution}
 $\gamma$的参数方程为$z=a+r\ee^{\ii t},0\le t\le2\pi$. 由公式 \eqref{eq3.1.3}，得
-\[\int\limits_\gamma\frac{\dz}{(z-a)^n}=\int_0^{2\pi}\frac{r\ii\ee^{\ii t}}{r^n\ee^{\ii nt}}\textrm dt=r^{1-n}\ii\int_0^{2\pi}\ee^{\ii(1-n)t}\textrm dt.\]
+\[\int\limits_\gamma\frac{\dz}{(z-a)^n}=\int_0^{2\pi}\frac{r\ii\ee^{\ii t}}{r^n\ee^{\ii nt}}\dif t=r^{1-n}\ii\int_0^{2\pi}\ee^{\ii(1-n)t}\dif t.\]
 所以，上述积分当$n\ne1$时为零，当$n=1$时为$2\pi\ii$，即
 \begin{equation*}\int\limits_\gamma\frac{\dz}{(z-a)^n}=\begin{cases}
 0,&n\ne1;\\
@@ -153,7 +153,7 @@ $\gamma$的参数方程为$z=a+r\ee^{\ii t},0\le t\le2\pi$. 由公式 \eqref{eq3
   \[\lim_{R\to\infty}\int\limits_{|z|=R}\frac{P(z)}{Q(z)}\dz=0.\]
 \item 计算积分$\int\limits_{|z|=r}z^n\bar z^k\dz$，其中，$n,k$ 为整数.
 \item 设$f\in C^1(D)$，$\gamma$是域$D$中分别以$a$和$b$为起点和终点的可求长曲线. 证明：
-  \[\int\limits_\gamma\bigg\{\pp{f(z)}z\dz+\pp{f(z)}{\bar z}\textrm d\bar z\bigg\}=f(b)-f(a).\]
+  \[\int\limits_\gamma\bigg\{\pp{f(z)}z\dz+\pp{f(z)}{\bar z}\dif \bar z\bigg\}=f(b)-f(a).\]
 \item 设$\gamma$是可求长曲线，$\varphi$在$\gamma$上全纯，$\Gamma=\varphi(\gamma)$. 证明：
   \begin{enuma}
     \item $\Gamma$也是可求长曲线；
@@ -554,16 +554,16 @@ I=
 \item 设$n$为正整数，试通过计算积分
 \[\int\limits_{|z|=1}\bigg(z+\frac1z\bigg)^n\frac{\dz}z\]
 证明
-\[\int_0^{2\pi}\cos^{2n}\theta\textrm d\theta=2\pi\frac{(2n-1)!!}{(2n)!!}.\]
+\[\int_0^{2\pi}\cos^{2n}\theta\dif \theta=2\pi\frac{(2n-1)!!}{(2n)!!}.\]
 \item 设$0<r<R,f$在$B(0,R)$中全纯. 证明：
 \begin{enuma}
-  \item $f(0)=\frac1{2\pi}\int_0^{2\pi}f(r\ee^{\ii\theta})\textrm d\theta$；
+  \item $f(0)=\frac1{2\pi}\int_0^{2\pi}f(r\ee^{\ii\theta})\dif \theta$；
   \item $f(0)=\frac1{\pi r^2}\iint\limits_{|z|<r}f(z)\dx\dy$.
 \end{enuma}
 \item 设$u$是$B(0,R)$中的调和函数，$0<r<R$. 证明：
-\[u(0)=\frac1{2\pi}\int_0^{2\pi}u(r\ee^{\ii\theta})\textrm d\theta.\]
+\[u(0)=\frac1{2\pi}\int_0^{2\pi}u(r\ee^{\ii\theta})\dif \theta.\]
 \item 设$0<r<1$. 证明：
-\[\int_0^\pi\log(1-2r\cos\theta+r^2)\textrm d\theta=0.\]
+\[\int_0^\pi\log(1-2r\cos\theta+r^2)\dif \theta=0.\]
 \end{xiti}
 
 \section{全纯函数的原函数\label{sec3.3}}
@@ -575,13 +575,13 @@ I=
 如果$f\in H(D)$，是否一定存在原函数呢?答案是否定的.例如，若$D$是除去原点的单位圆盘，$f(z)=\frac1z$，$f$当然是$D$上的全纯函数.如果它在$D$上存在原函数$F$，则有$F'(z)=\frac1z$在$D$上成立，但这是不可能的.因为若上式成立，在$D$中取光滑闭曲线$\gamma:[a,b]\to D$，则有$\gamma(a)=\gamma(b)$，于是
 \begin{align*}
 \int\limits_\gamma\frac{\dz}z&=\int\limits_\gamma F'(z)\dz
-=\int_a^bF'\big(\gamma(t)\big)\gamma'(t)\textrm dt\\
+=\int_a^bF'\big(\gamma(t)\big)\gamma'(t)\dif t\\
 &=F\big(\gamma(b)\big)-F\big(\gamma(a)\big)=0.
 \end{align*}
 但由例 \ref{exam3.1.4} 知道$\int\limits_\gamma\frac{\dz}z=2\pi\ii$.这一矛盾说明$\frac1z$在$D$上不存在原函数.问题出在$D$不是单连通域.对于单连通域上的全纯函数，一定存在原函数.为此，先证明
 \begin{theorem}\label{thm3.3.2}
 设$f$在域$D$中连续，且对$D$中任意可求长闭曲线$\gamma$，均有$\int\limits_\gamma f(z)\dz=0$，那么
-\[F(z)=\int_{z_0}^zf(\zeta)\textrm d\zeta\]
+\[F(z)=\int_{z_0}^zf(\zeta)\dif \zeta\]
 是$D$中的全纯函数，且在$D$中有$F'(z)=f(z)$，这里，$z_0$是$D$中一固定点.
 \end{theorem}
 \begin{proof}
@@ -589,8 +589,8 @@ I=
 \begin{minipage}[b]{0,7\textwidth}
 值函数.任取$a\in D$，我们证明$F'(a)=f(a)$.因为$f$在$a$点连续，故对任意$\varepsilon>0$，存在$\delta>0$，当$|z-a|<\delta$时，有$|f(z)-f(a)|<\varepsilon$.今取$z\in B(a,\delta)$（图 \ref{fig3.6}），显然
 \begin{align*}
-F(z)-F(a)&=\int_{z_0}^zf(\zeta)\textrm d\zeta-\int_{z_0}^af(\zeta)\textrm d\zeta\\
-&=\int_a^zf(\zeta)\textrm d\zeta.
+F(z)-F(a)&=\int_{z_0}^zf(\zeta)\dif \zeta-\int_{z_0}^af(\zeta)\dif \zeta\\
+&=\int_a^zf(\zeta)\dif \zeta.
 \end{align*}
 这里，积分在线段$[a,z]$上进行，于是
 \end{minipage}
@@ -611,15 +611,15 @@ F(z)-F(a)&=\int_{z_0}^zf(\zeta)\textrm d\zeta-\int_{z_0}^af(\zeta)\textrm d\zeta
 \begin{align*}
 \bigg|\frac{F(z)-F(a)}{z-a}-f(a)\bigg|
 &=\frac1{|z-a|}\bigg|F(z)-F(a)-f(a)(z-a)\bigg|\\
-&=\frac1{|z-a|}\bigg|\int_a^zf(\zeta)\textrm d\zeta-\int_a^zf(a)\textrm d\zeta\bigg|\\
-&=\frac1{|z-a|}\bigg|\int_a^z\big(f(\zeta)-f(a)\big)\textrm d\zeta\bigg|.
+&=\frac1{|z-a|}\bigg|\int_a^zf(\zeta)\dif \zeta-\int_a^zf(a)\dif \zeta\bigg|\\
+&=\frac1{|z-a|}\bigg|\int_a^z\big(f(\zeta)-f(a)\big)\dif \zeta\bigg|.
 \end{align*}
 由长大不等式，即知上式右端小于$\varepsilon$，这就证明了$F'(a)=f(a)$.
 \end{proof}
 
 作为定理 \ref{thm3.3.2} 的一个简单的推论，我们有
 \begin{theorem}\label{thm3.3.3}
-设$D$是$\MC$中的单连通域，$f\in H(D)$，那么$F(z)=\int_{z_0}^zf(\zeta)\textrm d\zeta$是$f$在$D$中的一个原函数.
+设$D$是$\MC$中的单连通域，$f\in H(D)$，那么$F(z)=\int_{z_0}^zf(\zeta)\dif \zeta$是$f$在$D$中的一个原函数.
 \end{theorem}
 \begin{proof}
 在定理的假定下，由Cauchy积分定理知道，$f$沿$D$中任意可求长闭曲线的积分为零，由定理 \ref{thm3.3.2} 即得本定理.
@@ -628,25 +628,25 @@ F(z)-F(a)&=\int_{z_0}^zf(\zeta)\textrm d\zeta-\int_{z_0}^af(\zeta)\textrm d\zeta
 类似于微积分中的Newton--Leibniz公式，我们有
 \begin{theorem}\label{thm3.3.4}
 设$D$是$\MC$中的单连通域，$f\in H(D),\varPhi$是$f$的任一原函数，那么
-\[\int_{z_0}^zf(\zeta)\textrm d\zeta=\varPhi(z)-\varPhi(z_0).\]
+\[\int_{z_0}^zf(\zeta)\dif \zeta=\varPhi(z)-\varPhi(z_0).\]
 \end{theorem}
 \begin{proof}
 证明方法也与微积分中一样.由定理 \ref{thm3.3.3} 知，由变上限积分确定的函数$F$是$f$的一个原函数，因而
 \[\big(\varPhi(z)-F(z)\big)'=f(z)-f(z)=0.\]
 故由第 \ref{chap2} 章习题 \hyperlink{xiti2.2}{2.2} 的第 \hyperlink{xiti2.2.1}{1} 题知道$\varPhi(z)-F(z)$是一个常数，因而
 \begin{equation*}
-\int_{z_0}^zf(\zeta)\textrm d\zeta=F(z)-F(z_0)=\varPhi(z)-\varPhi(z_0).
+\int_{z_0}^zf(\zeta)\dif \zeta=F(z)-F(z_0)=\varPhi(z)-\varPhi(z_0).
 \end{equation*}
 \end{proof}
 
 现在设$D$是多连通域，$f\in H(D)$，一般来说
-\[F(z)=\int_{z_0}^zf(\zeta)\textrm d\zeta\]
+\[F(z)=\int_{z_0}^zf(\zeta)\dif \zeta\]
 是一个多值函数，它在$z$点的值将随着连接$z_0$和$z$的曲线变化而变动.下面看一个具体的例子：
 
 设$D=\MC\backslash\{0\}$，则$D$是一个二连通域，$f(z)=\frac1z$是$D$中的全纯函数，我们来研究积分
-\[\int_1^z\frac1\zeta\textrm d\zeta.\]
+\[\int_1^z\frac1\zeta\dif \zeta.\]
 如果连接$1$和$z$的曲线$\gamma$不围绕原点（图 \ref{fig3.7}），那么$\frac1\zeta$沿$\gamma$的积分等于在实轴上从$1$到$|z|$的积分与圆弧$\gamma'$上的积分之和，即
-\[\int\limits_\gamma\frac{\textrm d\zeta}{\zeta}=\int_1^{|z|}\frac{\dx}x+\int_0^{\arg z}\frac{\ii|z|\ee^{\ii\theta}}{|z|\ee^{\ii\theta}}\textrm d\theta=\log|z|+\ii\arg z=\log z.\]
+\[\int\limits_\gamma\frac{\dif \zeta}{\zeta}=\int_1^{|z|}\frac{\dx}x+\int_0^{\arg z}\frac{\ii|z|\ee^{\ii\theta}}{|z|\ee^{\ii\theta}}\dif \theta=\log|z|+\ii\arg z=\log z.\]
 \begin{figure}[!ht]
 \centering
 \begin{minipage}[b]{0.48\linewidth}
@@ -690,13 +690,13 @@ coordinate(a1)[bend right=60]to(190:1.2)coordinate(b)
 
 \noindent 如果连接$1$和$z$的曲线$\gamma$绕原点沿反时针方向转了$2$圈（图 \ref{fig3.8}），这时沿$\gamma$的积分可以分解为沿$\wideparen{1az}$，$\wideparen{abea}$和$\wideparen{bcdb}$的积分，即
 \begin{equation}\label{eq3.3.1}
-\int\limits_\gamma\frac{\textrm d\zeta}{\zeta}
-=\int\limits_{\wideparen{1az}}\frac{\textrm d\zeta}{\zeta}+\int\limits_{\wideparen{abea}}\frac{\textrm d\zeta}{\zeta}+\int\limits_{\wideparen{bcdb}}\frac{\textrm d\zeta}{\zeta}.
+\int\limits_\gamma\frac{\dif \zeta}{\zeta}
+=\int\limits_{\wideparen{1az}}\frac{\dif \zeta}{\zeta}+\int\limits_{\wideparen{abea}}\frac{\dif \zeta}{\zeta}+\int\limits_{\wideparen{bcdb}}\frac{\dif \zeta}{\zeta}.
 \end{equation}
 由于$\wideparen{abea}$和$\wideparen{bcdb}$是两条围绕原点的简单闭曲线，故由 \ref{sec3.2} 节的例 \ref{exam3.2.7}，\eqref{eq3.3.1} 式右端的后两个积分都等于$2\pi\ii$.根据上面的计算，\eqref{eq3.3.1} 式右端的第一个积分为$\log z$，因而得
-\[\int\limits_\gamma\frac{\textrm d\zeta}\zeta=\log z+4\pi\ii.\]
+\[\int\limits_\gamma\frac{\dif \zeta}\zeta=\log z+4\pi\ii.\]
 由此可见，随着绕原点圈数的不同，一般可得
-\[\int\limits_\gamma\frac{\textrm d\zeta}\zeta=\log z+2k\pi\ii,k=0,\pm1,\cdots,\]
+\[\int\limits_\gamma\frac{\dif \zeta}\zeta=\log z+2k\pi\ii,k=0,\pm1,\cdots,\]
 这恰好是对数函数$\Log z$.所以，对数函数也可用变上限的积分来定义.
 \begin{xiti}
 \item 设$D$是域，$f,g\in H(D)$.如果$fg'$在$D$上有原函数$\varphi$. 证明：$f'g$在$D$上有原函数$fg-\varphi$.
@@ -712,7 +712,7 @@ Cauchy积分公式是Cauchy积分定理最重要的推论之一，它是全纯�
 \begin{theorem}\label{thm3.4.1}
 设$D$是由可求长简单闭曲线$\gamma$围成的域，如果$f\in H(D)\cap C(\bar D)$，那么对任意$z\in D$，均有
 \begin{equation}\label{eq3.4.1}
-  f(z)=\frac1{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{\zeta-z}\textrm d\zeta.
+  f(z)=\frac1{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{\zeta-z}\dif \zeta.
 \end{equation}
 \end{theorem}
 \begin{proof}
@@ -720,12 +720,12 @@ Cauchy积分公式是Cauchy积分定理最重要的推论之一，它是全纯�
 
 \noindent\begin{minipage}{0.7\textwidth}
 \begin{equation}\label{eq3.4.2}
-\frac1{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{\zeta-z}\textrm d\zeta
-=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta.
+\frac1{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{\zeta-z}\dif \zeta
+=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(\zeta)}{\zeta-z}\dif \zeta.
 \end{equation}
-又因为$\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{\textrm d\zeta}{\zeta-z}=1$，所以
+又因为$\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{\dif \zeta}{\zeta-z}=1$，所以
 \begin{equation}\label{eq3.4.3}
-f(z)=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(z)}{\zeta-z}\textrm d\zeta.
+f(z)=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(z)}{\zeta-z}\dif \zeta.
 \end{equation}
 于是，由 \eqref{eq3.4.2} 式、\eqref{eq3.4.3} 式及长大不等式即得
 \end{minipage}
@@ -742,8 +742,8 @@ f(z)=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(z)}{\zeta-z}\textrm d\zeta.
 \captionof{figure}{\label{fig3.9}}
 \end{minipage}
 \begin{align*}
-\bigg|f(z)-\frac1{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{\zeta-z}\textrm d\zeta\bigg|&=\bigg|\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(z)}{\zeta-z}\textrm d\zeta-\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta\bigg|\\
-&=\frac1{2\pi}\bigg|\int\limits_{\gamma_\rho}\frac{f(z)-f(\zeta)}{\zeta-z}\textrm d\zeta\bigg|\le\frac1{2\pi}\cdot\frac{\varepsilon}\rho\cdot2\pi\rho\\
+\bigg|f(z)-\frac1{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{\zeta-z}\dif \zeta\bigg|&=\bigg|\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(z)}{\zeta-z}\dif \zeta-\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(\zeta)}{\zeta-z}\dif \zeta\bigg|\\
+&=\frac1{2\pi}\bigg|\int\limits_{\gamma_\rho}\frac{f(z)-f(\zeta)}{\zeta-z}\dif \zeta\bigg|\le\frac1{2\pi}\cdot\frac{\varepsilon}\rho\cdot2\pi\rho\\
 &=\varepsilon.
 \end{align*}
 让$\varepsilon\to0$，即得所要证的等式 \eqref{eq3.4.1}.
@@ -752,22 +752,22 @@ f(z)=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(z)}{\zeta-z}\textrm d\zeta.
 等式 \eqref{eq3.4.1} 称为\textbf{Cauchy积分公式}\index{G!公式!Cauchy积分公式}，它表明全纯函数在域中的值由它在边界上的值所完全确定. \eqref{eq3.4.1} 式是全纯函数的一种积分表示，通过这种表示，我们可以证明全纯函数有任意阶导数，这实际上是下面更一般的结果的一个特殊情形：
 
 设$\gamma$是$\MC$中一条可求长曲线（不一定是闭的），$g$是$\gamma$上的连续函数，如果$z\in\MC\backslash\gamma$，那么积分
-\[\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{\zeta-z}\textrm d\zeta\]
+\[\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{\zeta-z}\dif \zeta\]
 是存在的，它定义了$\MC\backslash\gamma$上的一个函数$G(z)$，即
-\[G(z)=\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{\zeta-z}\textrm d\zeta,\]
+\[G(z)=\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{\zeta-z}\dif \zeta,\]
 称它为\textbf{Cauchy型积分}\index{C!Cauchy型积分}.由Cauchy型积分确定的函数有很好的性质.
 \begin{theorem}\label{thm3.4.2}
 设$\gamma$是$\MC$中的可求长曲线，$g$是$\gamma$上的连续函数，那么由Cauchy型积分确定的函数
-\[G(z)=\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{\zeta-z}\textrm d\zeta,\]
+\[G(z)=\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{\zeta-z}\dif \zeta,\]
 在$\MC\backslash\gamma$上有任意阶导数，而且
 \begin{equation}\label{eq3.4.4}
-  G^{(n)}(z)=\frac{n!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{n+1}}\textrm d\zeta,n=1,2,\cdots.
+  G^{(n)}(z)=\frac{n!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{n+1}}\dif \zeta,n=1,2,\cdots.
 \end{equation}
 \end{theorem}
 \begin{proof}
 我们用数学归纳法来证明等式 \eqref{eq3.4.4}.先设$n=1$，我们要证明
 \begin{equation}\label{eq3.4.5}
-G'(z)=\frac1{2\pi\ii}\int\limits_\gamma \frac{g(\zeta)}{(\zeta-z)^2}\textrm d\zeta,z\in\MC\backslash\gamma.
+G'(z)=\frac1{2\pi\ii}\int\limits_\gamma \frac{g(\zeta)}{(\zeta-z)^2}\dif \zeta,z\in\MC\backslash\gamma.
 \end{equation}
 任意取定$z_0\in\MC\backslash\gamma$，记$\rho=\inf_{\zeta\in\gamma}|\zeta-z_0|>0,\delta=\min\bigg\{1,\frac\rho2\bigg\}$，则当$\zeta\in\gamma,z\in B(z_0,\delta)$时，有$\bigg|\frac{z-z_0}{\zeta-z_0}\bigg|<\frac12$. 于是
 \begin{equation}\label{eq3.4.6}
@@ -782,24 +782,24 @@ G'(z)=\frac1{2\pi\ii}\int\limits_\gamma \frac{g(\zeta)}{(\zeta-z)^2}\textrm d\ze
 \end{equation}
 这样，由 \eqref{eq3.4.6} 式便得
 \begin{align*}
-G(z)&=\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{\zeta-z}\textrm d\zeta\\
-&=\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{\zeta-z_0}\textrm d\zeta+\frac{z-z_0}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z_0)^2}\textrm d\zeta
-+\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)h(z,\zeta)}{\zeta-z_0}\textrm d\zeta,
+G(z)&=\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{\zeta-z}\dif \zeta\\
+&=\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{\zeta-z_0}\dif \zeta+\frac{z-z_0}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z_0)^2}\dif \zeta
++\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)h(z,\zeta)}{\zeta-z_0}\dif \zeta,
 \end{align*}
 因而有
 \begin{equation}\label{eq3.4.8}
-\frac{G(z)-G(z_0)}{z-z_0}-\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z_0)^2}\textrm d\zeta=\frac1{2\pi\ii(z-z_0)}\int\limits_\gamma\frac{g(\zeta)h(z,\zeta)}{\zeta-z_0}\textrm d\zeta.
+\frac{G(z)-G(z_0)}{z-z_0}-\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z_0)^2}\dif \zeta=\frac1{2\pi\ii(z-z_0)}\int\limits_\gamma\frac{g(\zeta)h(z,\zeta)}{\zeta-z_0}\dif \zeta.
 \end{equation}
 若记$M=\sup_{\zeta\in\gamma}|g(\zeta)|$，由 \eqref{eq3.4.7} 式便知 \eqref{eq3.4.8} 式右端的绝对值不超过
 \[\frac{M|\gamma|}{\pi\rho^3|z-z_0|}\cdot|z-z_0|^2=\frac{M|\gamma|}{\pi\rho^3}|z-z_0|.\]
 在 \eqref{eq3.4.8} 式两端令$z\to z_0$，即得
-\[G'(z)=\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^2}\textrm d\zeta.\]
+\[G'(z)=\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^2}\dif \zeta.\]
 
 现设$n=k$时 \eqref{eq3.4.4} 式成立. 即
-\[ G^{(k)}(z)=\frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{k+1}}\textrm d\zeta,
+\[ G^{(k)}(z)=\frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{k+1}}\dif \zeta,
 \]
 要证明
-\[ G^{(k+1)}(z)=\frac{(k+1)!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{k+2}}\textrm d\zeta.
+\[ G^{(k+1)}(z)=\frac{(k+1)!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{k+2}}\dif \zeta.
 \]
 由 \eqref{eq3.4.6} 式和二项式定理，可得
 \begin{align*}
@@ -812,10 +812,10 @@ G(z)&=\frac1{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{\zeta-z}\textrm d\zeta\\
 \end{equation}
 这里，$C$是一个常数. 于是
 \begin{align*}
-G^{(k)}(z)={}&\frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{k+1}}\textrm d\zeta\\
+G^{(k)}(z)={}&\frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{k+1}}\dif \zeta\\
 &+\frac{(k+1)!}{2\pi\ii}(z-z_0)\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z_0)^{k+2}}
-\textrm d\zeta+\frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)H(z,\zeta)}{(\zeta-z_0)^{k+1}}
-\textrm d\zeta,
+\dif \zeta+\frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)H(z,\zeta)}{(\zeta-z_0)^{k+1}}
+\dif \zeta,
 \end{align*}
 即
 \begin{equation}\label{eq3.4.10}
@@ -825,7 +825,7 @@ G^{(k)}(z)={}&\frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{k+1
 \end{gathered}
 \end{equation}
 由 \eqref{eq3.4.9} 式便知 \eqref{eq3.4.10} 式右端的绝对值不超过$K|z-z_0|$，这里，$K$是一个常数. 在 \eqref{eq3.4.10} 式中令$z\to z_0$，即得
-\[ G^{(k+1)}(z_0)=\frac{(k+1)!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z_0)^{k+2}}\textrm d\zeta.
+\[ G^{(k+1)}(z_0)=\frac{(k+1)!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z_0)^{k+2}}\dif \zeta.
 \]
 由于$z_0$是$D$中的任意点，归纳法证明完毕.
 \end{proof}
@@ -834,12 +834,12 @@ G^{(k)}(z)={}&\frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{k+1
 \begin{theorem}\label{thm3.4.3}
 设$D$是由可求长简单闭曲线$\gamma$围成的域，如果$f\in H(D)\cap C(\bar D)$，那么$f$在$D$上有任意阶导数，而且对任意$z\in D$，有
 \begin{equation*}
-  f^{(n)}(z)=\frac{n!}{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{(\zeta-z)^{n+1}}\textrm d\zeta,n=1,2,\cdots.
+  f^{(n)}(z)=\frac{n!}{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{(\zeta-z)^{n+1}}\dif \zeta,n=1,2,\cdots.
 \end{equation*}
 \end{theorem}
 \begin{proof}
 由定理 \ref{thm3.4.1}，$f$可写为Cauchy型积分
-\[f(z)=\frac1{2\pi\ii}\int\limits_{\gamma}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta.\]
+\[f(z)=\frac1{2\pi\ii}\int\limits_{\gamma}\frac{f(\zeta)}{\zeta-z}\dif \zeta.\]
 由于$f$在$\gamma$上连续，故由定理 \ref{thm3.4.2} 即得所要证的结果.
 \end{proof}
 
@@ -868,9 +868,9 @@ G^{(k)}(z)={}&\frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{k+1
 类似于Cauchy积分定理，也有下面的
 \begin{theorem}\label{thm3.4.6}
   设$\gamma_0,\gamma_1,\cdots,\gamma_k$是$k+1$条可求长简单闭曲线，$\gamma_1,\cdots,\gamma_k$都在$\gamma_0$的内部，$\gamma_1,\cdots,\gamma_k$中的每一条都在其他$k-1$条的外部，$D$是由这$k+1$条曲线围成的域，$D$的边界$\gamma$由$\gamma_0,\gamma_1,\cdots,\gamma_k$所组成.如果$f\in H(D)\cap C(\bar D)$，则对任意$z\in D$，有
-  \[f(z)=\frac1{2\pi\ii}\int\limits_{\gamma}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta.\]
+  \[f(z)=\frac1{2\pi\ii}\int\limits_{\gamma}\frac{f(\zeta)}{\zeta-z}\dif \zeta.\]
 $f$在$D$内有任意阶导数，且
-\[f^{(n)}(z)=\frac{n!}{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{(\zeta-z)^{n+1}}\textrm d\zeta,n=1,2,\cdots.\]
+\[f^{(n)}(z)=\frac{n!}{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{(\zeta-z)^{n+1}}\dif \zeta,n=1,2,\cdots.\]
 \end{theorem}
 
 定理的证明和前面的一样，不再重复.
@@ -924,53 +924,53 @@ $f$在$D$内有任意阶导数，且
 \item 设$\gamma$是可求长简单闭曲线，其内部为域$G_1$，外部为域$G_2$.如果$f\in H(G_2)\cap C(\bar G_2)$，而且
     \[\lim_{z\to\infty}f(z)=A,\]
 那么
-\[\frac1{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{\zeta-z}\textrm d\zeta=\begin{cases}
+\[\frac1{2\pi\ii}\int\limits_\gamma\frac{f(\zeta)}{\zeta-z}\dif \zeta=\begin{cases}
 -f(z)+A,&z\in G_2;\\
 A,&z\in G_1,
 \end{cases}\]
 这里，$\gamma$关于$G_1$取正向. 通常，称它为\textbf{无界域的Cauchy积分公式}\index{G!公式!无界域的Cauchy积分公式}.
 \item 设$D$是由有限条可求长简单闭曲线围成的域，$z_1,\cdots,z_n$是$D$中$n$个彼此不同的点.如果$f\in H(D)\cap C(\bar D)$，证明：
     \[P(z)=\frac1{2\pi\ii}\int\limits_{\partial D}\frac{f(\zeta)}{\omega_n(\zeta)}
-    \frac{\omega_n(\zeta)-\omega_n(z)}{\zeta-z}\textrm d\zeta\]
+    \frac{\omega_n(\zeta)-\omega_n(z)}{\zeta-z}\dif \zeta\]
 是次数不超过$n-1$的多项式，并且
 \[P(z_k)=f(z_k),k=1,2,\cdots,n.\]
 其中，$\omega_n(z)=(z-z_1)\cdots(z-z_n)$.
 
 （\textbf{提示}：$\frac{\omega_n(\zeta)-\omega_n(z)}{\zeta-z}$是$z$的次数不超过$n-1$的多项式.）
 \item 称
-\[P_n(z)=\frac1{2^nn!}\frac{\textrm d^n}{\textrm dz^n}(z^2-1)^n\]
+\[P_n(z)=\frac1{2^nn!}\frac{\dif ^n}{\dif z^n}(z^2-1)^n\]
 是\textbf{Legendre多项式}\index{L!Legendre多项式}. 证明：
 \begin{enuma}
   \item Legendre多项式有如下的积分表示：
   \[P_n(z)=\frac1{2\pi\ii}\int\limits_\gamma\frac{(\zeta^2-1)^n}{2^n(\zeta-z)^{n+1}}
-  \textrm d\zeta,\]
+  \dif \zeta,\]
 其中，$\gamma$是任意内部包含$z$的可求长简单闭曲线；
 \item 如果取
 \[\gamma=\{\zeta\in\MC:|\zeta-x|=\sqrt{x^2-1}\}\;\mbox{（$1<x<\infty$）},\]
 那么有如下的\textbf{Laplace公式}\index{G!公式!Laplace公式}：
-\[P_n(x)=\frac1\pi\int_0^\pi\big(x+\sqrt{x^2-1}\cos\theta\big)^n\textrm d\theta.\]
+\[P_n(x)=\frac1\pi\int_0^\pi\big(x+\sqrt{x^2-1}\cos\theta\big)^n\dif \theta.\]
 \end{enuma}
 \item 设$f\in H\big(B(0,1)\big)\cap C\big(\bar{B(0,1)}\big)$. 证明：
 \begin{enuma}
-  \item $\frac2\pi\int_0^{2\pi}f(\ee^{\ii\theta})\cos^2\bigg(\frac\theta2\bigg)\textrm d\theta=2f(0)+f'(0)$；
-  \item $\frac2\pi\int_0^{2\pi}f(\ee^{\ii\theta})\sin^2\bigg(\frac\theta2\bigg)\textrm d\theta=2f(0)-f'(0)$.
+  \item $\frac2\pi\int_0^{2\pi}f(\ee^{\ii\theta})\cos^2\bigg(\frac\theta2\bigg)\dif \theta=2f(0)+f'(0)$；
+  \item $\frac2\pi\int_0^{2\pi}f(\ee^{\ii\theta})\sin^2\bigg(\frac\theta2\bigg)\dif \theta=2f(0)-f'(0)$.
 \end{enuma}
 
 （\textbf{提示}：分别计算积分
 \[\frac1{2\pi\ii}\int\limits_{|\zeta|=1}\bigg(2+\zeta+\frac1\zeta\bigg)f(\zeta)
-\frac{\textrm d\zeta}\zeta\]
+\frac{\dif \zeta}\zeta\]
 和
 \[\frac1{2\pi\ii}\int\limits_{|\zeta|=1}\bigg(2-\zeta-\frac1\zeta\bigg)f(\zeta)
-\frac{\textrm d\zeta}\zeta\]
+\frac{\dif \zeta}\zeta\]
 即可.）
 \item 利用上题结果证明：设$f\in H\big(B(0,1)\big)\cap C\big(\bar{B(0,1)}\big)$，且$f(0)=1,\Re f(z)\ge0$，那么
 \[-1\le\Re f'(0)\le 2.\]
 \item 设$f$在角状域$G=\bigg\{z\in\MC:0<\arg z<\frac\pi4\bigg\}$中全纯，在$\bar G$上连续.如果$f$在正实轴的区间$[a,b]$上等于零，证明：$f$在$G$中恒等于零.
 \item （\textbf{Schwarz积分公式}\index{G!公式!Schwarz积分公式}）设$f\in H\big(B(0,R)\big)\cap C\big(\bar{B(0,R)}\big)$，$f=u+\ii v$. 证明：$f$可用实部表示为
     \[f(z)=\frac1{2\pi}\int_0^{2\pi}\frac{R\ee^{\ii\theta}+z}{R\ee^{\ii\theta}-z}
-    u(R\ee^{\ii\theta})\textrm d\theta+\ii v(0).\]
+    u(R\ee^{\ii\theta})\dif \theta+\ii v(0).\]
 \item 设$f\in H\big(B(0,R)\big)\cap C\big(\bar{B(0,R)}\big)$，$f=u+\ii v$，则对任意$0<r\le R$，有
-    \[f'(0)=\frac1{\pi r}\int_0^{2\pi}u(r\ee^{\ii\theta})\ee^{-\ii\theta}\textrm d\theta.\]
+    \[f'(0)=\frac1{\pi r}\int_0^{2\pi}u(r\ee^{\ii\theta})\ee^{-\ii\theta}\dif \theta.\]
 \end{xiti}
 
 \section{Cauchy积分公式的一些重要推论\label{sec3.5}}
@@ -983,7 +983,7 @@ A,&z\in G_1,
 \begin{proof}
 取$0<r<R$，则$f$在闭圆盘$\bar{B(a,r)}$中全纯，由定理 \ref{thm3.4.3}，得
 \begin{equation*}
-  f^{(n)}(a)=\frac{n!}{2\pi\ii}\int\limits_{|\zeta-a|=r}\frac{f(\zeta)}{(\zeta-a)^{n+1}}\textrm d\zeta,n=1,2,\cdots.
+  f^{(n)}(a)=\frac{n!}{2\pi\ii}\int\limits_{|\zeta-a|=r}\frac{f(\zeta)}{(\zeta-a)^{n+1}}\dif \zeta,n=1,2,\cdots.
 \end{equation*}
 于是，由长大不等式得
 \[|f^{(n)}(a)|\le\frac{n!}{2\pi}\cdot\frac M{r^{n+1}}\cdot2\pi r=\frac{n!M}{r^n}.\]
@@ -1055,18 +1055,18 @@ f'(z_0),&z=z_0.
 \begin{align*}
 \dz\wedge\dzz&=(\dx+\ii\dy)\wedge(\dx-\ii\dy)\\
 &=\ii\dy\wedge\dx-\ii\dx\wedge\dy\\
-&=-2\ii\dx\wedge\dy=-2\ii\textrm dA.
+&=-2\ii\dx\wedge\dy=-2\ii\dif A.
 \end{align*}
-这里，$\textrm dA$是面积元素；$\dx,\dy$的外积定义与$\dz,\dzz$的外积定义一样，即$\dx\wedge\dx=0,\dy\wedge\dy=0,\dx\wedge\dy=-\dy\wedge\dx$.
+这里，$\dif A$是面积元素；$\dx,\dy$的外积定义与$\dz,\dzz$的外积定义一样，即$\dx\wedge\dx=0,\dy\wedge\dy=0,\dx\wedge\dy=-\dy\wedge\dx$.
 
 称$z,\bar z$的函数$f(z,\bar z)$为\textbf{零次微分形式}\index{W!微分形式!零次微分形式}，$f_1(z,\bar z)\dz+f_2(z,\bar z)\dzz$为\textbf{一次微分形式}\index{W!微分形式!一次微分形式}，$f(z,\bar z)\dz\wedge\dzz$为\textbf{二次微分形式}\index{W!微分形式!二次微分形式}.定义算子$\partial$，如下：
 \begin{align*}
 &\partial f=\pp fz\dz,\\
 &\bar \partial f=\pp f{\bar z}\dzz,
 \end{align*}
-这里，$\pp{}z,\pp{}{\bar z}$由第 \ref{chap2} 章 \ref{sec2.2} 节中的 \eqref{eq2.2.3} 式定义. 定义算子$\textrm d=\partial+\bar\partial$，即
+这里，$\pp{}z,\pp{}{\bar z}$由第 \ref{chap2} 章 \ref{sec2.2} 节中的 \eqref{eq2.2.3} 式定义. 定义算子$\dif =\partial+\bar\partial$，即
 \begin{equation}\label{eq3.6.1}
-\textrm df=\partial f+\bar\partial f=\pp fz\dz+\pp f{\bar z}\dzz.
+\dif f=\partial f+\bar\partial f=\pp fz\dz+\pp f{\bar z}\dzz.
 \end{equation}
 算子$\partial,\bar\partial$对一次微分形式的作用定义为
 \begin{align*}
@@ -1077,7 +1077,7 @@ f'(z_0),&z=z_0.
 \end{align*}
 所以
 \begin{equation}\label{eq3.6.2}
-  \textrm d\big(f_1(z,\bar z)\dz+f_2(z,\bar z)\dzz\big)
+  \dif \big(f_1(z,\bar z)\dz+f_2(z,\bar z)\dzz\big)
   =\bigg(\pp{f_2}z-\pp{f_1}{\bar z}\bigg)\dz\wedge\dzz.
 \end{equation}
 $\partial,\bar\partial$作用在二次微分形式上的结果都是零：
@@ -1087,16 +1087,16 @@ $\partial,\bar\partial$作用在二次微分形式上的结果都是零：
 \end{align*}
 因而
 \begin{equation}\label{eq3.6.3}
-\textrm d\big(f(z,\bar z)\dz\wedge\dzz\big)=0.
+\dif \big(f(z,\bar z)\dz\wedge\dzz\big)=0.
 \end{equation}
 
-定义$\textrm d^2\omega=\textrm d(\textrm d\omega)$. 当$\omega$是一$C^2$函数时，由 \eqref{eq3.6.1} 式和 \eqref{eq3.6.2} 式，得
+定义$\dif ^2\omega=\dif (\dif \omega)$. 当$\omega$是一$C^2$函数时，由 \eqref{eq3.6.1} 式和 \eqref{eq3.6.2} 式，得
 \begin{equation}\label{eq3.6.4}
-\textrm d^2\omega=\textrm d(\textrm d\omega)=\textrm d\bigg(
+\dif ^2\omega=\dif (\dif \omega)=\dif \bigg(
 \pp\omega z\dz+\pp\omega{\bar z}\dzz\bigg)=\bigg(
 \pppp\omega{\bar z}z-\pppp\omega z{\bar z}\bigg)\dz\wedge\dzz=0.
 \end{equation}
-当$\omega$是一个一次微分形式时，由 \eqref{eq3.6.2} 式知$\textrm d\omega$是一个二次微分形式，由 \eqref{eq3.6.3} 式即知$\textrm d^2\omega=0$.当$\omega$是一个二次微分形式时，由 \eqref{eq3.6.3} 式知$\textrm d^2\omega=0$.总之，不论$\omega$是零次、一次或二次微分形式，都有$\textrm d^2\omega=0$，所以$\textrm d^2=0$.
+当$\omega$是一个一次微分形式时，由 \eqref{eq3.6.2} 式知$\dif \omega$是一个二次微分形式，由 \eqref{eq3.6.3} 式即知$\dif ^2\omega=0$.当$\omega$是一个二次微分形式时，由 \eqref{eq3.6.3} 式知$\dif ^2\omega=0$.总之，不论$\omega$是零次、一次或二次微分形式，都有$\dif ^2\omega=0$，所以$\dif ^2=0$.
 
 定义$\partial^2\omega=\partial(\partial\omega),\bar\partial^2\omega=
 \bar\partial(\bar\partial\omega),\partial\bar\partial\omega=\partial(\bar\partial\omega),
@@ -1113,7 +1113,7 @@ $\partial,\bar\partial$作用在二次微分形式上的结果都是零：
 \begin{theorem}\label{thm3.6.1}
 设$D$和$\partial D$如定理 \ref{thm3.2.5} 中所述，如果$\omega=f_1(z,\bar z)\dz+f_2(z,\bar z)\dzz$是域$D$上的一个一次微分形式，这里，$f_1,f_2\in C^1(\bar D)$，那么
 \begin{equation}\label{eq3.6.6}
-\int\limits_{\partial D}\omega=\int\limits_D\textrm d\omega.
+\int\limits_{\partial D}\omega=\int\limits_D\dif \omega.
 \end{equation}
 \end{theorem}
 \begin{proof}
@@ -1128,19 +1128,19 @@ $\partial,\bar\partial$作用在二次微分形式上的结果都是零：
 由 \eqref{eq3.6.2} 式得
 \begin{equation}\label{eq3.6.8}
 \begin{aligned}
-\textrm d\omega&=\bigg(\pp{f_2}z-\pp{f_1}{\bar z}\bigg)\dz\wedge\dzz\\
+\dif \omega&=\bigg(\pp{f_2}z-\pp{f_1}{\bar z}\bigg)\dz\wedge\dzz\\
 &=-\bigg\{\frac12\bigg(\pp{}x-\ii\pp{}y\bigg)(u_2+\ii v_2)
- -\frac12\bigg(\pp{}x+\ii\pp{}y\bigg)(u_1+\ii v_1)\bigg\}2\ii\textrm dA\\
+ -\frac12\bigg(\pp{}x+\ii\pp{}y\bigg)(u_1+\ii v_1)\bigg\}2\ii\dif A\\
 &=\bigg\{\bigg(\pp{v_2}x-\pp{v_1}x-\pp{u_2}y--\pp{u_1}y\bigg)
-+\ii\bigg(\pp{u_1}x-\pp{u_2}x-\pp{v_1}y-\pp{v_2}y\bigg)\bigg\}\textrm dA.
++\ii\bigg(\pp{u_1}x-\pp{u_2}x-\pp{v_1}y-\pp{v_2}y\bigg)\bigg\}\dif A.
 \end{aligned}
 \end{equation}
 根据Green公式，我们有
 \begin{align}
 &\int\limits_{\partial D}(u_1+u_2)\dx+(-v_1+v_2)\dy
-=\int\limits_D\bigg\{\pp{}x(-v_1+v_2)-\pp{}y(u_1+u_2)\bigg\}\textrm dA,\label{eq3.6.9}\\
+=\int\limits_D\bigg\{\pp{}x(-v_1+v_2)-\pp{}y(u_1+u_2)\bigg\}\dif A,\label{eq3.6.9}\\
 &\int\limits_{\partial D}(v_1+v_2)\dx+(u_1-u_2)\dy
-=\int\limits_D\bigg\{\pp{}x(u_1-u_2)-\pp{}y(v_1+v_2)\bigg\}\textrm dA.\label{eq3.6.10}
+=\int\limits_D\bigg\{\pp{}x(u_1-u_2)-\pp{}y(v_1+v_2)\bigg\}\dif A.\label{eq3.6.10}
 \end{align}
 由等式 \eqref{eq3.6.7}，\eqref{eq3.6.8}，\eqref{eq3.6.9}，\eqref{eq3.6.10} 即得我们要证明的公式 \eqref{eq3.6.6}.
 \end{proof}
@@ -1149,27 +1149,27 @@ $\partial,\bar\partial$作用在二次微分形式上的结果都是零：
 \begin{theorem}\label{thm3.6.2}
 设$D$和$\partial D$如定理 \ref{thm3.2.5} 中所述，如果$f\in C^1(\bar D)$，那么对任意$z\in D$，有
 \begin{equation}\label{eq3.6.11}
-f(z)=\frac1{2\pi\ii}\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta
-+\frac1{2\pi\ii}\int\limits_D\pp{f(\zeta)}{\bar\zeta}\frac1{\zeta-z}\textrm d\zeta\wedge\textrm d\bar\zeta.
+f(z)=\frac1{2\pi\ii}\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\dif \zeta
++\frac1{2\pi\ii}\int\limits_D\pp{f(\zeta)}{\bar\zeta}\frac1{\zeta-z}\dif \zeta\wedge\dif \bar\zeta.
 \end{equation}
 \end{theorem}
 \begin{proof}
 不妨设$D$是图 \ref{fig3.11} 所示的二连通域，$D$的边界$\partial D$由$\gamma_0$和$\gamma_1$组成.任取$z\in D$，因为$f$在$z$点连续，故对任意$\varepsilon>0$，存在$\delta>0$，当$|\zeta-z|<\delta$时，$|f(\zeta)-f(z)|<\varepsilon$. 记$\rho=\inf_{\zeta\in\partial D}|\zeta-z|>0$，取$\eta$，使得$0<\eta<\min\{\rho,\delta\}$，于是$\bar{B(z,\eta)}\subset D$. 记$B_\eta=B(z,\eta)$，令$G_\eta=D\backslash\bar B_\eta$，则$G_\eta$的边界$\partial G_\eta$由$\gamma_0,\gamma_1$和$\partial B_\eta$三条曲线组成. 考虑一次形式
-\[\omega=\frac{f(\zeta)}{\zeta-z}\textrm d\zeta,\]
+\[\omega=\frac{f(\zeta)}{\zeta-z}\dif \zeta,\]
 它在域$G_\eta$上满足定理 \ref{thm3.6.1} 的条件，因而有
 \begin{equation}\label{eq3.6.12}
-\int\limits_{\partial G_\eta}\omega=\int\limits_{G_\eta}\textrm d\omega.
+\int\limits_{\partial G_\eta}\omega=\int\limits_{G_\eta}\dif \omega.
 \end{equation}
 \begin{minipage}{0.7\textwidth}
 由于$\frac1{\zeta-z}$在$G_\eta$中全纯，所以
 \begin{align*}
-\bar\partial \omega&=\pp{}{\bar\zeta}\bigg(\frac{f(\zeta)}{\zeta-z}\bigg)\textrm d\bar\zeta\wedge\textrm d\zeta\\
+\bar\partial \omega&=\pp{}{\bar\zeta}\bigg(\frac{f(\zeta)}{\zeta-z}\bigg)\dif \bar\zeta\wedge\dif \zeta\\
 &=\bigg\{f(\zeta)\pp{}{\bar\zeta}\bigg(\frac1{\zeta-z}\bigg)
-+\pp{f(\zeta)}{\bar\zeta}\frac1{\zeta-z}\bigg\}\textrm d\bar\zeta\wedge\textrm d\zeta\\
-&=\pp{f(\zeta)}{\bar\zeta}\frac1{\zeta-z}\textrm d\bar\zeta\wedge\textrm d\zeta.
++\pp{f(\zeta)}{\bar\zeta}\frac1{\zeta-z}\bigg\}\dif \bar\zeta\wedge\dif \zeta\\
+&=\pp{f(\zeta)}{\bar\zeta}\frac1{\zeta-z}\dif \bar\zeta\wedge\dif \zeta.
 \end{align*}
 易知
-\[\partial\omega=\pp{}\zeta\bigg(\frac{f(\zeta)}{\zeta-z}\bigg)\textrm d\zeta\wedge\textrm d\zeta,\]
+\[\partial\omega=\pp{}\zeta\bigg(\frac{f(\zeta)}{\zeta-z}\bigg)\dif \zeta\wedge\dif \zeta,\]
 \end{minipage}
 \begin{minipage}{0.3\textwidth}
 \centering
@@ -1189,40 +1189,40 @@ f(z)=\frac1{2\pi\ii}\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\textrm d\ze
 \captionof{figure}{\label{fig3.11}}
 \end{minipage}\\
 因而
-\[\textrm d\omega=\partial\omega+\bar\partial\omega=\pp{f(\zeta)}{\bar\zeta}\frac1{\zeta-z}
-\textrm d\bar\zeta\wedge\textrm d\zeta.\]
+\[\dif \omega=\partial\omega+\bar\partial\omega=\pp{f(\zeta)}{\bar\zeta}\frac1{\zeta-z}
+\dif \bar\zeta\wedge\dif \zeta.\]
 这样，\eqref{eq3.6.12} 式可以写成
 \begin{equation}\label{eq3.6.13}
-\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta
--\int\limits_{\partial B_\eta}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta
-=\int\limits_{G_\eta}\pp{f(\zeta)}{\bar\zeta}\frac1{\zeta-z}\textrm d\bar\zeta\wedge
-\textrm d\zeta.
+\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\dif \zeta
+-\int\limits_{\partial B_\eta}\frac{f(\zeta)}{\zeta-z}\dif \zeta
+=\int\limits_{G_\eta}\pp{f(\zeta)}{\bar\zeta}\frac1{\zeta-z}\dif \bar\zeta\wedge
+\dif \zeta.
 \end{equation}
 注意
 \begin{align*}
-\int\limits_{\partial B_\eta}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta
-&=\int\limits_{\partial B_\eta}\frac{f(\zeta)-f(z)}{\zeta-z}\textrm d\zeta
-+f(z)\int\limits_{\partial B_\eta}\frac{\textrm d\zeta}{\zeta-z}\\
-&=\int\limits_{\partial B_\eta}\frac{f(\zeta)-f(z)}{\zeta-z}\textrm d\zeta+2\pi\ii f(z),
+\int\limits_{\partial B_\eta}\frac{f(\zeta)}{\zeta-z}\dif \zeta
+&=\int\limits_{\partial B_\eta}\frac{f(\zeta)-f(z)}{\zeta-z}\dif \zeta
++f(z)\int\limits_{\partial B_\eta}\frac{\dif \zeta}{\zeta-z}\\
+&=\int\limits_{\partial B_\eta}\frac{f(\zeta)-f(z)}{\zeta-z}\dif \zeta+2\pi\ii f(z),
 \end{align*}
 而
-\[\bigg|\int\limits_{\partial B_\eta}\frac{f(\zeta)-f(z)}{\zeta-z}\textrm d\zeta\bigg|\le\int\limits_{\partial B_\eta}\frac{|f(\zeta)-f(z)|}{|\zeta-z|}
-|\textrm d\zeta|\le\frac{\varepsilon}{\eta}\cdot2\pi\eta=2\pi\varepsilon,\]
+\[\bigg|\int\limits_{\partial B_\eta}\frac{f(\zeta)-f(z)}{\zeta-z}\dif \zeta\bigg|\le\int\limits_{\partial B_\eta}\frac{|f(\zeta)-f(z)|}{|\zeta-z|}
+|\dif \zeta|\le\frac{\varepsilon}{\eta}\cdot2\pi\eta=2\pi\varepsilon,\]
 由此即得
 \begin{equation}\label{eq3.6.14}
-\lim_{\eta\to0}\int\limits_{\partial B_\eta}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta
+\lim_{\eta\to0}\int\limits_{\partial B_\eta}\frac{f(\zeta)}{\zeta-z}\dif \zeta
 =2\pi\ii f(z).
 \end{equation}
 另一方面，由于$\pp f{\bar \zeta}$在$\bar B_\eta$上连续，故有常数$M$，使得$\bigg|\pp f{\bar \zeta}\bigg|\le M$在$\bar B_\eta$上成立.于是
 \[
-\bigg|\int\limits_{B_\eta}\pp f{\bar\zeta}\frac1{\zeta-z}\textrm d\bar\zeta\wedge\textrm d\zeta\bigg|\le2\int\limits_{B_\eta}\bigg|\pp f{\bar\zeta}\bigg|\frac1{|\zeta-z|}\textrm dA\le 4M\pi\eta\to0\;\mbox{（$\eta\to0$）}.
+\bigg|\int\limits_{B_\eta}\pp f{\bar\zeta}\frac1{\zeta-z}\dif \bar\zeta\wedge\dif \zeta\bigg|\le2\int\limits_{B_\eta}\bigg|\pp f{\bar\zeta}\bigg|\frac1{|\zeta-z|}\dif A\le 4M\pi\eta\to0\;\mbox{（$\eta\to0$）}.
 \]
 因而
 \begin{equation}\label{eq3.6.15}
 \begin{aligned}
-\lim_{\eta\to0}\int\limits_{G_\eta}\pp f{\bar\zeta}\frac1{\zeta-z}\textrm d\bar\zeta\wedge\textrm d\zeta&=\lim_{\eta\to0}\bigg\{
-\int\limits_{D}\pp f{\bar\zeta}\frac1{\zeta-z}\textrm d\bar\zeta\wedge\textrm d\zeta-\int\limits_{B_\eta}\pp f{\bar\zeta}\frac1{\zeta-z}\textrm d\bar\zeta\wedge\textrm d\zeta\bigg\}\\
-&=\int\limits_D\pp f{\bar\zeta}\frac1{\zeta-z}\textrm d\bar\zeta\wedge\textrm d\zeta.
+\lim_{\eta\to0}\int\limits_{G_\eta}\pp f{\bar\zeta}\frac1{\zeta-z}\dif \bar\zeta\wedge\dif \zeta&=\lim_{\eta\to0}\bigg\{
+\int\limits_{D}\pp f{\bar\zeta}\frac1{\zeta-z}\dif \bar\zeta\wedge\dif \zeta-\int\limits_{B_\eta}\pp f{\bar\zeta}\frac1{\zeta-z}\dif \bar\zeta\wedge\dif \zeta\bigg\}\\
+&=\int\limits_D\pp f{\bar\zeta}\frac1{\zeta-z}\dif \bar\zeta\wedge\dif \zeta.
 \end{aligned}
 \end{equation}
 在等式 \eqref{eq3.6.13} 两端令$\eta\to0$，并利用 \eqref{eq3.6.14} 式和 \eqref{eq3.6.15} 式，即得所要证明的公式 \eqref{eq3.6.11}.
@@ -1234,13 +1234,13 @@ f(z)=\frac1{2\pi\ii}\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\textrm d\ze
 \begin{xiti}
 \item 设$D$是由有限条可求长简单闭曲线围成的域，$f\in C^1(\bar D)$.证明：
 \begin{enuma}
-  \item $\iint\limits_D\pp{f(\zeta)}{\bar\zeta}\textrm d\bar\zeta\wedge\textrm d\zeta=\int\limits_{\partial D}f(\zeta)\textrm d\zeta$；
-  \item $\iint\limits_D\pp{f(\zeta)}{\zeta}\textrm d\zeta\wedge\textrm d\bar\zeta=\int\limits_{\partial D}f(\zeta)\textrm d\bar\zeta$.
+  \item $\iint\limits_D\pp{f(\zeta)}{\bar\zeta}\dif \bar\zeta\wedge\dif \zeta=\int\limits_{\partial D}f(\zeta)\dif \zeta$；
+  \item $\iint\limits_D\pp{f(\zeta)}{\zeta}\dif \zeta\wedge\dif \bar\zeta=\int\limits_{\partial D}f(\zeta)\dif \bar\zeta$.
 \end{enuma}
 \item 设$D$是由有限条可求长简单闭曲线围成的域，$f,g\in C^1(\bar D)$. 证明（\textbf{Green公式}\index{G!公式!Green公式}）：
 \[\iint\limits_D\bigg(\pp{g(\zeta)}\zeta-\pp{f(\zeta)}{\bar\zeta}\bigg)
-\textrm d\zeta\wedge\textrm d\bar\zeta=\int\limits_{\partial D}
-\big(f(\zeta)\textrm d\zeta+g(\zeta)\textrm d\bar\zeta\big).\]
+\dif \zeta\wedge\dif \bar\zeta=\int\limits_{\partial D}
+\big(f(\zeta)\dif \zeta+g(\zeta)\dif \bar\zeta\big).\]
 \item 设$D$是由有限条光滑简单闭曲线围成的域，$\boldsymbol n$是$\partial D$的单位法向量场，指向$D$的外部，$u,v\in C^2(\bar D)$. 证明：
 \begin{enuma}
   \item $\iint\limits_Du(z)\Delta v(z)\dx\dy+\iint\limits_D\bigg(
@@ -1251,8 +1251,8 @@ f(z)=\frac1{2\pi\ii}\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\textrm d\ze
   -v(z)\pp{u(z)}{\boldsymbol n}\bigg)|\dz|$.
 \end{enuma}
 \item 设$D$是由有限条可求长简单闭曲线围成的域，$f$在$\bar D$上全纯，$z\in D$. 证明：
-\[\iint\limits_D\frac{f'(\zeta)}{\bar\zeta-\bar z}\textrm d\zeta\wedge\textrm d\bar\zeta
-=\int\limits_{\partial D}\bigg(\frac{f(\zeta)}{\zeta-z}\textrm d\zeta+\frac{f(\zeta)}{\bar \zeta-\bar z}\textrm d\bar\zeta\bigg).\]
+\[\iint\limits_D\frac{f'(\zeta)}{\bar\zeta-\bar z}\dif \zeta\wedge\dif \bar\zeta
+=\int\limits_{\partial D}\bigg(\frac{f(\zeta)}{\zeta-z}\dif \zeta+\frac{f(\zeta)}{\bar \zeta-\bar z}\dif \bar\zeta\bigg).\]
 \end{xiti}
 
 \section{一维 \texorpdfstring{$\bar \partial$}{∂̅}问题的解}
@@ -1293,44 +1293,44 @@ $u$就称为$\bar\partial$问题的解. \ref{sec3.6} 节介绍的非齐次Cauchy
 \begin{theorem}\label{thm3.7.3}
 设$D$是$\MC$中的域，$f\in C^1(D)$.令
 \begin{equation}\label{eq3.7.1}
-u(z)=\frac1{2\pi\ii}\int\limits_D\frac{f(\zeta)}{\zeta-z}\textrm d\zeta\wedge\textrm d\bar \zeta,z\in D,
+u(z)=\frac1{2\pi\ii}\int\limits_D\frac{f(\zeta)}{\zeta-z}\dif \zeta\wedge\dif \bar \zeta,z\in D,
 \end{equation}
 则$u\in C^1(D)$，且对任意$z\in D$，有$\pp{u(z)}{\bar z}=f(z)$.
 \end{theorem}
 \begin{proof}
 把$f$的定义扩充到整个复平面，对于$z\notin D$，定义$f(z)=0$. 这时，\eqref{eq3.7.1} 式可写为
-\[u(z)=\frac1{2\pi\ii}\int\limits_\MC\frac{f(\zeta)}{\zeta-z}\textrm d\zeta\wedge\textrm d\bar\zeta=\frac1{2\pi\ii}\int\limits_\MC f(\zeta+\eta)\frac1\eta\textrm d\eta\wedge\textrm d\bar\eta.\]
+\[u(z)=\frac1{2\pi\ii}\int\limits_\MC\frac{f(\zeta)}{\zeta-z}\dif \zeta\wedge\dif \bar\zeta=\frac1{2\pi\ii}\int\limits_\MC f(\zeta+\eta)\frac1\eta\dif \eta\wedge\dif \bar\eta.\]
 由$f\in C^1(D)$，可得$u\in C^1(D)$.
 
 现固定$a\in D$，我们证明
 \[\pp{u(a)}{\bar z}=f(a).\]
 为此，取$0<\varepsilon<r$，使得$B(a,\varepsilon)\subset B(a,r)\subset D$. 根据引理 \ref{lemma3.7.2}，存在$\varphi\in C^\infty(\MC)$，使得当$z\in B(a,\varepsilon)$时，$\varphi(z)\equiv1$；而当$z\notin B(a,r)$时，$\varphi(z)\equiv0$.记
 \begin{align*}
-&u_1(z)=\frac1{2\pi\ii}\int\limits_\MC\frac{\varphi(\zeta)f(\zeta)}{\zeta-z}\textrm d\zeta\wedge\textrm d\bar \zeta,\\
-&u_2(z)=\frac1{2\pi\ii}\int\limits_\MC\frac{f(\zeta)-\varphi(\zeta)f(\zeta)}{\zeta-z}\textrm d\zeta\wedge\textrm d\bar \zeta,
+&u_1(z)=\frac1{2\pi\ii}\int\limits_\MC\frac{\varphi(\zeta)f(\zeta)}{\zeta-z}\dif \zeta\wedge\dif \bar \zeta,\\
+&u_2(z)=\frac1{2\pi\ii}\int\limits_\MC\frac{f(\zeta)-\varphi(\zeta)f(\zeta)}{\zeta-z}\dif \zeta\wedge\dif \bar \zeta,
 \end{align*}
 那么$u=u_1+u_2$. 由于当$\zeta\in B(a,\varepsilon)$时，$f(\zeta)-\varphi(\zeta)f(\zeta)\equiv0$，所以
-\[u_2(z)=\frac1{2\pi\ii}\int\limits_{\MC\backslash B(a,\varepsilon)}\frac{\big(1-\varphi(\zeta)\big)f(\zeta)}{\zeta-z}\textrm d\zeta\wedge\textrm d\bar \zeta.\]
+\[u_2(z)=\frac1{2\pi\ii}\int\limits_{\MC\backslash B(a,\varepsilon)}\frac{\big(1-\varphi(\zeta)\big)f(\zeta)}{\zeta-z}\dif \zeta\wedge\dif \bar \zeta.\]
 因而，当$z\in B(a,\varepsilon)$时，$u_2$是全纯函数，所以$\pp{u_2}{\bar z}=0$. 于是，在小圆盘$B(a,\varepsilon)$上就有
 \begin{equation}\label{eq3.7.2}
 \begin{aligned}
 \pp u{\bar z}&=\pp{u_1}{\bar z}\\
-&=\pp{}{\bar z}\bigg\{\frac1{2\pi\ii}\int\limits_\MC\frac{\varphi(z+\eta)f(z+\eta)}\eta\textrm d\eta\wedge\textrm d\bar\eta\bigg\}\\
+&=\pp{}{\bar z}\bigg\{\frac1{2\pi\ii}\int\limits_\MC\frac{\varphi(z+\eta)f(z+\eta)}\eta\dif \eta\wedge\dif \bar\eta\bigg\}\\
 &=\frac1{2\pi\ii}\int\limits_\MC\bigg\{\pp{(\varphi f)}\zeta\pp\zeta{\bar z}
-\pp{(\varphi f)}{\bar \zeta}\pp{\bar \zeta}{\bar z}\bigg\}\frac1\eta\textrm d\eta\wedge\textrm d\bar\eta\\
-&=\frac1{2\pi\ii}\int\limits_\MC\pp{(\varphi f)}{\bar\zeta}\frac1\eta\textrm d\eta\wedge\textrm d\bar\eta\\
-&=\frac1{2\pi\ii}\int\limits_\MC\pp{(\varphi f)}{\bar\zeta}\frac1{\zeta-z}\textrm d\zeta\wedge\textrm d\bar\zeta\\
+\pp{(\varphi f)}{\bar \zeta}\pp{\bar \zeta}{\bar z}\bigg\}\frac1\eta\dif \eta\wedge\dif \bar\eta\\
+&=\frac1{2\pi\ii}\int\limits_\MC\pp{(\varphi f)}{\bar\zeta}\frac1\eta\dif \eta\wedge\dif \bar\eta\\
+&=\frac1{2\pi\ii}\int\limits_\MC\pp{(\varphi f)}{\bar\zeta}\frac1{\zeta-z}\dif \zeta\wedge\dif \bar\zeta\\
 &=\frac1{2\pi\ii}\int\limits_{B(a,r)}\pp{(\varphi f)}{\bar\zeta}\frac1{\zeta-z}
-\textrm d\zeta\wedge\textrm d\bar\zeta.
+\dif \zeta\wedge\dif \bar\zeta.
 \end{aligned}
 \end{equation}
 最后一个等式成立是因为当$\zeta\in\MC\backslash B(a,r)$时，$\varphi(\zeta)\equiv0$. 又因为当$\zeta\in\partial B(a,r)$时$\varphi(\zeta)\equiv0$，所以根据非齐次Cauchy积分公式，有
 \[\varphi(z)f(z)=\frac1{2\pi\ii}\int\limits_{B(a,r)}\pp{(\varphi f)}{\bar\zeta}
-\frac1{\zeta-z}\textrm d\zeta\wedge\textrm d\bar\zeta.\]
+\frac1{\zeta-z}\dif \zeta\wedge\dif \bar\zeta.\]
 因为当$z\in B(a,\varepsilon)$时$\varphi(z)=1$，所以
 \begin{equation}\label{eq3.7.3}
 f(z)=\frac1{2\pi\ii}\int\limits_{B(a,r)}\pp{(\varphi f)}{\bar\zeta}
-\frac1{\zeta-z}\textrm d\zeta\wedge\textrm d\bar\zeta.
+\frac1{\zeta-z}\dif \zeta\wedge\dif \bar\zeta.
 \end{equation}
 比较 \eqref{eq3.7.2} 式和 \eqref{eq3.7.3} 式，即得
 \[\pp{u(z)}{\bar z}=f(z).\]
