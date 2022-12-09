@@ -63,7 +63,7 @@ f(z)\dz & = (u+\ii v)(\dx+\ii\dy) \\
 \begin{align*}
   \int\limits_\gamma f(z)\dz
   & = \int_a^b \big[u\big(x(t),y(t)\big)+\ii v\big(x(t),y(t)\big)\big]\big(x'(t)+\ii y'(t)\big)\dif t\\
-  & = \int_a^b f\big(\gamma(t)\big)\gamma'(t)\dif t.
+  & = \int_a^b f\big(\gamma(t)\big)\gamma'(t)\dif t. \qedhere
 \end{align*}
 \end{proof}
 \begin{example}\label{exam3.1.3}
@@ -91,7 +91,7 @@ f(z)\dz & = (u+\ii v)(\dx+\ii\dy) \\
   把两式加起来，得
   \begin{equation*}
     \int\limits_\gamma z\dz=\frac12\lim_{\lambda\to0}
-    \sum_{k=1}^n(z_k^2-z_{k-1}^2)=\frac12(z_n^2-z_0^2)=\frac12(\beta^2-\alpha^2).
+    \sum_{k=1}^n(z_k^2-z_{k-1}^2)=\frac12(z_n^2-z_0^2)=\frac12(\beta^2-\alpha^2). \qedhere
   \end{equation*}
 \end{proof}
 
@@ -106,7 +106,7 @@ $\gamma$的参数方程为$z=a+r\ee^{\ii t},0\le t\le2\pi$. 由公式 \eqref{eq3
 \begin{equation*}\int\limits_\gamma\frac{\dz}{(z-a)^n}=\begin{cases}
 0,&n\ne1;\\
 2\pi\ii,&n=1.
-\end{cases}
+\end{cases} \qedhere
 \end{equation*}
 \end{solution}
 
@@ -132,7 +132,7 @@ $\gamma$的参数方程为$z=a+r\ee^{\ii t},0\le t\le2\pi$. 由公式 \eqref{eq3
 \begin{align*}
 \bigg|\sum_{k=1}^nf(\zeta_k)(z_k-z_{k-1})\bigg|&
 \le\sum_{k=1}^n|f(\zeta_k)|\,|z_k-z_{k-1}|\\
-&\le M\sum_{k=1}^n|z_k-z_{k-1}|\le ML,
+&\le M\sum_{k=1}^n|z_k-z_{k-1}|\le ML, \qedhere
 \end{align*}
 令$\lambda=\max_{1\le k\le n}s_k\to0$，即得所要的表达式.
 \end{proof}
@@ -199,7 +199,7 @@ $f$在其上的积分是不相等的，即$f$的积分与路径有关.我们问�
 \end{align*}
 由命题 \ref{prop3.1.1}，即得
 \begin{equation*}
-  \int\limits_\gamma f(z)\dz=0.
+  \int\limits_\gamma f(z)\dz=0. \qedhere
 \end{equation*}
 \end{proof}
 
@@ -360,7 +360,7 @@ $|f(z')-f(z'')|<\frac{\varepsilon}{2L}$，这里，$L$是$\gamma$的长度.
 \end{minipage}
 这里，$\varepsilon$是任意事先给定的正数. 由 \eqref{eq3.2.2} 和 \eqref{eq3.2.3} 式即知
 \begin{equation*}
-\int\limits_\gamma f(z)\dz=0.
+  \int\limits_\gamma f(z)\dz=0. \qedhere
 \end{equation*}
 \end{proof}
 
@@ -409,7 +409,7 @@ $|f(z')-f(z'')|<\frac{\varepsilon}{2L}$，这里，$L$是$\gamma$的长度.
 \end{align*}
 由于$\varepsilon>0$是任意的，所以
 \begin{equation*}
-\int\limits_\gamma f(z)\dz=0.
+  \int\limits_\gamma f(z)\dz=0. \qedhere
 \end{equation*}
 \end{proof}
 
@@ -536,7 +536,7 @@ I=
 \frac{2\pi\ii}{a-b},   &\mbox{若$a$在$\gamma$的内部，$b$在$\gamma$的外部；}\\
 -\frac{2\pi\ii}{a-b},  &\mbox{若$a$在$\gamma$的外部，$b$在$\gamma$的内部；}\\
 0,                     &\mbox{若$a,b$都在$\gamma$的内部.}
-\end{cases}
+\end{cases} \qedhere
 \end{equation*}
 \end{solution}
 
@@ -635,8 +635,8 @@ F(z)-F(a)&=\int_{z_0}^zf(\zeta)\dif \zeta-\int_{z_0}^af(\zeta)\dif \zeta\\
 \[\big(\varPhi(z)-F(z)\big)'=f(z)-f(z)=0.\]
 故由第 \ref{chap2} 章习题 \hyperlink{xiti2.2}{2.2} 的第 \hyperlink{xiti2.2.1}{1} 题知道$\varPhi(z)-F(z)$是一个常数，因而
 \begin{equation*}
-\int_{z_0}^zf(\zeta)\dif \zeta=F(z)-F(z_0)=\varPhi(z)-\varPhi(z_0).
-\end{equation*}
+  \int_{z_0}^zf(\zeta)\dif \zeta=F(z)-F(z_0)=\varPhi(z)-\varPhi(z_0). \qedhere
+\end{equation*} 
 \end{proof}
 
 现在设$D$是多连通域，$f\in H(D)$，一般来说
@@ -907,7 +907,9 @@ $f$在$D$内有任意阶导数，且
 \[\bigg|\int\limits_{|z|=R}\frac{\dz}{(z^3-1)(z+4)^2}\bigg|
 \le\frac{2\pi R}{(R^3-1)(R-4)^2}\to0\,\mbox{（$R\to\infty$）}.\]
 故在 \eqref{eq3.4.11} 中令$R\to\infty$，即得
-\[\int\limits_{|z|=2}\frac{\dz}{(z^3-1)(z+4)^2}=\frac{32\pi\ii}{1323}.\]
+\[
+  \int\limits_{|z|=2}\frac{\dz}{(z^3-1)(z+4)^2}=\frac{32\pi\ii}{1323}. \qedhere
+\]
 \end{solution}
 
 
