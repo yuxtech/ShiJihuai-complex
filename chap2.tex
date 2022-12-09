@@ -531,7 +531,6 @@ arc(170:100:2)coordinate(D)node[above]{$w$}arc(100:90:2);
 \[z=x+\ii y_0,-\infty<x<\infty,\]
 所以
 \[w=\ee^z=\ee^x\ee^{\ii y_0}.\]
-这是一条从原点出发的半射线，它与实轴正方向的夹角是$y_0$（图 \ref{fig2.4}）.当$y_0$从$0$变到$2\pi$时，这条半射线的辐角也从$0$变到$2\pi$.因此，$w=\ee^z$把带状域$\{z=x+\ii y:0<y<2\pi\}$变成全平面除掉正实轴的域$\MC\backslash\{z:z\ge0\}$，直线$\Im z=0$变成正实轴的上岸，直线$\Im z=2\pi$变成正实轴的下岸；带状域$\{z=x+\ii y:0<y<\pi\}$变成上半平面，带状域$\{z=x+\ii y:\pi<y<2\pi\}$变成下半平面.一般来说，$w=\ee^z$把带状域$\{z=x+\ii y:\alpha<y<\beta,0<\alpha<\beta\le2\pi\}$变成角状域$\alpha<\arg w<\beta$.
 \begin{figure}[!ht]
 \centering
 \subcaptionbox{\label{fig2.4a}}[0.48\textwidth]
@@ -555,6 +554,8 @@ arc(170:100:2)coordinate(D)node[above]{$w$}arc(100:90:2);
 }
 \caption{\label{fig2.4}}
 \end{figure}
+这是一条从原点出发的半射线，它与实轴正方向的夹角是$y_0$（图 \ref{fig2.4}）.当$y_0$从$0$变到$2\pi$时，这条半射线的辐角也从$0$变到$2\pi$.因此，$w=\ee^z$把带状域$\{z=x+\ii y:0<y<2\pi\}$变成全平面除掉正实轴的域$\MC\backslash\{z:z\ge0\}$，直线$\Im z=0$变成正实轴的上岸，直线$\Im z=2\pi$变成正实轴的下岸；带状域$\{z=x+\ii y:0<y<\pi\}$变成上半平面，带状域$\{z=x+\ii y:\pi<y<2\pi\}$变成下半平面.一般来说，$w=\ee^z$把带状域$\{z=x+\ii y:\alpha<y<\beta,0<\alpha<\beta\le2\pi\}$变成角状域$\alpha<\arg w<\beta$.
+
 \subsection{对数函数}
 对于给定的$z\in \MC$，满足方程$\ee^w=z$的$w$称为$z$的对数，记为$w=\Log z$.现在给出由$z$计算$w$的公式.设$z=r\ee^{\ii\theta},w=u+\ii v$，则$\ee^{u+\ii v}=r\ee^{\ii\theta}$，因而$\ee^u=r,v=\theta+2k\pi$.于是
 \[\Log z=\log|z|+\ii\arg z+2k\pi\ii=\log|z|+\ii\Arg z.\]
