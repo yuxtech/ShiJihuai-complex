@@ -1095,14 +1095,14 @@ $\partial,\bar\partial$作用在二次微分形式上的结果都是零：
 定义$\dif ^2\omega=\dif (\dif \omega)$. 当$\omega$是一$C^2$函数时，由 \eqref{eq3.6.1} 式和 \eqref{eq3.6.2} 式，得
 \begin{equation}\label{eq3.6.4}
 \dif ^2\omega=\dif (\dif \omega)=\dif \bigg(
-\pp\omega z\dz+\pp\omega{\bar z}\dzz\bigg)=\bigg(
-\pppp\omega{\bar z}z-\pppp\omega z{\bar z}\bigg)\dz\wedge\dzz=0.
+\pp\omega z\dz+\pp\omega{\bar z}\dzz\bigg)=\bigg(\pppp\omega z{\bar z}-
+\pppp\omega{\bar z}z\bigg)\dz\wedge\dzz=0.
 \end{equation}
 当$\omega$是一个一次微分形式时，由 \eqref{eq3.6.2} 式知$\dif \omega$是一个二次微分形式，由 \eqref{eq3.6.3} 式即知$\dif ^2\omega=0$.当$\omega$是一个二次微分形式时，由 \eqref{eq3.6.3} 式知$\dif ^2\omega=0$.总之，不论$\omega$是零次、一次或二次微分形式，都有$\dif ^2\omega=0$，所以$\dif ^2=0$.
 
 定义$\partial^2\omega=\partial(\partial\omega),\bar\partial^2\omega=
 \bar\partial(\bar\partial\omega),\partial\bar\partial\omega=\partial(\bar\partial\omega),
-\bar\partial\omega=\bar\partial(\partial\omega)$. 同样可以证明
+\bar\partial\partial\omega=\bar\partial(\partial\omega)$. 同样可以证明
 \begin{equation}\label{eq3.6.5}
 \begin{aligned}
 &\partial^2=0,\\
@@ -1133,7 +1133,7 @@ $\partial,\bar\partial$作用在二次微分形式上的结果都是零：
 \dif \omega&=\bigg(\pp{f_2}z-\pp{f_1}{\bar z}\bigg)\dz\wedge\dzz\\
 &=-\bigg\{\frac12\bigg(\pp{}x-\ii\pp{}y\bigg)(u_2+\ii v_2)
  -\frac12\bigg(\pp{}x+\ii\pp{}y\bigg)(u_1+\ii v_1)\bigg\}2\ii\dif A\\
-&=\bigg\{\bigg(\pp{v_2}x-\pp{v_1}x-\pp{u_2}y--\pp{u_1}y\bigg)
+&=\bigg\{\bigg(\pp{v_2}x-\pp{v_1}x-\pp{u_2}y-\pp{u_1}y\bigg)
 +\ii\bigg(\pp{u_1}x-\pp{u_2}x-\pp{v_1}y-\pp{v_2}y\bigg)\bigg\}\dif A.
 \end{aligned}
 \end{equation}
