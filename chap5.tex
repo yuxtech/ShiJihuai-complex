@@ -37,15 +37,15 @@ a_{-n}(z-z_0)^{-n}
 f(z)=\sum_{n=-\infty}^\infty a_n(z-z_0)^n,z\in D,
 \end{equation}
 其中，$a_n=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}
-\textrm d\zeta$，而$\gamma_\rho=\{\zeta:|\zeta-z_0|=\rho\}$（$r<\rho<R$），并且展开式 \eqref{eq5.1.2} 是唯一的.
+\dif \zeta$，而$\gamma_\rho=\{\zeta:|\zeta-z_0|=\rho\}$（$r<\rho<R$），并且展开式 \eqref{eq5.1.2} 是唯一的.
 \end{theorem}
 \begin{proof}
 如图 \ref{fig5.1} 所示，任意取定$z\in D$，取$r_1,r_2$，使得
 \[r<r_1<|z-z_0|<r_2<R.\]
 记$\gamma_j=\{\zeta:|\zeta-z_0|=r_j\},j=1,2,$. 由第 \ref{chap3} 章 \ref{sec3.4} 节的定理 \ref{thm3.4.6}，得
 \begin{equation}\label{eq5.1.3}
-f(z)=\frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta-
-\frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta.
+f(z)=\frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\dif \zeta-
+\frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\dif \zeta.
 \end{equation}
 \begin{figure}[!ht]
 \centering
@@ -80,9 +80,9 @@ $\bigg|\frac{\zeta-z_0}{z-z_0}\bigg|=\frac{r_1}{|z-z_0|}<1$，所以有
 \le\frac{M_1}{|z-z_0|}\bigg(\frac{r_1}{|z-z_0|}\bigg)^{n-1},\]
 并且右端是一收敛级数，故知级数 \eqref{eq5.1.4} 在$\gamma_1$上一致收敛，因而可逐项积分：
 \begin{equation}\label{eq5.1.5}
-\frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta
+\frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\dif \zeta
 =-\sum_{n=1}^\infty\bigg(\frac1{2\pi\ii}\int\limits_{\gamma_1}
-\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\textrm d\zeta\bigg)(z-z_0)^{-n}.
+\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta\bigg)(z-z_0)^{-n}.
 \end{equation}
 当$\zeta\in\gamma_2$时，$\bigg|\frac{z-z_0}{\zeta-z_0}\bigg|=\frac{|z-z_0|}{r_2}<1$，所以有
 \[\frac1{\zeta-z}=\frac1{\zeta-z_0}\bigg(1-\frac{z-z_0}{\zeta-z_0}\bigg)^{-1}
@@ -93,26 +93,26 @@ $\bigg|\frac{\zeta-z_0}{z-z_0}\bigg|=\frac{r_1}{|z-z_0|}<1$，所以有
 \end{equation}
 与上面的讨论一样，级数 \eqref{eq5.1.6} 在$\gamma_2$上一致收敛，所以
 \begin{equation}\label{eq5.1.7}
-\frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta
+\frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\dif \zeta
 =\sum_{n=0}^\infty\bigg(\frac1{2\pi\ii}\int\limits_{\gamma_2}
-\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\textrm d\zeta\bigg)(z-z_0)^{n}.
+\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\dif \zeta\bigg)(z-z_0)^{n}.
 \end{equation}
 由多连通域的Cauchy积分定理，得
 \begin{align*}
 &\frac1{2\pi\ii}\int\limits_{\gamma_1}
-\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\textrm d\zeta
+\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta
 =\frac1{2\pi\ii}\int\limits_{\gamma_\rho}
-\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\textrm d\zeta=a_{-n},\\
+\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta=a_{-n},\\
 &\frac1{2\pi\ii}\int\limits_{\gamma_2}
-\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\textrm d\zeta
+\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\dif \zeta
 =\frac1{2\pi\ii}\int\limits_{\gamma_\rho}
-\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\textrm d\zeta=a_{n}.
+\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\dif \zeta=a_{n}.
 \end{align*}
 把它们分别代入 \eqref{eq5.1.5} 式和 \eqref{eq5.1.7} 式，得
 \begin{align*}
-&\frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta
+&\frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\dif \zeta
 =-\sum_{n=1}^\infty a_{-n}(z-z_0)^{-n},\\
-&\frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta
+&\frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\dif \zeta
 =\sum_{n=0}^\infty a_n(z-z_0)^n,
 \end{align*}
 再把它们代入 \eqref{eq5.1.3} 式，即得展开式 \eqref{eq5.1.2}.
@@ -121,9 +121,9 @@ $\bigg|\frac{\zeta-z_0}{z-z_0}\bigg|=\frac{r_1}{|z-z_0|}<1$，所以有
 \[f(z)=\sum_{n=-\infty}^{\infty}a_n'(z-z_0)^n,\]
 因为级数在$\gamma_\rho$上一致收敛，逐项积分得
 \[\frac1{2\pi\ii}\int\limits_{\gamma_\rho}
-\frac{f(\zeta)}{(\zeta-z_0)^{m+1}}\textrm d\zeta
+\frac{f(\zeta)}{(\zeta-z_0)^{m+1}}\dif \zeta
 =\sum_{n=-\infty}^\infty a_n'\frac1{2\pi\ii}
-\int\limits_{\gamma_\rho}(\zeta-z_0)^{n-m-1}\textrm d\zeta=a_{m'}.\]
+\int\limits_{\gamma_\rho}(\zeta-z_0)^{n-m-1}\dif \zeta=a_{m'}.\]
 所以这个展开式就是 \eqref{eq5.1.2} 式.
 \end{proof}
 
@@ -139,10 +139,10 @@ $\bigg|\frac{\zeta-z_0}{z-z_0}\bigg|=\frac{r_1}{|z-z_0|}<1$，所以有
 \end{align*}
 当$z\in D_2$时，由于$2<|z|<\infty$，所以
 \begin{align*}
-\frac1{(z-1)(z-2)}&=\frac1{z-2}-\frac1{z-1}
-=\frac1z\frac1{1-\frac2z}-\frac1z\frac1{1-\frac1z}\\
-&=\sum_{n=0}^\infty\frac{2^n}{z^{n+1}}-\sum_{n=0}^\infty\frac1{z^{n+1}}
-=\sum_{n=0}^\infty\frac{2^n-1}{z^{n+1}}.
+  \frac1{(z-1)(z-2)} &= \frac1{z-2}-\frac1{z-1}
+  = \frac1z \frac1{1-\frac2z} - \frac1z \frac1{1-\frac1z}\\
+  & = \sum_{n=0}^\infty\frac{2^n}{z^{n+1}} - \sum_{n=0}^\infty\frac1{z^{n+1}}
+  =\sum_{n=0}^\infty\frac{2^n-1}{z^{n+1}}. \qedhere
 \end{align*}
 \end{solution}
 
@@ -173,7 +173,7 @@ $\bigg|\frac{\zeta-z_0}{z-z_0}\bigg|=\frac{r_1}{|z-z_0|}<1$，所以有
     \[\sum_{n=-\infty}^\infty J_n(z)\zeta^n,\]
 称$J_n(z)$（$n\ge0$）为\textbf{Bessel函数}\index{B!Bessel函数}. 证明：
 \begin{align*}
-J_n(z)&=\frac1\pi\int_0^\pi\cos(n\theta-z\sin\theta)\textrm d\theta\\
+J_n(z)&=\frac1\pi\int_0^\pi\cos(n\theta-z\sin\theta)\dif \theta\\
 &=\sum_{k=0}^\infty\frac{(-1)^k}{k!(n+k)!}\bigg(\frac z2\bigg)^{n+2k},n\ge0.
 \end{align*}
 \item \hypertarget{xiti5.1.4}{} 设$0<r<R<\infty,D=B(0,R)\backslash\bar{B(0,r)}$. 证明：若$f(z)=\sum_{n=-\infty}^\infty a_nz^n$双全纯地将$D$映为域$G$，则$G$的面积为
@@ -217,9 +217,9 @@ $z_0$是$f$的可去奇点的充分必要条件是$f$在$z_0$附近有界.
 f(z)=\sum_{n=-\infty}^\infty a_n(z-z_0)^n,z\in D,
 \end{equation}
 其中，$a_n=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}
-\textrm d\zeta,0<\rho<R,\gamma_{\rho}=\{\zeta:|\zeta-z_0|=\rho\}$. 今取$0<\rho<\varepsilon$，故当$\zeta\in\gamma_\rho$时，$|f(\zeta)|<M$. 于是，由长大不等式得
+\dif \zeta,0<\rho<R,\gamma_{\rho}=\{\zeta:|\zeta-z_0|=\rho\}$. 今取$0<\rho<\varepsilon$，故当$\zeta\in\gamma_\rho$时，$|f(\zeta)|<M$. 于是，由长大不等式得
 \[|a_{-n}|=\bigg|\frac1{2\pi\ii}\int\limits_{\gamma_\rho}
-\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\textrm d\zeta\bigg|\le
+\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta\bigg|\le
 \frac M{2\pi\rho^{-n+1}}\cdot2\pi\rho=M\rho^n,\]
 让$\rho\to0$，即得$a_{-n}=0,n=1,2,\cdots$. 这说明在$f$的Laurent展开式 \eqref{eq5.2.1} 中，所有负次幂的系数都是零，因而展开式 \eqref{eq5.2.1} 是一个幂级数. 所以$\lim_{z\to z_0}f(z)=a_0$，即$z_0$是一个可去奇点.
 \end{proof}
@@ -457,10 +457,10 @@ a&b\\c&d
 设$f$在$a$点全纯，那么对于$a$点邻域中的任意可求长闭曲线$\gamma$，都有$\int\limits_\gamma f(z)\dz=0$. 如果$a$是$f$的孤立奇点，那么上述积分不一定总等于零，且积分值只与$f$和$a$有关，而与$\gamma$无关. 现在来计算这个积分. 设$f$在$a$点邻域中的Laurent展开式为
 \[f(z)=\sum_{n=-\infty}^\infty c_n(z-a)^n,\]
 这里，
-\[c_n=\frac1{2\pi\ii}\int\limits_{\gamma}\frac{f(\zeta)}{(\zeta-a)^{n+1}}\textrm d\zeta,n=0,\pm1,\cdots.\]
+\[c_n=\frac1{2\pi\ii}\int\limits_{\gamma}\frac{f(\zeta)}{(\zeta-a)^{n+1}}\dif \zeta,n=0,\pm1,\cdots.\]
 特别地，当$n=-1$时，我们有
 \begin{equation}\label{eq5.4.1}
-c_{-1}=\frac1{2\pi\ii}\int\limits_{\gamma}f(\zeta)\textrm d\zeta.
+c_{-1}=\frac1{2\pi\ii}\int\limits_{\gamma}f(\zeta)\dif \zeta.
 \end{equation}
 原来所讨论的积分值就是$c_{-1}$的$2\pi\ii$倍，因此$c_{-1}$这个系数有它特殊的含义.我们给出下面的
 \begin{definition}\label{def5.4.1}
@@ -487,7 +487,7 @@ c_{-1}=\frac1{2\pi\ii}\int\limits_{\gamma}f(\zeta)\textrm d\zeta.
 
 \begin{prop}\label{prop5.4.2}
 若$a$是$f$的$m$阶极点，则
-\[\Res(f,a)=\frac1{(m-1)!}\lim_{z\to a}\frac{\textrm d^{m-1}}{\textrm dz^{m-1}}
+\[\Res(f,a)=\frac1{(m-1)!}\lim_{z\to a}\frac{\dif ^{m-1}}{\dif z^{m-1}}
 \{(z-a)^mf(z)\}.\]
 \end{prop}
 \begin{proof}
@@ -500,7 +500,7 @@ f(z)=\frac1{(z-a)^m}g(z),
 =\sum_{n=0}^\infty\frac{g^{(n)}(a)}{n!}(z-a)^{n-m}.\]
 这是一个Laurent展开式，$(z-a)^{-1}$的系数为$\frac{g^{(m-1)}(a)}{(m-1)!}$. 由 \eqref{eq5.4.4} 式知$g(z)=(z-a)^mf(z)$，因而得
 \begin{equation*}
-\Res(f,a)=\frac{g^{(m-1)}(a)}{(m-1)!}=\frac1{(m-1)!}\lim_{z\to a}\frac{\textrm d^{m-1}}{\textrm dz^{m-1}}\{(z-a)^mf(z)\}.
+  \Res(f,a) = \frac{g^{(m-1)}(a)}{(m-1)!} = \frac1{(m-1)!}\lim_{z\to a}\frac{\dif ^{m-1}}{\dif z^{m-1}}\{(z-a)^mf(z)\}. \qedhere
 \end{equation*}
 \end{proof}
 
@@ -526,8 +526,8 @@ f(z)=\frac1{(z-a)^m}g(z),
 \begin{proof}
 在所设的条件下，$a$是$f$的$1$阶极点，故由命题 \ref{prop5.4.3} 即知道
 \begin{equation*}
-\Res(f,a)=\lim_{z\to a}(z-a)\frac{g(z)}{h(z)}
-=\lim_{z\to a}\frac{g(z)}{\frac{h(z)-h(a)}{z-a}}=\frac{g(a)}{h'(a)}.
+  \Res(f,a) = \lim_{z\to a}(z-a)\frac{g(z)}{h(z)}
+  = \lim_{z\to a}\frac{g(z)}{\frac{h(z)-h(a)}{z-a}} = \frac{g(a)}{h'(a)}. \qedhere
 \end{equation*}
 \end{proof}
 
@@ -537,7 +537,7 @@ f(z)=\frac1{(z-a)^m}g(z),
 \begin{solution}
 这时$g(z)=\ee^z,h(z)=\sin z$. 于是$g(0)=1,h(0)=0,h'(0)=1$，因而由命题 \ref{prop5.4.5} 得
 \begin{equation*}
-\Res(f,0)=1.
+  \Res(f,0) = 1. \qedhere
 \end{equation*}
 \end{solution}
 
@@ -547,8 +547,8 @@ f(z)=\frac1{(z-a)^m}g(z),
 \begin{solution}
   显然，$z=-\ii$是$f$的一个$2$阶极点，利用命题 \ref{prop5.4.2}，得
   \begin{equation*}
-  \Res(f,-\ii)=\lim_{z\to-\ii}\dd{}z\bigg(\frac{\ee^{\ii z}}{z(z-\ii)^2}\bigg)
-  =\frac{\ee}4.
+    \Res(f,-\ii)=\lim_{z\to-\ii}\dd{}z\bigg(\frac{\ee^{\ii z}}{z(z-\ii)^2}\bigg)
+    = \frac{\ee}4. \qedhere
   \end{equation*}
 \end{solution}
 
@@ -565,7 +565,7 @@ f(z)=\frac1{(z-a)^m}g(z),
 \[1+\frac1{2!}+\frac1{2!3!}+\frac1{3!4!}+\cdots,\]
 这就是要找的残数，即
 \begin{equation*}
-\Res(f,a)=\sum_{n=0}^\infty\frac1{n!(n+1)!}.
+  \Res(f,a) = \sum_{n=0}^\infty\frac1{n!(n+1)!}. \qedhere
 \end{equation*}
 \end{solution}
 
@@ -611,8 +611,10 @@ f(z)=\frac1{(z-a)^m}g(z),
 \end{aligned}
 \end{align*}
 因而有
-\[\int\limits_\gamma f(z)\dz=2\pi\ii\bigg(\frac18+\frac18-\frac18\bigg)
-=\frac{\pi\ii}4.\]
+\[
+  \int\limits_\gamma f(z)\dz=2\pi\ii\bigg(\frac18+\frac18-\frac18\bigg)
+  =\frac{\pi\ii}4. \qedhere
+\]
 \end{proof}
 
 \begin{example}\label{exam5.4.11}
@@ -630,7 +632,7 @@ f(z)=\frac1{(z-a)^m}g(z),
 \[\frac{z^2\sin^2z}{(1-\ee^z)^5}=-\frac1z(1+c_1z+\cdots),\]
 因而$\Res(f,0)=-1$. 由残数定理即得
 \begin{equation*}
-\int\limits_{|z|=1}\frac{z^2\sin^2z}{(1-\ee^z)^5}\dz=-2\pi\ii.
+  \int\limits_{|z|=1}\frac{z^2\sin^2z}{(1-\ee^z)^5}\dz = -2\pi\ii. \qedhere
 \end{equation*}
 \end{solution}
 
@@ -707,7 +709,7 @@ p_jg(z_j)-\sum_{j=1}^n q_jg(w_j).\]
   \item $\int\limits_{|z|=2}\frac1{z^3(z^{10}-2)}\dz$；
   \item $\int\limits_{|z|=1}\frac1{(z-a)^n(z-b)^n}\dz$（$|a|<1<|b|,n\in\MN$）；
   \item $\int_0^{2\pi}\ee^{\cos\theta}[\cos(n\theta-\sin\theta)+\ii
-  \sin(n\theta-\sin\theta)]\textrm d\theta$（$n\in\MZ$）；
+  \sin(n\theta-\sin\theta)]\dif \theta$（$n\in\MZ$）；
   \item $\int\limits_{|z|=R}\frac{z^2\dz}{\ee^{2\pi\ii z^3}-1}$（$n<R^3<n+1,n\in\MN$）.
 \end{enuma}
 \item 计算积分
@@ -717,7 +719,7 @@ p_jg(z_j)-\sum_{j=1}^n q_jg(w_j).\]
   \item $\int\limits_{|z|=R}z^n\log\frac{z-a}{z-b}\dz$ $\big(a\ne b,R>\max\{|a|,|b|\}\big)$.
 \end{enuma}
 \item 设$D$是由有限条可求长简单闭曲线围成的域，$f(z)$在$D$上亚纯，在$D$中的全部彼此不同的极点为$w_1,w_2,\cdots,w_m$，其相应的Laurent展开式的主要部分为$f_1(z),f_2(z),\cdots$，$f_m(z)$，并且在$\bar D\backslash\{w_1,w_2,\cdots,w_m\}$上连续.证明：对于任意$z\in D$，有
-    \[\frac1{2\pi\ii}\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\textrm d\zeta=f(z)-\sum_{j=1}^mf_j(z).\]
+    \[\frac1{2\pi\ii}\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\dif \zeta=f(z)-\sum_{j=1}^mf_j(z).\]
 \end{xiti}
 
 \section{利用残数定理计算定积分\label{sec5.5}}
@@ -725,7 +727,7 @@ p_jg(z_j)-\sum_{j=1}^n q_jg(w_j).\]
 
 我们分几种类型来讨论：
 
-\subsection{\mbox{$\int_{-\infty}^\infty f(x){\normalfont\textrm d}x$}型积分}
+\subsection{\mbox{$\int_{-\infty}^\infty f(x){\normalfont\dif }x$}型积分}
 先证明下面的
 \begin{theorem}\label{thm5.5.1}
 设$f$在上半平面$\{z:\Im z>0\}$中除去$a_1,\cdots,a_n$外是全纯的，在$\{z:\Im z\ge0\}$中除去$a_1,\cdots,a_n$外是连续的.如果$\lim_{z\to\infty}zf(z)=0$，那么
@@ -753,7 +755,7 @@ p_jg(z_j)-\sum_{j=1}^n q_jg(w_j).\]
 \int_{-R}^Rf(x)\dx+\int\limits_{\gamma_R}f(z)\dz=2\pi\ii\sum_{k=1}^n\Res(f,a_k).
 \end{equation}
 记$M(R)=\max\{|f(z)|:z\in \gamma_R\}$，由假定，$\lim_{R\to\infty}RM(R)=0$，因而
-\[\bigg|\int\limits_{\gamma_R}f(z)\dz\bigg|=\bigg|\int_0^\pi f(R\ee^{\ii\theta})R\ii\ee^{\ii\theta}\textrm d\theta\bigg|
+\[\bigg|\int\limits_{\gamma_R}f(z)\dz\bigg|=\bigg|\int_0^\pi f(R\ee^{\ii\theta})R\ii\ee^{\ii\theta}\dif \theta\bigg|
 \le\pi RM(R)\to0\;\mbox{（$R\to\infty$）}.\]
 在 \eqref{eq5.5.2} 式中令$R\to\infty$，即得公式 \eqref{eq5.5.1}.
 \end{proof}
@@ -780,7 +782,7 @@ p_jg(z_j)-\sum_{j=1}^n q_jg(w_j).\]
 \end{align*}
 故得
 \begin{equation*}
-\int_{-\infty}^\infty\frac{x^2-x+2}{x^4+10x^2+9}\dx=\frac5{12}\pi.
+  \int_{-\infty}^\infty\frac{x^2-x+2}{x^4+10x^2+9}\dx = \frac5{12}\pi. \qedhere
 \end{equation*}
 \end{solution}
 
@@ -793,7 +795,7 @@ p_jg(z_j)-\sum_{j=1}^n q_jg(w_j).\]
 \[\Res(f,\ii)=\frac1{2\ii}\frac{(2n)!}{2^{2n}(n!)^2},\]
 于是得
 \begin{equation*}
-\int_{-\infty}^\infty\frac{\dx}{(1+x^2)^{n+1}}=\frac{(2n)!\pi}{2^{2n}(n!)^2}.
+  \int_{-\infty}^\infty\frac{\dx}{(1+x^2)^{n+1}} = \frac{(2n)!\pi}{2^{2n}(n!)^2}. \qedhere
 \end{equation*}
 \end{solution}
 
@@ -806,18 +808,18 @@ p_jg(z_j)-\sum_{j=1}^n q_jg(w_j).\]
 \end{lemma}
 \begin{proof}
 记$M(R)=\max\{|f(z)|:z\in\gamma_R\}$，则由假定，$M(R)\to0$（$R\to\infty$）. 因为
-\[\int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz=\int_0^\pi\ee^{\ii\alpha R\cos\theta}\ee^{-\alpha R\sin\theta}f(R\ee^{\ii\theta})R\ii\ee^{\ii\theta}\textrm d\theta,\]
+\[\int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz=\int_0^\pi\ee^{\ii\alpha R\cos\theta}\ee^{-\alpha R\sin\theta}f(R\ee^{\ii\theta})R\ii\ee^{\ii\theta}\dif \theta,\]
 所以
 \begin{align*}
 \bigg|\int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz\bigg|
-&\le RM(R)\int_0^\pi\ee^{-\alpha R\sin\theta}\textrm d\theta
-=2RM(R)\int_0^{\frac\pi2}\ee^{-\alpha R\sin\theta}\textrm d\theta\\
+&\le RM(R)\int_0^\pi\ee^{-\alpha R\sin\theta}\dif \theta
+=2RM(R)\int_0^{\frac\pi2}\ee^{-\alpha R\sin\theta}\dif \theta\\
 &\le 2RM(R)\int_0^{\frac\pi2}\ee^{-\frac2\pi \alpha R\theta}
 =\frac\pi2M(R)(1-\ee^{-\alpha R})\to0\;\mbox{（$R\to\infty$）}.
 \end{align*}
 这里，我们已经利用了不等式
 \begin{equation*}
-\sin\theta\ge\frac2\pi\theta\left(0\le\theta\le\frac\pi2\right).
+  \sin\theta \ge \frac2\pi\theta \left(0\le\theta\le\frac\pi2\right). \qedhere
 \end{equation*}
 \end{proof}
 
@@ -865,7 +867,7 @@ $a_1,\cdots,a_n$外是连续的. 如果$\lim_{z\to\infty}f(z)=0$，那么对任�
 \[\Res\bigg(\frac{\ee^{\ii a z}}{b^2+z^2},b\ii\bigg)=\frac{\ee^{-ab}}{2b\ii},\]
 根据推论 \ref{cor5.5.7}，即得
 \begin{equation*}
-\int_{-\infty}^\infty\frac{\cos a x}{b^2+x^2}\dx=\frac\pi b\ee^{-ab}.
+  \int_{-\infty}^\infty\frac{\cos a x}{b^2+x^2}\dx = \frac\pi b\ee^{-ab}. \qedhere
 \end{equation*}
 \end{solution}
 
@@ -883,12 +885,12 @@ $a_1,\cdots,a_n$外是连续的. 如果$\lim_{z\to\infty}f(z)=0$，那么对任�
 令$g(z)=(z-a)f(z)-A$，则$\lim_{z\to a}g(z)=0$. 若记$M_\rho=\sup\{|g(z)|:z=a+\rho\ee^{\ii\theta},\theta_0\le\theta\le\theta_0+\alpha\}$，则$\lim_{\rho\to0}M_\rho=0$. 于是
 \[\bigg|\int\limits_{\gamma_\rho}\frac{g(z)}{z-a}\dz\bigg|
 =\bigg|\int_{\theta_0}^{\theta_0+\alpha}\frac{g(a+\rho\ee^{\ii\theta})}
-{\rho\ee^{\ii\theta}}\rho\ii\ee^{\ii\theta}\textrm d\theta\bigg|
+{\rho\ee^{\ii\theta}}\rho\ii\ee^{\ii\theta}\dif \theta\bigg|
 \le M_\rho\alpha\to0\;\mbox{（$\rho\to0$）.}\]
 由此即得
 \begin{equation*}
-\int\limits_{\gamma_\rho}f(z)\dz=\ii A\alpha+\int\limits_{\gamma_\rho}
-\frac{g(z)}{z-a}\dz\to\ii A\alpha\;\mbox{（$\rho\to0$）}.
+  \int\limits_{\gamma_\rho}f(z)\dz=\ii A\alpha+\int\limits_{\gamma_\rho}
+  \frac{g(z)}{z-a}\dz\to\ii A\alpha\;\mbox{（$\rho\to0$）}. \qedhere
 \end{equation*}
 \end{proof}
 
@@ -902,7 +904,7 @@ $a_1,\cdots,a_n$外是连续的. 如果$\lim_{z\to\infty}f(z)=0$，那么对任�
 >={Stealth[width=3pt]}]
 \draw(-3,0)node[below]{$-R$}--(-1,0)node[below]{$-\rho$}arc(180:0:1)node[below]{$\rho$}
 --(3,0)node[below]{$R$}arc(0:180:3);
-\draw[very thin](0,1)node[above]{$\gamma_\rho$}--++(-0.01,0);
+\draw[->,very thin](0,1)node[above]{$\gamma_\rho$}--++(0.01,0);
 \draw[->,very thin](0,3)node[above]{$\gamma_R$}(45:3)--++(-0.01,0.01);
 \fill(0,0)circle(0.7pt)node[below]{$O$};
 \end{tikzpicture}
@@ -925,15 +927,15 @@ $a_1,\cdots,a_n$外是连续的. 如果$\lim_{z\to\infty}f(z)=0$，那么对任�
 \[\int_{-\infty}^\infty\frac{\sin x}x\dx=\pi,\]
 因而
 \begin{equation*}
-\int_0^\infty\frac{\sin x}x\dx=\frac12\int_{-\infty}^\infty\frac{\sin x}x\dx=\frac\pi2.
+  \int_0^\infty\frac{\sin x}x\dx = \frac12\int_{-\infty}^\infty\frac{\sin x}x\dx = \frac\pi2. \qedhere
 \end{equation*}
 \end{solution}
 
 注意，如果$f$是偶函数，$\int_0^\infty f(x)\dx$的值可以通过等式
-\[\int_0^\infty f(x)\dx=\frac12\int_{-\infty}^\infty f(x)\dx.\]
+\[\int_0^\infty f(x)\dx=\frac12\int_{-\infty}^\infty f(x)\dx\]
 从$\int_{-\infty}^\infty f(x)\dx$的值得到，就像上面的例子那样.如果$f$不是偶函数，这个方法就不行了.下面就来讨论计算$\int_0^\infty f(x)\dx$的方法.
 
-\subsection{\mbox{$\int_0^\infty f(x){\normalfont\textrm d}x$}型积分\protect\hypertarget{sec5.5.2}{}}
+\subsection{\mbox{$\int_0^\infty f(x){\normalfont\dif }x$}型积分\protect\hypertarget{sec5.5.2}{}}
 
 用残数定理计算$\int_0^\infty f(x)\dx$这种类型的积分，往往要借助于对数函数，不像计算$\int_{-\infty}^\infty f(x)\dx$型积分直接.我们通过下面两个例子来说明这种方法.
 \begin{example}\label{exam5.5.11}
@@ -999,8 +1001,8 @@ $a_1,\cdots,a_n$外是连续的. 如果$\lim_{z\to\infty}f(z)=0$，那么对任�
 (m-1-p)\ee^{p\pi\ii}.\]
 由此即得
 \begin{align*}
-&\int_0^\infty\frac{x^{p-1}}{1+x}\dx=\frac\pi{\sin p\pi}\;\mbox{（$0<p<1$）},\\
-&\int_0^\infty\frac{x^{p-1}}{(1+x)^m}\dx=\frac\pi{\sin p\pi}\frac1{(m-1)!}(1-p)(2-p)\cdots(m-1-p).
+  &\int_0^\infty\frac{x^{p-1}}{1+x}\dx = \frac\pi{\sin p\pi}\;\mbox{（$0<p<1$）},\\
+  &\int_0^\infty\frac{x^{p-1}}{(1+x)^m}\dx = \frac\pi{\sin p\pi}\frac1{(m-1)!}(1-p)(2-p)\cdots(m-1-p). \qedhere
 \end{align*}
 \end{solution}
 
@@ -1033,12 +1035,12 @@ $f$在$\Gamma$所围成的域中有两个$2$阶极点$z=\pm\ii$.对$f$用残数�
 \begin{align*}
 &\begin{aligned}
 \bigg|\int\limits_{\gamma_R}\frac{\log^2z}{(1+z^2)^2}\dz\bigg|&
-=\bigg|\int_0^{2\pi}\frac{(\log R+\ii\theta)^2}{(1+R^2\ee^{2\ii\theta})^2}R\ii\ee^{\ii\theta}\textrm d\theta\bigg|\\
+=\bigg|\int_0^{2\pi}\frac{(\log R+\ii\theta)^2}{(1+R^2\ee^{2\ii\theta})^2}R\ii\ee^{\ii\theta}\dif \theta\bigg|\\
 &\le2\pi R\frac{(\log R+2\pi)^2}{(R^2-1)^2}\to0\;\mbox{（$R\to\infty$）},
 \end{aligned}\\
 &\begin{aligned}
 \bigg|\int\limits_{\gamma_\rho}\frac{\log^2z}{(1+z^2)^2}\dz\bigg|&
-=\bigg|\int_0^{2\pi}\frac{(\log \rho+\ii\theta)^2}{(1+\rho^2\ee^{2\ii\theta})^2}\rho\ii\ee^{\ii\theta}\textrm d\theta\bigg|\\
+=\bigg|\int_0^{2\pi}\frac{(\log \rho+\ii\theta)^2}{(1+\rho^2\ee^{2\ii\theta})^2}\rho\ii\ee^{\ii\theta}\dif \theta\bigg|\\
 &\le2\pi\rho\frac{(\log \rho+2\pi)^2}{(1-\rho^2)^2}\to0\;\mbox{（$\rho\to0$）}.
 \end{aligned}
 \end{align*}
@@ -1054,7 +1056,7 @@ $f$在$\Gamma$所围成的域中有两个$2$阶极点$z=\pm\ii$.对$f$用残数�
 \begin{equation}\label{eq5.5.9}
 \begin{aligned}
 \int_{-R}^{-\rho}\frac{\log|x|}{(1+x^2)^2}\dx&+\ii\pi\int_{-R}^{-\rho}\frac{\dx}{(1+x^2)^2}
-+\int\limits_{\gamma_\rho}\frac{\log z}{(1+z^2)^2}\dz\\
++\int\limits_{\gamma_\rho^-}\frac{\log z}{(1+z^2)^2}\dz\\
 &+\int_\rho^R\frac{\log x}{(1+x^2)^2}\dx+\int\limits_{\gamma_R}\frac{\log z}{(1+z^2)^2}\dz\\
 &=2\pi\ii \Res\bigg(\frac{\log z}{(1+z^2)},\ii\bigg).
 \end{aligned}
@@ -1074,7 +1076,7 @@ $f$在$\Gamma$所围成的域中有两个$2$阶极点$z=\pm\ii$.对$f$用残数�
 与上面的做法一样，可证
 \begin{align*}
 &\lim_{R\to\infty}\int\limits_{\gamma_R}\frac{\log z}{(1+z^2)^2}\dz=0,\\
-&\lim_{\rho\to0}\int\limits_{\gamma_\rho}\frac{\log z}{(1+z^2)^2}\dz=0,
+&\lim_{\rho\to0}\int\limits_{\gamma_\rho^-}\frac{\log z}{(1+z^2)^2}\dz=0,
 \end{align*}
 而
 \[\Res\bigg(\frac{\log z}{(1+z^2)^2},\ii\bigg)=\frac\pi8+\frac\ii4,\]
@@ -1086,67 +1088,67 @@ $f$在$\Gamma$所围成的域中有两个$2$阶极点$z=\pm\ii$.对$f$用残数�
 与第一种方法所得的结果一样.
 \end{solution}
 
-\subsection{\mbox{$\int_a^b f(x){\normalfont\textrm d}x$}型积分}
+\subsection{\mbox{$\int_a^b f(x){\normalfont\dif }x$}型积分}
 我们讨论两种重要类型的有穷限积分.一种是
-\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\textrm d\theta\]
+\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta\]
 类型的积分，其中，$R(X,Y)$是两个变量$X,Y$的有理函数.这种类型的积分可以化为$\int_{-\infty}^\infty f(x)\dx$型积分来讨论.事实上，因为被积函数是周期为$2\pi$的函数，所以
-\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\textrm d\theta=\int_{-\pi}^{\pi}R(\sin\theta,\cos\theta)\textrm d\theta.\]
+\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta=\int_{-\pi}^{\pi}R(\sin\theta,\cos\theta)\dif \theta.\]
 作变换$t=\tan\frac\theta2$，那么
 \begin{align*}
 &\sin\theta=\frac{2t}{1+t^2},\\
 &\cos\theta=\frac{1-t^2}{1+t^2},\\
-&\textrm d\theta=\frac{2\textrm dt}{1+t^2},
+&\dif \theta=\frac{2\dif t}{1+t^2},
 \end{align*}
 于是
-\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\textrm d\theta
+\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta
 =2\int_{-\infty}^\infty R\bigg(\frac{2t}{1+t^2},\frac{1-t^2}{1+t^2}\bigg)
-\frac1{1+t^2}\textrm dt.\]
+\frac1{1+t^2}\dif t.\]
 右端积分中的被积函数是$t$的有理函数，这是刚讨论过的积分.
 
 计算这种积分的另外一种方法是把它化为单位圆周上的积分.设$z=\ee^{\ii\theta}$，那么
 \begin{align*}
 &\cos\theta=\frac12(\ee^{\ii\theta}+\ee^{-\ii\theta})=\frac12\bigg(z+\frac1z\bigg),\\
 &\sin\theta=\frac1{2\ii}(\ee^{\ii\theta}-\ee^{-\ii\theta})=\frac1{2\ii}\bigg(z-\frac1z\bigg),\\
-&\textrm d\theta=\frac{1}{\ii z}\dz,
+&\dif \theta=\frac{1}{\ii z}\dz,
 \end{align*}
 于是
-\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\textrm d\theta=
+\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta=
 \int\limits_{|z|=1}R\bigg(\frac1{2\ii}\bigg(z-\frac1z\bigg),
 \frac12\bigg(z+\frac1z\bigg)\bigg)\frac1{\ii z}\dz.\]
 右端积分中的被积函数是$z$的有理函数，积分在单位圆周上进行，因而可用残数定理来计算.
 
 \begin{example}\label{exam5.5.13}
 计算积分
-\[\int_0^{2\pi}\frac{\textrm d\theta}{3+\cos\theta+2\sin\theta}.\]
+\[\int_0^{2\pi}\frac{\dif \theta}{3+\cos\theta+2\sin\theta}.\]
 \end{example}
 \begin{solution}
 令$z=\ee^{\ii\theta}$，则
-\[\int_0^{2\pi}\frac{\textrm d\theta}{3+\cos\theta+2\sin\theta}
+\[\int_0^{2\pi}\frac{\dif \theta}{3+\cos\theta+2\sin\theta}
 =2\int\limits_{|z|=1}\frac{\dz}{(\ii+2)z^2+6\ii z+\ii-2}.\]
 右端积分中的被积函数有两个$1$阶极点
 \[a_1=-\frac{1+2\ii}5,\quad a_2=-1-2\ii,\]
 但只有$a_1$在单位圆内，被积函数在$a_1$处的残数为$\frac1{4\ii}$，因而
 \begin{equation*}
-\int_0^{2\pi}\frac{\textrm d\theta}{3+\cos\theta+2\sin\theta}
-=4\pi\ii\cdot\frac1{4\ii}=\pi.
+  \int_0^{2\pi}\frac{\dif \theta}{3+\cos\theta+2\sin\theta}
+  = 4\pi\ii\cdot\frac1{4\ii} = \pi. \qedhere
 \end{equation*}
 \end{solution}
 
 用类似的方法可以计算积分
-\[\int_0^{2\pi}R(\sin n\theta,\cos n\theta)\textrm d\theta,\]
+\[\int_0^{2\pi}R(\sin n\theta,\cos n\theta)\dif \theta,\]
 这是因为
-\[\int_0^{2\pi}R(\sin n\theta,\cos n\theta)\textrm d\theta=
+\[\int_0^{2\pi}R(\sin n\theta,\cos n\theta)\dif \theta=
 \int\limits_{|z|=1}R\bigg(\frac1{2\ii}\bigg(z^n-\frac1{z^n}\bigg),
 \frac12\bigg(z^n+\frac1{z^n}\bigg)\bigg)\frac1{\ii z}\dz.\]
 这里，$n$是整数.
 
 如果要计算积分
-\[\int_0^{2\pi}R(\sin \theta,\cos \theta)\cos n\theta\textrm d\theta\]
+\[\int_0^{2\pi}R(\sin \theta,\cos \theta)\cos n\theta\dif \theta\]
 或
-\[\int_0^{2\pi}R(\sin \theta,\cos \theta)\sin n\theta\textrm d\theta,\]
+\[\int_0^{2\pi}R(\sin \theta,\cos \theta)\sin n\theta\dif \theta,\]
 则先利用公式
 \begin{equation}\label{eq5.5.10}
-\int_0^{2\pi}R(\sin\theta,\cos\theta)\ee^{\ii n\theta}\textrm d\theta=
+\int_0^{2\pi}R(\sin\theta,\cos\theta)\ee^{\ii n\theta}\dif \theta=
 \int\limits_{|z|=1}R\bigg(\frac1{2\ii}\bigg(z-\frac1z\bigg),
 \frac12\bigg(z+\frac1z\bigg)\bigg)\frac{z^{n-1}}{\ii}\dz.
 \end{equation}
@@ -1268,7 +1270,7 @@ s\pi}\sum_{k=1}^n\Res(F,a_k).
 \[\lim_{z\to\infty}z^{r+s+1}f(z)=1.\]
 由公式 \eqref{eq5.5.11} 即得
 \begin{equation*}
-\int_{-1}^1\frac{\dx}{\sqrt[\leftroot{-1}\uproot{2}3]{(1+x)^2(1-x)}}=\frac2{\sqrt3}\pi.
+  \int_{-1}^1\frac{\dx}{\sqrt[\leftroot{-1}\uproot{2}3]{(1+x)^2(1-x)}} = \frac2{\sqrt3}\pi. \qedhere
 \end{equation*}
 \end{solution}
 \begin{example}\label{exam5.5.17}
@@ -1299,8 +1301,8 @@ $f$在全平面上只有一个$3$阶极点$z=-1$，于是由公式 \eqref{eq5.5.
 \frac29\ee^{\frac{2\pi}3\ii}2^{-\frac53}.\]
 代入 \eqref{eq5.5.15} 式后再代入 \eqref{eq5.5.14} 式，即得
 \begin{equation*}
-\int_0^1\frac{\sqrt[\leftroot{-1}\uproot{2}3]{x^2(1-x)}}{(1+x)^3}\dx
-=\frac{\sqrt[\leftroot{-1}\uproot{2}3]2\pi}{18\sqrt3}.
+  \int_0^1\frac{\sqrt[\leftroot{-1}\uproot{2}3]{x^2(1-x)}}{(1+x)^3}\dx
+  =\frac{\sqrt[\leftroot{-1}\uproot{2}3]2\pi}{18\sqrt3}. \qedhere
 \end{equation*}
 \end{solution}
 
@@ -1331,17 +1333,17 @@ $\int_0^\infty\sin x^2\dx$}
 \end{figure}
 于是，当$R\to\infty$时，有
 \[\bigg|\int\limits_{\gamma_R}\ee^{\ii z^2}\dz\bigg|
-\le\int_0^{\frac\pi4}\ee^{-\frac4\pi R^2\theta}R\textrm d\theta
+\le\int_0^{\frac\pi4}\ee^{-\frac4\pi R^2\theta}R\dif \theta
 =\frac\pi{4R}(1-\ee^{-R^2})\to0.\]
 当$z\in\gamma_2$时，$z=r\ee^{\ii\frac\pi4},0\le r\le R$，所以
-\[\int\limits_{\gamma_2}\ee^{\ii z^2}\dz=-\ee^{\ii\frac\pi4}\int_0^R\ee^{-r^2}\textrm dr.\]
+\[\int\limits_{\gamma_2}\ee^{\ii z^2}\dz=-\ee^{\ii\frac\pi4}\int_0^R\ee^{-r^2}\dif r.\]
 在 \eqref{eq5.5.16} 式中令$R\to\infty$，即得
 \begin{equation}\label{eq5.5.17}
-\int_0^\infty\ee^{\ii x^2}\dx=\ee^{\ii\frac\pi4}\int_0^\infty\ee^{-r^2}\textrm dr
+\int_0^\infty\ee^{\ii x^2}\dx=\ee^{\ii\frac\pi4}\int_0^\infty\ee^{-r^2}\dif r
 =\frac{\sqrt\pi}2\ee^{\ii\frac\pi4}.
 \end{equation}
 这里，我们已经利用了已知的概率积分
-\[\int_0^\infty\ee^{-r^2}\textrm dr=\frac{\sqrt\pi}2.\]
+\[\int_0^\infty\ee^{-r^2}\dif r=\frac{\sqrt\pi}2.\]
 在 \eqref{eq5.5.17} 式两边分别取实部和虚部，即得
 \[\int_0^\infty\cos x^2\dx=\int_0^\infty\sin x^2\dx=\frac12\sqrt{\frac\pi2}.\]
 
@@ -1404,8 +1406,8 @@ node[above]{$-R+\frac b{2a}\textrm i$}--(-2,1)node[right]{$\gamma_3$};
        $\bigg(\frac5{12}\pi\bigg)$
   \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{x^2}{x^4+6x^2+13}\dx$；}
   $\left(\frac\pi4\sqrt{\frac{\sqrt{13}-3}2}\right)$
-  \item \makebox[0.65\textwidth][l]{$\int_0^{2\pi}\frac1{a+b\cos\theta}\textrm d\theta$  （$0<b<a$）；} $\bigg(\frac{2\pi}{\sqrt{a^2-b^2}}\bigg)$
-  \item \makebox[0.65\textwidth][l]{$\int_0^{\frac\pi2}\frac1{a+\sin^2\theta}\textrm d\theta$（$a>0$）；} $\bigg(\frac\pi2\frac1{\sqrt{a(a+1)}}\bigg)$
+  \item \makebox[0.65\textwidth][l]{$\int_0^{2\pi}\frac1{a+b\cos\theta}\dif \theta$  （$0<b<a$）；} $\bigg(\frac{2\pi}{\sqrt{a^2-b^2}}\bigg)$
+  \item \makebox[0.65\textwidth][l]{$\int_0^{\frac\pi2}\frac1{a+\sin^2\theta}\dif \theta$（$a>0$）；} $\bigg(\frac\pi2\frac1{\sqrt{a(a+1)}}\bigg)$
   \item \makebox[0.65\textwidth][l]{$\int_{-\infty}^\infty\frac{x\cos x}{x^2-2x+10}\dx$；} $\bigg(\frac{\cos1-3\sin1}{3\ee^3}\pi\bigg)$
   \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{x\sin ax}{x^2+b^2}\dx$（$a,b>0$）；} $\bigg(\frac\pi2\ee^{-ab}\bigg)$
   \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{\cos x}{(1+x^2)^3}\dx$；}
@@ -1603,9 +1605,9 @@ node[above]{$-R+\frac b{2a}\textrm i$}--(-2,1)node[right]{$\gamma_3$};
   $\left(\frac{\sqrt{2\pi}}4\sqrt{\frac{\sqrt{a^2+b^2}+a}{a^2+b^2}}\right)$
   （\textbf{提示}：考虑$\ee^{z^2(-a+\ii b)}$沿图 \ref{fig5.15} 所示的曲线上的积分，其中$\varphi$待定.）
   \item \makebox[0.65\textwidth][l]
-  {$\int_0^{\frac\pi2}\log\sin\theta\textrm d\theta$；}
+  {$\int_0^{\frac\pi2}\log\sin\theta\dif \theta$；}
   $(-\pi\log2)$\\
-  （\textbf{提示}：先求出广义积分$\int_0^{\frac\pi2}\log|\ee^{\ii\theta}-1|\textrm d\theta$.）
+  （\textbf{提示}：先求出广义积分$\int_0^{\frac\pi2}\log|\ee^{\ii\theta}-1|\dif \theta$.）
   \item $\int_0^\pi\frac{x\sin x}{1-2a\cos x+a^2}\dx$（$a>0$）；
   \hfill $\left(\begin{cases}
   \frac\pi a\log(1+a),&0<a\le1;\\
@@ -1697,7 +1699,7 @@ g(z)=\frac{k_n}{z-a_n}+g_n(z),
 \end{equation}
 这里，$g_n(z)$在$a_n$附近全纯. 固定$a_0\in D\backslash\{a_n:n\in\MN\}$，令
 \begin{equation}\label{eq5.6.5}
-F(z)=\int_{a_0}^zg(\zeta)\textrm d\zeta,z\in D\backslash\{a_n:n\in\MN\}.
+F(z)=\int_{a_0}^zg(\zeta)\dif \zeta,z\in D\backslash\{a_n:n\in\MN\}.
 \end{equation}
 则对于固定的$z$，由于$D\backslash\{a_n:n\in\MN\}$中连接$a_0$和$z$的曲线的不同，所得的积分值也不同.但从 \eqref{eq5.6.4} 式可看出，两个不同的积分值之差是$2\pi\ii$的整数倍.因此，$F(z)$是$D\backslash\{a_n:n\in\MN\}$上的多值全纯函数，但$F(z)$在同一点处的任意两个函数值之差是$2\pi\ii$的整数倍.于是，$f(z)=\ee^{F(z)}$便是$D\backslash\{a_n:n\in\MN\}$上的单值全纯函数.我们可验证$f$就是要求的$D$上的全纯函数.事实上，由 \eqref{eq5.6.4} 式和 \eqref{eq5.6.5} 式可知，在$a_n$附近有
 \[F(z)=k_n\Log(z-a_n)+h_n(z),\]
@@ -1788,7 +1790,7 @@ f(z)=f(0)+\sum_{n=1}^\infty c_n\bigg(\frac1{z-a_n}+\frac1{a_n}\bigg),
 \end{theorem}
 \begin{proof}
 对每个$\gamma_n$，令$D_n$是由$\gamma_n$所围成的单连通域. 设$z\in\big(B(0,R)\backslash\{0\}\big)\backslash\{a_n:n\in\MN\}$，取$m$，使得$B(0,R)\subset D_m$. 考虑积分
-\[I_m=\frac1{2\pi\ii}\int\limits_{\gamma_m}\frac{f(\zeta)}{\zeta(\zeta-z)}\textrm d\zeta.\]
+\[I_m=\frac1{2\pi\ii}\int\limits_{\gamma_m}\frac{f(\zeta)}{\zeta(\zeta-z)}\dif \zeta.\]
 显然，$g(\zeta)=\frac{f(\zeta)}{\zeta(\zeta-z)}$在$D_m$中的全部极点为
 \[0,z,a_n\in D_m,\]
 $g$在这些极点处的残数分别为
@@ -1800,7 +1802,7 @@ $g$在这些极点处的残数分别为
 z\in B(0,R)\backslash\{a_n:n\in\MN\}.\]
 注意到
 \[|zI_m|\le R\frac1{2\pi}\int\limits_{\gamma_m}\frac{|f(\zeta)|}{|\zeta|\,
-\big||\zeta|-|z|\big|}|\textrm d\zeta|\le\frac{R}{2\pi}\frac{Ml_m}{d_m(d_m-R)}
+\big||\zeta|-|z|\big|}|\dif \zeta|\le\frac{R}{2\pi}\frac{Ml_m}{d_m(d_m-R)}
 \to0\;\mbox{（$m\to\infty$）},\]
 其中，$M=\sup_{\zeta\in\bigcup\limits_{n=1}^\infty\gamma_n}|f(\zeta)|<\infty$，便知
 \[f(0)+\sum_{n=1}^\infty c_n\bigg(\frac1{z-a_n}+\frac1{a_n}\bigg)\]
@@ -1828,15 +1830,14 @@ f(z)=f(0)\ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty\bigg(1-\frac z{a_n}\bigg)
 \[\frac{f'(0)}{f(0)}+\sum_{n=1}^\infty\bigg(\frac{k_n}{z-a_n}+\frac{k_n}{a_n}\bigg)\]
 在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛于$\frac{f'(z)}{f(z)}$. 于是
 \begin{equation}\label{eq5.7.3}
-\Log\frac{f(z)}{f(0)}=\int_0^z\frac{f'(\zeta)}{f(\zeta)}\textrm d\zeta=\frac{f'(0)}{f(0)}z+\sum_{n=1}^\infty\int_0^z\bigg(\frac{k_n}{\zeta-a_n}+
-\frac{k_n}{a_n}\bigg)\textrm d\zeta,
+\Log\frac{f(z)}{f(0)}=\int_0^z\frac{f'(\zeta)}{f(\zeta)}\dif \zeta=\frac{f'(0)}{f(0)}z+\sum_{n=1}^\infty\int_0^z\bigg(\frac{k_n}{\zeta-a_n}+
+\frac{k_n}{a_n}\bigg)\dif \zeta,
 \end{equation}
 其中，积分是沿$\MC\backslash\{a_n:n\in\MN\}$中连接$O$和$z$的任意可求长曲线进行的，并且 \eqref{eq5.7.3} 式右端在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛.因此
 \begin{equation*}
-f(z)=f(0)\ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty\ee^{\int_0^z\left(\frac{k_n}{\zeta-a_n}+
-\frac{k_n}{a_n}\right)\textrm d\zeta}
-=f(0)\ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty\bigg(1-\frac z{a_n}\bigg)
-^{k_n}\ee^{\frac{k_n}{a_n}z}.
+  f(z) = f(0)\ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty \ee^{\int_0^z\left(\frac{k_n}{\zeta-a_n}+
+  \frac{k_n}{a_n}\right) \dif \zeta}
+  = f(0)\ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty\bigg(1-\frac z{a_n}\bigg)  ^{k_n}\ee^{\frac{k_n}{a_n}z}. \qedhere
 \end{equation*}
 \end{proof}
 
@@ -1857,15 +1858,15 @@ f(z)=f(0)\ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty\ee^{\int_0^z\left(\frac{k_n
 \{a_n:n\in\MN\}\big)$. 显然，$g$是$B(0,R)$上的亚纯函数，恰以$\{a_n\}$为其极点集，且在每个$a_n$处的残数为$k_n$. 令
 \begin{equation}\label{eq5.7.5}
 \begin{aligned}
-F(z)&=\int_0^zg(\zeta)\textrm d\zeta=\sum_{n=1}^\infty\int_0^z
-\frac{k_n(R^2-|a_n|^2)}{(R^2-\bar a_n\zeta)(\zeta-a_n)}\textrm d\zeta\\
+F(z)&=\int_0^zg(\zeta)\dif \zeta=\sum_{n=1}^\infty\int_0^z
+\frac{k_n(R^2-|a_n|^2)}{(R^2-\bar a_n\zeta)(\zeta-a_n)}\dif \zeta\\
 &=\sum_{n=1}^\infty k_n\int_0^z\bigg(\frac1{\zeta-a_n}+\frac{\bar a_n}{R^2
--\bar a_n\zeta}\bigg)\textrm d\zeta,
+-\bar a_n\zeta}\bigg)\dif \zeta,
 \end{aligned}
 \end{equation}
 其中，积分是沿$B(0,R)\backslash\{a_n:n\in\MN\}$中连接$O$和$z$的可求长曲线进行的，并且 \eqref{eq5.7.5} 式右端在$B(0,R)\backslash\{a_n:n\in\MN\}$上内闭一致收敛.显然，$F(z)$是$B(0,R)\backslash\{a_n:n\in\MN\}$上的多值全纯函数，但在同一点处的任意两个函数值之差为$2\pi\ii$的整数倍，故
 \[h(z)=\ee^{F(z)}=\prod_{n=1}^\infty\ee^{k_n\int_0^z\left(\frac1{\zeta-a_n}
-+\frac{a_n}{R^2-\bar a_n\zeta}\right)\textrm d\zeta}
++\frac{a_n}{R^2-\bar a_n\zeta}\right)\dif \zeta}
 =\prod_{n=1}^\infty\bigg(\frac{R(a_n-z)}{R^2-\bar a_nz}\bigg)^{k_n}
 \bigg(\frac{R}{a_n}\bigg)^{k_n}\]
 是$B(0,R)$上的全纯函数，$h$恰以$\{a_n\}$为其零点集，且在每个$a_n$处的零点阶数恰为$k_n$. 再注意到$\prod_{n=1}^\infty\bigg(\frac{|a_n|}{R}\bigg)^{k_n}$是一个正数，便知 \eqref{eq5.7.4} 式在$B(0,R)$上内闭一致收敛于$h(z)\prod_{n=1}^\infty\bigg(\frac{|a_n|}{R}\bigg)^{k_n}$. 最后，由于对任意$z\in B(0,R),\bigg|\frac{R(a_n-z)}{R^2-\bar a_nz}\bigg|<1$，若令
@@ -1874,7 +1875,7 @@ F(z)&=\int_0^zg(\zeta)\textrm d\zeta=\sum_{n=1}^\infty\int_0^z
 \bigg(\frac{|a_n|}{a_n}\bigg)^{k_n},\]
 则
 \begin{equation*}
-f\big(B(0,R)\big)\subset B(0,1).
+  f\big(B(0,R)\big)\subset B(0,1). \qedhere
 \end{equation*}
 \end{proof}
 
@@ -1906,7 +1907,7 @@ $f(z)=\cot z-\frac1z$的全部极点$\pm n\pi$（$n\in\MN$）都是$1$阶的，�
 \]
 或者
 \begin{equation*}
-\cot z=\frac1z+\sum_{n=1}^\infty\frac{2z}{z^2-n^2\pi^2}.
+  \cot z = \frac1z+\sum_{n=1}^\infty\frac{2z}{z^2-n^2\pi^2}. \qedhere
 \end{equation*}
 \end{solution}
 
@@ -1922,7 +1923,7 @@ $f(z)=\cot z-\frac1z$的全部极点$\pm n\pi$（$n\in\MN$）都是$1$阶的，�
 =\prod_{n=1}^\infty\bigg(1-\frac{z^2}{n^2\pi^2}\bigg),\]
 或者
 \begin{equation*}
-\sin z=z\prod_{n=1}^\infty\bigg(1-\frac{z^2}{n^2\pi^2}\bigg).
+  \sin z = z\prod_{n=1}^\infty\bigg(1-\frac{z^2}{n^2\pi^2}\bigg). \qedhere
 \end{equation*}
 \end{solution}
 
