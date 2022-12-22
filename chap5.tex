@@ -1039,7 +1039,7 @@ $f$在$\Gamma$所围成的域中有两个$2$阶极点$z=\pm\ii$.对$f$用残数�
 &\le2\pi R\frac{(\log R+2\pi)^2}{(R^2-1)^2}\to0\;\mbox{（$R\to\infty$）},
 \end{aligned}\\
 &\begin{aligned}
-\bigg|\int\limits_{\gamma_\rho}\frac{\log^2z}{(1+z^2)^2}\dz\bigg|&
+\bigg|\int\limits_{\gamma_\rho^-}\frac{\log^2z}{(1+z^2)^2}\dz\bigg|&
 =\bigg|\int_0^{2\pi}\frac{(\log \rho+\ii\theta)^2}{(1+\rho^2\ee^{2\ii\theta})^2}\rho\ii\ee^{\ii\theta}\dif \theta\bigg|\\
 &\le2\pi\rho\frac{(\log \rho+2\pi)^2}{(1-\rho^2)^2}\to0\;\mbox{（$\rho\to0$）}.
 \end{aligned}
@@ -1185,7 +1185,7 @@ s\pi}\sum_{k=1}^n\Res(F,a_k),
 事实上，记$z-a=\rho_1\ee^{\ii\theta_1},z-b=\rho_2\ee^{\ii\theta_2}$，当$z$沿线段$[a,b]$外部的任意简单闭曲线转一圈时，$z-a$和$z-b$的辐角都要增加$2\pi$，$(z-a)^r(z-b)^s$的值由原来的$\rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)}$变为
 \[\rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)+2\pi(r+s)\ii}=
 \rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)},\]
-等式成立是因为$r+s$是整数，这就是说$F(x)$的值不变.
+等式成立是因为$r+s$是整数，这就是说$F(z)$的值不变.
 
 现取定在$[a,b]$上岸
 \[\arg(z-a)=0,\,\arg(b-z)=0\]
@@ -1866,7 +1866,7 @@ F(z)&=\int_0^zg(\zeta)\dif \zeta=\sum_{n=1}^\infty\int_0^z
 \end{equation}
 其中，积分是沿$B(0,R)\backslash\{a_n:n\in\MN\}$中连接$O$和$z$的可求长曲线进行的，并且 \eqref{eq5.7.5} 式右端在$B(0,R)\backslash\{a_n:n\in\MN\}$上内闭一致收敛.显然，$F(z)$是$B(0,R)\backslash\{a_n:n\in\MN\}$上的多值全纯函数，但在同一点处的任意两个函数值之差为$2\pi\ii$的整数倍，故
 \[h(z)=\ee^{F(z)}=\prod_{n=1}^\infty\ee^{k_n\int_0^z\left(\frac1{\zeta-a_n}
-+\frac{a_n}{R^2-\bar a_n\zeta}\right)\dif \zeta}
++\frac{\bar a_n}{R^2-\bar a_n\zeta}\right)\dif \zeta}
 =\prod_{n=1}^\infty\bigg(\frac{R(a_n-z)}{R^2-\bar a_nz}\bigg)^{k_n}
 \bigg(\frac{R}{a_n}\bigg)^{k_n}\]
 是$B(0,R)$上的全纯函数，$h$恰以$\{a_n\}$为其零点集，且在每个$a_n$处的零点阶数恰为$k_n$. 再注意到$\prod_{n=1}^\infty\bigg(\frac{|a_n|}{R}\bigg)^{k_n}$是一个正数，便知 \eqref{eq5.7.4} 式在$B(0,R)$上内闭一致收敛于$h(z)\prod_{n=1}^\infty\bigg(\frac{|a_n|}{R}\bigg)^{k_n}$. 最后，由于对任意$z\in B(0,R),\bigg|\frac{R(a_n-z)}{R^2-\bar a_nz}\bigg|<1$，若令
