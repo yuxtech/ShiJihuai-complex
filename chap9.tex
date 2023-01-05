@@ -12,7 +12,7 @@
 &\lambda z=(\lambda z_1,\cdots,\lambda z_n).
 \end{align*}
 在这样的定义下，$\MC^n$是复数域上的线性空间. $\MC^n$中向量$z$的长度定义为
-\[|z|=\big({|z_1|^2+\cdots+|z_n|\big)^2\frac12}.\]
+\[|z|=\big(|z_1|^2+\cdots+|z_n|^2\big)^{\frac12}.\]
 
 正像$\MC$可以看成$\MR^2$一样，$\MC^n$也可以看成$\MR^{2n}$.
 
@@ -55,7 +55,7 @@ $U^n$和$B_n$都是单位圆盘在$\MC^n$中的推广，但它们不是全纯等
 \sum_{\alpha_1,\cdots,\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}z_1^{\alpha_1}
 \cdots z_n^{\alpha_n}
 \end{equation}
-在点$b=(b_1,\cdots,b_n)$处收敛，这里，$b_j\ne0,j=1,\cdots,n$. 那么他在闭多圆柱
+在点$b=(b_1,\cdots,b_n)$处收敛，这里，$b_j\ne0,j=1,\cdots,n$. 那么它在闭多圆柱
 \[\bar{P(0,r)}=\{(z_1,\cdots,z_n):|z_j|\le r_j,j=1,\cdots,n\}\]
 中绝对且一致收敛，这里，$r_j<|b_j|,j=1,\cdots,n$.
 \end{prop}
@@ -71,10 +71,10 @@ $U^n$和$B_n$都是单位圆盘在$\MC^n$中的推广，但它们不是全纯等
 \bigg(\frac{r_n}{|b_n|}\bigg)^{\alpha_n},\]
 于是
 \begin{align*}
-\sum_{\alpha_1,\cdots,\alpha_n=0}^\infty |c_{\alpha_1\cdots\alpha_n}z_1^{\alpha_1}
-\cdots z_n^{\alpha_n}|&\le M\sum_{\alpha_1=0}^\infty \bigg(\frac{r_1}{|b_1|}\bigg)^{\alpha_1}\cdots\sum_{\alpha_n=0}^\infty
-\bigg(\frac{r_n}{|b_n|}\bigg)^{\alpha_n}\\
-&=M\bigg(1-\frac{r_1}{|b_1|}\bigg)^{-1}\cdots\bigg(1-\frac{r_n}{|b_n|}\bigg)^{-1}.
+  \sum_{\alpha_1,\cdots,\alpha_n=0}^\infty |c_{\alpha_1\cdots\alpha_n}z_1^{\alpha_1}
+  \cdots z_n^{\alpha_n}|&\le M\sum_{\alpha_1=0}^\infty \bigg(\frac{r_1}{|b_1|}\bigg)^{\alpha_1}\cdots\sum_{\alpha_n=0}^\infty
+  \bigg(\frac{r_n}{|b_n|}\bigg)^{\alpha_n}\\
+  & = M\bigg(1-\frac{r_1}{|b_1|}\bigg)^{-1} \cdots\bigg(1-\frac{r_n}{|b_n|}\bigg)^{-1}. \qedhere
 \end{align*}
 \end{proof}
 
@@ -178,21 +178,23 @@ $n=1$时定理是成立的（见定理 \ref{thm4.4.6}）.现设$n>1$.任取开�
 设$\Omega$是$\MC^n$中的域，$f\in H(\Omega)$. 如果$\bar{P(a,r)}\subset \Omega$，则对$z\in P(a,r)$，有
 \begin{equation}\label{eq9.2.1}
 f(z)=\frac1{(2\pi\ii)^n}\int\limits_{|\zeta_1-a_1|=r_1}\cdots\int\limits_{|\zeta_n-a_n|=r_n}
-\frac{f(\zeta_1,\cdots,\zeta_n)\textrm d\zeta_1\cdots\textrm d\zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)}.
+\frac{f(\zeta_1,\cdots,\zeta_n)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)}.
 \end{equation}
 \end{theorem}
 \begin{proof}
 当$n=1$时，这是熟知的圆盘上的Cauchy积分公式.今设定理对$n-1$个变数的全纯函数成立.分别在圆周$|\zeta_2-a_2|=r_2,\cdots,|\zeta_n-a_n|=r_n$上固定$\zeta_2,\cdots,\zeta_n$，则$f(z_1,\zeta_2,\cdots,\zeta_n)$是圆盘$|z_1-a_1|\le r_1$上的全纯函数，由单复变的Cauchy积分公式得
 \begin{equation}\label{eq9.2.2}
 f(z,\zeta_2,\cdots,\zeta_n)=\frac1{2\pi\ii}\int\limits_{|\zeta_1-a_1|=r_1}
-\frac{f(\zeta_1,\zeta_2,\cdots,\zeta_n)}{\zeta_1-z_1}\textrm d\zeta_1.
+\frac{f(\zeta_1,\zeta_2,\cdots,\zeta_n)}{\zeta_1-z_1}\dif \zeta_1.
 \end{equation}
 固定$z_1$，把$f(z_1,z_2,\cdots,z_n)$看成$z_2,\cdots,z_n$的函数，用归纳法的假定，再利用 \eqref{eq9.2.2} 式，即得
 \begin{align*}
-f(z_1,z_2,\cdots,z_n)&=\frac1{(2\pi\ii)^{n-1}}\int\limits_{|\zeta_2-a_2|=r_2}\cdots\int\limits_{|\zeta_n-a_n|=r_n}
-\frac{f(z,\zeta_2,\cdots,\zeta_n)\textrm d\zeta_2\cdots\textrm d\zeta_n}{(\zeta_2-z_2)\cdots(\zeta_n-z_n)}\\
-&=\frac1{(2\pi\ii)^n}\int\limits_{|\zeta_1-a_1=r_1}\cdots\int\limits_{|\zeta_n-a_n|=r_n}
-\frac{f(\zeta_1,\cdots,\zeta_n)\textrm d\zeta_1\cdots\textrm d\zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)}
+  f(z_1,z_2,\cdots,z_n)&=\frac1{(2\pi\ii)^{n-1}}\int\limits_{|\zeta_2-a_2|=r_2}\cdots\int\limits_{|\zeta_n-a_n|=r_n}
+  \frac{f(z,\zeta_2,\cdots,\zeta_n)\dif \zeta_2\cdots
+  \dif \zeta_n}{(\zeta_2-z_2)\cdots(\zeta_n-z_n)}\\
+  & = \frac1{(2\pi\ii)^n}\int\limits_{|\zeta_1-a_1=r_1} \cdots\int\limits_{|\zeta_n-a_n|=r_n}
+  \frac{f(\zeta_1,\cdots,\zeta_n)\dif \zeta_1\cdots
+  \dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)} \qedhere
 \end{align*}
 \end{proof}
 
@@ -206,7 +208,7 @@ f(z_1,z_2,\cdots,z_n)&=\frac1{(2\pi\ii)^{n-1}}\int\limits_{|\zeta_2-a_2|=r_2}\cd
 \begin{equation}\label{eq9.2.3}
 (\DD^\alpha f)(a)=\frac{\alpha!}{(2\pi\ii)^n}
 \int\limits_{\partial_0P}
-\frac{f(\zeta)\textrm d\zeta_1\cdots\textrm d\zeta_n}{(\zeta_1-z_1)^{\alpha_1+1}\cdots(\zeta_n-z_n)^{\alpha_n+1}}.
+\frac{f(\zeta)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-z_1)^{\alpha_1+1}\cdots(\zeta_n-z_n)^{\alpha_n+1}}.
 \end{equation}
 由此可以得到下面的\textbf{Cauchy不等式}\index{B!不等式!Cauchy不等式}.
 \begin{theorem}\label{thm9.2.2}
@@ -216,12 +218,11 @@ f(z_1,z_2,\cdots,z_n)&=\frac1{(2\pi\ii)^{n-1}}\int\limits_{|\zeta_2-a_2|=r_2}\cd
 \begin{proof}
 从等式 \eqref{eq9.2.3} 即得
 \begin{align*}
-|(\DD^\alpha f)(a)|&\le\frac{\alpha!}{(2\pi)^n}
-\int\limits_{\partial_0P}
-\frac{|f(\zeta)|\,|\textrm d\zeta_1|\cdots|\textrm d\zeta_n|}{|\zeta_1-z_1|^{\alpha_1+1}\cdots|\zeta_n-z_n|^{\alpha_n+1}}\\
-&\le\frac{\alpha!}{(2\pi)^n}\frac M{r_1^{\alpha_1+1}\cdots r_n^{\alpha_n+1}}
-(2\pi)^nr_1\cdots r_n\\
-&=M\frac{\alpha!}{r^\alpha}.
+  |(\DD^\alpha f)(a)|&\le\frac{\alpha!}{(2\pi)^n}
+  \int\limits_{\partial_0P}
+  \frac{|f(\zeta)|\,|\dif \zeta_1|\cdots|\dif \zeta_n|}{|\zeta_1-z_1|^{\alpha_1+1}\cdots|\zeta_n-z_n|^{\alpha_n+1}}\\
+  & \le \frac{\alpha!}{(2\pi)^n}\frac M{r_1^{\alpha_1+1}\cdots r_n^{\alpha_n+1}} (2\pi)^nr_1\cdots r_n\\
+  & = M\frac{\alpha!}{r^\alpha}. \qedhere
 \end{align*}
 \end{proof}
 
@@ -248,10 +249,10 @@ f(z_1,z_2,\cdots,z_n)&=\frac1{(2\pi\ii)^{n-1}}\int\limits_{|\zeta_2-a_2|=r_2}\cd
 \end{theorem}
 \begin{proof}
 对任意$a\in\Omega$，我们证明$f$在$a$附近能展开成幂级数. 适当选取$\rho=(\rho_1,\cdots,\rho_n)$，使得$\bar{P(a,\rho)}\subset\Omega$. 对$f_k$用Cauchy积分公式，得
-\[f_k(z)=\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f_k(\zeta)\textrm d\zeta_1\cdots\textrm d\zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)},\;z\in P(a,\rho).\]
+\[f_k(z)=\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f_k(\zeta)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)},\;z\in P(a,\rho).\]
 由于当$k\to\infty$，$f_k$在$\partial_0P$上一致收敛于$f$，故在上式中令$k\to\infty$，即得
 \begin{equation}\label{eq9.2.4}
-f(z)=\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f(\zeta)\textrm d\zeta_1\cdots\textrm d\zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)},\;z\in P(a,\rho).
+f(z)=\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f(\zeta)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)},\;z\in P(a,\rho).
 \end{equation}
 利用证明定理 \ref{thm4.3.1} 时用过的方法，有
 \begin{align*}
@@ -266,7 +267,7 @@ f(z)=\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f(\zeta)\textrm d\zeta_1\
 {(\zeta_1-a_1)^{\alpha_1+1}\cdots(\zeta_n-a_n)^{\alpha_n+1}}.\]
 上述级数对于$\zeta\in\partial_0P$是一致收敛的，代入 \eqref{eq9.2.4} 式即得
 \[f(z)=\sum_{\alpha\ge0}\bigg\{\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}
-\frac{f(\zeta)\textrm d\zeta_1\cdots\textrm d\zeta_n}
+\frac{f(\zeta)\dif \zeta_1\cdots\dif \zeta_n}
 {(\zeta_1-a_1)^{\alpha_1+1}\cdots(\zeta_n-a_n)^{\alpha_n+1}}\bigg\}(z-a)^\alpha.\]
 把上面花括弧中的数记为$c_\alpha$，即得
 \[f(z)=\sum_{\alpha\ge0}c_\alpha(z-a)^\alpha.\]
@@ -287,8 +288,8 @@ f(z)=\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f(\zeta)\textrm d\zeta_1\
     \[|(\DD^\alpha f)(a)|\le\frac{\alpha!(\alpha_1+2)\cdots(\alpha_n+2)}{(2n)^nr^{\alpha+2}}\|f\|
     _{L^1(P(a,r))},\]
 这里
-\[\|f\|_{L^1(P(a,r))}=\int\limits_{P(a,r)}|f(z)|\textrm dm(z),\]
-$\textrm dm(z)$是$\MR^{2n}$中的测度.
+\[\|f\|_{L^1(P(a,r))}=\int\limits_{P(a,r)}|f(z)|\dif m(z),\]
+$\dif m(z)$是$\MR^{2n}$中的测度.
 \item 设$f$是$\MC^n$上的有界全纯函数，证明$f$必为常数.
 \item 设$\Omega$是$\MC^n$中的域，$\{f_k\}$是$\Omega$上一列处处不为零的全纯函数.如果$\{f_k\}$在$\Omega$上内闭一致收敛于$f$，那么$f$在$\Omega$中或者恒等于零，或者处处不等于零.
 \end{xiti}
@@ -321,7 +322,7 @@ a_\alpha w_1^{\alpha_1}\cdots w_n^{\alpha_n}\ee^{\ii(\alpha_1\theta_1+\cdots+\al
 \[a_\beta=\frac1{(2\pi)^n}\frac1{w^\beta}\int_0^{2\pi}\cdots\int_0^{2\pi}
 f(\ee^{\ii\theta_1}w_1,\cdots,\ee^{\ii\theta_n}w_n)
 \ee^{-\ii(\beta_1\theta_1+\cdots+\beta_n\theta_n)}
-\textrm d\theta_1\cdots\textrm d\theta_n.
+\dif \theta_1\cdots\dif \theta_n.
 \]
 这就证明了展开式 \eqref{eq9.3.1} 中的系数由$f$所唯一确定.
 
@@ -542,7 +543,7 @@ F'(z)=\begin{pmatrix}
 \end{align}
 从 \eqref{eq9.4.5} 式即得$h\in H(\Omega_1),j=1,\cdots,n$，所以$H$是全纯映射.由 \eqref{eq9.4.6} 式即得
 \begin{equation*}
-  H'(z)=G'(w)F'(z).
+  H'(z) = G'(w)F'(z). \qedhere
 \end{equation*}
 \end{proof}
 
@@ -614,7 +615,7 @@ F^2(z)&=F\big(F(z)\big)\\
 \[F^k(\ee^{\ii\theta}z)=\ee^{\ii\theta}z+k\ee^{\ii m\theta}F_m(z)+\cdots.\]
 两端乘以$\ee^{-\ii m\theta}$，并对$\theta$从$0$到$2\pi$积分，得
 \begin{equation}\label{eq9.5.3}
-kF_m(z)=\frac1{2\pi}\int_0^{2\pi}F^k(\ee^{\ii\theta}z)\ee^{-\ii m\theta}\textrm d\theta,
+kF_m(z)=\frac1{2\pi}\int_0^{2\pi}F^k(\ee^{\ii\theta}z)\ee^{-\ii m\theta}\dif \theta,
 \end{equation}
 这里，积分是对$F$的每个分量进行的.因为$F$把$\Omega$映入$\Omega$，所以$F^k$也把$\Omega$映入$\Omega$，因而
 \[|F^k(\ee^{\ii\theta}z)|<R,\;k=1,2,\cdots\]
