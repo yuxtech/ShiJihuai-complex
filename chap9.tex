@@ -208,7 +208,7 @@ f(z_1,\zeta_2,\cdots,\zeta_n)=\frac1{2\pi\ii}\int\limits_{|\zeta_1-a_1|=r_1}
 \begin{equation}\label{eq9.2.3}
 (\DD^\alpha f)(a)=\frac{\alpha!}{(2\pi\ii)^n}
 \int\limits_{\partial_0P}
-\frac{f(\zeta)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-z_1)^{\alpha_1+1}\cdots(\zeta_n-z_n)^{\alpha_n+1}}.
+\frac{f(\zeta)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-a_1)^{\alpha_1+1}\cdots(\zeta_n-a_n)^{\alpha_n+1}}.
 \end{equation}
 由此可以得到下面的\textbf{Cauchy不等式}\index{B!不等式!Cauchy不等式}.
 \begin{theorem}\label{thm9.2.2}
@@ -220,7 +220,7 @@ f(z_1,\zeta_2,\cdots,\zeta_n)=\frac1{2\pi\ii}\int\limits_{|\zeta_1-a_1|=r_1}
 \begin{align*}
   |(\DD^\alpha f)(a)|&\le\frac{\alpha!}{(2\pi)^n}
   \int\limits_{\partial_0P}
-  \frac{|f(\zeta)|\,|\dif \zeta_1|\cdots|\dif \zeta_n|}{|\zeta_1-z_1|^{\alpha_1+1}\cdots|\zeta_n-z_n|^{\alpha_n+1}}\\
+  \frac{|f(\zeta)|\,|\dif \zeta_1|\cdots|\dif \zeta_n|}{|\zeta_1-a_1|^{\alpha_1+1}\cdots|\zeta_n-a_n|^{\alpha_n+1}}\\
   & \le \frac{\alpha!}{(2\pi)^n}\frac M{r_1^{\alpha_1+1}\cdots r_n^{\alpha_n+1}} (2\pi)^nr_1\cdots r_n\\
   & = M\frac{\alpha!}{r^\alpha}. \qedhere
 \end{align*}
@@ -281,7 +281,7 @@ f(z)=\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f(\zeta)\dif \zeta_1\cdot
 这正好说明$\DD^\alpha f_k$在$\Omega$上内闭一致收敛到$\DD^\alpha f$.
 \end{proof}
 
-多圆柱的Cauchy积分公式是单位圆盘Cauchy积分公式的自然推广，人们很早就知道它了.可是长期以来人们不知道球的Cauchy积分公式是什么样子，直到本世纪50年代中期，华罗庚得到了四类典型域的Cauchy积分公式，作为第一类典型域的一种特殊情形，人们才得到了球的Cauchy积分公式.由此可见，在多复变中，Cauchy积分公式因域而异，寻找给定域的Cauchy积分公式本身是一个相当困难的研究课题.
+多圆柱的Cauchy积分公式是单位圆盘Cauchy积分公式的自然推广，人们很早就知道它了.可是长期以来人们不知道球的Cauchy积分公式是什么样子，直到19世纪50年代中期，华罗庚得到了四类典型域的Cauchy积分公式，作为第一类典型域的一种特殊情形，人们才得到了球的Cauchy积分公式.由此可见，在多复变中，Cauchy积分公式因域而异，寻找给定域的Cauchy积分公式本身是一个相当困难的研究课题.
 \begin{xiti}
 \item 设$P(a,r)$是一个多圆柱，试利用多圆柱上的Cauchy积分公式证明：若$f\in C\big(\bar{P(a,r)}\big)\cap H\big(P(a,r)\big)$，则$f$的最大模必在$\partial_0P$上取到.
 \item 设$\Omega$是$\MC^n$中的域，$\bar{P(a,r)}\subset\Omega$.如果$f\in H(\Omega)$，那么对任意多重指标$\alpha=(\alpha_1,\cdots,\alpha_n)$，有
