@@ -184,13 +184,13 @@ f(z)=\frac1{(2\pi\ii)^n}\int\limits_{|\zeta_1-a_1|=r_1}\cdots\int\limits_{|\zeta
 \begin{proof}
 当$n=1$时，这是熟知的圆盘上的Cauchy积分公式.今设定理对$n-1$个变数的全纯函数成立.分别在圆周$|\zeta_2-a_2|=r_2,\cdots,|\zeta_n-a_n|=r_n$上固定$\zeta_2,\cdots,\zeta_n$，则$f(z_1,\zeta_2,\cdots,\zeta_n)$是圆盘$|z_1-a_1|\le r_1$上的全纯函数，由单复变的Cauchy积分公式得
 \begin{equation}\label{eq9.2.2}
-f(z,\zeta_2,\cdots,\zeta_n)=\frac1{2\pi\ii}\int\limits_{|\zeta_1-a_1|=r_1}
+f(z_1,\zeta_2,\cdots,\zeta_n)=\frac1{2\pi\ii}\int\limits_{|\zeta_1-a_1|=r_1}
 \frac{f(\zeta_1,\zeta_2,\cdots,\zeta_n)}{\zeta_1-z_1}\dif \zeta_1.
 \end{equation}
 固定$z_1$，把$f(z_1,z_2,\cdots,z_n)$看成$z_2,\cdots,z_n$的函数，用归纳法的假定，再利用 \eqref{eq9.2.2} 式，即得
 \begin{align*}
   f(z_1,z_2,\cdots,z_n)&=\frac1{(2\pi\ii)^{n-1}}\int\limits_{|\zeta_2-a_2|=r_2}\cdots\int\limits_{|\zeta_n-a_n|=r_n}
-  \frac{f(z,\zeta_2,\cdots,\zeta_n)\dif \zeta_2\cdots
+  \frac{f(z_1,\zeta_2,\cdots,\zeta_n)\dif \zeta_2\cdots
   \dif \zeta_n}{(\zeta_2-z_2)\cdots(\zeta_n-z_n)}\\
   & = \frac1{(2\pi\ii)^n}\int\limits_{|\zeta_1-a_1=r_1} \cdots\int\limits_{|\zeta_n-a_n|=r_n}
   \frac{f(\zeta_1,\cdots,\zeta_n)\dif \zeta_1\cdots
