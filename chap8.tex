@@ -10,15 +10,15 @@
 
 设$f$在圆盘$B(a,R)$中全纯，根据Cauchy积分公式，对任意$0<r<R$，有
 \begin{equation}\label{eq8.1.1}
-f(a)=\frac1{2\pi\ii}\int\limits_{|\zeta-a|=r}\frac{f(\zeta)}{\zeta-a}\textrm d\zeta
-=\frac1{2\pi}\int_0^{2\pi}f(a+r\ee^{\ii\theta})\textrm d\theta.
+f(a)=\frac1{2\pi\ii}\int\limits_{|\zeta-a|=r}\frac{f(\zeta)}{\zeta-a}\dif \zeta
+=\frac1{2\pi}\int_0^{2\pi}f(a+r\ee^{\ii\theta})\dif \theta.
 \end{equation}
 这表明$f$在圆周$|\zeta-a|=r$上的平均值就等于$f$在圆心的值.因此，\eqref{eq8.1.1} 式称为全纯函数的\textbf{平均值公式}\index{G!公式!平均值公式}.全纯函数的这一性质对调和函数也成立.
 
 \begin{theorem}\label{thm8.1.1}
 设$u$是圆盘$B(a,R)$中的调和函数，那么对任意$0<r<R$，有平均值公式
 \begin{equation}\label{eq8.1.2}
-u(a)=\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta.
+u(a)=\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\dif \theta.
 \end{equation}
 \end{theorem}
 \begin{proof}
@@ -33,10 +33,10 @@ u(a)=\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta.
 \begin{proof}
 先证明$u$不能在$D$中取到最大值.设$M=\sup_{z\in D}u(z)$.如果$M=\infty$，那么定理成立.今设$M$是一有限数，如果存在$a\in D$，使得$u(a)=M$，则取$r>0$，使得$B(a,r)\subset D$，我们证明$u$在$B(a,r)$中恒等于$M$.若不然，必有$0<\rho\le r$及某个实数$\theta_0$，使得$u(a+\rho\ee^{\ii\theta_0})<M$.由$u$的连续性，必存在$\delta>0$，使得$u(a+\rho\ee^ {\ii\theta})<M$在$\theta\in(\theta_0-\delta,\theta_0+\delta)$中成立.于是，由平均值公式，有
 \begin{align*}
-M=u(a)&=\frac1{2\pi}\int_0^{2\pi}u(a+\rho\ee^{\ii\theta})\textrm d\theta\\
+M=u(a)&=\frac1{2\pi}\int_0^{2\pi}u(a+\rho\ee^{\ii\theta})\dif \theta\\
 &=\frac1{2\pi}\int_{\theta_0-\delta}^{\theta_0+\delta}u(a+\rho\ee^{\ii\theta})
-\textrm d\theta+\frac1{2\pi}\int\limits_{|\theta-\theta_0|>\delta}
-u(a+\rho\ee^ {\ii\theta})\textrm d\theta\\
+\dif \theta+\frac1{2\pi}\int\limits_{|\theta-\theta_0|>\delta}
+u(a+\rho\ee^ {\ii\theta})\dif \theta\\
 &<\frac1{2\pi}[2\delta M+(2\pi-2\delta)M]\\
 &=M.
 \end{align*}
@@ -49,7 +49,7 @@ u(a+\rho\ee^ {\ii\theta})\textrm d\theta\\
 
 \begin{definition}\label{def8.1.3}
 设$u$是域$D$上的实值连续函数，如果对任意$B(a,r)\subset D$，均有
-\[u(a)=\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta\]
+\[u(a)=\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\dif \theta\]
 成立，就称$u$在$D$上具有\textbf{平均值性质}.\index{P!平均值性质}
 \end{definition}
 
@@ -62,7 +62,7 @@ u(a+\rho\ee^ {\ii\theta})\textrm d\theta\\
 
 设$u$是$B(0,R)$中的调和函数，且在$\bar{B(0,R)}$上连续，由平均值公式，得
 \begin{equation}\label{eq8.1.3}
-u(0)=\frac1{2\pi}\int_0^{2\pi}u(R\ee^{\ii\theta})\textrm d\theta,
+u(0)=\frac1{2\pi}\int_0^{2\pi}u(R\ee^{\ii\theta})\dif \theta,
 \end{equation}
 即$u$用它在圆周$|z|=R$上的值表示出了它在圆心的值.一个自然的问题是，$u$能否用它在圆周上的值表示出圆内任意点的值?
 
@@ -76,14 +76,14 @@ u_1(0)=u(a),
 \end{equation}
 而且$u_1$仍是$B(0,R)$中的调和函数，在$\bar{B(0,R)}$上连续，因而由 \eqref{eq8.1.3} 式可得
 \begin{equation}\label{eq8.1.6}
-u_1(0)=\frac1{2\pi}\int_0^{2\pi}u_1(R\ee^{\ii\tau})\textrm d\tau.
+u_1(0)=\frac1{2\pi}\int_0^{2\pi}u_1(R\ee^{\ii\tau})\dif \tau.
 \end{equation}
 
 由于 \eqref{eq8.1.4} 式把圆周上的点变为圆周上的点，即$\psi_a(R\ee^{\ii\varphi})=R\ee^{\ii\tau}$，或者
 \[\ee^{\ii\tau}=\frac{R\ee^{\ii\varphi}-a}{R-\bar a\ee^{\ii\varphi}}.\]
 两边微分后取绝对值，即得
 \begin{equation}\label{eq8.1.7}
-\textrm d\tau=\frac{R^2-|a|^2}{|R\ee^{\ii\varphi}-a|^2}\textrm d\varphi.
+\dif \tau=\frac{R^2-|a|^2}{|R\ee^{\ii\varphi}-a|^2}\dif \varphi.
 \end{equation}
 且易知
 \begin{equation}\label{eq8.1.8}
@@ -92,14 +92,14 @@ u_1(R\ee^{\ii\tau})=u_1\big(\psi_a(R\ee^{\ii\varphi})\big)=u(R\ee^{\ii\varphi}).
 现在把 \eqref{eq8.1.5} 式、\eqref{eq8.1.7} 式和 \eqref{eq8.1.8} 式代入 \eqref{eq8.1.6} 式，即得
 \begin{equation}\label{eq8.1.9}
 u(a)=\frac1{2\pi}\int_0^{2\pi}\frac{R^2-|a|^2}{|R\ee^{\ii\varphi}-a|^2}
-u(R\ee^{\ii\varphi})\textrm d\varphi.
+u(R\ee^{\ii\varphi})\dif \varphi.
 \end{equation}
 这个公式称为\textbf{Poisson积分公式}\index{G!公式!Poisson积分公式}，它用$u$在圆周$|z|=R$上的值表示出了$u$在圆内任意点$a$的值.这样，我们已经证明了
 \begin{theorem}\label{thm8.1.5}
 设$u$是圆盘$B(0,R)$中的调和函数，且在$\bar{B(0,R)}$上连续，那么对任意$r\in[0,R)$，有
 \begin{equation}\label{eq8.1.10}
 u(r\ee^{\ii\theta})=\frac1{2\pi}\int_0^{2\pi}
-\frac{R^2-r^2}{R^2-2rR\cos(\varphi-\theta)+r^2}u(R\ee^{\ii\varphi})\textrm d\varphi.
+\frac{R^2-r^2}{R^2-2rR\cos(\varphi-\theta)+r^2}u(R\ee^{\ii\varphi})\dif \varphi.
 \end{equation}
 \end{theorem}
 \begin{proof}
@@ -112,7 +112,7 @@ P(a,R\ee^{\ii\varphi})=\frac1{2\pi}\frac{R^2-|a|^2}{|R\ee^{\ii\varphi}-a|^2}
 \end{equation}
 为圆盘$B(0,R)$的\textbf{Poisson核}\index{P!Poisson核}. 这样，\eqref{eq8.1.9} 式可写成
 \begin{equation}\label{eq8.1.12}
-u(a)=\int_0^{2\pi}P(a,R\ee^{\ii\varphi})u(R\ee^{\ii\varphi})\textrm d\varphi.
+u(a)=\int_0^{2\pi}P(a,R\ee^{\ii\varphi})u(R\ee^{\ii\varphi})\dif \varphi.
 \end{equation}
 
 由 \eqref{eq8.1.7} 式知道，$B(0,R)$的Poisson核恰好是圆周的弧长元素在自同构变换下的Jacobian.这一简单事实启发人们把Poisson积分的理论推广到多个复变数的函数论中去.
@@ -123,7 +123,7 @@ Poisson 核具有一些重要性质，它们使得Poisson积分成为解决Diric
 $B(0,R)$的Poisson核$P(z,R\ee^{\ii\varphi})$具有下列性质：
 \begin{eenum}
 \item \label{prop8.1.6.1} $P(z,R\ee^{\ii\varphi})>0,z\in B(0,R)$；
-\item \label{prop8.1.6.2} $\int_0^{2\pi}P(z,R\ee^{\ii\varphi})\textrm d\varphi=1$，对任意$z\in B(0,R)$成立；
+\item \label{prop8.1.6.2} $\int_0^{2\pi}P(z,R\ee^{\ii\varphi})\dif \varphi=1$，对任意$z\in B(0,R)$成立；
 \item \label{prop8.1.6.3} $P(z,R\ee^{\ii\varphi})$是$z\in B(0,R)$中的调和函数.
 \end{eenum}
 \end{prop}
@@ -179,7 +179,7 @@ $B(0,R)$的Poisson核$P(z,R\ee^{\ii\varphi})$具有下列性质：
 \item 设$D$是域，$a\in D$.证明：若$u$在$D$上连续，在$D\backslash\{a\}$上调和，则$u$在$D$上调和.
 \item （\textbf{Jensen公式}\index{G!公式!Jensen公式}）设$f\in H\big(\bar{B(0,r)}\big),a_1,\cdots,a_m$是$f$在$B(0,r)$中的零点，重零点按重数重复计算，但$f(0)\ne0$. 证明：
 \[\log|f(0)|=-\sum_{k=1}^m\log\frac r{|a_k|}+\frac1{2\pi}\int_0^{2\pi}
-\log|f(r\ee^{\ii\theta})|\textrm d\theta.\]
+\log|f(r\ee^{\ii\theta})|\dif \theta.\]
 （\textbf{提示}：考虑函数$g(z)=f(z)\prod_{k=1}^m\frac{r^2-\bar{a_k}z}{r(z-a_k)}$.）
 \end{xiti}
 
@@ -194,7 +194,7 @@ $B(0,R)$的Poisson核$P(z,R\ee^{\ii\varphi})$具有下列性质：
 
 设$u$是圆周$|z|=R$上的逐段连续函数，称
 \begin{equation}\label{eq8.2.1}
-P[u](z)=\int_0^{2\pi}P(z,R\ee^{\ii\theta})u(R\ee^{\ii\theta})\textrm d\theta
+P[u](z)=\int_0^{2\pi}P(z,R\ee^{\ii\theta})u(R\ee^{\ii\theta})\dif \theta
 \end{equation}
 为$u$在圆盘$B(0,R)$中的Poisson积分.
 \begin{theorem}\label{thm8.2.1}
@@ -205,7 +205,7 @@ P[u](z)=\int_0^{2\pi}P(z,R\ee^{\ii\theta})u(R\ee^{\ii\theta})\textrm d\theta
 \end{theorem}
 \begin{proof}
 由命题 \ref{prop8.1.6} 的 \ref{prop8.1.6.3} 即知$P[u](z)$是$B(0,R)$中的调和函数. 因为$u$有界，设$|u(R\ee^{\ii\varphi})|\le M,0\le\varphi\le2\pi$. 由命题 \ref{prop8.1.6} 的 \ref{prop8.1.6.1} 和 \ref{prop8.1.6.2} 即得
-\[|P[u](z)|\le\int_0^{2\pi}P(z,R\ee^{\ii\varphi})|u(R\ee^{\ii\varphi})|\textrm d\varphi\le M.\]
+\[|P[u](z)|\le\int_0^{2\pi}P(z,R\ee^{\ii\varphi})|u(R\ee^{\ii\varphi})|\dif \varphi\le M.\]
 这就证明了$P[u](z)$是$B(0,R)$中的有界调和函数.
 
 下面证明等式 \eqref{eq8.2.2}. 因为$u$在$R\ee^{\ii\varphi_0}$处连续，故对任意$\varepsilon>0$，存在$\delta>0$，当$|\varphi-\varphi_0|\le\delta$时，有
@@ -214,23 +214,23 @@ P[u](z)=\int_0^{2\pi}P(z,R\ee^{\ii\theta})u(R\ee^{\ii\theta})\textrm d\theta
 \end{equation}
 由命题 \ref{prop8.1.6} 的 \ref{prop8.1.6.2}，可得
 \[u(R\ee^{\ii\varphi_0})=\int_0^{2\pi}P(z,R\ee^{\ii\varphi})u(R\ee^{\ii\varphi_0})
-\textrm d\varphi,\]
+\dif \varphi,\]
 因而
 \begin{align*}
 |P[u](z)-u(R\ee^{\ii\varphi_0})|&\le\int_0^{2\pi}P(z,R\ee^{\ii\varphi})|u(R\ee^{\ii\varphi})-u(R\ee^{\ii\varphi_0})|
-\textrm d\varphi\\
+\dif \varphi\\
 &=\int\limits_{|\varphi-\varphi_0|\le\delta}P(z,R\ee^{\ii\varphi})|u(R\ee^{\ii\varphi})
--u(R\ee^{\ii\varphi_0})|\textrm d\varphi\\
+-u(R\ee^{\ii\varphi_0})|\dif \varphi\\
 &\phantom{=}+\int\limits_{|\varphi-\varphi_0|>\delta}P(z,R\ee^{\ii\varphi})|u(R\ee^{\ii\varphi})
--u(R\ee^{\ii\varphi_0})|\textrm d\varphi\\
+-u(R\ee^{\ii\varphi_0})|\dif \varphi\\
 &=I_1+I_2.
 \end{align*}
 由 \eqref{eq8.2.3} 式立刻可得
 \begin{equation}\label{eq8.2.4}
 \begin{aligned}
 I_1&=\int\limits_{|\varphi-\varphi_0|\le\delta}P(z,R\ee^{\ii\varphi})|u(R\ee^{\ii\varphi})
--u(R\ee^{\ii\varphi_0})|\textrm d\varphi\\
-&<\varepsilon\int_0^{2\pi}P(z,R\ee^{\ii\varphi})\textrm d\varphi=\varepsilon.
+-u(R\ee^{\ii\varphi_0})|\dif \varphi\\
+&<\varepsilon\int_0^{2\pi}P(z,R\ee^{\ii\varphi})\dif \varphi=\varepsilon.
 \end{aligned}
 \end{equation}
 若令$z=r\ee^{\ii\theta}$，则
@@ -244,7 +244,7 @@ I_1&=\int\limits_{|\varphi-\varphi_0|\le\delta}P(z,R\ee^{\ii\varphi})|u(R\ee^{\i
 \begin{equation}\label{eq8.2.5}
 \begin{aligned}
 I_2&=\frac1{2\pi}\int\limits_{|\varphi-\varphi_0|>\delta}\frac{R^2-r^2}{R^2-2rR
-\cos(\theta-\varphi)+r^2}\cdot|u(R\ee^{\ii\varphi})-u(R\ee^{\ii\varphi_0})|\textrm d\varphi\\
+\cos(\theta-\varphi)+r^2}\cdot|u(R\ee^{\ii\varphi})-u(R\ee^{\ii\varphi_0})|\dif \varphi\\
 &<\frac1{2\pi}\cdot2M\cdot\frac{R^2}M\cdot\frac{(1-\cos\delta)\varepsilon}
 {2R^2(1-\cos\delta)}\cdot2\pi\\
 &=\varepsilon.
@@ -324,7 +324,7 @@ $P[u](z)$是Dirichlet问题的解已由定理 \ref{thm8.2.1} 证明.如果另外
 
 现在来求$u(z)$的具体表达式.因为$u_1$是$|w|<1$中的调和函数，且在$|\zeta|=1$上除去有限个点外取值$u_1(\zeta)$，故有
 \begin{equation}\label{eq8.3.1}
-u_1(0)=\frac1{2\pi}\int_0^{2\pi}u_1(\ee^{\ii\varphi})\textrm d\varphi.
+u_1(0)=\frac1{2\pi}\int_0^{2\pi}u_1(\ee^{\ii\varphi})\dif \varphi.
 \end{equation}
 其中
 \begin{equation}\label{eq8.3.2}
@@ -334,17 +334,17 @@ u_1(0)=u(z_0),\quad u_1(\ee^{\ii\varphi})=u(t),
 \[\ee^{\ii\varphi}=\frac{t-z_0}{t-\bar{z_0}}.\]
 上式两边取对数后求微分，即得
 \begin{equation}\label{eq8.3.3}
-\textrm d\varphi=\frac{2y_0\textrm dt}{(t-x_0)^2+y_0^2},z_0=x_0+\ii y_0.
+\dif \varphi=\frac{2y_0\dif t}{(t-x_0)^2+y_0^2},z_0=x_0+\ii y_0.
 \end{equation}
 把 \eqref{eq8.3.2} 式和 \eqref{eq8.3.3} 式代入 \eqref{eq8.3.1} 式，即得$u(z)$的表达式为
 \begin{equation}\label{eq8.3.4}
-u(z_0)=\frac1\pi\int_{-\infty}^\infty\frac{y_0}{(t-x_0)^2+y_0^2}u(t)\textrm dt,\;\Im z_0>0.
+u(z_0)=\frac1\pi\int_{-\infty}^\infty\frac{y_0}{(t-x_0)^2+y_0^2}u(t)\dif t,\;\Im z_0>0.
 \end{equation}
 由于
 \[\Re\frac1{\ii(t-z_0)}=\frac{y_0}{(t-x_0)^2+y_0^2},\]
 故 \eqref{eq8.3.4} 式也可改写为
 \begin{equation}\label{eq8.3.5}
-u(z_0)=\Re\frac1{\pi\ii}\int_{-\infty}^\infty\frac{u(t)}{t-z_0}\textrm dt,\;\Im z_0>0.
+u(z_0)=\Re\frac1{\pi\ii}\int_{-\infty}^\infty\frac{u(t)}{t-z_0}\dif t,\;\Im z_0>0.
 \end{equation}
 
 把上面的结果写成定理的形式，有
@@ -364,7 +364,7 @@ f(z)=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz+C_1,
 \[\log f'(z)=\log|f'(z)|+\ii\arg f'(z).\]
 记$v(z)=\arg f'(z)$，它是上半平面中的调和函数，我们看它在实轴上满足什么条件.当$z\in(a_k,a_{k+1})$（$k=1,\cdots,n-1$）时，$f(z)$在线段$w_kw_{k+1}$上，根据导数辐角的几何意义，这时有
 \[v(z)=\arg f'(z)=\arg (w_{k+1}-w_k),k=1,\cdots,n-1.\]
-若记$a_0=-\infty,a_{n+1}=\infty$，则当$z\in(a_0，a_1)$或$(a_n,a_{n+1})$时，$f(z)$在线段$w_nw_1$上，所以此时
+若记$a_0=-\infty,a_{n+1}=\infty$，则当$z\in(a_0,a_1)$或$(a_n,a_{n+1})$时，$f(z)$在线段$w_nw_1$上，所以此时
 \[v(z)=\arg f'(z)=\arg(w_1-w_n).\]
 如果记
 \begin{equation}\label{eq8.3.7}
@@ -377,8 +377,8 @@ f(z)=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz+C_1,
 \[v(t)=\theta_k,a_k<t<a_{k+1},k=0,1,\cdots,n.\]
 根据上半平面Dirichlet问题解的公式 \eqref{eq8.3.5}，有
 \begin{align*}
-v(z)&=\Re\frac1{\pi\ii}\int_{-\infty}^\infty\frac{v(t)}{t-z}\textrm dt
-=\sum_{k=0}^n\Re\frac1{\pi\ii}\int_{a_k}^{a_{k+1}}\frac{\theta_k}{t-z}\textrm dt\\
+v(z)&=\Re\frac1{\pi\ii}\int_{-\infty}^\infty\frac{v(t)}{t-z}\dif t
+=\sum_{k=0}^n\Re\frac1{\pi\ii}\int_{a_k}^{a_{k+1}}\frac{\theta_k}{t-z}\dif t\\
 &=\sum_{k=0}^n\Re\frac{\theta_k}{\pi\ii}\log\frac{z-a_{k+1}}{z-a_k}
 =\frac1\pi\sum_{k=0}^n\theta_k\arg\frac{z-a_{k+1}}{z-a_k}.
 \end{align*}
@@ -397,7 +397,7 @@ v(z)&=\frac1\pi\sum_{k=0}^{n-1}(\theta_k-\theta_{k+1})\arg(z-a_{k+1})+\theta_n\\
 &=\frac1\pi\sum_{k=1}^n(\theta_{k-1}-\theta_k)\arg(z-a_k)+\theta_n.
 \end{align*}
 但从 \eqref{eq8.3.7} 式容易直接验证
-\[\theta_{k+1}-\theta_k=(\alpha_k-1)\pi,\;k=1,\cdots,n,\]
+\[\theta_{k-1}-\theta_k=(\alpha_k-1)\pi,\;k=1,\cdots,n,\]
 因而有
 \[\arg f'(z)=v(z)=\sum_{k=1}^n(\alpha_k-1)\arg(z-a_k)+\theta_n.\]
 现在令
@@ -414,7 +414,7 @@ f(z)=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz+C_1.
 \item 求出上半平面$D$的Green函数$g$，并证明：若
 \[P(z,t)=\frac1{2\pi}\lim_{s\to0}\pp{g(z,t+s\ii)}s,z\in D,t\in\MR,\]
 则
-\[u(z)=\int_{-\infty}^\infty P(z,t)f(t)\textrm dt\]
+\[u(z)=\int_{-\infty}^\infty P(z,t)f(t)\dif t\]
 是上半平面以$f(t)$为边界值的Dirichlet问题的解.
 \item 设$D$是由简单闭曲线围成的单连通域.证明：$D$的Dirichlet问题可解，并且解是唯一的.
 \item 求出解上半单位圆盘Dirichlet问题的具体公式.
@@ -428,7 +428,7 @@ f(z)=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz+C_1.
   \item $u$是上半连续的；
   \item 对任意以$a$为中心、$r$为半径的闭圆盘$\bar{B(a,r)}\subset D$，有不等式
   \begin{equation}\label{eq8.4.1}
-    u(a)\le\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta,
+    u(a)\le\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\dif \theta,
   \end{equation}
 \end{eenum}
 就称$u$是$D$上的\textbf{次调和函数}.\index{C!次调和函数}.
@@ -444,24 +444,24 @@ f(z)=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz+C_1.
 设$D$是$\MC$中的域，$u$是$D$上的连续实值函数. $u$是$D$上的次调和函数的充分必要条件是，对任意域$G\subset\subset D$及任意在$\bar G$上连续、在$G$内调和的函数$h$，如果$u(z)\le h(z)$在$G$上成立，那么在$G$内也有$u(z)\le h(z)$.
 \end{theorem}
 \begin{proof}
-先证必要性.如果$u(z_0)>h(z_0)$对某个$z_0\in G$成立，令$u_1=u-h$，则$u_1(z_0)>0$.因为$u$在$G$上连续，故在$G$上达到它的最大值$M$.记
+先证必要性.如果$u(z_0)>h(z_0)$对某个$z_0\in G$成立，令$u_1=u-h$，则$u_1(z_0)>0$. 因为$u$在$\bar G$上连续，故在$\bar G$上达到它的最大值$M$.记
 \[E=\{z\in\bar G:u_1(z)=M\}.\]
 因为在$G$的边界上$u_1\le0$，所以$u_1$的最大值只能在$G$中取到，因此$E$是$G$中的紧子集.今设$a$是$E$的一个边界点，于是有$r>0$，使得$\bar{B(a,r)}\subset G$.但$\bar{B(a,r)}$的边界上必有某段弧不在$E$中，因而
 \begin{equation}\label{eq8.4.2}
-u_1(a)=M>\frac1{2\pi}\int_0^{2\pi}u_1(a+r\ee^{\ii\theta})\textrm d\theta.
+u_1(a)=M>\frac1{2\pi}\int_0^{2\pi}u_1(a+r\ee^{\ii\theta})\dif \theta.
 \end{equation}
 令一方面，$u$和$h$分别在$G$中次调和与调和，因而有
 \begin{align*}
-&u(a)\le\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta,\\
-&h(a)=\frac1{2\pi}\int_0^{2\pi}h(a+r\ee^{\ii\theta})\textrm d\theta.
+&u(a)\le\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\dif \theta,\\
+&h(a)=\frac1{2\pi}\int_0^{2\pi}h(a+r\ee^{\ii\theta})\dif \theta.
 \end{align*}
 由此即得
-\[u_1(a)\le\frac1{2\pi}\int_0^{2\pi}u_1(a+r\ee^{\ii\theta})\textrm d\theta.\]
+\[u_1(a)\le\frac1{2\pi}\int_0^{2\pi}u_1(a+r\ee^{\ii\theta})\dif \theta.\]
 这和 \eqref{eq8.4.2} 式矛盾.
 
 再证充分性.任取$\bar{B(a,r)}\subset D$，那么存在$B(a,r)$中的调和函数$h$，它在圆周上和$u$一致.于是由假定，$u(z)\le h(z)$在圆内成立.这样
-\[u(a)\le h(a)=\frac1{2\pi}\int_0^{2\pi}h(a+r\ee^{\ii\theta})\textrm d\theta
-=\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta.\]
+\[u(a)\le h(a)=\frac1{2\pi}\int_0^{2\pi}h(a+r\ee^{\ii\theta})\dif \theta
+=\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\dif \theta.\]
 这正好说明$u$是次调和函数.
 \end{proof}
 
@@ -470,17 +470,19 @@ u_1(a)=M>\frac1{2\pi}\int_0^{2\pi}u_1(a+r\ee^{\ii\theta})\textrm d\theta.
 作为这个定理的一个应用，我们有
 \begin{theorem}\label{thm8.4.3}
 设$u$是单位圆盘$u$中的次调和函数，令
-\[m(r)=\frac1{2\pi}\int_0^{2\pi}u(r\ee^{\ii\theta})\textrm d\theta,\;0\le r<1,\]
+\[m(r)=\frac1{2\pi}\int_0^{2\pi}u(r\ee^{\ii\theta})\dif \theta,\;0\le r<1,\]
 那么$m(r)$是$r$的非降函数.
 \end{theorem}
 \begin{proof}
 设$0<r_1<r_2<1$.存在圆盘$B(0,r_2)$上的调和函数$h$，它在圆周上和$u$一致.由定理 \ref{thm8.4.2}，在$B(0,r_2)$中有$u\le h$，因而
 \begin{align*}
-m(r_1)&=\frac1{2\pi}\int_0^{2\pi}u(r_1\ee^{\ii\theta})\textrm d\theta
-\le\frac1{2\pi}\int_0^{2\pi}h(r_1\ee^{\ii\theta})\textrm d\theta\\
-&=h(0)=\frac1{2\pi}\int_0^{2\pi}h(r_2\ee^{\ii\theta})\textrm d\theta
-=\frac1{2\pi}\int_0^{2\pi}u(r_2\ee^{\ii\theta})\textrm d\theta\\
-&=m(r_2).
+  m(r_1) & = \frac1{2\pi}\int_0^{2\pi}u(r_1\ee^{\ii\theta})\dif \theta
+  \le \frac1{2\pi}\int_0^{2\pi} h(r_1\ee^{\ii\theta})
+  \dif \theta\\
+  &  = h(0) = \frac1{2\pi}\int_0^{2\pi}h(r_2\ee^{\ii\theta})
+  \dif \theta
+  = \frac1{2\pi}\int_0^{2\pi}u(r_2\ee^{\ii\theta})\dif \theta\\
+  & = m(r_2). \qedhere
 \end{align*}
 \end{proof}
 
@@ -490,11 +492,11 @@ m(r_1)&=\frac1{2\pi}\int_0^{2\pi}u(r_1\ee^{\ii\theta})\textrm d\theta
 \end{prop}
 \begin{proof}
 因为$u$是次调和函数，故对任意$\bar{B(a,r)}\subset D$，有
-\[u(a)\le\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta.\]
+\[u(a)\le\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\dif \theta.\]
 又因为$\varphi$是递增的凸函数，所以
 \begin{align*}
-\varphi\big(u(a)\big)&\le\varphi\bigg(\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\textrm d\theta\bigg)\\
-&\le\frac1{2\pi}\int_0^{2\pi}\varphi\big(u(a+r\ee^{\ii\theta})\big)\textrm d\theta
+\varphi\big(u(a)\big)&\le\varphi\bigg(\frac1{2\pi}\int_0^{2\pi}u(a+r\ee^{\ii\theta})\dif \theta\bigg)\\
+&\le\frac1{2\pi}\int_0^{2\pi}\varphi\big(u(a+r\ee^{\ii\theta})\big)\dif \theta
 \end{align*}
 因而$\varphi\circ u$也是次调和函数.
 \end{proof}
@@ -505,12 +507,12 @@ m(r_1)&=\frac1{2\pi}\int_0^{2\pi}u(r_1\ee^{\ii\theta})\textrm d\theta
 \begin{proof}
 容易知道，$\log|f|$是上半连续的. 任取圆盘$\bar{B(a,r)}\subset D$，我们要证明
 \begin{equation}\label{eq8.4.3}
-\log|f(a)|\le\frac1{2\pi}\int_0^{2\pi}\log|f(a+r\ee^{\ii\theta})|\textrm d\theta.
+\log|f(a)|\le\frac1{2\pi}\int_0^{2\pi}\log|f(a+r\ee^{\ii\theta})|\dif \theta.
 \end{equation}
 如果$f(a)=0$，那么$\log|f(a)|=-\infty$，\eqref{eq8.4.3} 式显然成立.今设$f(a)\ne0$，$f$在$\bar{B(a,r)}$中也没有其他零点，那么通过直接计算知道，$\log|f|$是$B(a,r)$中的调和函数，因而它是次调和的.现若$f$在$B(a,r)$中有零点$z_1,\cdots,z_m$，重零点按重数重复计算，根据Jensen公式，有
 \begin{align*}
-\log|f(a)|&=-\sum_{k=1}^m\log\frac r{|a-z_k|}+\frac1{2\pi}\int_0^{2\pi}\log|f(a+r\ee^{\ii\theta}|\textrm d\theta\\
-&\le\frac1{2\pi}\int_0^{2\pi}\log|f(a+r\ee^{\ii\theta}|\textrm d\theta.
+\log|f(a)|&=-\sum_{k=1}^m\log\frac r{|a-z_k|}+\frac1{2\pi}\int_0^{2\pi}\log|f(a+r\ee^{\ii\theta}|\dif \theta\\
+&\le\frac1{2\pi}\int_0^{2\pi}\log|f(a+r\ee^{\ii\theta}|\dif \theta.
 \end{align*}
 这就是 \eqref{eq8.4.3} 式.这就证明了$\log|f|$的次调和性.
 
@@ -522,7 +524,7 @@ m(r_1)&=\frac1{2\pi}\int_0^{2\pi}u(r_1\ee^{\ii\theta})\textrm d\theta
 利用定理 \ref{thm8.4.3} 和命题 \ref{prop8.4.5}，立刻可得
 \begin{prop}\label{prop8.4.6}
 设$f\in H(U)$，那么对任意$0<p<\infty$，积分平均
-\[M_p(r,f)=\bigg(\frac1{2\pi}\int_0^{2\pi}|f(r\ee^{\ii\theta})|^p\textrm d\theta\bigg)^{\frac1p}\]
+\[M_p(r,f)=\bigg(\frac1{2\pi}\int_0^{2\pi}|f(r\ee^{\ii\theta})|^p\dif \theta\bigg)^{\frac1p}\]
 是$r$的非降函数.
 \end{prop}
 
