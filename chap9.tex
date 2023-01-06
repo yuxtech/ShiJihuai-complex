@@ -285,7 +285,7 @@ f(z)=\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f(\zeta)\dif \zeta_1\cdot
 \begin{xiti}
 \item 设$P(a,r)$是一个多圆柱，试利用多圆柱上的Cauchy积分公式证明：若$f\in C\big(\bar{P(a,r)}\big)\cap H\big(P(a,r)\big)$，则$f$的最大模必在$\partial_0P$上取到.
 \item 设$\Omega$是$\MC^n$中的域，$\bar{P(a,r)}\subset\Omega$.如果$f\in H(\Omega)$，那么对任意多重指标$\alpha=(\alpha_1,\cdots,\alpha_n)$，有
-    \[|(\DD^\alpha f)(a)|\le\frac{\alpha!(\alpha_1+2)\cdots(\alpha_n+2)}{(2n)^nr^{\alpha+2}}\|f\|
+    \[|(\DD^\alpha f)(a)|\le\frac{\alpha!(\alpha_1+2)\cdots(\alpha_n+2)}{(2\pi)^nr^{\alpha+2}}\|f\|
     _{L^1(P(a,r))},\]
 这里
 \[\|f\|_{L^1(P(a,r))}=\int\limits_{P(a,r)}|f(z)|\dif m(z),\]
@@ -362,8 +362,8 @@ f(z)=\sum_{\alpha\ge0}a_\alpha z^\alpha,
 f(z)=\sum_{\alpha\in\MZ^n}a_\alpha z^\alpha.
 \end{equation}
 我们要证明，如果$\alpha=(\alpha_1,\cdots,\alpha_n)$的某个分量出现负整数，那么相应的系数$a_\alpha=0$，这样展开式 \eqref{eq9.3.4} 就变成幂级数了.事实上，设$\alpha_k$是一个负整数，而相应的$a_\alpha\ne0$，这时取第$k$个坐标为零的点
-\[\widetilde{z}=(z_1,\cdots,z_{k-1},0,z_{k+1},\cdots,z_n),\]
-于是$a_\alpha\widetilde{z}^\alpha=\infty$，因而 \eqref{eq9.3.4} 式在$\widetilde{z}$处不成立，这是一个矛盾. 所以，\eqref{eq9.3.4} 式的右端就是幂级数 \eqref{eq9.3.3}.
+\[\tilde{z}=(z_1,\cdots,z_{k-1},0,z_{k+1},\cdots,z_n),\]
+于是$a_\alpha\tilde{z}^\alpha=\infty$，因而 \eqref{eq9.3.4} 式在$\tilde{z}$处不成立，这是一个矛盾. 所以，\eqref{eq9.3.4} 式的右端就是幂级数 \eqref{eq9.3.3}.
 \end{proof}
 
 由于单位球$B_n$和单位多圆柱$U^n$都满足定理 \ref{thm9.3.3} 的条件，所以从定理 \ref{thm9.3.3} 立刻可得
