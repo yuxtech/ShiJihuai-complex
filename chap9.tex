@@ -580,7 +580,7 @@ F'(z)=\begin{pmatrix}
 设$\Omega$是$\MC^n$中包含原点的有界域，如果$F:\Omega\to\Omega$是全纯的，且有$F(0)=0,F'(0)= I_n$，这里，$I_n$是$n$阶单位方阵，那么对任意$z\in\Omega$，有$F(z)=z$.
 \end{theorem}
 \begin{proof}
-因为$\Omega$是有界域，故比存在$0<r<R<\infty$，使得$B(0,r)\subset\Omega\subset B(0,R)$. 设$F=(f_1,\cdots,f_n)$，由假定得
+因为$\Omega$是有界域，故必存在$0<r<R<\infty$，使得$B(0,r)\subset\Omega\subset B(0,R)$. 设$F=(f_1,\cdots,f_n)$，由假定得
 \[f_j(0)=0,\;\pp{f_i}{z_j}(0)=\delta_{ij},\;i,j=1,\cdots,n.\]
 根据定理 \ref{thm9.3.4}，$f_j$在$B(0,r)$中有展开式
 \[f_j(z)=z_j+P_2^{(j)}(z)+\cdots,j=1,\cdots,n,\]
@@ -594,7 +594,7 @@ F(z)=z+\sum_{s=2}^\infty F_s(z),
 \begin{equation}\label{eq9.5.2}
 F(z)=z+\sum_{s=m}^\infty F_s(z).
 \end{equation}
-注意到$P_m^{(j)}=\sum_{|\alpha|=m}a_\alpha z^\alpha$，所以
+注意到$P_m^{(j)}(z)=\sum_{|\alpha|=m}a_\alpha z^\alpha$，所以
 \begin{align*}
 P_m^{(j)}\big(F(z)\big)&=P_m^{(j)}(f_1,\cdots,f_n)=\sum_{|\alpha|=m}a_\alpha
 f_1^{\alpha_1}\cdots f_n^{\alpha_n}\\
@@ -692,8 +692,8 @@ F(z)=F'(0)z+\ee^{\ii(m-1)\theta}F_m(z)+\cdots.
   \item 如果$f(0)=0$，那么一定存在实数$\theta_1,\cdots,\theta_n$和置换$\tau:(1,\cdots,n)\to(1,\cdots,n)$，使得
       \[f(z)=\big(\ee^{\ii\theta_1}z_{\tau(1)},\cdots,\ee^{\ii\theta_n}z_{\tau(n)}\big);\]
   \item 如果$f(a)=0,a\ne0$，那么一定存在实数$\theta_1,\cdots,\theta_n$和置换$\tau:(1,\cdots,n)\to(1,\cdots,n)$，使得
-  \[f(z)=\bigg(\ee^{\ii\theta_1}\frac{z_{\tau(1)}-a_1}{1-\bar{a}_1z_{\tau(1)}},
-  \cdots,\ee^{\ii\theta_n}\frac{z_{\tau(n)}-a_n}{1-\bar{a}_nz_{\tau(n)}}\bigg).\]
+  \[f(z)=\bigg(\ee^{\ii\theta_1}\frac{z_{\tau(1)}-a_1}{1-\bar{a_1}z_{\tau(1)}},
+  \cdots,\ee^{\ii\theta_n}\frac{z_{\tau(n)}-a_n}{1-\bar{a_n}z_{\tau(n)}}\bigg).\]
 \end{enuma}
 \end{xiti}
 
@@ -719,7 +719,7 @@ a_1\\\vdots\\a_n
 \end{pmatrix}(z_1,\cdots,z_n)=\begin{pmatrix}
 a_1z_1&\cdots&a_1z_n\\
 \cdots&\cdots&\cdots\\
-a_nz_1&\cdots&a_nz)n
+a_nz_1&\cdots&a_nz_n
 \end{pmatrix}.
 \end{align*}
 
@@ -785,7 +785,7 @@ A\bar{A'}&=A^2=s^2I_n+\frac{2s\bar{a'}a}{1+s}+\frac{\bar{a'}a\bar{a'}a}{(1+s)^2}
 &=s^2I_n+\bar{a'}a,
 \end{align*}
 即
-\[\bar a'a-A\bar{A'}=-s^2I_n.\]
+\[\bar {a'}a-A\bar{A'}=-s^2I_n.\]
 于是，\eqref{eq9.6.1} 式可写为
 \begin{align*}
 1-|\varphi_a(z)|^2&=\frac1{|1-\bar az'|^2}\big(1-|a|^2+z\bar{a'}a\bar{z'}-
@@ -796,7 +796,7 @@ zA\bar{A'}\bar{z'}\big)\\
 \end{align*}
 这就是要证明的.
 
-(4) 记$H=\varphi_a\circ\varphi_1$. 由 \ref{thm9.6.2.3} 知$\varphi_a$是把$B_n$映入$B_n$的全纯映射，所以$H$也是把$B_n$映入$B_n$的全纯映射. 由 \ref{thm9.6.2.1} 得
+(4) 记$H=\varphi_a\circ\varphi_a$. 由 \ref{thm9.6.2.3} 知$\varphi_a$是把$B_n$映入$B_n$的全纯映射，所以$H$也是把$B_n$映入$B_n$的全纯映射. 由 \ref{thm9.6.2.1} 得
 \[H(0)=\varphi_a\big(\varphi_a(0)\big)=\varphi_a(a)=0.\]
 再由命题 \ref{prop9.4.4} 及 \ref{thm9.6.2.2}，可得
 \[H'(0)=\varphi_a'(a)\varphi_a'(0)=-\frac{A'}{s^2}(a'\bar a-A')=I_n.\]
@@ -841,7 +841,7 @@ zA\bar{A'}\bar{z'}\big)\\
 \item 设$a,z,w\in B_n$，证明：
 \[|\varphi_{\varphi_a(w)}(z)|=\big|\varphi_w\big(\varphi_a(z)\big)\big|.\]
 （\textbf{提示}：考虑映射$\varphi_{\varphi_a(w)}\circ\varphi_a\circ\varphi_w$.）
-\item 定义$E(a,r)=\varphi_a\big(B(0,r)\big)=\{z:|\varphi_a(z)|<r\}$. 证明：对任意$a,z\in B_n,0<r<1$，有
+\item 定义$E(a,r)=\varphi_a^{-1}\big(B(0,r)\big)=\{z:|\varphi_a(z)|<r\}$. 证明：对任意$a,z\in B_n,0<r<1$，有
     \[\varphi_a\big(E(z,r)\big)=E\big(\varphi_a(z),r\big).\]
 \item 设$F\in H(B_n),F=f\circ\varphi_z$. 证明：
 \begin{enuma}
