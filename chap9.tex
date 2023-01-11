@@ -5,14 +5,18 @@
 
 \section{多复变数全纯函数的定义\label{sec9.1}}
 我们用$\MC^n$记$n$个坐标都是复数的$n$维向量的全体，即
-\[\MC^n=\{z=(z_1,\cdots,z_n):z_j\in\MC,j=1,\cdots,n\}.\]
+\[
+  \MC^n = \{z=(z_1,\cdots,z_n):z_j\in\MC,j=1,\cdots,n\}.
+\]
 设$z=(z_1,\cdots,z_n),w=(w_1,\cdots,w_n)$是$\MC^n$中的两个点，$\lambda\in\MC$，定义它们的加法和数乘如下：
 \begin{align*}
-&z+w=(z_1+w_1,\cdots,z_n+w_n),\\
-&\lambda z=(\lambda z_1,\cdots,\lambda z_n).
+  & z + w = (z_1+w_1,\cdots,z_n+w_n),\\
+  & \lambda z = (\lambda z_1,\cdots,\lambda z_n).
 \end{align*}
 在这样的定义下，$\MC^n$是复数域上的线性空间. $\MC^n$中向量$z$的长度定义为
-\[|z|=\big(|z_1|^2+\cdots+|z_n|^2\big)^{\frac12}.\]
+\[
+  |z| = \big(|z_1|^2+\cdots+|z_n|^2\big)^{\frac12}.
+\]
 
 正像$\MC$可以看成$\MR^2$一样，$\MC^n$也可以看成$\MR^{2n}$.
 
@@ -20,16 +24,24 @@ $\MC^n$中的连通开集$\Omega$称为域. 当$\Omega$有界时，就称$\Omega
 下面两类简单的有界域值得我们特别注意：
 
 设$a=(a_1,\cdots,a_n)\in\MC^n,r=(r_1,\cdots,r_n),r_j>0,j=1,\cdots,n$. 称
-\[P(a,r)=\{(z_1,\cdots,z_n):|z_j-a_j|<r_j,j=1,\cdots,n\}\]
+\[
+  P(a,r) = \{(z_1,\cdots,z_n):|z_j-a_j|<r_j,j=1,\cdots,n\}
+\]
 为以$a$为中心、$r$为半径的\textbf{多圆柱}\index{D!多复变函数!多圆柱}. 特别地，当$a=0,r_j=1,j=1,\cdots,n$时，称之为\textbf{单位多圆柱}\index{D!多复变函数!单位多圆柱}，记为$U^n$，即
-\[U^n=\{(z_1,\cdots,z_n):|z_j|<1,j=1,\cdots,n\}.\]
+\[
+  U^n = \{(z_1,\cdots,z_n):|z_j|<1,j=1,\cdots,n\}.
+\]
 显然，当$n=1$时，它就是单位圆盘.
 
 以$a=(a_1,\cdots,a_n)$为中心、$\rho>0$为半径的\textbf{球}\index{D!多复变函数!球}是指
-\[B(a,\rho)=\bigg\{(z_1,\cdots,z_n):\sum_{j=1}^n|z_j-a_j|^2<\rho^2\bigg\}.\]
+\[
+  B(a,\rho) = \bigg\{(z_1,\cdots,z_n):\sum_{j=1}^n|z_j-a_j|^2<\rho^2\bigg\}.
+\]
 特别地，当$a=0,\rho=1$时，称之为\textbf{单位球}\index{D!多复变函数!单位球}
 ，记为$B_n$，即
-\[B_n=\bigg\{(z_1,\cdots,z_n):\sum_{j=1}^n|z_j|^2<1\bigg\}.\]
+\[
+  B_n =\ bigg\{(z_1,\cdots,z_n):\sum_{j=1}^n|z_j|^2<1\bigg\}.
+\]
 当$n=1$时，它也是单位圆盘.
 
 $U^n$和$B_n$都是单位圆盘在$\MC^n$中的推广，但它们不是全纯等价的，即不存在双全纯映射把$B_n$映为$U^n$，这是著名的\textbf{Poincar\'e定理}\index{D!定理!Poincar\'e定理}.它说明单复变中的Riemann映射定理在多复变中是不成立的.
@@ -41,161 +53,193 @@ $U^n$和$B_n$都是单位圆盘在$\MC^n$中的推广，但它们不是全纯等
 用同样的方法可以定义一般多重级数收敛的概念.
 
 级数
-\[\sum_{\alpha_1,\cdots,\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}(z_1-a_1)
-^{\alpha_1}\cdots(z_n-a_n)^{\alpha_n}\]
+\[
+  \sum_{\alpha_1,\cdots,\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}(z_1-a_1)
+  ^{\alpha_1}\cdots(z_n-a_n)^{\alpha_n}
+\]
 称为\textbf{$n$重幂级数}\index{N!$n$重级数}，它在点$b=(b_1,\cdots,b_n)$处收敛是指$n$重级数
-\[\sum_{\alpha_1,\cdots,\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}(b_1-a_1)
-^{\alpha_1}\cdots(b_n-a_n)^{\alpha_n}\]
+\[
+  \sum_{\alpha_1,\cdots,\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}(b_1-a_1)
+  ^{\alpha_1}\cdots(b_n-a_n)^{\alpha_n}
+\]
 收敛.
 
 关于多重幂级数，也有类似与单变数中的Abel定理. 为简单起见，我们讨论$a=0$的情形.
 \begin{prop}\label{prop9.1.1}
-如果$n$重幂级数
-\begin{equation}\label{eq9.1.1}
-\sum_{\alpha_1,\cdots,\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}z_1^{\alpha_1}
-\cdots z_n^{\alpha_n}
-\end{equation}
-在点$b=(b_1,\cdots,b_n)$处收敛，这里，$b_j\ne0,j=1,\cdots,n$. 那么它在闭多圆柱
-\[\bar{P(0,r)}=\{(z_1,\cdots,z_n):|z_j|\le r_j,j=1,\cdots,n\}\]
-中绝对且一致收敛，这里，$r_j<|b_j|,j=1,\cdots,n$.
+  如果$n$重幂级数
+  \begin{equation}\label{eq9.1.1}
+    \sum_{\alpha_1,\cdots,\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}z_1^{\alpha_1}
+    \cdots z_n^{\alpha_n}
+  \end{equation}
+  在点$b=(b_1,\cdots,b_n)$处收敛，这里，$b_j\ne0,j=1,\cdots,n$. 那么它在闭多圆柱
+  \[
+    \bar{P(0,r)} = \{(z_1,\cdots,z_n):|z_j|\le r_j,j=1,\cdots,n\}
+  \]
+  中绝对且一致收敛，这里，$r_j<|b_j|,j=1,\cdots,n$.
 \end{prop}
 \begin{proof}
-因为幂级数$\sum_{\alpha_1,\cdots,\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}b_1^{\alpha_1}
-\cdots b_n^{\alpha_n}$收敛，所以存在常数$M$，使得对任意$\alpha_1,\cdots,\alpha_n\ge0$，有
-\[|c_{\alpha_1\cdots\alpha_n}|\le\frac M{|b_1|^{\alpha_1}\cdots|b_n|^{\alpha_n}}.\]
-故当$|z_j|\le r_j<|b_j|$（$j=1,\cdots,n$）时，有
-\[|c_{\alpha_1\cdots\alpha_n}z_1^{\alpha_1}
-\cdots z_n^{\alpha_n}|\le M\bigg|\frac{z_1}{b_1}\bigg|^{\alpha_1}\cdots
-\bigg|\frac{z_n}{b_n}\bigg|^{\alpha_n}
-\le M\bigg(\frac{r_1}{|b_1|}\bigg)^{\alpha_1}\cdots
-\bigg(\frac{r_n}{|b_n|}\bigg)^{\alpha_n},\]
-于是
-\begin{align*}
-  \sum_{\alpha_1,\cdots,\alpha_n=0}^\infty |c_{\alpha_1\cdots\alpha_n}z_1^{\alpha_1}
-  \cdots z_n^{\alpha_n}|&\le M\sum_{\alpha_1=0}^\infty \bigg(\frac{r_1}{|b_1|}\bigg)^{\alpha_1}\cdots\sum_{\alpha_n=0}^\infty
-  \bigg(\frac{r_n}{|b_n|}\bigg)^{\alpha_n}\\
-  & = M\bigg(1-\frac{r_1}{|b_1|}\bigg)^{-1} \cdots\bigg(1-\frac{r_n}{|b_n|}\bigg)^{-1}. \qedhere
-\end{align*}
+  因为幂级数$\sum_{\alpha_1,\cdots,\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}b_1^{\alpha_1}
+  \cdots b_n^{\alpha_n}$收敛，所以存在常数$M$，使得对任意$\alpha_1,\cdots,\alpha_n\ge0$，有
+  \[
+    |c_{\alpha_1\cdots\alpha_n}| \le \frac M{|b_1|^{\alpha_1}\cdots|b_n|^{\alpha_n}}.
+  \]
+  故当$|z_j|\le r_j<|b_j|$（$j=1,\cdots,n$）时，有
+  \[
+    |c_{\alpha_1\cdots\alpha_n}z_1^{\alpha_1}
+    \cdots z_n^{\alpha_n}|\le M\bigg|\frac{z_1}{b_1}\bigg|^{\alpha_1}\cdots
+    \bigg|\frac{z_n}{b_n}\bigg|^{\alpha_n}
+    \le M\bigg(\frac{r_1}{|b_1|}\bigg)^{\alpha_1}\cdots
+    \bigg(\frac{r_n}{|b_n|}\bigg)^{\alpha_n},
+  \]
+  于是
+  \begin{align*}
+    \sum_{\alpha_1,\cdots,\alpha_n=0}^\infty |c_{\alpha_1\cdots\alpha_n}z_1^{\alpha_1}
+    \cdots z_n^{\alpha_n}|&\le M\sum_{\alpha_1=0}^\infty \bigg(\frac{r_1}{|b_1|}\bigg)^{\alpha_1}\cdots\sum_{\alpha_n=0}^\infty
+    \bigg(\frac{r_n}{|b_n|}\bigg)^{\alpha_n}\\
+    & = M\bigg(1-\frac{r_1}{|b_1|}\bigg)^{-1} \cdots\bigg(1-\frac{r_n}{|b_n|}\bigg)^{-1}. \qedhere
+  \end{align*}
 \end{proof}
 
 为简化记号，我们采用下面的习惯记法：对于有序数组$\alpha=(\alpha_1,\cdots,\alpha_n)$，其中，每个$\alpha_j$都是非负整数，记
 \begin{align*}
-&|\alpha|=\alpha_1+\cdots+\alpha_n,\\
-&\alpha!=\alpha_1!\cdots\alpha_n!,\\
-&z^\alpha=z_1^{\alpha_1}\cdots z_n^{\alpha_n},
+  & |\alpha| = \alpha_1 + \cdots + \alpha_n,\\
+  & \alpha! = \alpha_1! \cdots \alpha_n!,\\
+  & z^\alpha = z_1^{\alpha_1}\cdots z_n^{\alpha_n},
 \end{align*}
 其中，$z=(z_1,\cdots,z_n)$. 这样，幂级数 \eqref{eq9.1.1} 就可简记为$\sum_\alpha c_\alpha z^\alpha$或者$\sum_{\alpha\ge0}c_\alpha z^\alpha$.
 
 现在可以给出多复变数全纯函数的概念了.
 \begin{definition}\label{def9.1.2}
-设$\Omega$是$\MC^n$中的域，$f:\Omega\to \MC$是定义在$\Omega$上的一个复值函数.如果对每一点$a\in\Omega$，存在多圆柱$P(a,\rho)\subset\Omega$和幂级数$\sum_\alpha c_\alpha(z-a)^\alpha$，使得
-\begin{equation}\label{eq9.1.2}
-f(z)=\sum_\alpha c_\alpha(z-a)^\alpha
-\end{equation}
-在$P(a,\rho)$中成立，则称$f$为$\Omega$中的\textbf{全纯函数}\index{Q!全纯函数}.
+  设$\Omega$是$\MC^n$中的域，$f:\Omega\to \MC$是定义在$\Omega$上的一个复值函数.如果对每一点$a\in\Omega$，存在多圆柱$P(a,\rho)\subset\Omega$和幂级数$\sum_\alpha c_\alpha(z-a)^\alpha$，使得
+  \begin{equation}\label{eq9.1.2}
+    f(z) = \sum_\alpha c_\alpha(z-a)^\alpha
+  \end{equation}
+  在$P(a,\rho)$中成立，则称$f$为$\Omega$中的\textbf{全纯函数}\index{Q!全纯函数}.
 \end{definition}
 
 与单复变中一样，我们用$H(\Omega)$记$\Omega$上全纯函数的全体.
 
 设$f$在$a$点附近全纯，那么$f$在$a$点附近可以用幂级数 \eqref{eq9.1.2} 表示.如果把幂级数 \eqref{eq9.1.2} 写成
-\[f(z)=\sum_{\alpha_1=0}^\infty\bigg\{\sum_{\alpha_2=0}^\infty\cdots
-\sum_{\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}(z_2-a_2)^{\alpha_2}\cdots(z_n-a_n)^{\alpha_n}\bigg\}
-(z_1-a_1)^{\alpha_1},\]
+\[
+  f(z) = \sum_{\alpha_1=0}^\infty\bigg\{\sum_{\alpha_2=0}^\infty\cdots
+  \sum_{\alpha_n=0}^\infty c_{\alpha_1\cdots\alpha_n}(z_2-a_2)^{\alpha_2}\cdots(z_n-a_n)^{\alpha_n}\bigg\}
+  (z_1-a_1)^{\alpha_1},
+\]
 那么当$z_2,\cdots,z_n$固定时，上式是$f(z_1,z_2,\cdots,z_n)$关于$z_1$在$a_1$附近的幂级数展开式，因此它是$z_1$的全纯函数.一般来说，如果$f$在$a$点附近全纯，那么当$z_1,\cdots,z_{j-1},z_{j+1}$， $\cdots,z_n$固定时，$f$便是单变数$z_j$的全纯函数，因而有Cauchy--Riemann方程
 \begin{equation}\label{eq9.1.3}
-\pp f{\bar{z_j}}=0,\;j=1,\cdots,n.
+  \pp f{\bar{z_j}} = 0,\;j=1,\cdots,n.
 \end{equation}
 这$n$个方程称为$f$的\textbf{Cauchy--Riemann方程组}\index{C!Cauchy--Riemann方程组}.
 
 一个自然的问题是，如果 \eqref{eq9.1.3} 式在$a$点附近成立，能否断言$f$在$a$点附近全纯呢?答案是肯定的，但证明起来很困难，这里略去它的证明.
 \begin{theorem}[（\textbf{Hartogs}）]\label{thm9.1.3}\index{D!定理!Hartogs定理}
-设$\Omega$是$\MC^n$中的域，$f:\Omega\to\MC$是定义在$\Omega$上的函数. 对于$a\in\MC^n$，定义$\MC$中的域$\Omega_{j,a}$及$\Omega_{j,a}$上的函数$f_{j,a}$如下：
-\begin{align*}
-&\Omega_{j,a}=\{z\in\MC:(a_1,\cdots,a_{j-1},z,a_{j+1},\cdots,a_n)\in\Omega\},\\
-&f_{j,a}(z)=f(a_1,\cdots,a_{j-1},z,a_{j+1},\cdots,a_n).
-\end{align*}
-如果对任意的$a\in\MC^n$及$j=1,\cdots,n,f_{j,a}\in H(\Omega_{j,a})$，那么$f\in H(\Omega)$.
+  设$\Omega$是$\MC^n$中的域，$f:\Omega\to\MC$是定义在$\Omega$上的函数. 对于$a\in\MC^n$，定义$\MC$中的域$\Omega_{j,a}$及$\Omega_{j,a}$上的函数$f_{j,a}$如下：
+  \begin{align*}
+    & \Omega_{j,a} = \{z\in\MC:(a_1,\cdots,a_{j-1},z,a_{j+1},\cdots,a_n)\in\Omega\},\\
+    & f_{j,a}(z) = f(a_1,\cdots,a_{j-1},z,a_{j+1},\cdots,a_n).
+  \end{align*}
+  如果对任意的$a\in\MC^n$及$j=1,\cdots,n,f_{j,a}\in H(\Omega_{j,a})$，那么$f\in H(\Omega)$.
 \end{theorem}
 
 设$f\in H(\Omega)$，根据上面的讨论，当$z_1,\cdots,z_{j-1},z_{j+1},\cdots,z_n$固定时，$f$是$z_j$的全纯函数，因而对它的幂级数表达式可以逐项求导数，从幂级数 \eqref{eq9.1.2} 可得
-\[\frac{\partial^{\alpha_1+\cdots+\alpha_n}f(z)}{\partial z_1^{\alpha_1}
-\cdots\partial z_n^{\alpha_n}}\bigg|_{z=a}=\alpha!c_\alpha.\]
+\[
+  \frac{\partial^{\alpha_1+\cdots+\alpha_n}f(z)}{\partial z_1^{\alpha_1}
+  \cdots\partial z_n^{\alpha_n}}\bigg|_{z=a}=\alpha!c_\alpha.
+\]
 如果记
-\[(\DD^\alpha f)(a)=\frac{\partial^{\alpha_1+\cdots+\alpha_n}f(z)}{\partial z_1^{\alpha_1}
-\cdots\partial z_n^{\alpha_n}}\bigg|_{z=a},\]
+\[
+  (\DD^\alpha f)(a)=\frac{\partial^{\alpha_1+\cdots+\alpha_n}f(z)}{\partial z_1^{\alpha_1}
+  \cdots\partial z_n^{\alpha_n}}\bigg|_{z=a},
+\]
 那么$f$在$a$点的幂级数展开式 \eqref{eq9.1.2} 可写为
-\[f(z)=\sum_\alpha\frac{(\DD^\alpha f)(a)}{\alpha!}(z-a)^\alpha.\]
+\[
+  f(z) = \sum_\alpha\frac{(\DD^\alpha f)(a)}{\alpha!}(z-a)^\alpha.
+\]
 
 类似于第 \ref{chap4} 章定理 \ref{thm4.3.7} 的唯一性定理在多复变中是不成立的. 例如，函数$f(z_1,z_2)=z_1z_2$在双圆柱$U^2=\{z=(z_1,z_2):|z_1|<1,|z_2|<1\}$中全纯，点列$\bigg\{\bigg(0,\frac1k\bigg),k=2,3,\cdots\bigg\}$以$(0,0)$为极限点，且$f\bigg(0,\frac1k\bigg)=0$，但$f$在双圆柱中并不恒等于零. 在多复变中，有下列形式的唯一性定理：
 \begin{theorem}\label{thm9.1.4}
-设$\Omega$是$\MC^n$中的域，$f\in H(\Omega)$. 如果$f$在非空开集$E$上恒等于零，那么$f$在$\Omega$上恒等于零.
+  设$\Omega$是$\MC^n$中的域，$f\in H(\Omega)$. 如果$f$在非空开集$E$上恒等于零，那么$f$在$\Omega$上恒等于零.
 \end{theorem}
 \begin{proof}
-令
-\begin{align*}
-&K=\{z\in\Omega:(D^\alpha f)(z)=0\,\mbox{对所有$\alpha=(\alpha_1,\cdots,\alpha_n)$成立}\},\\
-&K_\alpha=\{z\in\Omega:(D^\alpha f)(z)=0\,\mbox{对某个$\alpha=(\alpha_1,\cdots,\alpha_n)$成立}\}.
-\end{align*}
-由假定，$E\subset K$，所以$K$不是空集. 显然
-\[K=\bigcap_\alpha K_\alpha.\]
-因为$\DD^\alpha f$是连续函数，所以$K_\alpha$是闭集，因而$K$也是闭集.任取$a\in K$，因为$f$在$\Omega$中全纯，故存在多圆柱$P(a,r)\subset \Omega$，使得
-\[f(z)=\sum_\alpha\frac{(D^\alpha f)(a)}{\alpha!}(z-a)^\alpha=0\]
-在$P(a,r)$中成立，因而$P(a,r)\subset K$，这说明$K$是一个开集. 由于$\Omega\backslash K$也是开集，等式
-\[\Omega=K\cup(\Omega\backslash K)\]
-与$\Omega$的连通性矛盾.因为$K$不是空集，所以只能$\Omega\backslash K$是空集，即$K=\Omega$.由此即知$f$在$\Omega$上恒等于零.
+  令
+  \begin{align*}
+    & K = \{z\in\Omega:(D^\alpha f)(z)=0\,\mbox{对所有$\alpha=(\alpha_1,\cdots,\alpha_n)$成立}\},\\
+    & K_\alpha = \{z\in\Omega:(D^\alpha f)(z)=0\,\mbox{对某个$\alpha=(\alpha_1,\cdots,\alpha_n)$成立}\}.
+  \end{align*}
+  由假定，$E\subset K$，所以$K$不是空集. 显然
+  \[
+    K = \bigcap_\alpha K_\alpha.
+  \]
+  因为$\DD^\alpha f$是连续函数，所以$K_\alpha$是闭集，因而$K$也是闭集.任取$a\in K$，因为$f$在$\Omega$中全纯，故存在多圆柱$P(a,r)\subset \Omega$，使得
+  \[
+    f(z) = \sum_\alpha\frac{(D^\alpha f)(a)}{\alpha!}(z-a)^\alpha = 0
+  \]
+  在$P(a,r)$中成立，因而$P(a,r)\subset K$，这说明$K$是一个开集. 由于$\Omega\backslash K$也是开集，等式
+  \[
+    \Omega = K\cup(\Omega\backslash K)
+  \]
+  与$\Omega$的连通性矛盾.因为$K$不是空集，所以只能$\Omega\backslash K$是空集，即$K=\Omega$.由此即知$f$在$\Omega$上恒等于零.
 \end{proof}
 
 作为唯一性定理的应用，我们可以证明下面的\textbf{开映射定理}\index{D!定理!开映射定理}：
 \begin{theorem}\label{thm9.1.5}
-设$\Omega$是$\MC^n$中的域，$f$是$\Omega$上非常数的全纯函数，那么$f$把$\Omega$中的开集映成$\MC$中的开集.
+  设$\Omega$是$\MC^n$中的域，$f$是$\Omega$上非常数的全纯函数，那么$f$把$\Omega$中的开集映成$\MC$中的开集.
 \end{theorem}
 \begin{proof}
-$n=1$时定理是成立的（见定理 \ref{thm4.4.6}）.现设$n>1$.任取开集$E\subset\Omega$，我们要证明$f(E)$是$\MC$中的开集.为此任取$w\in f(E)$，则必存在$a\in E$，使得$f(a)=w$.令$Q$是$a$的一个凸邻域（例如可以取$Q$为包含$a$的一个多圆柱），$Q\subset E$，由定理 \ref{thm9.1.4} 知道，$f$在$Q$上不能恒等于$f(a)$，因而能找到$b\in Q$，使得$f(a)\ne f(b)$.令
-\[D=\{\lambda\in\MC:a+\lambda(b-a)\in Q\},\]
-显然$\lambda=0,\lambda=1$都属于$D$，因而$D$不是空集. 由于$Q$是开集，所以$D$也是$\MC$中的开集.令
-\[g(\lambda)=f\big(a+\lambda(b-a)\big),\lambda\in D.\]
-容易知道它是$D$上的全纯函数，且
-\[g(0)=f(a)\ne f(b)=g(1),\]
-即$g$不是常函数. 于是，由定理 \ref{thm4.4.6} 即知$g(D)$是$\MC$中的开集，且$w=f(a)=g(0)\in g(D)$.另一方面，$g(D)\subset f(Q)\subset f(E)$，因而$f(E)$是$\MC$中的开集.
+  $n=1$时定理是成立的（见定理 \ref{thm4.4.6}）.现设$n>1$.任取开集$E\subset\Omega$，我们要证明$f(E)$是$\MC$中的开集.为此任取$w\in f(E)$，则必存在$a\in E$，使得$f(a)=w$.令$Q$是$a$的一个凸邻域（例如可以取$Q$为包含$a$的一个多圆柱），$Q\subset E$，由定理 \ref{thm9.1.4} 知道，$f$在$Q$上不能恒等于$f(a)$，因而能找到$b\in Q$，使得$f(a)\ne f(b)$.令
+  \[
+    D = \{\lambda\in\MC:a+\lambda(b-a)\in Q\},
+  \]
+  显然$\lambda=0,\lambda=1$都属于$D$，因而$D$不是空集. 由于$Q$是开集，所以$D$也是$\MC$中的开集.令
+  \[
+    g(\lambda) = f\big(a+\lambda(b-a)\big),\lambda\in D.
+  \]
+  容易知道它是$D$上的全纯函数，且
+  \[
+    g(0) = f(a)\ne f(b) = g(1),
+  \]
+  即$g$不是常函数. 于是，由定理 \ref{thm4.4.6} 即知$g(D)$是$\MC$中的开集，且$w=f(a)=g(0)\in g(D)$.另一方面，$g(D)\subset f(Q)\subset f(E)$，因而$f(E)$是$\MC$中的开集.
 \end{proof}
 
 利用开映射定理又可得到下面的\textbf{最大模原理}\index{D!定理!最大模原理}：
 \begin{theorem}\label{thm9.1.6}
-设$\Omega$是$\MC^n$中的域，$f$是$\Omega$上非常数的全纯函数，那么$f$的模不可能在$\Omega$的内点达到最大值.
+  设$\Omega$是$\MC^n$中的域，$f$是$\Omega$上非常数的全纯函数，那么$f$的模不可能在$\Omega$的内点达到最大值.
 \end{theorem}
 
 这个定理的证明与定理 \ref{thm4.5.1} 的证明一样，留给读者作为练习.
 \begin{xiti}
-\item 设$\Omega$是$\MC^n$中的域，$f\in H(\Omega)$.如果存在$a\in\Omega$，使得$(\DD^\alpha f)(a)=0$对所有多重指标$\alpha=(\alpha_1,\cdots,\alpha_n)$成立，证明在$\Omega$上$f(z)\equiv0$.
-\item 设$\Omega$是$\MC^n$中的域，$f_1,\cdots,f_m\in H(\Omega)$. 如果$\sum_{j=1}^m|f_j(z)|^2$在$\Omega$上为一常数，证明$f_1,\cdots,f_m$都是常数.
-\item 设$\Omega$是$\MC^n$中的域，$f,g\in H(\Omega)$. 如果$f(z)g(z)\equiv0$在$\Omega$上成立，证明$f$或$g$必在$\Omega$上恒等于零.
-\item 证明定理 \ref{thm9.1.6}.
+  \item 设$\Omega$是$\MC^n$中的域，$f\in H(\Omega)$.如果存在$a\in\Omega$，使得$(\DD^\alpha f)(a)=0$对所有多重指标$\alpha=(\alpha_1,\cdots,\alpha_n)$成立，证明在$\Omega$上$f(z)\equiv0$.
+  \item 设$\Omega$是$\MC^n$中的域，$f_1,\cdots,f_m\in H(\Omega)$. 如果$\sum_{j=1}^m|f_j(z)|^2$在$\Omega$上为一常数，证明$f_1,\cdots,f_m$都是常数.
+  \item 设$\Omega$是$\MC^n$中的域，$f,g\in H(\Omega)$. 如果$f(z)g(z)\equiv0$在$\Omega$上成立，证明$f$或$g$必在$\Omega$上恒等于零.
+  \item 证明定理 \ref{thm9.1.6}.
 \end{xiti}
 
 \section{多圆柱的Cauchy积分公式\label{sec9.2}}
+
 在单复变中，Cauchy积分公式起了十分重要的作用，对于不同的域，Cauchy积分公式具有相同的形式.但在多复变中，情况要复杂得多，对于不同的域，有不同的Cauchy积分公式.下面先给出\textbf{多圆柱上的Cauchy积分公式}\index{G!公式!多圆柱上的Cauchy积分公式}.
+
 \begin{theorem}\label{thm9.2.1}
-设$\Omega$是$\MC^n$中的域，$f\in H(\Omega)$. 如果$\bar{P(a,r)}\subset \Omega$，则对$z\in P(a,r)$，有
-\begin{equation}\label{eq9.2.1}
-f(z)=\frac1{(2\pi\ii)^n}\int\limits_{|\zeta_1-a_1|=r_1}\cdots\int\limits_{|\zeta_n-a_n|=r_n}
-\frac{f(\zeta_1,\cdots,\zeta_n)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)}.
-\end{equation}
+  设$\Omega$是$\MC^n$中的域，$f\in H(\Omega)$. 如果$\bar{P(a,r)}\subset \Omega$，则对$z\in P(a,r)$，有
+  \begin{equation}\label{eq9.2.1}
+    f(z) = \frac1{(2\pi\ii)^n}\int\limits_{|\zeta_1-a_1|=r_1}\cdots\int\limits_{|\zeta_n-a_n|=r_n}
+    \frac{f(\zeta_1,\cdots,\zeta_n)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)}.
+  \end{equation}
 \end{theorem}
 \begin{proof}
-当$n=1$时，这是熟知的圆盘上的Cauchy积分公式.今设定理对$n-1$个变数的全纯函数成立.分别在圆周$|\zeta_2-a_2|=r_2,\cdots,|\zeta_n-a_n|=r_n$上固定$\zeta_2,\cdots,\zeta_n$，则$f(z_1,\zeta_2,\cdots,\zeta_n)$是圆盘$|z_1-a_1|\le r_1$上的全纯函数，由单复变的Cauchy积分公式得
-\begin{equation}\label{eq9.2.2}
-f(z_1,\zeta_2,\cdots,\zeta_n)=\frac1{2\pi\ii}\int\limits_{|\zeta_1-a_1|=r_1}
-\frac{f(\zeta_1,\zeta_2,\cdots,\zeta_n)}{\zeta_1-z_1}\dif \zeta_1.
-\end{equation}
-固定$z_1$，把$f(z_1,z_2,\cdots,z_n)$看成$z_2,\cdots,z_n$的函数，用归纳法的假定，再利用 \eqref{eq9.2.2} 式，即得
-\begin{align*}
-  f(z_1,z_2,\cdots,z_n)&=\frac1{(2\pi\ii)^{n-1}}\int\limits_{|\zeta_2-a_2|=r_2}\cdots\int\limits_{|\zeta_n-a_n|=r_n}
-  \frac{f(z_1,\zeta_2,\cdots,\zeta_n)\dif \zeta_2\cdots
-  \dif \zeta_n}{(\zeta_2-z_2)\cdots(\zeta_n-z_n)}\\
-  & = \frac1{(2\pi\ii)^n}\int\limits_{|\zeta_1-a_1=r_1} \cdots\int\limits_{|\zeta_n-a_n|=r_n}
-  \frac{f(\zeta_1,\cdots,\zeta_n)\dif \zeta_1\cdots
-  \dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)} \qedhere
-\end{align*}
+  当$n=1$时，这是熟知的圆盘上的Cauchy积分公式.今设定理对$n-1$个变数的全纯函数成立.分别在圆周$|\zeta_2-a_2|=r_2,\cdots,|\zeta_n-a_n|=r_n$上固定$\zeta_2,\cdots,\zeta_n$，则$f(z_1,\zeta_2,\cdots,\zeta_n)$是圆盘$|z_1-a_1|\le r_1$上的全纯函数，由单复变的Cauchy积分公式得
+  \begin{equation}\label{eq9.2.2}
+    f(z_1,\zeta_2,\cdots,\zeta_n) = \frac1{2\pi\ii}\int\limits_{|\zeta_1-a_1|=r_1}
+    \frac{f(\zeta_1,\zeta_2,\cdots,\zeta_n)}{\zeta_1-z_1}\dif \zeta_1.
+  \end{equation}
+  固定$z_1$，把$f(z_1,z_2,\cdots,z_n)$看成$z_2,\cdots,z_n$的函数，用归纳法的假定，再利用 \eqref{eq9.2.2} 式，即得
+  \begin{align*}
+    f(z_1,z_2,\cdots,z_n)&=\frac1{(2\pi\ii)^{n-1}}\int\limits_{|\zeta_2-a_2|=r_2}\cdots\int\limits_{|\zeta_n-a_n|=r_n}
+    \frac{f(z_1,\zeta_2,\cdots,\zeta_n)\dif \zeta_2\cdots
+    \dif \zeta_n}{(\zeta_2-z_2)\cdots(\zeta_n-z_n)}\\
+    & = \frac1{(2\pi\ii)^n}\int\limits_{|\zeta_1-a_1=r_1} \cdots\int\limits_{|\zeta_n-a_n|=r_n}
+    \frac{f(\zeta_1,\cdots,\zeta_n)\dif \zeta_1\cdots
+    \dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)} \qedhere
+  \end{align*}
 \end{proof}
 
 如果记$D_j=\{z_j\in\MC:|z_j-a_j|<r_j\},j=1,2,\cdots,n$，那么多圆柱$P(a,r)$是这$n$个圆盘的拓扑积。它的边界$\partial P$由若干部分组成，例如，$\partial D_1\times D_2\times\cdots\times D_n,\partial D_1\times\partial D_2\times D_3\times\cdots\times D_n,\cdots,\partial D_1\times\partial D_2\times\cdots\times\partial D_n$都是它的边界的组成部分.其中，最低维的那一部分
@@ -206,210 +250,271 @@ f(z_1,\zeta_2,\cdots,\zeta_n)=\frac1{2\pi\ii}\int\limits_{|\zeta_1-a_1|=r_1}
 
 如果在Cauchy积分公式 \eqref{eq9.2.1} 中对$z$求导数，可得
 \begin{equation}\label{eq9.2.3}
-(\DD^\alpha f)(a)=\frac{\alpha!}{(2\pi\ii)^n}
-\int\limits_{\partial_0P}
-\frac{f(\zeta)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-a_1)^{\alpha_1+1}\cdots(\zeta_n-a_n)^{\alpha_n+1}}.
+  (\DD^\alpha f)(a)=\frac{\alpha!}{(2\pi\ii)^n}
+  \int\limits_{\partial_0P}
+  \frac{f(\zeta)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-a_1)^{\alpha_1+1}\cdots(\zeta_n-a_n)^{\alpha_n+1}}.
 \end{equation}
 由此可以得到下面的\textbf{Cauchy不等式}\index{B!不等式!Cauchy不等式}.
 \begin{theorem}\label{thm9.2.2}
-设$\Omega$是$\MC^n$中的域，$\bar{P(a,r)}\subset\Omega$. 如果$f\in H(\Omega)$，记$M=\sup\{|f(\zeta)|:\zeta\in\partial_0P\}$，那么对任意多重指标$\alpha=(\alpha_1,\cdots,\alpha_n)$，有
-\[|(\DD^\alpha f)(a)\le M\frac{\alpha!}{r^\alpha}.\]
+  设$\Omega$是$\MC^n$中的域，$\bar{P(a,r)}\subset\Omega$. 如果$f\in H(\Omega)$，记$M=\sup\{|f(\zeta)|:\zeta\in\partial_0P\}$，那么对任意多重指标$\alpha=(\alpha_1,\cdots,\alpha_n)$，有
+  \[
+    |(\DD^\alpha f)(a)\le M\frac{\alpha!}{r^\alpha}.
+  \]
 \end{theorem}
 \begin{proof}
-从等式 \eqref{eq9.2.3} 即得
-\begin{align*}
-  |(\DD^\alpha f)(a)|&\le\frac{\alpha!}{(2\pi)^n}
-  \int\limits_{\partial_0P}
-  \frac{|f(\zeta)|\,|\dif \zeta_1|\cdots|\dif \zeta_n|}{|\zeta_1-a_1|^{\alpha_1+1}\cdots|\zeta_n-a_n|^{\alpha_n+1}}\\
-  & \le \frac{\alpha!}{(2\pi)^n}\frac M{r_1^{\alpha_1+1}\cdots r_n^{\alpha_n+1}} (2\pi)^nr_1\cdots r_n\\
-  & = M\frac{\alpha!}{r^\alpha}. \qedhere
-\end{align*}
+  从等式 \eqref{eq9.2.3} 即得
+  \begin{align*}
+    |(\DD^\alpha f)(a)|&\le\frac{\alpha!}{(2\pi)^n}
+    \int\limits_{\partial_0P}
+    \frac{|f(\zeta)|\,|\dif \zeta_1|\cdots|\dif \zeta_n|}{|\zeta_1-a_1|^{\alpha_1+1}\cdots|\zeta_n-a_n|^{\alpha_n+1}}\\
+    & \le \frac{\alpha!}{(2\pi)^n}\frac M{r_1^{\alpha_1+1}\cdots r_n^{\alpha_n+1}} (2\pi)^nr_1\cdots r_n\\
+    & = M\frac{\alpha!}{r^\alpha}. \qedhere
+  \end{align*}
 \end{proof}
 
 当$n=1$时，这就是定理 \ref{thm3.5.1}.
 
 我们也有类似于引理 \ref{lemma4.1.8} 的结果.
 \begin{theorem}\label{thm9.2.3}
-设$\Omega$是$\MC^n$中的域，$f\in H(\Omega)$. 如果紧集$K$及其邻域$G$满足条件$K\subset G\subset\subset \Omega$，那么有不等式
-\[\sup\{|(\DD^\alpha f)(z)|:z\in K\}\le C\sup\{|f(z)|:z\in G\},\]
-这里，$C$是与$K,G$及$\alpha$有关的常数.
+  设$\Omega$是$\MC^n$中的域，$f\in H(\Omega)$. 如果紧集$K$及其邻域$G$满足条件$K\subset G\subset\subset \Omega$，那么有不等式
+  \[
+    \sup\{|(\DD^\alpha f)(z)|:z\in K\}\le C\sup\{|f(z)|:z\in G\},
+  \]
+  这里，$C$是与$K,G$及$\alpha$有关的常数.
 \end{theorem}
 \begin{proof}
-因为$\rho=d(K,\partial G)>0$，所以以$K$中任何点$a$为中心、$\rho$为半径的多圆柱
-\[P=\{(z_1,\cdots,z_n):|z_j-a_j|<\rho,j=1,\cdots,n\}\]
-都含在$G$中.于是由Cauchy不等式，有
-\[|(\DD^\alpha f)(a)|\le\sup_{\zeta\in\partial_0P}|f(\zeta)|\frac{\alpha!}{\rho^{|\alpha|}}
-\le C\sup\{|f(z)|:z\in G\}.\]
-由此即得所要证的不等式.
+  因为$\rho=d(K,\partial G)>0$，所以以$K$中任何点$a$为中心、$\rho$为半径的多圆柱
+  \[
+    P = \{(z_1,\cdots,z_n):|z_j-a_j|<\rho,j=1,\cdots,n\}
+  \]
+  都含在$G$中.于是由Cauchy不等式，有
+  \[
+    |(\DD^\alpha f)(a)|\le\sup_{\zeta\in\partial_0P}|f(\zeta)|\frac{\alpha!}{\rho^{|\alpha|}}
+    \le C\sup\{|f(z)|:z\in G\}.
+  \]
+  由此即得所要证的不等式.
 \end{proof}
 
 在多复变中，也有类似于单复变中的\textbf{Weierstrass定理}\index{D!定理!Weierstrass定理}.
 \begin{theorem}\label{thm9.2.4}
-设$\Omega$是$\MC^n$中的域，$\{f_k\}$是$\Omega$上的一列全纯函数，如果它在$\Omega$上内闭一致收敛于$f$，那么$f\in H(\Omega)$，而且对任意多重指标$\alpha=(\alpha_1,\cdots,\alpha_n)$，$\DD^\alpha f_k$在$\Omega$上内闭一致收敛于$\DD^\alpha f$.
+  设$\Omega$是$\MC^n$中的域，$\{f_k\}$是$\Omega$上的一列全纯函数，如果它在$\Omega$上内闭一致收敛于$f$，那么$f\in H(\Omega)$，而且对任意多重指标$\alpha=(\alpha_1,\cdots,\alpha_n)$，$\DD^\alpha f_k$在$\Omega$上内闭一致收敛于$\DD^\alpha f$.
 \end{theorem}
 \begin{proof}
-对任意$a\in\Omega$，我们证明$f$在$a$附近能展开成幂级数. 适当选取$\rho=(\rho_1,\cdots,\rho_n)$，使得$\bar{P(a,\rho)}\subset\Omega$. 对$f_k$用Cauchy积分公式，得
-\[f_k(z)=\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f_k(\zeta)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)},\;z\in P(a,\rho).\]
-由于当$k\to\infty$，$f_k$在$\partial_0P$上一致收敛于$f$，故在上式中令$k\to\infty$，即得
-\begin{equation}\label{eq9.2.4}
-f(z)=\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f(\zeta)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)},\;z\in P(a,\rho).
-\end{equation}
-利用证明定理 \ref{thm4.3.1} 时用过的方法，有
-\begin{align*}
-\frac1{\zeta_j-z_j}&=\frac1{(\zeta_j-a_j)-(z_j-a_j)}
-=\frac1{\zeta_j-a_j}\bigg(1-\frac{z_j-a_j}{\zeta_j-a_j}\bigg)^{-1}\\
-&=\frac1{\zeta_j-a_j}\sum_{\alpha_j=0}^\infty\bigg(\frac{z_j-a_j}{\zeta_j-a_j}\bigg)
-^{\alpha_j},
-\end{align*}
-于是
-\[\frac1{(\zeta_1-z_1)\cdots(\zeta_n-z_n)}=\sum_{\alpha_1=0}^\infty\cdots
-\sum_{\alpha_n=0}^\infty\frac{(z_1-a_1)^{\alpha_1}\cdots(z_n-a_n)^{\alpha_n}}
-{(\zeta_1-a_1)^{\alpha_1+1}\cdots(\zeta_n-a_n)^{\alpha_n+1}}.\]
-上述级数对于$\zeta\in\partial_0P$是一致收敛的，代入 \eqref{eq9.2.4} 式即得
-\[f(z)=\sum_{\alpha\ge0}\bigg\{\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}
-\frac{f(\zeta)\dif \zeta_1\cdots\dif \zeta_n}
-{(\zeta_1-a_1)^{\alpha_1+1}\cdots(\zeta_n-a_n)^{\alpha_n+1}}\bigg\}(z-a)^\alpha.\]
-把上面花括弧中的数记为$c_\alpha$，即得
-\[f(z)=\sum_{\alpha\ge0}c_\alpha(z-a)^\alpha.\]
-这就证明了$f\in H(\Omega)$.
+  对任意$a\in\Omega$，我们证明$f$在$a$附近能展开成幂级数. 适当选取$\rho=(\rho_1,\cdots,\rho_n)$，使得$\bar{P(a,\rho)}\subset\Omega$. 对$f_k$用Cauchy积分公式，得
+  \[
+    f_k(z) = \frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f_k(\zeta)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)},\;z\in P(a,\rho).
+  \]
+  由于当$k\to\infty$，$f_k$在$\partial_0P$上一致收敛于$f$，故在上式中令$k\to\infty$，即得
+  \begin{equation}\label{eq9.2.4}
+    f(z) = \frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}\frac{f(\zeta)\dif \zeta_1\cdots\dif \zeta_n}{(\zeta_1-z_1)\cdots(\zeta_n-z_n)},\;z\in P(a,\rho).
+  \end{equation}
+  利用证明定理 \ref{thm4.3.1} 时用过的方法，有
+  \begin{align*}
+    \frac1{\zeta_j-z_j} & = \frac1{(\zeta_j-a_j)-(z_j-a_j)}
+    = \frac1{\zeta_j-a_j}\bigg(1-\frac{z_j-a_j}{\zeta_j-a_j}\bigg)^{-1}\\
+    & = \frac1{\zeta_j-a_j}\sum_{\alpha_j=0}^\infty\bigg(\frac{z_j-a_j}{\zeta_j-a_j}\bigg)^{\alpha_j},
+  \end{align*}
+  于是
+  \[
+    \frac1{(\zeta_1-z_1)\cdots(\zeta_n-z_n)}=\sum_{\alpha_1=0}^\infty\cdots
+    \sum_{\alpha_n=0}^\infty\frac{(z_1-a_1)^{\alpha_1}\cdots(z_n-a_n)^{\alpha_n}}
+    {(\zeta_1-a_1)^{\alpha_1+1}\cdots(\zeta_n-a_n)^{\alpha_n+1}}.
+  \]
+  上述级数对于$\zeta\in\partial_0P$是一致收敛的，代入 \eqref{eq9.2.4} 式即得
+  \[
+    f(z) = \sum_{\alpha\ge0}\bigg\{\frac1{(2\pi\ii)^n}\int\limits_{\partial_0P}
+    \frac{f(\zeta)\dif \zeta_1\cdots\dif \zeta_n}
+    {(\zeta_1-a_1)^{\alpha_1+1}\cdots(\zeta_n-a_n)^{\alpha_n+1}}\bigg\}(z-a)^\alpha.
+  \]
+  把上面花括弧中的数记为$c_\alpha$，即得
+  \[
+    f(z) = \sum_{\alpha\ge0}c_\alpha(z-a)^\alpha.
+  \]
+  这就证明了$f\in H(\Omega)$.
 
-对于任意紧集$K\subset D$，取其邻域$G$，使得$K\subset G\subset\subset \Omega$.因为$\bar G$是紧的，故对任意$\varepsilon>0$，存在$k_0$，当$k>k_0$时，有
-\[\sup\{|f_k(z)-f(z)|:z\in\bar G\}<\varepsilon.\]
-于是，由定理 \ref{thm9.2.3} 得
-\[\sup\{|\DD^\alpha(f_k-f)(z)|:z\in K\}\le C\sup\{|f_k(z)-f(z)|:z\in\bar G\}
-<C\varepsilon.\]
-这正好说明$\DD^\alpha f_k$在$\Omega$上内闭一致收敛到$\DD^\alpha f$.
+  对于任意紧集$K\subset D$，取其邻域$G$，使得$K\subset G\subset\subset \Omega$.因为$\bar G$是紧的，故对任意$\varepsilon>0$，存在$k_0$，当$k>k_0$时，有
+  \[
+    \sup\{|f_k(z)-f(z)|:z\in\bar G\}<\varepsilon.
+  \]
+  于是，由定理 \ref{thm9.2.3} 得
+  \[
+    \sup\{|\DD^\alpha(f_k-f)(z)|:z\in K\}\le C\sup\{|f_k(z)-f(z)|:z\in\bar G\}
+  < C\varepsilon.
+  \]
+  这正好说明$\DD^\alpha f_k$在$\Omega$上内闭一致收敛到$\DD^\alpha f$.
 \end{proof}
 
 多圆柱的Cauchy积分公式是单位圆盘Cauchy积分公式的自然推广，人们很早就知道它了.可是长期以来人们不知道球的Cauchy积分公式是什么样子，直到19世纪50年代中期，华罗庚得到了四类典型域的Cauchy积分公式，作为第一类典型域的一种特殊情形，人们才得到了球的Cauchy积分公式.由此可见，在多复变中，Cauchy积分公式因域而异，寻找给定域的Cauchy积分公式本身是一个相当困难的研究课题.
 \begin{xiti}
-\item 设$P(a,r)$是一个多圆柱，试利用多圆柱上的Cauchy积分公式证明：若$f\in C\big(\bar{P(a,r)}\big)\cap H\big(P(a,r)\big)$，则$f$的最大模必在$\partial_0P$上取到.
-\item 设$\Omega$是$\MC^n$中的域，$\bar{P(a,r)}\subset\Omega$.如果$f\in H(\Omega)$，那么对任意多重指标$\alpha=(\alpha_1,\cdots,\alpha_n)$，有
-    \[|(\DD^\alpha f)(a)|\le\frac{\alpha!(\alpha_1+2)\cdots(\alpha_n+2)}{(2\pi)^nr^{\alpha+2}}\|f\|
-    _{L^1(P(a,r))},\]
-这里
-\[\|f\|_{L^1(P(a,r))}=\int\limits_{P(a,r)}|f(z)|\dif m(z),\]
-$\dif m(z)$是$\MR^{2n}$中的测度.
-\item 设$f$是$\MC^n$上的有界全纯函数，证明$f$必为常数.
-\item 设$\Omega$是$\MC^n$中的域，$\{f_k\}$是$\Omega$上一列处处不为零的全纯函数.如果$\{f_k\}$在$\Omega$上内闭一致收敛于$f$，那么$f$在$\Omega$中或者恒等于零，或者处处不等于零.
+  \item 设$P(a,r)$是一个多圆柱，试利用多圆柱上的Cauchy积分公式证明：若$f\in C\big(\bar{P(a,r)}\big)\cap H\big(P(a,r)\big)$，则$f$的最大模必在$\partial_0P$上取到.
+  \item 设$\Omega$是$\MC^n$中的域，$\bar{P(a,r)}\subset\Omega$.如果$f\in H(\Omega)$，那么对任意多重指标$\alpha=(\alpha_1,\cdots,\alpha_n)$，有
+      \[
+        |(\DD^\alpha f)(a)| \le \frac{\alpha!(\alpha_1+2)\cdots(\alpha_n+2)}{(2\pi)^nr^{\alpha+2}}\|f\|
+         _{L^1(P(a,r))},
+      \]
+     这里
+     \[
+       \|f\|_{L^1(P(a,r))} = \int\limits_{P(a,r)}|f(z)|\dif m(z),
+     \]
+     $\dif m(z)$是$\MR^{2n}$中的测度.
+  \item 设$f$是$\MC^n$上的有界全纯函数，证明$f$必为常数.
+  \item 设$\Omega$是$\MC^n$中的域，$\{f_k\}$是$\Omega$上一列处处不为零的全纯函数.如果$\{f_k\}$在$\Omega$上内闭一致收敛于$f$，那么$f$在$\Omega$中或者恒等于零，或者处处不等于零.
 \end{xiti}
 
 \section{全纯函数在Reinhardt域上的展开式\label{sec9.3}}
 为了找出发生Hartogs现象的域，我们要先讨论全纯函数在Reinhardt 域上的展开式.
+
 \begin{definition}\label{def9.3.1}
-设$\Omega$是$\MC^n$中的域，如果对任意$(z_1,\cdots,z_n)\in\Omega$及$\theta_1,\cdots,\theta_n\in\MR$，必有$(\ee^{\ii\theta_1}z_1,\cdots,\ee^{\ii\theta_n}z_n)\in\Omega$，就称$\Omega$是\textbf{Reinhardt域}\index{Y!域!Reinhardt域}.
+  设$\Omega$是$\MC^n$中的域，如果对任意$(z_1,\cdots,z_n)\in\Omega$及$\theta_1,\cdots,\theta_n\in\MR$，必有$(\ee^{\ii\theta_1}z_1,\cdots,\ee^{\ii\theta_n}z_n)\in\Omega$，就称$\Omega$是\textbf{Reinhardt域}\index{Y!域!Reinhardt域}.
 \end{definition}
 
 前面提到的球和多圆柱都是Reinhardt域.
 \begin{theorem}\label{thm9.3.2}
-设$\Omega$是$\MC^n$中的Reinhardt域，$f\in H(\Omega)$，那么$f$必有Laurent展开式
-\begin{equation}\label{eq9.3.1}
-f(z)=\sum_{\alpha\in\MZ^n}a_\alpha z^\alpha,
-\end{equation}
-这里，$\MZ^n=\{(\alpha_1,\cdots,\alpha_n):\alpha_1,\cdots,\alpha_n\text{都是整数}\}$.上述级数在$\Omega$中内闭一致收敛，且$a_\alpha$由$f$唯一确定.
+  设$\Omega$是$\MC^n$中的Reinhardt域，$f\in H(\Omega)$，那么$f$必有Laurent展开式
+  \begin{equation}\label{eq9.3.1}
+    f(z) = \sum_{\alpha\in\MZ^n}a_\alpha z^\alpha,
+  \end{equation}
+  这里，$\MZ^n=\{(\alpha_1,\cdots,\alpha_n):\alpha_1,\cdots,\alpha_n\text{都是整数}\}$.上述级数在$\Omega$中内闭一致收敛，且$a_\alpha$由$f$唯一确定.
 \end{theorem}
 \begin{proof}
-我们先证，如果展开式 \eqref{eq9.3.1} 在$\Omega$上内闭一致收敛，那么$a_\alpha$
-由$f$唯一确定.事实上，取$w\in\Omega$，要求$w$的每个坐标$w_j\ne0$.对于这个固定的$w$，取$z=(\ee^{\ii\theta_1}w_1,\cdots,\ee^{\ii\theta_n}w_n)$，则$z\in\Omega$.于是，由展开式 \eqref{eq9.3.1} 得
-\[f(\ee^{\ii\theta_1}w_1,\cdots,\ee^{\ii\theta_n}w_n)=\sum_{\alpha\in\MZ^n}
-a_\alpha w_1^{\alpha_1}\cdots w_n^{\alpha_n}\ee^{\ii(\alpha_1\theta_1+\cdots+\alpha_n\theta_n)}.\]
-两端乘以$\ee^{-\ii(\beta_1\theta_1+\cdots+\beta_n\theta_n)}$，得
-\[f(\ee^{\ii\theta_1}w_1,\cdots,\ee^{\ii\theta_n}w_n)
-\ee^{-\ii(\beta_1\theta_1+\cdots+\beta_n\theta_n)}
-=\sum_{\alpha\in\MZ^n}a_\alpha w_1^{\alpha_1}\cdots w_n^{\alpha_n}\ee^{\ii[(\alpha_1-\beta_1)\theta_1+\cdots+(\alpha_n-\beta_n)\theta_n]},\]
-这里，$(\beta_1,\cdots,\beta_n)$是任意一个多重指标.上式两端分别对$\theta_1,\cdots,\theta_n$
-在$[0,2\pi]$上积分，由于右端级数的项只有当$\alpha=\beta$时不为零，因而有
-\[a_\beta=\frac1{(2\pi)^n}\frac1{w^\beta}\int_0^{2\pi}\cdots\int_0^{2\pi}
-f(\ee^{\ii\theta_1}w_1,\cdots,\ee^{\ii\theta_n}w_n)
-\ee^{-\ii(\beta_1\theta_1+\cdots+\beta_n\theta_n)}
-\dif \theta_1\cdots\dif \theta_n.
-\]
-这就证明了展开式 \eqref{eq9.3.1} 中的系数由$f$所唯一确定.
+  我们先证，如果展开式 \eqref{eq9.3.1} 在$\Omega$上内闭一致收敛，那么$a_\alpha$
+  由$f$唯一确定.事实上，取$w\in\Omega$，要求$w$的每个坐标$w_j\ne0$.对于这个固定的$w$，取$z=(\ee^{\ii\theta_1}w_1,\cdots,\ee^{\ii\theta_n}w_n)$，则$z\in\Omega$.于是，由展开式 \eqref{eq9.3.1} 得
+  \[
+    f(\ee^{\ii\theta_1}w_1,\cdots,\ee^{\ii\theta_n}w_n)=\sum_{\alpha\in\MZ^n}
+    a_\alpha w_1^{\alpha_1}\cdots w_n^{\alpha_n}\ee^{\ii(\alpha_1\theta_1+\cdots+\alpha_n\theta_n)}.
+  \]
+  两端乘以$\ee^{-\ii(\beta_1\theta_1+\cdots+\beta_n\theta_n)}$，得
+  \[
+    f(\ee^{\ii\theta_1}w_1,\cdots,\ee^{\ii\theta_n}w_n)
+    \ee^{-\ii(\beta_1\theta_1+\cdots+\beta_n\theta_n)}
+    =\sum_{\alpha\in\MZ^n}a_\alpha w_1^{\alpha_1}\cdots w_n^{\alpha_n}\ee^{\ii[(\alpha_1-\beta_1)\theta_1+\cdots+(\alpha_n-\beta_n)\theta_n]},
+  \]
+  这里，$(\beta_1,\cdots,\beta_n)$是任意一个多重指标.上式两端分别对$\theta_1,\cdots,\theta_n$
+  在$[0,2\pi]$上积分，由于右端级数的项只有当$\alpha=\beta$时不为零，因而有
+  \[
+    a_\beta = \frac1{(2\pi)^n}\frac1{w^\beta}\int_0^{2\pi}\cdots\int_0^{2\pi}
+    f(\ee^{\ii\theta_1}w_1,\cdots,\ee^{\ii\theta_n}w_n)
+    \ee^{-\ii(\beta_1\theta_1 + \cdots + \beta_n\theta_n)}
+    \dif \theta_1\cdots\dif \theta_n.
+  \]
+  这就证明了展开式 \eqref{eq9.3.1} 中的系数由$f$所唯一确定.
 
-现在证明展开式 \eqref{eq9.3.1} 成立.取定$w\in\Omega$，由于$\Omega$是Reinhardt域，故可取充分小的$\varepsilon>0$，使得
-\[G(w,\varepsilon)=\{z\in\MC^n:|w_j|-\varepsilon<|z_j|<|w_j|+\varepsilon,j=1,\cdots,n\}\]
-含在$\Omega$中.这是因为对于任意的$z\in G(w,\varepsilon)$，有
-\[\big||z_j|-|w_j|\big|<\varepsilon,\;j=1,\cdots,n.\]
-令$z_j'=\ee^{\ii\theta_j}z_j$，当然有
-\begin{equation}\label{eq9.3.2}
-\big||z_j'|-|w_j|\big|<\varepsilon,\;j=1,\cdots,n.
-\end{equation}
-适当选择$\theta_j$，可使$\arg z_j'=\arg w_j$，于是 \eqref{eq9.3.2} 式变成
-\[|z_j'-w_j|<\varepsilon,j=1,\cdots,n.\]
-因为$\Omega$是域，取$\varepsilon>0$充分小，可使$(z_1',\cdots,z_n')\in\Omega$. 因为$\Omega$是Reinhardt域，所以
-\[(z_1,\cdots,z_n)=(\ee^{-\ii\theta_1}z_1',\cdots,\ee^{-\ii\theta_n}z_n')\in\Omega.\]
-由于$G(w,\varepsilon)$是$n$个圆环的拓扑积，对$f$的每个变量分别用单复变中的Laurent定理，可得
-\[f(z)=\sum_{\alpha\in\MZ^n}a_\alpha(w)z^\alpha,\;z\in G(w,\varepsilon),\]
-它在$w$的邻域中一致收敛.不难证明$a_\alpha(w)$实际上与$w$无关.为此，取$w'\in G(w,\varepsilon)$，同样有
-\[f(z)=\sum_{\alpha\in\MZ^n}a_\alpha(w')z^\alpha,\;z\in G(w',\varepsilon').\]
-由上面证明的$a_\alpha$的唯一性知道，$a_\alpha(w)=a_\alpha(w'),\alpha\in\MZ^n $.这就证明了$a_\alpha(w)$在一个局部范围内是一个常数，利用$\Omega$的连通性，便知$a_\alpha(w)=a_\alpha$在$\Omega$上成立.因而
-\[f(z)=\sum_{\alpha\in\MZ^n}a_\alpha z^\alpha\]
-在$\Omega$中每一点的邻域中一致地成立，从而在$\Omega$中内闭一致地成立.
+  现在证明展开式 \eqref{eq9.3.1} 成立.取定$w\in\Omega$，由于$\Omega$是Reinhardt域，故可取充分小的$\varepsilon>0$，使得
+  \[
+    G(w,\varepsilon) = \{z\in\MC^n:|w_j|-\varepsilon < |z_j| < |w_j| + \varepsilon,j=1,\cdots,n\}
+  \]
+  含在$\Omega$中.这是因为对于任意的$z\in G(w,\varepsilon)$，有
+  \[
+    \big||z_j|-|w_j|\big| < \varepsilon,\;j=1,\cdots,n.
+  \]
+  令$z_j'=\ee^{\ii\theta_j}z_j$，当然有
+  \begin{equation}\label{eq9.3.2}
+    \big||z_j'|-|w_j|\big| < \varepsilon,\;j=1,\cdots,n.
+  \end{equation}
+  适当选择$\theta_j$，可使$\arg z_j'=\arg w_j$，于是 \eqref{eq9.3.2} 式变成
+  \[
+    |z_j'-w_j| < \varepsilon, j=1,\cdots,n.
+  \]
+  因为$\Omega$是域，取$\varepsilon>0$充分小，可使$(z_1',\cdots,z_n')\in\Omega$. 因为$\Omega$是Reinhardt域，所以
+  \[
+    (z_1,\cdots,z_n) = (\ee^{-\ii\theta_1}z_1', \cdots, \ee^{-\ii\theta_n}z_n')\in\Omega.
+  \]
+  由于$G(w,\varepsilon)$是$n$个圆环的拓扑积，对$f$的每个变量分别用单复变中的Laurent定理，可得
+  \[
+    f(z) = \sum_{\alpha\in\MZ^n}a_\alpha(w) z^\alpha,\;z\in G(w,\varepsilon),
+  \]
+  它在$w$的邻域中一致收敛.不难证明$a_\alpha(w)$实际上与$w$无关.为此，取$w'\in G(w,\varepsilon)$，同样有
+  \[
+    f(z) = \sum_{\alpha\in\MZ^n}a_\alpha(w')z^\alpha,\;z\in G(w',\varepsilon').
+  \]
+  由上面证明的$a_\alpha$的唯一性知道，$a_\alpha(w)=a_\alpha(w'),\alpha\in\MZ^n $.这就证明了$a_\alpha(w)$在一个局部范围内是一个常数，利用$\Omega$的连通性，便知$a_\alpha(w)=a_\alpha$在$\Omega$上成立.因而
+  \[
+    f(z) = \sum_{\alpha\in\MZ^n}a_\alpha z^\alpha
+  \]
+  在$\Omega$中每一点的邻域中一致地成立，从而在$\Omega$中内闭一致地成立.
 \end{proof}
 
 从这个定理可得下面很有用的定理：
 \begin{theorem}\label{thm9.3.3}
-设$\Omega$是$\MC^n$中的Reinhardt域，如果对每个$j$
-（$j=1,\cdots,n$），$\Omega$中都有$j$第个坐标为零的点，那么每个$f\in H(\Omega)$都有幂级数展开式
-\begin{equation}\label{eq9.3.3}
-f(z)=\sum_{\alpha\ge0}a_\alpha z^\alpha,
-\end{equation}
-它在$\Omega$上内闭一致地成立.
+  设$\Omega$是$\MC^n$中的Reinhardt域，如果对每个$j$
+  （$j=1,\cdots,n$），$\Omega$中都有$j$第个坐标为零的点，那么每个$f\in H(\Omega)$都有幂级数展开式
+  \begin{equation}\label{eq9.3.3}
+    f(z) = \sum_{\alpha\ge0}a_\alpha z^\alpha,
+  \end{equation}
+  它在$\Omega$上内闭一致地成立.
 \end{theorem}
 \begin{proof}
-因为$\Omega$是Reinhardt域，根据定理 \ref{thm9.3.2}，$f$有Laurent展开式
-\begin{equation}\label{eq9.3.4}
-f(z)=\sum_{\alpha\in\MZ^n}a_\alpha z^\alpha.
-\end{equation}
-我们要证明，如果$\alpha=(\alpha_1,\cdots,\alpha_n)$的某个分量出现负整数，那么相应的系数$a_\alpha=0$，这样展开式 \eqref{eq9.3.4} 就变成幂级数了.事实上，设$\alpha_k$是一个负整数，而相应的$a_\alpha\ne0$，这时取第$k$个坐标为零的点
-\[\tilde{z}=(z_1,\cdots,z_{k-1},0,z_{k+1},\cdots,z_n),\]
-于是$a_\alpha\tilde{z}^\alpha=\infty$，因而 \eqref{eq9.3.4} 式在$\tilde{z}$处不成立，这是一个矛盾. 所以，\eqref{eq9.3.4} 式的右端就是幂级数 \eqref{eq9.3.3}.
+  因为$\Omega$是Reinhardt域，根据定理 \ref{thm9.3.2}，$f$有Laurent展开式
+  \begin{equation}\label{eq9.3.4}
+    f(z) = \sum_{\alpha\in\MZ^n}a_\alpha z^\alpha.
+  \end{equation}
+  我们要证明，如果$\alpha=(\alpha_1,\cdots,\alpha_n)$的某个分量出现负整数，那么相应的系数$a_\alpha=0$，这样展开式 \eqref{eq9.3.4} 就变成幂级数了.事实上，设$\alpha_k$是一个负整数，而相应的$a_\alpha\ne0$，这时取第$k$个坐标为零的点
+  \[
+    \tilde{z} = (z_1,\cdots,z_{k-1},0,z_{k+1},\cdots,z_n),
+  \]
+  于是$a_\alpha\tilde{z}^\alpha=\infty$，因而 \eqref{eq9.3.4} 式在$\tilde{z}$处不成立，这是一个矛盾. 所以，\eqref{eq9.3.4} 式的右端就是幂级数 \eqref{eq9.3.3}.
 \end{proof}
 
 由于单位球$B_n$和单位多圆柱$U^n$都满足定理 \ref{thm9.3.3} 的条件，所以从定理 \ref{thm9.3.3} 立刻可得
 \begin{theorem}\label{thm9.3.4}
-每个$f\in H(B_n)$都有幂级数展开式
-\[f(z)=\sum_{\alpha\ge0}a_\alpha z^\alpha,\;z\in B_n.\]
+  每个$f\in H(B_n)$都有幂级数展开式
+  \[
+    f(z) = \sum_{\alpha\ge0}a_\alpha z^\alpha,\;z\in B_n.
+  \]
 \end{theorem}
 
 \begin{theorem}\label{thm9.3.5}
-每个$f\in H(U^n)$都有幂级数展开式
-\[f(z)=\sum_{\alpha\ge0}a_\alpha z^\alpha,\;z\in U^n.\]
+  每个$f\in H(U^n)$都有幂级数展开式
+  \[
+    f(z) = \sum_{\alpha\ge0}a_\alpha z^\alpha,\;z\in U^n.
+  \]
 \end{theorem}
 
 上面这个展开式也可写为
-\[f(z)=\sum_{k=0}^\infty\sum_{|\alpha|=k}a_\alpha z^\alpha=\sum_{k=0}^\infty P_k(z),\]
+\[
+  f(z) = \sum_{k=0}^\infty\sum_{|\alpha| = k}a_\alpha z^\alpha = \sum_{k=0}^\infty P_k(z),
+\]
 这里，$P_k(z)=\sum_{|\alpha|=k}a_\alpha z^\alpha$是$z_1,\cdots,z_n$的$k$次齐次多项式.上式称为$f$的\textbf{齐次展开式}\index{Q!齐次展开式}.
 
 为简单起见，我们就$n=2$的情形写出$P_k(z)$的具体表达式：
 \begin{align*}
-&P_0(z)=a_{0,0},\\
-&P_1(z)=\sum_{|\alpha|=1}a_\alpha z^\alpha=a_{1,0}z_1+a_{0,1}z_2,\\
-&P_2(z)=\sum_{|\alpha|=2}a_\alpha z^\alpha=a_{2,0}z_1^2+a_{1,1}z_1z_2+a_{0,2}z_2^2,\\
-&P_3(z)=\sum_{|\alpha|=3}a_\alpha z^\alpha=a_{3,0}z_1^3+a_{2,1}z_1^2z_2+a_{1,2}z_1z_2^2+a_{0,3}z_2^3,\\
-&\cdots.
+  & P_0(z) = a_{0,0},\\
+  & P_1(z) = \sum_{|\alpha|=1}a_\alpha z^\alpha = a_{1,0}z_1+a_{0,1}z_2,\\
+  & P_2(z) = \sum_{|\alpha|=2}a_\alpha z^\alpha = a_{2,0}z_1^2+a_{1,1}z_1z_2+a_{0,2}z_2^2,\\
+  & P_3(z) = \sum_{|\alpha|=3}a_\alpha z^\alpha = a_{3,0}z_1^3+a_{2,1}z_1^2z_2+a_{1,2}z_1z_2^2+a_{0,3}z_2^3,\\
+  & \cdots.
 \end{align*}
 
 从定理 \ref{thm9.3.3} 还可得到下面的\textbf{全纯开拓定理}\index{D!定理!全纯开拓定理}：
 \begin{theorem}\label{thm9.3.6}
-设$\Omega$是$\MC^n$中的Reinhardt域，如果对每个$j$（$j=1,\cdots,n$），$\Omega$中都有第$j$个坐标为零的点，那么每个$f\in H(\Omega)$都能全纯开拓到域
-\[\Omega'=\{w=(\rho_1z_1,\cdots,\rho_nz_n):(z_1,\cdots,z_n)\in\Omega,0\le\rho_j\le1,
-j=1,\cdots,n\}.\]
+  设$\Omega$是$\MC^n$中的Reinhardt域，如果对每个$j$（$j=1,\cdots,n$），$\Omega$中都有第$j$个坐标为零的点，那么每个$f\in H(\Omega)$都能全纯开拓到域
+  \[
+    \Omega' = \{w=(\rho_1z_1,\cdots,\rho_nz_n):(z_1,\cdots,z_n)\in\Omega,0\le\rho_j\le1,
+    j=1,\cdots,n\}.
+  \]
 \end{theorem}
 \begin{proof}
-根据定理 \ref{thm9.3.3}，$f$在$\Omega$中有幂级数展开式
-\[f(z)=\sum_{\alpha\ge0}a_\alpha z^\alpha,\;z\in\Omega.\]
-任取$w\in\Omega'$，按定义，存在$z\in\Omega$及$0\le\rho_j\le1,j=1,\cdots,n$，使得$w_j=\rho_jz_j,j=1,\cdots,n$，因而$|w_j|\le|z_j|$. 由于$\sum_{\alpha\ge 0}a_\alpha z^\alpha$收敛，由命题 \ref{prop9.1.1}，$\sum_{\alpha\ge0}a_\alpha w^\alpha$收敛，且在$\Omega'$中内闭一致收敛. 现在定义
-\[F(w)=\sum_{\alpha}a_\alpha w^\alpha,\;w\in\Omega',\]
-由Weierstrass定理，$F\in H(\Omega')$，且$F\big|_\Omega=f$，所以$F$是$f$在$\Omega'$上的全纯开拓.
+  根据定理 \ref{thm9.3.3}，$f$在$\Omega$中有幂级数展开式
+  \[
+    f(z) = \sum_{\alpha\ge0}a_\alpha z^\alpha,\;z\in\Omega.
+  \]
+  任取$w\in\Omega'$，按定义，存在$z\in\Omega$及$0\le\rho_j\le1,j=1,\cdots,n$，使得$w_j=\rho_jz_j,j=1,\cdots,n$，因而$|w_j|\le|z_j|$. 由于$\sum_{\alpha\ge 0}a_\alpha z^\alpha$收敛，由命题 \ref{prop9.1.1}，$\sum_{\alpha\ge0}a_\alpha w^\alpha$收敛，且在$\Omega'$中内闭一致收敛. 现在定义
+  \[
+    F(w) = \sum_{\alpha}a_\alpha w^\alpha,\;w\in\Omega',
+  \]
+  由Weierstrass定理，$F\in H(\Omega')$，且$F\big|_\Omega=f$，所以$F$是$f$在$\Omega'$上的全纯开拓.
 \end{proof}
 
 从这个定理马上可以举出发生Hartogs现象的具体的域.
 \begin{example}\label{exam9.3.7}
-设$0<r<R$，若
-\[\Omega=\{z=(z_1,\cdots,z_n):r^2<|z_1^2|+\cdots+|z_n|^2<R^2\},\]
-则每个$f\in H(\Omega)$必能全纯开拓到
-\[B(0,R)=\{z=(z_1,\cdots,z_n):|z_1|^2+\cdots+|z_n|^2<R^2\}.\]
+  设$0<r<R$，若
+  \[
+    \Omega = \{z=(z_1,\cdots,z_n):r^2 < |z_1^2| + \cdots + |z_n|^2 < R^2\},
+  \]
+  则每个$f\in H(\Omega)$必能全纯开拓到
+  \[
+    B(0,R) = \{z=(z_1,\cdots,z_n):|z_1|^2+\cdots+|z_n|^2<R^2\}.
+  \]
 \end{example}
 
 由例 \ref{exam9.3.7} 还可得到一个与单复变有本质不同的事实：在单复变中，全纯函数的零点一定是孤立的，可在多复变中恰好相反.
@@ -417,284 +522,342 @@ j=1,\cdots,n\}.\]
   设$\Omega$是$\MC^n$（$n>1$）中的域，$f\in H(\Omega)$，那么$f$在$\Omega$上的零点一定不是孤立的.
 \end{theorem}
 \begin{proof}
-如果$a\in\Omega$是$f$的一个孤立零点，这意味着存在以$a$为中心、以充分小的正数$\varepsilon$为半径的球$B(a,\varepsilon)\subset\Omega$，$f$在$B(a,\varepsilon)$中除$a$以外不再有其他的零点.令
-\[g(z)=\frac1{f(z)},\]
-则$g$在$B(a,\varepsilon)\backslash\bar{B\bigg(a,\frac\varepsilon2\bigg)}$中全纯. 由例 \ref{exam9.3.7}，$g$必在$B(a,\varepsilon)$中全纯，因而$f(a)\ne0$，这是一个矛盾.
+  如果$a\in\Omega$是$f$的一个孤立零点，这意味着存在以$a$为中心、以充分小的正数$\varepsilon$为半径的球$B(a,\varepsilon)\subset\Omega$，$f$在$B(a,\varepsilon)$中除$a$以外不再有其他的零点.令
+  \[
+    g(z) = \frac1{f(z)},
+  \]
+  则$g$在$B(a,\varepsilon)\backslash\bar{B\bigg(a,\frac\varepsilon2\bigg)}$中全纯. 由例 \ref{exam9.3.7}，$g$必在$B(a,\varepsilon)$中全纯，因而$f(a)\ne0$，这是一个矛盾.
 \end{proof}
 
 Hartogs现象是多复变数空间$\MC^n$（$n>1$）中所特有的，在复平面上没有这种现象.设$D$是$\MC$中的域，在$\partial D$上任意取一点$a$，那么
-\[f(z)=\frac1{z-a}\]
+\[
+  f(z) = \frac1{z-a}
+\]
 是$D$中的全纯函数，但它不能越过$a$全纯开拓出去.这说明对$D$不会发生Hartogs现象。
 
 $\MC^n$中怎样的域不会发生Hartogs现象呢?我们把不发生Hartogs现象的域称为全纯域.严格说来，我们有下面的
 \begin{definition}\label{def9.3.9}
-设$\Omega$是$\MC^n$中的域，如果不存在比$\Omega$更大的域$\Omega'$
-（$\Omega'\supset\Omega,\Omega'\ne\Omega$），使得$H(\Omega)$中的每个函数都能全纯开拓到$\Omega'$上去，就称$\Omega$是\textbf{全纯域}\index{Y!域!全纯域}.
+  设$\Omega$是$\MC^n$中的域，如果不存在比$\Omega$更大的域$\Omega'$
+  （$\Omega'\supset\Omega,\Omega'\ne\Omega$），使得$H(\Omega)$中的每个函数都能全纯开拓到$\Omega'$上去，就称$\Omega$是\textbf{全纯域}\index{Y!域!全纯域}.
 \end{definition}
 
 如上面所说，$\MC$中所有的域都是全纯域. $\MC^n$（$n>1$）中什么样的域是全纯域，这是多复变中一个十分重要的问题.我们在这里给出一个域是全纯域的一个充分条件.
 \begin{theorem}\label{thm9.3.10}
-$\MC^n$中的凸域一定是全纯域.
+  $\MC^n$中的凸域一定是全纯域.
 \end{theorem}
 \begin{proof}
-设$\Omega$是$\MC^n$中的凸域，故对$\partial\Omega$上每一点$\zeta$，存在一个过$\zeta$的超平面$Q$，它与$\Omega$不相交.不妨设$\zeta=0$，则过$\zeta$的超平面可写为
-\begin{equation}\label{eq9.3.5}
-a_1x_1+b_1y_1+\cdots+a_nx_n+b_ny_n=0.
-\end{equation}
-记$c_j=a_j-\ii b_j,z_j=x_j+\ii y_j$，则 \eqref{eq9.3.5} 式可写为
-\[\Re\bigg(\sum_{j=1}^nc_jz_j\bigg)=0.\]
-令$g(z)=\sum_{j=1}^nc_jz_j$，易知$g$在$\Omega$中没有零点. 因为若有$w\in\Omega$，使得$g(w)=0$，则$\Re g(w)=0$，这等于说超平面 \eqref{eq9.3.5} 通过$w$点，与$Q$的取法矛盾. 因而
-\[f(z)=\frac1{g(z)}\]
-是$\Omega$中的全纯函数，但它不能通过边界点$\zeta$全纯开拓出去.
+  设$\Omega$是$\MC^n$中的凸域，故对$\partial\Omega$上每一点$\zeta$，存在一个过$\zeta$的超平面$Q$，它与$\Omega$不相交.不妨设$\zeta=0$，则过$\zeta$的超平面可写为
+  \begin{equation}\label{eq9.3.5}
+    a_1x_1 + b_1y_1 + \cdots + a_nx_n + b_ny_n = 0.
+  \end{equation}
+  记$c_j=a_j-\ii b_j,z_j=x_j+\ii y_j$，则 \eqref{eq9.3.5} 式可写为
+  \[
+    \Re\bigg(\sum_{j=1}^nc_jz_j\bigg) = 0.
+  \]
+  令$g(z)=\sum_{j=1}^nc_jz_j$，易知$g$在$\Omega$中没有零点. 因为若有$w\in\Omega$，使得$g(w)=0$，则$\Re g(w)=0$，这等于说超平面 \eqref{eq9.3.5} 通过$w$点，与$Q$的取法矛盾. 因而
+  \[
+    f(z) = \frac1{g(z)}
+  \]
+  是$\Omega$中的全纯函数，但它不能通过边界点$\zeta$全纯开拓出去.
 \end{proof}
 
 显然，这个定理的逆是不成立的，即全纯域不一定是凸域，这在$n=1$时就有大量的反例.因此，全纯域是比凸域更为广泛的一类域.
 \begin{xiti}
-\item 记$A(B_n)=H(B_n)\cap C(\bar{B_n}),n>1$.
-\begin{enuma}
-\item 设$f\in A(B_n)$，如果$f$在$\partial B_n$上处处不为零，证明$f$在$B_n$中也处处不为零；
-\item 设$f\in A(B_n)$，证明$f(\bar{B_n})=f(\partial B_n)$；
-\item 举例说明，上述结论在$n=1$时不成立.
-\end{enuma}
-\item 设$f\in A(B_n),n>1$.如果$|f|$在球面$\partial B_n$上恒等于常数$c$，那么$f$在$B_n$中也恒等于常数$c$.举例说明$n=1$时结论不成立.
-\item 设$0<\alpha,\beta<1$，记
-\begin{align*}
-&G_1=\{(z,w)\in\MC^2:|z|<1,\beta<|w|<1\},\\
-&G_2=\{(z,w)\in\MC^2:|z|<\alpha,|w|<1\},
-\end{align*}
-令$G=G_1\cup G_2$. 证明：$H(G)$中的每一个函数都能全纯开拓到双圆柱域
-\[U^2=\{(z,w)\in\MC^2:|z|<1,|w|<1\}.\]
+  \item 记$A(B_n)=H(B_n)\cap C(\bar{B_n}),n>1$.
+    \begin{enuma}
+      \item 设$f\in A(B_n)$，如果$f$在$\partial B_n$上处处不为零，证明$f$在$B_n$中也处处不为零；
+      \item 设$f\in A(B_n)$，证明$f(\bar{B_n})=f(\partial B_n)$；
+      \item 举例说明，上述结论在$n=1$时不成立.
+    \end{enuma}
+  \item 设$f\in A(B_n),n>1$.如果$|f|$在球面$\partial B_n$上恒等于常数$c$，那么$f$在$B_n$中也恒等于常数$c$.举例说明$n=1$时结论不成立.
+  \item 设$0<\alpha,\beta<1$，记
+    \begin{align*}
+      & G_1 = \{(z,w)\in\MC^2:|z|<1,\beta<|w|<1\},\\
+      & G_2 = \{(z,w)\in\MC^2:|z|<\alpha,|w|<1\},
+    \end{align*}
+    令$G=G_1\cup G_2$. 证明：$H(G)$中的每一个函数都能全纯开拓到双圆柱域
+    \[
+      U^2 = \{(z,w)\in\MC^2:|z|<1,|w|<1\}.
+    \]
 \end{xiti}
 
 \section{全纯映射的导数\label{sec9.4}}
 设$\Omega$是$\MC^n$中的域，$f:\Omega\to \MC$是定义在$\Omega$上的复值函数，它可以看成是$\Omega$到$\MC$上的一个映射.从映射的角度来看，更重要的是要考虑$\Omega$到$\MC^n$中的映射.
 \begin{theorem}\label{def9.4.1}
-设$\Omega$是$\MC^n$中的域，$f_1,\cdots,f_n$是$\Omega$上的$n$个全纯函数，称$F=(f_1,\cdots,f_n)$是$\Omega$到$\MC^n$的\textbf{全纯映射}\index{Q!全纯映射}.
+  设$\Omega$是$\MC^n$中的域，$f_1,\cdots,f_n$是$\Omega$上的$n$个全纯函数，称$F=(f_1,\cdots,f_n)$是$\Omega$到$\MC^n$的\textbf{全纯映射}\index{Q!全纯映射}.
 \end{theorem}
 
 在单变数的情形下，如果$f$在$z_0$处可微，则有
-\[f(z_0+h)-f(z_0)=f'(z_0)h+o(|h|),\]
+\[
+  f(z_0+h) - f(z_0) = f'(z_0)h + o(|h|),
+\]
 这里，导数$f'(z_0)$可以看成是由$f$和$z_0$确定的一个线性算子$A:h\to f'(z_0)h$.下面就用这一观点来定义全纯映射的导数.
 
 \begin{definition}\label{def9.4.2}
-设$\Omega$是$\MC^n$中的域，$F:\Omega\to\MC^n$是一个映射. 对于给定的$z\in\Omega$，如果存在$A\in L(\MC^n,\MC^n)$，使得
-\begin{equation}\label{eq9.4.1}
-F(z+h)-F(z)=Ah+o(|h|),
-\end{equation}
-就称$F$在$z$点\textbf{可微}\index{Q!全纯映射!可微}，称$A$为$F$在$z$点的\textbf{导数}\index{Q!全纯映射!导数}，记为$F'(z)=A$.这里，$h\in \MC^n,L(\MC^n,\MC^n)$表示$\MC^n\to\MC^n$的线性映射的全体，\eqref{eq9.4.1} 式的含义是
-\[\lim_{h\to0}\frac{|F(z+h)-F(z)-Ah|}{|h|}=0.\]
+  设$\Omega$是$\MC^n$中的域，$F:\Omega\to\MC^n$是一个映射. 对于给定的$z\in\Omega$，如果存在$A\in L(\MC^n,\MC^n)$，使得
+  \begin{equation}\label{eq9.4.1}
+    F(z + h) - F(z) = Ah + o(|h|),
+  \end{equation}
+  就称$F$在$z$点\textbf{可微}\index{Q!全纯映射!可微}，称$A$为$F$在$z$点的\textbf{导数}\index{Q!全纯映射!导数}，记为$F'(z)=A$.这里，$h\in \MC^n,L(\MC^n,\MC^n)$表示$\MC^n\to\MC^n$的线性映射的全体，\eqref{eq9.4.1} 式的含义是
+  \[
+    \lim_{h\to0}\frac{|F(z + h) - F(z) - Ah|}{|h|} = 0.
+  \]
 \end{definition}
 
 那么什么样的映射可微呢?我们有下面的
 \begin{theorem}\label{thm9.4.3}
-设$\Omega$是$\MC^n$中的域，$F=(f_1,\cdots,f_n)$是$\Omega$上的全纯映射，那么$F$在$\Omega$中的每一点都可微，而且对任意$z\in\Omega$，有
-\begin{equation}\label{eq9.4.2}
-F'(z)=\begin{pmatrix}
-\pp{f_1(z)}{z_1}&\cdots&\pp{f_1(z)}{z_n}\\
-\cdots&\cdots&\cdots\\
-\pp{f_n(z)}{z_1}&\cdots&\pp{f_n(z)}{z_n}
-\end{pmatrix}.
-\end{equation}
+  设$\Omega$是$\MC^n$中的域，$F=(f_1,\cdots,f_n)$是$\Omega$上的全纯映射，那么$F$在$\Omega$中的每一点都可微，而且对任意$z\in\Omega$，有
+  \begin{equation}\label{eq9.4.2}
+    F'(z) = \begin{pmatrix}
+    \pp{f_1(z)}{z_1} & \cdots & \pp{f_1(z)}{z_n} \\
+    \cdots & \cdots & \cdots \\
+    \pp{f_n(z)}{z_1} & \cdots & \pp{f_n(z)}{z_n}
+    \end{pmatrix}.
+  \end{equation}
 \end{theorem}
 \begin{proof}
-因为每个$f_j$都是$\Omega$上的全纯函数，故在$z$的邻域中可以展开为幂级数：
-\begin{align*}
-&f_1(z+h)=f_1(z)+\pp{f_1(z)}{z_1}h_1+\cdots+\pp{f_1(z)}{z_n}h_n+o(|h|),\\
-&\cdots,\\
-&f_n(z+h)=f_n(z)+\pp{f_n(z)}{z_1}h_1+\cdots+\pp{f_n(z)}{z_n}h_n+o(|h|).
-\end{align*}
-写成向量的形式，就有
-\[F(z+h)=F(z)+Ah+o(|h|),\]
-这里，$A$就是 \eqref{eq9.4.2} 式右边的方阵. 按照定义 \ref{def9.4.2}，$F$在$z$点可微，而且$F'(z)=A$.
+  因为每个$f_j$都是$\Omega$上的全纯函数，故在$z$的邻域中可以展开为幂级数：
+  \begin{align*}
+    & f_1(z+h) = f_1(z)+\pp{f_1(z)}{z_1}h_1 + \cdots + \pp{f_1(z)}{z_n}h_n+o(|h|),\\
+    & \cdots,\\
+    & f_n(z+h) = f_n(z)+\pp{f_n(z)}{z_1}h_1 + \cdots + \pp{f_n(z)}{z_n}h_n+o(|h|).
+  \end{align*}
+  写成向量的形式，就有
+  \[
+    F(z + h) = F(z) + Ah + o(|h|),
+  \]
+  这里，$A$就是 \eqref{eq9.4.2} 式右边的方阵. 按照定义 \ref{def9.4.2}，$F$在$z$点可微，而且$F'(z)=A$.
 \end{proof}
 
 由此可知，全纯映射$F$的导数就是它的\textbf{Jacobian矩阵}\index{J!Jacobian矩阵}.
 
 下面我们将证明，两个全纯映射的复合映射也是全纯的，而且有类似于复合函数求导数的求导法则.
 \begin{prop}\label{prop9.4.4}
-设$\Omega_1,\Omega_2$是$\MC^n$中的两个域，如果
-\begin{align*}
-&F:\Omega_1\to\Omega_2,\\
-&G:\Omega_2\to\MC^n
-\end{align*}
-都是全纯映射，那么复合映射$H=G\circ F$也是$\Omega_1$上的全纯映射，而且
-\[H'(z)=G'(w)F'(z),\]
-其中，$w=F(z)$.
+  设$\Omega_1,\Omega_2$是$\MC^n$中的两个域，如果
+  \begin{align*}
+    & F:\Omega_1 \to \Omega_2,\\
+    & G:\Omega_2 \to \MC^n
+  \end{align*}
+  都是全纯映射，那么复合映射$H=G\circ F$也是$\Omega_1$上的全纯映射，而且
+  \[
+    H'(z) = G'(w)F'(z),
+  \]
+  其中，$w=F(z)$.
 \end{prop}
 \begin{proof}
-设$F=(f_1,\cdots,f_n),G=(g_1,\cdots,g_n),H=(h_1,\cdots,h_n)$，其中
-\[h_j=g_j(f_1,\cdots,f_n),\;j=1,\cdots,n.\]
-于是
-\begin{align}
-&\pp{h_j}{\bar{z}_l}=\sum_{s=1}^n\bigg(\pp{g_j}{w_s}\pp{w_s}{\bar{z}_l}
-+\pp{g_j}{\bar{w}_s}\pp{\bar{w}_s}{\bar{z}_l}\bigg),\label{eq9.4.3}\\
-&\pp{h_j}{z_l}=\sum_{s=1}^n\bigg(\pp{g_j}{w_s}\pp{w_s}{z_l}
-+\pp{g_j}{\bar{w}_s}\pp{\bar{w}_s}{z_l}\bigg).\label{eq9.4.4}
-\end{align}
-由Cauchy--Riemann方程组，有
-\begin{align*}
-&\pp{w_s}{\bar{z}_l}=0,s=1,\cdots,n\\
-&\pp{g_j}{\bar{w}_s}=0,s=1,\cdots,n.
-\end{align*}
-\eqref{eq9.4.3} 式和 \eqref{eq9.4.4} 式分别变为
-\begin{align}
-&\pp{h_j}{\bar{z}_l}=0,\;j,l=1,\cdots,n,\label{eq9.4.5}\\
-&\pp{h_j}{z_l}=\sum_{s=1}^n\pp{g_j}{w_s}\pp{w_s}{z_l},\;j,l=1,\cdots,n.\label{eq9.4.6}
-\end{align}
-从 \eqref{eq9.4.5} 式即得$h\in H(\Omega_1),j=1,\cdots,n$，所以$H$是全纯映射.由 \eqref{eq9.4.6} 式即得
-\begin{equation*}
-  H'(z) = G'(w)F'(z). \qedhere
-\end{equation*}
+  设$F=(f_1,\cdots,f_n),G=(g_1,\cdots,g_n),H=(h_1,\cdots,h_n)$，其中
+  \[
+    h_j = g_j(f_1,\cdots,f_n),\;j=1,\cdots,n.
+  \]
+  于是
+  \begin{align}
+    & \pp{h_j}{\bar{z}_l} = \sum_{s=1}^n\bigg(\pp{g_j}{w_s}\pp{w_s}{\bar{z}_l}
+    + \pp{g_j}{\bar{w}_s}\pp{\bar{w}_s}{\bar{z}_l}\bigg),\label{eq9.4.3}\\
+    & \pp{h_j}{z_l}=\sum_{s=1}^n\bigg(\pp{g_j}{w_s}\pp{w_s}{z_l}
+    + \pp{g_j}{\bar{w}_s}\pp{\bar{w}_s}{z_l}\bigg).\label{eq9.4.4}
+  \end{align}
+  由Cauchy--Riemann方程组，有
+  \begin{align*}
+    & \pp{w_s}{\bar{z}_l} = 0, s = 1,\cdots ,n\\
+    & \pp{g_j}{\bar{w}_s} = 0,s = 1,\cdots,n.
+  \end{align*}
+  \eqref{eq9.4.3} 式和 \eqref{eq9.4.4} 式分别变为
+  \begin{align}
+    & \pp{h_j}{\bar{z}_l} =  0 ,\;j,l=1,\cdots,n,\label{eq9.4.5}\\
+    & \pp{h_j}{z_l}=\sum_{s=1}^n\pp{g_j}{w_s}\pp{w_s}{z_l},\;j,l=1,\cdots,n.\label{eq9.4.6}
+  \end{align}
+  从 \eqref{eq9.4.5} 式即得$h\in H(\Omega_1),j=1,\cdots,n$，所以$H$是全纯映射.由 \eqref{eq9.4.6} 式即得
+  \begin{equation*}
+    H'(z) = G'(w)F'(z). \qedhere
+  \end{equation*}
 \end{proof}
 
 \begin{xiti}\hypertarget{xiti9.4}{}
-\item \hypertarget{xiti9.4.1}{} 设$f$是$\MC$上的一个整函数，满足$f(0)=f'(0)=0$.令$F(z_1,z_2)=\big(z_1,z_2+f(z_1)\big), I_2$为$2$阶单位方阵.证明：
-    \[F(0)=0,F'(0)= I_2.\]
-\item \hypertarget{xiti9.4.2}{} 设$\Omega=\{z=(z_1,z_2)\in\MC^2:|z_1z_2|<1\}$，任取$h:U\to\MC$为$U$中处处不为零的全纯函数，这里，$U$表示单位圆盘. 令
-    \[F_h(z_1,z_2)=\bigg(z_1h(z_1z_2),\frac{z_2}{h(z_1z_2)}\bigg).\]
-证明：
-\begin{enuma}
-   \item $F_h(0)=0$；
-   \item $(F_h)^{-1}=F_{\frac1h}$；
-   \item 如果$h(0)=1$，那么$F_h'(0)= I_2$.
-\end{enuma}
-\item 设$\Omega$是$\MC^n$中的域，$F:\Omega\to\MC^n$是全纯映射. 设$F=(f_1,\cdots,f_n),f_j=u_j+\ii v_j,j=1,\cdots,n$. 记
-    \begin{align*}
-    &(\textrm JF)(z)=\det F'(z),\\
-    &(\textrm J_\MR F)(z)=\det\begin{pmatrix}
-    \pp{(u_1,\cdots,u_n)}{(x_1,\cdots,x_n)}&\pp{(u_1,\cdots,u_n)}{(y_1,\cdots,y_n)}\\
-    \pp{(v_1,\cdots,v_n)}{(x_1,\cdots,x_n)}&\pp{(v_1,\cdots,v_n)}{(y_1,\cdots,y_n)}
-    \end{pmatrix},
+  \item \hypertarget{xiti9.4.1}{} 设$f$是$\MC$上的一个整函数，满足$f(0)=f'(0)=0$.令$F(z_1,z_2)=\big(z_1,z_2+f(z_1)\big), I_2$为$2$阶单位方阵.证明：
+      \[
+        F(0) = 0,F'(0) = I_2.
+       \]
+  \item \hypertarget{xiti9.4.2}{} 设$\Omega=\{z=(z_1,z_2)\in\MC^2:|z_1z_2|<1\}$，任取$h:U\to\MC$为$U$中处处不为零的全纯函数，这里，$U$表示单位圆盘. 令
+      \[
+        F_h(z_1,z_2) = \bigg(z_1h(z_1z_2),\frac{z_2}{h(z_1z_2)}\bigg).
+      \]
+      证明：
+      \begin{enuma}
+        \item $F_h(0)=0$；
+        \item $(F_h)^{-1}=F_{\frac1h}$；
+        \item 如果$h(0)=1$，那么$F_h'(0)= I_2$.
+      \end{enuma}
+  \item 设$\Omega$是$\MC^n$中的域，$F:\Omega\to\MC^n$是全纯映射. 设$F=(f_1,\cdots,f_n),f_j=u_j+\ii v_j,j=1,\cdots,n$. 记
+      \begin{align*}
+        & (\mathrm JF)(z)=\det F'(z),\\
+        &(\mathrm J_\MR F)(z)=\det\begin{pmatrix}
+        \pp{(u_1,\cdots,u_n)}{(x_1,\cdots,x_n)}&\pp{(u_1,\cdots,u_n)}{(y_1,\cdots,y_n)}\\
+        \pp{(v_1,\cdots,v_n)}{(x_1,\cdots,x_n)}&\pp{(v_1,\cdots,v_n)}{(y_1,\cdots,y_n)}
+      \end{pmatrix},
     \end{align*}
-前者称为$F$的\textbf{复Jacobian}\index{J!Jacobian矩阵!复Jacobian}，后者称为$F$的\textbf{实Jacobian}\index{J!Jacobian矩阵!实Jacobian}.证明：
-\[(\textrm J_\MR F)(z)=|(\textrm JF)(z)|^2.\]
-\item 设$\Omega$是$\MC^n$中的域，$F:\Omega\to \MC^n$是全纯映射.如果存在$a\in\Omega$，使得$F'(a)$可逆，那么一定存在$a$和$F(a)$的邻域$V$和$W$，使得$F$一一地把$V$映为$W$，而且$F$的逆映射$G:W\to V$是全纯的，等式
-    \[G'(w)=\big(F'(z)\big)^{-1}\]
-对$z\in V$成立.
+    前者称为$F$的\textbf{复Jacobian}\index{J!Jacobian矩阵!复Jacobian}，后者称为$F$的\textbf{实Jacobian}\index{J!Jacobian矩阵!实Jacobian}.证明：
+    \[
+      (\mathrm J_\MR F)(z) = |(\mathrm JF)(z)|^2.
+    \]
+  \item 设$\Omega$是$\MC^n$中的域，$F:\Omega\to \MC^n$是全纯映射.如果存在$a\in\Omega$，使得$F'(a)$可逆，那么一定存在$a$和$F(a)$的邻域$V$和$W$，使得$F$一一地把$V$映为$W$，而且$F$的逆映射$G:W\to V$是全纯的，等式
+    \[
+      G'(w) = \big(F'(z)\big)^{-1}
+    \]
+    对$z\in V$成立.
 \end{xiti}
 
 \section{Cartan定理\label{sec9.5}}
 定理 \ref{thm4.5.5} 给出了单位圆盘的全纯自同构.一个自然的问题是，如何确定$\MC^n$中单位球的全纯自同构?在证明定理 \ref{thm4.5.5} 时，用到了Schwarz引理（定理 \ref{thm4.5.3}）的第 \ref{thm4.5.3.3} 个结论，即若$f$是单位圆盘到单位圆盘的映射，$f(0)=0$，如果$f'(0)=1$，那么$f(z)=z$. H. Cartan把这个定理推广到了多复变数.
 
 \begin{theorem}\label{thm9.5.1}\index{D!定理!Cartan定理}
-设$\Omega$是$\MC^n$中包含原点的有界域，如果$F:\Omega\to\Omega$是全纯的，且有$F(0)=0,F'(0)= I_n$，这里，$I_n$是$n$阶单位方阵，那么对任意$z\in\Omega$，有$F(z)=z$.
+  设$\Omega$是$\MC^n$中包含原点的有界域，如果$F:\Omega\to\Omega$是全纯的，且有$F(0)=0,F'(0)= I_n$，这里，$I_n$是$n$阶单位方阵，那么对任意$z\in\Omega$，有$F(z)=z$.
 \end{theorem}
 \begin{proof}
-因为$\Omega$是有界域，故必存在$0<r<R<\infty$，使得$B(0,r)\subset\Omega\subset B(0,R)$. 设$F=(f_1,\cdots,f_n)$，由假定得
-\[f_j(0)=0,\;\pp{f_i}{z_j}(0)=\delta_{ij},\;i,j=1,\cdots,n.\]
-根据定理 \ref{thm9.3.4}，$f_j$在$B(0,r)$中有展开式
-\[f_j(z)=z_j+P_2^{(j)}(z)+\cdots,j=1,\cdots,n,\]
-这里，$P_2^{(j)},P_3^{(j)},\cdots$分别是$z_1,\cdots,z_n$的$2$次、$3$次、$\cdots$齐次多项式. 因而上式可写为
-\begin{equation}\label{eq9.5.1}
-F(z)=z+\sum_{s=2}^\infty F_s(z),
-\end{equation}
-这里，$F_s(z)=\big(P_s^{(1)}(z),\cdots,P_s^{(n)}(z)\big)$. 我们要证明
-\[F_j(z)\equiv0,\;s=2,3,\cdots.\]
-设第一个不为零的是$F_m,m\ge2$，则 \eqref{eq9.4.1} 式可写为
-\begin{equation}\label{eq9.5.2}
-F(z)=z+\sum_{s=m}^\infty F_s(z).
-\end{equation}
-注意到$P_m^{(j)}(z)=\sum_{|\alpha|=m}a_\alpha z^\alpha$，所以
-\begin{align*}
-P_m^{(j)}\big(F(z)\big)&=P_m^{(j)}(f_1,\cdots,f_n)=\sum_{|\alpha|=m}a_\alpha
-f_1^{\alpha_1}\cdots f_n^{\alpha_n}\\
-&=\sum_{|\alpha|=m}a_\alpha(z_1+\cdots)^{\alpha_1}\cdots(z_n+\cdots)^{\alpha_n}\\
-&=\sum_{|\alpha|=m}a_\alpha z^\alpha+\cdots=P_m^{(j)}(z)+\cdots,
-\end{align*}
-因而
-\[F_m\big(F(z)\big)=F_m(z)+\cdots.\]
-记$F^2=F\circ F,F^k=F\circ F^{k-1}$，那么
-\begin{align*}
-F^2(z)&=F\big(F(z)\big)\\
-&=F(z)=F_m\big(F(z)\big)+\cdots\\
-&=z+2F_m(z)+\cdots.
-\end{align*}
-一般可得
-\[F^k(z)=z+kF_m(z)+\cdots,\;k=1,2,\cdots,\;z\in B(0,r).\]
-因为$F_m(z)$的每个分量都是$m$次齐次多项式，所以
-\[F^k(\ee^{\ii\theta}z)=\ee^{\ii\theta}z+k\ee^{\ii m\theta}F_m(z)+\cdots.\]
-两端乘以$\ee^{-\ii m\theta}$，并对$\theta$从$0$到$2\pi$积分，得
-\begin{equation}\label{eq9.5.3}
-kF_m(z)=\frac1{2\pi}\int_0^{2\pi}F^k(\ee^{\ii\theta}z)\ee^{-\ii m\theta}\dif \theta,
-\end{equation}
-这里，积分是对$F$的每个分量进行的.因为$F$把$\Omega$映入$\Omega$，所以$F^k$也把$\Omega$映入$\Omega$，因而
-\[|F^k(\ee^{\ii\theta}z)|<R,\;k=1,2,\cdots\]
-对所有$z\in B(0,r)$及$0\le\theta\le2\pi$成立. 由 \eqref{eq9.5.3} 式即得
-\[k|F_m(z)|<R,\;k=1,2,\cdots\]
-对每个$z\in B(0,r)$成立，因而在$B(0,r)$上有$F_m(z)\equiv0$. 再由唯一性定理（定理 \ref{thm9.1.4}），$F_m(z)\equiv0$在$\Omega$上成立，所以在$\Omega$上有$F(z)\equiv z$.
+  因为$\Omega$是有界域，故必存在$0<r<R<\infty$，使得$B(0,r)\subset\Omega\subset B(0,R)$. 设$F=(f_1,\cdots,f_n)$，由假定得
+  \[
+    f_j(0) = 0,\;\pp{f_i}{z_j}(0) = \delta_{ij},\;i,j = 1,\cdots,n.
+  \]
+  根据定理 \ref{thm9.3.4}，$f_j$在$B(0,r)$中有展开式
+  \[
+    f_j(z) = z_j + P_2^{(j)}(z) + \cdots,j = 1,\cdots,n,
+  \]
+  这里，$P_2^{(j)},P_3^{(j)},\cdots$分别是$z_1,\cdots,z_n$的$2$次、$3$次、$\cdots$齐次多项式. 因而上式可写为
+  \begin{equation}\label{eq9.5.1}
+    F(z) = z + \sum_{s=2}^\infty F_s(z),
+  \end{equation}
+  这里，$F_s(z)=\big(P_s^{(1)}(z),\cdots,P_s^{(n)}(z)\big)$. 我们要证明
+  \[
+    F_j(z) \equiv 0,\;s = 2,3,\cdots.
+  \]
+  设第一个不为零的是$F_m,m\ge2$，则 \eqref{eq9.4.1} 式可写为
+  \begin{equation}\label{eq9.5.2}
+    F(z) = z + \sum_{s=m}^\infty F_s(z).
+  \end{equation}
+  注意到$P_m^{(j)}(z)=\sum_{|\alpha|=m}a_\alpha z^\alpha$，所以
+  \begin{align*}
+    P_m^{(j)}\big(F(z)\big) & = P_m^{(j)}(f_1,\cdots,f_n)=\sum_{|\alpha|=m}a_\alpha
+    f_1^{\alpha_1}\cdots f_n^{\alpha_n}\\
+    & = \sum_{|\alpha|=m}a_\alpha(z_1+\cdots)^{\alpha_1}\cdots(z_n+\cdots)^{\alpha_n}\\
+    & = \sum_{|\alpha|=m}a_\alpha z^\alpha+\cdots=P_m^{(j)}(z)+\cdots,
+  \end{align*}
+  因而
+  \[
+    F_m \big( F(z) \big) = F_m(z) + \cdots.
+  \]
+  记$F^2=F\circ F,F^k=F\circ F^{k-1}$，那么
+  \begin{align*}
+    F^2(z) & = F\big(F(z)\big)\\
+    & = F(z) = F_m\big(F(z)\big)+\cdots\\
+    & =z +2F_m(z)+\cdots.
+  \end{align*}
+  一般可得
+  \[
+    F^k(z) = z + kF_m(z) + \cdots,\;k = 1,2,\cdots,\;z\in B(0,r).
+  \]
+  因为$F_m(z)$的每个分量都是$m$次齐次多项式，所以
+  \[
+    F^k(\ee^{\ii\theta}z) = \ee^{\ii\theta}z + k\ee^{\ii m\theta}F_m(z) + \cdots.
+  \]
+  两端乘以$\ee^{-\ii m\theta}$，并对$\theta$从$0$到$2\pi$积分，得
+  \begin{equation}\label{eq9.5.3}
+    kF_m(z) = \frac1{2\pi}\int_0^{2\pi}F^k(\ee^{\ii\theta}z)\ee^{-\ii m\theta}\dif \theta,
+  \end{equation}
+  这里，积分是对$F$的每个分量进行的.因为$F$把$\Omega$映入$\Omega$，所以$F^k$也把$\Omega$映入$\Omega$，因而
+  \[
+    |F^k(\ee^{\ii\theta}z)| < R,\;k = 1,2,\cdots
+  \]
+  对所有$z\in B(0,r)$及$0\le\theta\le2\pi$成立. 由 \eqref{eq9.5.3} 式即得
+  \[
+    k|F_m(z)| < R,\;k=1,2,\cdots
+  \]
+  对每个$z\in B(0,r)$成立，因而在$B(0,r)$上有$F_m(z)\equiv0$. 再由唯一性定理（定理 \ref{thm9.1.4}），$F_m(z)\equiv0$在$\Omega$上成立，所以在$\Omega$上有$F(z)\equiv z$.
 \end{proof}
 
 Cartan证明的另一个定理是对圆型域上的双全纯映射来说的.
 \begin{definition}\label{def9.5.2}
-设$\Omega$是$\MC^n$中的域，如果对任意$z\in\Omega$及实数$\theta$，均有$\ee^{\ii\theta}z\in\Omega$，就称$\Omega$为\textbf{圆型域}\index{Y!域!圆型域}.
+  设$\Omega$是$\MC^n$中的域，如果对任意$z\in\Omega$及实数$\theta$，均有$\ee^{\ii\theta}z\in\Omega$，就称$\Omega$为\textbf{圆型域}\index{Y!域!圆型域}.
 \end{definition}
 
 显然，球和多圆柱都是圆型域，Reinhardt域也一定是圆型域，但圆型域不一定是Reinhardt域.例如，$\Omega=\{(z_1,\cdots,z_n):|z_1+\cdots+z_n|<1\}$显然是圆型域，但它不是Reinhardt域.
 \begin{definition}\label{def9.5.3}
-设$\Omega$是$\MC^n$中的域，$F:\Omega\to\MC^n$是全纯映射.如果$F$有全纯的逆映射$F^{-1}$，就称$F$是\textbf{双全纯映射}.\index{Q!全纯映射!双全纯映射}
+  设$\Omega$是$\MC^n$中的域，$F:\Omega\to\MC^n$是全纯映射.如果$F$有全纯的逆映射$F^{-1}$，就称$F$是\textbf{双全纯映射}.\index{Q!全纯映射!双全纯映射}
 \end{definition}
 
 对于圆型域上的双全纯映射，有下面的
 \begin{theorem}\label{thm9.5.4}
-设$\Omega_1$和$\Omega_2$是$\MC^n$中包含原点的圆型域，其中$\Omega_1$是有界的.如果$F:\Omega_1\to\Omega_2$是双全纯映射，且$F(0)=0$，那么$F$一定是线性映射.
+  设$\Omega_1$和$\Omega_2$是$\MC^n$中包含原点的圆型域，其中$\Omega_1$是有界的.如果$F:\Omega_1\to\Omega_2$是双全纯映射，且$F(0)=0$，那么$F$一定是线性映射.
 \end{theorem}
 \begin{proof}
-令$G=F^{-1}$，因为$G\big(F(z)\big)=z$，对等式两边求导数，由命题 \ref{prop9.4.4} 得$G'(0)F'(0)$\\$= I_n$. 对于固定的实数$\theta$，定义
-\[H(z)=G\big(\ee^{-\ii\theta}F(\ee^{\ii\theta}z)\big),\;z\in\Omega_1.\]
-因为$\Omega_1$和$\Omega_2$都是圆型域，所以$H$是$\Omega_1\to\Omega_1$的全纯映射，而且
-$H(0)=0,H'(0)=G'(0)F'(0)= I_n$. 又因为$\Omega_1$是有界域，于是由定理 \ref{thm9.5.1}，$H(z)=z$对$z\in\Omega_1$成立. 由此可得
-\[F(z)=F\big(H(z)\big)=F\big[G\big(\ee^{-\ii\theta}F(\ee^{\ii\theta}z)\big)\big]
-=\ee^{-\ii\theta}F(\ee^{\ii\theta}z),\]
-即
-\begin{equation}\label{eq9.5.4}
-F(\ee^{\ii\theta}z)=\ee^{\ii\theta}F(z),
-\end{equation}
-对任意$z\in\Omega_1$及实数$\theta$成立.今在原点附近作$F(z)$的齐次展开式：
-\begin{equation}\label{eq9.5.5}
-F(z)=F'(0)z+F_m(z)+\cdots,\;m\ge2,
-\end{equation}
-这里，$F(z),z,F_m(z)$都写成列向量，$F_m(z)$的每个分量都是$m$次齐次多项式.在 \eqref{eq9.5.5} 式中用$\ee^{\ii\theta}z$代替$z$，并注意到等式 \eqref{eq9.5.4}，即得
-\begin{equation}\label{eq9.5.6}
-F(z)=F'(0)z+\ee^{\ii(m-1)\theta}F_m(z)+\cdots.
-\end{equation}
-比较 \eqref{eq9.5.5} 式与 \eqref{eq9.5.6} 式，即得$F_m(z)=0$，因而
-\[F(z)=F'(0)z.\]
-这就证明了$F$是一个线性映射.
+  令$G=F^{-1}$，因为$G\big(F(z)\big)=z$，对等式两边求导数，由命题 \ref{prop9.4.4} 得$G'(0)F'(0)$\\$= I_n$. 对于固定的实数$\theta$，定义
+  \[
+   H(z) = G\big(\ee^{-\ii\theta}F(\ee^{\ii\theta}z)\big),\;z\in\Omega_1.
+  \]
+  因为$\Omega_1$和$\Omega_2$都是圆型域，所以$H$是$\Omega_1\to\Omega_1$的全纯映射，而且
+  $H(0)=0,H'(0)=G'(0)F'(0)= I_n$. 又因为$\Omega_1$是有界域，于是由定理 \ref{thm9.5.1}，$H(z)=z$对$z\in\Omega_1$成立. 由此可得
+  \[
+    F(z) = F\big(H(z)\big) = F\big[G\big(\ee^{-\ii\theta}F(\ee^{\ii\theta}z)\big)\big]
+    = \ee^{-\ii\theta}F(\ee^{\ii\theta}z),
+  \]
+  即
+  \begin{equation}\label{eq9.5.4}
+    F(\ee^{\ii\theta}z) = \ee^{\ii\theta}F(z),
+  \end{equation}
+  对任意$z\in\Omega_1$及实数$\theta$成立.今在原点附近作$F(z)$的齐次展开式：
+  \begin{equation}\label{eq9.5.5}
+    F(z) = F'(0)z + F_m(z) + \cdots,\;m\ge2,
+  \end{equation}
+  这里，$F(z),z,F_m(z)$都写成列向量，$F_m(z)$的每个分量都是$m$次齐次多项式.在 \eqref{eq9.5.5} 式中用$\ee^{\ii\theta}z$代替$z$，并注意到等式 \eqref{eq9.5.4}，即得
+  \begin{equation}\label{eq9.5.6}
+    F(z) = F'(0)z + \ee^{\ii(m-1) \theta}F_m(z)+\cdots.
+  \end{equation}
+  比较 \eqref{eq9.5.5} 式与 \eqref{eq9.5.6} 式，即得$F_m(z)=0$，因而
+  \[
+    F(z) = F'(0)z.
+  \]
+  这就证明了$F$是一个线性映射.
 \end{proof}
 
 设$\Omega$是$\MC^n$中的域，如果$F$是把$\Omega$映为自己的双全纯映射，就称$F$是$\Omega$的一个\textbf{全纯自同构}\index{Q!全纯自同构}.与单复变的情形一样，$\Omega$的全纯自同构的全体记为$\Aut(\Omega)$.
 \begin{definition}\label{def9.5.5}
-设$\Omega$是$\MC^n$中的域，如果对$\Omega$中任意两点$a,b$，必有$\varphi\in\Aut(\Omega)$，使得$\varphi(a)=b$，就称$\Omega$为\textbf{可递域}\index{Y!域!可递域}或\textbf{齐性域}.
+  设$\Omega$是$\MC^n$中的域，如果对$\Omega$中任意两点$a,b$，必有$\varphi\in\Aut(\Omega)$，使得$\varphi(a)=b$，就称$\Omega$为\textbf{可递域}\index{Y!域!可递域}或\textbf{齐性域}.
 \index{Y!域!齐性域}
 \end{definition}
 
 可递域有很多良好的性质.
 \begin{theorem}\label{thm9.5.6}
-设$\Omega_1$和$\Omega_2$是$\MC^n$中包含原点的圆型域，其中$\Omega_1$是有界的可递域. 如果存在双全纯映射$F$把$\Omega_1$映为$\Omega_2$，那么一定存在线性映射把$\Omega_1$映为$\Omega_2$.
+  设$\Omega_1$和$\Omega_2$是$\MC^n$中包含原点的圆型域，其中$\Omega_1$是有界的可递域. 如果存在双全纯映射$F$把$\Omega_1$映为$\Omega_2$，那么一定存在线性映射把$\Omega_1$映为$\Omega_2$.
 \end{theorem}
 \begin{proof}
-设$a=F^{-1}(0)$. 因为$\Omega_1$是可递的，故必存在$\varphi\in\Aut(\Omega_1)$，使得$\varphi(0)=a$. 令$G=F\circ \varphi$，于是
-\[G(\Omega_1)=F\big(\varphi(\Omega_1)\big)=F(\Omega_1)=\Omega_2,\]
-而且$G(0)=F\big(\varphi(0)\big)=F(a)=0$. 应用定理 \ref{thm9.5.4}，即知$G$是线性映射.
+  设$a=F^{-1}(0)$. 因为$\Omega_1$是可递的，故必存在$\varphi\in\Aut(\Omega_1)$，使得$\varphi(0)=a$. 令$G=F\circ \varphi$，于是
+  \[
+    G(\Omega_1) = F\big(\varphi(\Omega_1)\big) = F(\Omega_1) = \Omega_2,
+  \]
+  而且$G(0)=F\big(\varphi(0)\big)=F(a)=0$. 应用定理 \ref{thm9.5.4}，即知$G$是线性映射.
 \end{proof}
 
 \begin{xiti}
-\item 由习题  \hyperlink{xiti9.4}{9.4} 中的第 \hyperlink{xiti9.4.1}{1}，\hyperlink{xiti9.4.2}{2} 两题说明，定理 \ref{thm9.5.1} 和定理 \ref{thm9.5.4} 中域$\Omega$和$\Omega_1$有界的条件是不能去掉的.
-\item 设$F=(f_1,f_2):U^2\to B_2$是双全纯映射.
-\begin{enuma}
-  \item 证明：对于任意$\{z_k\}\subset U$（$U$是单位圆盘），$|z_k|\to1$，必有子列$\{z_{k_v}\}$，使得
-      \[\lim_{v\to\infty}F(z_{k_v},w)=\varphi(w),\]
-  其中，$\varphi$是常数映射，即$\varphi(w)=(c_1,c_2)$；
-  \item 由此证明$F$不存在，即不存在把$U^2$一一地映为$B_2$的双全纯映射.
-\end{enuma}
-\item 设$f\in\Aut(U^n),U^n$是单位多圆柱.
-\begin{enuma}
-  \item 如果$f(0)=0$，那么一定存在实数$\theta_1,\cdots,\theta_n$和置换$\tau:(1,\cdots,n)\to(1,\cdots,n)$，使得
-      \[f(z)=\big(\ee^{\ii\theta_1}z_{\tau(1)},\cdots,\ee^{\ii\theta_n}z_{\tau(n)}\big);\]
-  \item 如果$f(a)=0,a\ne0$，那么一定存在实数$\theta_1,\cdots,\theta_n$和置换$\tau:(1,\cdots,n)\to(1,\cdots,n)$，使得
-  \[f(z)=\bigg(\ee^{\ii\theta_1}\frac{z_{\tau(1)}-a_1}{1-\bar{a_1}z_{\tau(1)}},
-  \cdots,\ee^{\ii\theta_n}\frac{z_{\tau(n)}-a_n}{1-\bar{a_n}z_{\tau(n)}}\bigg).\]
-\end{enuma}
+  \item 由习题  \hyperlink{xiti9.4}{9.4} 中的第 \hyperlink{xiti9.4.1}{1}，\hyperlink{xiti9.4.2}{2} 两题说明，定理 \ref{thm9.5.1} 和定理 \ref{thm9.5.4} 中域$\Omega$和$\Omega_1$有界的条件是不能去掉的.
+  \item 设$F=(f_1,f_2):U^2\to B_2$是双全纯映射.
+    \begin{enuma}
+      \item 证明：对于任意$\{z_k\}\subset U$（$U$是单位圆盘），$|z_k|\to1$，必有子列$\{z_{k_v}\}$，使得
+        \[
+          \lim_{v\to\infty}F(z_{k_v},w) = \varphi(w),
+        \]
+        其中，$\varphi$是常数映射，即$\varphi(w)=(c_1,c_2)$；
+      \item 由此证明$F$不存在，即不存在把$U^2$一一地映为$B_2$的双全纯映射.
+    \end{enuma}
+  \item 设$f\in\Aut(U^n),U^n$是单位多圆柱.
+    \begin{enuma}
+      \item 如果$f(0)=0$，那么一定存在实数$\theta_1,\cdots,\theta_n$和置换$\tau:(1,\cdots,n)\to(1,\cdots,n)$，使得
+         \[
+           f(z) = \big(\ee^{\ii\theta_1}z_{\tau(1)},\cdots,\ee^{\ii\theta_n}z_{\tau(n)}\big);
+         \]
+      \item 如果$f(a)=0,a\ne0$，那么一定存在实数$\theta_1,\cdots,\theta_n$和置换$\tau:(1,\cdots,n)\to(1,\cdots,n)$，使得
+         \[
+           f(z) = \bigg(\ee^{\ii\theta_1}\frac{z_{\tau(1)}-a_1}{1-\bar{a_1}z_{\tau(1)}},
+          \cdots,\ee^{\ii\theta_n}\frac{z_{\tau(n)}-a_n}{1-\bar{a_n}z_{\tau(n)}}\bigg).
+         \]
+    \end{enuma}
 \end{xiti}
 
 \section{球的全纯自同构和Poincar\'e定理\label{sec9.6}}
@@ -702,156 +865,192 @@ F(z)=F'(0)z+\ee^{\ii(m-1)\theta}F_m(z)+\cdots.
 
 先定出让原点保持不变的全纯自同构.
 \begin{theorem}\label{thm9.6.1}
-设$\varphi\in\Aut(B_n)$，如果$\varphi(0)=0$，那么$\varphi$是一个酉变换，即存在酉方阵$U$，使得
-\[\varphi(z)=zU,\;z\in B_n.\]
+  设$\varphi\in\Aut(B_n)$，如果$\varphi(0)=0$，那么$\varphi$是一个酉变换，即存在酉方阵$U$，使得
+  \[
+    \varphi(z) = zU,\;z\in B_n.
+  \]
 \end{theorem}
 \begin{proof}
-由定理 \ref{thm9.5.4} 知道，$\varphi$是一个线性变换.设$\varphi(z)=zT$，这里，$T$是一个$n$阶可逆方阵. 对于任意$z\in B_n$，如果$|z|<|zT|$，那么$\frac z{|zT|}\in B_n$，因而$\bigg(\frac z{|zT|}\bigg)T\in B_n$，但$\bigg|\bigg(\frac z{|zT|}\bigg)T\bigg|=1$，这不可能. 同理可证，$|z|>|zT|$也别可能. 因而对所有$z\in B_n$，都有$|z|=|zT|$，这说明$T$是酉方阵.
+  由定理 \ref{thm9.5.4} 知道，$\varphi$是一个线性变换.设$\varphi(z)=zT$，这里，$T$是一个$n$阶可逆方阵. 对于任意$z\in B_n$，如果$|z|<|zT|$，那么$\frac z{|zT|}\in B_n$，因而$\bigg(\frac z{|zT|}\bigg)T\in B_n$，但$\bigg|\bigg(\frac z{|zT|}\bigg)T\bigg|=1$，这不可能. 同理可证，$|z|>|zT|$也别可能. 因而对所有$z\in B_n$，都有$|z|=|zT|$，这说明$T$是酉方阵.
 \end{proof}
 
 在下面的讨论中，$z=(z_1,\cdots,z_n),a=(a_1,\cdots,a_n)$都表示行向量，$z',a'$表示它们的转置，是一个列向量，因而$az'$表示一个数，而$a'z$表示一个方阵：
 \begin{align*}
-&az'=(a_1,\cdots,a_n)\begin{pmatrix}
-z_1\\\vdots\\z_n
-\end{pmatrix}=a_1z_1+\cdots+a_nz_n,\\
-&a'z=\begin{pmatrix}
-a_1\\\vdots\\a_n
-\end{pmatrix}(z_1,\cdots,z_n)=\begin{pmatrix}
-a_1z_1&\cdots&a_1z_n\\
-\cdots&\cdots&\cdots\\
-a_nz_1&\cdots&a_nz_n
-\end{pmatrix}.
+  & az' = (a_1,\cdots,a_n)
+    \begin{pmatrix}
+      z_1 \\ \vdots \\ z_n
+    \end{pmatrix}
+    = a_1z_1 + \cdots + a_nz_n,\\
+    & a'z =
+    \begin{pmatrix}
+      a_1 \\ \vdots \\ a_n
+    \end{pmatrix}(z_1,\cdots,z_n) =
+    \begin{pmatrix}
+      a_1z_1 & \cdots & a_1z_n\\
+      \cdots & \cdots & \cdots\\
+      a_nz_1 & \cdots & a_nz_n
+    \end{pmatrix}.
 \end{align*}
 
 \begin{theorem}\label{thm9.6.2}
-对于每个$a\in B_n$，记$s^2=1-|a|^2,A=sI_n+\frac{\bar {a'}a}{1+s}$，那么映射
-\[\varphi_a(z)=\frac{a-zA}{1-\bar az'}\]
-具有下列性质：
-\begin{eenum}
- \item \label{thm9.6.2.1} $\varphi_a(0)=a,\varphi_a(a)=0$；
- \item \label{thm9.6.2.2} $\varphi_a'(0)=a'\bar a-A',\varphi_a'(a)=-\frac{A'}{s^2}；$
- \item \label{thm9.6.2.3} 对$z\in\bar{B_n}$，有
- \[1-|\varphi_a(z)|^2=\frac{\big(1-|a|^2\big)\big(1-|z|^2\big)}{|1-\bar az'|^2};\]
- \item \label{thm9.6.2.4} $\varphi_a\big(\varphi_a(z)\big)=z$；
- \item \label{thm9.6.2.5} $\varphi_a\in\Aut(B_n)$.
-\end{eenum}
+  对于每个$a\in B_n$，记$s^2=1-|a|^2,A=sI_n+\frac{\bar {a'}a}{1+s}$，那么映射
+  \[
+    \varphi_a(z) = \frac{a-zA}{1-\bar az'}
+  \]
+  具有下列性质：
+  \begin{eenum}
+    \item \label{thm9.6.2.1} $\varphi_a(0)=a,\varphi_a(a)=0$；
+    \item \label{thm9.6.2.2} $\varphi_a'(0)=a'\bar a-A',\varphi_a'(a)=-\frac{A'}{s^2}；$
+    \item \label{thm9.6.2.3} 对$z\in\bar{B_n}$，有
+        \[
+          1-|\varphi_a(z)|^2 = \frac{\big(1-|a|^2\big)\big(1-|z|^2\big)}{|1-\bar az'|^2};
+        \]
+    \item \label{thm9.6.2.4} $\varphi_a\big(\varphi_a(z)\big)=z$；
+    \item \label{thm9.6.2.5} $\varphi_a\in\Aut(B_n)$.
+  \end{eenum}
 \end{theorem}
 \begin{proof}
-(1) $\varphi_a(0)=0$是显然的. 由于
-\[aA=sa+\frac{a\bar {a'}a}{1+s}=sa+(1-s)a=a,\]
-所以$\varphi_a(a)=0$.
+  (1) $\varphi_a(0)=0$是显然的. 由于
+  \[
+    aA = sa + \frac{a\bar {a'}a}{1+s} = sa + (1 - s)a = a,
+  \]
+  所以$\varphi_a(a)=0$.
 
-(2)因为
-\begin{align*}
-\varphi_a(z)&=\big(a-zA)(1+\bar az'+o(|z|)\big)\\
-&=a-zA+z\bar {a'}a+o(|z|)\\
-&=\varphi_a(0)+z(\bar {a'}a-A)+o(|z|),
-\end{align*}
-根据全纯映射导数的定义（定义 \ref{def9.4.2}），即得
-\[\varphi_a'(0)=a'\bar a-A'.\]
-为了计算$\varphi_a'(a)$，注意
-\begin{align*}
-\varphi_a(a+h)-\varphi_a(a)&=\varphi_a(a+h)=\frac{a-(a+h)A}{1-\bar a(a+h)'}\\
-&=-\frac{hA}{s^2}\bigg(1-\frac{\bar ah'}{s^2}\bigg)^{-1}=
--\frac{hA}{s^2}\bigg(1+\frac{\bar ah'}{s^2}+o(|h|)\bigg)\\
-&=-\frac{hA}{s^2}+o(|h|),
-\end{align*}
-由此即得
-\[\varphi_a'(a)=-\frac{A'}{s^2}.\]
+  (2)因为
+    \begin{align*}
+      \varphi_a(z) & = \big(a - zA)(1 + \bar az' + o(|z|)\big)\\
+      & = a - zA + z\bar {a'}a + o(|z|)\\
+      & = \varphi_a(0) + z(\bar {a'}a - A) + o(|z|),
+    \end{align*}
+  根据全纯映射导数的定义（定义 \ref{def9.4.2}），即得
+  \[
+    \varphi_a'(0) = a'\bar a - A'.
+  \]
+  为了计算$\varphi_a'(a)$，注意
+  \begin{align*}
+    \varphi_a(a+h) - \varphi_a(a) & = \varphi_a(a+h) = \frac{a-(a+h)A}{1-\bar a(a+h)'}\\
+    & = -\frac{hA}{s^2}\bigg(1-\frac{\bar ah'}{s^2}\bigg)^{-1}=
+    - \frac{hA}{s^2}\bigg(1+\frac{\bar ah'}{s^2}+o(|h|)\bigg)\\
+    & = -\frac{hA}{s^2}+o(|h|),
+  \end{align*}
+  由此即得
+  \[
+    \varphi_a'(a) = -\frac{A'}{s^2}.
+  \]
 
-(3)通过直接计算，得
-\begin{equation}\label{eq9.6.1}
-\begin{aligned}
-1-|\varphi_a(z)|^2={}&1-\varphi_a(z)\bar{\varphi_a(z)'}\\
-={}&1-\frac{a-zA}{1-\bar az'}\frac{\bar{a'}-\bar{A'}\bar{z'}}{1-a\bar{z'}}\\
-={}&\frac1{|1-\bar az'|^2}(1-\bar az'-a\bar{z'}+\bar az'z\bar{z'}\\
-&-a\bar{a'}+zA\bar{a'}+a\bar{A'}\bar{z'}-zA\bar{A'}\bar{z'}).
-\end{aligned}
-\end{equation}
-注意到
-\begin{align*}
-&a\bar{A'}=aA=a,\\
-&A\bar{a'}=\bar{a'},
-\end{align*}
-所以
-\begin{align*}
-&a\bar{A'}\bar{z'}=a\bar{z'},\\
-&zA\bar{a'}=z\bar{a'}=\bar az'.
-\end{align*}
-显然$\bar{A'}=A$，所以
-\begin{align*}
-A\bar{A'}&=A^2=s^2I_n+\frac{2s\bar{a'}a}{1+s}+\frac{\bar{a'}a\bar{a'}a}{(1+s)^2}\\
-&=s^2I_n+\frac{2s\bar{a'}a}{1+s}+\frac{1-s}{1+s}\bar{a'}a\\
-&=s^2I_n+\bar{a'}a,
-\end{align*}
-即
-\[\bar {a'}a-A\bar{A'}=-s^2I_n.\]
-于是，\eqref{eq9.6.1} 式可写为
-\begin{align*}
-1-|\varphi_a(z)|^2&=\frac1{|1-\bar az'|^2}\big(1-|a|^2+z\bar{a'}a\bar{z'}-
-zA\bar{A'}\bar{z'}\big)\\
-&=\frac1{|1-\bar az'|^2}\big(1-|a|^2+z(\bar{a'}a-A\bar{A'})\bar{z'}\big)\\
-&=\frac1{|1-\bar az'|^2}\big(1-|a|^2-s^2z\bar{z'}\big)\\
-&=\frac1{|1-\bar az'|^2}\big(1-|a|^2\big)\big(1-|z|^2\big.)
-\end{align*}
-这就是要证明的.
+  (3)通过直接计算，得
+    \begin{equation}\label{eq9.6.1}
+      \begin{aligned}
+        1 - |\varphi_a(z)|^2 = {}& 1-\varphi_a(z) \bar{\varphi_a(z)'}\\
+        = {}& 1 - \frac{a-zA}{1-\bar az'}\frac{\bar{a'} - \bar{A'}\bar{z'}}{1-a\bar{z'}}\\
+        = {}& \frac1{|1-\bar az'|^2}(1-\bar az'-a\bar{z'} + \bar az'z\bar{z'}\\
+        & - a\bar{a'}+zA\bar{a'}+a\bar{A'}\bar{z'} - zA\bar{A'}\bar{z'}).
+      \end{aligned}
+    \end{equation}
+  注意到
+  \begin{align*}
+    & a\bar{A'} = aA = a,\\
+    & A\bar{a'} = \bar{a'},
+  \end{align*}
+  所以
+  \begin{align*}
+    & a\bar{A'} \bar{z'} = a\bar{z'},\\
+    & zA \bar{a'} = z\bar{a'} = \bar az'.
+  \end{align*}
+  显然$\bar{A'}=A$，所以
+  \begin{align*}
+    A\bar{A'} & = A^2 = s^2I_n + \frac{2s\bar{a'}a}{1+s} + \frac{\bar{a'}a\bar{a'}a}{(1+s)^2}\\
+    & = s^2I_n + \frac{2s\bar{a'}a}{1+s} + \frac{1-s}{1+s}\bar{a'}a\\
+    & = s^2I_n + \bar{a'}a,
+  \end{align*}
+  即
+  \[
+    \bar {a'}a - A\bar{A'} = -s^2I_n.
+  \]
+  于是，\eqref{eq9.6.1} 式可写为
+  \begin{align*}
+    1 - |\varphi_a(z)|^2 & = \frac1{|1-\bar az'|^2}\big(1-|a|^2+z\bar{a'}a\bar{z'}-
+    zA\bar{A'}\bar{z'}\big)\\
+    & = \frac1{|1-\bar az'|^2}\big(1-|a|^2 + z(\bar{a'}a-A\bar{A'})\bar{z'}\big)\\
+    & = \frac1{|1-\bar az'|^2}\big(1-|a|^2 - s^2z\bar{z'}\big)\\
+    & = \frac1{|1-\bar az'|^2}\big(1-|a|^2\big)\big(1-|z|^2\big.)
+  \end{align*}
+  这就是要证明的.
 
-(4) 记$H=\varphi_a\circ\varphi_a$. 由 \ref{thm9.6.2.3} 知$\varphi_a$是把$B_n$映入$B_n$的全纯映射，所以$H$也是把$B_n$映入$B_n$的全纯映射. 由 \ref{thm9.6.2.1} 得
-\[H(0)=\varphi_a\big(\varphi_a(0)\big)=\varphi_a(a)=0.\]
-再由命题 \ref{prop9.4.4} 及 \ref{thm9.6.2.2}，可得
-\[H'(0)=\varphi_a'(a)\varphi_a'(0)=-\frac{A'}{s^2}(a'\bar a-A')=I_n.\]
-于是由定理 \ref{thm9.5.1}，即得
-\[\varphi_a\big(\varphi_a(z)\big)=z.\]
+  (4) 记$H=\varphi_a\circ\varphi_a$. 由 \ref{thm9.6.2.3} 知$\varphi_a$是把$B_n$映入$B_n$的全纯映射，所以$H$也是把$B_n$映入$B_n$的全纯映射. 由 \ref{thm9.6.2.1} 得
+  \[
+    H(0) = \varphi_a\big(\varphi_a(0)\big) = \varphi_a(a) = 0.
+  \]
+  再由命题 \ref{prop9.4.4} 及 \ref{thm9.6.2.2}，可得
+  \[
+    H'(0) = \varphi_a'(a)\varphi_a'(0) = -\frac{A'}{s^2}(a'\bar a-A') = I_n.
+  \]
+  于是由定理 \ref{thm9.5.1}，即得
+  \[
+    \varphi_a\big(\varphi_a(z)\big) = z.
+  \]
 
-(5) 由 \ref{thm9.6.2.3} 知$\varphi_a$是把$B_n$映入$B_n$的全纯映射，由 \ref{thm9.6.2.4} 知$\varphi_a^{-1}=\varphi_a$是全纯的，因而$\varphi_a\in\Aut(B_n)$.
+  (5) 由 \ref{thm9.6.2.3} 知$\varphi_a$是把$B_n$映入$B_n$的全纯映射，由 \ref{thm9.6.2.4} 知$\varphi_a^{-1}=\varphi_a$是全纯的，因而$\varphi_a\in\Aut(B_n)$.
 \end{proof}
 
 上面证明了$\varphi_a$是$B_n$的一个全纯自同构，但是否$B_n$的每个自同构都能写成这种样子呢?下面的定理断言，$B_n$的任何自同构必是$\varphi$和一个酉变换的复合.
 \begin{theorem}\label{thm9.6.3}
-设$\psi\in\Aut(B_n)$，如果$\psi^{-1}(0)=a$，则必存在唯一的酉方阵$U$，使得对每个$z\in B_n$，有
-\[\psi(z)=\varphi_a(z)U.\]
+  设$\psi\in\Aut(B_n)$，如果$\psi^{-1}(0)=a$，则必存在唯一的酉方阵$U$，使得对每个$z\in B_n$，有
+  \[
+    \psi(z) = \varphi_a(z)U.
+  \]
 \end{theorem}
 \begin{proof}
-记$f=\psi\circ \varphi_a$，则$f\in\Aut(B_n)$，且$f(0)=\psi(a)=0$. 由定理 \ref{thm9.6.1} 知，$f$是一个酉变换，即存在酉方阵$U$，使得$\psi\big(\varphi_a(w)\big)=wU$. 令$\varphi_a(w)=z$，则$w=\varphi_a(z)$，因而$\psi(z)=\varphi_a(z)U$. $U$的唯一性是显然的.
+  记$f=\psi\circ \varphi_a$，则$f\in\Aut(B_n)$，且$f(0)=\psi(a)=0$. 由定理 \ref{thm9.6.1} 知，$f$是一个酉变换，即存在酉方阵$U$，使得$\psi\big(\varphi_a(w)\big)=wU$. 令$\varphi_a(w)=z$，则$w=\varphi_a(z)$，因而$\psi(z)=\varphi_a(z)U$. $U$的唯一性是显然的.
 \end{proof}
 
 现在很容易证明下面的
 \begin{theorem}\label{thm9.6.4}
-单位球$B_n$是$\MC^n$中的可递域.
+  单位球$B_n$是$\MC^n$中的可递域.
 \end{theorem}
 \begin{proof}
-任取$a,b\in B_n$，则有$\varphi_a\in\Aut(B_n)$，使得$\varphi_a(a)=0$，同时有$\varphi_b\in\Aut(B_n)$，使得$\varphi_b(0)=b$. 令$\psi=\varphi_b\circ\varphi_a$，则当然$\psi\in\Aut(B_n)$，而$\psi(a)=b$.所以$B_n$是可递域.
+  任取$a,b\in B_n$，则有$\varphi_a\in\Aut(B_n)$，使得$\varphi_a(a)=0$，同时有$\varphi_b\in\Aut(B_n)$，使得$\varphi_b(0)=b$. 令$\psi=\varphi_b\circ\varphi_a$，则当然$\psi\in\Aut(B_n)$，而$\psi(a)=b$.所以$B_n$是可递域.
 \end{proof}
 
 \begin{definition}\label{def9.6.5}
-设$\Omega_1$和$\Omega_2$是$\MC^n$中的两个域，如果存在双全纯映射把$\Omega_1$映为$\Omega_2$，就称$\Omega_1$和$\Omega_2$是\textbf{全纯等价}\index{Q!全纯等价}的.
+  设$\Omega_1$和$\Omega_2$是$\MC^n$中的两个域，如果存在双全纯映射把$\Omega_1$映为$\Omega_2$，就称$\Omega_1$和$\Omega_2$是\textbf{全纯等价}\index{Q!全纯等价}的.
 \end{definition}
 
 在单复变中，Riemann定理断言，除了整个复平面$\MC$以外，$\MC$上任意两个单连通域都是全纯等价的.在多复变中，Riemann定理不再成立，即使是两个最简单的域$U^n$和$B_n$也不是全纯等价的.这一事实于本世纪初首先由Poincar\'e指出.
 \begin{theorem}[（\textbf{Poincar\'e}）]
-多圆柱$U^n$和球$B_n$不全纯等价.
+  多圆柱$U^n$和球$B_n$不全纯等价.
 \end{theorem}
 \begin{proof}
-如果$U^n$和$B_n$全纯等价，那么存在双全纯映射$F$，使得$F(B_n)=U^n$.由于$B_n$是圆型的，而且是有界可递的，$U^n$也是圆型的，由定理 \ref{thm9.5.6}，一定存在线性映射把$B_n$映为$U^n$.但线性映射把球映为椭球，不可能是多圆柱.这个矛盾证明了$U^n$和$B_n$不是全纯等价的.
+  如果$U^n$和$B_n$全纯等价，那么存在双全纯映射$F$，使得$F(B_n)=U^n$.由于$B_n$是圆型的，而且是有界可递的，$U^n$也是圆型的，由定理 \ref{thm9.5.6}，一定存在线性映射把$B_n$映为$U^n$.但线性映射把球映为椭球，不可能是多圆柱.这个矛盾证明了$U^n$和$B_n$不是全纯等价的.
 \end{proof}
 
 \begin{xiti}
-\item 对于任意$z,w\in B_n$，证明：
-\[|\varphi_z(w)|=|\varphi_w(z)|.\]
-\item 设$a,z,w\in B_n$，证明：
-\[|\varphi_{\varphi_a(w)}(z)|=\big|\varphi_w\big(\varphi_a(z)\big)\big|.\]
-（\textbf{提示}：考虑映射$\varphi_{\varphi_a(w)}\circ\varphi_a\circ\varphi_w$.）
-\item 定义$E(a,r)=\varphi_a^{-1}\big(B(0,r)\big)=\{z:|\varphi_a(z)|<r\}$. 证明：对任意$a,z\in B_n,0<r<1$，有
-    \[\varphi_a\big(E(z,r)\big)=E\big(\varphi_a(z),r\big).\]
-\item 设$F\in H(B_n),F=f\circ\varphi_z$. 证明：
-\begin{enuma}
-  \item $(\nabla F)(0)=(\nabla f)(z)\varphi_z'(0)$，这里
-  \[(\nabla f)(z)=\bigg(\pp{f(z)}{z_1},\cdots,\pp{f(z)}{z_n}\bigg);\]
-  \item $|(\nabla F)(0)|^2=(1-|z|^2)[|(\nabla F)(z)|^2-|(\textrm Rf)(z)|^2]$，这里，$(\textrm Rf)(z)=\sum_{j=1}^nz_j\pp{f(z)}{z_j}$是$f$的径向导数.
-\end{enuma}
-\item 设$\psi\in\Aut(B_n)$，如果$\psi(a)=0$，那么对任意$z,w\in\bar{B_n}$，有等式
-\[1-\psi(z)\bar{\psi(w)'}=\frac{(1-|a|^2)(1-z\bar{w'})}
-{(1-\bar az')(1-a\bar {w'})}.\]
-\item 设$\psi\in\Aut(B_n)$. 如果$\psi$在$\partial B_n$上有三个不同的不动点，证明$\psi$在$B_n$中至少有一个不动点.\\
-（\textbf{提示}：设$\zeta_1,\zeta_2,\zeta_3$是$\psi$在$\partial B_n$上的三个不动点，令$z_0=\frac12(\zeta_1+\zeta_2)$，先证明$\varphi_a(z_0)=\frac12\big(\varphi_a(\zeta_1)+\varphi_a(\zeta_2)\big)$，这里$a=\psi^{-1}(0)$，然后再证明$\psi(z_0)=z_0$.）
+  \item 对于任意$z,w\in B_n$，证明：
+     \[
+       |\varphi_z(w)| = |\varphi_w(z)|.
+     \]
+  \item 设$a,z,w\in B_n$，证明：
+     \[
+       |\varphi_{\varphi_a(w)}(z)| = \big|\varphi_w\big(\varphi_a(z)\big)\big|.
+     \]
+    （\textbf{提示}：考虑映射$\varphi_{\varphi_a(w)}\circ\varphi_a\circ\varphi_w$.）
+  \item 定义$E(a,r)=\varphi_a^{-1}\big(B(0,r)\big)=\{z:|\varphi_a(z)|<r\}$. 证明：对任意$a,z\in B_n,0<r<1$，有
+     \[
+       \varphi_a\big(E(z,r)\big) = E\big(\varphi_a(z),r\big).
+     \]
+  \item 设$F\in H(B_n),F=f\circ\varphi_z$. 证明：
+    \begin{enuma}
+      \item $(\nabla F)(0)=(\nabla f)(z)\varphi_z'(0)$，这里
+         \[
+           (\nabla f)(z) = \bigg(\pp{f(z)}{z_1},\cdots,\pp{f(z)}{z_n}\bigg);
+         \]
+      \item $|(\nabla F)(0)|^2=(1-|z|^2)[|(\nabla F)(z)|^2-|(\mathrm Rf)(z)|^2]$，这里，$(\mathrm Rf)(z)=\sum_{j=1}^nz_j\pp{f(z)}{z_j}$是$f$的径向导数.
+    \end{enuma}
+  \item 设$\psi\in\Aut(B_n)$，如果$\psi(a)=0$，那么对任意$z,w\in\bar{B_n}$，有等式
+    \[
+      1-\psi(z)\bar{\psi(w)'} = \frac{(1-|a|^2)(1-z\bar{w'})}
+      {(1-\bar az')(1-a\bar {w'})}.
+    \]
+  \item 设$\psi\in\Aut(B_n)$. 如果$\psi$在$\partial B_n$上有三个不同的不动点，证明$\psi$在$B_n$中至少有一个不动点.\\
+     （\textbf{提示}：设$\zeta_1,\zeta_2,\zeta_3$是$\psi$在$\partial B_n$上的三个不动点，令$z_0=\frac12(\zeta_1+\zeta_2)$，先证明$\varphi_a(z_0)=\frac12\big(\varphi_a(\zeta_1)+\varphi_a(\zeta_2)\big)$，这里$a=\psi^{-1}(0)$，然后再证明$\psi(z_0)=z_0$.）
 \end{xiti}
