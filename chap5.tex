@@ -4,15 +4,17 @@
 \section{全纯函数的Laurent展开}
 称级数
 \begin{equation}\label{eq5.1.1}
-\sum_{n=-\infty}^\infty a_n(z-z_0)^n=\sum_{n=0}^\infty a_n(z-z_0)^n+\sum_{n=1}^\infty
-a_{-n}(z-z_0)^{-n}
+  \sum_{n=-\infty}^\infty a_n(z-z_0)^n = \sum_{n=0}^\infty a_n(z-z_0)^n + \sum_{n=1}^\infty
+  a_{-n}(z-z_0)^{-n}
 \end{equation}
 为\textbf{Laurent级数}\index{L!Laurent级数}.它由两部分组成，第一部分就是幂级数，第二部分是负幂项的级数.如果这两个级数都收敛，就称级数 \eqref{eq5.1.1} 收敛.
 
 我们首先关心的是级数 \eqref{eq5.1.1} 的收敛域的形状.
 
 设第一个级数的收敛半径为$R$.对第二个级数作变换$\zeta=\frac1{z-z_0}$，它对$\zeta$而言就是幂级数
-\[\sum_{n=1}^\infty a_{-n}(z-z_0)^{-n}=\sum_{n=1}^\infty a_{-n}\zeta^n.\]
+\[
+  \sum_{n=1}^\infty a_{-n}(z-z_0)^{-n} = \sum_{n=1}^\infty a_{-n}\zeta^n.
+\]
 设其收敛半径为$\rho$，则当$|\zeta|<\rho$，或者$|z-z_0|>\frac1\rho$时，上述级数收敛.记$r=\frac1\rho$，则当$r<|z-z_0|<\infty$时，级数 \eqref{eq5.1.1} 中的负幂项级数收敛.
 现在看在什么条件下级数 \eqref{eq5.1.1} 中的两个级数都能收敛.
 
@@ -20,179 +22,195 @@ a_{-n}(z-z_0)^{-n}
 
 如果$r<R$，则当$r<|z-z_0|<R$时，级数 \eqref{eq5.1.1} 的两个级数都收敛，而且在这个圆环中内闭一致收敛，即级数 \eqref{eq5.1.1} 在上述圆环中内闭一致收敛，根据Weierstrass定理，它的和是圆环中的全纯函数. 这样，我们证明了下面的
 \begin{theorem}\label{thm5.1.1}
-如果Laurent级数
-\begin{equation*}
-\sum_{n=-\infty}^\infty a_n(z-z_0)^n=\sum_{n=0}^\infty a_n(z-z_0)^n+\sum_{n=1}^\infty
-a_{-n}(z-z_0)^{-n}
-\end{equation*}
-的收敛域为圆环$D=\{z:r<|z-z_0|<R\}$，那么它在$D$中绝对收敛且内闭一致收敛，它的和函数在$D$中全纯..
-
-上述级数的幂级数部分称为该级数的\textbf{全纯部分}\index{L!Laurent级数!全纯部分}，负幂项级数部分称为该级数的\textbf{主要部分}\index{L!Laurent级数!主要部分}.下面我们将看到，Laurent级数的一些重要性质取决于它的主要部分.
+  如果Laurent级数
+  \begin{equation*}
+    \sum_{n=-\infty}^\infty a_n(z-z_0)^n = \sum_{n=0}^\infty a_n(z-z_0)^n + \sum_{n=1}^\infty
+  a_{-n}(z-z_0)^{-n}
+  \end{equation*}
+  的收敛域为圆环$D=\{z:r<|z-z_0|<R\}$，那么它在$D$中绝对收敛且内闭一致收敛，它的和函数在$D$中全纯..
+ 
+  上述级数的幂级数部分称为该级数的\textbf{全纯部分}\index{L!Laurent级数!全纯部分}，负幂项级数部分称为该级数的\textbf{主要部分}\index{L!Laurent级数!主要部分}.下面我们将看到，Laurent级数的一些重要性质取决于它的主要部分.
 \end{theorem}
 
 定理 \ref{thm5.1.1} 的逆定理也成立.
 \begin{theorem}\label{thm5.1.2}
-设$D=\{z:r<|z-z_0|<R\}$，如果$f\in H(D)$，那么$f$在$D$上可以展开为Laurent级数：
-\begin{equation}\label{eq5.1.2}
-f(z)=\sum_{n=-\infty}^\infty a_n(z-z_0)^n,z\in D,
-\end{equation}
-其中，$a_n=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}
-\dif \zeta$，而$\gamma_\rho=\{\zeta:|\zeta-z_0|=\rho\}$（$r<\rho<R$），并且展开式 \eqref{eq5.1.2} 是唯一的.
+  设$D=\{z:r<|z-z_0|<R\}$，如果$f\in H(D)$，那么$f$在$D$上可以展开为Laurent级数：
+  \begin{equation}\label{eq5.1.2}
+    f(z) = \sum_{n=-\infty}^\infty a_n(z-z_0)^n,z\in D,
+  \end{equation}
+  其中，$a_n=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}
+  \dif \zeta$，而$\gamma_\rho=\{\zeta:|\zeta-z_0|=\rho\}$（$r<\rho<R$），并且展开式 \eqref{eq5.1.2} 是唯一的.
 \end{theorem}
 \begin{proof}
-如图 \ref{fig5.1} 所示，任意取定$z\in D$，取$r_1,r_2$，使得
-\[r<r_1<|z-z_0|<r_2<R.\]
-记$\gamma_j=\{\zeta:|\zeta-z_0|=r_j\},j=1,2,$. 由第 \ref{chap3} 章 \ref{sec3.4} 节的定理 \ref{thm3.4.6}，得
-\begin{equation}\label{eq5.1.3}
-f(z)=\frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\dif \zeta-
-\frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\dif \zeta.
-\end{equation}
-\begin{figure}[!ht]
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
->={Stealth[width=3pt]}]
-\draw(0,0)node[below right,inner sep=0pt]{$z_0$}circle(0.5)circle(0.8)
-circle(3)circle(3.5);
-\draw[very thin,->](3,0)--++(90:0.01)node[right]{$\gamma_2$};
-\draw[very thin,->](0.8,0)--++(90:0.01)node[right]{$\gamma_1$};
-\fill(0,0)circle(1pt);
-\draw(0,0)--node[below]{$R$}(35:3.5);
-\draw(0,0)--node[above]{$r$}(-0.5,0);
-\draw(0,0)--node[below right,fill=white,inner sep=0pt]{$r_1$}(-130:0.8);
-\draw(0,0)--node[right]{$r_2$}(85:3)(-40:1.6)node[right]{$z$};
-\fill(-40:1.6)circle(1pt);
-\end{tikzpicture}
-\caption{\label{fig5.1}}
-\end{figure}
-记$M_j=\sup\{|f(\zeta)|:\zeta\in\gamma_j\},j=1,2$.当$\zeta\in\gamma_1$时，
-$\bigg|\frac{\zeta-z_0}{z-z_0}\bigg|=\frac{r_1}{|z-z_0|}<1$，所以有
-\begin{align*}
-\frac1{\zeta-z}&=-\frac1{z-z_0}\bigg(1-\frac{\zeta-z_0}{z-z_0}\bigg)^{-1}\\
-&=-\sum_{n=0}^\infty\frac{(\zeta-z_0)^n}{(z-z_0)^{n+1}}=-
-\sum_{n=1}^\infty\frac{(\zeta-z_0)^{n-1}}{(z-z_0)^{n}},
-\end{align*}
-于是
-\begin{equation}\label{eq5.1.4}
-\frac{f(\zeta)}{\zeta-z}=-\sum_{n=1}^\infty f(\zeta)\frac{(\zeta-z_0)^{n-1}}{(z-z_0)^{n}},\zeta\in\gamma_1.
-\end{equation}
-由于
-\[\bigg|\frac{f(\zeta)(\zeta-z_0)^{n-1}}{(z-z_0)^n}\bigg|
-\le\frac{M_1}{|z-z_0|}\bigg(\frac{r_1}{|z-z_0|}\bigg)^{n-1},\]
-并且右端是一收敛级数，故知级数 \eqref{eq5.1.4} 在$\gamma_1$上一致收敛，因而可逐项积分：
-\begin{equation}\label{eq5.1.5}
-\frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\dif \zeta
-=-\sum_{n=1}^\infty\bigg(\frac1{2\pi\ii}\int\limits_{\gamma_1}
-\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta\bigg)(z-z_0)^{-n}.
-\end{equation}
-当$\zeta\in\gamma_2$时，$\bigg|\frac{z-z_0}{\zeta-z_0}\bigg|=\frac{|z-z_0|}{r_2}<1$，所以有
-\[\frac1{\zeta-z}=\frac1{\zeta-z_0}\bigg(1-\frac{z-z_0}{\zeta-z_0}\bigg)^{-1}
-=\sum_{n=0}^\infty\frac{(z-z_0)^n}{(\zeta-z_0)^{n+1}},\]
-于是
-\begin{equation}\label{eq5.1.6}
-\frac{f(\zeta)}{\zeta-z}=\sum_{n=0}^\infty f(\zeta)\frac{(z-z_0)^{n}}{(\zeta-z_0)^{n+1}},\zeta\in\gamma_2.
-\end{equation}
-与上面的讨论一样，级数 \eqref{eq5.1.6} 在$\gamma_2$上一致收敛，所以
-\begin{equation}\label{eq5.1.7}
-\frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\dif \zeta
-=\sum_{n=0}^\infty\bigg(\frac1{2\pi\ii}\int\limits_{\gamma_2}
-\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\dif \zeta\bigg)(z-z_0)^{n}.
-\end{equation}
-由多连通域的Cauchy积分定理，得
-\begin{align*}
-&\frac1{2\pi\ii}\int\limits_{\gamma_1}
-\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta
-=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}
-\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta=a_{-n},\\
-&\frac1{2\pi\ii}\int\limits_{\gamma_2}
-\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\dif \zeta
-=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}
-\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\dif \zeta=a_{n}.
-\end{align*}
-把它们分别代入 \eqref{eq5.1.5} 式和 \eqref{eq5.1.7} 式，得
-\begin{align*}
-&\frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\dif \zeta
-=-\sum_{n=1}^\infty a_{-n}(z-z_0)^{-n},\\
-&\frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\dif \zeta
-=\sum_{n=0}^\infty a_n(z-z_0)^n,
-\end{align*}
-再把它们代入 \eqref{eq5.1.3} 式，即得展开式 \eqref{eq5.1.2}.
+  如图 \ref{fig5.1} 所示，任意取定$z\in D$，取$r_1,r_2$，使得
+  \[
+    r < r_1 < |z - z_0| < r_2 < R.
+  \]
+  记$\gamma_j=\{\zeta:|\zeta-z_0|=r_j\},j=1,2,$. 由第 \ref{chap3} 章 \ref{sec3.4} 节的定理 \ref{thm3.4.6}，得
+  \begin{equation}\label{eq5.1.3}
+    f(z) = \frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\dif \zeta-
+    \frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\dif \zeta.
+  \end{equation}
+  \begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+      >={Stealth[width=3pt]}]
+      \draw(0,0)node[below right,inner sep=0pt]{$z_0$}circle(0.5)circle(0.8)
+        circle(3)circle(3.5);
+      \draw[very thin,->](3,0)--++(90:0.01)node[right]{$\gamma_2$};
+      \draw[very thin,->](0.8,0)--++(90:0.01)node[right]{$\gamma_1$};
+      \fill(0,0)circle(1pt);
+      \draw(0,0)--node[below]{$R$}(35:3.5);
+      \draw(0,0)--node[above]{$r$}(-0.5,0);
+      \draw(0,0)--node[below right,fill=white,inner sep=0pt]{$r_1$}(-130:0.8);
+      \draw(0,0)--node[right]{$r_2$}(85:3)(-40:1.6)node[right]{$z$};
+      \fill(-40:1.6)circle(1pt);
+    \end{tikzpicture}
+    \caption{\label{fig5.1}}
+  \end{figure}
+  记$M_j=\sup\{|f(\zeta)|:\zeta\in\gamma_j\},j=1,2$.当$\zeta\in\gamma_1$时，
+  $\bigg|\frac{\zeta-z_0}{z-z_0}\bigg|=\frac{r_1}{|z-z_0|}<1$，所以有
+  \begin{align*}
+    \frac1{\zeta-z} & = -\frac1{z-z_0} \bigg(1-\frac{\zeta-z_0}{z-z_0} \bigg)^{-1}\\
+    & = -\sum_{n=0}^\infty\frac{(\zeta-z_0)^n}{(z-z_0)^{n+1}}=-
+     \sum_{n=1}^\infty\frac{(\zeta-z_0)^{n-1}}{(z-z_0)^{n}},
+  \end{align*}
+  于是
+  \begin{equation}\label{eq5.1.4}
+    \frac{f(\zeta)}{\zeta-z} = -\sum_{n=1}^\infty f(\zeta)\frac{(\zeta-z_0)^{n-1}}{(z-z_0)^{n}}, \zeta\in\gamma_1.
+  \end{equation}
+  由于
+  \[
+    \bigg|\frac{f(\zeta)(\zeta-z_0)^{n-1}}{(z-z_0)^n}\bigg|
+    \le\frac{M_1}{|z-z_0|}\bigg(\frac{r_1}{|z-z_0|}\bigg)^{n-1},
+  \]
+  并且右端是一收敛级数，故知级数 \eqref{eq5.1.4} 在$\gamma_1$上一致收敛，因而可逐项积分：
+  \begin{equation}\label{eq5.1.5}
+    \frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\dif \zeta
+    = -\sum_{n=1}^\infty\bigg(\frac1{2\pi\ii}\int\limits_{\gamma_1}
+    \frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta\bigg)(z-z_0)^{-n}.
+  \end{equation}
+  当$\zeta\in\gamma_2$时，$\bigg|\frac{z-z_0}{\zeta-z_0}\bigg|=\frac{|z-z_0|}{r_2}<1$，所以有
+  \[
+    \frac1{\zeta-z}=\frac1{\zeta-z_0}\bigg(1-\frac{z-z_0}{\zeta-z_0}\bigg)^{-1}
+    =\sum_{n=0}^\infty\frac{(z-z_0)^n}{(\zeta-z_0)^{n+1}},
+  \]
+  于是
+  \begin{equation}\label{eq5.1.6}
+    \frac{f(\zeta)}{\zeta-z} = \sum_{n=0}^\infty f(\zeta)\frac{(z-z_0)^{n}}{(\zeta-z_0)^{n+1}},\zeta\in\gamma_2.
+  \end{equation}
+  与上面的讨论一样，级数 \eqref{eq5.1.6} 在$\gamma_2$上一致收敛，所以
+  \begin{equation}\label{eq5.1.7}
+    \frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\dif \zeta
+    =\sum_{n=0}^\infty\bigg(\frac1{2\pi\ii}\int\limits_{\gamma_2}
+    \frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\dif \zeta\bigg)(z-z_0)^{n}.
+  \end{equation}
+  由多连通域的Cauchy积分定理，得
+  \begin{align*}
+    & \frac1{2\pi\ii}\int\limits_{\gamma_1}
+      \frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta
+    = \frac1{2\pi\ii}\int\limits_{\gamma_\rho}
+      \frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta=a_{-n},\\
+    & \frac1{2\pi\ii}\int\limits_{\gamma_2}
+      \frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\dif \zeta
+    = \frac1{2\pi\ii}\int\limits_{\gamma_\rho}
+      \frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\dif \zeta=a_{n}.
+  \end{align*}
+  把它们分别代入 \eqref{eq5.1.5} 式和 \eqref{eq5.1.7} 式，得
+  \begin{align*}
+    & \frac1{2\pi\ii}\int\limits_{\gamma_1}\frac{f(\zeta)}{\zeta-z}\dif \zeta
+    = -\sum_{n=1}^\infty a_{-n}(z-z_0)^{-n},\\
+    & \frac1{2\pi\ii}\int\limits_{\gamma_2}\frac{f(\zeta)}{\zeta-z}\dif \zeta
+    = \sum_{n=0}^\infty a_n(z-z_0)^n,
+  \end{align*}
+  再把它们代入 \eqref{eq5.1.3} 式，即得展开式 \eqref{eq5.1.2}.
 
-现在证明展开式 \eqref{eq5.1.2} 是唯一的.如果另有展开式
-\[f(z)=\sum_{n=-\infty}^{\infty}a_n'(z-z_0)^n,\]
-因为级数在$\gamma_\rho$上一致收敛，逐项积分得
-\[\frac1{2\pi\ii}\int\limits_{\gamma_\rho}
-\frac{f(\zeta)}{(\zeta-z_0)^{m+1}}\dif \zeta
-=\sum_{n=-\infty}^\infty a_n'\frac1{2\pi\ii}
-\int\limits_{\gamma_\rho}(\zeta-z_0)^{n-m-1}\dif \zeta=a_{m'}.\]
-所以这个展开式就是 \eqref{eq5.1.2} 式.
+  现在证明展开式 \eqref{eq5.1.2} 是唯一的.如果另有展开式
+  \[
+    f(z) = \sum_{n=-\infty}^{\infty}a_n'(z-z_0)^n,
+  \]
+  因为级数在$\gamma_\rho$上一致收敛，逐项积分得
+  \[
+    \frac1{2\pi\ii}\int\limits_{\gamma_\rho}
+    \frac{f(\zeta)}{(\zeta-z_0)^{m+1}}\dif \zeta
+    = \sum_{n=-\infty}^\infty a_n'\frac1{2\pi\ii}
+    \int\limits_{\gamma_\rho}(\zeta-z_0)^{n-m-1}\dif \zeta=a_{m'}.
+  \]
+  所以这个展开式就是 \eqref{eq5.1.2} 式.
 \end{proof}
 
 \begin{example}\label{exam5.1.3}
-设$f(z)=\frac1{(z-1)(z-2)}$，试分别给出这个函数在$D_1=\{z:1<|z|<2\}$和$D_2=\{z:2<|z|<\infty\}$上的Laurent展开式.
+  设$f(z)=\frac1{(z-1)(z-2)}$，试分别给出这个函数在$D_1=\{z:1<|z|<2\}$和$D_2=\{z:2<|z|<\infty\}$上的Laurent展开式.
 \end{example}
 \begin{solution}
-当$z\in D_1$时，由于$1<|z|<2$，所以
-\begin{align*}
-\frac1{(z-1)(z-2)}&=\frac1{z-2}-\frac1{z-1}\\
-&=-\frac12\frac1{1-\frac z2}-\frac1z\frac1{1-\frac1z}\\
-&=-\sum_{n=0}^\infty\frac1{2^{n+1}}z^n-\sum_{n=1}^\infty\frac1{z^n}.
-\end{align*}
-当$z\in D_2$时，由于$2<|z|<\infty$，所以
-\begin{align*}
-  \frac1{(z-1)(z-2)} &= \frac1{z-2}-\frac1{z-1}
-  = \frac1z \frac1{1-\frac2z} - \frac1z \frac1{1-\frac1z}\\
-  & = \sum_{n=0}^\infty\frac{2^n}{z^{n+1}} - \sum_{n=0}^\infty\frac1{z^{n+1}}
-  =\sum_{n=0}^\infty\frac{2^n-1}{z^{n+1}}. \qedhere
-\end{align*}
+  当$z\in D_1$时，由于$1<|z|<2$，所以
+  \begin{align*}
+    \frac1{(z-1)(z-2)} & = \frac1{z-2}-\frac1{z-1}\\
+    & = -\frac12\frac1{1-\frac z2}-\frac1z\frac1{1-\frac1z}\\
+    & = -\sum_{n=0}^\infty\frac1{2^{n+1}}z^n-\sum_{n=1}^\infty\frac1{z^n}.
+  \end{align*}
+  当$z\in D_2$时，由于$2<|z|<\infty$，所以
+  \begin{align*}
+    \frac1{(z-1)(z-2)} & = \frac1{z-2}-\frac1{z-1}
+    = \frac1z \frac1{1-\frac2z} - \frac1z \frac1{1-\frac1z}\\
+    & = \sum_{n=0}^\infty\frac{2^n}{z^{n+1}} - \sum_{n=0}^\infty\frac1{z^{n+1}}
+    =\sum_{n=0}^\infty\frac{2^n-1}{z^{n+1}}. \qedhere
+  \end{align*}
 \end{solution}
 
 \begin{xiti}
-\item 下列初等函数能否在指定的域$D$上展开为Laurent级数?
-\begin{enuma}
-  \item $\cos\frac1z,D=B(0,\infty)\backslash\{0\}$；
-  \item $\tan z,D=B(\infty,R),R>0$；
-  \item $\Log\frac{z-1}{z-2},D=B(\infty,2)$；
-  \item $\frac{z^2}{\sin\frac1z},D=B(0,r)\backslash\{0\},r>0$；
-  \item $\Log\frac1{z-1},D=B(1,\infty)\backslash\{1\}$；
-  \item $\sqrt[\leftroot{-1}\uproot{2}3]{(z-1)(z-2)(z-3)},D=B(\infty,3)$；
-  \item $\sqrt{\frac z{(z-1)(z-2)}},D=B(0,2)\backslash\bar{B(0,1)}$；
-  \item $\Log\frac{(z-1)(z-2)}{(z-3)(z-5)},D=B(0,3)\backslash\bar{B(0,2)}$.
-\end{enuma}
-\item 将下列初等函数在指定的域$D$上展开为Laurent级数：
-\begin{enuma}
-  \item $\frac1{z^2(z-1)},D=B(1,1)\backslash\{1\}$；
-  \item $\frac1{(z-1)(z-2)},D=B(0,2)\backslash\bar{B(0,1)}$；
-  \item $\Log\bigg(\frac{z-1}{z-2}\bigg),D=B(\infty,2)$；
-  \item $\sqrt{(z-1)(z-2)},D=B(\infty,2)$；
-  \item $\frac1{(z-5)^n},n\in\MN,D=B(\infty,5)$；
-  \item $\sin\frac z{1-z},D=B(1,\infty)\backslash\{1\}$；
-  \item $\sqrt{\frac z{(z-1)(z-2)}},D=B(0,2)\backslash\bar{B(0,1)}$；
-  \item $\ee^{\frac1{1-z}},D=B(\infty,1)$.
-\end{enuma}
-\item 将$\ee^{\frac z2\big(\zeta-\frac1\zeta\big)}$作为$\zeta$的函数在$B(0,\infty)\backslash\{0\}$上展开为Laurent级数
-    \[\sum_{n=-\infty}^\infty J_n(z)\zeta^n,\]
-称$J_n(z)$（$n\ge0$）为\textbf{Bessel函数}\index{B!Bessel函数}. 证明：
-\begin{align*}
-J_n(z)&=\frac1\pi\int_0^\pi\cos(n\theta-z\sin\theta)\dif \theta\\
-&=\sum_{k=0}^\infty\frac{(-1)^k}{k!(n+k)!}\bigg(\frac z2\bigg)^{n+2k},n\ge0.
-\end{align*}
-\item \hypertarget{xiti5.1.4}{} 设$0<r<R<\infty,D=B(0,R)\backslash\bar{B(0,r)}$. 证明：若$f(z)=\sum_{n=-\infty}^\infty a_nz^n$双全纯地将$D$映为域$G$，则$G$的面积为
-    \[\pi\sum_{n=-\infty}^\infty n|a_n|^2(R^{2n}-r^{2n}).\]
-\item 证明（面积原理）：若$f(z)=\frac1z+\sum_{n=1}^\infty a_nz^n$是$B(0,1)\backslash\{0\}$上的双全纯映射，则
-    \[\sum_{n=1}^\infty n|a_n|^2\le1.\]
-\item \hypertarget{xiti5.1.6}{} 证明：若$f(z)=z+\sum_{n=2}^\infty a_nz^n$是$B(0,1)\backslash\{0\}$上的双全纯映射，则$|a_2|\le2$，并且$|a_2|=2$当且仅当$f(z)=\frac z{(1-\ee^{\ii\theta}z)^2},\theta\in\MR$.\\
-（\textbf{提示}：考虑$z\sqrt{\frac{f(z^2)}{z^2}}$的一个双全纯分支.）
-\item 证明：若$f(z)=z+\sum_{n=2}^\infty a_nz^n$是$B(0,1)\backslash\{0\}$上的双全纯映射，则
-\begin{enuma}
-  \item \label{xiti5.1.7.1}$\frac{1-|z|}{(1+|z|)^3}\le|f'(z)|\le\frac{1+|z|}{(1-|z|)^3},\forall z\in B(0,1)$；
-  \item \label{xiti5.1.7.2}$\frac{|z|}{(1+|z|)^2}\le|f(z)|\le\frac{|z|}{(1-|z|)^2},\forall z\in B(0,1)$，特别地，$f\big(B(0,1)\big)\supset \frac14B(0,1)$.
-  \item 上述不等式在异于零处成立，当且仅当$f(z)=\frac z{(1-\ee^{\ii\theta}z)^2},\theta\in\MR$.
-\end{enuma}
-（\textbf{说明}：不等式 \ref{xiti5.1.7.1} 称为偏差定理；不等式 \ref{xiti5.1.7.2} 称为增长定理和$\frac14$掩盖定理.）\\
-（\textbf{提示}：利用第 \hyperlink{xiti5.1.6}{6} 题的结论.）
-\item 证明：若$w=\varphi(z)$双全纯地将$D=\{z\in\MC:r_1<|z|<r_2\}$映为$G=\{w\in\MC:
-R_1<|w|<R_2\}$，其中，$0<r_1<r_2<\infty,0<R_1<R_2<\infty$，则$\frac{r_1}{r_2}=\frac{R_1}{R_2}$，并且$\varphi(z)=\ee^{\ii\theta}\frac{R_1z}{r_1}$或$\varphi(z)=\ee^{\ii\theta}\frac{R_2r_1}z,\theta\in\MR.$\\
-（\textbf{提示}：利用第 \hyperlink{xiti5.1.4}{4} 题的结论）
+  \item 下列初等函数能否在指定的域$D$上展开为Laurent级数?
+    \begin{enuma}
+      \item $\cos\frac1z,D=B(0,\infty)\backslash\{0\}$；
+      \item $\tan z,D=B(\infty,R),R>0$；
+      \item $\Log\frac{z-1}{z-2},D=B(\infty,2)$；
+      \item $\frac{z^2}{\sin\frac1z},D=B(0,r)\backslash\{0\},r>0$；
+      \item $\Log\frac1{z-1},D=B(1,\infty)\backslash\{1\}$；
+      \item $\sqrt[\leftroot{-1}\uproot{2}3]{(z-1)(z-2)(z-3)},D=B(\infty,3)$；
+      \item $\sqrt{\frac z{(z-1)(z-2)}},D=B(0,2)\backslash\bar{B(0,1)}$；
+      \item $\Log\frac{(z-1)(z-2)}{(z-3)(z-5)},D=B(0,3)\backslash\bar{B(0,2)}$.
+    \end{enuma}
+  \item 将下列初等函数在指定的域$D$上展开为Laurent级数：
+    \begin{enuma}
+      \item $\frac1{z^2(z-1)},D=B(1,1)\backslash\{1\}$；
+      \item $\frac1{(z-1)(z-2)},D=B(0,2)\backslash\bar{B(0,1)}$；
+      \item $\Log\bigg(\frac{z-1}{z-2}\bigg),D=B(\infty,2)$；
+      \item $\sqrt{(z-1)(z-2)},D=B(\infty,2)$；
+      \item $\frac1{(z-5)^n},n\in\MN,D=B(\infty,5)$；
+      \item $\sin\frac z{1-z},D=B(1,\infty)\backslash\{1\}$；
+      \item $\sqrt{\frac z{(z-1)(z-2)}},D=B(0,2)\backslash\bar{B(0,1)}$；
+      \item $\ee^{\frac1{1-z}},D=B(\infty,1)$.
+    \end{enuma}
+  \item 将$\ee^{\frac z2\big(\zeta-\frac1\zeta\big)}$作为$\zeta$的函数在$B(0,\infty)\backslash\{0\}$上展开为Laurent级数
+      \[
+        \sum_{n=-\infty}^\infty J_n(z)\zeta^n,
+      \]
+      称$J_n(z)$（$n\ge0$）为\textbf{Bessel函数}\index{B!Bessel函数}. 证明：
+      \begin{align*}
+        J_n(z) & = \frac1\pi\int_0^\pi\cos(n\theta-z\sin\theta)\dif \theta\\
+        & = \sum_{k=0}^\infty\frac{(-1)^k}{k!(n+k)!}\bigg(\frac z2\bigg)^{n+2k},n\ge0.
+      \end{align*}
+  \item \hypertarget{xiti5.1.4}{} 设$0<r<R<\infty,D=B(0,R)\backslash\bar{B(0,r)}$. 证明：若$f(z)=\sum_{n=-\infty}^\infty a_nz^n$双全纯地将$D$映为域$G$，则$G$的面积为
+      \[
+        \pi\sum_{n=-\infty}^\infty n|a_n|^2(R^{2n}-r^{2n}).
+      \]
+  \item 证明（面积原理）：若$f(z)=\frac1z+\sum_{n=1}^\infty a_nz^n$是$B(0,1)\backslash\{0\}$上的双全纯映射，则
+      \[
+        \sum_{n=1}^\infty n |a_n|^2 \le1.
+      \]
+  \item \hypertarget{xiti5.1.6}{} 证明：若$f(z)=z+\sum_{n=2}^\infty a_nz^n$是$B(0,1)\backslash\{0\}$上的双全纯映射，则$|a_2|\le2$，并且$|a_2|=2$当且仅当$f(z)=\frac z{(1-\ee^{\ii\theta}z)^2},\theta\in\MR$.\\
+     （\textbf{提示}：考虑$z\sqrt{\frac{f(z^2)}{z^2}}$的一个双全纯分支.）
+  \item 证明：若$f(z)=z+\sum_{n=2}^\infty a_nz^n$是$B(0,1)\backslash\{0\}$上的双全纯映射，则
+      \begin{enuma}
+        \item \label{xiti5.1.7.1}$\frac{1-|z|}{(1+|z|)^3}\le|f'(z)|\le\frac{1+|z|}{(1-|z|)^3},\forall z\in B(0,1)$；
+        \item \label{xiti5.1.7.2}$\frac{|z|}{(1+|z|)^2}\le|f(z)|\le\frac{|z|}{(1-|z|)^2},\forall z\in B(0,1)$，特别地，$f\big(B(0,1)\big)\supset \frac14B(0,1)$.
+        \item 上述不等式在异于零处成立，当且仅当$f(z)=\frac z{(1-\ee^{\ii\theta}z)^2},\theta\in\MR$.
+      \end{enuma}
+      （\textbf{说明}：不等式 \ref{xiti5.1.7.1} 称为偏差定理；不等式 \ref{xiti5.1.7.2} 称为增长定理和$\frac14$掩盖定理.）\\
+      （\textbf{提示}：利用第 \hyperlink{xiti5.1.6}{6} 题的结论.）
+  \item 证明：若$w=\varphi(z)$双全纯地将$D=\{z\in\MC:r_1<|z|<r_2\}$映为$G=\{w\in\MC:
+      R_1<|w|<R_2\}$，其中，$0<r_1<r_2<\infty,0<R_1<R_2<\infty$，则$\frac{r_1}{r_2}=\frac{R_1}{R_2}$，并且$\varphi(z)=\ee^{\ii\theta}\frac{R_1z}{r_1}$或$\varphi(z)=\ee^{\ii\theta}\frac{R_2r_1}z,\theta\in\MR.$\\
+      （\textbf{提示}：利用第 \hyperlink{xiti5.1.4}{4} 题的结论）
 \end{xiti}
 
 \section{孤立奇点\label{sec5.2}}
@@ -209,84 +227,96 @@ $f$在孤立奇点$z_0$附近可能有三种情形：
 
 现在我们分别讨论在上述三种情形下$f$在$z_0$点附近的性质. 先证明
 \begin{theorem}[（\textbf{Riemann}）]\label{thm5.2.1}\index{D!定理!Riemann定理}
-$z_0$是$f$的可去奇点的充分必要条件是$f$在$z_0$附近有界.
+  $z_0$是$f$的可去奇点的充分必要条件是$f$在$z_0$附近有界.
 \end{theorem}
 \begin{proof}
-必要性是显然的，因为如果$z_0$是$f$的可去奇点，那么$\lim_{z\to z_0}f(z)=a$，$f$在$z_0$附近当然有界.现在设$f$在$z_0$附近有界，即存在$\varepsilon>0$，使得当$z$满足$0<|z-z_0|<\varepsilon$时，$|f(z)|<M$. 因为$f$在无心圆盘$D=\{z:0<|z-z_0|<R\}$中全纯，根据定理 \ref{thm5.1.2}，$f$在$D$中有Laurent展开式：
-\begin{equation}\label{eq5.2.1}
-f(z)=\sum_{n=-\infty}^\infty a_n(z-z_0)^n,z\in D,
-\end{equation}
-其中，$a_n=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}
-\dif \zeta,0<\rho<R,\gamma_{\rho}=\{\zeta:|\zeta-z_0|=\rho\}$. 今取$0<\rho<\varepsilon$，故当$\zeta\in\gamma_\rho$时，$|f(\zeta)|<M$. 于是，由长大不等式得
-\[|a_{-n}|=\bigg|\frac1{2\pi\ii}\int\limits_{\gamma_\rho}
-\frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta\bigg|\le
-\frac M{2\pi\rho^{-n+1}}\cdot2\pi\rho=M\rho^n,\]
-让$\rho\to0$，即得$a_{-n}=0,n=1,2,\cdots$. 这说明在$f$的Laurent展开式 \eqref{eq5.2.1} 中，所有负次幂的系数都是零，因而展开式 \eqref{eq5.2.1} 是一个幂级数. 所以$\lim_{z\to z_0}f(z)=a_0$，即$z_0$是一个可去奇点.
+  必要性是显然的，因为如果$z_0$是$f$的可去奇点，那么$\lim_{z\to z_0}f(z)=a$，$f$在$z_0$附近当然有界.现在设$f$在$z_0$附近有界，即存在$\varepsilon>0$，使得当$z$满足$0<|z-z_0|<\varepsilon$时，$|f(z)|<M$. 因为$f$在无心圆盘$D=\{z:0<|z-z_0|<R\}$中全纯，根据定理 \ref{thm5.1.2}，$f$在$D$中有Laurent展开式：
+  \begin{equation}\label{eq5.2.1}
+    f(z) = \sum_{n=-\infty}^\infty a_n(z-z_0)^n,z\in D,
+  \end{equation}
+  其中，$a_n=\frac1{2\pi\ii}\int\limits_{\gamma_\rho}\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}
+  \dif \zeta,0<\rho<R,\gamma_{\rho}=\{\zeta:|\zeta-z_0|=\rho\}$. 今取$0<\rho<\varepsilon$，故当$\zeta\in\gamma_\rho$时，$|f(\zeta)|<M$. 于是，由长大不等式得
+  \[
+    |a_{-n}| = \bigg|\frac1{2\pi\ii}\int\limits_{\gamma_\rho}
+    \frac{f(\zeta)}{(\zeta-z_0)^{-n+1}}\dif \zeta\bigg|\le
+    \frac M{2\pi\rho^{-n+1}}\cdot2\pi\rho=M\rho^n,
+  \]
+  让$\rho\to0$，即得$a_{-n}=0,n=1,2,\cdots$. 这说明在$f$的Laurent展开式 \eqref{eq5.2.1} 中，所有负次幂的系数都是零，因而展开式 \eqref{eq5.2.1} 是一个幂级数. 所以$\lim_{z\to z_0}f(z)=a_0$，即$z_0$是一个可去奇点.
 \end{proof}
 
 从上面的证明可以看出，在$z_0$是$f$的可去奇点的情形下，$f$在$\{z:0<|z-z_0|<R\}$中的展开式为
-\[f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n,\]
+\[
+  f(z) = \sum_{n=0}^\infty a_n(z-z_0)^n,
+\]
 只要令$f(z_0)=a_0$，上式便在圆盘$B(z_0,R)$中成立了，因而$f$在$z_0$处全纯.换句话说，在这种情形下，只要适当定义$f$在$z_0$处的值，便能使$f$在$z_0$处全纯.这就是称$z_0$为$f$的可去奇点的原因.
 
 再看极点的情形，先证明
 \begin{prop}\label{prop5.2.2}
-$z_0$是$f$的极点的充分必要条件是$z_0$为$\frac1f$的零点.
+  $z_0$是$f$的极点的充分必要条件是$z_0$为$\frac1f$的零点.
 \end{prop}
 \begin{proof}
-如果$z_0$是$f$的极点，即$\lim_{z\to z_0}f(z)=\infty$，那么存在$\varepsilon>0$，使得当$0<|z-z_0|<\varepsilon$时，$f(z)$不等于零. 故$\varphi(z)=\frac1{f(z)}$在上述无心圆盘中全纯，且$\lim_{z\to z_0}\varphi(z)=0$，即$z_0$是$\varphi$的可去奇点，且$\varphi(z_0)=0$. 反之，如果$z_0$是$\varphi(z)=\frac1{f(z)}$的零点，则
-\[\lim_{z\to z_0}f(z)=\lim_{z\to z_0}\frac1{\varphi(z)}=\infty,\]
-即$z_0$是$f$的极点.
+  如果$z_0$是$f$的极点，即$\lim_{z\to z_0}f(z)=\infty$，那么存在$\varepsilon>0$，使得当$0<|z-z_0|<\varepsilon$时，$f(z)$不等于零. 故$\varphi(z)=\frac1{f(z)}$在上述无心圆盘中全纯，且$\lim_{z\to z_0}\varphi(z)=0$，即$z_0$是$\varphi$的可去奇点，且$\varphi(z_0)=0$. 反之，如果$z_0$是$\varphi(z)=\frac1{f(z)}$的零点，则
+  \[
+    \lim_{z\to z_0}f(z) = \lim_{z\to z_0}\frac1{\varphi(z)} = \infty,
+  \]
+  即$z_0$是$f$的极点.
 \end{proof}
 
 \begin{definition}\label{def5.2.3}
-如果$z_0$是$\frac1{f(z)}$的$m$阶零点，就称$z_0$是$f$的$m$阶极点.
+  如果$z_0$是$\frac1{f(z)}$的$m$阶零点，就称$z_0$是$f$的$m$阶极点.
 \end{definition}
 
 现在可以证明
 \begin{theorem}\label{thm5.2.4}
-$z_0$是$f$的$m$阶极点的充分必要条件是$f$在$z_0$附近的Laurent展开式为
-\begin{equation}\label{eq5.2.2}
-f(z)=\frac{a_{-m}}{(z-z_0)^m}+\cdots+\frac{a_{-1}}{z-z_0}+a_0+a_1(z-z_0)+\cdots,
-\end{equation}
-其中，$a_{-m}\ne0$.
+  $z_0$是$f$的$m$阶极点的充分必要条件是$f$在$z_0$附近的Laurent展开式为
+  \begin{equation}\label{eq5.2.2}
+    f(z) = \frac{a_{-m}}{(z-z_0)^m} + \cdots+\frac{a_{-1}}{z-z_0} + a_0 + a_1(z-z_0) + \cdots,
+  \end{equation}
+  其中，$a_{-m}\ne0$.
 \end{theorem}
 \begin{proof}
   如果$z_0$是$f$的$m$阶极点，根据定义，它是$\frac1f$的$m$阶零点.由第 \ref{chap4} 章的命题 \ref{prop4.3.4}，它在$z_0$的邻域中可以表示为$\frac1{f(z)}=(z-z_0)^mg(z)$，这里，$g$在$z_0$处全纯，且$g(z_0)\ne0$，因而$\frac1g$也在$z_0$处全纯.设$\frac1g$在$z_0$处的Taylor展开为
-  \[\frac1{g(z)}=\sum_{n=0}^\infty c_n(z-z_0)^n,\]
-这里，$c_0\ne0$，于是
-\begin{align*}
-f(z)&=\frac1{(z-z_0)^m}\frac1{g(z)}=\sum_{n=0}^\infty c_n(z-z_0)^{n-m}\\
-&=\frac{c_0}{(z-z_0)^m}+\cdots+\frac{c_{m-1}}{z-z_0}
-+c_m+c_{m+1}(z-z_0)+\cdots.
-\end{align*}
-记$a_n=c_{n+m},n=-m,\cdots,-1,0,1,\cdots$，即得展开式 \eqref{eq5.2.2}.
+  \[
+    \frac1{g(z)} = \sum_{n=0}^\infty c_n(z-z_0)^n,
+  \]
+  这里，$c_0\ne0$，于是
+  \begin{align*}
+    f(z) & = \frac1{(z-z_0)^m}\frac1{g(z)} = \sum_{n=0}^\infty c_n(z-z_0)^{n-m}\\
+    & = \frac{c_0}{(z-z_0)^m} + \cdots + \frac{c_{m-1}}{z-z_0}
+      + c_m + c_{m+1}(z-z_0) + \cdots.
+  \end{align*}
+  记$a_n=c_{n+m},n=-m,\cdots,-1,0,1,\cdots$，即得展开式 \eqref{eq5.2.2}.
 
-反之，如果$f$在$z_0$附近的Laurent展开式为 \eqref{eq5.2.2} 式，那么
-\[(z-z_0)^mf(z)=a_{-m}+a_{-(m-1)}(z-z_0)+\cdots+a_0(z-z_0)^m+\cdots.\]
-若记上式右端的幂级数为$\varphi(z)$，则$\varphi$在$z_0$处全纯，且$\varphi(z_0)=a_{-m}\ne0$. 因而$\frac1{\varphi}$也在$z_0$处全纯，于是
-\[\frac1{f(z)}=(z-z_0)^m\frac1{\varphi(z)}\]
-在$z_0$附近成立。由第 \ref{chap4} 章的命题 \ref{prop4.3.4}，$z_0$是$\frac1f$的$m$阶零点，所以是$f$的$m$阶极点.
+  反之，如果$f$在$z_0$附近的Laurent展开式为 \eqref{eq5.2.2} 式，那么
+  \[
+    (z-z_0)^mf(z) = a_{-m}+a_{-(m-1)}(z-z_0) + \cdots + a_0(z-z_0)^m + \cdots.
+  \]
+  若记上式右端的幂级数为$\varphi(z)$，则$\varphi$在$z_0$处全纯，且$\varphi(z_0)=a_{-m}\ne0$. 因而$\frac1{\varphi}$也在$z_0$处全纯，于是
+  \[
+    \frac1{f(z)} = (z-z_0)^m\frac1{\varphi(z)}
+  \]
+  在$z_0$附近成立。由第 \ref{chap4} 章的命题 \ref{prop4.3.4}，$z_0$是$\frac1f$的$m$阶零点，所以是$f$的$m$阶极点.
 \end{proof}
 
 最后来看$f$在本性奇点附近的性质.前面已经证明，$f$在可去奇点处的特征是Laurent展开式没有主要部分，只有全纯部分；在极点处的特征是Laurent展开式的主要部分只有有限项.因此，在本性奇点处的特征是Laurent展开式的主要部分有无穷多项.按定义，$z_0$是$f$的本性奇点是指$\lim_{z\to z_0}f(z)$不存在，实际上，我们可以证明一个更深刻的结果.
 \begin{theorem}[（\textbf{Weierstrass}）]\label{thm5.2.5}\index{D!定理!Weierstrass定理}
-设$z_0$是$f$的本性奇点，那么对任意$A\in\MC_\infty$，必存在趋于$z_0$的点列$\{z_n\}$，使得$\lim_{n\to\infty}f(z_n)=A$.
+  设$z_0$是$f$的本性奇点，那么对任意$A\in\MC_\infty$，必存在趋于$z_0$的点列$\{z_n\}$，使得$\lim_{n\to\infty}f(z_n)=A$.
 \end{theorem}
 \begin{proof}
-先设$A=\infty$.因为$z_0$是$f$的本性奇点，故$f$在$z_0$附近无界.于是对任意自然数$n$，总能找到$z_n$，使得$|z_n-z_0|<\frac1n$，但$|f(z_n)|>n$，这说明$\lim_{n\to\infty}f(z_n)=\infty$.
+  先设$A=\infty$.因为$z_0$是$f$的本性奇点，故$f$在$z_0$附近无界.于是对任意自然数$n$，总能找到$z_n$，使得$|z_n-z_0|<\frac1n$，但$|f(z_n)|>n$，这说明$\lim_{n\to\infty}f(z_n)=\infty$.
 
-再设$A$是一个有限数.令$\varphi(z)=\frac1{f(z)-A}$，我们证明$\varphi$在$z_0$的邻域中无界.不然的话，$z_0$是$\varphi$的可去奇点，适当选择$\varphi(z_0)$的值，可使$\varphi$在$z_0$处全纯。如果$\varphi(z_0)\ne0$，则因$f(z)=\frac1{\varphi(z)}+A$，$f$也在$z_0$处全纯，这不可能.故必有$\varphi(z_0)=0$，这说明$z_0$是$f$的极点，也不可能.所以，$\varphi$在$z_0$的邻域中无界.于是，对任意自然数$n$，存在$z_n$，使得$|z_n-z_0|<\frac1n$，但$\frac1{|f(z)-A|}>n$，即$|f(z)-A|<\frac1n$.这就证明了$\lim_{n\to\infty}f(z_n)=A$.
+  再设$A$是一个有限数.令$\varphi(z)=\frac1{f(z)-A}$，我们证明$\varphi$在$z_0$的邻域中无界.不然的话，$z_0$是$\varphi$的可去奇点，适当选择$\varphi(z_0)$的值，可使$\varphi$在$z_0$处全纯。如果$\varphi(z_0)\ne0$，则因$f(z)=\frac1{\varphi(z)}+A$，$f$也在$z_0$处全纯，这不可能.故必有$\varphi(z_0)=0$，这说明$z_0$是$f$的极点，也不可能.所以，$\varphi$在$z_0$的邻域中无界.于是，对任意自然数$n$，存在$z_n$，使得$|z_n-z_0|<\frac1n$，但$\frac1{|f(z)-A|}>n$，即$|f(z)-A|<\frac1n$.这就证明了$\lim_{n\to\infty}f(z_n)=A$.
 \end{proof}
 
 后来，Picard又证明了比Weierstrass定理更进一步的结果：
 \begin{theorem}[（\textbf{Picard}）]\label{thm5.2.6}\index{D!定理!Picard定理}
-全纯函数在本性奇点的邻域内无穷多次地取到每个有穷复值，最多只有一个例外.
+  全纯函数在本性奇点的邻域内无穷多次地取到每个有穷复值，最多只有一个例外.
 \end{theorem}
 
 例如，考虑函数$f(z)=\ee^{\frac1z}$，它在$z=0$附近是全纯的.若让$z$沿着$x$轴分别从$0$的左边和右边趋于$0$，可得
 \begin{align*}
-&\lim_{z=x\to0^-}\ee^{\frac1z}=\lim_{x\to0^-}\ee^{\frac1x}=0,\\
-&\lim_{z=x\to0^+}\ee^{\frac1z}=\lim_{x\to0^+}\ee^{\frac1x}=\infty.
+  & \lim_{z=x\to0^-}\ee^{\frac1z} = \lim_{x\to0^-}\ee^{\frac1x} = 0,\\
+  & \lim_{z=x\to0^+}\ee^{\frac1z} = \lim_{x\to0^+}\ee^{\frac1x} = \infty.
 \end{align*}
 这说明$\lim_{z\to0}\ee^{\frac1z}$不存在，所以$z=0$是$\ee^{\frac1z}$的本性奇点.对于任意复数$a\ne0$，若取$z_n=(\log a+2n\pi\ii)^{-1}$，则$f(z_n)=\ee^{\log a+2n\pi\ii}=a$.由于$z_n\to0$，这说明$\ee^{\frac1z}$在$z=0$的邻域中可以无穷多次地取到非零值$a$，但$0$是它的唯一的例外值.
 
@@ -297,257 +327,299 @@ f(z)&=\frac1{(z-z_0)^m}\frac1{g(z)}=\sum_{n=0}^\infty c_n(z-z_0)^{n-m}\\
 如果$f$在无穷远点的邻域（不包括无穷远点）$\{z:0\le R<|z|<\infty\}$中全纯，就称$\infty$是$f$的孤立奇点.
 
 在这种情形下，作变换$z=\frac1\zeta$，记
-\[g(\zeta)=f\bigg(\frac1\zeta\bigg),\]
+\[
+  g(\zeta) = f\bigg(\frac1\zeta\bigg),
+\]
 则$g$在$0<|\zeta|<\frac1R$中全纯，即$\zeta=0$是$g$的孤立奇点. 很自然地，我们有下面的
 \begin{definition}\label{def5.2.7}
-如果$\zeta=0$是$g$的可去奇点、$m$阶极点或本性奇点，那么我们相应地称$z=\infty$是$f$的可去奇点、$m$阶极点或本性奇点.
+  如果$\zeta=0$是$g$的可去奇点、$m$阶极点或本性奇点，那么我们相应地称$z=\infty$是$f$的可去奇点、$m$阶极点或本性奇点.
 \end{definition}
 
 因为$g$在原点的邻域中有Laurent展开：
-\[g(\zeta)=\sum_{n=-\infty}^\infty a_n\zeta^n,0<|\zeta|<\frac1R,\]
+\[
+  g(\zeta) = \sum_{n=-\infty}^\infty a_n\zeta^n ,0 < |\zeta| < \frac1R,
+\]
 所以$f$在$R<|z|<\infty$中有下面的Laurent展开：
-\[f(z)=\sum_{n=-\infty}^\infty b_nz^n,\]
+\[
+  f(z) = \sum_{n=-\infty}^\infty b_nz^n,
+\]
 其中，$b_n=a_{-n},n=0,\pm1,\cdots$.
 
 特别地，如果$z=\infty$是$f$的可去奇点，即$\zeta=0$是$g$的可去奇点，因而$a_n=0$（$n=-1,-2,\cdots$），所以$f$的Laurent展开为
 \begin{equation}\label{eq5.2.3}
-f(z)=\sum_{n=0}^\infty b_{-n}z^{-n}.
+  f(z) = \sum_{n=0}^\infty b_{-n}z^{-n}.
 \end{equation}
 
 同样道理，如果$z=\infty$分别是$f$的$m$阶极点或本性奇点，那么$f$在$R<|z|<\infty$中分别有下面的Laurent展开式：
 \begin{equation}\label{eq5.2.4}
-f(z)=b_mz^m+\cdots+b_1+b_0+b_{-1}z^{-1}+\cdots,
+  f(z) = b_mz^m + \cdots + b_1 + b_0 + b_{-1}z^{-1} + \cdots,
 \end{equation}
 或
 \begin{equation}\label{eq5.2.5}
-f(z)=\cdots+b_mz^m+\cdots+b_1z+b_0+b_{-1}z^{-1}+\cdots.
+  f(z) = \cdots + b_mz^m + \cdots + b_1z + b_0 + b_{-1}z^{-1} + \cdots.
 \end{equation}
 这时，我们称$\sum_{n=1}^\infty b_nz^n$为$f$的主要部分，$\sum_{n=0}^\infty b_{-n}z^{-n}$为$f$的全纯部分.
 
 \begin{xiti}
-\item 是否存在$\bar{B(0,1)}\backslash\{0\}$上的无界全纯函数$f$，使得$\lim_{z\to0}zf(z)=0$?
-\item 下列初等全纯函数有哪些奇点?指出其类别：
-\begin{tasks}(2)
-\task $\frac1{\sin z-\cos z}$；
-\task $\frac{\ee^{\frac1{1-z}}}{\ee^z-1}$；
-\task $\sin\frac1{1-z}$；
-\task $\tan z$；
-\task $\frac{\ee^z}{z(1-\ee^z)}$；
-\task $\ee^{\cot\frac1z}$；
-\task $\sin\bigg(\frac1{\cos\frac1z}\bigg)$；
-\task $\ee^{\tan z}$.
-\end{tasks}
-\item 证明：若$z_0$是全纯函数$f:B(z_0,r)\backslash\{z_0\}\to\MC\backslash\{0\}$的本性奇点，则$z_0$也是$\frac1{f(z)}$的本性奇点.
-\item 设$R(z)$是有理函数，$z_1,z_2,\cdots,z_n$是$R(z)$在$\MC_\infty$上的全部不同的极点.证明：若$z_0$是全纯函数$f:B(z_0,r)\backslash\{z_0\}\to\MC_\infty\backslash
+  \item 是否存在$\bar{B(0,1)}\backslash\{0\}$上的无界全纯函数$f$，使得$\lim_{z\to0}zf(z)=0$?
+  \item 下列初等全纯函数有哪些奇点?指出其类别：
+    \begin{tasks}(2)
+      \task $\frac1{\sin z-\cos z}$；
+      \task $\frac{\ee^{\frac1{1-z}}}{\ee^z-1}$；
+      \task $\sin\frac1{1-z}$；
+      \task $\tan z$；
+      \task $\frac{\ee^z}{z(1-\ee^z)}$；
+      \task $\ee^{\cot\frac1z}$；
+      \task $\sin\bigg(\frac1{\cos\frac1z}\bigg)$；
+      \task $\ee^{\tan z}$.
+    \end{tasks}
+  \item 证明：若$z_0$是全纯函数$f:B(z_0,r)\backslash\{z_0\}\to\MC\backslash\{0\}$的本性奇点，则$z_0$也是$\frac1{f(z)}$的本性奇点.
+  \item 设$R(z)$是有理函数，$z_1,z_2,\cdots,z_n$是$R(z)$在$\MC_\infty$上的全部不同的极点.证明：若$z_0$是全纯函数$f:B(z_0,r)\backslash\{z_0\}\to\MC_\infty\backslash
     \{z_1,\cdots,z_n\}$的本性奇点，则$z_0$也是$R\big(f(z)\big)$的本性奇点.
-\item 设$P_n(z)$和$Q_m(z)$分别是$n$次和$m$次多项式，指出$\infty$是下列有理函数的什么奇点：
-\begin{enuma}
-  \item $P_n(z)+Q_m(z)$；
-  \item $\frac{P_n(z)}{Q_m(z)}$；
-  \item $P_n(z)Q_m(z)$.
-\end{enuma}
-\item 设$f$是$B(z_0,R)\backslash\{z_0\}$上非常数的全纯函数.证明：若$z_0$是$f$的零点集的极限点，则$z_0$是$f$的本性奇点.
-\item 若$f$在域$D$上除了极点外，在其他点处都全纯，则称$f$是$D$上的\textbf{亚纯函数}\index{F!复变函数!亚纯函数}.证明：若$f$是$B(z_0,R)\backslash\{z_0\}$上的亚纯函数，并且$z_0$是$f$的极点集的极限点，则对任意$A\in \MC_\infty$，存在收敛于$z_0$的点列$\{z_n\}\subset B(z_0,R)\backslash\{z_0\}$，使得$\lim_{n\to\infty}f(z_n)=A$.
-\item 设$f$在$B(0,R)\backslash\{0\}$上全纯. 证明：若$\Re f(z)>0,\forall z\in B(0,R)\backslash\{0\}$，则$0$是$f$的可去奇点.
-\item 设$f$是域$D$上的亚纯函数.证明：对于任意$A\in \MC$，
-$\frac{f'(z)}{f(z)-A}$也是$D$上的亚纯函数，并且其极点都是$1$阶的（$f$为常值函数的情形除外）.
-\item 证明：若$f$是域$D$上的亚纯函数，但不全纯，则存在$R>0$，使得$B(\infty,R)\subset f(D)$.
-\item 设$f$在$\MC\backslash\{0\}$上全纯，并且$0$和$\infty$都是$f$的本性奇点.证明：若令$A(r)=\max_{|z|=r}\Re f(z)$， $0<r<\infty$，则
-    \begin{align*}
-    &\lim_{r\to\infty}\frac{\log A(r)}{\log r}=\infty,\\
-    &\lim_{r\to0}\frac{\log A(r)}{\log\frac1r}=\infty.
-    \end{align*}
+  \item 设$P_n(z)$和$Q_m(z)$分别是$n$次和$m$次多项式，指出$\infty$是下列有理函数的什么奇点：
+    \begin{enuma}
+      \item $P_n(z)+Q_m(z)$；
+      \item $\frac{P_n(z)}{Q_m(z)}$；
+      \item $P_n(z)Q_m(z)$.
+    \end{enuma}
+  \item 设$f$是$B(z_0,R)\backslash\{z_0\}$上非常数的全纯函数.证明：若$z_0$是$f$的零点集的极限点，则$z_0$是$f$的本性奇点.
+  \item 若$f$在域$D$上除了极点外，在其他点处都全纯，则称$f$是$D$上的\textbf{亚纯函数}\index{F!复变函数!亚纯函数}.证明：若$f$是$B(z_0,R)\backslash\{z_0\}$上的亚纯函数，并且$z_0$是$f$的极点集的极限点，则对任意$A\in \MC_\infty$，存在收敛于$z_0$的点列$\{z_n\}\subset B(z_0,R)\backslash\{z_0\}$，使得$\lim_{n\to\infty}f(z_n)=A$.
+  \item 设$f$在$B(0,R)\backslash\{0\}$上全纯. 证明：若$\Re f(z)>0,\forall z\in B(0,R)\backslash\{0\}$，则$0$是$f$的可去奇点.
+  \item 设$f$是域$D$上的亚纯函数.证明：对于任意$A\in \MC$，
+      $\frac{f'(z)}{f(z)-A}$也是$D$上的亚纯函数，并且其极点都是$1$阶的（$f$为常值函数的情形除外）.
+  \item 证明：若$f$是域$D$上的亚纯函数，但不全纯，则存在$R>0$，使得$B(\infty,R)\subset f(D)$.
+  \item 设$f$在$\MC\backslash\{0\}$上全纯，并且$0$和$\infty$都是$f$的本性奇点.证明：若令$A(r)=\max_{|z|=r}\Re f(z)$， $0<r<\infty$，则
+      \begin{align*}
+        & \lim_{r\to\infty}\frac{\log A(r)}{\log r} = \infty,\\
+        & \lim_{r\to0}\frac{\log A(r)}{\log\frac1r} = \infty.
+      \end{align*}
 \end{xiti}
 
 \section{整函数与亚纯函数\label{sec5.3}}
 前面已经讲过，如果$f$在整个复平面$\MC$上全纯，就称$f$为整函数，$f$在$\MC$上有Taylor展开式
 \begin{equation}\label{eq5.3.1}
-f(z)=\sum_{n=0}^\infty a_nz^n.
+  f(z) = \sum_{n=0}^\infty a_nz^n.
 \end{equation}
 它当然在$R<|z|<\infty$中也成立，因此也可把它看成是无穷远点邻域中的Laurent展开式.
 
 如果整函数$f$在$\infty$处全纯，那么根据 \ref{sec5.2} 节中的展开式 \eqref{eq5.2.3}，它在$\infty$处邻域中的Laurent展开式除去常数项外只有负次幂的项，因此在展开式 \eqref{eq5.3.1} 中必须有
-\[a_1=a_2=\cdots=0,\]
+\[
+  a_1 = a_2 = \cdots = 0,
+\]
 所以$f$是一常数.这样，我们就得到了
 \begin{theorem}\label{thm5.3.1}
-在无穷远处全纯的整函数一定是常数.
+  在无穷远处全纯的整函数一定是常数.
 \end{theorem}
 
 如果无穷远点是整函数$f$的一个$m$阶极点，那么根据 \ref{sec5.2} 节中的展开式 \eqref{eq5.2.4}，它在无穷远点邻域中的Laurent展开式除去一个$m$次多项式外只有负次幂的项，因此在展开式 \eqref{eq5.3.1} 中必须有
-\[a_{m+1}=a_{m+2}=\cdots=0.\]
+\[
+  a_{m+1} = a_{m+2} = \cdots = 0.
+\]
 所以$f$是一个$m$次多项式.我们已经证明了下面的
 \begin{theorem}\label{thm5.3.2}
-如果无穷远点是整函数$f$的一个$m$阶极点，那么$f$是一个$m$次多项式.
+  如果无穷远点是整函数$f$的一个$m$阶极点，那么$f$是一个$m$次多项式.
 \end{theorem}
 
 不是常数和多项式的整函数称为超越整函数.无穷远点一定是超越整函数的本性奇点.如$\ee^z,\sin z,\cos z$等，都是超越整函数.
 
 如果$f$在整个复平面$\MC$上除去极点外没有其他的奇点，就称$f$是一个\textbf{亚纯函数}\index{F!复变函数!亚纯函数}.整函数当然是亚纯函数.此外，有理函数
-\[f(z)=\frac{P_n(z)}{Q_m(z)}\]
+\[
+  f(z) = \frac{P_n(z)}{Q_m(z)}
+\]
 也是亚纯函数，这里，$P_n$和$Q_m$是两个既约的多项式.现在来看有理函数在无穷远点的情况.若记
 \begin{align*}
-&P_n(z)=a_0+a_1z+\cdots+a_nz^n,a_n\ne0,\\
-&Q_m(z)=b_0+b_1z+\cdots+b_mz^m,b_m\ne0,
+  & P_n(z) = a_0 + a_1z + \cdots + a_nz^n, a_n \ne 0,\\
+  & Q_m(z) = b_0 + b_1z + \cdots + b_mz^m, b_m \ne 0,
 \end{align*}
 那么
-\[f(z)=\frac{P_n(z)}{Q_m(z)}=\frac1{z^{m-n}}\frac{a_n+a_{n-1}\frac1z+\cdots+a_0\frac1{z^n}}
-{b_m+b_{m-1}\frac1z+\cdots+b_0\frac1{z^m}}.\]
+\[
+  f(z) = \frac{P_n(z)}{Q_m(z)} = \frac1{z^{m-n}}\frac{a_n+a_{n-1}\frac1z+\cdots+a_0\frac1{z^n}}
+  {b_m+b_{m-1}\frac1z+\cdots+b_0\frac1{z^m}}.
+\]
 所以
-\[\lim_{z\to\infty}f(z)=\begin{cases}
-\frac{a_n}{b_m},&n=m;\\
-\infty,&n>m;\\
-0,&n<m.
-\end{cases}\]
+\[
+  \lim_{z\to\infty}f(z) = \begin{cases}
+     \frac{a_n}{b_m}, & n = m; \\
+       \infty, & n > m; \\
+        0, & n < m.
+   \end{cases}
+\]
 这说明$z=\infty$或是$f$的可去奇点，或是$f$的极点.下面我们将证明，这一事实的逆也成立.
 \begin{theorem}\label{thm5.3.3}
-若$z=\infty$是亚纯函数$f$的可去奇点或极点，则$f$一定是有理函数.
+  若$z=\infty$是亚纯函数$f$的可去奇点或极点，则$f$一定是有理函数.
 \end{theorem}
 \begin{proof}
-因$z=\infty$是$f$的可去奇点或极点，故必存在$R>0$，使得$f$在$R<|z|<\infty$中全纯.在$|z|\le R $中，$f$最多只能有有限个极点.因若有无穷多个极点$z_j,j=1,2,\cdots$，则$\{z_j\}$必有收敛的子列$\{z_{k_j}\}$，设其极限为$a$，则$|a|\le R$，显然$a$不是孤立奇点，这不可能.今设$z_1,\cdots,z_n$为$f$在$|z|\le R$中的有限个极点，它们的阶分别为$m_1,\cdots,m_n$. $f$在$z_j$（$j=1,\cdots,n$）附近的Laurent展开的主要部分为
-\[h_j(z)=\frac{c_{-1}^{(j)}}{z-z_j}+\frac{c_{-2}^{(j)}}{(z-z_j)^2}
-+\cdots+\frac{c_{-m_j}^{(j)}}{(z-z_j)^{m_j}}.\]
-设$f$在$\infty$的邻域内的Laurent展开的主要部分为$g$，当$z=\infty$是$f$的极点时，$g$是一个多项式；当$z=\infty$是$f$的可去奇点时，$g\equiv0$.令
-\[F(z)=f(z)-h_1(z)-\cdots-h_n(z)-g(z),\]
-显然，$F$在$\MC_\infty$中除$z_1,\cdots,z_n$和$\infty$外是全纯的，而在$z_1,\cdots,z_n$和$\infty$这些点上，$f$的主要部分都已经被消去，因而也是全纯的.所以，$F$是$\MC_\infty$上的全纯函数，因而由定理 \ref{thm5.3.1}，$F$是一个常数$c$.于是
-\[f(z)=c+g(z)+\sum_{j=1}^n h_j(z),\]
-所以$f$是有理函数.
+  因$z=\infty$是$f$的可去奇点或极点，故必存在$R>0$，使得$f$在$R<|z|<\infty$中全纯.在$|z|\le R $中，$f$最多只能有有限个极点.因若有无穷多个极点$z_j,j=1,2,\cdots$，则$\{z_j\}$必有收敛的子列$\{z_{k_j}\}$，设其极限为$a$，则$|a|\le R$，显然$a$不是孤立奇点，这不可能.今设$z_1,\cdots,z_n$为$f$在$|z|\le R$中的有限个极点，它们的阶分别为$m_1,\cdots,m_n$. $f$在$z_j$（$j=1,\cdots,n$）附近的Laurent展开的主要部分为
+  \[
+    h_j(z) = \frac{c_{-1}^{(j)}}{z-z_j} + \frac{c_{-2}^{(j)}}{(z-z_j)^2}
+    + \cdots + \frac{c_{-m_j}^{(j)}}{(z-z_j)^{m_j}}.
+  \]
+  设$f$在$\infty$的邻域内的Laurent展开的主要部分为$g$，当$z=\infty$是$f$的极点时，$g$是一个多项式；当$z=\infty$是$f$的可去奇点时，$g\equiv0$.令
+  \[
+    F(z) = f(z) - h_1(z) - \cdots - h_n(z) - g(z),
+  \]
+  显然，$F$在$\MC_\infty$中除$z_1,\cdots,z_n$和$\infty$外是全纯的，而在$z_1,\cdots,z_n$和$\infty$这些点上，$f$的主要部分都已经被消去，因而也是全纯的.所以，$F$是$\MC_\infty$上的全纯函数，因而由定理 \ref{thm5.3.1}，$F$是一个常数$c$.于是
+  \[
+    f(z) = c + g(z) + \sum_{j=1}^n h_j(z),
+  \]
+  所以$f$是有理函数.
 \end{proof}
 
 这里，我们顺便得到了这样一个结论：任何有理函数一定能分解成部分分式之和，而且这种分解是唯一的.这个结论在计算有理函数的不定积分时已经被多次用过.
 
 作为上面三个定理的应用，我们可以定出$\MC$的全纯自同构群和$\MC_\infty$的亚纯自同构群.
 \begin{theorem}\label{thm5.3.4}
-$\Aut(\MC)$由所有的一次多项式组成.
+  $\Aut(\MC)$由所有的一次多项式组成.
 \end{theorem}
 \begin{proof}
-设$f(z)=az+b,a\ne0$，则显然$f\in \Aut(\MC)$.反之，对于任意的$f\in \Aut(\MC)$，因为$f$是整函数，如果$\infty$是它的可去奇点，则由定理 \ref{thm5.3.1}，$f$是一个常数，这不可能.如果$\infty$是$f$的本性奇点，则由定理 \ref{thm5.2.5}，对于任意$A\in\MC$，必有$z_n\to\infty$，使得$\lim_{n\to\infty}f(z_n)=A$.现在记$f(z_n)=w_n$.，则$z_n=f^{-1}(w_n)$，两端令$n\to\infty$，即得$f^{-1}(A)=\infty$.这说明$A$是$f^{-1}$的一个极点，与$f^{-1}$是整函数相矛盾.由此可知$\infty$必为$f$的极点，由定理 \ref{thm5.3.2} 知道，$f$是一个多项式.又因为$f$在$\MC$上是单叶的，所以$f$只能是一次多项式.
+  设$f(z)=az+b,a\ne0$，则显然$f\in \Aut(\MC)$.反之，对于任意的$f\in \Aut(\MC)$，因为$f$是整函数，如果$\infty$是它的可去奇点，则由定理 \ref{thm5.3.1}，$f$是一个常数，这不可能.如果$\infty$是$f$的本性奇点，则由定理 \ref{thm5.2.5}，对于任意$A\in\MC$，必有$z_n\to\infty$，使得$\lim_{n\to\infty}f(z_n)=A$.现在记$f(z_n)=w_n$.，则$z_n=f^{-1}(w_n)$，两端令$n\to\infty$，即得$f^{-1}(A)=\infty$.这说明$A$是$f^{-1}$的一个极点，与$f^{-1}$是整函数相矛盾.由此可知$\infty$必为$f$的极点，由定理 \ref{thm5.3.2} 知道，$f$是一个多项式.又因为$f$在$\MC$上是单叶的，所以$f$只能是一次多项式.
 \end{proof}
 
 \begin{theorem}\label{thm5.3.5}
-$\Aut(\MC_\infty)$由所有的分式线性变换组成.
+  $\Aut(\MC_\infty)$由所有的分式线性变换组成.
 \end{theorem}
 \begin{proof}
-因为是在$\MC_\infty$上讨论，$\Aut(\MC)$中的元素不再是全纯函数，而是亚纯函数.由第 \ref{chap2} 章 \ref{sec2.5} 节的讨论知道，任何分式线性变换都是$\Aut(\MC_\infty)$中的元素.现设$f\in\Aut(\MC_\infty)$，则$f$必为亚纯函数，而且$\infty$必是$f$的可去奇点或极点.由定理 \ref{thm5.3.3}，$f$必为有理函数，再由它的单叶性，它只能是分式线性变换.
+  因为是在$\MC_\infty$上讨论，$\Aut(\MC)$中的元素不再是全纯函数，而是亚纯函数.由第 \ref{chap2} 章 \ref{sec2.5} 节的讨论知道，任何分式线性变换都是$\Aut(\MC_\infty)$中的元素.现设$f\in\Aut(\MC_\infty)$，则$f$必为亚纯函数，而且$\infty$必是$f$的可去奇点或极点.由定理 \ref{thm5.3.3}，$f$必为有理函数，再由它的单叶性，它只能是分式线性变换.
 \end{proof}
 
 \begin{xiti}
-\item 求出所有$\MC$上的亚纯函数$f$，使得$|f(z)|=1,\forall z\in \partial B(0,1)$.
-\item 证明：整函数$f(z)$无零点，当且仅当存在另一个整函数$g(z)$，使得$f(z)=\ee^{g(z)}$.
-\item 设$P_n(z)$是$n$次多项式，$n\in\MN$. 证明：$\ee^z-P_n(z)$有无数个零点.
-\item 设$\SL(2,\MC)=\left\{\begin{pmatrix}
-a&b\\c&d
-\end{pmatrix}:ad-cb=1\right\}, I=\begin{pmatrix}
-1&0\\0&1
-\end{pmatrix}$.证明：
-\begin{enuma}
-  \item $\SL(2,\MC)$按矩阵乘法构成一个群，$\{ I,- I\}$是其正规子群；
-  \item $\begin{pmatrix}
-    a&b\\c&d
-  \end{pmatrix}\mapsto\frac{az+b}{cz+d}$是商群$\frac{\SL(2,\MC)}{\{ I,- I\}}$与$\MC_\infty$的自同构群$\Aut(\MC_\infty)$之间的同构.
-\end{enuma}
-\item 设$f(z)$是整函数. 证明：
-\begin{enuma}
-  \item 若$f(\MR)\subset \MR,f(\ii\MR)\subset \ii\MR$，则$f(z)$是奇函数；
-  \item 若$f(\MR)\subset \MR,f(\ii\MR)\subset \MR$，则$f(z)$是偶函数.
-\end{enuma}
-\item 设$f$在$C_\infty$上亚纯，其极点只有$z=1,z=2$和$z=\infty$. 若$f$在这$3$个极点处的Laurent展开式的主要部分分别为$\frac1{z-1},\frac1{z-2}+\frac1{(z-2)^2}$和$z+z^2$，并且$f(0)=0$，求$f(z)$.
+  \item 求出所有$\MC$上的亚纯函数$f$，使得$|f(z)|=1,\forall z\in \partial B(0,1)$.
+  \item 证明：整函数$f(z)$无零点，当且仅当存在另一个整函数$g(z)$，使得$f(z)=\ee^{g(z)}$.
+  \item 设$P_n(z)$是$n$次多项式，$n\in\MN$. 证明：$\ee^z-P_n(z)$有无数个零点.
+  \item 设$\SL(2,\MC)=\left\{\begin{pmatrix}
+                           a & b \\ 
+                           c & d
+                           \end{pmatrix}:ad - cb = 1\right\}, 
+                           I = \begin{pmatrix}
+                           1 & 0 \\ 
+                           0 & 1
+                           \end{pmatrix}$.证明：
+    \begin{enuma}
+      \item $\SL(2,\MC)$按矩阵乘法构成一个群，$\{ I,- I\}$是其正规子群；
+      \item $\begin{pmatrix}
+        a & b \\ 
+        c & d
+       \end{pmatrix}\mapsto\frac{az+b}{cz+d}$是商群$\frac{\SL(2,\MC)}{\{ I,- I\}}$与$\MC_\infty$的自同构群$\Aut(\MC_\infty)$之间的同构.
+    \end{enuma}
+  \item 设$f(z)$是整函数. 证明：
+    \begin{enuma}
+      \item 若$f(\MR)\subset \MR,f(\ii\MR)\subset \ii\MR$，则$f(z)$是奇函数；
+      \item 若$f(\MR)\subset \MR,f(\ii\MR)\subset \MR$，则$f(z)$是偶函数.
+    \end{enuma}
+  \item 设$f$在$C_\infty$上亚纯，其极点只有$z=1,z=2$和$z=\infty$. 若$f$在这$3$个极点处的Laurent展开式的主要部分分别为$\frac1{z-1},\frac1{z-2}+\frac1{(z-2)^2}$和$z+z^2$，并且$f(0)=0$，求$f(z)$.
 \end{xiti}
 
 \section{残数定理\label{sec5.4}}
 设$f$在$a$点全纯，那么对于$a$点邻域中的任意可求长闭曲线$\gamma$，都有$\int\limits_\gamma f(z)\dz=0$. 如果$a$是$f$的孤立奇点，那么上述积分不一定总等于零，且积分值只与$f$和$a$有关，而与$\gamma$无关. 现在来计算这个积分. 设$f$在$a$点邻域中的Laurent展开式为
-\[f(z)=\sum_{n=-\infty}^\infty c_n(z-a)^n,\]
+\[
+  f(z) = \sum_{n=-\infty}^\infty c_n(z-a)^n,
+\]
 这里，
-\[c_n=\frac1{2\pi\ii}\int\limits_{\gamma}\frac{f(\zeta)}{(\zeta-a)^{n+1}}\dif \zeta,n=0,\pm1,\cdots.\]
+\[
+  c_n = \frac1{2\pi\ii}\int\limits_{\gamma}\frac{f(\zeta)}{(\zeta-a)^{n+1}}\dif \zeta,n=0,\pm1,\cdots.
+\]
 特别地，当$n=-1$时，我们有
 \begin{equation}\label{eq5.4.1}
-c_{-1}=\frac1{2\pi\ii}\int\limits_{\gamma}f(\zeta)\dif \zeta.
+  c_{-1} = \frac1{2\pi\ii}\int\limits_{\gamma}f(\zeta)\dif \zeta.
 \end{equation}
 原来所讨论的积分值就是$c_{-1}$的$2\pi\ii$倍，因此$c_{-1}$这个系数有它特殊的含义.我们给出下面的
 \begin{definition}\label{def5.4.1}
-设$a$是$f$的一个孤立奇点，$f$在$a$点的邻域$B(a,r)$中的Laurent展开为$f(z)=\sum_{n=-\infty}^\infty c_n(z-a)^n$，称$c_{-1}$为$f$在$a$点的\textbf{残数}\index{C!残数}
-\footnote{残数亦称留数.}，记为
-\[\Res(f,a)=c_{-1}\]
-或
-\[\Res_{z=a}f=c_{-1}.\]
+  设$a$是$f$的一个孤立奇点，$f$在$a$点的邻域$B(a,r)$中的Laurent展开为$f(z)=\sum_{n=-\infty}^\infty c_n(z-a)^n$，称$c_{-1}$为$f$在$a$点的\textbf{残数}\index{C!残数}
+  \footnote{残数亦称留数.}，记为
+  \[
+    \Res(f,a) = c_{-1}
+  \]
+  或
+  \[
+    \Res_{z=a}f = c_{-1}.
+  \]
 \end{definition}
 
 根据 \eqref{eq5.4.1} 式，我们有
 \begin{equation}\label{eq5.4.2}
-\int\limits_\gamma f(z)\dz=2\pi\ii\Res(f,a).
+  \int\limits_\gamma f(z)\dz = 2\pi\ii\Res(f,a).
 \end{equation}
 这里，$\gamma=\{z:|z-a|=\rho\},0<\rho<r$.
 
 若$z=\infty$是$f$的孤立奇点，即$f$在$R<|z|<\infty$中全纯，我们定义$f$在$z=\infty$处的残数为
 \begin{equation}\label{eq5.4.3}
-\Res(f,\infty)=-\frac1{2\pi\ii}\int\limits_\gamma f(z)\dz,
+  \Res(f,\infty) = -\frac1{2\pi\ii}\int\limits_\gamma f(z)\dz,
 \end{equation}
 这里，$\gamma=\{z:|z|=\rho\},R<\rho<\infty$.
 
 在很多情况下，函数在孤立奇点处的Laurent展开式是不易得到的，因此有必要讨论在不知道Laurent展开式的情况下计算残数的方法.
 
 \begin{prop}\label{prop5.4.2}
-若$a$是$f$的$m$阶极点，则
-\[\Res(f,a)=\frac1{(m-1)!}\lim_{z\to a}\frac{\dif ^{m-1}}{\dif z^{m-1}}
-\{(z-a)^mf(z)\}.\]
+  若$a$是$f$的$m$阶极点，则
+  \[
+    \Res(f,a) = \frac1{(m-1)!}\lim_{z\to a}\frac{\dif ^{m-1}}{\dif z^{m-1}}
+    \{(z-a)^mf(z)\}.
+  \]
 \end{prop}
 \begin{proof}
-因为$a$是$f$的$m$阶极点，故在$a$点的邻域中有
-\begin{equation}\label{eq5.4.4}
-f(z)=\frac1{(z-a)^m}g(z),
-\end{equation}
-这里，$g$在$a$点全纯，且$g(a)\ne0$. 于是
-\[f(z)=\frac1{(z-a)^m}\sum_{n=0}^\infty\frac{g^{(n)}(a)}{n!}(z-a)^n
-=\sum_{n=0}^\infty\frac{g^{(n)}(a)}{n!}(z-a)^{n-m}.\]
-这是一个Laurent展开式，$(z-a)^{-1}$的系数为$\frac{g^{(m-1)}(a)}{(m-1)!}$. 由 \eqref{eq5.4.4} 式知$g(z)=(z-a)^mf(z)$，因而得
-\begin{equation*}
-  \Res(f,a) = \frac{g^{(m-1)}(a)}{(m-1)!} = \frac1{(m-1)!}\lim_{z\to a}\frac{\dif ^{m-1}}{\dif z^{m-1}}\{(z-a)^mf(z)\}. \qedhere
-\end{equation*}
+  因为$a$是$f$的$m$阶极点，故在$a$点的邻域中有
+  \begin{equation}\label{eq5.4.4}
+    f(z) = \frac1{(z-a)^m}g(z),
+  \end{equation}
+  这里，$g$在$a$点全纯，且$g(a)\ne0$. 于是
+  \[
+    f(z) = \frac1{(z-a)^m}\sum_{n=0}^\infty\frac{g^{(n)}(a)}{n!}(z-a)^n
+    =\sum_{n=0}^\infty\frac{g^{(n)}(a)}{n!}(z-a)^{n-m}.
+  \]
+  这是一个Laurent展开式，$(z-a)^{-1}$的系数为$\frac{g^{(m-1)}(a)}{(m-1)!}$. 由 \eqref{eq5.4.4} 式知$g(z)=(z-a)^mf(z)$，因而得
+  \begin{equation*}
+    \Res(f,a) = \frac{g^{(m-1)}(a)}{(m-1)!} = \frac1{(m-1)!}\lim_{z\to a}\frac{\dif ^{m-1}}{\dif z^{m-1}}\{(z-a)^mf(z)\}. \qedhere
+  \end{equation*}
 \end{proof}
 
 特别地，当$m=1$时，我们有下面的
 \begin{prop}\label{prop5.4.3}
-若$a$是$f$的$1$阶极点，则
-\[\Res(f,a)=\lim_{z\to a}(z-a)f(z).\]
+  若$a$是$f$的$1$阶极点，则
+  \[
+    \Res(f,a) = \lim_{z\to a}(z-a)f(z).
+  \]
 \end{prop}
 
 \begin{example}\label{exam5.4.4}
-若$f(z)=\frac1{1+z^2},z=\pm\ii$都是$f$的$1$阶极点，由命题 \ref{prop5.4.3} 即得
-\begin{align*}
-&\Res(f,\ii)=\lim_{z\to \ii}(z-\ii)\frac1{1+z^2}=\frac1{2\ii},\\
-&\Res(f,-\ii)=\lim_{z\to-\ii}(z+\ii)\frac1{1+z^2}=-\frac1{2\ii}.
-\end{align*}
-在某些情况下，下面的命题用起来更方便.
+  若$f(z)=\frac1{1+z^2},z=\pm\ii$都是$f$的$1$阶极点，由命题 \ref{prop5.4.3} 即得
+  \begin{align*}
+    & \Res(f,\ii) = \lim_{z\to \ii}(z-\ii)\frac1{1+z^2} = \frac1{2\ii},\\
+    & \Res(f,-\ii) = \lim_{z\to-\ii}(z+\ii)\frac1{1+z^2} = -\frac1{2\ii}.
+  \end{align*}
+  在某些情况下，下面的命题用起来更方便.
 \end{example}
 
 \begin{prop}\label{prop5.4.5}
-设$f=\frac gh,g$和$h$都在$a$处全纯，且$g(a)\ne0,h(a)=0,h'(a)\ne0$，那么
-\[\Res(f,a)=\frac{g(a)}{h'(a)}.\]
+  设$f=\frac gh,g$和$h$都在$a$处全纯，且$g(a)\ne0,h(a)=0,h'(a)\ne0$，那么
+  \[
+    \Res(f,a) = \frac{g(a)}{h'(a)}.
+  \]
 \end{prop}
 \begin{proof}
-在所设的条件下，$a$是$f$的$1$阶极点，故由命题 \ref{prop5.4.3} 即知道
-\begin{equation*}
-  \Res(f,a) = \lim_{z\to a}(z-a)\frac{g(z)}{h(z)}
-  = \lim_{z\to a}\frac{g(z)}{\frac{h(z)-h(a)}{z-a}} = \frac{g(a)}{h'(a)}. \qedhere
-\end{equation*}
+  在所设的条件下，$a$是$f$的$1$阶极点，故由命题 \ref{prop5.4.3} 即知道
+  \begin{equation*}
+    \Res(f,a) = \lim_{z\to a}(z-a)\frac{g(z)}{h(z)}
+    = \lim_{z\to a}\frac{g(z)}{\frac{h(z)-h(a)}{z-a}} = \frac{g(a)}{h'(a)}. \qedhere
+  \end{equation*}
 \end{proof}
 
 \begin{example}\label{exam5.4.6}
-计算$f(z)=\frac{\ee^z}{\sin z}$在$z=0$处的残数.
+  计算$f(z)=\frac{\ee^z}{\sin z}$在$z=0$处的残数.
 \end{example}
 \begin{solution}
-这时$g(z)=\ee^z,h(z)=\sin z$. 于是$g(0)=1,h(0)=0,h'(0)=1$，因而由命题 \ref{prop5.4.5} 得
-\begin{equation*}
-  \Res(f,0) = 1. \qedhere
-\end{equation*}
+  这时$g(z)=\ee^z,h(z)=\sin z$. 于是$g(0)=1,h(0)=0,h'(0)=1$，因而由命题 \ref{prop5.4.5} 得
+  \begin{equation*}
+    \Res(f,0) = 1. \qedhere
+  \end{equation*}
 \end{solution}
 
 \begin{example}
-计算函数$f(z)=\frac{\ee^{\ii z}}{z(z^2+1)^2}$在$z=-\ii$处的残数.
+  计算函数$f(z)=\frac{\ee^{\ii z}}{z(z^2+1)^2}$在$z=-\ii$处的残数.
 \end{example}
 \begin{solution}
   显然，$z=-\ii$是$f$的一个$2$阶极点，利用命题 \ref{prop5.4.2}，得
   \begin{equation*}
-    \Res(f,-\ii)=\lim_{z\to-\ii}\dd{}z\bigg(\frac{\ee^{\ii z}}{z(z-\ii)^2}\bigg)
+    \Res(f,-\ii) = \lim_{z\to-\ii}\dd{}z\bigg(\frac{\ee^{\ii z}}{z(z-\ii)^2}\bigg)
     = \frac{\ee}4. \qedhere
   \end{equation*}
 \end{solution}
@@ -555,171 +627,201 @@ f(z)=\frac1{(z-a)^m}g(z),
 如果$a$是$f$的本性奇点，就没有像上面那种简单的计算残数的公式了，这时只能通过$f$的Laurent展开来得到$f$在$a$点的残数.
 
 \begin{example}\label{exam5.4.8}
-计算$f(z)=\ee^{z+\frac1z}$在$z=0$处的残数.
+  计算$f(z)=\ee^{z+\frac1z}$在$z=0$处的残数.
 \end{example}
 \begin{solution}
-因为
-\[f(z)=\ee^z\cdot\ee^{\frac1z}=
-\bigg(1+z+\frac{z^2}{2!}+\cdots\bigg)\bigg(1+\frac1z+\frac1{2!z^2}+\cdots\bigg),\]
-这个乘积中，$\frac1z$的系数为
-\[1+\frac1{2!}+\frac1{2!3!}+\frac1{3!4!}+\cdots,\]
-这就是要找的残数，即
-\begin{equation*}
-  \Res(f,a) = \sum_{n=0}^\infty\frac1{n!(n+1)!}. \qedhere
-\end{equation*}
+  因为
+  \[
+    f(z) = \ee^z\cdot\ee^{\frac1z} = 
+   \bigg(1 + z + \frac{z^2}{2!} + \cdots \bigg)\bigg(1 + \frac1z + \frac1{2!z^2} + \cdots \bigg),
+  \]
+  这个乘积中，$\frac1z$的系数为
+  \[
+    1 + \frac1{2!} + \frac1{2!3!} + \frac1{3!4!} + \cdots,
+  \]
+  这就是要找的残数，即
+  \begin{equation*}
+    \Res(f,a) = \sum_{n=0}^\infty\frac1{n!(n+1)!}. \qedhere
+  \end{equation*}
 \end{solution}
 
 残数理论的基本定理是下面的
 \begin{theorem}\label{thm5.4.9}
-设$D$是复平面上的一个有界区域，它的边界$\gamma$由一条或若干条简单闭曲线组成.如果$f$在$D$中除去孤立奇点$z_1,\cdots,z_n$外是全纯的，在闭域$\bar D$上除去$z_1,\cdots,z_n$外是连续的，那么
-\begin{equation}\label{eq5.4.5}
-\int\limits_\gamma f(z)\dz=2\pi\ii\sum_{k=1}^n\Res(f,z_k).
-\end{equation}
+  设$D$是复平面上的一个有界区域，它的边界$\gamma$由一条或若干条简单闭曲线组成.如果$f$在$D$中除去孤立奇点$z_1,\cdots,z_n$外是全纯的，在闭域$\bar D$上除去$z_1,\cdots,z_n$外是连续的，那么
+  \begin{equation}\label{eq5.4.5}
+    \int\limits_\gamma f(z)\dz = 2\pi\ii\sum_{k=1}^n\Res(f,z_k).
+  \end{equation}
 \end{theorem}
 \begin{proof}
-在$D$内以$z_k$（$k=1,2,\cdots,n$）为中心作一小圆周$\gamma_k$，使得所有$\gamma_k$都在$D$的内部，且每一个$\gamma_k$都在其余小圆周的外部. 于是由定理 \ref{thm3.2.5}，得
-\[\int\limits_\gamma f(z)\dz=\sum_{k=1}^n\int\limits_{\gamma_k}f(z)\dz.\]
-再由公式 \eqref{eq5.4.2}，即得所要证的公式 \eqref{eq5.4.5}.
+  在$D$内以$z_k$（$k=1,2,\cdots,n$）为中心作一小圆周$\gamma_k$，使得所有$\gamma_k$都在$D$的内部，且每一个$\gamma_k$都在其余小圆周的外部. 于是由定理 \ref{thm3.2.5}，得
+  \[
+    \int\limits_\gamma f(z)\dz = \sum_{k=1}^n\int\limits_{\gamma_k}f(z)\dz.
+  \]
+  再由公式 \eqref{eq5.4.2}，即得所要证的公式 \eqref{eq5.4.5}.
 \end{proof}
 
 这个定理称为\textbf{残数定理}\index{D!定理!残数定理}，它的主要贡献是把积分计算归结为残数的计算. 而从命题 \ref{prop5.4.2} 知道，计算残数是一个微分运算. 因此，从实质上来说，残数定理把积分运算变成了微分运算，从而带来了方便.
 
 \begin{example}\label{exam5.4.10}
-计算积分
-\[\int\limits_{\gamma}\frac{z}{(z^2-1)^2(z^2+1)}\dz,\]
-这里，$\gamma=\{z:|z-1|=\sqrt3\}$.
+  计算积分
+  \[
+    \int\limits_{\gamma} \frac{z}{(z^2-1)^2(z^2+1)} \dz,
+  \]
+  这里，$\gamma=\{z:|z-1|=\sqrt3\}$.
 \end{example}
 \begin{proof}被积函数
-\[f(z)=\frac{z}{(z^2-1)^2(z^2+1)}\]
-有两个$1$阶极点$z_1=\ii,z_2=-\ii$，以及两个$2$阶极点$z_3=1,z_4=-1$. 容易看出，$z_1,z_2,z_3$都在$\gamma$的内部，$z_4$在$\gamma$的外部. 由残数定理得
-\[\int\limits_\gamma f(z)\dz=2\pi\ii\sum_{k=1}^3\Res(f,z_k).\]
-由命题 \ref{prop5.4.3} 和命题 \ref{prop5.4.2}，得
-\begin{align*}
-&\begin{aligned}
-\Res(f,\ii)&=\lim_{z\to\ii}(z-\ii)f(z)\\
-&=\lim_{z\to\ii}\frac{z}{(z^2-1)^2(z+\ii)}=\frac18,
-\end{aligned}\\
-&\begin{aligned}
-\Res(f,-\ii)&=\lim_{z\to-\ii}(z+\ii)f(z)\\
-&=\lim_{z\to-\ii}\frac{z}{(z^2-1)^2(z-\ii)}=\frac18,
-\end{aligned}\\
-&\begin{aligned}
-\Res(f,1)&=\lim_{z\to1}\dd{}z\{(z-1)^2f(z)\}\\
-&=\lim_{z\to1}\dd{}z\bigg\{\frac z{(z+1)^2(z^2+1)}\bigg\}\\
-&=\lim_{z\to1}\frac{-3z^3-z^2-z+1}{(z+1)^3(z^2+1)^2}\\
-&=-\frac18.
-\end{aligned}
-\end{align*}
-因而有
-\[
-  \int\limits_\gamma f(z)\dz=2\pi\ii\bigg(\frac18+\frac18-\frac18\bigg)
-  =\frac{\pi\ii}4. \qedhere
-\]
+  \[
+    f(z) = \frac{z}{(z^2-1)^2(z^2+1)}
+  \]
+  有两个$1$阶极点$z_1=\ii,z_2=-\ii$，以及两个$2$阶极点$z_3=1,z_4=-1$. 容易看出，$z_1,z_2,z_3$都在$\gamma$的内部，$z_4$在$\gamma$的外部. 由残数定理得
+  \[
+    \int\limits_\gamma f(z)\dz = 2\pi\ii\sum_{k=1}^3\Res(f,z_k).
+  \]
+  由命题 \ref{prop5.4.3} 和命题 \ref{prop5.4.2}，得
+  \begin{align*}
+    & \begin{aligned}
+        \Res(f,\ii) & = \lim_{z\to\ii}(z-\ii)f(z) \\
+        & = \lim_{z\to\ii}\frac{z}{(z^2-1)^2(z+\ii)}=\frac18,
+      \end{aligned}\\
+    & \begin{aligned}
+        \Res(f,-\ii) & = \lim_{z\to-\ii}(z+\ii)f(z)\\
+        & = \lim_{z\to-\ii}\frac{z}{(z^2-1)^2(z-\ii)} = \frac18,
+      \end{aligned}\\
+    & \begin{aligned}
+        \Res(f,1) & = \lim_{z\to1} \dd{}z\{(z-1)^2f(z)\} \\
+        & = \lim_{z\to1}\dd{}z\bigg\{\frac z{(z+1)^2(z^2+1)}\bigg\}\\
+        & = \lim_{z\to1}\frac{-3z^3-z^2-z+1}{(z+1)^3(z^2+1)^2}\\
+        & = -\frac18.
+      \end{aligned}
+  \end{align*}
+    因而有
+    \[
+      \int\limits_\gamma f(z)\dz=2\pi\ii\bigg(\frac18 + \frac18 - \frac18\bigg)
+      = \frac{\pi\ii}4. \qedhere
+    \]
 \end{proof}
 
 \begin{example}\label{exam5.4.11}
-计算积分
-\[\int\limits_{|z|=1}\frac{z^2\sin^2z}{(1-\ee^z)^5}\dz.\]
+  计算积分
+  \[
+    \int\limits_{|z|=1} \frac{z^2\sin^2z}{(1-\ee^z)^5}\dz.
+  \]
 \end{example}
 \begin{solution}
-容易看出，被积函数
-\[f(z)=\frac{z^2\sin^2z}{(1-\ee^z)^5}\]
-在$|z|=1$内只有一个极点$z=0$. 对于这种类型的函数，直接从Laurent展开来求残数更方便些：
-\[\frac{z^2\sin^2z}{(1-\ee^z)^5}
-=\frac{z^2\big(z-\frac{z^3}{3!}+\cdots\big)^2}{\big(-z-\frac{z^2}{2!}-\cdots\big)^5}
-=-\frac{z^4\big(1-\frac{z^2}{3!}+\cdots\big)^2}{z^5\big(1+\frac z{2!}+\cdots\big)^5}.\]
-因为$\frac{\big(1-\frac{z^2}{3!}+\cdots\big)^2}{\big(1+\frac z{2!}+\cdots\big)^5}$在$z=0$处全纯，且在$z=0$处等于$1$，故其Taylor展开可写为$1+c_1z+\cdots$，于是得
-\[\frac{z^2\sin^2z}{(1-\ee^z)^5}=-\frac1z(1+c_1z+\cdots),\]
-因而$\Res(f,0)=-1$. 由残数定理即得
-\begin{equation*}
-  \int\limits_{|z|=1}\frac{z^2\sin^2z}{(1-\ee^z)^5}\dz = -2\pi\ii. \qedhere
-\end{equation*}
+  容易看出，被积函数
+  \[
+    f(z) = \frac{z^2\sin^2z}{(1-\ee^z)^5}
+  \]
+  在$|z|=1$内只有一个极点$z=0$. 对于这种类型的函数，直接从Laurent展开来求残数更方便些：
+  \[
+    \frac{z^2\sin^2z}{(1-\ee^z)^5}
+    = \frac{z^2\big(z-\frac{z^3}{3!}+\cdots\big)^2}{\big(-z-\frac{z^2}{2!}-\cdots\big)^5}
+    = -\frac{z^4\big(1-\frac{z^2}{3!}+\cdots\big)^2}{z^5\big(1+\frac z{2!}+\cdots\big)^5}.
+  \]
+  因为$\frac{\big(1-\frac{z^2}{3!}+\cdots\big)^2}{\big(1+\frac z{2!}+\cdots\big)^5}$在$z=0$处全纯，且在$z=0$处等于$1$，故其Taylor展开可写为$1+c_1z+\cdots$，于是得
+  \[
+    \frac{z^2\sin^2z}{(1-\ee^z)^5} = -\frac1z(1+c_1z+\cdots),
+  \]
+  因而$\Res(f,0)=-1$. 由残数定理即得
+  \begin{equation*}
+    \int\limits_{|z|=1}\frac{z^2\sin^2z}{(1-\ee^z)^5}\dz = -2\pi\ii. \qedhere
+  \end{equation*}
 \end{solution}
 
 残数定理也可写成下面的形式：
 \begin{theorem}\label{thm5.4.12}
-若$f$在$\MC$中除去$z_1,\cdots,z_n$外是全纯的，则$f$在$z_1,\cdots,z_n$及$z=\infty$处的残数之和为零.
+  若$f$在$\MC$中除去$z_1,\cdots,z_n$外是全纯的，则$f$在$z_1,\cdots,z_n$及$z=\infty$处的残数之和为零.
 \end{theorem}
 \begin{proof}
-取$R$充分大，使得$z_1,\cdots,z_n$都在$B(0,R)$中.于是，由残数定理得
-\begin{equation}\label{eq5.4.6}
-\int\limits_{|z|=R}f(z)\dz=2\pi\ii\sum_{k=1}^n\Res(f,z_k).
-\end{equation}
-但由 \eqref{eq5.4.3} 式得
-\begin{equation}\label{eq5.4.7}
--\int\limits_{|z|=R}f(z)\dz=2\pi\ii\Res(f,\infty).
-\end{equation}
-由 \eqref{eq5.4.6} 式和 \eqref{eq5.4.7} 式即得所要证之结论.
+  取$R$充分大，使得$z_1,\cdots,z_n$都在$B(0,R)$中.于是，由残数定理得
+  \begin{equation}\label{eq5.4.6}
+    \int\limits_{|z|=R}f(z)\dz=2\pi\ii\sum_{k=1}^n\Res(f,z_k).
+  \end{equation}
+  但由 \eqref{eq5.4.3} 式得
+  \begin{equation}\label{eq5.4.7}
+    -\int\limits_{|z|=R}f(z)\dz=2\pi\ii\Res(f,\infty).
+  \end{equation}
+  由 \eqref{eq5.4.6} 式和 \eqref{eq5.4.7} 式即得所要证之结论.
 \end{proof}
 
 \begin{xiti}
-\item 证明：残数定理与Cauchy积分公式等价.
-\item 若$a$是$B(a,R)\backslash\{a\}$上全纯函数$f$的可去奇点，其中$a\ne\infty$，则显然$\Res(f,a)=0$.举例说明，若$\infty$是$B(\infty,R)$上全纯函数$f$的可去奇点，则$\Res(f,\infty)$可能不等于零.
-\item 设$f\in H\big(B(\infty,R)\big)$. 证明：
-\begin{enuma}
-  \item 若$\infty$是$f$的可去奇点，则
-  \[\Res(f,\infty)=\lim_{z\to\infty}z^2f'(z);\]
-  \item 若$\infty$是$f$的$m$阶极点，则
-  \[\Res(f,\infty)=\frac{(-1)^m}{(m+1)!}\lim_{z\to\infty}z^{m+2}f^{(m+1)}(z).\]
-\end{enuma}
-\item 设$f,g\in H\big(B(a,r)\big),f(a)\ne0,a$是$g$的$2$阶零点，计算$\Res\bigg(\frac fg,a\bigg)$.
-\item 设$f$在$\MC$上除去孤立奇点外，在其他点处都全纯.证明：
-\begin{enuma}
-  \item 若$f$是偶函数，则$\Res(f,-a)=-\Res(f,a)$；
-  \item 若$f$是奇函数，则$\Res(f,-a)=\Res(f,a)$.
-\end{enuma}
-\item 设$D$是由有限条可求长简单闭曲线围成的域，$g\in H(D)\cap C(\bar D)$. 证明：若
-\begin{enuma}
-  \item $f$在$D$上亚纯，在$D$中的全部彼此不同的极点为$w_1,w_2,\cdots,w_m$，其相应的阶数分别为
-  $q_1,q_2,\cdots,q_m$；
-  \item $f$在$\bar D\backslash\{w_1,w_2,\cdots,w_m\}$上全纯，在$\partial D$上没有零点；
-  \item $f$在$D$中的全部彼此不同的零点为$z_1,z_2,\cdots,z_n$，其相应的阶数分别为$p_1,p_2,\cdots,p_n$，
-\end{enuma}
-则
-\[\frac1{2\pi\ii}\int\limits_{\partial D}g(z)\frac{f'(z)}{f(z)}\dz=\sum_{j=1}^n
-p_jg(z_j)-\sum_{j=1}^n q_jg(w_j).\]
-并说明这是Cauchy积分公式和辐角原理的推广.
-\item 求下列初等函数在指定点的残数：
-\begin{enuma}
-  \item $\Res\bigg(\frac{\sin\alpha z}{z^3\sin\beta z},0\bigg)$（$\alpha\ne\beta,\beta\ne0$）；
-  \item $\Res\bigg(\frac1{(1+z^2)^{n+1}},\ii\bigg)$（$n\in\MN$）；
-  \item $\Res\bigg(\Log\frac{z-a}{z-b},\infty\bigg)$（$a\ne b$）；
-  \item $\Res\bigg(\frac1{z^2}\ee^{\frac1z}\Log\frac{1-\alpha z}{1-\beta z},0\bigg)
-  $（$\alpha\ne\beta$）；
-  \item $\Res\bigg(z^3\cos\frac1{z-2},2\bigg)$；
-  \item $\Res(\cot^3z,0)$；
-  \item $\Res\bigg(\frac1{(z-a)^n(z-b)^m},a\bigg)$（$a\ne b,m,n\in\MN$）；
-  \item $\Res\bigg(\frac{z^{2n}}{(1+z)^n},\infty\bigg)$（$n\in\MN$）.
-\end{enuma}
-\item 指出下列初等函数在$\MC_\infty$中的全部孤立奇点，并求出这些初等函数在它们各自孤立奇点处的残数：
-\begin{tasks}(2)
-\task $\frac1{z^3-z^5}$；
-\task $\frac{z^3+z^2+2}{z(z^2-1)^2}$；
-\task $\frac{z^2+z-1}{z^2(z-1)}$；
-\task $\frac{z^{n-1}}{z^n+a^n}$（$a\ne0,n\in\MN$）；
-\task $\frac1{\sin z}$；
-\task $\sin\frac z{z+1}$；
-\task $\frac{\ee^z}{z(z-1)}$；
-\task $\frac{\ee^{\pi z}}{z^2+1}$.
-\end{tasks}
-\item 设$f,g\in H\big(B(0,R)\big)\cap C\big(\bar{B(0,R)}\big),g$在$\partial B(0,R)$上无零点，$g$在$B(0,R)$中的全部零点$z_1,z_2,\cdots,z_n$都是$1$阶零点，求
-    \[\frac1{2\pi\ii}\int\limits_{|z|=R}\frac{f(z)}{zg(z)}\dz.\]
-\item 求积分：
-\begin{enuma}
-  \item $\int\limits_{|z|=2}\frac1{z^3(z^{10}-2)}\dz$；
-  \item $\int\limits_{|z|=1}\frac1{(z-a)^n(z-b)^n}\dz$（$|a|<1<|b|,n\in\MN$）；
-  \item $\int_0^{2\pi}\ee^{\cos\theta}[\cos(n\theta-\sin\theta)+\ii
-  \sin(n\theta-\sin\theta)]\dif \theta$（$n\in\MZ$）；
-  \item $\int\limits_{|z|=R}\frac{z^2\dz}{\ee^{2\pi\ii z^3}-1}$（$n<R^3<n+1,n\in\MN$）.
-\end{enuma}
-\item 计算积分
-\begin{enuma}
-  \item $\int\limits_{|z|=R}\sqrt{(z-a)(z-b)}\dz$ $\bigg(a\ne b,R>\max\{|a|,|b|\},
-  \lim_{z\to\infty}\frac{\sqrt{(z-a)(z-b)}}z=1\bigg)$；
-  \item $\int\limits_{|z|=R}z^n\log\frac{z-a}{z-b}\dz$ $\big(a\ne b,R>\max\{|a|,|b|\}\big)$.
-\end{enuma}
-\item 设$D$是由有限条可求长简单闭曲线围成的域，$f(z)$在$D$上亚纯，在$D$中的全部彼此不同的极点为$w_1,w_2,\cdots,w_m$，其相应的Laurent展开式的主要部分为$f_1(z),f_2(z),\cdots$，$f_m(z)$，并且在$\bar D\backslash\{w_1,w_2,\cdots,w_m\}$上连续.证明：对于任意$z\in D$，有
-    \[\frac1{2\pi\ii}\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\dif \zeta=f(z)-\sum_{j=1}^mf_j(z).\]
+  \item 证明：残数定理与Cauchy积分公式等价.
+  \item 若$a$是$B(a,R)\backslash\{a\}$上全纯函数$f$的可去奇点，其中$a\ne\infty$，则显然$\Res(f,a)=0$.举例说明，若$\infty$是$B(\infty,R)$上全纯函数$f$的可去奇点，则$\Res(f,\infty)$可能不等于零.
+  \item 设$f\in H\big(B(\infty,R)\big)$. 证明：
+    \begin{enuma}
+      \item 若$\infty$是$f$的可去奇点，则
+        \[
+          \Res(f,\infty) = \lim_{z\to\infty}z^2f'(z);
+        \]
+      \item 若$\infty$是$f$的$m$阶极点，则
+        \[
+          \Res(f,\infty) = \frac{(-1)^m}{(m+1)!}\lim_{z\to\infty}z^{m+2}f^{(m+1)}(z).
+        \]
+    \end{enuma}
+  \item 设$f,g\in H\big(B(a,r)\big),f(a)\ne0,a$是$g$的$2$阶零点，计算$\Res\bigg(\frac fg,a\bigg)$.
+  \item 设$f$在$\MC$上除去孤立奇点外，在其他点处都全纯.证明：
+    \begin{enuma}
+      \item 若$f$是偶函数，则$\Res(f,-a)=-\Res(f,a)$；
+      \item 若$f$是奇函数，则$\Res(f,-a)=\Res(f,a)$.
+    \end{enuma}
+  \item 设$D$是由有限条可求长简单闭曲线围成的域，$g\in H(D)\cap C(\bar D)$. 证明：若
+    \begin{enuma}
+      \item $f$在$D$上亚纯，在$D$中的全部彼此不同的极点为$w_1,w_2,\cdots,w_m$，其相应的阶数分别为
+        $q_1,q_2,\cdots,q_m$；
+      \item $f$在$\bar D\backslash\{w_1,w_2,\cdots,w_m\}$上全纯，在$\partial D$上没有零点；
+      \item $f$在$D$中的全部彼此不同的零点为$z_1,z_2,\cdots,z_n$，其相应的阶数分别为$p_1,p_2,\cdots,p_n$，
+    \end{enuma}
+    则
+    \[
+      \frac1{2\pi\ii}\int\limits_{\partial D}g(z)\frac{f'(z)}{f(z)}\dz = \sum_{j=1}^n
+      p_jg(z_j)-\sum_{j=1}^n q_jg(w_j).
+    \]
+    并说明这是Cauchy积分公式和辐角原理的推广.
+  \item 求下列初等函数在指定点的残数：
+    \begin{enuma}
+      \item $\Res\bigg(\frac{\sin\alpha z}{z^3\sin\beta z},0\bigg)$（$\alpha\ne\beta,\beta\ne0$）；
+      \item $\Res\bigg(\frac1{(1+z^2)^{n+1}},\ii\bigg)$（$n\in\MN$）；
+      \item $\Res\bigg(\Log\frac{z-a}{z-b},\infty\bigg)$（$a\ne b$）；
+      \item $\Res\bigg(\frac1{z^2}\ee^{\frac1z}\Log\frac{1-\alpha z}{1-\beta z},0\bigg)
+           $（$\alpha\ne\beta$）；
+      \item $\Res\bigg(z^3\cos\frac1{z-2},2\bigg)$；
+      \item $\Res(\cot^3z,0)$；
+      \item $\Res\bigg(\frac1{(z-a)^n(z-b)^m},a\bigg)$（$a\ne b,m,n\in\MN$）；
+      \item $\Res\bigg(\frac{z^{2n}}{(1+z)^n},\infty\bigg)$（$n\in\MN$）.
+    \end{enuma}
+  \item 指出下列初等函数在$\MC_\infty$中的全部孤立奇点，并求出这些初等函数在它们各自孤立奇点处的残数：
+    \begin{tasks}(2)
+      \task $\frac1{z^3-z^5}$；
+      \task $\frac{z^3+z^2+2}{z(z^2-1)^2}$；
+      \task $\frac{z^2+z-1}{z^2(z-1)}$；
+      \task $\frac{z^{n-1}}{z^n+a^n}$（$a\ne0,n\in\MN$）；
+      \task $\frac1{\sin z}$；
+      \task $\sin\frac z{z+1}$；
+      \task $\frac{\ee^z}{z(z-1)}$；
+      \task $\frac{\ee^{\pi z}}{z^2+1}$.
+    \end{tasks}
+  \item 设$f,g\in H\big(B(0,R)\big)\cap C\big(\bar{B(0,R)}\big),g$在$\partial B(0,R)$上无零点，$g$在$B(0,R)$中的全部零点$z_1,z_2,\cdots,z_n$都是$1$阶零点，求
+      \[
+        \frac1{2\pi\ii}\int\limits_{|z|=R}\frac{f(z)}{zg(z)}\dz.
+      \]
+  \item 求积分：
+    \begin{enuma}
+      \item $\int\limits_{|z|=2}\frac1{z^3(z^{10}-2)}\dz$；
+      \item $\int\limits_{|z|=1}\frac1{(z-a)^n(z-b)^n}\dz$（$|a|<1<|b|,n\in\MN$）；
+      \item $\int_0^{2\pi}\ee^{\cos\theta}[\cos(n\theta-\sin\theta)+\ii
+          \sin(n\theta-\sin\theta)]\dif \theta$（$n\in\MZ$）；
+      \item $\int\limits_{|z|=R}\frac{z^2\dz}{\ee^{2\pi\ii z^3}-1}$（$n<R^3<n+1,n\in\MN$）.
+    \end{enuma}
+  \item 计算积分
+    \begin{enuma}
+      \item $\int\limits_{|z|=R}\sqrt{(z-a)(z-b)}\dz$ $\bigg(a\ne b,R>\max\{|a|,|b|\},
+        \lim_{z\to\infty}\frac{\sqrt{(z-a)(z-b)}}z=1\bigg)$；
+      \item $\int\limits_{|z|=R}z^n\log\frac{z-a}{z-b}\dz$ $\big(a\ne b,R>\max\{|a|,|b|\}\big)$.
+    \end{enuma}
+  \item 设$D$是由有限条可求长简单闭曲线围成的域，$f(z)$在$D$上亚纯，在$D$中的全部彼此不同的极点为$w_1,w_2,\cdots,w_m$，其相应的Laurent展开式的主要部分为$f_1(z),f_2(z),\cdots$，$f_m(z)$，并且在$\bar D\backslash\{w_1,w_2,\cdots,w_m\}$上连续.证明：对于任意$z\in D$，有
+      \[
+        \frac1{2\pi\ii}\int\limits_{\partial D}\frac{f(\zeta)}{\zeta-z}\dif \zeta=f(z)-\sum_{j=1}^mf_j(z).
+      \]
 \end{xiti}
 
 \section{利用残数定理计算定积分\label{sec5.5}}
@@ -730,580 +832,711 @@ p_jg(z_j)-\sum_{j=1}^n q_jg(w_j).\]
 \subsection{\mbox{$\int_{-\infty}^\infty f(x){\normalfont\dif }x$}型积分}
 先证明下面的
 \begin{theorem}\label{thm5.5.1}
-设$f$在上半平面$\{z:\Im z>0\}$中除去$a_1,\cdots,a_n$外是全纯的，在$\{z:\Im z\ge0\}$中除去$a_1,\cdots,a_n$外是连续的.如果$\lim_{z\to\infty}zf(z)=0$，那么
-\begin{equation}\label{eq5.5.1}
-\int_{-\infty}^\infty f(x)\dx=2\pi\ii\sum_{k=1}^n\Res(f,a_k).
-\end{equation}
-\begin{figure}[!ht]
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.4,
->={Stealth[width=3pt]}]
-\draw(-2.5,0)--(-2,0)node[below]{$-R$}--(0,0)node[below]{$O$}
---(2,0)node[below]{$R$}--(2.5,0);
-\draw(2,0)arc(0:180:2);
-\draw[->,very thin](2,0)arc(0:40:2)node[above right]{$\gamma_R$};
-\fill(-2,0)circle(0.7pt)(2,0)circle(0.7pt)(0,0)circle(0.7pt)
-(60:1.5)circle(0.7pt)node[right]{$a_1$}(85:1.7)circle(0.7pt)
-(100:1.54)circle(0.7pt)node[above]{$a_2$}(150:0.8)circle(0.7pt)node[above right]{$a_n$}
-(145:1.4)circle(0.7pt);
-\end{tikzpicture}
-\caption{\label{fig5.2}}
-\end{figure}
+  设$f$在上半平面$\{z:\Im z>0\}$中除去$a_1,\cdots,a_n$外是全纯的，在$\{z:\Im z\ge0\}$中除去$a_1,\cdots,a_n$外是连续的.如果$\lim_{z\to\infty}zf(z)=0$，那么
+  \begin{equation}\label{eq5.5.1}
+    \int_{-\infty}^\infty f(x)\dx = 2\pi\ii\sum_{k=1}^n\Res(f,a_k).
+  \end{equation}
+  \begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.4,
+      >={Stealth[width=3pt]}]
+      \draw(-2.5,0)--(-2,0)node[below]{$-R$}--(0,0)node[below]{$O$}
+         --(2,0)node[below]{$R$}--(2.5,0);
+      \draw(2,0)arc(0:180:2);
+      \draw[->,very thin](2,0)arc(0:40:2)node[above right]{$\gamma_R$};
+      \fill(-2,0)circle(0.7pt)(2,0)circle(0.7pt)(0,0)circle(0.7pt)
+        (60:1.5)circle(0.7pt)node[right]{$a_1$}(85:1.7)circle(0.7pt)
+        (100:1.54)circle(0.7pt)node[above]{$a_2$}(150:0.8)circle(0.7pt)node[above right]{$a_n$}
+        (145:1.4)circle(0.7pt);
+    \end{tikzpicture}
+    \caption{\label{fig5.2}}
+  \end{figure}
+\end{theorem}
 \begin{proof}
-如图 \ref{fig5.2} 所示，取充分大的$R$，使得$a_1,\cdots,a_n$包含在半圆盘$\{z:|z|<R,\Im z>0\}$中，记$\gamma_R=\{z:z=R\ee^{\ii\theta},0\le\theta\le\pi\}$，由残数定理得
-\begin{equation}\label{eq5.5.2}
-\int_{-R}^Rf(x)\dx+\int\limits_{\gamma_R}f(z)\dz=2\pi\ii\sum_{k=1}^n\Res(f,a_k).
-\end{equation}
-记$M(R)=\max\{|f(z)|:z\in \gamma_R\}$，由假定，$\lim_{R\to\infty}RM(R)=0$，因而
-\[\bigg|\int\limits_{\gamma_R}f(z)\dz\bigg|=\bigg|\int_0^\pi f(R\ee^{\ii\theta})R\ii\ee^{\ii\theta}\dif \theta\bigg|
-\le\pi RM(R)\to0\;\mbox{（$R\to\infty$）}.\]
-在 \eqref{eq5.5.2} 式中令$R\to\infty$，即得公式 \eqref{eq5.5.1}.
+  如图 \ref{fig5.2} 所示，取充分大的$R$，使得$a_1,\cdots,a_n$包含在半圆盘$\{z:|z|<R,\Im z>0\}$中，记$\gamma_R=\{z:z=R\ee^{\ii\theta},0\le\theta\le\pi\}$，由残数定理得
+  \begin{equation}\label{eq5.5.2}
+    \int_{-R}^Rf(x)\dx+\int\limits_{\gamma_R}f(z)\dz=2\pi\ii\sum_{k=1}^n\Res(f,a_k).
+  \end{equation}
+  记$M(R)=\max\{|f(z)|:z\in \gamma_R\}$，由假定，$\lim_{R\to\infty}RM(R)=0$，因而
+  \[
+    \bigg|\int\limits_{\gamma_R}f(z)\dz\bigg|=\bigg|\int_0^\pi f(R\ee^{\ii\theta})R\ii\ee^{\ii\theta}\dif \theta\bigg|
+    \le\pi RM(R)\to0\;\mbox{（$R\to\infty$）}.
+  \]
+  在 \eqref{eq5.5.2} 式中令$R\to\infty$，即得公式 \eqref{eq5.5.1}.
 \end{proof}
 
-\end{theorem}
 \begin{corollary}\label{cor5.5.2}
-设$P$和$Q$是两个既约多项式，$Q$没有实的零点，且$\deg Q-\deg P\ge2$，那么
-\[\int_{-\infty}^\infty\frac{P(x)}{Q(x)}\dx=2\pi\ii\sum_{k=1}^n
-\Res\bigg(\frac{P(z)}{Q(z)},a_k\bigg),\]
+  设$P$和$Q$是两个既约多项式，$Q$没有实的零点，且$\deg Q-\deg P\ge2$，那么
+  \[
+    \int_{-\infty}^\infty\frac{P(x)}{Q(x)}\dx=2\pi\ii\sum_{k=1}^n
+    \Res\bigg(\frac{P(z)}{Q(z)},a_k\bigg),
+  \]
 这里，$a_k$（$k=1,\cdots,n$）为$Q$在上半平面中的全部零点，$\deg P,\deg Q$分别为$P$和$Q$的次数.
 \end{corollary}
 \begin{proof}
-令$f(z)=\frac{P(z)}{Q(z)}$，则$f$满足定理 \ref{thm5.5.1} 的条件，由定理 \ref{thm5.5.1} 即得本推论.
+  令$f(z)=\frac{P(z)}{Q(z)}$，则$f$满足定理 \ref{thm5.5.1} 的条件，由定理 \ref{thm5.5.1} 即得本推论.
 \end{proof}
 \begin{example}\label{exam5.5.3}
-计算积分
-\[\int_{-\infty}^\infty\frac{x^2-x+2}{x^4+10x^2+9}\dx.\]
+  计算积分
+  \[
+    \int_{-\infty}^\infty \frac{x^2-x+2}{x^4+10x^2+9} \dx.
+  \]
 \end{example}
 \begin{solution}
-令$f(z)=\frac{z^2-z+2}{z^4+10z^2+9}$，它满足推论 \ref{cor5.5.2} 的条件. 容易看出，分母$Q(z)=z^4+10z^2+9$有$4$个零点$\pm\ii$和$\pm3\ii$，但在上半平面中的零点只有$a_1=\ii$和$a_2=3\ii$两个，容易算得
-\begin{align*}
-&\Res(f,\ii)=\frac{-1-\ii}{16},\\
-&\Res(f,3\ii)=\frac{3-7\ii}{48},
-\end{align*}
-故得
-\begin{equation*}
-  \int_{-\infty}^\infty\frac{x^2-x+2}{x^4+10x^2+9}\dx = \frac5{12}\pi. \qedhere
-\end{equation*}
+  令$f(z)=\frac{z^2-z+2}{z^4+10z^2+9}$，它满足推论 \ref{cor5.5.2} 的条件. 容易看出，分母$Q(z)=z^4+10z^2+9$有$4$个零点$\pm\ii$和$\pm3\ii$，但在上半平面中的零点只有$a_1=\ii$和$a_2=3\ii$两个，容易算得
+  \begin{align*}
+    & \Res(f,\ii) = \frac{-1-\ii}{16},\\
+    & \Res(f,3\ii) = \frac{3-7\ii}{48},
+  \end{align*}
+  故得
+  \begin{equation*}
+    \int_{-\infty}^\infty\frac{x^2-x+2}{x^4+10x^2+9}\dx = \frac5{12}\pi. \qedhere
+  \end{equation*}
 \end{solution}
 
 \begin{example}\label{exam5.5.4}
-计算积分
-\[\int_{-\infty}^\infty\frac{\dx}{(1+x^2)^{n+1}}.\]
+  计算积分
+  \[
+    \int_{-\infty}^\infty\frac{\dx}{(1+x^2)^{n+1}}.
+  \]
 \end{example}
 \begin{solution}
-令$f(z)=\frac1{(1+z^2)^{n+1}}$，它显然满足推论 \ref{cor5.5.2} 的条件，且在上半平面中只有一个$n+1$阶极点$z=\ii$. 应用命题 \ref{prop5.4.2}，通过直接计算得
-\[\Res(f,\ii)=\frac1{2\ii}\frac{(2n)!}{2^{2n}(n!)^2},\]
-于是得
-\begin{equation*}
-  \int_{-\infty}^\infty\frac{\dx}{(1+x^2)^{n+1}} = \frac{(2n)!\pi}{2^{2n}(n!)^2}. \qedhere
-\end{equation*}
+  令$f(z)=\frac1{(1+z^2)^{n+1}}$，它显然满足推论 \ref{cor5.5.2} 的条件，且在上半平面中只有一个$n+1$阶极点$z=\ii$. 应用命题 \ref{prop5.4.2}，通过直接计算得
+  \[
+    \Res(f,\ii) = \frac1{2\ii}\frac{(2n)!}{2^{2n}(n!)^2},
+  \]
+  于是得
+  \begin{equation*}
+    \int_{-\infty}^\infty\frac{\dx}{(1+x^2)^{n+1}} = \frac{(2n)!\pi}{2^{2n}(n!)^2}. \qedhere
+  \end{equation*}
 \end{solution}
 
 在计算$\int_{-\infty}^\infty\ee^{\ii\alpha x}f(x)\dx$这种类型的积分时，需要应用下面的Jordan引理：
 \begin{lemma}[（\textbf{Jordan}）]\label{lemma5.5.5}\index{D!定理!Jordan引理}
-设$f$在$\{z:R_0\le|z|<\infty,\Im z\ge0\}$上连续，且$\lim_{\substack{z\to\infty\\
-\Im z\ge0}}f(z)$\\$=0$，则对任意$\alpha>0$，有
-\[\lim_{R\to\infty}\int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz=0,\]
-这里，$\gamma_R=\{z:z=R\ee^{\ii\theta},0\le\theta\le\pi,R\ge R_0\}$.
+  设$f$在$\{z:R_0\le|z|<\infty,\Im z\ge0\}$上连续，且$\lim_{\substack{z\to\infty\\
+  \Im z\ge0}}f(z)$\\$=0$，则对任意$\alpha>0$，有
+  \[
+    \lim_{R\to\infty}\int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz = 0,
+  \]
+  这里，$\gamma_R=\{z:z=R\ee^{\ii\theta},0\le\theta\le\pi,R\ge R_0\}$.
 \end{lemma}
 \begin{proof}
-记$M(R)=\max\{|f(z)|:z\in\gamma_R\}$，则由假定，$M(R)\to0$（$R\to\infty$）. 因为
-\[\int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz=\int_0^\pi\ee^{\ii\alpha R\cos\theta}\ee^{-\alpha R\sin\theta}f(R\ee^{\ii\theta})R\ii\ee^{\ii\theta}\dif \theta,\]
-所以
-\begin{align*}
-\bigg|\int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz\bigg|
-&\le RM(R)\int_0^\pi\ee^{-\alpha R\sin\theta}\dif \theta
-=2RM(R)\int_0^{\frac\pi2}\ee^{-\alpha R\sin\theta}\dif \theta\\
-&\le 2RM(R)\int_0^{\frac\pi2}\ee^{-\frac2\pi \alpha R\theta}
-=\frac\pi2M(R)(1-\ee^{-\alpha R})\to0\;\mbox{（$R\to\infty$）}.
-\end{align*}
-这里，我们已经利用了不等式
-\begin{equation*}
-  \sin\theta \ge \frac2\pi\theta \left(0\le\theta\le\frac\pi2\right). \qedhere
-\end{equation*}
+  记$M(R)=\max\{|f(z)|:z\in\gamma_R\}$，则由假定，$M(R)\to0$（$R\to\infty$）. 因为
+  \[
+    \int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz = \int_0^\pi\ee^{\ii\alpha R\cos\theta}\ee^{-\alpha R\sin\theta}f(R\ee^{\ii\theta})R\ii\ee^{\ii\theta}\dif \theta,
+  \]
+  所以
+  \begin{align*}
+    \bigg| \int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z) \dz \bigg|
+    & \le RM(R)\int_0^\pi\ee^{-\alpha R\sin\theta}\dif \theta
+    = 2RM(R)\int_0^{\frac\pi2}\ee^{-\alpha R\sin\theta}\dif \theta\\
+    & \le 2RM(R)\int_0^{\frac\pi2}\ee^{-\frac2\pi \alpha R\theta}
+    = \frac\pi2M(R)(1-\ee^{-\alpha R})\to0\;\mbox{（$R\to\infty$）}.
+  \end{align*}
+  这里，我们已经利用了不等式
+  \begin{equation*}
+    \sin\theta \ge \frac2\pi\theta \left(0\le\theta\le\frac\pi2\right). \qedhere
+  \end{equation*}
 \end{proof}
 
 现在可以证明下面的
 \begin{theorem}\label{thm5.5.6}
-设$f$在上半平面$\{z:\Im z>0\}$中除去$a_1,\cdots,a_n$外是全纯的，在$\{z:\Im z\ge0\}$中除去
-$a_1,\cdots,a_n$外是连续的. 如果$\lim_{z\to\infty}f(z)=0$，那么对任意$\alpha>0$，有
-\begin{equation}\label{eq5.5.3}
-\int_{-\infty}^\infty \ee^{\ii\alpha x}f(x)\dx=2\pi\ii\sum_{k=1}^n\Res\big(
-\ee^{\ii\alpha z}f(z),a_k\big).
-\end{equation}
+  设$f$在上半平面$\{z:\Im z>0\}$中除去$a_1,\cdots,a_n$外是全纯的，在$\{z:\Im z\ge0\}$中除去
+  $a_1,\cdots,a_n$外是连续的. 如果$\lim_{z\to\infty}f(z)=0$，那么对任意$\alpha>0$，有
+  \begin{equation}\label{eq5.5.3}
+    \int_{-\infty}^\infty \ee^{\ii\alpha x}f(x)\dx=2\pi\ii\sum_{k=1}^n\Res\big(
+    \ee^{\ii\alpha z}f(z),a_k\big).
+  \end{equation}
 \end{theorem}
 \begin{proof}
-取充分大的$R$，使得$a_1,\cdots,a_n$都包含在半圆盘$\{z:|z|<R,\Im z>0\}$中，对函数
-\[F(z)=\ee^{\ii\alpha z}f(z)\]
-用残数定理，得
-\begin{equation}\label{eq5.5.4}
-\int_{-R}^R\ee^{\ii\alpha x}f(x)\dx+\int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz
-=2\pi\ii\sum_{k=1}^n\Res\big(\ee^{\ii\alpha z}f(z),a_k\big),
-\end{equation}
-根据Jordan引理，有
-\[\lim_{R\to\infty}\int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz=0.\]
-在 \eqref{eq5.5.4} 式的两端让$R\to\infty$，即得公式 \eqref{eq5.4.3}.
+  取充分大的$R$，使得$a_1,\cdots,a_n$都包含在半圆盘$\{z:|z|<R,\Im z>0\}$中，对函数
+  \[
+    F(z) = \ee^{\ii\alpha z}f(z)
+  \]
+  用残数定理，得
+  \begin{equation}\label{eq5.5.4}
+    \int_{-R}^R\ee^{\ii\alpha x}f(x)\dx+\int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz
+    = 2\pi\ii\sum_{k=1}^n\Res\big(\ee^{\ii\alpha z}f(z),a_k\big),
+  \end{equation}
+  根据Jordan引理，有
+  \[
+    \lim_{R\to\infty}\int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z)\dz = 0.
+  \]
+  在 \eqref{eq5.5.4} 式的两端让$R\to\infty$，即得公式 \eqref{eq5.4.3}.
 \end{proof}
 
 注意到
-\[\ee^{\ii\alpha x}=\cos\alpha x+\ii\sin\alpha x,\]
+\[
+  \ee^{\ii\alpha x} = \cos\alpha x+\ii\sin\alpha x,
+\]
 在公式 \eqref{eq5.5.3} 的两端分别取实部和虚部，即得
 \begin{corollary}\label{cor5.5.7}
-在定理 \ref{thm5.5.6} 的条件下，我们有
-\begin{align*}
-&\int_{-\infty}^\infty f(x)\cos \alpha x\dx=\Re\bigg\{2\pi\ii\sum_{k=1}^n\Res\big(
-\ee^{\ii\alpha z}f(z),a_k\big)\bigg\},\\
-&\int_{-\infty}^\infty f(x)\sin \alpha x\dx=\Im\bigg\{2\pi\ii\sum_{k=1}^n\Res\big(
-\ee^{\ii\alpha z}f(z),a_k\big)\bigg\}.\\
-\end{align*}
+  在定理 \ref{thm5.5.6} 的条件下，我们有
+  \begin{align*}
+    & \int_{-\infty}^\infty f(x)\cos \alpha x\dx = \Re\bigg\{2\pi\ii\sum_{k=1}^n\Res\big(
+    \ee^{\ii\alpha z}f(z),a_k\big)\bigg\},\\
+    & \int_{-\infty}^\infty f(x)\sin \alpha x\dx=\Im\bigg\{2\pi\ii\sum_{k=1}^n\Res\big(
+    \ee^{\ii\alpha z}f(z),a_k\big)\bigg\}.\\
+  \end{align*}
 \end{corollary}
 
 \begin{example}
-计算积分
-\[\int_{-\infty}^\infty\frac{\cos a x}{b^2+x^2}\dx\;\mbox{（$a>0,b>0$）}.\]
+  计算积分
+  \[
+    \int_{-\infty}^\infty\frac{\cos a x}{b^2+x^2}\dx\;\mbox{（$a>0,b>0$）}.
+  \]
 \end{example}
 \begin{solution}
-令$f(z)=\frac1{b^2+z^2}$，它满足定理 \ref{thm5.5.6} 的条件. 因为$\frac{\ee^{\ii a z}}{b^2+z^2}$在上半平面中只有一个$1$阶极点$z=b\ii$，且
-\[\Res\bigg(\frac{\ee^{\ii a z}}{b^2+z^2},b\ii\bigg)=\frac{\ee^{-ab}}{2b\ii},\]
-根据推论 \ref{cor5.5.7}，即得
-\begin{equation*}
-  \int_{-\infty}^\infty\frac{\cos a x}{b^2+x^2}\dx = \frac\pi b\ee^{-ab}. \qedhere
-\end{equation*}
+  令$f(z)=\frac1{b^2+z^2}$，它满足定理 \ref{thm5.5.6} 的条件. 因为$\frac{\ee^{\ii a z}}{b^2+z^2}$在上半平面中只有一个$1$阶极点$z=b\ii$，且
+  \[
+   \Res\bigg(\frac{\ee^{\ii a z}}{b^2+z^2},b\ii\bigg) = \frac{\ee^{-ab}}{2b\ii},
+  \]
+  根据推论 \ref{cor5.5.7}，即得
+  \begin{equation*}
+    \int_{-\infty}^\infty\frac{\cos a x}{b^2+x^2}\dx = \frac\pi b\ee^{-ab}. \qedhere
+  \end{equation*}
 \end{solution}
 
 遇到$f$在实轴上有奇点的情况时，常要使用下面的引理：
 \begin{lemma}\label{lemma5.5.9}
-设$f$在扇状域
-\[G=\{z=a+\rho\ee^{\ii\theta}:0<\rho\le\rho_0,\theta_0\le\theta\le\theta_0+\alpha\}\]
-上连续，如果$\lim_{z\to a}(z-a)f(z)=A$，那么
-\begin{equation}\label{eq5.5.5}
-\lim_{\rho\to0}\int\limits_{\gamma_\rho}f(z)\dz=\ii A\alpha,
-\end{equation}
-这里，$\gamma_\rho=\{z=a+\rho\ee^{\ii\theta}:\theta_0\le\theta\le\theta_0+\alpha\}$，它的方向是沿着辐角增加的方向.
+  设$f$在扇状域
+  \[
+    G = \{z=a+\rho\ee^{\ii\theta}:0<\rho\le\rho_0,\theta_0\le\theta\le\theta_0+\alpha\}
+  \]
+  上连续，如果$\lim_{z\to a}(z-a)f(z)=A$，那么
+  \begin{equation}\label{eq5.5.5}
+    \lim_{\rho\to0}\int\limits_{\gamma_\rho}f(z)\dz=\ii A\alpha,
+  \end{equation}
+  这里，$\gamma_\rho=\{z=a+\rho\ee^{\ii\theta}:\theta_0\le\theta\le\theta_0+\alpha\}$，它的方向是沿着辐角增加的方向.
 \end{lemma}
 \begin{proof}
-令$g(z)=(z-a)f(z)-A$，则$\lim_{z\to a}g(z)=0$. 若记$M_\rho=\sup\{|g(z)|:z=a+\rho\ee^{\ii\theta},\theta_0\le\theta\le\theta_0+\alpha\}$，则$\lim_{\rho\to0}M_\rho=0$. 于是
-\[\bigg|\int\limits_{\gamma_\rho}\frac{g(z)}{z-a}\dz\bigg|
-=\bigg|\int_{\theta_0}^{\theta_0+\alpha}\frac{g(a+\rho\ee^{\ii\theta})}
-{\rho\ee^{\ii\theta}}\rho\ii\ee^{\ii\theta}\dif \theta\bigg|
-\le M_\rho\alpha\to0\;\mbox{（$\rho\to0$）.}\]
-由此即得
-\begin{equation*}
-  \int\limits_{\gamma_\rho}f(z)\dz=\ii A\alpha+\int\limits_{\gamma_\rho}
-  \frac{g(z)}{z-a}\dz\to\ii A\alpha\;\mbox{（$\rho\to0$）}. \qedhere
-\end{equation*}
+  令$g(z)=(z-a)f(z)-A$，则$\lim_{z\to a}g(z)=0$. 若记$M_\rho=\sup\{|g(z)|:z=a+\rho\ee^{\ii\theta},\theta_0\le\theta\le\theta_0+\alpha\}$，则$\lim_{\rho\to0}M_\rho=0$. 于是
+  \[
+    \bigg|\int\limits_{\gamma_\rho}\frac{g(z)}{z-a}\dz\bigg|
+    =\bigg|\int_{\theta_0}^{\theta_0+\alpha}\frac{g(a+\rho\ee^{\ii\theta})}
+    {\rho\ee^{\ii\theta}}\rho\ii\ee^{\ii\theta}\dif \theta\bigg|
+    \le M_\rho\alpha\to0\;\mbox{（$\rho\to0$）.}
+  \]
+  由此即得
+  \begin{equation*}
+    \int\limits_{\gamma_\rho}f(z)\dz=\ii A\alpha+\int\limits_{\gamma_\rho}
+    \frac{g(z)}{z-a}\dz\to\ii A\alpha\;\mbox{（$\rho\to0$）}. \qedhere
+  \end{equation*}
 \end{proof}
 
 \begin{example}\label{exam5.5.10}
-计算积分
-\[\int_0^\infty\frac{\sin x}x\dx.\]
+  计算积分
+  \[
+    \int_0^\infty\frac{\sin x}x\dx.
+  \]
 \end{example}
 \begin{figure}[!ht]
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.3,
->={Stealth[width=3pt]}]
-\draw(-3,0)node[below]{$-R$}--(-1,0)node[below]{$-\rho$}arc(180:0:1)node[below]{$\rho$}
---(3,0)node[below]{$R$}arc(0:180:3);
-\draw[->,very thin](0,1)node[above]{$\gamma_\rho$}--++(0.01,0);
-\draw[->,very thin](0,3)node[above]{$\gamma_R$}(45:3)--++(-0.01,0.01);
-\fill(0,0)circle(0.7pt)node[below]{$O$};
-\end{tikzpicture}
-\caption{\label{fig5.3}}
+  \centering
+  \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.3,
+    >={Stealth[width=3pt]}]
+    \draw(-3,0)node[below]{$-R$}--(-1,0)node[below]{$-\rho$}arc(180:0:1)node[below]{$\rho$}
+      --(3,0)node[below]{$R$}arc(0:180:3);
+    \draw[->,very thin](0,1)node[above]{$\gamma_\rho$}--++(0.01,0);
+    \draw[->,very thin](0,3)node[above]{$\gamma_R$}(45:3)--++(-0.01,0.01);
+    \fill(0,0)circle(0.7pt)node[below]{$O$};
+  \end{tikzpicture}
+  \caption{\label{fig5.3}}
 \end{figure}
 \begin{solution}
-取函数$f(z)=\frac{\ee^{\ii z}}z$，取围道如图 \ref{fig5.3} 所示，它由线段$[-R,-\rho]$，$[\rho,R]$和半圆周$\gamma_\rho,\gamma_R$组成.在此围道围成的域中，$f$是全纯的，因而由Cauchy积分定理得
-\begin{equation}\label{eq5.5.6}
-\int_{-R}^{-\rho}\frac{\ee^{\ii x}}x\dx+\int\limits_{\gamma_\rho^-}\frac{\ee^{\ii z}}z\dz+\int_\rho^R\frac{\ee^{\ii x}}x\dx+\int\limits_{\gamma_R}\frac{\ee^{\ii z}}z\dz=0.
-\end{equation}
-由Jordan引理知道
-\[\lim_{R\to\infty}\int\limits_{\gamma_R}\frac{\ee^{\ii z}}z\dz=0.\]
-由引理 \ref{lemma5.5.9} 得
-\[\lim_{\rho\to0}\int\limits_{\gamma_\rho^-}\frac{\ee^{\ii z}}z\dz=-\ii\pi.\]
-在 \eqref{eq5.5.6} 式中令$\rho\to0,R\to\infty$，于是得
-\[\int_{-\infty}^0\frac{\ee^{\ii x}}x\dx+\int_0^\infty\frac{\ee^{\ii x}}x\dx=\ii\pi,\]
-即
-\[\int_{-\infty}^\infty\frac{\ee^{\ii x}}x\dx=\ii\pi.\]
-两边取虚部，得
-\[\int_{-\infty}^\infty\frac{\sin x}x\dx=\pi,\]
-因而
-\begin{equation*}
-  \int_0^\infty\frac{\sin x}x\dx = \frac12\int_{-\infty}^\infty\frac{\sin x}x\dx = \frac\pi2. \qedhere
-\end{equation*}
+  取函数$f(z)=\frac{\ee^{\ii z}}z$，取围道如图 \ref{fig5.3} 所示，它由线段$[-R,-\rho]$，$[\rho,R]$和半圆周$\gamma_\rho,\gamma_R$组成.在此围道围成的域中，$f$是全纯的，因而由Cauchy积分定理得
+  \begin{equation}\label{eq5.5.6}
+    \int_{-R}^{-\rho}\frac{\ee^{\ii x}}x\dx+\int\limits_{\gamma_\rho^-}\frac{\ee^{\ii z}}z\dz+\int_\rho^R\frac{\ee^{\ii x}}x\dx+\int\limits_{\gamma_R}\frac{\ee^{\ii z}}z\dz=0.
+  \end{equation}
+  由Jordan引理知道
+  \[
+    \lim_{R\to\infty}\int\limits_{\gamma_R}\frac{\ee^{\ii z}}z\dz = 0.
+  \]
+  由引理 \ref{lemma5.5.9} 得
+  \[
+    \lim_{\rho\to0}\int\limits_{\gamma_\rho^-}\frac{\ee^{\ii z}}z\dz = -\ii\pi.
+  \]
+  在 \eqref{eq5.5.6} 式中令$\rho\to0,R\to\infty$，于是得
+  \[
+    \int_{-\infty}^0\frac{\ee^{\ii x}}x\dx+\int_0^\infty\frac{\ee^{\ii x}}x\dx = \ii\pi,
+  \]
+  即
+  \[
+    \int_{-\infty}^\infty\frac{\ee^{\ii x}}x\dx = \ii\pi.
+  \]
+  两边取虚部，得
+  \[
+    \int_{-\infty}^\infty\frac{\sin x}x\dx = \pi,
+  \]
+  因而
+  \begin{equation*}
+    \int_0^\infty\frac{\sin x}x\dx = \frac12\int_{-\infty}^\infty\frac{\sin x}x\dx = \frac\pi2. \qedhere
+  \end{equation*}
 \end{solution}
 
 注意，如果$f$是偶函数，$\int_0^\infty f(x)\dx$的值可以通过等式
-\[\int_0^\infty f(x)\dx=\frac12\int_{-\infty}^\infty f(x)\dx\]
+\[
+  \int_0^\infty f(x)\dx = \frac12\int_{-\infty}^\infty f(x)\dx
+\]
 从$\int_{-\infty}^\infty f(x)\dx$的值得到，就像上面的例子那样.如果$f$不是偶函数，这个方法就不行了.下面就来讨论计算$\int_0^\infty f(x)\dx$的方法.
 
 \subsection{\mbox{$\int_0^\infty f(x){\normalfont\dif }x$}型积分\protect\hypertarget{sec5.5.2}{}}
 
 用残数定理计算$\int_0^\infty f(x)\dx$这种类型的积分，往往要借助于对数函数，不像计算$\int_{-\infty}^\infty f(x)\dx$型积分直接.我们通过下面两个例子来说明这种方法.
 \begin{example}\label{exam5.5.11}
-计算积分
-\[\int_0^\infty\frac{x^{p-1}}{(1+x)^m}\dx,\]
-这里，$m$是正整数，$p$不是整数，$0<p<m$.
+  计算积分
+  \[
+    \int_0^\infty\frac{x^{p-1}}{(1+x)^m}\dx,
+  \]
+  这里，$m$是正整数，$p$不是整数，$0<p<m$.
 \end{example}
 \begin{solution}
-取$f(z)=\frac{z^{p-1}}{(1+z)^m}$，因为$p$不是整数，所以
-\[z^{p-1}=\ee^{(p-1)\Log z}\]
-是一个多值函数.在复平面上，取正实轴作割线得一域，$z^{p-1}$在这个域中能分出单值的全纯分支。今取定在正实轴上沿取实值的那个全纯分支，即主支：$z^{p-1}=\ee^{(p-1)\log z}$.让$f(z)=
-\frac{\ee^{(p-1)\log z}}{(1+z)^m}$沿如下的闭曲线$\Gamma$积分：先沿正实轴的上沿从$\rho$到$R$（$0<\rho<1<R<\infty$），再按反时针方向，沿以原点为中心、$R$为半径的圆周$\gamma_R$回到出发处，再沿正实轴的下沿从$R$到$\rho$，最后按顺时针方向沿以原点为中心、$\rho$为半径的圆周$\gamma_\rho$回到原来的出发处（图 \ref{fig5.4}）.在正实轴上沿，有
-\begin{figure}[!ht]
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
->={Stealth[width=3pt]}]
-\draw(4:0.8)node[above right]{$\rho$}--++(2.215,0)node[above right]{$R$}--++(-2.229,0)
-(3:0.8)arc(3:356:0.8)--++(2.215,0);
-\draw(1:3)arc(1:358.7:3);
-\draw[->,very thin](30:3)arc(30:110:3);
-\draw[->,very thin](0,-0.8)--++(-0.1,0);
-\draw(140:1)node{$\gamma_\rho$}(70:3.2)node{$\gamma_R$};
-\fill(0,0)circle(1pt)node[below]{$O$};
-\end{tikzpicture}
-\caption{\label{fig5.4}}
-\end{figure}
-\[f(z)=\frac{\ee^{(p-1)\log x}}{(1+x)^m}=\frac{x^{p-1}}{(1+x)^m};\]
-在正实轴下沿，由于
-\[\log z=\log|z|+2\pi\ii,\]
-所以
-\[\ee^{(p-1)\log z}=\ee^{(p-1)(\log x+2\pi\ii)}=x^{p-1}\ee^{(p-1)2\pi\ii}=\ee^{2p\pi\ii}x^{p-1},\]
-因而
-\[f(z)=\ee^{2p\pi\ii}\frac{x^{p-1}}{(1+x)^m}.\]
-显然，$f$在由$\Gamma$围成的域中只有一个$m$阶极点$z=-1$.由残数定理，有
-\begin{equation}\label{eq5.5.7}
-\begin{gathered}
-\int_\rho^R\frac{x^{p-1}}{(1+x)^m}\dx+\int\limits_{\gamma_R}\frac{z^{p-1}}{(1+z)^m}\dz
-+\ee^{2p\pi\ii}\int_R^\rho\frac{x^{p-1}}{(1+x)^m}\dx\\
-+\int\limits_{\gamma_\rho^-}\frac{z^{p-1}}{(1+z)^m}\dz=
-2\pi\ii\Res\bigg(\frac{z^{p-1}}{(1+z)^m},-1\bigg).
-\end{gathered}
-\end{equation}
-当$z\in\gamma_R$时，$z=R\ee^{\ii\theta},\log z=\log R+\ii\theta$，所以
-\[\frac{|z^{p-1}|}{|1+z|^m}=\frac{|\ee^{(p-1)\log z}|}{|1+z|^m}\le\frac{R^{p-1}}{(R-1)^m}.\]
-同样道理，当$z\in\gamma_\rho$时，有
-\[\frac{|z^{p-1}|}{|1+z|^m}\le\frac{\rho^{p-1}}{(1-\rho)^m}.\]
-于是
-\begin{align*}
-&\bigg|\int\limits_{\gamma_R}\frac{z^{p-1}}{(1+z)^m}\dz\bigg|
-\le\frac{R^{p-1}}{(R-1)^m}2\pi R=2\pi\frac{R^{p}}{(R-1)^m}\to0\;\mbox{（$R\to\infty$）},\\
-&\bigg|\int\limits_{\gamma_\rho}\frac{z^{p-1}}{(1+z)^m}\bigg|
-\le\frac{\rho^{p-1}}{(1-\rho)^m}2\pi\rho=2\pi\frac{\rho^{p}}{(1-\rho)^m}
-\to0\;\mbox{（$\rho\to0$）}.
-\end{align*}
-在 \eqref{eq5.5.7} 式中令$\rho\to0,R\to\infty$，即得
-\[(1-\ee^{2p\pi\ii})\int_0^\infty\frac{x^{p-1}}{(1+x)^m}\dx
-=2\pi\ii\Res\bigg(\frac{z^{p-1}}{(1+z)^m},-1\bigg).\]
+  取$f(z)=\frac{z^{p-1}}{(1+z)^m}$，因为$p$不是整数，所以
+  \[
+    z^{p-1} = \ee^{(p-1)\Log z}
+  \]
+  是一个多值函数.在复平面上，取正实轴作割线得一域，$z^{p-1}$在这个域中能分出单值的全纯分支。今取定在正实轴上沿取实值的那个全纯分支，即主支：$z^{p-1}=\ee^{(p-1)\log z}$.让$f(z)=
+  \frac{\ee^{(p-1)\log z}}{(1+z)^m}$沿如下的闭曲线$\Gamma$积分：先沿正实轴的上沿从$\rho$到$R$（$0<\rho<1<R<\infty$），再按反时针方向，沿以原点为中心、$R$为半径的圆周$\gamma_R$回到出发处，再沿正实轴的下沿从$R$到$\rho$，最后按顺时针方向沿以原点为中心、$\rho$为半径的圆周$\gamma_\rho$回到原来的出发处（图 \ref{fig5.4}）.在正实轴上沿，有
+  \begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+      >={Stealth[width=3pt]}]
+      \draw(4:0.8)node[above right]{$\rho$}--++(2.215,0)node[above right]{$R$}--++(-2.229,0)
+         (3:0.8)arc(3:356:0.8)--++(2.215,0);
+      \draw(1:3)arc(1:358.7:3);
+      \draw[->,very thin](30:3)arc(30:110:3);
+      \draw[->,very thin](0,-0.8)--++(-0.1,0);
+      \draw(140:1)node{$\gamma_\rho$}(70:3.2)node{$\gamma_R$};
+      \fill(0,0)circle(1pt)node[below]{$O$};
+    \end{tikzpicture}
+    \caption{\label{fig5.4}}
+  \end{figure}
+  \[
+    f(z) = \frac{\ee^{(p-1)\log x}}{(1+x)^m} = \frac{x^{p-1}}{(1+x)^m};
+  \]
+  在正实轴下沿，由于
+  \[
+    \log z = \log|z|+2\pi\ii,
+  \]
+  所以
+  \[
+    \ee^{(p-1)\log z} = \ee^{(p-1)(\log x+2\pi\ii)} = x^{p-1}\ee^{(p-1)2\pi\ii} = \ee^{2p\pi\ii}x^{p-1},
+  \]
+  因而
+  \[
+    f(z) = \ee^{2p\pi\ii}\frac{x^{p-1}}{(1+x)^m}.
+  \]
+  显然，$f$在由$\Gamma$围成的域中只有一个$m$阶极点$z=-1$.由残数定理，有
+  \begin{equation}\label{eq5.5.7}
+    \begin{gathered}
+      \int_\rho^R\frac{x^{p-1}}{(1+x)^m}\dx+\int\limits_{\gamma_R}\frac{z^{p-1}}{(1+z)^m}\dz
+      + \ee^{2p\pi\ii}\int_R^\rho\frac{x^{p-1}}{(1+x)^m}\dx\\
+      + \int\limits_{\gamma_\rho^-}\frac{z^{p-1}}{(1+z)^m}\dz=
+      2\pi\ii\Res\bigg(\frac{z^{p-1}}{(1+z)^m},-1\bigg).
+    \end{gathered}
+  \end{equation}
+  当$z\in\gamma_R$时，$z=R\ee^{\ii\theta},\log z=\log R+\ii\theta$，所以
+  \[
+    \frac{|z^{p-1}|}{|1+z|^m}=\frac{|\ee^{(p-1)\log z}|}{|1+z|^m}\le\frac{R^{p-1}}{(R-1)^m}.
+  \]
+  同样道理，当$z\in\gamma_\rho$时，有
+  \[
+    \frac{|z^{p-1}|}{|1+z|^m}\le\frac{\rho^{p-1}}{(1-\rho)^m}.
+  \]
+  于是
+  \begin{align*}
+    & \bigg| \int\limits_{\gamma_R}\frac{z^{p-1}}{(1+z)^m} \dz \bigg|
+    \le \frac{R^{p-1}}{(R-1)^m}2\pi R=2\pi\frac{R^{p}}{(R-1)^m}\to0\;\mbox{（$R\to\infty$）},\\
+    & \bigg|\int\limits_{\gamma_\rho}\frac{z^{p-1}}{(1+z)^m}\bigg|
+    \le \frac{\rho^{p-1}}{(1-\rho)^m}2\pi\rho=2\pi\frac{\rho^{p}}{(1-\rho)^m}
+    \to0 \;\mbox{（$\rho\to0$）}.
+  \end{align*}
+  在 \eqref{eq5.5.7} 式中令$\rho\to0,R\to\infty$，即得
+  \[
+     (1-\ee^{2p\pi\ii})\int_0^\infty\frac{x^{p-1}}{(1+x)^m}\dx
+    = 2\pi\ii\Res\bigg(\frac{z^{p-1}}{(1+z)^m},-1\bigg).
+  \]
 
-容易算出，当$m=1$时
-\[\Res\bigg(\frac{z^{p-1}}{1+z},-1\bigg)=\ee^{(p-1)\pi\ii}=-\ee^{p\pi\ii};\]
-当$m>1$时
-\[\Res\bigg(\frac{z^{p-1}}{(1+z)^m},-1\bigg)=-\frac1{(m-1)!}(1-p)(2-p)\cdots
-(m-1-p)\ee^{p\pi\ii}.\]
-由此即得
-\begin{align*}
-  &\int_0^\infty\frac{x^{p-1}}{1+x}\dx = \frac\pi{\sin p\pi}\;\mbox{（$0<p<1$）},\\
-  &\int_0^\infty\frac{x^{p-1}}{(1+x)^m}\dx = \frac\pi{\sin p\pi}\frac1{(m-1)!}(1-p)(2-p)\cdots(m-1-p). \qedhere
-\end{align*}
+  容易算出，当$m=1$时
+  \[
+    \Res\bigg(\frac{z^{p-1}}{1+z},-1\bigg) = \ee^{(p-1)\pi\ii} = -\ee^{p\pi\ii};
+  \]
+  当$m>1$时
+  \[
+    \Res\bigg(\frac{z^{p-1}}{(1+z)^m},-1\bigg) = -\frac1{(m-1)!}(1-p)(2-p)\cdots
+    (m-1-p)\ee^{p\pi\ii}.
+  \]
+  由此即得
+  \begin{align*}
+    & \int_0^\infty\frac{x^{p-1}}{1+x}\dx = \frac\pi{\sin p\pi}\;\mbox{（$0<p<1$）},\\
+    & \int_0^\infty\frac{x^{p-1}}{(1+x)^m}\dx = \frac\pi{\sin p\pi}\frac1{(m-1)!}(1-p)(2-p)\cdots(m-1-p). \qedhere
+  \end{align*}
 \end{solution}
 
 上面的方法可用来计算一般的积分
-\[\int_0^\infty f(x)x^{p-1}\dx\;\mbox{（$0<p<1$）}.\]
+\[
+  \int_0^\infty f(x)x^{p-1}\dx\;\mbox{（$0<p<1$）}.
+\]
 
 \begin{example}\label{exam5.5.12}
-计算积分
-\[\int_0^\infty\frac{\log x}{(1+x^2)^2}\dx.\]
+  计算积分
+  \[
+    \int_0^\infty\frac{\log x}{(1+x^2)^2}\dx.
+  \]
 \end{example}
 \begin{solution}
-取函数$f(z)=\frac{\log^2z}{(1+z^2)^2}$，取围道如图 \ref{fig5.4} 所示.在正实轴的上沿，有
-\[f(z)=\frac{\log^2x}{(1+x^2)^2};\]
-在正实轴的下沿，由于$\log z=\log x+2\pi\ii$，所以
-\[\log^2z=(\log x+2\pi\ii)^2=\log^2x+4\pi\ii\log x-4\pi^2,\]
-因而
-\[f(z)=\frac{\log^2x}{(1+x^2)^2}+4\pi\ii\frac{\log x}{(1+x^2)^2}-4\pi^2\frac1{(1+x^2)^2}.\]
-$f$在$\Gamma$所围成的域中有两个$2$阶极点$z=\pm\ii$.对$f$用残数定理，得
-\begin{equation}\label{eq5.5.8}
-\begin{aligned}
-\int_\rho^R\frac{\log^2x}{(1+x^2)^2}\dx&+\int\limits_{\gamma_R}\frac{\log^2z}{(1+z^2)^2}\dz
-+\int_R^\rho\frac{\log^2x}{(1+x^2)^2}\dx\\
-&+4\pi\ii\int_R^\rho\frac{\log x}{(1+x^2)^2}\dx-4\pi^2\int_R^\rho\frac{\dx}{(1+x^2)^2}
-+\int\limits_{\gamma_\rho^-}\frac{\log^2z}{(1+z^2)^2}\dz\\
-&=2\pi\ii\bigg[\Res\bigg(\frac{\log^2z}{(1+z^2)^2},\ii\bigg)
-+\Res\bigg(\frac{\log^2z}{(1+z^2)^2},-\ii\bigg)\bigg].
-\end{aligned}
-\end{equation}
-\eqref{eq5.5.8} 式左端的第一个和第三个积分互相抵消了. $\gamma_R$和$\gamma_\rho$上两个积分的估计与例 \ref{exam5.5.11} 一样：
-\begin{align*}
-&\begin{aligned}
-\bigg|\int\limits_{\gamma_R}\frac{\log^2z}{(1+z^2)^2}\dz\bigg|&
-=\bigg|\int_0^{2\pi}\frac{(\log R+\ii\theta)^2}{(1+R^2\ee^{2\ii\theta})^2}R\ii\ee^{\ii\theta}\dif \theta\bigg|\\
-&\le2\pi R\frac{(\log R+2\pi)^2}{(R^2-1)^2}\to0\;\mbox{（$R\to\infty$）},
-\end{aligned}\\
-&\begin{aligned}
-\bigg|\int\limits_{\gamma_\rho^-}\frac{\log^2z}{(1+z^2)^2}\dz\bigg|&
-=\bigg|\int_0^{2\pi}\frac{(\log \rho+\ii\theta)^2}{(1+\rho^2\ee^{2\ii\theta})^2}\rho\ii\ee^{\ii\theta}\dif \theta\bigg|\\
-&\le2\pi\rho\frac{(\log \rho+2\pi)^2}{(1-\rho^2)^2}\to0\;\mbox{（$\rho\to0$）}.
-\end{aligned}
-\end{align*}
-直接计算残数，得
-\begin{align*}
-&\Res\bigg(\frac{\log^2z}{(1+z^2)^2},\ii\bigg)=\frac{-4\pi+\pi^2\ii}{16},\\
-&\Res\bigg(\frac{\log^2z}{(1+z^2)^2},-\ii\bigg)=\frac{12\pi-9\pi^2\ii}{16}.
-\end{align*}
-在 \eqref{eq5.5.8} 式中令$\rho\to0,R\to\infty$，并取两端的虚部，即得
-\[\int_0^\infty\frac{\log x}{(1+x^2)^2}\dx=-\frac\pi4.\]
+  取函数$f(z)=\frac{\log^2z}{(1+z^2)^2}$，取围道如图 \ref{fig5.4} 所示.在正实轴的上沿，有
+  \[
+    f(z) = \frac{\log^2x}{(1+x^2)^2};
+  \]
+  在正实轴的下沿，由于$\log z=\log x+2\pi\ii$，所以
+  \[
+    \log^2z = (\log x+2\pi\ii)^2=\log^2x+4\pi\ii\log x-4\pi^2,
+  \]
+  因而
+  \[
+    f(z) = \frac{\log^2x}{(1+x^2)^2}+4\pi\ii\frac{\log x}{(1+x^2)^2}-4\pi^2\frac1{(1+x^2)^2}.
+  \]
+  $f$在$\Gamma$所围成的域中有两个$2$阶极点$z=\pm\ii$.对$f$用残数定理，得
+  \begin{equation}\label{eq5.5.8}
+    \begin{aligned}
+      \int_\rho^R\frac{\log^2x}{(1+x^2)^2}\dx&+\int\limits_{\gamma_R}\frac{\log^2z}{(1+z^2)^2}\dz
+      + \int_R^\rho\frac{\log^2x}{(1+x^2)^2}\dx\\
+      & + 4\pi\ii\int_R^\rho\frac{\log x}{(1+x^2)^2}\dx-4\pi^2\int_R^\rho\frac{\dx}{(1+x^2)^2}
+      + \int\limits_{\gamma_\rho^-}\frac{\log^2z}{(1+z^2)^2}\dz\\
+      & = 2\pi\ii\bigg[\Res\bigg(\frac{\log^2z}{(1+z^2)^2},\ii\bigg)
+      + \Res\bigg(\frac{\log^2z}{(1+z^2)^2},-\ii\bigg)\bigg].
+    \end{aligned}
+  \end{equation}
+  \eqref{eq5.5.8} 式左端的第一个和第三个积分互相抵消了. $\gamma_R$和$\gamma_\rho$上两个积分的估计与例 \ref{exam5.5.11} 一样：
+  \begin{align*}
+    & \begin{aligned}
+        \bigg|\int\limits_{\gamma_R}\frac{\log^2z}{(1+z^2)^2}\dz\bigg| & 
+        =  \bigg|\int_0^{2\pi}\frac{(\log R+\ii\theta)^2}{(1+R^2\ee^{2\ii\theta})^2}R\ii\ee^{\ii\theta}\dif \theta\bigg|\\
+        & \le 2\pi R\frac{(\log R+2\pi)^2}{(R^2-1)^2}\to0\;\mbox{（$R\to\infty$）},
+      \end{aligned}\\
+    & \begin{aligned}
+        \bigg|\int\limits_{\gamma_\rho^-}\frac{\log^2z}{(1+z^2)^2}\dz\bigg|&
+        = \bigg|\int_0^{2\pi}\frac{(\log \rho+\ii\theta)^2}{(1+\rho^2\ee^{2\ii\theta})^2}\rho\ii\ee^{\ii\theta}\dif \theta\bigg|\\
+        & \le2\pi \rho\frac{(\log \rho+2\pi)^2}{(1-\rho^2)^2}\to0\;\mbox{（$\rho\to0$）}.
+      \end{aligned}
+  \end{align*}
+  直接计算残数，得
+  \begin{align*}
+    & \Res \bigg(\frac{\log^2z}{(1+z^2)^2},\ii\bigg)=\frac{-4\pi+\pi^2\ii}{16},\\
+    & \Res \bigg(\frac{\log^2z}{(1+z^2)^2},-\ii\bigg)=\frac{12\pi-9\pi^2\ii}{16}.
+  \end{align*}
+  在 \eqref{eq5.5.8} 式中令$\rho\to0,R\to\infty$，并取两端的虚部，即得
+  \[
+    \int_0^\infty\frac{\log x}{(1+x^2)^2}\dx = -\frac\pi4.
+  \]
 
-在计算过程中我们发现，如果取$f(z)=\frac{\log z}{(1+z^2)^2}$，则所需计算的积分将被抵消掉，这是取$f(z)=\frac{\log^2z}{(1+z^2)^2}$的原因.但若改变围道如图 \ref{fig5.5} 所示，那么取$f(z)=\frac{\log z}{(1+z^2)^2}$也是可以的.这时，$f$在$\Gamma$围成的域中只有一个$2$阶极点$z=\ii$.当$z\in[-R,-\rho]$时，$\log z=\log |x|+\ii\pi$.对$f$在$\Gamma$上应用残数定理，可得
-\begin{equation}\label{eq5.5.9}
-\begin{aligned}
-\int_{-R}^{-\rho}\frac{\log|x|}{(1+x^2)^2}\dx&+\ii\pi\int_{-R}^{-\rho}\frac{\dx}{(1+x^2)^2}
-+\int\limits_{\gamma_\rho^-}\frac{\log z}{(1+z^2)^2}\dz\\
-&+\int_\rho^R\frac{\log x}{(1+x^2)^2}\dx+\int\limits_{\gamma_R}\frac{\log z}{(1+z^2)^2}\dz\\
-&=2\pi\ii \Res\bigg(\frac{\log z}{(1+z^2)},\ii\bigg).
-\end{aligned}
-\end{equation}
-\begin{figure}[!ht]
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.3,
->={Stealth[width=3pt]}]
-\draw(-3,0)node[below]{$-R$}--(-1,0)node[below]{$-\rho$}arc(180:0:1)node[below]{$\rho$}
---(3,0)node[below]{$R$}arc(0:180:3);
-\draw[<-,very thin](0,1)node[above]{$\gamma_\rho$}--++(-0.01,0);
-\draw[->,very thin](0,3)node[above]{$\gamma_R$}(45:3)--++(-0.01,0.01);
-\fill(0,0)circle(0.7pt)node[below]{$O$};
-\end{tikzpicture}
-\caption{\label{fig5.5}}
-\end{figure}
-与上面的做法一样，可证
-\begin{align*}
-&\lim_{R\to\infty}\int\limits_{\gamma_R}\frac{\log z}{(1+z^2)^2}\dz=0,\\
-&\lim_{\rho\to0}\int\limits_{\gamma_\rho^-}\frac{\log z}{(1+z^2)^2}\dz=0,
-\end{align*}
-而
-\[\Res\bigg(\frac{\log z}{(1+z^2)^2},\ii\bigg)=\frac\pi8+\frac\ii4,\]
-在 \eqref{eq5.5.9} 式两端令$\rho\to0,R\to\infty$，得
-\[2\int_0^\infty\frac{\log x}{(1+x^2)^2}\dx-\ii\pi\int_0^\infty\frac{\dx}{(1+x^2)^2}
-=2\pi\ii\bigg(\frac\pi8+\frac\ii4\bigg),\]
-两边取实部，即得
-\[\int_0^\infty\frac{\log x}{(1+x^2)^2}\dx=-\frac\pi4.\]
-与第一种方法所得的结果一样.
+  在计算过程中我们发现，如果取$f(z)=\frac{\log z}{(1+z^2)^2}$，则所需计算的积分将被抵消掉，这是取$f(z)=\frac{\log^2z}{(1+z^2)^2}$的原因.但若改变围道如图 \ref{fig5.5} 所示，那么取$f(z)=\frac{\log z}{(1+z^2)^2}$也是可以的.这时，$f$在$\Gamma$围成的域中只有一个$2$阶极点$z=\ii$.当$z\in[-R,-\rho]$时，$\log z=\log |x|+\ii\pi$.对$f$在$\Gamma$上应用残数定理，可得
+  \begin{equation}\label{eq5.5.9}
+    \begin{aligned}
+      \int_{-R}^{-\rho}\frac{\log|x|}{(1+x^2)^2}\dx&+\ii\pi\int_{-R}^{-\rho}\frac{\dx}{(1+x^2)^2}
+      + \int\limits_{\gamma_\rho^-}\frac{\log z}{(1+z^2)^2}\dz\\
+      & + \int_\rho^R\frac{\log x}{(1+x^2)^2}\dx+\int\limits_{\gamma_R}\frac{\log z}{(1+z^2)^2}\dz\\
+      & = 2\pi\ii \Res\bigg(\frac{\log z}{(1+z^2)},\ii\bigg).
+    \end{aligned}
+  \end{equation}
+  \begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.3,
+      >={Stealth[width=3pt]}]
+      \draw(-3,0)node[below]{$-R$}--(-1,0)node[below]{$-\rho$}arc(180:0:1)node[below]{$\rho$}
+         --(3,0)node[below]{$R$}arc(0:180:3);
+      \draw[<-,very thin](0,1)node[above]{$\gamma_\rho$}--++(-0.01,0);
+      \draw[->,very thin](0,3)node[above]{$\gamma_R$}(45:3)--++(-0.01,0.01);
+      \fill(0,0)circle(0.7pt)node[below]{$O$};
+    \end{tikzpicture}
+    \caption{\label{fig5.5}}
+  \end{figure}
+  与上面的做法一样，可证
+  \begin{align*}
+    & \lim_{R\to\infty}\int\limits_{\gamma_R}\frac{\log z}{(1+z^2)^2}\dz=0,\\
+    & \lim_{\rho\to0}\int\limits_{\gamma_\rho^-}\frac{\log z}{(1+z^2)^2}\dz=0,
+  \end{align*}
+  而
+  \[
+    \Res\bigg(\frac{\log z}{(1+z^2)^2},\ii\bigg) = \frac\pi8+\frac\ii4,
+  \]
+  在 \eqref{eq5.5.9} 式两端令$\rho\to0,R\to\infty$，得
+  \[
+    2\int_0^\infty\frac{\log x}{(1+x^2)^2}\dx-\ii\pi\int_0^\infty\frac{\dx}{(1+x^2)^2}
+    = 2\pi\ii\bigg(\frac\pi8+\frac\ii4\bigg),
+  \]
+  两边取实部，即得
+  \[
+    \int_0^\infty\frac{\log x}{(1+x^2)^2}\dx = -\frac\pi4.
+  \]
+  与第一种方法所得的结果一样.
 \end{solution}
 
 \subsection{\mbox{$\int_a^b f(x){\normalfont\dif }x$}型积分}
 我们讨论两种重要类型的有穷限积分.一种是
-\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta\]
+\[
+  \int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta
+\]
 类型的积分，其中，$R(X,Y)$是两个变量$X,Y$的有理函数.这种类型的积分可以化为$\int_{-\infty}^\infty f(x)\dx$型积分来讨论.事实上，因为被积函数是周期为$2\pi$的函数，所以
-\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta=\int_{-\pi}^{\pi}R(\sin\theta,\cos\theta)\dif \theta.\]
+\[
+  \int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta = \int_{-\pi}^{\pi}R(\sin\theta,\cos\theta)\dif \theta.
+\]
 作变换$t=\tan\frac\theta2$，那么
 \begin{align*}
-&\sin\theta=\frac{2t}{1+t^2},\\
-&\cos\theta=\frac{1-t^2}{1+t^2},\\
-&\dif \theta=\frac{2\dif t}{1+t^2},
+  & \sin\theta = \frac{2t}{1+t^2},\\
+  & \cos\theta = \frac{1-t^2}{1+t^2},\\
+  & \dif \theta = \frac{2\dif t}{1+t^2},
 \end{align*}
 于是
-\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta
-=2\int_{-\infty}^\infty R\bigg(\frac{2t}{1+t^2},\frac{1-t^2}{1+t^2}\bigg)
-\frac1{1+t^2}\dif t.\]
+\[
+  \int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta
+  = 2\int_{-\infty}^\infty R\bigg(\frac{2t}{1+t^2},\frac{1-t^2}{1+t^2}\bigg)
+  \frac1{1+t^2}\dif t.
+\]
 右端积分中的被积函数是$t$的有理函数，这是刚讨论过的积分.
 
 计算这种积分的另外一种方法是把它化为单位圆周上的积分.设$z=\ee^{\ii\theta}$，那么
 \begin{align*}
-&\cos\theta=\frac12(\ee^{\ii\theta}+\ee^{-\ii\theta})=\frac12\bigg(z+\frac1z\bigg),\\
-&\sin\theta=\frac1{2\ii}(\ee^{\ii\theta}-\ee^{-\ii\theta})=\frac1{2\ii}\bigg(z-\frac1z\bigg),\\
-&\dif \theta=\frac{1}{\ii z}\dz,
+  & \cos\theta = \frac12(\ee^{\ii\theta}+\ee^{-\ii\theta}) = \frac12\bigg(z+\frac1z\bigg),\\
+  & \sin\theta = \frac1{2\ii}(\ee^{\ii\theta}-\ee^{-\ii\theta}) = \frac1{2\ii}\bigg(z-\frac1z\bigg),\\
+  & \dif \theta = \frac{1}{\ii z}\dz,
 \end{align*}
 于是
-\[\int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta=
-\int\limits_{|z|=1}R\bigg(\frac1{2\ii}\bigg(z-\frac1z\bigg),
-\frac12\bigg(z+\frac1z\bigg)\bigg)\frac1{\ii z}\dz.\]
+\[
+  \int_0^{2\pi}R(\sin\theta,\cos\theta)\dif \theta=
+  \int\limits_{|z|=1}R\bigg(\frac1{2\ii}\bigg(z-\frac1z\bigg),
+  \frac12\bigg(z+\frac1z\bigg)\bigg)\frac1{\ii z}\dz.
+\]
 右端积分中的被积函数是$z$的有理函数，积分在单位圆周上进行，因而可用残数定理来计算.
 
 \begin{example}\label{exam5.5.13}
-计算积分
-\[\int_0^{2\pi}\frac{\dif \theta}{3+\cos\theta+2\sin\theta}.\]
+  计算积分
+  \[
+    \int_0^{2\pi}\frac{\dif \theta}{3+\cos\theta+2\sin\theta}.
+  \]
 \end{example}
 \begin{solution}
-令$z=\ee^{\ii\theta}$，则
-\[\int_0^{2\pi}\frac{\dif \theta}{3+\cos\theta+2\sin\theta}
-=2\int\limits_{|z|=1}\frac{\dz}{(\ii+2)z^2+6\ii z+\ii-2}.\]
-右端积分中的被积函数有两个$1$阶极点
-\[a_1=-\frac{1+2\ii}5,\quad a_2=-1-2\ii,\]
-但只有$a_1$在单位圆内，被积函数在$a_1$处的残数为$\frac1{4\ii}$，因而
-\begin{equation*}
-  \int_0^{2\pi}\frac{\dif \theta}{3+\cos\theta+2\sin\theta}
-  = 4\pi\ii\cdot\frac1{4\ii} = \pi. \qedhere
-\end{equation*}
+  令$z=\ee^{\ii\theta}$，则
+  \[
+    \int_0^{2\pi}\frac{\dif \theta}{3+\cos\theta+2\sin\theta}
+    =2\int\limits_{|z|=1}\frac{\dz}{(\ii+2)z^2+6\ii z+\ii-2}.
+  \]
+  右端积分中的被积函数有两个$1$阶极点
+  \[
+    a_1 = -\frac{1+2\ii}5, \quad a_2 = -1-2\ii,
+  \]
+  但只有$a_1$在单位圆内，被积函数在$a_1$处的残数为$\frac1{4\ii}$，因而
+  \begin{equation*}
+    \int_0^{2\pi}\frac{\dif \theta}{3+\cos\theta+2\sin\theta}
+    = 4\pi\ii\cdot\frac1{4\ii} = \pi. \qedhere
+  \end{equation*}
 \end{solution}
 
 用类似的方法可以计算积分
-\[\int_0^{2\pi}R(\sin n\theta,\cos n\theta)\dif \theta,\]
+\[
+  \int_0^{2\pi}R(\sin n\theta,\cos n\theta)\dif \theta,
+\]
 这是因为
-\[\int_0^{2\pi}R(\sin n\theta,\cos n\theta)\dif \theta=
-\int\limits_{|z|=1}R\bigg(\frac1{2\ii}\bigg(z^n-\frac1{z^n}\bigg),
-\frac12\bigg(z^n+\frac1{z^n}\bigg)\bigg)\frac1{\ii z}\dz.\]
+\[
+  \int_0^{2\pi}R(\sin n\theta,\cos n\theta)\dif \theta=
+  \int\limits_{|z|=1}R\bigg(\frac1{2\ii}\bigg(z^n-\frac1{z^n}\bigg),
+  \frac12\bigg(z^n+\frac1{z^n}\bigg)\bigg)\frac1{\ii z}\dz.
+\]
 这里，$n$是整数.
 
 如果要计算积分
-\[\int_0^{2\pi}R(\sin \theta,\cos \theta)\cos n\theta\dif \theta\]
+\[
+  \int_0^{2\pi}R(\sin \theta,\cos \theta)\cos n\theta\dif \theta
+\]
 或
-\[\int_0^{2\pi}R(\sin \theta,\cos \theta)\sin n\theta\dif \theta,\]
+\[
+  \int_0^{2\pi}R(\sin \theta,\cos \theta)\sin n\theta\dif \theta,
+\]
 则先利用公式
 \begin{equation}\label{eq5.5.10}
-\int_0^{2\pi}R(\sin\theta,\cos\theta)\ee^{\ii n\theta}\dif \theta=
-\int\limits_{|z|=1}R\bigg(\frac1{2\ii}\bigg(z-\frac1z\bigg),
-\frac12\bigg(z+\frac1z\bigg)\bigg)\frac{z^{n-1}}{\ii}\dz.
+  \int_0^{2\pi}R(\sin\theta,\cos\theta)\ee^{\ii n\theta}\dif \theta =
+  \int\limits_{|z|=1}R\bigg(\frac1{2\ii}\bigg(z-\frac1z\bigg),
+  \frac12\bigg(z+\frac1z\bigg)\bigg)\frac{z^{n-1}}{\ii}\dz.
 \end{equation}
 算出左端的积分，然后取实部或虚部，即得上述两个积分.
 
 另一种重要类型的有穷限积分是
-\[\int_a^b(x-a)^r(b-x)^sf(x)\dx,\]
+\[
+  \int_a^b(x-a)^r(b-x)^sf(x)\dx,
+\]
 这里，$-1<r,s<1$，且$r+s=-1,0$或$1$. 对于这种积分，有下面的计算公式.
 
 \begin{theorem}\label{thm5.5.14}
-设$f$在$\MC$中除去$a_1,\cdots,a_n$外是全纯的，$a_1,\cdots,a_n$都不在区间$[a,b]$上；设$-1<r,s<1,s\ne0$，且$r+s$是整数.如果
-\[\lim_{z\to\infty}z^{r+s+1}f(z)=A\ne\infty,\]
-那么
-\begin{equation}\label{eq5.5.11}
-\int_a^b(x-a)^r(b-x)^sf(x)\dx=-\frac{A\pi}{\sin s\pi}+\frac\pi{\ee^{-s\pi\ii}\sin
-s\pi}\sum_{k=1}^n\Res(F,a_k),
-\end{equation}
-这里，$F(z)=(z-a)^r(b-z)^sf(z)$.
+  设$f$在$\MC$中除去$a_1,\cdots,a_n$外是全纯的，$a_1,\cdots,a_n$都不在区间$[a,b]$上；设$-1<r,s<1,s\ne0$，且$r+s$是整数.如果
+  \[
+    \lim_{z\to\infty}z^{r+s+1}f(z) = A\ne\infty,
+  \]
+  那么
+  \begin{equation}\label{eq5.5.11}
+    \int_a^b(x-a)^r(b-x)^sf(x)\dx = -\frac{A\pi}{\sin s\pi}+\frac\pi{\ee^{-s\pi\ii}\sin
+    s\pi}\sum_{k=1}^n\Res(F,a_k),
+  \end{equation}
+  这里，$F(z)=(z-a)^r(b-z)^sf(z)$.
 \end{theorem}
 
 证明这个定理还需要一个与引理 \ref{lemma5.5.9} 类似的引理：
 \begin{lemma}\label{lemma5.5.15}
-设$f$在
-\[G=\{z=\rho\ee^{\ii\theta}:\rho\ge R_0,\theta_0\le\theta\le\theta_0+\alpha\}\]
-中连续，如果$\lim_{z\to\infty}zf(z)=A$，那么
-\[\lim_{\rho\to\infty}\int\limits_{\gamma_\rho}f(z)\dz=\ii A\alpha,\]
-这里，$\gamma_\rho=\{z=\rho\ee^{\ii\theta}:\theta_0\le\theta\le\theta_0+\alpha\}$，它的方向是沿着辐角增加的方向.
+  设$f$在
+  \[
+    G = \{z=\rho\ee^{\ii\theta}:\rho\ge R_0,\theta_0\le\theta\le\theta_0+\alpha\}
+  \]
+  中连续，如果$\lim_{z\to\infty}zf(z)=A$，那么
+  \[
+    \lim_{\rho\to\infty}\int\limits_{\gamma_\rho}f(z)\dz=\ii A\alpha,
+  \]
+  这里，$\gamma_\rho=\{z=\rho\ee^{\ii\theta}:\theta_0\le\theta\le\theta_0+\alpha\}$，它的方向是沿着辐角增加的方向.
+\end{lemma}
 
 证明的方法与引理 \ref{lemma5.5.9} 完全一样，留给读者作练习.
-\end{lemma}
 
 \textbf{定理 \ref{thm5.5.14} 的证明}\quad 联结$a$和$b$，我们证明在线段$[a,b]$外部，$F(z)=(z-a)^r(b-z)^sf(z)$能分出单值全纯的分支.
 
 事实上，记$z-a=\rho_1\ee^{\ii\theta_1},z-b=\rho_2\ee^{\ii\theta_2}$，当$z$沿线段$[a,b]$外部的任意简单闭曲线转一圈时，$z-a$和$z-b$的辐角都要增加$2\pi$，$(z-a)^r(z-b)^s$的值由原来的$\rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)}$变为
-\[\rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)+2\pi(r+s)\ii}=
-\rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)},\]
+\[
+  \rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)+2\pi(r+s)\ii} = 
+  \rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)},
+\]
 等式成立是因为$r+s$是整数，这就是说$F(z)$的值不变.
 
 现取定在$[a,b]$上岸
-\[\arg(z-a)=0,\,\arg(b-z)=0\]
+\[
+  \arg(z-a) = 0,\,\arg(b-z) = 0
+\]
 的一支来讨论.取$R$充分大，$\varepsilon$充分小，使得由圆周$\Gamma=\{z:|z|=R\}$的内部以及圆周
 $\gamma_1=\{z:|z-a|=\varepsilon\}$和圆周$\gamma_2=\{z:|z-b|=\varepsilon\}$的外部所构成的域$D$包含$f$的全部奇点$a_1,\cdots,a_n$（见图 \ref{fig5.6}）. 在域$D$上对函数$F$用残数定理，得
 \begin{figure}[!ht]
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
->={Stealth[width=3pt]}]
-\fill(0,0)circle(1pt)(-1.5,0)circle(1pt)node[below]{$a$}(1.7,0)circle(1pt)
-node[below]{$b$};
-\draw(0,0)node[below=1pt]{$O$}circle(3);
-\draw[very thin,->](3,0)arc(0:45:3)node[above right]{$\Gamma$};
-\draw([shift={(7:0.5)}]-1.5,0)arc(7:353:0.5)
---node[below,pos=0.2]{$l_2$}++(2.222,0);
-\draw([shift={(-173:0.5)}]1.7,0)arc(-173:173:0.5)
---node[above,pos=0.8]{$l_1$}++(-2.222,0);
-\draw[->,very thin]([shift={(150:0.5)}]-1.5,0)--++(60:0.12);
-\draw[->,very thin]([shift={(90:0.5)}]1.7,0)--++(0.1,0);
-\draw[->,very thin]([shift={(7:0.5)}]-1.5,0)--++(1,0);
-\draw[->,very thin]([shift={(-173:0.5)}]1.7,0)--++(-1,0);
-\draw(-1.5,-0.7)node{$\gamma_1$}(1.7,-0.7)node{$\gamma_2$};
-\end{tikzpicture}
-\caption{\label{fig5.6}}
+  \centering
+    \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+      >={Stealth[width=3pt]}]
+      \fill(0,0)circle(1pt)(-1.5,0)circle(1pt)node[below]{$a$}(1.7,0)circle(1pt)
+        node[below]{$b$};
+      \draw(0,0)node[below=1pt]{$O$}circle(3);
+      \draw[very thin,->](3,0)arc(0:45:3)node[above right]{$\Gamma$};
+      \draw([shift={(7:0.5)}]-1.5,0)arc(7:353:0.5)
+        --node[below,pos=0.2]{$l_2$}++(2.222,0);
+      \draw([shift={(-173:0.5)}]1.7,0)arc(-173:173:0.5)
+        --node[above,pos=0.8]{$l_1$}++(-2.222,0);
+      \draw[->,very thin]([shift={(150:0.5)}]-1.5,0)--++(60:0.12);
+      \draw[->,very thin]([shift={(90:0.5)}]1.7,0)--++(0.1,0);
+      \draw[->,very thin]([shift={(7:0.5)}]-1.5,0)--++(1,0);
+      \draw[->,very thin]([shift={(-173:0.5)}]1.7,0)--++(-1,0);
+      \draw(-1.5,-0.7)node{$\gamma_1$}(1.7,-0.7)node{$\gamma_2$};
+   \end{tikzpicture}
+   \caption{\label{fig5.6}}
 \end{figure}
 \begin{equation}\label{eq5.5.12}
-\begin{gathered}
-\int\limits_\Gamma F(z)\dz+\int\limits_{\gamma_1}F(z)\dz+\int\limits_{l_1}F(z)\dz
-+\int\limits_{\gamma_2}F(z)\dz+\int\limits_{l_2}F(z)\dz\\
-=2\pi\ii\sum_{k=1}^n\Res(F,a_k),
-\end{gathered}
+  \begin{gathered}
+    \int\limits_\Gamma F(z)\dz+\int\limits_{\gamma_1}F(z)\dz+\int\limits_{l_1}F(z)\dz
+    + \int\limits_{\gamma_2}F(z)\dz+\int\limits_{l_2}F(z)\dz\\
+    = 2\pi\ii\sum_{k=1}^n\Res(F,a_k),
+  \end{gathered}
 \end{equation}
 这里，$l_1,l_2$分别是$[a,b]$上、下岸上的一段. 当$z\in l_1$时，$\arg(z-a)=0,\arg(b-z)=0$，所以
 \begin{align*}
-&(z-a)^r=\ee^{r\log(z-a)}=\ee^{r\log|z-a|}=\ee^{r\log(x-a)}=(x-a)^r,\\
-&(b-z)^s=\ee^{s\log(b-z)}=\ee^{s\log|b-z|}=\ee^{s\log(b-x)}=(b-x)^s.
+  & (z-a)^r = \ee^{r\log(z-a)} = \ee^{r\log|z-a|}=\ee^{r\log(x-a)} = (x-a)^r,\\
+  & (b-z)^s = \ee^{s\log(b-z)} = \ee^{s\log|b-z|}=\ee^{s\log(b-x)} = (b-x)^s.
 \end{align*}
 当$z\in l_2$时，$\arg(z-a)=0,\arg(b-z)=-2\pi$，所以，
 \begin{align*}
-&(z-a)^r=(x-a)^r,\\
-&(b-z)^s=\ee^{s\big(\log(b-x)+\ii\arg(b-z)\big)}=\ee^{-2s\pi\ii}(b-x)^s.
+  & (z-a)^r = (x-a)^r,\\
+  & (b-z)^s = \ee^{s\big(\log(b-x)+\ii\arg(b-z)\big)} = \ee^{-2s\pi\ii}(b-x)^s.
 \end{align*}
 于是，\eqref{eq5.5.12} 式可写为
 \begin{equation}\label{eq5.5.13}
-\begin{aligned}
-\int\limits_\Gamma F(z)\dz&+\int\limits_{\gamma_1}F(z)\dz+\int\limits_{\gamma_2}F(z)\dz\\
-&+(1-\ee^{-2s\pi\ii})\int_{a+\varepsilon}^{b-\varepsilon}(x-a)^r(b-x)^sf(x)\dx\\
-&=2\pi\ii\sum_{k=1}^n\Res(F,a_k).
-\end{aligned}
+  \begin{aligned}
+    \int\limits_\Gamma F(z)\dz&+\int\limits_{\gamma_1}F(z)\dz+\int\limits_{\gamma_2}F(z)\dz\\
+    & + (1-\ee^{-2s\pi\ii})\int_{a+\varepsilon}^{b-\varepsilon}(x-a)^r(b-x)^sf(x)\dx\\
+    & = 2\pi\ii\sum_{k=1}^n\Res(F,a_k).
+  \end{aligned}
 \end{equation}
 因为$-1$的辐角取$-\pi$，所以
 \begin{align*}
-\lim_{z\to\infty}zF(z)&=\lim_{z\to\infty}z(z-a)^r(b-z)^sf(z)\\
-&=\ee^{-s\pi\ii}\lim_{z\to\infty}z^{r+s+1}f(z)=\ee^{-s\pi\ii}A,
+  \lim_{z\to\infty}zF(z)&=\lim_{z\to\infty}z(z-a)^r(b-z)^sf(z)\\
+  & = \ee^{-s\pi\ii}\lim_{z\to\infty}z^{r+s+1}f(z)=\ee^{-s\pi\ii}A,
 \end{align*}
 故由引理 \ref{lemma5.5.15} 得
-\[\lim_{R\to\infty}\int\limits_{\Gamma}F(z)\dz=2\pi\ii\ee^{-s\pi\ii}A.\]
+\[
+  \lim_{R\to\infty}\int\limits_{\Gamma}F(z)\dz = 2\pi\ii\ee^{-s\pi\ii}A.
+\]
 由于$r+1>0,s+1>0$，所以
 \begin{align*}
-&\lim_{z\to a}(z-a)F(z)=\lim_{z\to a}(z-a)^{r+1}(b-z)^sf(z)=0,\\
-&\lim_{z\to b}(b-z)F(z)=\lim_{z\to b}(z-a)^{r}(b-z)^{s+1}f(z)=0,
+  & \lim_{z\to a}(z-a)F(z) = \lim_{z\to a}(z-a)^{r+1}(b-z)^sf(z) = 0,\\
+  & \lim_{z\to b}(b-z)F(z) = \lim_{z\to b}(z-a)^{r}(b-z)^{s+1}f(z) = 0,
 \end{align*}
 故由引理 \ref{lemma5.5.9} 得
 \begin{align*}
-&\lim_{\varepsilon\to0}\int\limits_{\gamma_1}F(z)\dz=0,\\
-&\lim_{\varepsilon\to0}\int\limits_{\gamma_2}F(z)\dz=0.
+  & \lim_{\varepsilon\to0}\int\limits_{\gamma_1}F(z)\dz = 0,\\
+  & \lim_{\varepsilon\to0}\int\limits_{\gamma_2}F(z)\dz = 0.
 \end{align*}
 在 \eqref{eq5.5.13} 式中令$R\to\infty,\varepsilon\to0$，即得
 \begin{align*}
-\int_a^b(x-a)^r(b-x)^sf(x)\dx&=-\frac{2\pi\ii\ee^{-s\pi\ii}A}{1-\ee^{-2s\pi\ii}}
-+\frac{2\pi\ii}{1-\ee^{-2s\pi\ii}}\sum_{k=1}^n\Res(F,a_k)\\
-&=-\frac{\pi A}{\sin s\pi}+\frac\pi{\ee^{-s\pi\ii}\sin
-s\pi}\sum_{k=1}^n\Res(F,a_k).
+  \int_a^b(x-a)^r(b-x)^sf(x)\dx&=-\frac{2\pi\ii\ee^{-s\pi\ii}A}{1-\ee^{-2s\pi\ii}}
+  + \frac{2\pi\ii}{1-\ee^{-2s\pi\ii}}\sum_{k=1}^n\Res(F,a_k)\\
+  & = -\frac{\pi A}{\sin s\pi}+\frac\pi{\ee^{-s\pi\ii}\sin
+    s\pi}\sum_{k=1}^n\Res(F,a_k).
 \end{align*}
 这就是要证明的公式 \eqref{eq5.5.11}.\hfill$\Box$
+
 \begin{example}\label{exam5.5.16}
-计算积分
-\[\int_{-1}^1\frac{\dx}{\sqrt[\leftroot{-1}\uproot{2}3]{(1+x)^2(1-x)}}.\]
+  计算积分
+  \[
+    \int_{-1}^1\frac{\dx}{\sqrt[\leftroot{-1}\uproot{2}3]{(1+x)^2(1-x)}}.
+  \]
 \end{example}
 \begin{solution}
-题中，$r=-\frac23,s=-\frac13,r+s=-1$，是一个整数，$f(z)\equiv1$，所以
-\[\lim_{z\to\infty}z^{r+s+1}f(z)=1.\]
-由公式 \eqref{eq5.5.11} 即得
-\begin{equation*}
-  \int_{-1}^1\frac{\dx}{\sqrt[\leftroot{-1}\uproot{2}3]{(1+x)^2(1-x)}} = \frac2{\sqrt3}\pi. \qedhere
-\end{equation*}
+  题中，$r=-\frac23,s=-\frac13,r+s=-1$，是一个整数，$f(z)\equiv1$，所以
+  \[
+    \lim_{z\to\infty}z^{r+s+1}f(z) = 1.
+  \]
+  由公式 \eqref{eq5.5.11} 即得
+  \begin{equation*}
+    \int_{-1}^1\frac{\dx}{\sqrt[\leftroot{-1}\uproot{2}3]{(1+x)^2(1-x)}} = \frac2{\sqrt3}\pi. \qedhere
+  \end{equation*}
 \end{solution}
 \begin{example}\label{exam5.5.17}
-计算积分
-\[\int_0^1\frac{\sqrt[\leftroot{-1}\uproot{2}3]{x^2(1-x)}}{(1+x)^3}\dx.\]
+  计算积分
+  \[
+    \int_0^1\frac{\sqrt[\leftroot{-1}\uproot{2}3]{x^2(1-x)}}{(1+x)^3}\dx.
+  \]
 \end{example}
 \begin{solution}
-题中，$r=\frac23,s=\frac13,r+s=1,f(z)=\frac1{(1+z)^3}$，因而
-\[\lim_{z\to\infty}z^{r+s+1}f(z)=\lim_{z\to\infty}\frac{z^2}{(1+z)^3}=0.\]
-$f$在全平面上只有一个$3$阶极点$z=-1$，于是由公式 \eqref{eq5.5.11} 即得
-\begin{equation}\label{eq5.5.14}
-\int_0^1\frac{\sqrt[\leftroot{-1}\uproot{2}3]{x^2(1-x)}}{(1+x)^3}\dx
-=\frac\pi{\sin\frac\pi3}\ee^{\frac\pi3\ii}\Res
-\bigg(\frac{z^{\frac23}(1-z)^{\frac13}}{(1+z)^3},-1\bigg).
-\end{equation}
-根据命题 \ref{prop5.4.2}，有
-\begin{equation}\label{eq5.5.15}
-\Res\bigg(\frac{z^{\frac23}(1-z)^{\frac13}}{(1+z)^3},-1\bigg)=\frac12
-\lim_{z\to-1}\ddd{}z\big\{z^{\frac23}(1-z)^{\frac13}\big\}.
-\end{equation}
-易知
-\[\ddd{}z\big\{z^{\frac23}(1-z)^{\frac13}\big\}=-\frac29z^{-\frac43}(1-z)^{\frac13}
--\frac49z^{-\frac13}(1-z)^{-\frac23}-\frac29(1-z)^{-\frac53}z^{\frac23},\]
-为了计算它在$z=-1$处的值，注意当$z=-1$时，$\arg z=\pi$，$\arg(1-z)=0$，于是
-\[\lim_{z\to-1}\ddd{}z\big\{z^{\frac23}(1-z)^{\frac13}\big\}
-=-\frac29\ee^{-\frac43\pi\ii}\sqrt[\leftroot{-1}\uproot{2}3]2-
-\frac49\ee^{-\frac\pi3\ii}\frac1{\sqrt[\leftroot{-1}\uproot{2}3]4}-
-\frac29\ee^{\frac{2\pi}3\ii}2^{-\frac53}.\]
-代入 \eqref{eq5.5.15} 式后再代入 \eqref{eq5.5.14} 式，即得
-\begin{equation*}
-  \int_0^1\frac{\sqrt[\leftroot{-1}\uproot{2}3]{x^2(1-x)}}{(1+x)^3}\dx
-  =\frac{\sqrt[\leftroot{-1}\uproot{2}3]2\pi}{18\sqrt3}. \qedhere
-\end{equation*}
+  题中，$r=\frac23,s=\frac13,r+s=1,f(z)=\frac1{(1+z)^3}$，因而
+  \[
+    \lim_{z\to\infty}z^{r+s+1}f(z) = \lim_{z\to\infty}\frac{z^2}{(1+z)^3} = 0.
+  \]
+  $f$在全平面上只有一个$3$阶极点$z=-1$，于是由公式 \eqref{eq5.5.11} 即得
+  \begin{equation}\label{eq5.5.14}
+    \int_0^1\frac{\sqrt[\leftroot{-1}\uproot{2}3]{x^2(1-x)}}{(1+x)^3}\dx
+    = \frac\pi{\sin\frac\pi3}\ee^{\frac\pi3\ii}\Res
+    \bigg(\frac{z^{\frac23}(1-z)^{\frac13}}{(1+z)^3},-1\bigg).
+  \end{equation}
+  根据命题 \ref{prop5.4.2}，有
+  \begin{equation}\label{eq5.5.15}
+    \Res\bigg(\frac{z^{\frac23}(1-z)^{\frac13}}{(1+z)^3},-1\bigg) = \frac12
+    \lim_{z\to-1}\ddd{}z\big\{z^{\frac23}(1-z)^{\frac13}\big\}.
+  \end{equation}
+  易知
+  \[
+    \ddd{}z\big\{z^{\frac23}(1-z)^{\frac13}\big\} = -\frac29z^{-\frac43}(1-z)^{\frac13}
+    -\frac49z^{-\frac13}(1-z)^{-\frac23}-\frac29(1-z)^{-\frac53}z^{\frac23},
+  \]
+  为了计算它在$z=-1$处的值，注意当$z=-1$时，$\arg z=\pi$，$\arg(1-z)=0$，于是
+  \[
+    \lim_{z\to-1}\ddd{}z\big\{z^{\frac23}(1-z)^{\frac13}\big\}
+    = -\frac29\ee^{-\frac43\pi\ii}\sqrt[\leftroot{-1}\uproot{2}3]2-
+    \frac49\ee^{-\frac\pi3\ii}\frac1{\sqrt[\leftroot{-1}\uproot{2}3]4}-
+    \frac29\ee^{\frac{2\pi}3\ii}2^{-\frac53}.
+  \]
+  代入 \eqref{eq5.5.15} 式后再代入 \eqref{eq5.5.14} 式，即得
+  \begin{equation*}
+    \int_0^1\frac{\sqrt[\leftroot{-1}\uproot{2}3]{x^2(1-x)}}{(1+x)^3}\dx
+    =\frac{\sqrt[\leftroot{-1}\uproot{2}3]2\pi}{18\sqrt3}. \qedhere
+  \end{equation*}
 \end{solution}
 
 \subsection{两个特殊的积分}
@@ -1314,329 +1547,355 @@ $\int_0^\infty\sin x^2\dx$}
 
 取函数$f(z)=\ee^{\ii z^2}$，取围道如图 \ref{fig5.7} 所示.因为$f$是整函数，由Cauchy积分定理，有
 \begin{equation}\label{eq5.5.16}
-\int_0^R\ee^{\ii x^2}\dx+\int\limits_{\gamma_R}\ee^{\ii z^2}\dz+\int\limits_{\gamma_2}\ee^{\ii z^2}\dz=0.
+  \int_0^R\ee^{\ii x^2}\dx+\int\limits_{\gamma_R}\ee^{\ii z^2}\dz+\int\limits_{\gamma_2}\ee^{\ii z^2}\dz=0.
 \end{equation}
 当$z\in\gamma_R$时，$z=R\ee^{\ii\theta},0\le\theta\le\frac\pi4$，所以
-\[\big|\ee^{\ii z^2}\big|=\ee^{-R^2\sin2\theta}\le\ee^{-\frac4\pi R^2\theta},0\le\theta\le\frac\pi4.\]
+\[
+  \big|\ee^{\ii z^2}\big| = \ee^{-R^2\sin2\theta}\le\ee^{-\frac4\pi R^2\theta},0\le\theta\le\frac\pi4.
+\]
 \begin{figure}[!ht]
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
->={Stealth[width=3pt]}]
-\draw(0,0)node[below]{$O$}--(4,0)node[below]{$R$}arc(0:45:4)--cycle;
-\draw[very thin,->](0,0)--(2,0)node[below]{$\gamma_1$};
-\draw[->,very thin](4,0)arc(0:25:4)node[right]{$\gamma_R$};
-\draw[->,very thin](45:4)--(45:2)node[above left]{$\gamma_2$};
-\draw(0.4,0)arc(0:45:0.4);
-\node at(24:1){$\frac\pi4$};
-\end{tikzpicture}
-\caption{\label{fig5.7}}
+  \centering
+  \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+    >={Stealth[width=3pt]}]
+    \draw(0,0)node[below]{$O$}--(4,0)node[below]{$R$}arc(0:45:4)--cycle;
+    \draw[very thin,->](0,0)--(2,0)node[below]{$\gamma_1$};
+    \draw[->,very thin](4,0)arc(0:25:4)node[right]{$\gamma_R$};
+    \draw[->,very thin](45:4)--(45:2)node[above left]{$\gamma_2$};
+    \draw(0.4,0)arc(0:45:0.4);
+    \node at(24:1){$\frac\pi4$};
+  \end{tikzpicture}
+  \caption{\label{fig5.7}}
 \end{figure}
 于是，当$R\to\infty$时，有
-\[\bigg|\int\limits_{\gamma_R}\ee^{\ii z^2}\dz\bigg|
-\le\int_0^{\frac\pi4}\ee^{-\frac4\pi R^2\theta}R\dif \theta
-=\frac\pi{4R}(1-\ee^{-R^2})\to0.\]
+\[
+  \bigg|\int\limits_{\gamma_R}\ee^{\ii z^2}\dz\bigg|
+  \le\int_0^{\frac\pi4}\ee^{-\frac4\pi R^2\theta}R\dif \theta
+  = \frac\pi{4R}(1-\ee^{-R^2})\to0.
+\]
 当$z\in\gamma_2$时，$z=r\ee^{\ii\frac\pi4},0\le r\le R$，所以
-\[\int\limits_{\gamma_2}\ee^{\ii z^2}\dz=-\ee^{\ii\frac\pi4}\int_0^R\ee^{-r^2}\dif r.\]
+\[
+  \int\limits_{\gamma_2}\ee^{\ii z^2}\dz = -\ee^{\ii\frac\pi4}\int_0^R\ee^{-r^2}\dif r.
+\]
 在 \eqref{eq5.5.16} 式中令$R\to\infty$，即得
 \begin{equation}\label{eq5.5.17}
-\int_0^\infty\ee^{\ii x^2}\dx=\ee^{\ii\frac\pi4}\int_0^\infty\ee^{-r^2}\dif r
-=\frac{\sqrt\pi}2\ee^{\ii\frac\pi4}.
+  \int_0^\infty\ee^{\ii x^2}\dx=\ee^{\ii\frac\pi4}\int_0^\infty\ee^{-r^2}\dif r
+  =\frac{\sqrt\pi}2\ee^{\ii\frac\pi4}.
 \end{equation}
 这里，我们已经利用了已知的概率积分
-\[\int_0^\infty\ee^{-r^2}\dif r=\frac{\sqrt\pi}2.\]
+\[
+  \int_0^\infty\ee^{-r^2}\dif r = \frac{\sqrt\pi}2.
+\]
 在 \eqref{eq5.5.17} 式两边分别取实部和虚部，即得
-\[\int_0^\infty\cos x^2\dx=\int_0^\infty\sin x^2\dx=\frac12\sqrt{\frac\pi2}.\]
+\[
+  \int_0^\infty\cos x^2\dx = \int_0^\infty\sin x^2\dx = \frac12\sqrt{\frac\pi2}.
+\]
 
 大家不难利用计算这两个积分的方法算出
-\[\int_0^\infty\cos x^n\dx\;\mbox{（$n>1$）}\]
+\[
+  \int_0^\infty\cos x^n\dx\;\mbox{（$n>1$）}
+\]
 和
-\[\int_0^\infty\sin x^n\dx\;\mbox{（$n>1$）}.\]
+\[
+  \int_0^\infty\sin x^n\dx\;\mbox{（$n>1$）}.
+\]
 
 （2）{\kaishu  Poisson积分$\int_0^\infty\ee^{-ax^2}\cos bx\dx$（$a>0$） }
 \index{J!积分!Poisson积分}
 
 取函数$f(z)=\ee^{-az^2}$，取围道如图 \ref{fig5.8} 所示. 因为$f$是整函数，由Cauchy积分定理，有
 \begin{equation}\label{eq5.5.18}
-\int_{-R}^R\ee^{-a x^2}\dx+\int\limits_{\gamma_1}\ee^{-az^2}\dz
-+\int\limits_{\gamma_2}\ee^{-az^2}\dz+\int\limits_{\gamma_3}\ee^{-az^2}\dz=0.
+  \int_{-R}^R\ee^{-a x^2}\dx+\int\limits_{\gamma_1}\ee^{-az^2}\dz
+  + \int\limits_{\gamma_2}\ee^{-az^2}\dz+\int\limits_{\gamma_3}\ee^{-az^2}\dz=0.
 \end{equation}
 \begin{figure}[!ht]
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
->={Stealth[width=3pt]}]
-\draw[->](-3,0)--(-2,0)node[below]{$-R$}--(0,0)node[below right]{$O$}
---(2,0)node[below]{$R$}--(3,0);
-\draw[->](0,-0.5)--(0,3);
-\draw(2,0)--(2,2)--(-2,2)--(-2,0);
-\draw[->,very thin](2,0)--(2,1)node[right]{$\frac{b}{2a}$}node[left]{$\gamma_1$};
-\draw[->,very thin](2,2)node[above]{$R+\frac b{2a}\textrm i$}--(0.8,2)node[below]{$\gamma_2$};
-\draw[->,very thin](-2,2)
-node[above]{$-R+\frac b{2a}\textrm i$}--(-2,1)node[right]{$\gamma_3$};
-\end{tikzpicture}
-\caption{\label{fig5.8}}
+  \centering
+  \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+    >={Stealth[width=3pt]}]
+    \draw[->](-3,0)--(-2,0)node[below]{$-R$}--(0,0)node[below right]{$O$}
+      --(2,0)node[below]{$R$}--(3,0);
+    \draw[->](0,-0.5)--(0,3);
+    \draw(2,0)--(2,2)--(-2,2)--(-2,0);
+    \draw[->,very thin](2,0)--(2,1)node[right]{$\frac{b}{2a}$}node[left]{$\gamma_1$};
+    \draw[->,very thin](2,2)node[above]{$R+\frac b{2a}\textrm i$}--(0.8,2)node[below]{$\gamma_2$};
+    \draw[->,very thin](-2,2)
+      node[above]{$-R+\frac b{2a}\textrm i$}--(-2,1)node[right]{$\gamma_3$};
+  \end{tikzpicture}
+  \caption{\label{fig5.8}}
 \end{figure}
 当$z\in\gamma_1$时，$z=R+\ii y,0\le y\le\frac b{2a}$，所以
-\[\bigg|\int\limits_{\gamma_1}\ee^{-az^2}\dz\bigg|
-\le\int_0^{\frac b{2a}}\ee^{-a(R^2-y^2)}\dy
-\le\ee^{-aR^2}\cdot\ee^{a\big(\frac b{2a}\big)^2}\cdot\frac b{2a}\to0\;\mbox
-{（$R\to\infty$）}.\]
+\[
+  \bigg|\int\limits_{\gamma_1}\ee^{-az^2}\dz\bigg|
+  \le\int_0^{\frac b{2a}}\ee^{-a(R^2-y^2)}\dy
+  \le\ee^{-aR^2}\cdot\ee^{a\big(\frac b{2a}\big)^2}\cdot\frac b{2a}\to0\;\mbox
+  {（$R\to\infty$）}.
+\]
 同样道理，有
-\[\int\limits_{\gamma_3}\ee^{-az^2}\dz\to0\;\mbox{（$R\to\infty$）}.\]
+\[
+  \int\limits_{\gamma_3}\ee^{-az^2}\dz\to0\;\mbox{（$R\to\infty$）}.
+\]
 当$z\in\gamma_2$时，$z=x+\frac b{2a}\ii,-R\le x\le R$，所以
 \begin{align*}
-\int\limits_{\gamma_2}\ee^{-az^2}\dz&=-\int_{-R}^R\ee^{-a\big(x^2-\frac{b^2}{4a^2}
-+\frac bax\ii\big)}\dx\\
-&=-\ee^{\frac{b^2}{4a}}\int_{-R}^R\ee^{-ax^2}\ee^{-bx\ii}\dx
-=-\ee^{\frac{b^2}{4a}}\int_{-R}^R\ee^{-ax^2}\cos bx\dx.
+  \int\limits_{\gamma_2}\ee^{-az^2}\dz&=-\int_{-R}^R\ee^{-a\big(x^2-\frac{b^2}{4a^2}
+  + \frac bax\ii\big)}\dx\\
+  & = -\ee^{\frac{b^2}{4a}}\int_{-R}^R\ee^{-ax^2}\ee^{-bx\ii}\dx
+  = -\ee^{\frac{b^2}{4a}}\int_{-R}^R\ee^{-ax^2}\cos bx\dx.
 \end{align*}
 在 \eqref{eq5.5.18} 式中令$R\to\infty$，即得
-\[\int_{-\infty}^\infty\ee^{-ax^2}\dx-\ee^{\frac{b^2}{2a}}\int_{-\infty}^\infty
-\ee^{-ax^2}\cos bx\dx=0.\]
+\[
+  \int_{-\infty}^\infty\ee^{-ax^2}\dx-\ee^{\frac{b^2}{2a}}\int_{-\infty}^\infty
+  \ee^{-ax^2}\cos bx\dx=0.
+\]
 由概率积分可得
-\[\int_{-\infty}^\infty\ee^{-ax^2}\dx=\sqrt{\frac\pi a},\]
+\[
+  \int_{-\infty}^\infty\ee^{-ax^2}\dx=\sqrt{\frac\pi a},
+\]
 所以
-\[\int_0^\infty\ee^{-ax^2}\cos bx\dx=\frac12\sqrt{\frac\pi a}\ee^{-\frac{b^2}{4a}}.\]
+\[
+  \int_0^\infty\ee^{-ax^2}\cos bx\dx=\frac12\sqrt{\frac\pi a}\ee^{-\frac{b^2}{4a}}.
+\]
 
 \begin{xiti}
-\item 利用残数定理和Cauchy积分定理计算下列积分（后面的括号中为正确答案）：
-\begin{enuma}
-  \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{x^2+1}{x^4+1}\dx$；} $\bigg(
-  \frac{\sqrt2}2\pi\bigg)$
-  \item \makebox[0.65\textwidth][l]{$\int_{-\infty}^\infty\frac{x^2-x+2}{x^4+10x^2+9}\dx$；}
+  \item 利用残数定理和Cauchy积分定理计算下列积分（后面的括号中为正确答案）：
+  \begin{enuma}
+    \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{x^2+1}{x^4+1}\dx$；} $\bigg(
+          \frac{\sqrt2}2\pi\bigg)$
+    \item \makebox[0.65\textwidth][l]{$\int_{-\infty}^\infty\frac{x^2-x+2}{x^4+10x^2+9}\dx$；}
        $\bigg(\frac5{12}\pi\bigg)$
-  \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{x^2}{x^4+6x^2+13}\dx$；}
-  $\left(\frac\pi4\sqrt{\frac{\sqrt{13}-3}2}\right)$
-  \item \makebox[0.65\textwidth][l]{$\int_0^{2\pi}\frac1{a+b\cos\theta}\dif \theta$  （$0<b<a$）；} $\bigg(\frac{2\pi}{\sqrt{a^2-b^2}}\bigg)$
-  \item \makebox[0.65\textwidth][l]{$\int_0^{\frac\pi2}\frac1{a+\sin^2\theta}\dif \theta$（$a>0$）；} $\bigg(\frac\pi2\frac1{\sqrt{a(a+1)}}\bigg)$
-  \item \makebox[0.65\textwidth][l]{$\int_{-\infty}^\infty\frac{x\cos x}{x^2-2x+10}\dx$；} $\bigg(\frac{\cos1-3\sin1}{3\ee^3}\pi\bigg)$
-  \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{x\sin ax}{x^2+b^2}\dx$（$a,b>0$）；} $\bigg(\frac\pi2\ee^{-ab}\bigg)$
-  \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{\cos x}{(1+x^2)^3}\dx$；}
-  $\bigg(\frac7{16}\pi\ee^{-1}\bigg)$
-  \item \makebox[0.65\textwidth][l]{$\int_0^\infty\bigg(\frac{\sin x}x\bigg)^2\dx$；}
-  $\bigg(\frac\pi2\bigg)$\\
-  （\textbf{提示}：考虑$\frac{\ee^{2\ii z}-1}{z^2}$沿图 \ref{fig5.9} 所示的曲线上的积分.）
-  \begin{figure}[!ht]
-  \centering
-  \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
->={Stealth[width=3pt]}]
-\draw[->](-4,0)--(-2,0)--(0,0)node[below]{$O$}
---(2,0)node[below]{$R$}--(4,0)node[below]{$x$};
-\draw[->](0,0)--(0,3.2)node[right]{$y$};
-\draw(0.6,0)node[below]{$r$}arc(0:180:0.6);
-\draw(2,0)arc(0:180:2);\fill(0,0)circle(1pt);
-\draw[->,very thin](-2,0)--(-1,0);
-\draw[->,very thin](0,0)--(1.2,0);
-\draw[->,very thin](2,0)arc(0:120:2);
-\draw[->,very thin](120:0.6)--++(30:0.1);
-\end{tikzpicture}
-  \caption{\label{fig5.9}}
-  \end{figure}
-  \item \makebox[0.65\textwidth][l]{$\int_0^\infty\bigg(\frac{\sin x}x\bigg)^3\dx$；}
-  $\bigg(\frac{3\pi}8\bigg)$\\
-    （\textbf{提示}：考虑$\frac{\ee^{3\ii z}-3\ee^{\ii z}+2}{z^3}$沿图 \ref{fig5.9} 所示的曲线上的积分.）
-  \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{x^p}{1+x^2}\dx$（$-1<p<1$）；}
-  $\bigg(\frac\pi{2\cos\frac{p\pi}2}\bigg)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^\infty\frac{x^p}{x^2+2x\cos\lambda+1}\dx$（$-1<p<1,-\pi<\lambda<\pi$）；}
-  $\bigg(\frac\pi{\sin p\pi}\frac{\sin p\lambda}{\sin \lambda}\bigg)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^\infty\frac1{1+x^p}\dx$（$p>1$）；}
-  $\bigg(\frac\pi{p\sin\frac\pi p}\bigg)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_{-\infty}^\infty\frac{\ee^{px}}{1+\ee^x}\dx$（$0<p<1$）；}
-  $\bigg(\frac\pi{\sin p\pi}\bigg)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^1\frac{x^{1-p}(1-x)^p}{1+x^2}\dx$（$-1<p<2$）；}
-  $\bigg(\frac\pi{\sin p\pi}\bigg(2^{\frac p2}\cos\frac{p\pi}4-1\bigg)\bigg)$\\
-  （\textbf{提示}：考虑$\frac{z^{1-p}(1-z)^p}{1+z^2}$沿图 \ref{fig5.10} 所示的曲线上的积分.）
-  \begin{figure}[!ht]
-    \centering
-    \begin{minipage}[b]{0.48\textwidth}
-    \centering
-    \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.5,
-  >={Stealth[width=3pt]}]
-  \draw[->](-2,0)--(-1.5,0)--(0,0)node[below left,inner sep=0.5pt]{$O$}--(1,0)node[below]{$1$}
-  --(1.5,0)node[below right]{$R$}--(2,0)node[below]{$x$};
-  \draw[->](0,-1.7)--(0,2)node[right]{$y$};
-  \draw(0,0)circle(1.5);
-  \fill(0,0)circle(0.7pt)(1,0)circle(0.7pt)(-0.3,0)circle(0.7pt)(1.5,0)circle(0.7pt);
-  \draw(10:0.3)--([shift={(170:0.3)}]1,0)arc(170:-170:0.3)
-  --(-10:0.3)arc(-10:-351.8:0.3);
-  \draw(-0.3,0)node[below left]{$-r$};
-  \draw[->,very thin](1.5,0)arc(0:120:1.5);
-  \draw[->,very thin](1,0.3)--++(0.05,0);
-  \draw[->,very thin](10:0.3)--++(0.2,0);
-  \draw[->,very thin]([shift={(-170:0.3)}]1,0)--++(-0.2,0);
-  \draw[->,very thin](140:0.3)--++(50:0.05);
-  \end{tikzpicture}
-    \caption{\label{fig5.10}}
-    \end{minipage}
-    \begin{minipage}[b]{0.48\textwidth}
-      \centering
-      \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.2,
-  >={Stealth[width=3pt]}]
-  \draw[->](0,0)node[below left]{$O$}--(0.3,0)node[below]{$r$}--(3,0)node[below]{$R$}
-  --(4,0)node[below]{$x$};
-  \draw(0,0.3)--(0,0)--(0.3,0);
-  \draw[->](0,0)--(0,4)node[right]{$y$};
-  \draw(3,0)arc(0:90:3);
-  \draw[->,very thin](0,0)--(2,0);
-  \draw[->,very thin](3,0)arc(0:45:3);
-  \draw[->,very thin](0,3)--(0,1.5);
-  \draw(0.3,0)arc(0:90:0.3);
-  \draw[->,very thin](45:0.3)--++(-45:0.05);
-  \end{tikzpicture}
-  \caption{\label{fig5.11}}
-    \end{minipage}
-  \end{figure}
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^1\frac1{(1+x)^2}\sqrt{\frac{(1-x)^3}x}\dx$；}
-  $\bigg(\bigg(1-\frac{\sqrt2}2\bigg)\pi\bigg)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_{-1}^1\frac{\sqrt[\leftroot{-1}\uproot{2}4]{(1-x)^3(1+x)}}{1+x^2}\dx$；}
-    $\bigg(\bigg(\sqrt{2+\sqrt2}-\sqrt2\bigg)\pi\bigg)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^\infty\frac{\log x}{x^2+2x+2}\dx$；}
-  $\bigg(\frac\pi8\log2\bigg)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^\infty\frac{\log^2x}{x^2+a^2}\dx$（$a>0$）；}
-  $\bigg(\frac\pi{8a}(\pi^2+4\log^2a)\bigg)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^\infty\frac{\sqrt x\log x}{x^2+1}\dx$；}
-  $\bigg(\frac{\sqrt2}4\pi^2\bigg)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^\infty\frac{\log x}{x^2-1}\dx$；}
-  $\bigg(\frac{\pi^2}4\bigg)$\\
-  （\textbf{提示}：考虑$\frac{\log z}{z^2-1}$沿图 \ref{fig5.11} 所示的曲线上的积分.）
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^1\frac1{x+1}\log\bigg(\frac{1-x}x\bigg)\dx$；}
-  $\bigg(\frac12\log^22\bigg)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^\infty\log\bigg(\frac{\ee^x+1}{\ee^x-1}\bigg)\dx$；}
-  $\bigg(\frac{\pi^2}4\bigg)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^\infty\frac{\sin x}{\ee^x-1}\dx$；}
-  $\bigg(\frac\pi2\bigg(\frac{\ee^{2\pi}+1}{\ee^{2\pi}-1}\bigg)-\frac12\bigg)$\\
-  （\textbf{提示}：考虑$\frac{\ee^{\ii z}}{\ee^z-1}$沿图 \ref{fig5.12} 所示的曲线上的积分.）
-  \begin{figure}[!ht]
-    \centering
-    \begin{minipage}{0.48\textwidth}
-    \centering
-    \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
-  >={Stealth[width=3pt]}]
-  \draw[->](0,0)node[below left]{$O$}--(5,0)node[below]{$R$}--(6.2,0)node[below]{$x$};
-  \draw(5,0)--(5,2.5)--(0,2.5)node[left]{$2\pi\textrm i$};
-  \draw[->](0,0)--(0,3.2)node[right]{$y$};
-  \draw[->,very thin](0,2.5)--(0,1.2);
-  \draw[->,very thin](0,0)--(2.5,0);
-  \draw[->,very thin](5,0)--(5,1.3);
-  \draw[->,very thin](5,2.5)--(2.5,2.5);
-  \draw(0.4,0)node[below]{$r$}arc(0:90:0.4);
-  \draw(0,2.1)arc(-90:0:0.4);
-  \draw[->,very thin](45:0.4)--++(-45:0.1);
-  \draw[->,very thin]([shift={(-45:0.4)}]0,2.5)--++(-135:0.1);
-  \end{tikzpicture}
-  \caption{\label{fig5.12}}
-  \end{minipage}
-  \begin{minipage}{0.48\textwidth}
-  \centering
-  \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
-  >={Stealth[width=3pt]}]
-  \draw[->](0,0)node[below left]{$O$}--(5,0)node[below]{$R$}--(6.2,0)node[below]{$x$};
-  \draw(5,0)--(5,2.5)--(0,2.5)node[left]{$2\pi\textrm i$};
-  \draw[->](0,0)--(0,3.2)node[right]{$y$};
-  \draw[->,very thin](0,2.5)--(0,1.9);
-  \draw[->,very thin](0,0)--(2.5,0);
-  \draw[->,very thin](5,0)--(5,1.3);
-  \draw[->,very thin](5,2.5)--(2.5,2.5);
-  \draw(0,0.95)arc(-90:90:0.3);
-  \draw[->,very thin](0,1.25)--(0,0.4);
-  \draw[->,very thin](0.3,1.25)--++(0,-0.1);
-  \fill(0,1.25)circle(1pt)node[left]{$\pi\textrm i$};
-  \end{tikzpicture}
-  \caption{\label{fig5.13}}
-\end{minipage}
-  \end{figure}
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^\infty\frac x{\ee^x+1}\dx$；}
-  $\bigg(\frac{\pi^2}{12}\bigg)$\\
-  （\textbf{提示}：考虑$\frac{z^2}{\ee^z+1}$沿图 \ref{fig5.13} 所示的曲线上的积分.）
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^\infty x^n\ee^{-x^{\frac14}}\sin x^{\frac14}\dx$（$n=0,1,2,\cdots$）；}
-  $(0)$\\
-  （\textbf{提示}：考虑$z^{4n+3}\ee^{-z+\ii z}$沿图 \ref{fig5.14} 所示的曲线上的积分.）
-  \begin{figure}[!ht]
-  \centering
-  \begin{minipage}{0.48\textwidth}
-  \centering
-  \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
-  >={Stealth[width=3pt]}]
-  \draw[->](0,0)node[below left]{$O$}--(3,0)node[below]{$R$}
-  --(4,0)node[below]{$x$};
-  \draw(0,0.3)--(0,0)--(0.3,0);
-  \draw[->](0,0)--(0,4)node[right]{$y$};
-  \draw(3,0)arc(0:90:3);
-  \draw[->,very thin](0,0)--(2,0);
-  \draw[->,very thin](3,0)arc(0:45:3);
-  \draw[->,very thin](0,3)--(0,1.5);
-  \end{tikzpicture}
-  \caption{\label{fig5.14}}
-  \end{minipage}
-  \begin{minipage}{0.48\textwidth}
-    \centering
-    \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
-     >={Stealth[width=3pt]}]
-     \draw[<->](0,4)node[right]{$y$}--(0,0)node[below left]{$O$}--(4,0)node[below]{$x$};
-     \draw(3,0)node[below]{$R$}arc(0:50:3)--(0,0);
-     \draw[->,very thin](0,0)--(1.5,0);
-     \draw[->,very thin](25:3)--++(115:0.1);
-     \draw[->,very thin](50:3)--(50:1.5);
-     \draw(0.3,0)arc(0:50:0.3)(0.4,0)arc(0:50:0.4);
-     \node at (24:0.6){$\varphi$};
-     \end{tikzpicture}
-     \caption{\label{fig5.15}}
-  \end{minipage}
-  \end{figure}
-  \item \makebox[0.65\textwidth][l]
-  {$\int_{-\infty}^\infty\ee^{-(x+\ii a)^2}\dx$；（$a\in \MR$）}
-  $\big(\sqrt\pi\big)$
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^\infty\ee^{-ax^2}\cos bx^2\dx$（$a>0$）；}
-  $\left(\frac{\sqrt{2\pi}}4\sqrt{\frac{\sqrt{a^2+b^2}+a}{a^2+b^2}}\right)$
-  （\textbf{提示}：考虑$\ee^{z^2(-a+\ii b)}$沿图 \ref{fig5.15} 所示的曲线上的积分，其中$\varphi$待定.）
-  \item \makebox[0.65\textwidth][l]
-  {$\int_0^{\frac\pi2}\log\sin\theta\dif \theta$；}
-  $(-\pi\log2)$\\
-  （\textbf{提示}：先求出广义积分$\int_0^{\frac\pi2}\log|\ee^{\ii\theta}-1|\dif \theta$.）
-  \item $\int_0^\pi\frac{x\sin x}{1-2a\cos x+a^2}\dx$（$a>0$）；
-  \hfill $\left(\begin{cases}
-  \frac\pi a\log(1+a),&0<a\le1;\\
-  \frac\pi a\log\bigg(1+\frac1a\bigg),&a>1
-  \end{cases}\right)$\\
-  （\textbf{提示}：考虑$\frac z{a-\ee^{-\ii z}}$沿图 \ref{fig5.16} 所示的曲线上的积分.）
-  \begin{figure}[!ht]
-    \centering
-    \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=0.5,
-  >={Stealth[width=3pt]}]
-  \draw[->](-7,0)--(-pi,0)node[below]{$-\pi$}--(0,0)node[below]{$O$};
-  \draw[->](0,0)--(pi,0)node[below]{$\pi$}--(7,0)node[below]{$x$};
-  \draw[->](0,0)--(0,10)node[right]{$y$};
-  \draw(-pi,0)--(pi,0);
-  \draw(pi,0)--(pi,7)--(-pi,7)--(-pi,0);
-  \draw[->,very thin](pi,0)--(pi,3.5);
-  \draw[->,very thin](-pi,7)--(-pi,3.5);
-  \draw[->](0,7)node[below left]{$R\textrm i$}--(-0.8,7);
-  \end{tikzpicture}
-    \caption{\label{fig5.16}}
-  \end{figure}
-  \item  \makebox[0.65\textwidth][l]
-  {$\int_0^{\infty}\frac{\log(1+x^2)}{1+x^2}\dx$；}
-  $(\pi\log2)$
-\end{enuma}
+    \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{x^2}{x^4+6x^2+13}\dx$；}
+       $\left(\frac\pi4\sqrt{\frac{\sqrt{13}-3}2}\right)$
+    \item \makebox[0.65\textwidth][l]{$\int_0^{2\pi}\frac1{a+b\cos\theta}\dif \theta$  （$0<b<a$）；} $\bigg(\frac{2\pi}{\sqrt{a^2-b^2}}\bigg)$
+    \item \makebox[0.65\textwidth][l]{$\int_0^{\frac\pi2}\frac1{a+\sin^2\theta}\dif \theta$（$a>0$）；} $\bigg(\frac\pi2\frac1{\sqrt{a(a+1)}}\bigg)$
+    \item \makebox[0.65\textwidth][l]{$\int_{-\infty}^\infty\frac{x\cos x}{x^2-2x+10}\dx$；} $\bigg(\frac{\cos1-3\sin1}{3\ee^3}\pi\bigg)$
+    \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{x\sin ax}{x^2+b^2}\dx$（$a,b>0$）；} $\bigg(\frac\pi2\ee^{-ab}\bigg)$
+    \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{\cos x}{(1+x^2)^3}\dx$；}
+        $\bigg(\frac7{16}\pi\ee^{-1}\bigg)$
+    \item \makebox[0.65\textwidth][l]{$\int_0^\infty\bigg(\frac{\sin x}x\bigg)^2\dx$；}
+        $\bigg(\frac\pi2\bigg)$\\
+        （\textbf{提示}：考虑$\frac{\ee^{2\ii z}-1}{z^2}$沿图 \ref{fig5.9} 所示的曲线上的积分.）
+        \begin{figure}[!ht]
+          \centering
+          \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+            >={Stealth[width=3pt]}]
+            \draw[->](-4,0)--(-2,0)--(0,0)node[below]{$O$}
+              --(2,0)node[below]{$R$}--(4,0)node[below]{$x$};
+            \draw[->](0,0)--(0,3.2)node[right]{$y$};
+            \draw(0.6,0)node[below]{$r$}arc(0:180:0.6);
+            \draw(2,0)arc(0:180:2);\fill(0,0)circle(1pt);
+            \draw[->,very thin](-2,0)--(-1,0);
+            \draw[->,very thin](0,0)--(1.2,0);
+            \draw[->,very thin](2,0)arc(0:120:2);
+            \draw[->,very thin](120:0.6)--++(30:0.1);
+        \end{tikzpicture}
+        \caption{\label{fig5.9}}
+      \end{figure}
+    \item \makebox[0.65\textwidth][l]{$\int_0^\infty\bigg(\frac{\sin x}x\bigg)^3\dx$；}
+      $\bigg(\frac{3\pi}8\bigg)$\\
+      （\textbf{提示}：考虑$\frac{\ee^{3\ii z}-3\ee^{\ii z}+2}{z^3}$沿图 \ref{fig5.9} 所示的曲线上的积分.）
+    \item \makebox[0.65\textwidth][l]{$\int_0^\infty\frac{x^p}{1+x^2}\dx$（$-1<p<1$）；}
+      $\bigg(\frac\pi{2\cos\frac{p\pi}2}\bigg)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^\infty\frac{x^p}{x^2+2x\cos\lambda+1}\dx$（$-1<p<1,-\pi<\lambda<\pi$）；}
+       $\bigg(\frac\pi{\sin p\pi}\frac{\sin p\lambda}{\sin \lambda}\bigg)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^\infty\frac1{1+x^p}\dx$（$p>1$）；}
+      $\bigg(\frac\pi{p\sin\frac\pi p}\bigg)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_{-\infty}^\infty\frac{\ee^{px}}{1+\ee^x}\dx$（$0<p<1$）；}
+      $\bigg(\frac\pi{\sin p\pi}\bigg)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^1\frac{x^{1-p}(1-x)^p}{1+x^2}\dx$（$-1<p<2$）；}
+      $\bigg(\frac\pi{\sin p\pi}\bigg(2^{\frac p2}\cos\frac{p\pi}4-1\bigg)\bigg)$\\
+      （\textbf{提示}：考虑$\frac{z^{1-p}(1-z)^p}{1+z^2}$沿图 \ref{fig5.10} 所示的曲线上的积分.）
+      \begin{figure}[!ht]
+        \centering
+        \begin{minipage}[b]{0.48\textwidth}
+          \centering
+          \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.5,
+            >={Stealth[width=3pt]}]
+            \draw[->](-2,0)--(-1.5,0)--(0,0)node[below left,inner sep=0.5pt]{$O$}--(1,0)node[below]{$1$}
+              --(1.5,0)node[below right]{$R$}--(2,0)node[below]{$x$};
+            \draw[->](0,-1.7)--(0,2)node[right]{$y$};
+            \draw(0,0)circle(1.5);
+            \fill(0,0)circle(0.7pt)(1,0)circle(0.7pt)(-0.3,0)circle(0.7pt)(1.5,0)circle(0.7pt);
+            \draw(10:0.3)--([shift={(170:0.3)}]1,0)arc(170:-170:0.3)
+              --(-10:0.3)arc(-10:-351.8:0.3);
+            \draw(-0.3,0)node[below left]{$-r$};
+            \draw[->,very thin](1.5,0)arc(0:120:1.5);
+            \draw[->,very thin](1,0.3)--++(0.05,0);
+            \draw[->,very thin](10:0.3)--++(0.2,0);
+            \draw[->,very thin]([shift={(-170:0.3)}]1,0)--++(-0.2,0);
+            \draw[->,very thin](140:0.3)--++(50:0.05);
+          \end{tikzpicture}
+          \caption{\label{fig5.10}}
+        \end{minipage}
+        \begin{minipage}[b]{0.48\textwidth}
+          \centering
+          \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.2,
+            >={Stealth[width=3pt]}]
+            \draw[->](0,0)node[below left]{$O$}--(0.3,0)node[below]{$r$}--(3,0)node[below]{$R$}
+              --(4,0)node[below]{$x$};
+            \draw(0,0.3)--(0,0)--(0.3,0);
+            \draw[->](0,0)--(0,4)node[right]{$y$};
+            \draw(3,0)arc(0:90:3);
+            \draw[->,very thin](0,0)--(2,0);
+            \draw[->,very thin](3,0)arc(0:45:3);
+            \draw[->,very thin](0,3)--(0,1.5);
+            \draw(0.3,0)arc(0:90:0.3);
+            \draw[->,very thin](45:0.3)--++(-45:0.05);
+          \end{tikzpicture}
+          \caption{\label{fig5.11}}
+        \end{minipage}
+      \end{figure}
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^1\frac1{(1+x)^2}\sqrt{\frac{(1-x)^3}x}\dx$；}
+      $\bigg(\bigg(1-\frac{\sqrt2}2\bigg)\pi\bigg)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_{-1}^1\frac{\sqrt[\leftroot{-1}\uproot{2}4]{(1-x)^3(1+x)}}{1+x^2}\dx$；}
+      $\bigg(\bigg(\sqrt{2+\sqrt2}-\sqrt2\bigg)\pi\bigg)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^\infty\frac{\log x}{x^2+2x+2}\dx$；}
+      $\bigg(\frac\pi8\log2\bigg)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^\infty\frac{\log^2x}{x^2+a^2}\dx$（$a>0$）；}
+      $\bigg(\frac\pi{8a}(\pi^2+4\log^2a)\bigg)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^\infty\frac{\sqrt x\log x}{x^2+1}\dx$；}
+      $\bigg(\frac{\sqrt2}4\pi^2\bigg)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^\infty\frac{\log x}{x^2-1}\dx$；}
+      $\bigg(\frac{\pi^2}4\bigg)$\\
+      （\textbf{提示}：考虑$\frac{\log z}{z^2-1}$沿图 \ref{fig5.11} 所示的曲线上的积分.）
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^1\frac1{x+1}\log\bigg(\frac{1-x}x\bigg)\dx$；}
+      $\bigg(\frac12\log^22\bigg)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^\infty\log\bigg(\frac{\ee^x+1}{\ee^x-1}\bigg)\dx$；}
+      $\bigg(\frac{\pi^2}4\bigg)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^\infty\frac{\sin x}{\ee^x-1}\dx$；}
+      $\bigg(\frac\pi2\bigg(\frac{\ee^{2\pi}+1}{\ee^{2\pi}-1}\bigg)-\frac12\bigg)$\\
+      （\textbf{提示}：考虑$\frac{\ee^{\ii z}}{\ee^z-1}$沿图 \ref{fig5.12} 所示的曲线上的积分.）
+      \begin{figure}[!ht]
+        \centering
+        \begin{minipage}{0.48\textwidth}
+          \centering
+          \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+            >={Stealth[width=3pt]}]
+            \draw[->](0,0)node[below left]{$O$}--(5,0)node[below]{$R$}--(6.2,0)node[below]{$x$};
+            \draw(5,0)--(5,2.5)--(0,2.5)node[left]{$2\pi\textrm i$};
+            \draw[->](0,0)--(0,3.2)node[right]{$y$};
+            \draw[->,very thin](0,2.5)--(0,1.2);
+            \draw[->,very thin](0,0)--(2.5,0);
+            \draw[->,very thin](5,0)--(5,1.3);
+            \draw[->,very thin](5,2.5)--(2.5,2.5);
+            \draw(0.4,0)node[below]{$r$}arc(0:90:0.4);
+            \draw(0,2.1)arc(-90:0:0.4);
+            \draw[->,very thin](45:0.4)--++(-45:0.1);
+            \draw[->,very thin]([shift={(-45:0.4)}]0,2.5)--++(-135:0.1);
+          \end{tikzpicture}
+          \caption{\label{fig5.12}}
+        \end{minipage}
+        \begin{minipage}{0.48\textwidth}
+          \centering
+          \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+             >={Stealth[width=3pt]}]
+             \draw[->](0,0)node[below left]{$O$}--(5,0)node[below]{$R$}--(6.2,0)node[below]{$x$};
+             \draw(5,0)--(5,2.5)--(0,2.5)node[left]{$2\pi\textrm i$};
+             \draw[->](0,0)--(0,3.2)node[right]{$y$};
+             \draw[->,very thin](0,2.5)--(0,1.9);
+             \draw[->,very thin](0,0)--(2.5,0);
+             \draw[->,very thin](5,0)--(5,1.3);
+             \draw[->,very thin](5,2.5)--(2.5,2.5);
+             \draw(0,0.95)arc(-90:90:0.3);
+             \draw[->,very thin](0,1.25)--(0,0.4);
+             \draw[->,very thin](0.3,1.25)--++(0,-0.1);
+             \fill(0,1.25)circle(1pt)node[left]{$\pi\textrm i$};
+          \end{tikzpicture}
+          \caption{\label{fig5.13}}
+        \end{minipage}
+    \end{figure}
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^\infty\frac x{\ee^x+1}\dx$；}
+      $\bigg(\frac{\pi^2}{12}\bigg)$\\
+      （\textbf{提示}：考虑$\frac{z^2}{\ee^z+1}$沿图 \ref{fig5.13} 所示的曲线上的积分.）
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^\infty x^n\ee^{-x^{\frac14}}\sin x^{\frac14}\dx$（$n=0,1,2,\cdots$）；}
+      $(0)$\\
+     （\textbf{提示}：考虑$z^{4n+3}\ee^{-z+\ii z}$沿图 \ref{fig5.14} 所示的曲线上的积分.）
+     \begin{figure}[!ht]
+       \centering
+       \begin{minipage}{0.48\textwidth}
+         \centering
+         \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+           >={Stealth[width=3pt]}]
+           \draw[->](0,0)node[below left]{$O$}--(3,0)node[below]{$R$}
+             --(4,0)node[below]{$x$};
+           \draw(0,0.3)--(0,0)--(0.3,0);
+           \draw[->](0,0)--(0,4)node[right]{$y$};
+           \draw(3,0)arc(0:90:3);
+           \draw[->,very thin](0,0)--(2,0);
+           \draw[->,very thin](3,0)arc(0:45:3);
+           \draw[->,very thin](0,3)--(0,1.5);
+         \end{tikzpicture}
+         \caption{\label{fig5.14}}
+       \end{minipage}
+       \begin{minipage}{0.48\textwidth}
+         \centering
+          \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+            >={Stealth[width=3pt]}]
+            \draw[<->](0,4)node[right]{$y$}--(0,0)node[below left]{$O$}--(4,0)node[below]{$x$};
+            \draw(3,0)node[below]{$R$}arc(0:50:3)--(0,0);
+            \draw[->,very thin](0,0)--(1.5,0);
+            \draw[->,very thin](25:3)--++(115:0.1);
+            \draw[->,very thin](50:3)--(50:1.5);
+            \draw(0.3,0)arc(0:50:0.3)(0.4,0)arc(0:50:0.4);
+            \node at (24:0.6){$\varphi$};
+          \end{tikzpicture}
+          \caption{\label{fig5.15}}
+       \end{minipage}
+      \end{figure}
+    \item \makebox[0.65\textwidth][l]
+      {$\int_{-\infty}^\infty\ee^{-(x+\ii a)^2}\dx$；（$a\in \MR$）}
+      $\big(\sqrt\pi\big)$
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^\infty\ee^{-ax^2}\cos bx^2\dx$（$a>0$）；}
+      $\left(\frac{\sqrt{2\pi}}4\sqrt{\frac{\sqrt{a^2+b^2}+a}{a^2+b^2}}\right)$
+      （\textbf{提示}：考虑$\ee^{z^2(-a+\ii b)}$沿图 \ref{fig5.15} 所示的曲线上的积分，其中$\varphi$待定.）
+    \item \makebox[0.65\textwidth][l]
+      {$\int_0^{\frac\pi2}\log\sin\theta\dif \theta$；}
+      $(-\pi\log2)$\\
+      （\textbf{提示}：先求出广义积分$\int_0^{\frac\pi2}\log|\ee^{\ii\theta}-1|\dif \theta$.）
+    \item $\int_0^\pi\frac{x\sin x}{1-2a\cos x+a^2}\dx$（$a>0$）；
+      \hfill $\left(\begin{cases}
+      \frac\pi a\log(1+a),&0<a\le1;\\
+      \frac\pi a\log\bigg(1+\frac1a\bigg),&a>1
+      \end{cases}\right)$\\
+      （\textbf{提示}：考虑$\frac z{a-\ee^{-\ii z}}$沿图 \ref{fig5.16} 所示的曲线上的积分.）
+      \begin{figure}[!ht]
+        \centering
+        \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=0.5,
+           >={Stealth[width=3pt]}]
+           \draw[->](-7,0)--(-pi,0)node[below]{$-\pi$}--(0,0)node[below]{$O$};
+           \draw[->](0,0)--(pi,0)node[below]{$\pi$}--(7,0)node[below]{$x$};
+           \draw[->](0,0)--(0,10)node[right]{$y$};
+           \draw(-pi,0)--(pi,0);
+           \draw(pi,0)--(pi,7)--(-pi,7)--(-pi,0);
+           \draw[->,very thin](pi,0)--(pi,3.5);
+           \draw[->,very thin](-pi,7)--(-pi,3.5);
+           \draw[->](0,7)node[below left]{$R\textrm i$}--(-0.8,7);
+        \end{tikzpicture}
+        \caption{\label{fig5.16}}
+      \end{figure}
+    \item  \makebox[0.65\textwidth][l]
+      {$\int_0^{\infty}\frac{\log(1+x^2)}{1+x^2}\dx$；}
+      $(\pi\log2)$
+  \end{enuma}
   \item 设$f(z)$是有理函数，在$[0,\infty)$上无极点，并且$\infty$是$f(z)$的零点. 证明：
-  \[\int_0^\infty\frac{f(x)}{(\log x)^2+\pi^2}\dx
-  =\sum_{k=1}^n\Res\bigg(\frac{f(z)}{\Log z-\pi\ii},a_k\bigg),\]
-其中，$a_1=-1,a_2,a_3,\cdots,a_n$是$f(z)$在$\MC$中的全部彼此不同的极点，$\Log z=\log|z|+\ii\Arg z,0<\Arg z<2\pi,z\in\MC\backslash[0,\infty)$.
+    \[
+      \int_0^\infty\frac{f(x)}{(\log x)^2+\pi^2}\dx
+      =\sum_{k=1}^n\Res\bigg(\frac{f(z)}{\Log z-\pi\ii},a_k\bigg),
+    \]
+    其中，$a_1=-1,a_2,a_3,\cdots,a_n$是$f(z)$在$\MC$中的全部彼此不同的极点，$\Log z=\log|z|+\ii\Arg z,0<\Arg z<2\pi,z\in\MC\backslash[0,\infty)$.
 \end{xiti}
 
 \section{一般域上的Mittag--Leffler定理、Weierstrass因子分解定理和插值定理\label{sec5.6}}
@@ -1662,330 +1921,398 @@ node[above]{$-R+\frac b{2a}\textrm i$}--(-2,1)node[right]{$\gamma_3$};
 下面我们将证明问题 \hyperlink{5.6.1}{(1)}， \hyperlink{5.6.2}{(2)} 和  \hyperlink{5.6.3}{(3)} 的答案都是肯定的.
 
 \begin{theorem}[（\textbf{Mittag--Leffler定理}）]\label{thm5.6.2}\index{D!定理!Mittag--Leffler定理}
-设$D$是$\MC$中的域，$\{a_n\}$是$D$中的一列互不相同并且在$D$内部无极限点的点列，且
-\begin{equation}\label{eq5.6.1}
-\psi_n(z)=\sum_{j=1}^{k_n}\frac{c_{n,j}}{(z-a_n)^j}\;\mbox{（$n=1,2,\cdots$）}
-\end{equation}
-是给定的一列有理函数，则必存在$D$上的亚纯函数$f$，使得$f$恰以$\{a_n\}$为其极点集，并且在每个$a_n$处的Laurent展开式的主要部分恰为$\psi_n(z)$.
+  设$D$是$\MC$中的域，$\{a_n\}$是$D$中的一列互不相同并且在$D$内部无极限点的点列，且
+  \begin{equation}\label{eq5.6.1}
+    \psi_n(z) = \sum_{j=1}^{k_n}\frac{c_{n,j}}{(z-a_n)^j}\;\mbox{（$n=1,2,\cdots$）}
+  \end{equation}
+  是给定的一列有理函数，则必存在$D$上的亚纯函数$f$，使得$f$恰以$\{a_n\}$为其极点集，并且在每个$a_n$处的Laurent展开式的主要部分恰为$\psi_n(z)$.
 \end{theorem}
 \begin{proof}
-对每个$a_n$，存在圆盘$B(a_n,3\varepsilon_n)\subset D$，使得$\{B(a_n,3\varepsilon)\}$互不相交.由引理 \ref{lemma3.7.2}，存在 $\varphi_n\in C^\infty(\MC)$，使得$\varphi_n(z)$在$B(a_n,\varepsilon_n)$上恒等于$1$，并且$\supp\varphi_n \subset B(a_n,2\varepsilon_n)$.令
-\begin{equation}\label{eq5.6.2}
-u(z)=\sum_{n=1}^\infty\varphi_n(z)\psi_n(z),
-\end{equation}
-则$u\in C^\infty\big(D\backslash\{a_n:n\in\MN\}\big)$，并且当$z\in B(a_n,\varepsilon_n)\backslash\{a_n\}$时，有$u(z)=\varphi_n(z)\psi_n(z)=\psi_n(z)$. 再令
-\begin{equation}\label{eq5.6.3}
-h(z)=\begin{cases}
-\pp{u(z)}{\bar z},&z\in D\backslash\{a_n:n\in\MN\};\\
-0,&z\in\{a_n:n\in\MN\},
-\end{cases}
-\end{equation}
-注意到当$z\in B(a_n,\varepsilon_n)\backslash\{a_n\}$时，$h(z)=\pp{u(z)}{\bar z}
-=\pp{\psi_n(z)}{\bar z}=0$，由 \eqref{eq5.6.3} 式便知$h\in C^\infty(D)$. 根据定理 \ref{thm3.7.3}，下面的$\bar\partial$问题
-\[\pp v{\bar z}=h\]
-有解$v\in C^\infty(D)$. 令$f=u-v$，则$f$在$D\backslash\{a_n:n\in\MN\}$上全纯，这是因为
-$\pp f{\bar z}=\pp u{\bar z}-\pp v{\bar z}=h-h=0$的缘故. 由 \eqref{eq5.6.2} 式及$v\in C^\infty(D)$，即知$f$在每个$a_n$处的Laurent展开式的主要部分为$\psi_n(z)$.
+  对每个$a_n$，存在圆盘$B(a_n,3\varepsilon_n)\subset D$，使得$\{B(a_n,3\varepsilon)\}$互不相交.由引理 \ref{lemma3.7.2}，存在 $\varphi_n\in C^\infty(\MC)$，使得$\varphi_n(z)$在$B(a_n,\varepsilon_n)$上恒等于$1$，并且$\supp\varphi_n \subset B(a_n,2\varepsilon_n)$.令
+  \begin{equation}\label{eq5.6.2}
+    u(z) = \sum_{n=1}^\infty\varphi_n(z)\psi_n(z),
+  \end{equation}
+  则$u\in C^\infty\big(D\backslash\{a_n:n\in\MN\}\big)$，并且当$z\in B(a_n,\varepsilon_n)\backslash\{a_n\}$时，有$u(z)=\varphi_n(z)\psi_n(z)=\psi_n(z)$. 再令
+  \begin{equation}\label{eq5.6.3}
+    h(z) = \begin{cases}
+      \pp{u(z)}{\bar z}, & z\in D\backslash\{a_n:n\in\MN\};\\
+      0, & z\in\{a_n:n\in\MN\},
+    \end{cases}
+  \end{equation}
+  注意到当$z\in B(a_n,\varepsilon_n)\backslash\{a_n\}$时，$h(z)=\pp{u(z)}{\bar z}
+  =\pp{\psi_n(z)}{\bar z}=0$，由 \eqref{eq5.6.3} 式便知$h\in C^\infty(D)$. 根据定理 \ref{thm3.7.3}，下面的$\bar\partial$问题
+  \[
+    \pp v{\bar z} = h
+  \]
+  有解$v\in C^\infty(D)$. 令$f=u-v$，则$f$在$D\backslash\{a_n:n\in\MN\}$上全纯，这是因为
+  $\pp f{\bar z}=\pp u{\bar z}-\pp v{\bar z}=h-h=0$的缘故. 由 \eqref{eq5.6.2} 式及$v\in C^\infty(D)$，即知$f$在每个$a_n$处的Laurent展开式的主要部分为$\psi_n(z)$.
 \end{proof}
 
 从定理 \ref{thm5.6.2} 可以推出下面的
 \begin{theorem}[（\textbf{Weierstrass}因子分解定理）]\label{thm5.6.3}\index{D!定理!Weierstrass因子分解定理}
-设$D$是$\MC$中的单连通域，$\{a_n\}$是$D$中的一列互不相同并且在$D$内部无极限点的点列，$\{k_n\}$是一列自然数，则必存在$D$上的全纯函数$f$，使得$f$恰以$\{a_n\}$为其零点集，并且$f$在每个$a_n$处的零点阶数恰为$k_n$.
+  设$D$是$\MC$中的单连通域，$\{a_n\}$是$D$中的一列互不相同并且在$D$内部无极限点的点列，$\{k_n\}$是一列自然数，则必存在$D$上的全纯函数$f$，使得$f$恰以$\{a_n\}$为其零点集，并且$f$在每个$a_n$处的零点阶数恰为$k_n$.
 \end{theorem}
 \begin{proof}
-由定理 \ref{thm5.6.2}，存在$D$上的亚纯函数$g$，使得$g$恰以$\{a_n\}$
-为其极点集，并且$g$在每个$a_n$处的Laurent展开式的主要部分恰为$\frac{k_n}{z-a_n}$.于是，在$a_n$附近有
-\begin{equation}\label{eq5.6.4}
-g(z)=\frac{k_n}{z-a_n}+g_n(z),
-\end{equation}
-这里，$g_n(z)$在$a_n$附近全纯. 固定$a_0\in D\backslash\{a_n:n\in\MN\}$，令
-\begin{equation}\label{eq5.6.5}
-F(z)=\int_{a_0}^zg(\zeta)\dif \zeta,z\in D\backslash\{a_n:n\in\MN\}.
-\end{equation}
-则对于固定的$z$，由于$D\backslash\{a_n:n\in\MN\}$中连接$a_0$和$z$的曲线的不同，所得的积分值也不同.但从 \eqref{eq5.6.4} 式可看出，两个不同的积分值之差是$2\pi\ii$的整数倍.因此，$F(z)$是$D\backslash\{a_n:n\in\MN\}$上的多值全纯函数，但$F(z)$在同一点处的任意两个函数值之差是$2\pi\ii$的整数倍.于是，$f(z)=\ee^{F(z)}$便是$D\backslash\{a_n:n\in\MN\}$上的单值全纯函数.我们可验证$f$就是要求的$D$上的全纯函数.事实上，由 \eqref{eq5.6.4} 式和 \eqref{eq5.6.5} 式可知，在$a_n$附近有
-\[F(z)=k_n\Log(z-a_n)+h_n(z),\]
-这里，$h_n(z)$在$a_n$附近全纯，于是
-\[f(z)=(z-a_n)^{k_n}\ee^{h_n(z)}.\]
-所以$f$是$D$上的全纯函数，恰以$\{a_n:n\in\MN\}$为其零点集，并且在每个$a_n$处的零点阶数为$k_n$.
+  由定理 \ref{thm5.6.2}，存在$D$上的亚纯函数$g$，使得$g$恰以$\{a_n\}$
+  为其极点集，并且$g$在每个$a_n$处的Laurent展开式的主要部分恰为$\frac{k_n}{z-a_n}$.于是，在$a_n$附近有
+  \begin{equation}\label{eq5.6.4}
+    g(z) = \frac{k_n}{z-a_n}+g_n(z),
+  \end{equation}
+  这里，$g_n(z)$在$a_n$附近全纯. 固定$a_0\in D\backslash\{a_n:n\in\MN\}$，令
+  \begin{equation}\label{eq5.6.5}
+    F(z) = \int_{a_0}^zg(\zeta)\dif \zeta,z\in D\backslash\{a_n:n\in\MN\}.
+  \end{equation}
+  则对于固定的$z$，由于$D\backslash\{a_n:n\in\MN\}$中连接$a_0$和$z$的曲线的不同，所得的积分值也不同.但从 \eqref{eq5.6.4} 式可看出，两个不同的积分值之差是$2\pi\ii$的整数倍.因此，$F(z)$是$D\backslash\{a_n:n\in\MN\}$上的多值全纯函数，但$F(z)$在同一点处的任意两个函数值之差是$2\pi\ii$的整数倍.于是，$f(z)=\ee^{F(z)}$便是$D\backslash\{a_n:n\in\MN\}$上的单值全纯函数.我们可验证$f$就是要求的$D$上的全纯函数.事实上，由 \eqref{eq5.6.4} 式和 \eqref{eq5.6.5} 式可知，在$a_n$附近有
+  \[
+    F(z) = k_n\Log(z-a_n) + h_n(z),
+  \]
+  这里，$h_n(z)$在$a_n$附近全纯，于是
+  \[
+    f(z) = (z-a_n)^{k_n}\ee^{h_n(z)}.
+  \]
+  所以$f$是$D$上的全纯函数，恰以$\{a_n:n\in\MN\}$为其零点集，并且在每个$a_n$处的零点阶数为$k_n$.
 \end{proof}
 
 从定理 \ref{thm5.6.3} 和问题的可解性能得出下面的
 \begin{theorem}[（\textbf{插值定理}）]\label{thm5.6.4}\index{D!定理!插值定理}
-设$\{a_n\}$是单连通域$D$中的一列互不相同并且在$D$内部无极限点的点列，且
-\begin{equation}\label{eq5.6.6}
-P_n(z)=\sum_{j=0}^{k_n}b_{n,j}(z-a_n)^j\;\mbox{（$n=1,2,\cdots$）}
-\end{equation}
-是给定的一列多项式，则必存在$D$上的全纯函数$f$，使得$f$在每个$a_n$处的Taylor级数的前$k_n+1$项部分和恰为$P_n(z)$.
+  设$\{a_n\}$是单连通域$D$中的一列互不相同并且在$D$内部无极限点的点列，且
+  \begin{equation}\label{eq5.6.6}
+    P_n(z) = \sum_{j=0}^{k_n}b_{n,j}(z-a_n)^j\;\mbox{（$n=1,2,\cdots$）}
+  \end{equation}
+  是给定的一列多项式，则必存在$D$上的全纯函数$f$，使得$f$在每个$a_n$处的Taylor级数的前$k_n+1$项部分和恰为$P_n(z)$.
 \end{theorem}
 \begin{proof}
-由定理 \ref{thm5.6.3}，可取$g\in H(D)$，使得$g$恰以$\{a_n\}$为其零点集，$g$在每个$a_n$处的零点阶数恰为$k_n+1$.对每个$a_n$，存在圆盘$B(a_n,3\varepsilon_n)\subset D$，使得$\{B(a_n,3\varepsilon_n)\}$互不相交.由引理 \ref{lemma3.7.2}，存在$\varphi_n\in C^\infty(\MC)$，使得$\varphi_n(z)$在$B(a_n,\varepsilon_n)$上恒等于$1$，并且$\supp\varphi_n\subset B(a_n,2\varepsilon_n)$.令
-\begin{equation}\label{eq5.6.7}
-u(z)=\begin{cases}
-\varphi_n(z)\frac{P_n(z)}{g(z)},&z\in B(a_n,3\varepsilon_n)\backslash\{a_n\},n\in\MN;\\
-0,&z\in D\backslash\bigcup_{n=1}^\infty\big(B(a_n,3\varepsilon_n)\backslash
-\{a_n\}\big),
-\end{cases}
-\end{equation}
-则$u\in C^\infty\big(D\backslash\{a_n:n\in\MN\}\big)$，并且$z\in B(a_n,\varepsilon_n)\backslash\{a_n\}$时，有$u(z)=\varphi_n(z)\frac{P_n(z)}{g(z)}
-=\frac{P_n(z)}{g(z)}$.再令
-\begin{equation}\label{eq5.6.8}
-h(z)=\begin{cases}
-\pp{u(z)}{\bar z},&z\in D\backslash\{a_n:n\in\MN\};\\
-0,&z\in\{a_n:n\in\MN\},
-\end{cases}
-\end{equation}
-注意到当$z\in B(a_n,\varepsilon_n)\backslash\{a_n\}$时，$h(z)=\pp{u(z)}{\bar z}
-=\pp{}{\bar z}\bigg(\frac{P_n(z)}{g(z)}\bigg)=0$，由 \eqref{eq5.6.8} 式便知$h\in C^\infty(D)$. 根据定理 \ref{thm3.7.3}，下面的$\bar\partial$问题
-\[\pp v{\bar z}=h\]
-有解$v\in C^\infty(D)$. 令
-\[f(z)=g(z)u(z)-g(z)v(z),\]
-则$f$在$D\backslash\{a_n:n\in\MN\}$上全纯，这是因为$\pp f{\bar z}=g\bigg(\pp u{\bar z}-\pp v{\bar z}\bigg)=g(h-h)=0$的缘故. 由 \eqref{eq5.6.7} 式和$v\in C^\infty(D)$可知$f\in H(D)$，并且在每个$a_n$附近有
-\[f(z)=P_n(z)-g(z)v(z).\]
-若注意到$a_n$是$g(z)v(z)$的至少$k_n+1$阶零点，则知$f$在$a_n$处的Taylor级数的前$k_n+1$项部分和便是$P_n(z)$.
+  由定理 \ref{thm5.6.3}，可取$g\in H(D)$，使得$g$恰以$\{a_n\}$为其零点集，$g$在每个$a_n$处的零点阶数恰为$k_n+1$.对每个$a_n$，存在圆盘$B(a_n,3\varepsilon_n)\subset D$，使得$\{B(a_n,3\varepsilon_n)\}$互不相交.由引理 \ref{lemma3.7.2}，存在$\varphi_n\in C^\infty(\MC)$，使得$\varphi_n(z)$在$B(a_n,\varepsilon_n)$上恒等于$1$，并且$\supp\varphi_n\subset B(a_n,2\varepsilon_n)$.令
+  \begin{equation}\label{eq5.6.7}
+    u(z) = \begin{cases}
+     \varphi_n(z)\frac{P_n(z)}{g(z)},&z\in B(a_n,3\varepsilon_n)\backslash\{a_n\},n\in\MN;\\
+     0, & z\in D\backslash\bigcup_{n=1}^\infty\big(B(a_n,3\varepsilon_n)\backslash
+      \{a_n\}\big),
+    \end{cases}
+  \end{equation}
+  则$u\in C^\infty\big(D\backslash\{a_n:n\in\MN\}\big)$，并且$z\in B(a_n,\varepsilon_n)\backslash\{a_n\}$时，有$u(z)=\varphi_n(z)\frac{P_n(z)}{g(z)}
+   =\frac{P_n(z)}{g(z)}$.再令
+    \begin{equation} \label{eq5.6.8}
+        h(z) = \begin{cases}
+        \pp{u(z)}{\bar z}, & z\in D\backslash\{a_n:n\in\MN\};\\
+         0, & z\in\{a_n:n\in\MN\},
+      \end{cases}
+    \end{equation}
+  注意到当$z\in B(a_n,\varepsilon_n)\backslash\{a_n\}$时，$h(z)=\pp{u(z)}{\bar z}
+  =\pp{}{\bar z}\bigg(\frac{P_n(z)}{g(z)}\bigg)=0$，由 \eqref{eq5.6.8} 式便知$h\in C^\infty(D)$. 根据定理 \ref{thm3.7.3}，下面的$\bar\partial$问题
+  \[
+    \pp v{\bar z} = h
+  \]
+  有解$v\in C^\infty(D)$. 令
+  \[
+    f(z) = g(z)u(z) - g(z)v(z),
+  \]
+  则$f$在$D\backslash\{a_n:n\in\MN\}$上全纯，这是因为$\pp f{\bar z}=g\bigg(\pp u{\bar z}-\pp v{\bar z}\bigg)=g(h-h)=0$的缘故. 由 \eqref{eq5.6.7} 式和$v\in C^\infty(D)$可知$f\in H(D)$，并且在每个$a_n$附近有
+  \[
+    f(z)  =P_n(z) - g(z)v(z).
+  \]
+  若注意到$a_n$是$g(z)v(z)$的至少$k_n+1$阶零点，则知$f$在$a_n$处的Taylor级数的前$k_n+1$项部分和便是$P_n(z)$.
 \end{proof}
 
 \begin{xiti}
-\item 设$f$和$g$都是域$D$上的亚纯函数，它们的零点集和极点集相同，并且相应的零点阶数和极点阶数也相同. 证明：必存在$h\in H(D)$，使得$\frac{f(z)}{g(z)}=\ee^{h(z)},\forall z\in D$.
-\item 设$\{a_n\}$是域$D$中互不相同并且在$D$内部无极限点的点列，Laurent级数
-\[\psi_n(z)=\sum_{j=1}^\infty\frac{c_{n,j}}{(z-a_n)^j}\;\mbox{（$n=1,2,\cdots$）}\]
-在$D$上除了$a_n$外的其他点处都全纯.证明：存在$f\in H\big(D\backslash
-\{a_n:n\in\MN\}\big)$，使得$f$在每个$a_n$处的Laurent展开式的主要部分恰为$\psi_n(z)$.
-\item 证明：$f$是域$D$上的亚纯函数，当且仅当存在$g,h\in H(D),h\not\equiv0$，使得$f(z)=\frac{g(z)}{h(z)},\forall z\in D$.
-\item （插值定理的推广）设$\{a_n\}$是域$D$中互不相同并且在$D$内部无极限点的点列，Laurent级数
-\[\varphi_n(z)=\sum_{j=-\infty}^\infty b_{n,j}(z-a_n)^j\;\mbox{（$n=1,2,\cdots$）}\]
-在$D$上除了$a_n$外的其他点处都全纯.证明：对于任意整数列$\{k_n\}$，必存在$D\backslash
-\{a_n,n\in\MN\}$上的全纯函数$f$，使得$f$在每个$a_n$处的Laurent展开式恰为
-\[\sum_{j=-\infty}^{k_n}b_{n,j}(z-a_n)^j+\sum_{j=k_n+1}^\infty c_{n,j}(z-a_n)^j.\]
-\item 设$a_1,a_2$是域$D$中的两个不同点. Laurent级数
-\[\varphi_n(z)=\sum_{j=-\infty}^\infty b_{n,j}(z-a_n)^j\;\mbox{（$n=1,2$）}\]
-在$D$上除了$a_n$外的其他点处都全纯.举例说明，通常不存在$D\backslash\{a_1,a_2\}$上的全纯函数$f$，使得$f$在$a_1$和$a_2$处的Laurent展开式分别为$\varphi_1(z)$和$\varphi_2(z)$.
-\item 证明：Weierstrass因子分解定理对于一般的域成立.
-\item 证明：插值定理对于一般的域成立.
+  \item 设$f$和$g$都是域$D$上的亚纯函数，它们的零点集和极点集相同，并且相应的零点阶数和极点阶数也相同. 证明：必存在$h\in H(D)$，使得$\frac{f(z)}{g(z)}=\ee^{h(z)},\forall z\in D$.
+  \item 设$\{a_n\}$是域$D$中互不相同并且在$D$内部无极限点的点列，Laurent级数
+     \[
+       \psi_n(z) = \sum_{j=1}^\infty\frac{c_{n,j}}{(z-a_n)^j}\;\mbox{（$n=1,2,\cdots$）}
+     \]
+     在$D$上除了$a_n$外的其他点处都全纯.证明：存在$f\in H\big(D\backslash
+      \{a_n:n\in\MN\}\big)$，使得$f$在每个$a_n$处的Laurent展开式的主要部分恰为$\psi_n(z)$.
+  \item 证明：$f$是域$D$上的亚纯函数，当且仅当存在$g,h\in H(D),h\not\equiv0$，使得$f(z)=\frac{g(z)}{h(z)},\forall z\in D$.
+  \item （插值定理的推广）设$\{a_n\}$是域$D$中互不相同并且在$D$内部无极限点的点列，Laurent级数
+     \[
+       \varphi_n(z) = \sum_{j=-\infty}^\infty b_{n,j}(z-a_n)^j\;\mbox{（$n=1,2,\cdots$）}
+     \]
+     在$D$上除了$a_n$外的其他点处都全纯.证明：对于任意整数列$\{k_n\}$，必存在$D\backslash
+        \{a_n,n\in\MN\}$上的全纯函数$f$，使得$f$在每个$a_n$处的Laurent展开式恰为
+     \[
+       \sum_{j=-\infty}^{k_n}b_{n,j}(z-a_n)^j+\sum_{j=k_n+1}^\infty c_{n,j}(z-a_n)^j.
+     \]
+  \item 设$a_1,a_2$是域$D$中的两个不同点. Laurent级数
+     \[
+       \varphi_n(z)=\sum_{j=-\infty}^\infty b_{n,j}(z-a_n)^j\;\mbox{（$n=1,2$）}
+     \]
+     在$D$上除了$a_n$外的其他点处都全纯.举例说明，通常不存在$D\backslash\{a_1,a_2\}$上的全纯函数$f$，使得$f$在$a_1$和$a_2$处的Laurent展开式分别为$\varphi_1(z)$和$\varphi_2(z)$.
+  \item 证明：Weierstrass因子分解定理对于一般的域成立.
+  \item 证明：插值定理对于一般的域成立.
 \end{xiti}
 
 \section{特殊域上的Mittag--Leffler定理、
 Weierstrass因子分解定理和Blaschke 乘积\label{sec5.7}}
 为了叙述方便起见，我们给出下面的
 \begin{definition}\label{def5.7.1}
-设$\{\gamma_n\}$是一列可求长的简单闭曲线，$l_n=\int\limits_{\gamma_n}|\dz|$是$\gamma_n$的长度，$d_n=d(0,\gamma_n)=\inf_{z\in\gamma_n}|z|$是$\gamma_n$与原点$O$之间的距离. 若
-\begin{eenum}
-  \item $\gamma_n$总是位于$\gamma_{n+1}$的内部，原点$O$位于$\gamma_1$的内部；
-  \item $d_n\to\infty$（$n\to\infty$）；
-  \item $\bigg\{\frac{l_n}{d_n}\bigg\}$有界.
-\end{eenum}
-则称$\{\gamma_n\}$是\textbf{正则曲线列}\index{Z!正则曲线列}.
+  设$\{\gamma_n\}$是一列可求长的简单闭曲线，$l_n=\int\limits_{\gamma_n}|\dz|$是$\gamma_n$的长度，$d_n=d(0,\gamma_n)=\inf_{z\in\gamma_n}|z|$是$\gamma_n$与原点$O$之间的距离. 若
+  \begin{eenum}
+    \item $\gamma_n$总是位于$\gamma_{n+1}$的内部，原点$O$位于$\gamma_1$的内部；
+    \item $d_n\to\infty$（$n\to\infty$）；
+    \item $\bigg\{\frac{l_n}{d_n}\bigg\}$有界.
+  \end{eenum}
+  则称$\{\gamma_n\}$是\textbf{正则曲线列}\index{Z!正则曲线列}.
 \end{definition}
 
 \begin{theorem}\label{thm5.7.2}
-设$\{\gamma_n\}$是正则曲线列，$f$是$\MC$上的亚纯函数，若
-\begin{eenum}
-  \item $f$的全部互不相同的极点$\{a_n\}$都是$f$的$1$阶极点，记$c_n=\Res(f,a_n)$；
-  \item 原点$O$不是$f$的极点；
-  \item $f$在$\bigcup_{n=1}^\infty\gamma_n$上有界，
-\end{eenum}
-则
-\begin{equation}\label{eq5.7.1}
-f(z)=f(0)+\sum_{n=1}^\infty c_n\bigg(\frac1{z-a_n}+\frac1{a_n}\bigg),
-\end{equation}
-其中，\eqref{eq5.7.1} 式右端在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛.
+  设$\{\gamma_n\}$是正则曲线列，$f$是$\MC$上的亚纯函数，若
+  \begin{eenum}
+    \item $f$的全部互不相同的极点$\{a_n\}$都是$f$的$1$阶极点，记$c_n=\Res(f,a_n)$；
+    \item 原点$O$不是$f$的极点；
+    \item $f$在$\bigcup_{n=1}^\infty\gamma_n$上有界，
+  \end{eenum}
+  则
+  \begin{equation}\label{eq5.7.1}
+    f(z) = f(0) + \sum_{n=1}^\infty c_n\bigg(\frac1{z-a_n}+\frac1{a_n}\bigg),
+  \end{equation}
+  其中，\eqref{eq5.7.1} 式右端在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛.
 \end{theorem}
 \begin{proof}
-对每个$\gamma_n$，令$D_n$是由$\gamma_n$所围成的单连通域. 设$z\in\big(B(0,R)\backslash\{0\}\big)\backslash\{a_n:n\in\MN\}$，取$m$，使得$B(0,R)\subset D_m$. 考虑积分
-\[I_m=\frac1{2\pi\ii}\int\limits_{\gamma_m}\frac{f(\zeta)}{\zeta(\zeta-z)}\dif \zeta.\]
-显然，$g(\zeta)=\frac{f(\zeta)}{\zeta(\zeta-z)}$在$D_m$中的全部极点为
-\[0,z,a_n\in D_m,\]
-$g$在这些极点处的残数分别为
-\[-\frac{f(0)}z,\frac{f(z)}z,\frac{c_n}{a_n(a_n-z)}.\]
-由残数定理便知，当$z\in\big(B(0,R)\backslash\{0\}\big)\backslash\{a_n:n\in\MN\}$时，有
-\[I_m=-\frac{f(0)}z+\frac{f(z)}z+\sum_{a_n\in D_m}\frac{c_n}{a_n(a_n-z)},\]
-或
-\[f(z)=f(0)+\sum_{a_n\in D_m}c_n\bigg(\frac1{z-a_n}+\frac1{a_n}\bigg)+zI_m,
-z\in B(0,R)\backslash\{a_n:n\in\MN\}.\]
-注意到
-\[|zI_m|\le R\frac1{2\pi}\int\limits_{\gamma_m}\frac{|f(\zeta)|}{|\zeta|\,
-\big||\zeta|-|z|\big|}|\dif \zeta|\le\frac{R}{2\pi}\frac{Ml_m}{d_m(d_m-R)}
-\to0\;\mbox{（$m\to\infty$）},\]
-其中，$M=\sup_{\zeta\in\bigcup\limits_{n=1}^\infty\gamma_n}|f(\zeta)|<\infty$，便知
-\[f(0)+\sum_{n=1}^\infty c_n\bigg(\frac1{z-a_n}+\frac1{a_n}\bigg)\]
-在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛于$f(z)$.
+  对每个$\gamma_n$，令$D_n$是由$\gamma_n$所围成的单连通域. 设$z\in\big(B(0,R)\backslash\{0\}\big)\backslash\{a_n:n\in\MN\}$，取$m$，使得$B(0,R)\subset D_m$. 考虑积分
+  \[
+    I_m = \frac1{2\pi\ii}\int\limits_{\gamma_m}\frac{f(\zeta)}{\zeta(\zeta-z)}\dif \zeta.
+  \]
+  显然，$g(\zeta)=\frac{f(\zeta)}{\zeta(\zeta-z)}$在$D_m$中的全部极点为
+  \[
+    0, z, a_n \in D_m,
+  \]
+  $g$在这些极点处的残数分别为
+  \[
+    -\frac{f(0)}z, \frac{f(z)}z, \frac{c_n}{a_n(a_n-z)}.
+  \]
+  由残数定理便知，当$z\in\big(B(0,R)\backslash\{0\}\big)\backslash\{a_n:n\in\MN\}$时，有
+  \[
+    I_m = -\frac{f(0)}z + \frac{f(z)}z + \sum_{a_n\in D_m}\frac{c_n}{a_n(a_n-z)},
+  \]
+  或
+  \[
+    f(z) = f(0) + \sum_{a_n\in D_m}c_n\bigg(\frac1{z-a_n}+\frac1{a_n}\bigg) + zI_m,
+    z\in B(0,R)\backslash\{a_n:n\in\MN\}.
+  \]
+  注意到
+  \[
+    |zI_m|\le R\frac1{2\pi}\int\limits_{\gamma_m}\frac{|f(\zeta)|}{|\zeta|\,
+    \big||\zeta|-|z|\big|}|\dif \zeta|\le\frac{R}{2\pi}\frac{Ml_m}{d_m(d_m-R)}
+    \to0\;\mbox{（$m\to\infty$）},
+  \]
+  其中，$M=\sup_{\zeta\in\bigcup\limits_{n=1}^\infty\gamma_n}|f(\zeta)|<\infty$，便知
+  \[
+    f(0) + \sum_{n=1}^\infty c_n\bigg(\frac1{z-a_n}+\frac1{a_n}\bigg)
+  \]
+  在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛于$f(z)$.
 \end{proof}
 
 \begin{theorem}\label{thm5.7.3}
-设$\{\gamma_n\}$是正则曲线列，$f$是整函数. 若
-\begin{eenum}
-  \item $f$的全部互不相同的零点集为$\{a_n\}$，在每个$a_n$处的零点阶数为$k_n$；
-  \item $f(0)\ne0$；
-  \item $\frac{f'(z)}{f(z)}$在$\bigcup_{n=1}^\infty\gamma_n$上有界，
-\end{eenum}
-则
-\begin{equation}\label{eq5.7.2}
-f(z)=f(0)\ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty\bigg(1-\frac z{a_n}\bigg)
-^{k_n}\ee^{\frac{k_n}{a_n}z},
-\end{equation}
-其中，\eqref{eq5.7.2} 式右端在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛.
+  设$\{\gamma_n\}$是正则曲线列，$f$是整函数. 若
+  \begin{eenum}
+    \item $f$的全部互不相同的零点集为$\{a_n\}$，在每个$a_n$处的零点阶数为$k_n$；
+    \item $f(0)\ne0$；
+    \item $\frac{f'(z)}{f(z)}$在$\bigcup_{n=1}^\infty\gamma_n$上有界，
+  \end{eenum}
+  则
+  \begin{equation}\label{eq5.7.2}
+    f(z) = f(0) \ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty\bigg(1-\frac z{a_n}\bigg)
+    ^{k_n}\ee^{\frac{k_n}{a_n}z},
+  \end{equation}
+  其中，\eqref{eq5.7.2} 式右端在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛.
 \end{theorem}
 \begin{proof}
-对$\MC$上的亚纯函数$\frac{f'(z)}{f(z)}$应用定理 \ref{thm5.7.2}，并注意到
-\[\Res\bigg(\frac{f'(z)}{f(z)},a_n\bigg)=k_n,\]
-便知
-\[\frac{f'(0)}{f(0)}+\sum_{n=1}^\infty\bigg(\frac{k_n}{z-a_n}+\frac{k_n}{a_n}\bigg)\]
-在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛于$\frac{f'(z)}{f(z)}$. 于是
-\begin{equation}\label{eq5.7.3}
-\Log\frac{f(z)}{f(0)}=\int_0^z\frac{f'(\zeta)}{f(\zeta)}\dif \zeta=\frac{f'(0)}{f(0)}z+\sum_{n=1}^\infty\int_0^z\bigg(\frac{k_n}{\zeta-a_n}+
-\frac{k_n}{a_n}\bigg)\dif \zeta,
-\end{equation}
-其中，积分是沿$\MC\backslash\{a_n:n\in\MN\}$中连接$O$和$z$的任意可求长曲线进行的，并且 \eqref{eq5.7.3} 式右端在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛.因此
-\begin{equation*}
-  f(z) = f(0)\ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty \ee^{\int_0^z\left(\frac{k_n}{\zeta-a_n}+
-  \frac{k_n}{a_n}\right) \dif \zeta}
-  = f(0)\ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty\bigg(1-\frac z{a_n}\bigg)  ^{k_n}\ee^{\frac{k_n}{a_n}z}. \qedhere
-\end{equation*}
+  对$\MC$上的亚纯函数$\frac{f'(z)}{f(z)}$应用定理 \ref{thm5.7.2}，并注意到
+  \[
+    \Res\bigg(\frac{f'(z)}{f(z)},a_n\bigg) = k_n,
+  \]
+  便知
+  \[
+    \frac{f'(0)}{f(0)} + \sum_{n=1}^\infty\bigg(\frac{k_n}{z-a_n} + \frac{k_n}{a_n}\bigg)
+  \]
+  在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛于$\frac{f'(z)}{f(z)}$. 于是
+  \begin{equation}\label{eq5.7.3}
+    \Log\frac{f(z)}{f(0)}=\int_0^z\frac{f'(\zeta)}{f(\zeta)}\dif \zeta = \frac{f'(0)}{f(0)}z+\sum_{n=1}^\infty\int_0^z\bigg(\frac{k_n}{\zeta-a_n}+
+    \frac{k_n}{a_n}\bigg)\dif \zeta,
+  \end{equation}
+  其中，积分是沿$\MC\backslash\{a_n:n\in\MN\}$中连接$O$和$z$的任意可求长曲线进行的，并且 \eqref{eq5.7.3} 式右端在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛.因此
+  \begin{equation*}
+    f(z) = f(0)\ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty \ee^{\int_0^z\left(\frac{k_n}{\zeta-a_n}+
+    \frac{k_n}{a_n}\right) \dif \zeta}
+    = f(0)\ee^{\frac{f'(0)}{f(0)}z}\prod_{n=1}^\infty\bigg(1-\frac z{a_n}\bigg)  ^{k_n}\ee^{\frac{k_n}{a_n}z}. \qedhere
+  \end{equation*}
 \end{proof}
 
 \begin{theorem}[（\textbf{Blaschke定理}）]\label{thm5.7.4}\index{D!定理!Blaschke定理}
-设$\{a_n\}$是$B(0,R)\backslash\{0\}$中互不相同的点列，$\{k_n\}$是一列自然数. 若
-\[\sum_{n=1}^\infty k_n(R-|a_n|)<\infty,\]
-则
-\begin{equation}\label{eq5.7.4}
-\bigg\{\prod_{j=1}^n\bigg(\frac{R(a_j-z)}{R^2-\bar a_jz}\bigg)^{k_j}
-\bigg(\frac{|a_j|}{a_j}\bigg)^{k_j}\bigg\}
-\end{equation}
-必在$B(0,R)$上内闭一致收敛于一个全纯映射$f:B(0,R)\to B(0,1)$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.
+  设$\{a_n\}$是$B(0,R)\backslash\{0\}$中互不相同的点列，$\{k_n\}$是一列自然数. 若
+  \[
+    \sum_{n=1}^\infty k_n(R-|a_n|) < \infty,
+  \]
+  则
+  \begin{equation}\label{eq5.7.4}
+    \bigg\{\prod_{j=1}^n\bigg(\frac{R(a_j-z)}{R^2-\bar a_jz}\bigg)^{k_j}
+    \bigg(\frac{|a_j|}{a_j}\bigg)^{k_j}\bigg\}
+  \end{equation}
+  必在$B(0,R)$上内闭一致收敛于一个全纯映射$f:B(0,R)\to B(0,1)$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.
 \end{theorem}
 \begin{proof}
-由所给条件知$\{a_n\}$在$B(0,R)$中无极限点，因而$B(0,R)\backslash\{a_n:n\in\MN\}$是域，并且
-\[\sum_{n=1}^\infty\frac{k_n(R^2-|a_n|^2)}{(R^2-\bar a_nz)(z-a_n)}\]
-在$B(0,R)\backslash\{a_n:n\in\MN\}$上内闭一致收敛于$g\in H\big(B(0,R)\backslash
-\{a_n:n\in\MN\}\big)$. 显然，$g$是$B(0,R)$上的亚纯函数，恰以$\{a_n\}$为其极点集，且在每个$a_n$处的残数为$k_n$. 令
-\begin{equation}\label{eq5.7.5}
-\begin{aligned}
-F(z)&=\int_0^zg(\zeta)\dif \zeta=\sum_{n=1}^\infty\int_0^z
-\frac{k_n(R^2-|a_n|^2)}{(R^2-\bar a_n\zeta)(\zeta-a_n)}\dif \zeta\\
-&=\sum_{n=1}^\infty k_n\int_0^z\bigg(\frac1{\zeta-a_n}+\frac{\bar a_n}{R^2
--\bar a_n\zeta}\bigg)\dif \zeta,
-\end{aligned}
-\end{equation}
-其中，积分是沿$B(0,R)\backslash\{a_n:n\in\MN\}$中连接$O$和$z$的可求长曲线进行的，并且 \eqref{eq5.7.5} 式右端在$B(0,R)\backslash\{a_n:n\in\MN\}$上内闭一致收敛.显然，$F(z)$是$B(0,R)\backslash\{a_n:n\in\MN\}$上的多值全纯函数，但在同一点处的任意两个函数值之差为$2\pi\ii$的整数倍，故
-\[h(z)=\ee^{F(z)}=\prod_{n=1}^\infty\ee^{k_n\int_0^z\left(\frac1{\zeta-a_n}
-+\frac{\bar {a_n}}{R^2-\bar {a_n}\zeta}\right)\dif \zeta}
-=\prod_{n=1}^\infty\bigg(\frac{R(a_n-z)}{R^2-\bar {a_n}z}\bigg)^{k_n}
-\bigg(\frac{R}{a_n}\bigg)^{k_n}\]
-是$B(0,R)$上的全纯函数，$h$恰以$\{a_n\}$为其零点集，且在每个$a_n$处的零点阶数恰为$k_n$. 再注意到$\prod_{n=1}^\infty\bigg(\frac{|a_n|}{R}\bigg)^{k_n}$是一个正数，便知 \eqref{eq5.7.4} 式在$B(0,R)$上内闭一致收敛于$h(z)\prod_{n=1}^\infty\bigg(\frac{|a_n|}{R}\bigg)^{k_n}$. 最后，由于对任意$z\in B(0,R),\bigg|\frac{R(a_n-z)}{R^2-\bar {a_n}z}\bigg|<1$，若令
-\[f(z)=h(z)\prod_{n=1}^\infty\bigg(\frac{|a_n|}{R}\bigg)^{k_n}
-=\prod_{n=1}^\infty\bigg(\frac{R(a_n-z)}{R^2-\bar {a_n}z}\bigg)^{k_n}
-\bigg(\frac{|a_n|}{a_n}\bigg)^{k_n},\]
-则
-\begin{equation*}
-  f\big(B(0,R)\big)\subset B(0,1). \qedhere
-\end{equation*}
+  由所给条件知$\{a_n\}$在$B(0,R)$中无极限点，因而$B(0,R)\backslash\{a_n:n\in\MN\}$是域，并且
+  \[
+    \sum_{n=1}^\infty\frac{k_n(R^2-|a_n|^2)}{(R^2-\bar a_nz)(z-a_n)}
+  \]
+  在$B(0,R)\backslash\{a_n:n\in\MN\}$上内闭一致收敛于$g\in H\big(B(0,R)\backslash
+  \{a_n:n\in\MN\}\big)$. 显然，$g$是$B(0,R)$上的亚纯函数，恰以$\{a_n\}$为其极点集，且在每个$a_n$处的残数为$k_n$. 令
+  \begin{equation}\label{eq5.7.5}
+    \begin{aligned}
+      F(z) & = \int_0^zg(\zeta)\dif \zeta=\sum_{n=1}^\infty\int_0^z
+             \frac{k_n(R^2-|a_n|^2)}{(R^2-\bar a_n\zeta)(\zeta-a_n)}\dif \zeta\\
+           & = \sum_{n=1}^\infty k_n\int_0^z\bigg(\frac1{\zeta-a_n}+\frac{\bar a_n}{R^2
+             - \bar a_n\zeta}\bigg)\dif \zeta,
+    \end{aligned}
+  \end{equation}
+  其中，积分是沿$B(0,R)\backslash\{a_n:n\in\MN\}$中连接$O$和$z$的可求长曲线进行的，并且 \eqref{eq5.7.5} 式右端在$B(0,R)\backslash\{a_n:n\in\MN\}$上内闭一致收敛.显然，$F(z)$是$B(0,R)\backslash\{a_n:n\in\MN\}$上的多值全纯函数，但在同一点处的任意两个函数值之差为$2\pi\ii$的整数倍，故
+  \[
+    h(z) = \ee^{F(z)} = \prod_{n=1}^\infty\ee^{k_n\int_0^z\left(\frac1{\zeta-a_n}
+    + \frac{\bar {a_n}}{R^2-\bar {a_n}\zeta}\right)\dif \zeta}
+    = \prod_{n=1}^\infty\bigg(\frac{R(a_n-z)}{R^2-\bar {a_n}z}\bigg)^{k_n}
+    \bigg(\frac{R}{a_n}\bigg)^{k_n}
+  \]
+  是$B(0,R)$上的全纯函数，$h$恰以$\{a_n\}$为其零点集，且在每个$a_n$处的零点阶数恰为$k_n$. 再注意到$\prod_{n=1}^\infty\bigg(\frac{|a_n|}{R}\bigg)^{k_n}$是一个正数，便知 \eqref{eq5.7.4} 式在$B(0,R)$上内闭一致收敛于$h(z)\prod_{n=1}^\infty\bigg(\frac{|a_n|}{R}\bigg)^{k_n}$. 最后，由于对任意$z\in B(0,R),\bigg|\frac{R(a_n-z)}{R^2-\bar {a_n}z}\bigg|<1$，若令
+  \[
+    f(z) = h(z)\prod_{n=1}^\infty\bigg(\frac{|a_n|}{R}\bigg)^{k_n}
+    = \prod_{n=1}^\infty\bigg(\frac{R(a_n-z)}{R^2-\bar {a_n}z}\bigg)^{k_n}
+    \bigg(\frac{|a_n|}{a_n}\bigg)^{k_n},
+  \]
+  则
+  \begin{equation*}
+    f\big(B(0,R)\big)\subset B(0,1). \qedhere
+  \end{equation*}
 \end{proof}
 
 \begin{example}\label{exam5.7.5}
-用极点处Laurent级数的主要部分表示$\cot z-\frac1z$.
+  用极点处Laurent级数的主要部分表示$\cot z-\frac1z$.
 \end{example}
 \begin{solution}
-$f(z)=\cot z-\frac1z$的全部极点$\pm n\pi$（$n\in\MN$）都是$1$阶的，且$\Res(f,\pm n\pi)=1,f(0)=0$.
+  $f(z)=\cot z-\frac1z$的全部极点$\pm n\pi$（$n\in\MN$）都是$1$阶的，且$\Res(f,\pm n\pi)=1,f(0)=0$.
 
-令$\gamma_n$为以$O$为中心，以$(2n-1)\pi$为边长，并且平行于坐标轴的正方形折线，则$\{\gamma_n\}$是正则曲线列.注意到
-\begin{align*}
-&\begin{aligned}
-\bigg|\cot\bigg(\pm\bigg(n-\frac12\bigg)\pi+\ii y\bigg)\bigg|
-&=\bigg|\frac{\ee^{\pm(2n-1)\pi\ii}\ee^{-2y}+1}
-{\ee^{\pm(2n-1)\pi\ii}\ee^{-2y}-1}\bigg|\\
-&=\frac{\ee^{2|y|}-1}{\ee^{2|y|}+1}\le1,
-\end{aligned}\\
-&\begin{aligned}
-\bigg|\cot\bigg(x\pm\ii\bigg(n-\frac12\bigg)\pi\bigg)\bigg|
-&=\bigg|\frac{1+\ee^{-\ii2x}\ee^{\pm(2n-1)\pi}}{1-\ee^{-\ii2x}\ee^{\pm(2n-1)\pi}}\bigg|\\
-&\le\frac{\ee^{(2n-1)\pi}+1}{\ee^{(2n-1)\pi}-1}\le\frac{\ee^\pi+1}{\ee^\pi-1},
-\end{aligned}
-\end{align*}
-因而$\cot z-\frac1z$在$\bigcup_{n=1}^\infty\gamma_n$上有界. 故由定理 \ref{thm5.7.2} 得
-\[
-\cot z-\frac1z=\sum_{n=1}^\infty\bigg[\bigg(\frac1{z-n\pi}+\frac1{n\pi}\bigg)+
-\bigg(\frac1{z+n\pi}-\frac1{n\pi}\bigg)\bigg]
-=\sum_{n=1}^\infty\frac{2z}{z^2-n^2\pi^2},
-\]
-或者
-\begin{equation*}
-  \cot z = \frac1z+\sum_{n=1}^\infty\frac{2z}{z^2-n^2\pi^2}. \qedhere
-\end{equation*}
+  令$\gamma_n$为以$O$为中心，以$(2n-1)\pi$为边长，并且平行于坐标轴的正方形折线，则$\{\gamma_n\}$是正则曲线列.注意到
+  \begin{align*}
+    & \begin{aligned}
+         \bigg|\cot\bigg(\pm\bigg(n-\frac12\bigg)\pi+\ii y\bigg)\bigg|
+         & = \bigg|\frac{\ee^{\pm(2n-1)\pi\ii}\ee^{-2y}+1}
+             {\ee^{\pm(2n-1)\pi\ii}\ee^{-2y}-1}\bigg|\\
+         & = \frac{\ee^{2|y|}-1}{\ee^{2|y|}+1}\le1,
+       \end{aligned}\\
+    &  \begin{aligned}
+         \bigg|\cot\bigg(x\pm\ii\bigg(n-\frac12\bigg)\pi\bigg)\bigg|
+         & = \bigg|\frac{1+\ee^{-\ii2x}\ee^{\pm(2n-1)\pi}}{1-\ee^{-\ii2x}\ee^{\pm(2n-1)\pi}}\bigg|\\
+         & \le \frac{\ee^{(2n-1)\pi}+1}{\ee^{(2n-1)\pi}-1}\le\frac{\ee^\pi+1}{\ee^\pi-1},
+       \end{aligned}
+  \end{align*}
+  因而$\cot z-\frac1z$在$\bigcup_{n=1}^\infty\gamma_n$上有界. 故由定理 \ref{thm5.7.2} 得
+  \[
+    \cot z - \frac1z = \sum_{n=1}^\infty\bigg[\bigg(\frac1{z-n\pi}+\frac1{n\pi}\bigg) +
+    \bigg(\frac1{z+n\pi}-\frac1{n\pi}\bigg)\bigg]
+    = \sum_{n=1}^\infty\frac{2z}{z^2-n^2\pi^2},
+  \]
+  或者
+  \begin{equation*}
+    \cot z = \frac1z+\sum_{n=1}^\infty\frac{2z}{z^2-n^2\pi^2}. \qedhere
+  \end{equation*}
 \end{solution}
 
 \begin{example}
-求$\sin z$的因子分解.
+  求$\sin z$的因子分解.
 \end{example}
 \begin{solution}
-整函数$f(z)=\frac{\sin z}z$的全部零点$\pm n\pi$（$n\in\MN$）都是$1$阶的，且$f(0)=1$. 设$\{\gamma_n\}$是例 \ref{exam5.7.5} 中给出的正则曲线列，则
-\[\frac{f'(z)}{f(z)}=\cot z-\frac1z\]
-在$\bigcup_{n=1}^\infty\gamma_n$上有界. 故由定理 \ref{thm5.7.3} 得
-\[\frac{\sin z}z=\prod_{n=1}^\infty\bigg[\bigg(1-\frac z{n\pi}\bigg)\ee^{
-\frac z{n\pi}}\bigg]\bigg[\bigg(1+\frac z{n\pi}\bigg)\ee^{-\frac z{n\pi}}\bigg]
-=\prod_{n=1}^\infty\bigg(1-\frac{z^2}{n^2\pi^2}\bigg),\]
-或者
-\begin{equation*}
-  \sin z = z\prod_{n=1}^\infty\bigg(1-\frac{z^2}{n^2\pi^2}\bigg). \qedhere
-\end{equation*}
+  整函数$f(z)=\frac{\sin z}z$的全部零点$\pm n\pi$（$n\in\MN$）都是$1$阶的，且$f(0)=1$. 设$\{\gamma_n\}$是例 \ref{exam5.7.5} 中给出的正则曲线列，则
+  \[
+    \frac{f'(z)}{f(z)} = \cot z-\frac1z
+  \]
+  在$\bigcup_{n=1}^\infty\gamma_n$上有界. 故由定理 \ref{thm5.7.3} 得
+  \[ 
+    \frac{\sin z}z = \prod_{n=1}^\infty\bigg[\bigg(1-\frac z{n\pi}\bigg)\ee^{
+    \frac z{n\pi}}\bigg]\bigg[\bigg(1+\frac z{n\pi}\bigg)\ee^{-\frac z{n\pi}}\bigg]
+    =\prod_{n=1}^\infty\bigg(1-\frac{z^2}{n^2\pi^2}\bigg),
+  \]
+  或者
+  \begin{equation*}
+    \sin z = z\prod_{n=1}^\infty\bigg(1-\frac{z^2}{n^2\pi^2}\bigg). \qedhere
+  \end{equation*}
 \end{solution}
 
 \begin{xiti}
-\item 用极点处Laurent级数的主要部分表示下列$\MC$上的亚纯函数：
-\begin{tasks}(2)
-\task $\frac1{\ee^z-1}$；
-\task $\frac1{\cos z}$；
-\task $\tan z$；
-\task $\frac1{\sin z}-\frac1z$.
-\end{tasks}
-\item 将下列整函数进行因子分解：
-\begin{tasks}(2)
-\task $\ee^z-1$；
-\task $\ee^{az}-\ee^{bz}$；
-\task $\cos z$；
-\task $\cos z-\sin z$.
-\end{tasks}
-\item 设$\{a_n\}$是$B(0,R)\backslash\{0\}$中互不相同的点列，$\{b_n\}$是点列$\{a_n\}$
-关于圆周$\partial B(0,R)$的对称点列，$\{k_n\}$是自然数列.证明：若$\sum_{n=1}^\infty k_n(R-|a_n|)<\infty$，则
-\[\bigg\{\prod_{j=1}^n\bigg(\frac{z-a_j}{z-b_j}\bigg)^{k_j}\bigg\}\]
-在$B(0,R)$上内闭一致收敛于一个全纯映射$f:B(0,R)\to B(0,1)$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.
-\item 设$\{a_n\}$是$\MC\backslash\{0\}$中互不相同的点列，$\{k_n\}$是自然数列. 证明：若$\sum_{n=1}^\infty\frac{k_n}{|a_n|}$收敛，则
-    \[\bigg\{\prod_{j=1}^n\bigg(1-\frac z{a_j}\bigg)^{k_j}\bigg\}\]
-在$\MC$上内闭一致收敛于一个整函数$f$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.\\
-（\textbf{提示}：$\sum_{n=1}^\infty\frac{k_n}{z-a_n}$在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛.）
-\item 设$\{a_n\}$是$\MC\backslash\{0\}$中互不相同的点列，$\{k_n\}$是自然数列.证明：若存在自然数$m$，使得$\sum_{n=1}^\infty\frac{k_n}{|a_n|^{m+1}}$收敛，则
-\[\bigg\{\prod_{j=1}^n\bigg[\bigg(1-\frac z{a_j}\bigg)\ee^{\frac z{a_j}+\frac12\big(\frac z{a_j}\big)^2+\cdots+\frac1m\big(\frac z{a_j}\big)^m}\bigg]^{k_j}\bigg\}\]
-在$\MC$上内闭一致收敛于一个整函数$f$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.\\
-（\textbf{提示}：$\sum_{n=1}^\infty k_n\bigg(\frac1{z-a_n}+\frac1{a_n}
-+\frac z{a_n^2}+\cdots+\frac{z^{m-1}}{a_n^m}\bigg)$在$\MC\backslash\{a_n:n\in\MN\}$
-上内闭一致收敛.）
-\item 设$\{a_n\}$是$\MC\backslash\{0\}$中互不相同的点列，$\{k_n\}$是自然数列.证明：若存在自然数列$\{p_n\}$，使得全纯函数项级数
-    \[\sum_{m=1}^\infty k_n\bigg(\frac z{a_n}\bigg)^{p_n+1}\]
-在$\MC$上绝对收敛，则
-\[\bigg\{\prod_{j=1}^n\bigg[\bigg(1-\frac z{a_j}\bigg)\ee^{\frac z{a_j}+\frac12\big(\frac z{a_j}\big)^2+\cdots+\frac1{p_j}\big(\frac z{a_j}\big)^{p_j}}\bigg]^{k_j}\bigg\}\]
-在$\MC$上内闭一致收敛于一个整函数$f$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.\\
-（\textbf{提示}：$\sum_{n=1}^\infty k_n\bigg(\frac1{z-a_n}+\frac1{a_n}
-+\frac z{a_n^2}+\cdots+\frac{z^{p_n-1}}{a_n^{p_n}}\bigg)$在$\MC\backslash\{a_n:n\in\MN\}$
-上内闭一致收敛.）
-\item 设$\{a_n\}$是$\MC\backslash\{0\}$中互不相同的点列，$\{k_n\}$是自然数列.证明：若$\lim_{n\to\infty}|a_n|=\infty$，则
-\[\bigg\{\prod_{j=1}^n\bigg[\bigg(1-\frac z{a_j}\bigg)\ee^{\frac z{a_j}+\frac12\big(\frac z{a_j}\big)^2+\cdots+\frac1{jk_j}\big(\frac z{a_j}\big)^{jk_j}}\bigg]^{k_j}\bigg\}\]
-在$\MC$上内闭一致收敛于一个整函数$f$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.
-\item 设$f$是非常数的整函数，$f$在$\MC\backslash\{0\}$中的互不相同的零点集是$\{a_n\}$，其相应的零点阶数为$\{k_n\},k_0=\Res\bigg(\frac{f'(z)}{f(z)},0\bigg)$. 证明：一定存在整函数$g$，使得
-    \[f(z)=\ee^{g(z)}z^{k_0}\prod_{n=1}^\infty\bigg[\bigg(1-\frac z{a_n}\bigg)\ee^{\frac z{a_n}+\frac1z\big(\frac z{a_n}\big)^2
-    +\cdots+\frac1{nk_n}\big(\frac z{a_n}\big)^{nk_n}}\bigg]^{k_n}.\]
-\item 设$f$是有理函数，$\infty$是$f$的至少$2$阶的零点，并且$f$的全部互不相同的极点$a_1,a_2,\cdots,a_m$都不是整数. 证明：
-\begin{enuma}
-  \item $\sum_{n=-\infty}^\infty f(n)=-\pi\sum_{k=1}^m\Res\big(f(z)\cot\pi z,a_k\big)$；
-  \item $\sum_{n=-\infty}^\infty (-1)^nf(n)=-\pi\sum_{k=1}^m\Res\bigg(\frac{f(z)}{\sin\pi z},a_k\bigg)$.
-\end{enuma}
-\item 求下列级数的和：
-\begin{enuma}
-  \item $\sum_{n=-\infty}^\infty\frac1{(a+n)^2},\sum_{n=-\infty}^\infty
-      \frac{(-1)^n}{(a+n)^2}$（$a$不是整数）；
-  \item $\sum_{n=0}^\infty\frac1{n^2+a^2},\sum_{n=0}^\infty\frac{(-1)^n}{n^2+a^2}$（$a>0$）；
-  \item $\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)^3}$；
-  \item $\sum_{n=1}^\infty\frac1{n^{2k}}$（$k\in\MN$）.
-\end{enuma}
-\item 设$f$是$B(0,R)$上非常数的有界全纯函数，$\{a_n\}$是$f$在$B(0,R)\backslash\{0\}$中的互不相同的零点集，$\{k_n\}$是相应的零点阶数. 证明：
-    \[\sum_{n=1}^\infty k_n(R-|a_n|)<\infty.\]
-\item 设$f$是$B(0,R)$上非常数的有界全纯函数，$f$在$B(0,R)\backslash\{0\}$中的全部互不相同的零点集为$\{a_n\}$，相应的零点阶数为$\{k_n\},k_0=\Res\bigg(\frac{f'(z)}{f(z)},0\bigg)$.证明：一定存在$B(0,R)$上无零点的有界全纯函数$g$，使得
-\[f(z)=g(z)z^{k_0}\prod_{n=1}^\infty\bigg(\frac{R(a_n-z)}{R^2-\bar {a_n}z}\bigg)^{k_n}
-\bigg(\frac{|a_n|}{a_n}\bigg)^{k_n},\forall z\in B(0,R).\]
+  \item 用极点处Laurent级数的主要部分表示下列$\MC$上的亚纯函数：
+    \begin{tasks}(2)
+      \task $\frac1{\ee^z-1}$；
+      \task $\frac1{\cos z}$；
+      \task $\tan z$；
+      \task $\frac1{\sin z}-\frac1z$.
+    \end{tasks}
+  \item 将下列整函数进行因子分解：
+    \begin{tasks}(2)
+      \task $\ee^z-1$；
+      \task $\ee^{az}-\ee^{bz}$；
+      \task $\cos z$；
+      \task $\cos z-\sin z$.
+    \end{tasks}
+  \item 设$\{a_n\}$是$B(0,R)\backslash\{0\}$中互不相同的点列，$\{b_n\}$是点列$\{a_n\}$
+    关于圆周$\partial B(0,R)$的对称点列，$\{k_n\}$是自然数列.证明：若$\sum_{n=1}^\infty k_n(R-|a_n|)<\infty$，则
+    \[
+      \bigg\{\prod_{j=1}^n \bigg(\frac{z-a_j}{z-b_j} \bigg)^{k_j}\bigg\}
+    \]
+    在$B(0,R)$上内闭一致收敛于一个全纯映射$f:B(0,R)\to B(0,1)$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.
+  \item 设$\{a_n\}$是$\MC\backslash\{0\}$中互不相同的点列，$\{k_n\}$是自然数列. 证明：若$\sum_{n=1}^\infty\frac{k_n}{|a_n|}$收敛，则
+      \[
+        \bigg\{\prod_{j=1}^n\bigg(1-\frac z{a_j}\bigg)^{k_j}\bigg\}
+      \]
+      在$\MC$上内闭一致收敛于一个整函数$f$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.\\
+     （\textbf{提示}：$\sum_{n=1}^\infty\frac{k_n}{z-a_n}$在$\MC\backslash\{a_n:n\in\MN\}$上内闭一致收敛.）
+  \item 设$\{a_n\}$是$\MC\backslash\{0\}$中互不相同的点列，$\{k_n\}$是自然数列.证明：若存在自然数$m$，使得$\sum_{n=1}^\infty\frac{k_n}{|a_n|^{m+1}}$收敛，则
+      \[
+        \bigg\{\prod_{j=1}^n\bigg[\bigg(1-\frac z{a_j}\bigg)\ee^{\frac z{a_j} + \frac12\big(\frac z{a_j}\big)^2 + \cdots + \frac1m\big(\frac z{a_j}\big)^m}\bigg]^{k_j}\bigg\}
+      \]
+      在$\MC$上内闭一致收敛于一个整函数$f$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.\\
+      （\textbf{提示}：$\sum_{n=1}^\infty k_n\bigg(\frac1{z-a_n}+\frac1{a_n}
+      +\frac z{a_n^2}+\cdots+\frac{z^{m-1}}{a_n^m}\bigg)$在$\MC\backslash\{a_n:n\in\MN\}$
+      上内闭一致收敛.）
+  \item 设$\{a_n\}$是$\MC\backslash\{0\}$中互不相同的点列，$\{k_n\}$是自然数列.证明：若存在自然数列$\{p_n\}$，使得全纯函数项级数
+      \[
+        \sum_{m=1}^\infty k_n\bigg(\frac z{a_n}\bigg)^{p_n+1}
+      \]
+      在$\MC$上绝对收敛，则
+      \[
+        \bigg\{\prod_{j=1}^n\bigg[\bigg(1-\frac z{a_j}\bigg)\ee^{\frac z{a_j}+\frac12\big(\frac z{a_j}\big)^2+\cdots+\frac1{p_j}\big(\frac z{a_j}\big)^{p_j}}\bigg]^{k_j}\bigg\}
+      \]
+      在$\MC$上内闭一致收敛于一个整函数$f$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.\\
+      （\textbf{提示}：$\sum_{n=1}^\infty k_n\bigg(\frac1{z-a_n}+\frac1{a_n}
+      +\frac z{a_n^2}+\cdots+\frac{z^{p_n-1}}{a_n^{p_n}}\bigg)$在$\MC\backslash\{a_n:n\in\MN\}$
+      上内闭一致收敛.）
+  \item 设$\{a_n\}$是$\MC\backslash\{0\}$中互不相同的点列，$\{k_n\}$是自然数列.证明：若$\lim_{n\to\infty}|a_n|=\infty$，则
+      \[
+        \bigg\{\prod_{j=1}^n\bigg[\bigg(1-\frac z{a_j}\bigg)\ee^{\frac z{a_j}+\frac12\big(\frac z{a_j}\big)^2+\cdots+\frac1{jk_j}\big(\frac z{a_j}\big)^{jk_j}}\bigg]^{k_j}\bigg\}
+      \]
+      在$\MC$上内闭一致收敛于一个整函数$f$，使得$f$恰以$\{a_n\}$为其零点集，且$f$在每个$a_n$处的零点阶数恰为$k_n$.
+  \item 设$f$是非常数的整函数，$f$在$\MC\backslash\{0\}$中的互不相同的零点集是$\{a_n\}$，其相应的零点阶数为$\{k_n\},k_0=\Res\bigg(\frac{f'(z)}{f(z)},0\bigg)$. 证明：一定存在整函数$g$，使得
+      \[
+        f(z) = \ee^{g(z)}z^{k_0}\prod_{n=1}^\infty\bigg[\bigg(1-\frac z{a_n}\bigg)\ee^{\frac z{a_n} + \frac1z\big(\frac z{a_n}\big)^2
+        + \cdots+\frac1{nk_n}\big(\frac z{a_n}\big)^{nk_n}}\bigg]^{k_n}.
+      \]
+  \item 设$f$是有理函数，$\infty$是$f$的至少$2$阶的零点，并且$f$的全部互不相同的极点$a_1,a_2,\cdots,a_m$都不是整数. 证明：
+    \begin{enuma}
+      \item $\sum_{n=-\infty}^\infty f(n)=-\pi\sum_{k=1}^m\Res\big(f(z)\cot\pi z,a_k\big)$；
+      \item $\sum_{n=-\infty}^\infty (-1)^nf(n)=-\pi\sum_{k=1}^m\Res\bigg(\frac{f(z)}{\sin\pi z},a_k\bigg)$.
+    \end{enuma}
+  \item 求下列级数的和：
+    \begin{enuma}
+      \item $\sum_{n=-\infty}^\infty\frac1{(a+n)^2},\sum_{n=-\infty}^\infty
+         \frac{(-1)^n}{(a+n)^2}$（$a$不是整数）；
+      \item $\sum_{n=0}^\infty\frac1{n^2+a^2},\sum_{n=0}^\infty\frac{(-1)^n}{n^2+a^2}$（$a>0$）；
+      \item $\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)^3}$；
+      \item $\sum_{n=1}^\infty\frac1{n^{2k}}$（$k\in\MN$）.
+    \end{enuma}
+  \item 设$f$是$B(0,R)$上非常数的有界全纯函数，$\{a_n\}$是$f$在$B(0,R)\backslash\{0\}$中的互不相同的零点集，$\{k_n\}$是相应的零点阶数. 证明：
+     \[
+       \sum_{n=1}^\infty k_n(R-|a_n|) < \infty.
+     \]
+  \item 设$f$是$B(0,R)$上非常数的有界全纯函数，$f$在$B(0,R)\backslash\{0\}$中的全部互不相同的零点集为$\{a_n\}$，相应的零点阶数为$\{k_n\},k_0=\Res\bigg(\frac{f'(z)}{f(z)},0\bigg)$.证明：一定存在$B(0,R)$上无零点的有界全纯函数$g$，使得
+     \[
+       f(z) = g(z)z^{k_0}\prod_{n=1}^\infty\bigg(\frac{R(a_n-z)}{R^2-\bar {a_n}z}\bigg)^{k_n}
+       \bigg(\frac{|a_n|}{a_n}\bigg)^{k_n},\forall z\in B(0,R).
+     \]
 \end{xiti}
