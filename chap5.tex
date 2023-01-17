@@ -28,7 +28,7 @@
   a_{-n}(z-z_0)^{-n}
   \end{equation*}
   的收敛域为圆环$D=\{z:r<|z-z_0|<R\}$，那么它在$D$中绝对收敛且内闭一致收敛，它的和函数在$D$中全纯..
- 
+
   上述级数的幂级数部分称为该级数的\textbf{全纯部分}\index{L!Laurent级数!全纯部分}，负幂项级数部分称为该级数的\textbf{主要部分}\index{L!Laurent级数!主要部分}.下面我们将看到，Laurent级数的一些重要性质取决于它的主要部分.
 \end{theorem}
 
@@ -487,17 +487,17 @@ $f$在孤立奇点$z_0$附近可能有三种情形：
   \item 证明：整函数$f(z)$无零点，当且仅当存在另一个整函数$g(z)$，使得$f(z)=\ee^{g(z)}$.
   \item 设$P_n(z)$是$n$次多项式，$n\in\MN$. 证明：$\ee^z-P_n(z)$有无数个零点.
   \item 设$\SL(2,\MC)=\left\{\begin{pmatrix}
-                           a & b \\ 
+                           a & b \\
                            c & d
-                           \end{pmatrix}:ad - cb = 1\right\}, 
+                           \end{pmatrix}:ad - cb = 1\right\},
                            I = \begin{pmatrix}
-                           1 & 0 \\ 
+                           1 & 0 \\
                            0 & 1
                            \end{pmatrix}$.证明：
     \begin{enuma}
       \item $\SL(2,\MC)$按矩阵乘法构成一个群，$\{ I,- I\}$是其正规子群；
       \item $\begin{pmatrix}
-        a & b \\ 
+        a & b \\
         c & d
        \end{pmatrix}\mapsto\frac{az+b}{cz+d}$是商群$\frac{\SL(2,\MC)}{\{ I,- I\}}$与$\MC_\infty$的自同构群$\Aut(\MC_\infty)$之间的同构.
     \end{enuma}
@@ -632,7 +632,7 @@ $f$在孤立奇点$z_0$附近可能有三种情形：
 \begin{solution}
   因为
   \[
-    f(z) = \ee^z\cdot\ee^{\frac1z} = 
+    f(z) = \ee^z\cdot\ee^{\frac1z} =
    \bigg(1 + z + \frac{z^2}{2!} + \cdots \bigg)\bigg(1 + \frac1z + \frac1{2!z^2} + \cdots \bigg),
   \]
   这个乘积中，$\frac1z$的系数为
@@ -930,8 +930,8 @@ $f$在孤立奇点$z_0$附近可能有三种情形：
     \bigg| \int\limits_{\gamma_R}\ee^{\ii\alpha z}f(z) \dz \bigg|
     & \le RM(R)\int_0^\pi\ee^{-\alpha R\sin\theta}\dif \theta
     = 2RM(R)\int_0^{\frac\pi2}\ee^{-\alpha R\sin\theta}\dif \theta\\
-    & \le 2RM(R)\int_0^{\frac\pi2}\ee^{-\frac2\pi \alpha R\theta}
-    = \frac\pi2M(R)(1-\ee^{-\alpha R})\to0\;\mbox{（$R\to\infty$）}.
+    & \le 2RM(R)\int_0^{\frac\pi2}\ee^{-\frac2\pi \alpha R\theta} \dif \theta
+    = \frac\pi\alpha M(R)(1-\ee^{-\alpha R})\to0\;\mbox{（$R\to\infty$）}.
   \end{align*}
   这里，我们已经利用了不等式
   \begin{equation*}
@@ -1210,7 +1210,7 @@ $f$在孤立奇点$z_0$附近可能有三种情形：
   \eqref{eq5.5.8} 式左端的第一个和第三个积分互相抵消了. $\gamma_R$和$\gamma_\rho$上两个积分的估计与例 \ref{exam5.5.11} 一样：
   \begin{align*}
     & \begin{aligned}
-        \bigg|\int\limits_{\gamma_R}\frac{\log^2z}{(1+z^2)^2}\dz\bigg| & 
+        \bigg|\int\limits_{\gamma_R}\frac{\log^2z}{(1+z^2)^2}\dz\bigg| &
         =  \bigg|\int_0^{2\pi}\frac{(\log R+\ii\theta)^2}{(1+R^2\ee^{2\ii\theta})^2}R\ii\ee^{\ii\theta}\dif \theta\bigg|\\
         & \le 2\pi R\frac{(\log R+2\pi)^2}{(R^2-1)^2}\to0\;\mbox{（$R\to\infty$）},
       \end{aligned}\\
@@ -1236,7 +1236,7 @@ $f$在孤立奇点$z_0$附近可能有三种情形：
       \int_{-R}^{-\rho}\frac{\log|x|}{(1+x^2)^2}\dx&+\ii\pi\int_{-R}^{-\rho}\frac{\dx}{(1+x^2)^2}
       + \int\limits_{\gamma_\rho^-}\frac{\log z}{(1+z^2)^2}\dz\\
       & + \int_\rho^R\frac{\log x}{(1+x^2)^2}\dx+\int\limits_{\gamma_R}\frac{\log z}{(1+z^2)^2}\dz\\
-      & = 2\pi\ii \Res\bigg(\frac{\log z}{(1+z^2)},\ii\bigg).
+      & = 2\pi\ii \Res\bigg(\frac{\log z}{(1+z^2)^2},\ii\bigg).
     \end{aligned}
   \end{equation}
   \begin{figure}[!ht]
@@ -1398,7 +1398,7 @@ $f$在孤立奇点$z_0$附近可能有三种情形：
 
 事实上，记$z-a=\rho_1\ee^{\ii\theta_1},z-b=\rho_2\ee^{\ii\theta_2}$，当$z$沿线段$[a,b]$外部的任意简单闭曲线转一圈时，$z-a$和$z-b$的辐角都要增加$2\pi$，$(z-a)^r(z-b)^s$的值由原来的$\rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)}$变为
 \[
-  \rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)+2\pi(r+s)\ii} = 
+  \rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)+2\pi(r+s)\ii} =
   \rho_1^r\rho_2^s\ee^{\ii(r\theta_1+s\theta_2)},
 \]
 等式成立是因为$r+s$是整数，这就是说$F(z)$的值不变.
@@ -2225,7 +2225,7 @@ Weierstrass因子分解定理和Blaschke 乘积\label{sec5.7}}
     \frac{f'(z)}{f(z)} = \cot z-\frac1z
   \]
   在$\bigcup_{n=1}^\infty\gamma_n$上有界. 故由定理 \ref{thm5.7.3} 得
-  \[ 
+  \[
     \frac{\sin z}z = \prod_{n=1}^\infty\bigg[\bigg(1-\frac z{n\pi}\bigg)\ee^{
     \frac z{n\pi}}\bigg]\bigg[\bigg(1+\frac z{n\pi}\bigg)\ee^{-\frac z{n\pi}}\bigg]
     =\prod_{n=1}^\infty\bigg(1-\frac{z^2}{n^2\pi^2}\bigg),
