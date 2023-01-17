@@ -915,7 +915,7 @@ Cauchy积分公式是Cauchy积分定理最重要的推论之一，它是全纯�
   \end{equation}
   这里，$C$是一个常数. 于是
   \begin{align*}
-    G^{(k)}(z) = {}& \frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z)^{k+1}}\dif \zeta\\
+    G^{(k)}(z) = {}& \frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z_0)^{k+1}}\dif \zeta\\
     & +\frac{(k+1)!}{2\pi\ii}(z-z_0)\int\limits_\gamma\frac{g(\zeta)}{(\zeta-z_0)^{k+2}}
     \dif \zeta+\frac{k!}{2\pi\ii}\int\limits_\gamma\frac{g(\zeta)H(z,\zeta)}{(\zeta-z_0)^{k+1}}
     \dif \zeta,
@@ -1251,7 +1251,7 @@ Cauchy积分公式是Cauchy积分定理最重要的推论之一，它是全纯�
 $\partial,\bar\partial$作用在二次微分形式上的结果都是零：
 \begin{align*}
   & \partial\big(f(z,\bar z)\dz\wedge\dzz\big) = \pp fz\dz\wedge\dz\wedge\dzz = 0,\\
-  & \partial\big(f(z,\bar z)\dzz\wedge\dzz\big) = \pp fz\dzz\wedge\dz\wedge\dzz = 0,
+  & \bar\partial\big(f(z,\bar z)\dz\wedge\dzz\big) = \pp fz\dzz\wedge\dz\wedge\dzz = 0,
 \end{align*}
 因而
 \begin{equation}\label{eq3.6.3}
@@ -1485,7 +1485,7 @@ $u$就称为$\bar\partial$问题的解. \ref{sec3.6} 节介绍的非齐次Cauchy
 \begin{proof}
   把$f$的定义扩充到整个复平面，对于$z\notin D$，定义$f(z)=0$. 这时，\eqref{eq3.7.1} 式可写为
   \[
-    u(z) = \frac1{2\pi\ii}\int\limits_\MC\frac{f(\zeta)}{\zeta-z}\dif \zeta\wedge\dif \bar\zeta=\frac1{2\pi\ii}\int\limits_\MC f(\zeta+\eta)\frac1\eta\dif \eta\wedge\dif \bar\eta.
+    u(z) = \frac1{2\pi\ii}\int\limits_\MC\frac{f(\zeta)}{\zeta-z}\dif \zeta\wedge\dif \bar\zeta = \frac1{2\pi\ii}\int\limits_\MC f(z+\eta)\frac1\eta\dif \eta\wedge\dif \bar\eta.
   \]
   由$f\in C^1(D)$，可得$u\in C^1(D)$.
 
