@@ -6,465 +6,534 @@
 \section{正规族\label{sec7.1}}
 我们从正规族的定义开始.
 \begin{definition}\label{def7.1.1}
-设$\MCF$是域$D$上的一个函数族，如果它的任意序列$\{f_n\}\subset \MCF$中一定包含一个在$D$上内闭一致收敛的子列$\{f_{n_k}\}$，就称$\MCF$是$D$上的一个\textbf{正规族}.\index{Z!正规族}
+  设$\MCF$是域$D$上的一个函数族，如果它的任意序列$\{f_n\}\subset \MCF$中一定包含一个在$D$上内闭一致收敛的子列$\{f_{n_k}\}$，就称$\MCF$是$D$上的一个\textbf{正规族}.\index{Z!正规族}
 \end{definition}
 
 为了给出正规族的特征，我们还需要下面的
 
 \begin{definition}\label{def7.1.2}
-设$\MCF$是域$D$上的一个函数族，如果存在常数$M$，使得对任意的$f\in\MCF$及$z\in D$，均有$|f(z)|\le M$，就说$\MCF$在$D$上是\textbf{一致有界}\index{Y!一致有界}的.如果对任意紧集$K\subset D$，存在与$K$有关的常数$M(K)$，使得对任意的$f\in\MCF$及$z\in K$，有$|f(z)|\le M(K)$，就说$\MCF$在$D$上是\textbf{内闭一致有界}\index{Y!一致有界!内闭一致有界}的.
+  设$\MCF$是域$D$上的一个函数族，如果存在常数$M$，使得对任意的$f\in\MCF$及$z\in D$，均有$|f(z)|\le M$，就说$\MCF$在$D$上是\textbf{一致有界}\index{Y!一致有界}的.如果对任意紧集$K\subset D$，存在与$K$有关的常数$M(K)$，使得对任意的$f\in\MCF$及$z\in K$，有$|f(z)|\le M(K)$，就说$\MCF$在$D$上是\textbf{内闭一致有界}\index{Y!一致有界!内闭一致有界}的.
 \end{definition}
 
 显然，在$D$上一致有界的函数族一定是内闭一致有界的，反之不然.
 \begin{definition}\label{def7.1.3}
-设$\MCF$是域$D$上的一个函数族，如果对任意$\varepsilon>0$，存在$\delta>0$，当$z_1,z_2\in D$，且$|z_1-z_2|<\delta$时，有
-\[|f(z_1)-f(z_2)|<\varepsilon\]
-对每个$f\in\MCF$都成立，就$\MCF$说在$D$上是\textbf{等度连续}\index{D!等度连续}的.
+  设$\MCF$是域$D$上的一个函数族，如果对任意$\varepsilon>0$，存在$\delta>0$，当$z_1,z_2\in D$，且$|z_1-z_2|<\delta$时，有
+  \[
+    |f(z_1) - f(z_2)| < \varepsilon
+  \]
+  对每个$f\in\MCF$都成立，就$\MCF$说在$D$上是\textbf{等度连续}\index{D!等度连续}的.
 \end{definition}
 
 关于一致有界且等度连续的函数列，有下面的\textbf{Arzela--Ascoli定理}\index{D!定理!Arzela--Ascoli定理}：
 \begin{theorem}\label{thm7.1.4}
-设$K$是$\MC$中的紧集，$\{f_n\}$是在$K$上一致有界且等度连续的函数列，那么$\{f_n\}$必有子列在$K$上一致收敛.
+  设$K$是$\MC$中的紧集，$\{f_n\}$是在$K$上一致有界且等度连续的函数列，那么$\{f_n\}$必有子列在$K$上一致收敛.
 \end{theorem}
 \begin{proof}
-令$A\subset K$是可数集，且在$K$中稠密.记
-\[A=\{\zeta_1,\zeta_2,\cdots\}.\]
-由于$\{f_n(\zeta_1)\}$是有界数列，根据Bolzano--Weierstrass定理，从中可以取出收敛的子列，即有
-\[f_{n_1}^{(1)}(z),f_{n_2}^{(1)}(z),\cdots\]
-在$z=\zeta_1$处收敛；因为$\{f_{n_j}^{(1)}(\zeta_2)\}$有界，故有
-\[f_{n_1}^{(2)}(z),f_{n_2}^{(2)}(z),\cdots\]
-在$z=\zeta_2$处收敛.继续这样做下去，可得一串函数列：
-\begin{align*}
-&f_{n_1}^{(1)}(z),f_{n_2}^{(1)}(z),\cdots,f_{n_k}^{(1)}(z),\cdots;\\
-&\cdots;\\
-&f_{n_1}^{(s)}(z),f_{n_2}^{(s)}(z),\cdots,f_{n_k}^{(s)}(z),\cdots;\\
-&\cdots.
-\end{align*}
-其中，后一序列是前一序列的子列，第$s$个序列在
-\[\zeta_1,\zeta_2,\cdots,\zeta_s\]
-处收敛.现在取对角线序列
-\begin{equation}\label{eq7.1.1}
-f_{n_1}^{(1)}(z),\cdots,f_{n_2}^{(2)}(z),\cdots,f_{n_k}^{(k)}(z),\cdots,
-\end{equation}
-它在$A$中的每一点处都收敛.
+  令$A\subset K$是可数集，且在$K$中稠密.记
+  \[
+    A = \{\zeta_1,\zeta_2,\cdots\}.
+  \]
+  由于$\{f_n(\zeta_1)\}$是有界数列，根据Bolzano--Weierstrass定理，从中可以取出收敛的子列，即有
+  \[
+    f_{n_1}^{(1)}(z),f_{n_2}^{(1)}(z),\cdots
+  \]
+  在$z=\zeta_1$处收敛；因为$\{f_{n_j}^{(1)}(\zeta_2)\}$有界，故有
+  \[
+    f_{n_1}^{(2)}(z),f_{n_2}^{(2)}(z),\cdots
+  \]
+  在$z=\zeta_2$处收敛.继续这样做下去，可得一串函数列：
+  \begin{align*}
+    & f_{n_1}^{(1)}(z),f_{n_2}^{(1)}(z),\cdots,f_{n_k}^{(1)}(z),\cdots;\\
+    & \cdots;\\
+    & f_{n_1}^{(s)}(z),f_{n_2}^{(s)}(z),\cdots,f_{n_k}^{(s)}(z),\cdots;\\
+    & \cdots.
+  \end{align*}
+  其中，后一序列是前一序列的子列，第$s$个序列在
+  \[
+    \zeta_1,\zeta_2,\cdots,\zeta_s
+  \]
+  处收敛.现在取对角线序列
+  \begin{equation}\label{eq7.1.1}
+    f_{n_1}^{(1)}(z),\cdots,f_{n_2}^{(2)}(z),\cdots,f_{n_k}^{(k)}(z),\cdots,
+  \end{equation}
+  它在$A$中的每一点处都收敛.
 
-为符号简单起见，我们把函数列 \eqref{eq7.1.1} 记为$\{f_{n_k}\}$，它是$\{f_n\}$的一个子列，我们证明它在$K$上一致收敛.因为$\{f_n\}$在$K$上等度连续，故对任意$\varepsilon>0$，存在$\delta>0$，当$z_1,z_2\in K$，且$|z_1-z_2|<\delta$时，有$|f_n(z_1)-f_n(z_2)|<\varepsilon$对$n=1,2,\cdots$都成立.显然，$\bigcup_{z\in K}B\bigg(z,\frac\delta2\bigg)$是$K$的一个开覆盖，根据有限覆盖定理，可以选出有限个圆盘，设为
-$B\bigg(z_j,\frac\delta2\bigg),j=1,\cdots,n$来覆盖$K$.今取$\zeta_j\in B\bigg(z_j,\frac\delta2\bigg),j=1,\cdots,n$，由于$\{f_{n_k}(\zeta_j)\},j=1,\cdots,n$收敛，由Cauchy收敛原理，存在$N$，当$l,k>N$时，有
-\begin{equation}\label{eq7.1.2}
-|f_{n_l}(\zeta_j)-f_{n_k}(\zeta_j)|<\varepsilon,j=1,\cdots,n.
-\end{equation}
-今任取$z\in K,z$必定属于$B\bigg(z_j,\frac\delta2\bigg),j=1,\cdots,n$中的一个，不妨设$z\in B\bigg(z_p,\frac\delta2\bigg)$. 因为$\zeta_p\in B\bigg(z_p,\frac\delta2\bigg)$，于是$|z-\zeta_p|<\delta$，因而
-\begin{equation}\label{eq7.1.3}
-|f_n(z)-f_n(\zeta_p)|<\varepsilon,n=1,2,\cdots.
-\end{equation}
-由 \eqref{eq7.1.2} 式和 \eqref{eq7.1.3} 式即知，当$l,k>N$时，便有
-\begin{equation*}
-|f_{n_l}(z)-f_{n_k}(z)|\le|f_{n_l}(z)-f_{n_l}(\zeta_p)|+
-|f_{n_l}(\zeta_p)-f_{n_k}(\zeta_p)|+|f_{n_k}(\zeta_p)-f_{n_k}(z)|
-<3\varepsilon.
-\end{equation*}
-这就证明了$\{f_{n_k}\}$在$K$上一致收敛.
+  为符号简单起见，我们把函数列 \eqref{eq7.1.1} 记为$\{f_{n_k}\}$，它是$\{f_n\}$的一个子列，我们证明它在$K$上一致收敛.因为$\{f_n\}$在$K$上等度连续，故对任意$\varepsilon>0$，存在$\delta>0$，当$z_1,z_2\in K$，且$|z_1-z_2|<\delta$时，有$|f_n(z_1)-f_n(z_2)|<\varepsilon$对$n=1,2,\cdots$都成立.显然，$\bigcup_{z\in K}B\bigg(z,\frac\delta2\bigg)$是$K$的一个开覆盖，根据有限覆盖定理，可以选出有限个圆盘，设为
+  $B\bigg(z_j,\frac\delta2\bigg),j=1,\cdots,n$来覆盖$K$.今取$\zeta_j\in B\bigg(z_j,\frac\delta2\bigg),j=1,\cdots,n$，由于$\{f_{n_k}(\zeta_j)\},j=1,\cdots,n$收敛，由Cauchy收敛原理，存在$N$，当$l,k>N$时，有
+  \begin{equation}\label{eq7.1.2}
+    |f_{n_l}(\zeta_j) - f_{n_k}(\zeta_j)| < \varepsilon, j=1,\cdots,n.
+  \end{equation}
+  今任取$z\in K,z$必定属于$B\bigg(z_j,\frac\delta2\bigg),j=1,\cdots,n$中的一个，不妨设$z\in B\bigg(z_p,\frac\delta2\bigg)$. 因为$\zeta_p\in B\bigg(z_p,\frac\delta2\bigg)$，于是$|z-\zeta_p|<\delta$，因而
+  \begin{equation}\label{eq7.1.3}
+    |f_n(z) - f_n(\zeta_p)| < \varepsilon,n=1,2,\cdots.
+  \end{equation}
+  由 \eqref{eq7.1.2} 式和 \eqref{eq7.1.3} 式即知，当$l,k>N$时，便有
+  \begin{equation*}
+    |f_{n_l}(z)-f_{n_k}(z)| \le |f_{n_l}(z)-f_{n_l}(\zeta_p)|+
+    |f_{n_l}(\zeta_p)-f_{n_k}(\zeta_p)|+|f_{n_k}(\zeta_p)-f_{n_k}(z)|
+    < 3\varepsilon.
+  \end{equation*}
+  这就证明了$\{f_{n_k}\}$在$K$上一致收敛.
 \end{proof}
 
 下面的Montel定理给出了全纯函数族是正规族的特征：
 \begin{theorem}[（\textbf{Montel}）]\label{thm7.1.5}\index{D!定理!Montel定理}
-设$\MCF$是域$D$上的全纯函数族，那么$\MCF$是正规族的充分必要条件是$\MCF$在$D$上内闭一致有界.
+  设$\MCF$是域$D$上的全纯函数族，那么$\MCF$是正规族的充分必要条件是$\MCF$在$D$上内闭一致有界.
 \end{theorem}
 \begin{proof}
-先证必要性.如果$\MCF$是$D$上的正规族，但不是内闭一致有界的，那么存在一个紧集$K\subset D$，使得
-\[\sup\{|f(z)|:z\in K,f\in\MCF\}=\infty.\]
-因而存在序列$\{f_n\}\subset \MCF$，使得
-\begin{equation}\label{eq7.1.4}
-\sup\{|f_n(z)|:z\in K\}\ge n.
-\end{equation}
-由于$\MCF$是$D$上的正规族，故在$\{f_n\}$中存在子列$\{f_{n_k}\}$，它在$D$上内闭一致收敛，设其极限函数为$f$，则当$k>k_0$时，$|f_{n_k}(z)-f(z)|<1$在$K$上成立. $f$是$D$上的全纯函数，当然在$K$上有界，不妨设$|f(z)|\le M$（$z\in K$）.于是，当$z\in K$且$k>k_0$时，有
-\begin{equation}\label{eq7.1.5}
-|f_{n_k}(z)|\le |f_{n_k}(z)-f(z)|+|f(z)|<M+1.
-\end{equation}
-由 \eqref{eq7.1.4} 和 \eqref{eq7.1.5} 式就得到$n_k\le M+1$的矛盾.
+  先证必要性.如果$\MCF$是$D$上的正规族，但不是内闭一致有界的，那么存在一个紧集$K\subset D$，使得
+  \[
+    \sup\{|f(z)|:z\in K,f\in\MCF\} = \infty.
+  \]
+  因而存在序列$\{f_n\}\subset \MCF$，使得
+  \begin{equation}\label{eq7.1.4}
+    \sup\{|f_n(z)|:z\in K\}\ge n.
+  \end{equation}
+  由于$\MCF$是$D$上的正规族，故在$\{f_n\}$中存在子列$\{f_{n_k}\}$，它在$D$上内闭一致收敛，设其极限函数为$f$，则当$k>k_0$时，$|f_{n_k}(z)-f(z)|<1$在$K$上成立. $f$是$D$上的全纯函数，当然在$K$上有界，不妨设$|f(z)|\le M$（$z\in K$）.于是，当$z\in K$且$k>k_0$时，有
+  \begin{equation}\label{eq7.1.5}
+    |f_{n_k}(z)| \le |f_{n_k}(z)-f(z)|+|f(z)|<M+1.
+  \end{equation}
+  由 \eqref{eq7.1.4} 和 \eqref{eq7.1.5} 式就得到$n_k\le M+1$的矛盾.
 
-现在证明充分性.任取$\{f_n\}\subset\MCF$，再取圆盘$\bar{B(z_0,r)}\subset D$，按假定，$\{f_n\}$在$\bar{B(z_0,r)}$上一致有界.利用引理 \ref{lemma4.1.8}，即知$\{f_n'\}$在$\bar{B(z_0,r)}$上也一致有界，不妨设$|f_n'|\le M,z\in\bar{B(z_0,r)},n=1,2,\cdots$. 对任意$\varepsilon>0$，取$\delta=\frac\varepsilon M$，当$z_1,z_2\in B(z_0,r)$，且$|z_1-z_2|<\delta$时，有
-\[|f_n(z_1)-f_n(z_2)|=\bigg|\int_{z_2}^{z_1}f_n'(z)\dz\bigg|\le M|z_1-z_2|<\varepsilon.\]
-这就证明了$\{f_n\}$在$B(z_0,r)$上等度连续. 今取任意紧集$K\subset D$，由于$K$可用有限个上面这种圆盘来覆盖，因而$\{f_n\}$在$K$上也是等度连续的，当然$\{f_n\}$在$K$上也是一致有界的.由定理 \ref{thm7.1.4}，$\{f_n\}$有子列$\{f_{n_k}\}$在$K$上一致收敛.为了取出在任意紧集上一致收敛的子列，取一列紧集$K_j$，使得
-\[K_1\subset K_2\subset\cdots\subset K_j\subset\cdots\to D.\]
-根据上面的讨论，先在$\{f_n\}$中取出在$K_1$上一致收敛的子列$\{f_{n_k}^{(1)}\}$，再从$\{f_{n_k}^{(1)}\}$中取出在$K_2$上一致收敛的子列$\{f_{n_k}^{(2)}\}$，继续这样做下去.最后，用对角线法即可取出在所有$K_j$上一致收敛的子列，这个子列便在任意紧集上一致收敛.
+  现在证明充分性.任取$\{f_n\}\subset\MCF$，再取圆盘$\bar{B(z_0,r)}\subset D$，按假定，$\{f_n\}$在$\bar{B(z_0,r)}$上一致有界.利用引理 \ref{lemma4.1.8}，即知$\{f_n'\}$在$\bar{B(z_0,r)}$上也一致有界，不妨设$|f_n'|\le M,z\in\bar{B(z_0,r)},n=1,2,\cdots$. 对任意$\varepsilon>0$，取$\delta=\frac\varepsilon M$，当$z_1,z_2\in B(z_0,r)$，且$|z_1-z_2|<\delta$时，有
+  \[
+    |f_n(z_1)-f_n(z_2)| = \bigg|\int_{z_2}^{z_1}f_n'(z)\dz\bigg| \le M|z_1-z_2| < \varepsilon.
+  \]
+  这就证明了$\{f_n\}$在$B(z_0,r)$上等度连续. 今取任意紧集$K\subset D$，由于$K$可用有限个上面这种圆盘来覆盖，因而$\{f_n\}$在$K$上也是等度连续的，当然$\{f_n\}$在$K$上也是一致有界的.由定理 \ref{thm7.1.4}，$\{f_n\}$有子列$\{f_{n_k}\}$在$K$上一致收敛.为了取出在任意紧集上一致收敛的子列，取一列紧集$K_j$，使得
+  \[
+    K_1\subset K_2 \subset\cdots\subset K_j\subset\cdots\to D.
+  \]
+  根据上面的讨论，先在$\{f_n\}$中取出在$K_1$上一致收敛的子列$\{f_{n_k}^{(1)}\}$，再从$\{f_{n_k}^{(1)}\}$中取出在$K_2$上一致收敛的子列$\{f_{n_k}^{(2)}\}$，继续这样做下去.最后，用对角线法即可取出在所有$K_j$上一致收敛的子列，这个子列便在任意紧集上一致收敛.
 \end{proof}
 
 \begin{xiti}
-\item 设$\{f_n\}$是域$D$上的全纯函数列，并且在$D$上内闭一致有界.证明：若$\lim_{n\to\infty}f_n(z)$在$D$上处处存在，则$\{f_n\}$在$D$上内闭一致收敛.
-\item 设$\{f_n\}$是域$D$上的全纯函数列，并且在$D$上内闭一致有界，$A=\{z=x+\ii y\in D:x,y\text{为有理数}\}$.证明：若$\lim_{n\to\infty}f_n(z)$在$A$上处处存在，则$\{f_n\}$在$D$上内闭一致收敛.
-\item （\textbf{Vitali定理}\index{D!定理!Vitali定理}）设$\{f_n\}$是域$D$上的全纯函数列，并且在$D$上内闭一致有界，$\{z_n\}$是$D$中彼此不同的点列，$\lim_{n\to\infty}z_n=z_0\in D$.证明：若$\lim_{n\to\infty}f_n(z)$在$\{z_n\}$上处处存在，则$\{f_n\}$在$D$上内闭一致收敛.
-\item 设$\MCF$是域$D$上的全纯函数族，$z_0\in D$.证明：若
-\begin{enuma}
-  \item $\Re f(z)\ge0,\forall z\in D,f\in\MCF$；
-  \item \label{xiti7.1.4.2}$f(z_0)=g(z_0),\forall f,g\in\MCF$，
-\end{enuma}
-则$\MCF$是$D$上的正规族.并举例说明条件 \ref{xiti7.1.4.2} 是不可去掉的.
-\item 设$\MCF$是域$D$上的正规全纯函数族，$g$是整函数。证明：
-$\{g\circ f:f\in\MCF\}$也是$D$上的正规族.
-\item 设$D$是有界域，$0<M<\infty$. 证明：
-\[\MCF=\bigg\{f\in H(D):\iint\limits_D|f(z)|^2\dx\dy\le M\bigg\}\]
-是$D$上的正规族.
-\item 设$\{f_n\}$是域$D$上的全纯函数列，并且在$D$上内闭一致有界.证明：若存在$z_0\in D$，使
-得$\lim_{n\to\infty}f_n(z_0)=A$存在，并且$f_n(D)\subset\MC\backslash\{A\}$（$n\in\MN$），则$\{f_n\}$在$D$上内闭一致收敛于常数$A$.
+  \item 设$\{f_n\}$是域$D$上的全纯函数列，并且在$D$上内闭一致有界.证明：若$\lim_{n\to\infty}f_n(z)$在$D$上处处存在，则$\{f_n\}$在$D$上内闭一致收敛.
+  \item 设$\{f_n\}$是域$D$上的全纯函数列，并且在$D$上内闭一致有界，$A=\{z=x+\ii y\in D:x,y\text{为有理数}\}$.证明：若$\lim_{n\to\infty}f_n(z)$在$A$上处处存在，则$\{f_n\}$在$D$上内闭一致收敛.
+  \item （\textbf{Vitali定理}\index{D!定理!Vitali定理}）设$\{f_n\}$是域$D$上的全纯函数列，并且在$D$上内闭一致有界，$\{z_n\}$是$D$中彼此不同的点列，$\lim_{n\to\infty}z_n=z_0\in D$.证明：若$\lim_{n\to\infty}f_n(z)$在$\{z_n\}$上处处存在，则$\{f_n\}$在$D$上内闭一致收敛.
+  \item 设$\MCF$是域$D$上的全纯函数族，$z_0\in D$.证明：若
+    \begin{enuma}
+      \item $\Re f(z)\ge0,\forall z\in D,f\in\MCF$；
+      \item \label{xiti7.1.4.2}$f(z_0)=g(z_0),\forall f,g\in\MCF$，
+    \end{enuma}
+    则$\MCF$是$D$上的正规族.并举例说明条件 \ref{xiti7.1.4.2} 是不可去掉的.
+  \item 设$\MCF$是域$D$上的正规全纯函数族，$g$是整函数。证明：
+    $\{g\circ f:f\in\MCF\}$也是$D$上的正规族.
+  \item 设$D$是有界域，$0<M<\infty$. 证明：
+    \[
+      \MCF = \bigg\{f\in H(D):\iint\limits_D|f(z)|^2\dx\dy\le M\bigg\}
+    \]
+    是$D$上的正规族.
+  \item 设$\{f_n\}$是域$D$上的全纯函数列，并且在$D$上内闭一致有界.证明：若存在$z_0\in D$，使
+    得$\lim_{n\to\infty}f_n(z_0)=A$存在，并且$f_n(D)\subset\MC\backslash\{A\}$（$n\in\MN$），则$\{f_n\}$在$D$上内闭一致收敛于常数$A$.
 \end{xiti}
 
 \section{Riemann映射定理\label{sec7.2}}
 现在可以证明下面的Riemann映射定理：
 \begin{theorem}[（\textbf{Riemann}）]\label{thm7.2.1}\index{D!定理!Riemann映射定理}
-设$G$是$\MC$中的单连通域，$G\ne\MC$.对于$G$中的任意点$a$，存在唯一的函数$f:G\to\MC$，使得
-\begin{eenum}
-  \item $f$在$G$中全纯且单叶；
-  \item $f(a)=0,f'(a)>0$；
-  \item $f(G)=B(0,1)$.
-\end{eenum}
+  设$G$是$\MC$中的单连通域，$G\ne\MC$.对于$G$中的任意点$a$，存在唯一的函数$f:G\to\MC$，使得
+  \begin{eenum}
+    \item $f$在$G$中全纯且单叶；
+    \item $f(a)=0,f'(a)>0$；
+    \item $f(G)=B(0,1)$.
+  \end{eenum}
 \end{theorem}
 \begin{proof}
-证明分下面四步进行：
+  证明分下面四步进行：
 
-(1) \hypertarget{thm7.2.1.1}{} 作一函数$\varphi:G\to\MC$，它在$G$中是全纯且单叶的，使得$\varphi(G)$是一有界域.事实上，因为$G\ne\MC$，故存在$b\notin G,b\ne\infty$. 在$G$中取
-$\sqrt{z-b}$的单值全纯分支，记为$g(z)=\sqrt{z-b}$.显然，它在$G$中是单叶的.设$g(G)=E$，则由第 \ref{chap4} 章定理 \ref{thm4.4.6} 知，$E$是$\MC$中的域. $E$有一个简单的性质：如果$w\in E$，那么$-w\notin E$.因为如果$-w\in E$，则有$z_1,z_2\in G$，使得$\sqrt{z_1-b}=w,\sqrt{z_2-b}=-w$.两边平方后即得$z_1=z_2$，因而$w=-w$，即$w=0$.这是不可能的，因为$g$在$G$中没有零点.因为$a\in G$，所以$g(a)$是$E$的内点，故存在$\delta>0$，使得$B\big(g(a),\delta\big)\subset E$，因而$B\big(-g(a),\delta\big)\subset\MC\backslash E$.于是，当$z\in G$时，便有$|g(z)+g(a)|>\delta$.令
-\[\varphi(z)=\frac1{g(z)+g(a)},\]
-则当$z\in G$时，$|\varphi(z)|<\frac1\delta$，即$\varphi(G)\subset B\bigg(0,\frac1\delta\bigg)$，这说明$\varphi(G)$是一个有界域.
+  (1) \hypertarget{thm7.2.1.1}{} 作一函数$\varphi:G\to\MC$，它在$G$中是全纯且单叶的，使得$\varphi(G)$是一有界域.事实上，因为$G\ne\MC$，故存在$b\notin G,b\ne\infty$. 在$G$中取
+  $\sqrt{z-b}$的单值全纯分支，记为$g(z)=\sqrt{z-b}$.显然，它在$G$中是单叶的.设$g(G)=E$，则由第 \ref{chap4} 章定理 \ref{thm4.4.6} 知，$E$是$\MC$中的域. $E$有一个简单的性质：如果$w\in E$，那么$-w\notin E$.因为如果$-w\in E$，则有$z_1,z_2\in G$，使得$\sqrt{z_1-b}=w,\sqrt{z_2-b}=-w$.两边平方后即得$z_1=z_2$，因而$w=-w$，即$w=0$.这是不可能的，因为$g$在$G$中没有零点.因为$a\in G$，所以$g(a)$是$E$的内点，故存在$\delta>0$，使得$B\big(g(a),\delta\big)\subset E$，因而$B\big(-g(a),\delta\big)\subset\MC\backslash E$.于是，当$z\in G$时，便有$|g(z)+g(a)|>\delta$.令
+  \[
+    \varphi(z) = \frac1{g(z) + g(a)},
+  \]
+  则当$z\in G$时，$|\varphi(z)|<\frac1\delta$，即$\varphi(G)\subset B\bigg(0,\frac1\delta\bigg)$，这说明$\varphi(G)$是一个有界域.
 
-(2) \hypertarget{thm7.2.1.2}{} 由步骤 \hyperlink{thm7.2.1.1}{(1)} 所证，我们不妨假定$G$是有界域.在$G$上定义函数族
-\[\MCF=\{f:f\mbox{在$G$上全纯且单叶},f(a)=0,f'(a)>0,f(G)\subset B(0,1)\}.\]
-我们首先证明$\MCF$不是空集.事实上，因为$G$是有界域，故存在$R>0$，使得$G\subset B(0,R)$.若令
-\[f(z)=\frac1{2R}(z-a),\]
-由于$|f(z)|\le\frac1{2R}(|z|+|a|)<1$，故$f\in\MCF$，这证明$\MCF$非空.
+  (2) \hypertarget{thm7.2.1.2}{} 由步骤 \hyperlink{thm7.2.1.1}{(1)} 所证，我们不妨假定$G$是有界域.在$G$上定义函数族
+  \[
+    \MCF = \{f:f\mbox{在$G$上全纯且单叶},f(a)=0,f'(a)>0,f(G)\subset B(0,1)\}.
+  \]
+  我们首先证明$\MCF$不是空集.事实上，因为$G$是有界域，故存在$R>0$，使得$G\subset B(0,R)$.若令
+  \[
+    f(z) = \frac1{2R}(z-a),
+  \]
+  由于$|f(z)|\le\frac1{2R}(|z|+|a|)<1$，故$f\in\MCF$，这证明$\MCF$非空.
 
-现取$r>0$，使得$B(a,r)\subset G$.根据Cauchy不等式，对任意$f\in \MCF$，有
-\[f'(a)<\frac1r\sup\{|f(z)|:z\in B(a,r)\}<\frac1r.\]
-这说明数集$\{f'(a):f\in\MCF\}$有上界，设$M$为其上确界，则
-\[M=\sup\{f'(a):f\in\MCF\}<\infty.\]
-下面我们证明，存在$f_\ast\in \MCF$，使得$f_\ast'(a)=M$.事实上，存在$f_n\in\MCF$，使得$\lim_{n\to\infty}f_n'(a)=M $. 由于$\MCF$在$G$上一致有界，因而由定理 \ref{thm7.1.5}，它是一个正规族，故在$\{f_n\}$中可以取出在$G$上内闭一致收敛的子列$\{f_{n_k}\}$，设其极限函数为$f_\ast$，即
-\begin{equation}\label{eq7.2.1}
-\lim_{k\to\infty}f_{n_k}(z)=f_\ast(z).
-\end{equation}
-由Weierstrass定理，$f_\ast\in H(G)$，且
-\begin{equation}\label{eq7.2.2}
-\lim_{k\to\infty} f_{n_k}'(z)=f_\ast'(z).
-\end{equation}
-由 \eqref{eq7.2.2} 式及$\lim_{k\to\infty}f_{n_k}'(a)=M$，即得
-\begin{equation}\label{eq7.2.3}
-f_\ast'(a)=M.
-\end{equation}
-现在证明$f_\ast\in\MCF$.因为每一个$f_{n_k}$都是$G$中的单叶全纯函数，由 \eqref{eq7.2.3} 式知$f_\ast'$不是常数，由定理 \ref{thm4.4.11} 知道$f_\ast$也是$G$中的单叶全纯函数.由 \eqref{eq7.2.1} 式易知$f_\ast(a)=0$，且$|f_\ast(z)|\le1,z\in G$.由最大模原理，$|f_\ast(z)|=1$不能成立，因而只有$|f_\ast(z)|<1$.这就证明了$f_\ast\in\MCF$.
+  现取$r>0$，使得$B(a,r)\subset G$.根据Cauchy不等式，对任意$f\in \MCF$，有
+  \[
+    f'(a) < \frac1r\sup\{|f(z)|:z\in B(a,r)\}<\frac1r.
+  \]
+  这说明数集$\{f'(a):f\in\MCF\}$有上界，设$M$为其上确界，则
+  \[
+    M = \sup\{f'(a):f\in\MCF\}<\infty.
+  \]
+  下面我们证明，存在$f_\ast\in \MCF$，使得$f_\ast'(a)=M$.事实上，存在$f_n\in\MCF$，使得$\lim_{n\to\infty}f_n'(a)=M $. 由于$\MCF$在$G$上一致有界，因而由定理 \ref{thm7.1.5}，它是一个正规族，故在$\{f_n\}$中可以取出在$G$上内闭一致收敛的子列$\{f_{n_k}\}$，设其极限函数为$f_\ast$，即
+  \begin{equation}\label{eq7.2.1}
+    \lim_{k\to\infty}f_{n_k}(z) = f_\ast(z).
+  \end{equation}
+  由Weierstrass定理，$f_\ast\in H(G)$，且
+  \begin{equation}\label{eq7.2.2}
+    \lim_{k\to\infty} f_{n_k}'(z) = f_\ast'(z).
+  \end{equation}
+  由 \eqref{eq7.2.2} 式及$\lim_{k\to\infty}f_{n_k}'(a)=M$，即得
+  \begin{equation}\label{eq7.2.3}
+    f_\ast'(a) = M.
+  \end{equation}
+  现在证明$f_\ast\in\MCF$.因为每一个$f_{n_k}$都是$G$中的单叶全纯函数，由 \eqref{eq7.2.3} 式知$f_\ast'$不是常数，由定理 \ref{thm4.4.11} 知道$f_\ast$也是$G$中的单叶全纯函数.由 \eqref{eq7.2.1} 式易知$f_\ast(a)=0$，且$|f_\ast(z)|\le1,z\in G$.由最大模原理，$|f_\ast(z)|=1$不能成立，因而只有$|f_\ast(z)|<1$.这就证明了$f_\ast\in\MCF$.
 
-(3) \hypertarget{thm7.2.1.3}{} 现在证明$f_\ast$即是定理中要找的函数，即要证明$f_\ast(G)=B(0,1)$.如果不是这样，设
-\[f_\ast(G)=G_1\subset B(0,1),\]
-那么$G_1$是$B(0,1)$中的一个单连通域，但$G_1\ne B(0,1)$.因而存在$u_0\in B(0,1),u_0\notin G_1$，由此即可引出一个矛盾.为此，令
-\[v=\varphi_{u_0}=\frac{u_0-u}{1-\bar{u_0}u},\]
-于是
-\begin{align*}
-&\varphi_{u_0}(u_0)=0,\\
-&\varphi_{u_0}'(0)=-(1-|u_0|^2).
-\end{align*}
-$\varphi_{u_0}$把$G_1$映为$B(0,1)$中的单连通域$G_2$，把$u_0$映为原点，把原点映为$v_0=u_0$，所以$O\notin G_2$.再令
-\[s=p(v)=\sqrt v,\]
-于是
-\begin{align*}
-&s_0=p(v_0)=\sqrt{v_0},\\
-&p'(v_0)=\frac1{2\sqrt{v_0}}.
-\end{align*}
-它在$G_2$中能分出单值全纯的分支，记$p(G_2)=G_3$，则$G_3$是$B(0,1)$中的单连通域，$O\notin G_3$.最后，令
-\[w=q(s)=\frac{s_0}{|s_0|}\varphi_{s_0}(s),\]
-于是
-\[q'(s_0)=-\frac{s_0}{|s_0|}\frac1{1-|s_0|^2}.\]
-它把$G_3$映为$B(0,1)$中的单连通域$G_4$，把$s_0$映为原点.于是，复合函数
-\[w=(q\circ p\circ\varphi_{u_0}\circ f_\ast)(z)=w(z)\]
-\begin{figure}[!ht]
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=0.9,
->={Stealth[width=3pt]}]
-\begin{scope}[xshift=-5.5cm]
-\draw[rotate=55](0,0)ellipse(2.5 and 1.2);
-\fill(60:1.6)circle(1pt)node[above right]{$a$};
-\draw(-120:1.8)node{$G$}(0,-2.2)node{$z$};
-\end{scope}
-\draw[->](-3.9,0)--node[below]{$u=f_\ast (z)$}(-2.3,0);
-\draw(0,0)circle(2);
-\fill(0,0)node[below left]{$O$}circle(1pt)(1.2,0.1)circle(1pt)node[below]{$u_0$};
-\draw[rotate=100](0,0)ellipse(1.2 and 0.7);
-\draw(-0.1,-0.7)node{$G_1$};
-\draw[->](2.3,0)--node[below]{$v=\varphi_{u_0(u)}$}(3.9,0);
-\node at(0,-2.2){$u$};
-\begin{scope}[xshift=6.1cm]
-\draw(0,0)circle(2);
-\fill(0,0)node[left]{$O$}circle(1pt)(95:1.2)node[right]{$v_0$}circle(1pt);
-\draw(0.1,-1.1)node{$G_2$};
-\draw(-0.1,-0.4)arc(100:260:0.65)arc(-100:90:1.65)arc(90:140:1.1)
-arc(140:270:0.45)arc(90:20:0.6)arc(20:0:0.1)[bend left=40]to(-0.1,-0.4);
-\node at(0,-2.2){$v$};
-\end{scope}
-\begin{scope}[yshift=-4.5cm]
-\draw[->](-6,0)--node[below]{$s=p(v)$}(-4.6,0);
-\draw[->](0.2,0)--node[below]{$w=q(s)$}(1.6,0);
-\begin{scope}[xshift=-2.2cm]
-\draw(0,0)node[left]{$O$}circle(2)(70:1)node[right]{$s_0$}(-0.1,-1.1)node{$G_3$};
-\draw(-0.1,-0.6)[bend right=5]to(-0.8,-0.6)arc(100:180:0.15)
-arc(180:230:0.9)arc(-130:10:1.35)arc(10:40:2.4)
-arc(40:100:1)arc(100:240:0.5)arc(60:20:1)arc(20:-50:0.3)
-[bend left=20]to(-0.1,-0.6);
-\node at(0,-2.2){$s$};
-\fill(0,0)circle(1pt)(70:1)circle(1pt);
-\end{scope}
-\begin{scope}[xshift=4cm]
-\draw(0,0)node[below]{$O$}circle(2);
-\draw[rotate=70](-0.2,-0.2)ellipse(1.3 and 1);
-\node at(0,-2.2){$w$};
-\fill(0,0)circle(1pt);\node at(-0.1,-1.2){$G_4$};
-\end{scope}
-\end{scope}
-\end{tikzpicture}
-\caption{\label{fig7.1}}
-\end{figure}
-把$G$映为$G_4$，且$w(a)=0$（见图 \ref{fig7.1}）. $w(z)$显然是$G$上的单叶全纯函数.现在来计算$w'(a)$，根据复合函数的求导法则，有
-\begin{align*}
-w'(a)&=q'(s_0)p'(v_0)\varphi_{u_0}'(0)f_\ast'(a)\\
-&=\frac{s_0}{|s_0|}\frac1{1-|s_0|^2}\frac1{2\sqrt{v_0}}(1-|u_0|^2)M\\
-&=\frac{1-|u_0|^2}{2|s_0|(1-|s_0|^2)}M>0.
-\end{align*}
-所以$w\in\MCF$. 若记$u_0=\rho\ee^{\ii\theta}$，则$v_0=-u_0=\rho\ee^{\ii(\theta+\pi)},|s_0|=\big|\sqrt{v_0}\big|=\sqrt\rho
-,1-|s_0|^2=1-\rho$，因而
-\[w'(a)=\frac{1-\rho^2}{2\sqrt\rho(1-\rho)}M=\frac{1+\rho}{2\sqrt\rho}M>M.\]
-这就是说，我们在$\MCF$中找到了一个函数$w$，它在$a$点的导数大于$M$，这是不可能的.这个矛盾说明假设不成立，于是$f_\ast(G)=B(0,1)$.
+  (3) \hypertarget{thm7.2.1.3}{} 现在证明$f_\ast$即是定理中要找的函数，即要证明$f_\ast(G)=B(0,1)$.如果不是这样，设
+  \[
+    f_\ast(G) = G_1\subset B(0,1),
+  \]
+  那么$G_1$是$B(0,1)$中的一个单连通域，但$G_1\ne B(0,1)$.因而存在$u_0\in B(0,1),u_0\notin G_1$，由此即可引出一个矛盾.为此，令
+  \[
+    v = \varphi_{u_0} = \frac{u_0-u}{1-\bar{u_0}u},
+  \]
+  于是
+  \begin{align*}
+    & \varphi_{u_0}(u_0) = 0,\\
+    & \varphi_{u_0}'(0) = -(1-|u_0|^2).
+  \end{align*}
+  $\varphi_{u_0}$把$G_1$映为$B(0,1)$中的单连通域$G_2$，把$u_0$映为原点，把原点映为$v_0=u_0$，所以$O\notin G_2$.再令
+  \[
+    s = p(v) = \sqrt v,
+  \]
+  于是
+  \begin{align*}
+    & s_0 = p(v_0) = \sqrt{v_0},\\
+    & p'(v_0) = \frac1{2\sqrt{v_0}}.
+  \end{align*}
+  它在$G_2$中能分出单值全纯的分支，记$p(G_2)=G_3$，则$G_3$是$B(0,1)$中的单连通域，$O\notin G_3$.最后，令
+  \[
+    w = q(s) = \frac{s_0}{|s_0|}\varphi_{s_0}(s),
+  \]
+  于是
+  \[
+    q'(s_0) = -\frac{s_0}{|s_0|}\frac1{1-|s_0|^2}.
+  \]
+  它把$G_3$映为$B(0,1)$中的单连通域$G_4$，把$s_0$映为原点.于是，复合函数
+  \[
+    w = (q\circ p\circ\varphi_{u_0}\circ f_\ast)(z) = w(z)
+  \]
+  \begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=0.9,
+      >={Stealth[width=3pt]}]
+      \begin{scope}[xshift=-5.5cm]
+        \draw[rotate=55](0,0)ellipse(2.5 and 1.2);
+        \fill(60:1.6)circle(1pt)node[above right]{$a$};
+        \draw(-120:1.8)node{$G$}(0,-2.2)node{$z$};
+      \end{scope}
+      \draw[->](-3.9,0)--node[below]{$u=f_\ast (z)$}(-2.3,0);
+      \draw(0,0)circle(2);
+      \fill(0,0)node[below left]{$O$}circle(1pt)(1.2,0.1)circle(1pt)node[below]{$u_0$};
+      \draw[rotate=100](0,0)ellipse(1.2 and 0.7);
+      \draw(-0.1,-0.7)node{$G_1$};
+      \draw[->](2.3,0)--node[below]{$v=\varphi_{u_0(u)}$}(3.9,0);
+      \node at(0,-2.2){$u$};
+      \begin{scope}[xshift=6.1cm]
+        \draw(0,0)circle(2);
+        \fill(0,0)node[left]{$O$}circle(1pt)(95:1.2)node[right]{$v_0$}circle(1pt);
+        \draw(0.1,-1.1)node{$G_2$};
+        \draw(-0.1,-0.4)arc(100:260:0.65)arc(-100:90:1.65)arc(90:140:1.1)
+           arc(140:270:0.45)arc(90:20:0.6)arc(20:0:0.1)[bend left=40]to(-0.1,-0.4);
+        \node at(0,-2.2){$v$};
+      \end{scope}
+      \begin{scope}[yshift=-4.5cm]
+        \draw[->](-6,0)--node[below]{$s=p(v)$}(-4.6,0);
+        \draw[->](0.2,0)--node[below]{$w=q(s)$}(1.6,0);
+        \begin{scope}[xshift=-2.2cm]
+          \draw(0,0)node[left]{$O$}circle(2)(70:1)node[right]{$s_0$}(-0.1,-1.1)node{$G_3$};
+          \draw(-0.1,-0.6)[bend right=5]to(-0.8,-0.6)arc(100:180:0.15)
+            arc(180:230:0.9)arc(-130:10:1.35)arc(10:40:2.4)
+            arc(40:100:1)arc(100:240:0.5)arc(60:20:1)arc(20:-50:0.3)
+            [bend left=20]to(-0.1,-0.6);
+          \node at(0,-2.2){$s$};
+          \fill(0,0)circle(1pt)(70:1)circle(1pt);
+        \end{scope}
+        \begin{scope}[xshift=4cm]
+          \draw(0,0)node[below]{$O$}circle(2);
+          \draw[rotate=70](-0.2,-0.2)ellipse(1.3 and 1);
+          \node at(0,-2.2){$w$};
+          \fill(0,0)circle(1pt);\node at(-0.1,-1.2){$G_4$};
+        \end{scope}
+      \end{scope}
+    \end{tikzpicture}
+    \caption{\label{fig7.1}}
+  \end{figure}
+  把$G$映为$G_4$，且$w(a)=0$（见图 \ref{fig7.1}）. $w(z)$显然是$G$上的单叶全纯函数.现在来计算$w'(a)$，根据复合函数的求导法则，有
+  \begin{align*}
+    w'(a) & = q'(s_0)p'(v_0)\varphi_{u_0}'(0)f_\ast'(a)\\
+    & = \frac{s_0}{|s_0|}\frac1{1-|s_0|^2}\frac1{2\sqrt{v_0}}(1-|u_0|^2)M\\
+    & = \frac{1-|u_0|^2}{2|s_0|(1-|s_0|^2)}M>0.
+  \end{align*}
+  所以$w\in\MCF$. 若记$u_0=\rho\ee^{\ii\theta}$，则$v_0=-u_0=\rho\ee^{\ii(\theta+\pi)},|s_0|=\big|\sqrt{v_0}\big|=\sqrt\rho
+  ,1-|s_0|^2=1-\rho$，因而
+  \[
+    w'(a) = \frac{1-\rho^2}{2\sqrt\rho(1-\rho)}M = \frac{1+\rho}{2\sqrt\rho}M > M.
+  \]
+  这就是说，我们在$\MCF$中找到了一个函数$w$，它在$a$点的导数大于$M$，这是不可能的.这个矛盾说明假设不成立，于是$f_\ast(G)=B(0,1)$.
+
+
+  (4) \hyperlink{thm7.2.1.4}{} 最后证明满足定理中三个条件的$f$是唯一的.如果还有函数$g$也满足这三个条件，令
+  \[
+    h = f\circ g^{-1},
+  \]
+  那么$h\big(B(0,1)\big)=B(0,1)$，因而$h\in\Aut\big(B(0,1)\big)$. 又因$h(0)=0$，因而由第 \ref{chap4} 章定理 \ref{thm4.5.5} 知道
+  \[
+    h(z) = \ee^{\ii\theta}z.
+  \]
+  但由于$h'(0)=\frac{f'(a)}{g'(a)}>0$，即知$h(z)=z$，从而
+  \begin{equation*}
+    f(z) \equiv g(z),z\in G.
+  \end{equation*}
 \end{proof}
-
-(4) \hyperlink{thm7.2.1.4}{} 最后证明满足定理中三个条件的$f$是唯一的.如果还有函数$g$也满足这三个条件，令
-\[h=f\circ g^{-1},\]
-那么$h\big(B(0,1)\big)=B(0,1)$，因而$h\in\Aut\big(B(0,1)\big)$. 又因$h(0)=0$，因而由第 \ref{chap4} 章定理 \ref{thm4.5.5} 知道
-\[h(z)=\ee^{\ii\theta}z.\]
-但由于$h'(0)=\frac{f'(a)}{g'(a)}>0$，即知$h(z)=z$，从而
-\begin{equation*}
-f(z)\equiv g(z),z\in G.
-\end{equation*}
 
 由Riemann定理立刻可得
 \begin{theorem}\label{thm7.2.2}
-设$G$和$D$是$\MC$中的两个单连通域，如果它们都不是整个平面$\MC$，那么对于给定的$z_0\in G$和$w_0\in D$，存在唯一的函数$f$，它在$G$上单叶且全纯，$f(z_0)=w_0,f'(z_0)>0$，且$f(G)=D$.
+  设$G$和$D$是$\MC$中的两个单连通域，如果它们都不是整个平面$\MC$，那么对于给定的$z_0\in G$和$w_0\in D$，存在唯一的函数$f$，它在$G$上单叶且全纯，$f(z_0)=w_0,f'(z_0)>0$，且$f(G)=D$.
 \end{theorem}
 \begin{proof}
-由Riemann映射定理，存在唯一的全纯函数$g$，使得$\zeta=g(z)$把$G$一一地映为$|\zeta|<1$，且$g(z_0)=0,g'(z_0)>0$.同样道理，存在唯一的全纯函数$\zeta=h(w)$，它把$D$一一地映为$|\zeta|<1$，且$h(w_0)=0,h'(w_0)>0$.于是，函数$w=(h^{-1}\circ g)(z)=f(z)$即是符合定理条件的函数.
+  由Riemann映射定理，存在唯一的全纯函数$g$，使得$\zeta=g(z)$把$G$一一地映为$|\zeta|<1$，且$g(z_0)=0,g'(z_0)>0$.同样道理，存在唯一的全纯函数$\zeta=h(w)$，它把$D$一一地映为$|\zeta|<1$，且$h(w_0)=0,h'(w_0)>0$.于是，函数$w=(h^{-1}\circ g)(z)=f(z)$即是符合定理条件的函数.
 \end{proof}
 
 这个定理断言，两个异于$\MC$的单连通域是全纯等价的.已经知道单连通域和多连通域一定不全纯等价，那么两个$n$（$n>1$）连通域是不是全纯等价呢?一般来说，答案是否定的.例 \ref{exam6.1.6} 已为我们提供了这样的例子：即使两个最简单的二连通域——两个同心圆环$D=\{z\in\MC:r_1<|z|<r_2\}$和$G=\{w\in\MC:R_1<|w| <R_2\}$全纯等价也是有条件的，要求它们满足$\frac{r_2}{r_1}=\frac{R_2}{R_1}$.这从另一个角度说明了Riemann映射定理的重要性.
 
 \begin{xiti}\hypertarget{xiti7.2}{}
-\item （\textbf{推广的Liouville定理}\index{D!定理!推广的Liouville定理}）设$D$是异于$\MC$的单连通域. 证明：若$f$是整函数，并且$f(\MC)\subset D$，则$f$是常值函数.
-\item 设$D$是异于$\MC$的单连通域，$a\in D$.证明：若$f$将$D$双全纯地映为$B(0,1)$，并且$f(a)=0,f'(a)>0$，则
-    \[\min_{z\in\partial D}|z-a|\le\frac1{f'(a)}\le\max_{z\in\partial D}|z-a|.\]
-称$\frac1{f'(a)}$为$D$在$a$处的\textbf{映射半径}.\index{Y!映射半径}
-\item 设$D$是异于$\MC$的单连通域，$a\in D$，$f$将$D$双全纯地映为$B(0,1)$，并且$f(a)=0,f'(a)>0$.证明：若$g$将$D$双全纯地映为$B(0,1),p=g^{-1}(0)$，则
-    \[g(z)=\frac{g'(a)}{|g'(a)|}\frac{f(z)-f(p)}{1-\bar{f(p)}f(z)}.\]
-\item 设$D$为异于$\MC$的凸域，$a\in D,\MCF=\{f\in H(D):f(a)=0,f'(a)>0\}$.证明：$\MCF$中满足$f(D)=B(0,1)$和$\Re f'(z)\ge0$（$\forall z\in D$）的$f$最多只有一个.
-\item 设$D$是异于$\MC$的单连通域，$a\in D$，$R$为$D$在$a$处的映射半径.证明：若$F\in H(D) $，$F(a)=0,F'(a)=1$，则$\sup_{z\in D}|F(z)|\ge R$.等号成立当且仅当$F$是将$D$映为$B(0,R)$的双全纯映射.
-\item 证明：
-\begin{enuma}
-  \item 存在$B(0,1)$上的全纯函数$f$，使得$f\big(B(0,1)\big)=\MC$；
-  \item 对于$a\in \MC$，存在$B(0,1)$上的全纯函数$f$，使得$f\big(B(0,1)\big)=\MC\backslash\{a\}$.
-\end{enuma}
-      并将这里的结论与习题 \hyperlink{xiti6.3}{6.3} 的第 \hyperlink{xiti6.3.3}{3} 题和第 \hyperlink{xiti6.3.3}{4} 题作比较.
-\item 设$D$是异于$\MC$的单连通域，$a\in D$，$R$为$D$在$a$处的映射半径.证明：若$F\in H(D)$，$F(a)=0,F'(a)=1$，则
-    \[\iint\limits_D|F'(z)|^2\dx\dy\ge\pi R^2.\]
-等号成立当且仅当$F$是将$D$映为$B(0,R)$的双全纯映射.
+  \item （\textbf{推广的Liouville定理}\index{D!定理!推广的Liouville定理}）设$D$是异于$\MC$的单连通域. 证明：若$f$是整函数，并且$f(\MC)\subset D$，则$f$是常值函数.
+  \item 设$D$是异于$\MC$的单连通域，$a\in D$.证明：若$f$将$D$双全纯地映为$B(0,1)$，并且$f(a)=0,f'(a)>0$，则
+      \[
+        \min_{z\in\partial D}|z-a| \le \frac1{f'(a)}\le\max_{z\in\partial D}|z-a|.
+      \]
+      称$\frac1{f'(a)}$为$D$在$a$处的\textbf{映射半径}.\index{Y!映射半径}
+  \item 设$D$是异于$\MC$的单连通域，$a\in D$，$f$将$D$双全纯地映为$B(0,1)$，并且$f(a)=0,f'(a)>0$.证明：若$g$将$D$双全纯地映为$B(0,1),p=g^{-1}(0)$，则
+      \[
+        g(z) = \frac{g'(a)}{|g'(a)|}\frac{f(z)-f(p)}{1-\bar{f(p)}f(z)}.
+      \]
+  \item 设$D$为异于$\MC$的凸域，$a\in D,\MCF=\{f\in H(D):f(a)=0,f'(a)>0\}$.证明：$\MCF$中满足$f(D)=B(0,1)$和$\Re f'(z)\ge0$（$\forall z\in D$）的$f$最多只有一个.
+  \item 设$D$是异于$\MC$的单连通域，$a\in D$，$R$为$D$在$a$处的映射半径.证明：若$F\in H(D) $，$F(a)=0,F'(a)=1$，则$\sup_{z\in D}|F(z)|\ge R$.等号成立当且仅当$F$是将$D$映为$B(0,R)$的双全纯映射.
+  \item 证明：
+    \begin{enuma}
+      \item 存在$B(0,1)$上的全纯函数$f$，使得$f\big(B(0,1)\big)=\MC$；
+      \item 对于$a\in \MC$，存在$B(0,1)$上的全纯函数$f$，使得$f\big(B(0,1)\big)=\MC\backslash\{a\}$.
+    \end{enuma}
+       并将这里的结论与习题 \hyperlink{xiti6.3}{6.3} 的第 \hyperlink{xiti6.3.3}{3} 题和第 \hyperlink{xiti6.3.3}{4} 题作比较.
+  \item 设$D$是异于$\MC$的单连通域，$a\in D$，$R$为$D$在$a$处的映射半径.证明：若$F\in H(D)$，$F(a)=0,F'(a)=1$，则
+       \[
+         \iint\limits_D|F'(z)|^2\dx\dy\ge\pi R^2.
+       \]
+       等号成立当且仅当$F$是将$D$映为$B(0,R)$的双全纯映射.
 \end{xiti}
 
 \section{边界对应定理\label{sec7.3}}
 Riemann映射定理断言，一定存在双全纯映射$f$把任一单连通域$G$（整个平面$\MC$除外）一一地映为单位圆盘$B(0,1)$.一个自然的问题是，$f$在把$G$映为$B(0,1)$的同时，是否也把$G$的边界$\partial G$映为单位圆盘的边界?一般来说，一个域的边界可以是相当复杂的，下面只就$G$的边界是一条简单闭曲线的情形来回答上面的问题.
 \begin{theorem}[（\textbf{边界对应定理}）]\label{thm7.3.1}\index{D!定理!边界对应定理}
-设$G$是由一条简单闭曲线$\Gamma$所围成的域，如果$w=f(z)$把$G$双全纯地映为$B(0,1)$，那么$f$的定义可扩充到$\Gamma$上，使得$f\in C(\bar G)$，且把$\Gamma$一一地映为$|w|=1$，$\Gamma$关于$G$的正向对应于$f(\Gamma)$关于$B(0,1)$的正向.
+  设$G$是由一条简单闭曲线$\Gamma$所围成的域，如果$w=f(z)$把$G$双全纯地映为$B(0,1)$，那么$f$的定义可扩充到$\Gamma$上，使得$f\in C(\bar G)$，且把$\Gamma$一一地映为$|w|=1$，$\Gamma$关于$G$的正向对应于$f(\Gamma)$关于$B(0,1)$的正向.
 \end{theorem}
 \begin{proof}
-证明分下面四步进行：
+  证明分下面四步进行：
 
-(1) \hypertarget{thm7.3.1.1}{} 先证明对于任意$\zeta\in\partial G,\lim_{\substack{z\to\zeta\\z\in G}}f(z)$存在.为此只要证明，如果$\lim_{z_n\to\zeta}f(z_n)=a,\lim_{z_n'\to\zeta}f(z_n')=b$，则必有$a=b$.
+  (1) \hypertarget{thm7.3.1.1}{} 先证明对于任意$\zeta\in\partial G,\lim_{\substack{z\to\zeta\\z\in G}}f(z)$存在.为此只要证明，如果$\lim_{z_n\to\zeta}f(z_n)=a,\lim_{z_n'\to\zeta}f(z_n')=b$，则必有$a=b$.
 
-首先，容易看出，$a,b$都在单位圆周上.不然的话，若$a\in B(0,1)$，记$w_n=f(z_n)$，则$z_n=f^{-1}(w_n)$.由于$f^{-1}$在$B(0,1)$中连续，因而有
-\[\zeta=\lim_{n\to\infty}z_n=\lim_{n\to\infty}f^{-1}(w_n)=\lim_{w_n\to a}f^{-1}(w_n)=f^{-1}(a),\]
-这不可能.
+  首先，容易看出，$a,b$都在单位圆周上.不然的话，若$a\in B(0,1)$，记$w_n=f(z_n)$，则$z_n=f^{-1}(w_n)$.由于$f^{-1}$在$B(0,1)$中连续，因而有
+  \[
+    \zeta = \lim_{n\to\infty}z_n = \lim_{n\to\infty}f^{-1}(w_n) = \lim_{w_n\to a}f^{-1}(w_n) = f^{-1}(a),
+  \]
+  这不可能.
 
-现在设$a\ne b$，作分式线性变换$T$，使得$T\big(B(0,1)\big)=B(0,1),T(a)=\ee^{\ii\frac\pi4},T(b)=\ee^{\ii\frac54\pi}$.令$g(z)=T\big(f(z)\big)$，则$g$仍然把$G$双全纯地映为$B(0,1)$，但
-\begin{align*}
-&\lim_{z_n\to\zeta}g(z_n)=\lim_{z_n\to\zeta}T\big(f(z_n)\big)=T(a)=\ee^{\ii\frac\pi4},\\
-&\lim_{z_n'\to\zeta}g(z_n')=\lim_{z_n'\to\zeta}T\big(f(z_n')\big)=T(b)=\ee^{\ii\frac54\pi}.
-\end{align*}
-\begin{figure}[!ht]
-\centering
-\subcaptionbox{\label{fig7.2a}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.2,>={Stealth[width=3pt]}]
-\begin{scope}[rotate=55]
-\draw[->](0,2)arc(90:452:2 and 1.3);
-\clip(0,2)arc(90:452:2 and 1.3);
-\draw(-35:1)circle(0.8);
-\end{scope}
-\fill(110:1.6)node[right]{$z_0$}circle(1pt);
-\node at(180:1.9){$G$};
-\draw(24:0.95)node[right]{$\zeta$}--++(-0.73,0)node[left]{$\delta$};
-\draw(49:1.1)node(a){$z_n'$}(12:0.45)node(b){$z_n$};
-\draw[shorten >=1mm,shorten <=1.7mm,->](49:1.1)[bend right=10]to(12:0.45);
-\node at(55:0.7){$l$};
-\end{tikzpicture}
-}
-\subcaptionbox{\label{fig7.2b}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=2,>={Stealth[width=3pt]}]
-\draw[->](-1.1,0)--(0,0)node[above left]{$O$}--(1.3,0)node[below]{$x$};
-\draw[->](0,-1.1)--(0,1.3)node[right]{$y$};
-\draw(0,0)circle(1);
-\draw(0,-0.3)node[below right]{$Q$}[bend right=20]to(0.3,0)node[below right]{$P$}
-[bend right=20]to(0,0.3)node[above right]{$Q'$}[bend right=20]to(-0.3,0)node[above left]{$P'$}[bend right=20]to(0,-0.3);
-\draw(0.7071,0.7071)circle(0.2)(-0.7071,-0.7071)circle(0.2);
-\fill(0.7071,0.7071)circle(0.5pt)(-0.7071,-0.7071)circle(0.5pt)
-(-0.63,-0.7)circle(0.5pt)(0.63,0.7)circle(0.5pt);
-\draw(0.7071,0.7071)--++(80:0.2)node[above]{$\varepsilon$};
-\draw(-0.7071,-0.7071)--++(80:0.2)node[above]{$\varepsilon$};
-\draw(0,-0.3)[bend right=10]to(-0.63,-0.7);
-\draw(0.3,0)[bend left=10]to(0.63,0.7)(-0.3,-0.6)node{$L$};
-\draw[->,shorten <=3mm,shorten >=1mm](-1.3,-0.8)node{$\textrm e^{\textrm i\frac54\pi}$}--(-0.7071,-0.7071);
-\draw[->,shorten <=2mm,shorten >=0.5mm](-0.7071,-1.1)
-node{$g(z_n')$}--(-0.63,-0.7);
-\draw[->,shorten <=3mm,shorten >=1mm](1.2,1)node{$\textrm e^{\textrm i\frac\pi4}$}--(0.7071,0.7071);
-\draw[->,shorten <=3mm,shorten >=0.5mm](1.15,0.5)
-node{$g(z_n)$}--(0.63,0.7);
-\end{tikzpicture}
-}
-\caption{\label{fig7.2}}
-\end{figure}
-对任给的$\varepsilon>0$，必有$\delta>0$，当$0<|z_n-\zeta|<\delta,0<|z_n'-\zeta|<\delta $时，$\big|g(z_n)-\ee^{\ii\frac\pi4}\big|<\varepsilon,\big|g(z_n')-\ee^{\ii\frac54\pi}\big|
-<\varepsilon$.现设$z_0=g^{-1}(0)$，则$z_0\in G$.取充分小的$\delta>0$，使得$G_\delta=B(\zeta,\delta)\cap G$不包含$z_0$.取$z_n,z_n'\in G_\delta$，则$g(z_n),g(z_n')$分别在以$\ee^{\ii\frac\pi4}$和$\ee^{\ii\frac54\pi}$为中心、以$\varepsilon$为半径的圆盘中.用位于$G_\delta$中的连续曲线$l$连接$z_n$和$z_n'$，则它的像$L=g(l)$是连接$g(z_n)$和$g(z_n')$的$B(0,1)$中的连续曲线，它不会经过原点，因此必和实轴、虚轴相交，设交点分别为$P$和$Q$（见图 \ref{fig7.2}）.用$\wideparen{PQ'},\wideparen{P'Q'},\wideparen{P'Q}$分别记$\wideparen{PQ}$相对于实轴、原点和虚轴对称的弧段，由这四段弧围成的域记为$D$，显然$O\in D$.
+  现在设$a\ne b$，作分式线性变换$T$，使得$T\big(B(0,1)\big)=B(0,1),T(a)=\ee^{\ii\frac\pi4},T(b)=\ee^{\ii\frac54\pi}$.令$g(z)=T\big(f(z)\big)$，则$g$仍然把$G$双全纯地映为$B(0,1)$，但
+  \begin{align*}
+    & \lim_{z_n\to\zeta}g(z_n) = \lim_{z_n\to\zeta}T\big(f(z_n)\big) = T(a) = \ee^{\ii\frac\pi4},\\
+    & \lim_{z_n'\to\zeta}g(z_n') = \lim_{z_n'\to\zeta}T\big(f(z_n')\big) = T(b) = \ee^{\ii\frac54\pi}.
+  \end{align*}
+  \begin{figure}[!ht]
+    \centering
+    \subcaptionbox{\label{fig7.2a}}[0.48\textwidth]
+      {
+        \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.2,>={Stealth[width=3pt]}]
+          \begin{scope}[rotate=55]
+            \draw[->](0,2)arc(90:452:2 and 1.3);
+            \clip(0,2)arc(90:452:2 and 1.3);
+            \draw(-35:1)circle(0.8);
+          \end{scope}
+          \fill(110:1.6)node[right]{$z_0$}circle(1pt);
+          \node at(180:1.9){$G$};
+          \draw(24:0.95)node[right]{$\zeta$}--++(-0.73,0)node[left]{$\delta$};
+          \draw(49:1.1)node(a){$z_n'$}(12:0.45)node(b){$z_n$};
+          \draw[shorten >=1mm,shorten <=1.7mm,->](49:1.1)[bend right=10]to(12:0.45);
+          \node at(55:0.7){$l$};
+        \end{tikzpicture}
+      }
+    \subcaptionbox{\label{fig7.2b}}[0.48\textwidth]
+      {
+        \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=2,>={Stealth[width=3pt]}]
+          \draw[->](-1.1,0)--(0,0)node[above left]{$O$}--(1.3,0)node[below]{$x$};
+          \draw[->](0,-1.1)--(0,1.3)node[right]{$y$};
+          \draw(0,0)circle(1);
+          \draw(0,-0.3)node[below right]{$Q$}[bend right=20]to(0.3,0)node[below right]{$P$}
+             [bend right=20]to(0,0.3)node[above right]{$Q'$}[bend right=20]to(-0.3,0)node[above left]{$P'$}[bend right=20]to(0,-0.3);
+          \draw(0.7071,0.7071)circle(0.2)(-0.7071,-0.7071)circle(0.2);
+          \fill(0.7071,0.7071)circle(0.5pt)(-0.7071,-0.7071)circle(0.5pt)
+             (-0.63,-0.7)circle(0.5pt)(0.63,0.7)circle(0.5pt);
+          \draw(0.7071,0.7071)--++(80:0.2)node[above]{$\varepsilon$};
+          \draw(-0.7071,-0.7071)--++(80:0.2)node[above]{$\varepsilon$};
+          \draw(0,-0.3)[bend right=10]to(-0.63,-0.7);
+          \draw(0.3,0)[bend left=10]to(0.63,0.7)(-0.3,-0.6)node{$L$};
+          \draw[->,shorten <=3mm,shorten >=1mm](-1.3,-0.8)node{$\ee ^{\ii \frac54\pi}$}--(-0.7071,-0.7071);
+          \draw[->,shorten <=2mm,shorten >=0.5mm](-0.7071,-1.1)
+               node{$g(z_n')$}--(-0.63,-0.7);
+          \draw[->,shorten <=3mm,shorten >=1mm](1.2,1)node{$\ee ^{\ii \frac\pi4}$}--(0.7071,0.7071);
+          \draw[->,shorten <=3mm,shorten >=0.5mm](1.15,0.5)
+               node{$g(z_n)$}--(0.63,0.7);
+        \end{tikzpicture}
+      }
+     \caption{\label{fig7.2}}
+  \end{figure}
+  对任给的$\varepsilon>0$，必有$\delta>0$，当$0<|z_n-\zeta|<\delta,0<|z_n'-\zeta|<\delta $时，$\big|g(z_n)-\ee^{\ii\frac\pi4}\big|<\varepsilon,\big|g(z_n')-\ee^{\ii\frac54\pi}\big|
+  <\varepsilon$.现设$z_0=g^{-1}(0)$，则$z_0\in G$.取充分小的$\delta>0$，使得$G_\delta=B(\zeta,\delta)\cap G$不包含$z_0$.取$z_n,z_n'\in G_\delta$，则$g(z_n),g(z_n')$分别在以$\ee^{\ii\frac\pi4}$和$\ee^{\ii\frac54\pi}$为中心、以$\varepsilon$为半径的圆盘中.用位于$G_\delta$中的连续曲线$l$连接$z_n$和$z_n'$，则它的像$L=g(l)$是连接$g(z_n)$和$g(z_n')$的$B(0,1)$中的连续曲线，它不会经过原点，因此必和实轴、虚轴相交，设交点分别为$P$和$Q$（见图 \ref{fig7.2}）.用$\wideparen{PQ'},\wideparen{P'Q'},\wideparen{P'Q}$分别记$\wideparen{PQ}$相对于实轴、原点和虚轴对称的弧段，由这四段弧围成的域记为$D$，显然$O\in D$.
 
-令
-\[F(w)=\big(g^{-1}(w)-\zeta\big)\big(\bar{g^{-1}(\bar w)}-\bar \zeta\big)
-\cdot\big(g^{-1}(-w)-\zeta\big)\big(\bar{g^{-1}(-\bar w)}-\bar \zeta\big),\]
-则$F\in H\big(B(0,1)\big)$. 我们来估计$F$在$\partial D$上的值，任取$w\in\wideparen{PQ}$，则$g^{-1}(w)\in l$，因此$|g^{-1}(w)-\zeta|<\delta$. 如果记$M=\sup_{z\in\partial G}|z-\zeta|$，那么因为$g^{-1}(\bar w),g^{-1}(-w),g^{-1}(-\bar w)$都属于$G$，因而有
-\begin{align*}
-&|g^{-1}(\bar w)-\zeta|\le M,\\
-&|g^{-1}(-w)-\zeta|\le M,\\
-&|g^{-1}(-\bar w)-\zeta|\le M,
-\end{align*}
-于是$|F(w)|\le \delta M^3$.同样道理，当$w$属于其他三段弧时也有同样的估计，即在$\partial D$上有
-\[|F(w)|\le\delta M^3.\]
-因而由最大模原理，上式在$D$中也成立.特别有$|F(0)|\le\delta M^3$，即$|g^{-1}(0)-\zeta|^4\le\delta M^3$.让$\delta\to0$，即得$g^{-1}(0)=\zeta$，这不可能.因而$a=b$，于是$\lim_{\substack{z\to\zeta\\z\in G}}f(z)$存在.
+  令
+  \[
+    F(w) = \big(g^{-1}(w)-\zeta\big)\big(\bar{g^{-1}(\bar w)}-\bar \zeta\big)
+    \cdot\big(g^{-1}(-w)-\zeta\big)\big(\bar{g^{-1}(-\bar w)}-\bar \zeta\big),
+  \]
+  则$F\in H\big(B(0,1)\big)$. 我们来估计$F$在$\partial D$上的值，任取$w\in\wideparen{PQ}$，则$g^{-1}(w)\in l$，因此$|g^{-1}(w)-\zeta|<\delta$. 如果记$M=\sup_{z\in\partial G}|z-\zeta|$，那么因为$g^{-1}(\bar w),g^{-1}(-w),g^{-1}(-\bar w)$都属于$G$，因而有
+  \begin{align*}
+    & |g^{-1}(\bar w) - \zeta| \le M,\\
+    & |g^{-1}(-w) - \zeta| \le M,\\
+    & |g^{-1}(-\bar w)-\zeta| \le M,
+  \end{align*}
+  于是$|F(w)|\le \delta M^3$.同样道理，当$w$属于其他三段弧时也有同样的估计，即在$\partial D$上有
+  \[
+    |F(w)| \le \delta M^3.
+  \]
+  因而由最大模原理，上式在$D$中也成立.特别有$|F(0)|\le\delta M^3$，即$|g^{-1}(0)-\zeta|^4\le\delta M^3$.让$\delta\to0$，即得$g^{-1}(0)=\zeta$，这不可能.因而$a=b$，于是$\lim_{\substack{z\to\zeta\\z\in G}}f(z)$存在.
 
-\noindent\begin{minipage}{0.7\textwidth}\parindent=2em
-(2) \hypertarget{thm7.3.1.2}{}  现在对任意$\zeta\in\partial G$，定义
-\[f(\zeta)=\lim_{\substack{z\to\zeta\\z\in G}}f(z).\]
-这样，$f$在$\bar G$上都有了定义，我们证明$f\in C(\bar G)$.为此，只需证明对任意$\zeta\in\partial G,\lim_{\substack{\xi\to\zeta\\\xi\in \partial G}}f(\xi)=f(\zeta)$就行了.如图
-\ref{fig7.3} 所示，固定$\zeta\in\partial G$，对任意$\varepsilon>0$，存在$\delta>0$，当$z\in B(\zeta,\delta)\cap G$时，$|f(z)-f(\zeta)|<\varepsilon$.今取$\xi\in B(\zeta,\delta)\cap\partial G$，对于这个$\xi$，有相应的$\delta_1$，当$z\in B(\xi,\delta_1)\cap G$时，有$|f(\xi)-f(z)|<\varepsilon$.今取$z\in B(\zeta,\delta)\cap B(\xi,\delta_1)\cap G$，便有
-\end{minipage}
-\begin{minipage}{0.3\textwidth}
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.3,>={Stealth[width=3pt]}]
-\begin{scope}[rotate=60]
-\draw(0,0)ellipse(2 and 1.1);
-\draw({2*cos(-59)},{1.1*sin(-59)})circle(0.5);
-\draw({2*cos(-49)},{1.1*sin(-49)})circle(0.6);
-\fill({2*cos(-59)},{1.1*sin(-59)})coordinate(A) circle(0.7pt)node[right]{$\xi$};
-\fill({2*cos(-49)},{1.1*sin(-49)})coordinate(B) circle(0.7pt)node[right]{$\zeta$};
-\fill({1.6*cos(-53)},{0.7*sin(-53)})circle(0.7pt)node[right]{$z$};
-\end{scope}
-\draw(-120:1)node[below]{$G$};
-\draw(B)--++(150:0.6)node[left]{$\delta$}(A)--++(-70:0.5)node[below]{$\delta_1$};
-\node at(1.1,-0.8){$\partial G$};
-\end{tikzpicture}
-\captionof{figure}{\label{fig7.3}}
-\end{minipage}
-\[|f(\zeta)-f(\xi)|\le|f(\zeta)-f(z)|+|f(z)-f(\xi)|<2\varepsilon,\]
-这就证明了$f\in C(\bar G)$.
+  \noindent\begin{minipage}{0.7\textwidth}\parindent=2em
+    (2) \hypertarget{thm7.3.1.2}{}  现在对任意$\zeta\in\partial G$，定义
+    \[ 
+      f(\zeta) = \lim_{\substack{z\to\zeta\\z\in G}}f(z).
+    \]
+    这样，$f$在$\bar G$上都有了定义，我们证明$f\in C(\bar G)$.为此，只需证明对任意$\zeta\in\partial G,\lim_{\substack{\xi\to\zeta\\\xi\in \partial G}}f(\xi)=f(\zeta)$就行了.如图
+    \ref{fig7.3} 所示，固定$\zeta\in\partial G$，对任意$\varepsilon>0$，存在$\delta>0$，当$z\in B(\zeta,\delta)\cap G$时，$|f(z)-f(\zeta)|<\varepsilon$.今取$\xi\in B(\zeta,\delta)\cap\partial G$，对于这个$\xi$，有相应的$\delta_1$，当$z\in B(\xi,\delta_1)\cap G$时，有$|f(\xi)-f(z)|<\varepsilon$.今取$z\in B(\zeta,\delta)\cap B(\xi,\delta_1)\cap G$，便有
+  \end{minipage}
+  \begin{minipage}{0.3\textwidth}
+    \centering
+    \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.3,>={Stealth[width=3pt]}]
+      \begin{scope}[rotate=60]
+        \draw(0,0)ellipse(2 and 1.1);
+        \draw({2*cos(-59)},{1.1*sin(-59)})circle(0.5);
+        \draw({2*cos(-49)},{1.1*sin(-49)})circle(0.6);
+        \fill({2*cos(-59)},{1.1*sin(-59)})coordinate(A) circle(0.7pt)node[right]{$\xi$};
+        \fill({2*cos(-49)},{1.1*sin(-49)})coordinate(B) circle(0.7pt)node[right]{$\zeta$};
+        \fill({1.6*cos(-53)},{0.7*sin(-53)})circle(0.7pt)node[right]{$z$};
+      \end{scope}
+      \draw(-120:1)node[below]{$G$};
+      \draw(B)--++(150:0.6)node[left]{$\delta$}(A)--++(-70:0.5)node[below]{$\delta_1$};
+      \node at(1.1,-0.8){$\partial G$};
+    \end{tikzpicture}
+    \captionof{figure}{\label{fig7.3}}
+  \end{minipage}
+  \[
+    |f(\zeta)-f(\xi)| \le |f(\zeta)-f(z)| + |f(z)-f(\xi)| < 2\varepsilon,
+  \]
+  这就证明了$f\in C(\bar G)$.
 
-(3) \hypertarget{thm7.3.1.3}{} 前面已经证明，对每个$\zeta\in\partial G,|f(\zeta)|=1$，这说明$f$把$\partial G$映入$\partial B(0,1)$.现在证明，如果$\zeta,\zeta'\in\partial G,\zeta\ne\zeta'$，那么$f(\zeta)\ne f(\zeta')$.取充分小的$\varepsilon>0$，使得$B(\zeta,\varepsilon)\cap B(\zeta',\varepsilon)=\varnothing$，由于$f$是单叶的，因而
-\[f\big(B(\zeta,\varepsilon)\cap G\big)\cap f\big(B(\zeta',\varepsilon)\cap G\big)=
-\varnothing,\]
-这就证明了$f(\zeta)\ne f(\zeta')$.
+  (3) \hypertarget{thm7.3.1.3}{} 前面已经证明，对每个$\zeta\in\partial G,|f(\zeta)|=1$，这说明$f$把$\partial G$映入$\partial B(0,1)$.现在证明，如果$\zeta,\zeta'\in\partial G,\zeta\ne\zeta'$，那么$f(\zeta)\ne f(\zeta')$.取充分小的$\varepsilon>0$，使得$B(\zeta,\varepsilon)\cap B(\zeta',\varepsilon)=\varnothing$，由于$f$是单叶的，因而
+  \[
+    f\big(B(\zeta,\varepsilon)\cap G\big)\cap f\big(B(\zeta',\varepsilon)\cap G\big)=
+    \varnothing,
+  \]
+  这就证明了$f(\zeta)\ne f(\zeta')$.
 
-由于$f$是$\bar G$上的一一连续映射，所以$f(\bar G)$是紧集.注意到$B(0,1)\subset f(\bar G)\subset\bar{B(0,1)}$，即知$f(\bar G)=\bar{B(0,1)}$.由习题 \hyperlink{xiti1.7}{1.7} 的第 \hyperlink{xiti1.7.7}{7} 题便知$f^{-1}$也是$\bar{B(0,1)}$上的一一连续映射.
+  由于$f$是$\bar G$上的一一连续映射，所以$f(\bar G)$是紧集.注意到$B(0,1)\subset f(\bar G)\subset\bar{B(0,1)}$，即知$f(\bar G)=\bar{B(0,1)}$.由习题 \hyperlink{xiti1.7}{1.7} 的第 \hyperlink{xiti1.7.7}{7} 题便知$f^{-1}$也是$\bar{B(0,1)}$上的一一连续映射.
 
-(4) \hypertarget{thm7.3.1.4}{} 最后证明$f$保持边界的方向不变.在$\partial G$上沿着关于$G$的正方向取三点$z_1,z_2,z_3$，它们在$f$下的像分别为$w_1,w_2,w_3$，半径$Ow_1,Ow_2,Ow_3$的原像分别是曲线弧段$\wideparen{z_0z_1}$，$\wideparen{z_0z_2}$，$\wideparen{z_0z_3}$（图 \ref{fig7.4}）.由于$f'(z_0)\ne0$，$f$在$z_0$处具有保角性，而且保持角度的方向不变，因此$w_1,w_2,w_3$也是沿着关于$B(0,1)$的正方向.
+  (4) \hypertarget{thm7.3.1.4}{} 最后证明$f$保持边界的方向不变.在$\partial G$上沿着关于$G$的正方向取三点$z_1,z_2,z_3$，它们在$f$下的像分别为$w_1,w_2,w_3$，半径$Ow_1,Ow_2,Ow_3$的原像分别是曲线弧段$\wideparen{z_0z_1}$，$\wideparen{z_0z_2}$，$\wideparen{z_0z_3}$（图 \ref{fig7.4}）.由于$f'(z_0)\ne0$，$f$在$z_0$处具有保角性，而且保持角度的方向不变，因此$w_1,w_2,w_3$也是沿着关于$B(0,1)$的正方向.
 \end{proof}
 \begin{figure}[!ht]
-\centering
-\subcaptionbox{\label{fig7.4a}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},rotate=60,scale=1.3,>={Stealth[width=3pt]}]
-\draw(0,0)ellipse(2 and 1);
-\coordinate(z0)at(0.2,0.2);
-\coordinate(z3)at({2*cos(-60)},{sin(-60)});
-\coordinate(z2)at({2*cos(-100)},{sin(-100)});
-\coordinate(z1)at({2*cos(-150)},{sin(-150)});
-\draw(z0)node[above left]{$z_0$}arc(90:0:0.3)[bend right=30]to(z3)node[right]{$z_3$};
-\draw(z0)[bend left=20]to(-0.2,-0.2)arc(120:180:0.2)[bend left=20]to(z2)
-node[below right]{$z_2$};
-\draw(z0)[bend right=5]to(-0.2,0.1)arc(110:140:0.4)arc(-40:-100:1.3)
-[bend right=20]to(z1)node[below right]{$z_3$};
-\node at(-1.6,0.2){$G$};
-\end{tikzpicture}
-}
-\subcaptionbox{\label{fig7.4b}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.3,>={Stealth[width=3pt]}]
-\draw(0,0)coordinate(O)node[left]{$O$}circle(2);
-\draw(O)--++(-45:2)node[below right]{$w_1$}
-(O)--++(-5:2)node[right]{$w_2$}(O)--++(60:2)node[above right]{$w_3$};
-\end{tikzpicture}
-}
-\caption{\label{fig7.4}}
+  \centering
+  \subcaptionbox{\label{fig7.4a}}[0.48\textwidth]
+    {
+      \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},rotate=60,scale=1.3,>={Stealth[width=3pt]}]
+        \draw(0,0)ellipse(2 and 1);
+        \coordinate(z0)at(0.2,0.2);
+        \coordinate(z3)at({2*cos(-60)},{sin(-60)});
+        \coordinate(z2)at({2*cos(-100)},{sin(-100)});
+        \coordinate(z1)at({2*cos(-150)},{sin(-150)});
+        \draw(z0)node[above left]{$z_0$}arc(90:0:0.3)[bend right=30]to(z3)node[right]{$z_3$};
+        \draw(z0)[bend left=20]to(-0.2,-0.2)arc(120:180:0.2)[bend left=20]to(z2)
+          node[below right]{$z_2$};
+        \draw(z0)[bend right=5]to(-0.2,0.1)arc(110:140:0.4)arc(-40:-100:1.3)
+          [bend right=20]to(z1)node[below right]{$z_3$};
+        \node at(-1.6,0.2){$G$};
+      \end{tikzpicture}
+    }
+  \subcaptionbox{\label{fig7.4b}}[0.48\textwidth]
+    {
+      \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.3,>={Stealth[width=3pt]}]
+        \draw(0,0)coordinate(O)node[left]{$O$}circle(2);
+        \draw(O)--++(-45:2)node[below right]{$w_1$}
+           (O)--++(-5:2)node[right]{$w_2$}(O)--++(60:2)node[above right]{$w_3$};
+      \end{tikzpicture}
+    }
+    \caption{\label{fig7.4}}
 \end{figure}
 
 后面我们将应用边界对应定理来推导把上半平面映为多角形域的Schwarz--Christoffel公式.
 
 在实际应用中，下面的边界对应定理的逆定理很有用.
 \begin{theorem}\label{thm7.3.2}
-设$G$和$D$分别是由可求长简单闭曲线$\gamma$和$\Gamma$围成的域，如果$f\in H(G)\cap C(\bar G)$，且把$\gamma$一一地映为$\Gamma$，那么$w=f(z)$把$G$一一地映为$D$，并且使$\gamma$关于$G$的正向对应于$\Gamma$关于$D$的正向.
+  设$G$和$D$分别是由可求长简单闭曲线$\gamma$和$\Gamma$围成的域，如果$f\in H(G)\cap C(\bar G)$，且把$\gamma$一一地映为$\Gamma$，那么$w=f(z)$把$G$一一地映为$D$，并且使$\gamma$关于$G$的正向对应于$\Gamma$关于$D$的正向.
 \end{theorem}
 \begin{proof}
-任取$w_0\in D$，先证明$f(z)-w_0$在$G$中有且只有一个零点.由辐角原理，$f(z)-w_0$在$G$中的零点个数为
-\[N=\frac1{2\pi}\Delta_\gamma\Arg\big(f(z)-w_0\big)=\frac1{2\pi}\Delta_\Gamma
-\Arg(w-w_0)=\pm1,\]
-右端等于$\pm1$是因为$w_0\in D$之故.但因$N$是零点的个数，不能取$-1$，故有$N=1$.这就证明了$f(z)-w_0$在$G$内有且只有一个零点，且当$z$沿$\gamma$的正向转一圈时，$w$也沿$\Gamma$的正向转一圈.容易看出，当$w_0\notin\bar D$时，$N=0$，即$f$不会把$G$中的点映到$D$的外部去.
-当$w_0\in\Gamma$时，如果存在$z_0\in G$，使得$f(z_0)=w_0$，那么$w_0$必须是$f(G)$的内点，这不可能.这就证明了定理的断言.
+  任取$w_0\in D$，先证明$f(z)-w_0$在$G$中有且只有一个零点.由辐角原理，$f(z)-w_0$在$G$中的零点个数为
+  \[
+    N = \frac1{2\pi}\Delta_\gamma\Arg\big(f(z)-w_0\big) = \frac1{2\pi}\Delta_\Gamma
+    \Arg(w-w_0)=\pm1,
+  \]
+  右端等于$\pm1$是因为$w_0\in D$之故.但因$N$是零点的个数，不能取$-1$，故有$N=1$.这就证明了$f(z)-w_0$在$G$内有且只有一个零点，且当$z$沿$\gamma$的正向转一圈时，$w$也沿$\Gamma$的正向转一圈.容易看出，当$w_0\notin\bar D$时，$N=0$，即$f$不会把$G$中的点映到$D$的外部去.
+  当$w_0\in\Gamma$时，如果存在$z_0\in G$，使得$f(z_0)=w_0$，那么$w_0$必须是$f(G)$的内点，这不可能.这就证明了定理的断言.
 \end{proof}
 
 下面看一个简单的例子：
 \begin{example}\label{exam7.3.3}
-问$w=z^2$把由圆周$\bigg|z-\frac12\bigg|=\frac12$围成的域变成什么样的域?
+  问$w=z^2$把由圆周$\bigg|z-\frac12\bigg|=\frac12$围成的域变成什么样的域?
 \end{example}
 \begin{figure}[!ht]
-\centering
-\subcaptionbox{\label{fig7.5a}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=4,>={Stealth[width=3pt]}]
-\draw[->](0,0)node[left]{$O$}--(0.5,0)node[below]{$\frac12$}--(1,0)node[below right]{$1$}--(1.3,0)node[below]{$x$};
-\draw(0.5,0)circle(0.5);\fill(0.5,0)circle(0.25pt);
-\draw(0,0)--node[above]{$r$}(30:{cos(30)});
-\draw(0.15,0)arc(0:30:0.15);\node at(15:0.2){$\theta$};
-\end{tikzpicture}
-}
-\subcaptionbox{\label{fig7.5b}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},xscale=4,yscale=3.2,>={Stealth[width=3pt]}]
-\draw[->](-0.2,0)--(0,0)node[below right]{$O$}--(1,0)node[below right]{$1$}--(1.3,0)node[below]{$x$};
-\draw[->](0,-0.7)--(0,0.5)node[above left]{$\frac12$}--(0,0.8)node[right]{$y$};
-\draw[domain=0:2*pi,samples=500]plot({(1+cos(\x r))*cos(\x r)/2},{(1+cos(\x r))*sin(\x r)/2});
-\end{tikzpicture}
-}
-\caption{\label{fig7.5}}
+  \centering
+  \subcaptionbox{\label{fig7.5a}}[0.48\textwidth]
+    {
+      \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=4,>={Stealth[width=3pt]}]
+        \draw[->](0,0)node[left]{$O$}--(0.5,0)node[below]{$\frac12$}--(1,0)node[below right]{$1$}--(1.3,0)node[below]{$x$};
+        \draw(0.5,0)circle(0.5);\fill(0.5,0)circle(0.25pt);
+        \draw(0,0)--node[above]{$r$}(30:{cos(30)});
+        \draw(0.15,0)arc(0:30:0.15);\node at(15:0.2){$\theta$};
+      \end{tikzpicture}
+    }
+  \subcaptionbox{\label{fig7.5b}}[0.48\textwidth]
+    {
+      \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},xscale=4,yscale=3.2,>={Stealth[width=3pt]}]
+        \draw[->](-0.2,0)--(0,0)node[below right]{$O$}--(1,0)node[below right]{$1$}--(1.3,0)node[below]{$x$};
+        \draw[->](0,-0.7)--(0,0.5)node[above left]{$\frac12$}--(0,0.8)node[right]{$y$};
+        \draw[domain=0:2*pi,samples=500]plot({(1+cos(\x r))*cos(\x r)/2},{(1+cos(\x r))*sin(\x r)/2});
+      \end{tikzpicture}
+    }
+    \caption{\label{fig7.5}}
 \end{figure}
 \begin{solution}
-从图 \ref{fig7.5}\subref{fig7.5a} 可以看出，圆周$\bigg|z-\frac12\bigg|=\frac12$的极坐标方程为$r=\cos\theta\bigg(-\frac\pi2\le\theta\le\frac\pi2\bigg)$，这里，$z=r\ee^{\ii\theta}$. 若记$w=\rho\ee^{\ii\varphi}$，则$w=z^2=r^2\ee^{2\ii\theta}$，所以$\rho=r^2,\varphi=2\theta$，故$r=\cos\theta$经变换后的极坐标方程为
-\[\rho=\frac12(1+\cos\varphi),\]
-这是一条心脏线（图 \ref{fig7.5}\subref{fig7.5b}）. 由定理 \ref{thm7.3.2}，$w=z^2$把圆周$\bigg|z-\frac12\bigg|=\frac12$的内部一一地映成上述心脏线的内部.
+  从图 \ref{fig7.5}\subref{fig7.5a} 可以看出，圆周$\bigg|z-\frac12\bigg|=\frac12$的极坐标方程为$r=\cos\theta\bigg(-\frac\pi2\le\theta\le\frac\pi2\bigg)$，这里，$z=r\ee^{\ii\theta}$. 若记$w=\rho\ee^{\ii\varphi}$，则$w=z^2=r^2\ee^{2\ii\theta}$，所以$\rho=r^2,\varphi=2\theta$，故$r=\cos\theta$经变换后的极坐标方程为
+  \[
+    \rho = \frac12(1+\cos\varphi),
+  \]
+  这是一条心脏线（图 \ref{fig7.5}\subref{fig7.5b}）. 由定理 \ref{thm7.3.2}，$w=z^2$把圆周$\bigg|z-\frac12\bigg|=\frac12$的内部一一地映成上述心脏线的内部.
 \end{solution}
 
 \begin{xiti}\hypertarget{xiti7.3}{}
-\item 利用Schwarz对称原理和边界对应定理证明：将$B(0,1)$映为自身的双全纯映射一定是分式线性变换.
-\item \hypertarget{xiti7.3.2}{} 证明：若$f$将圆环$\{z\in\MC:r_1<|z|<r_2\}$双全纯地映为圆环
-$\{z\in\MC:R_1<|z|<R_2\}$，则$f$将闭圆环$\{z\in\MC:r_1\le|z|\le r_2\}$同胚地映为闭圆环$\{z\in\MC:R_1\le|z|\le R_2\}$.
-\item 设$D$是由简单闭曲线所围成的单连通域，$z_1,z_2,z_3\in\partial D$是彼此不同的三点，按$\partial D$的正向排列。证明：若$w_1,w_2,w_3\in\partial B(0,1)$是彼此不同的三点，按$\partial B(0,1)$的正向排列，则存在唯一的$\varphi$，将$D$双全纯地映为$B(0,1)$，将$\bar D$同胚地映为$\bar{B(0,1)}$，并且$f(z_k)=w_k,k=1,2,3$.
-\item （边界对应原理）设$D$是由简单闭曲线$\gamma$所围成的单连通域（$\gamma$不必可求长），$f\in H(D)\cap C(\bar D)$.证明：若$f$将$\gamma$一一地映为简单闭曲线$\Gamma$，则$f$将$D$双全纯地映为由$\Gamma$所围成的单连通域$G$.将这里的结论与习题 \hyperlink{xiti4.4}{4.4} 中的第
-     \hyperlink{xiti4.4.17}{17} 题作比较.
-\item 设$f\in H\big(B(0,1)\big),f(0)=0,f'(0)=a>0$. 证明：若$f\big(B(0,1)\big)\subset B(0,1)$，则$f$在$B\bigg(0,\frac a{1+\sqrt{1-a^2}}\bigg)$上双全纯.
+  \item 利用Schwarz对称原理和边界对应定理证明：将$B(0,1)$映为自身的双全纯映射一定是分式线性变换.
+  \item \hypertarget{xiti7.3.2}{} 证明：若$f$将圆环$\{z\in\MC:r_1<|z|<r_2\}$双全纯地映为圆环
+        $\{z\in\MC:R_1<|z|<R_2\}$，则$f$将闭圆环$\{z\in\MC:r_1\le|z|\le r_2\}$同胚地映为闭圆环$\{z\in\MC:R_1\le|z|\le R_2\}$.
+  \item 设$D$是由简单闭曲线所围成的单连通域，$z_1,z_2,z_3\in\partial D$是彼此不同的三点，按$\partial D$的正向排列. 证明：若$w_1,w_2,w_3\in\partial B(0,1)$是彼此不同的三点，按$\partial B(0,1)$的正向排列，则存在唯一的$\varphi$，将$D$双全纯地映为$B(0,1)$，将$\bar D$同胚地映为$\bar{B(0,1)}$，并且$f(z_k)=w_k,k=1,2,3$.
+  \item （边界对应原理）设$D$是由简单闭曲线$\gamma$所围成的单连通域（$\gamma$不必可求长），$f\in H(D)\cap C(\bar D)$.证明：若$f$将$\gamma$一一地映为简单闭曲线$\Gamma$，则$f$将$D$双全纯地映为由$\Gamma$所围成的单连通域$G$.将这里的结论与习题 \hyperlink{xiti4.4}{4.4} 中的第
+      \hyperlink{xiti4.4.17}{17} 题作比较.
+  \item 设$f\in H\big(B(0,1)\big),f(0)=0,f'(0)=a>0$. 证明：若$f\big(B(0,1)\big)\subset B(0,1)$，则$f$在$B\bigg(0,\frac a{1+\sqrt{1-a^2}}\bigg)$上双全纯.
 \end{xiti}
 
 \section{Schwarz--Christoffel公式\label{sec7.4}}
@@ -475,482 +544,575 @@ Riemann映射定理断言，任意两个异于$\MC$的单连通域都可通过�
   存在把上半平面$D$一一地映为多角形域$G$的双全纯映射$w=f(z)$，它在$\bar D$上连续，且把实轴一一地映为$ \partial G$.
 \end{lemma}
 \begin{proof}
-任取$a\in D$，则分式线性变换
-\[\zeta=\frac{z-a}{z-\bar a}\]
-把$D$一一地映为$|\zeta|<1$，它在$\bar D$上连续，且把实轴一一地映为$|\zeta|=1$.根据Riemann映射定理和边界对应原理，存在双全纯函数$w=g(\zeta)$，它把$|\zeta|<1$一一地映为$G$，且$g$在$|\zeta|\le1$上连续，并把$|\zeta|=1$一一地映为$\partial G$.于是，函数
-\[w=g\bigg(\frac{z-a}{z-\bar a}\bigg)=f(z)\]
-即符合引理的要求.
+  任取$a\in D$，则分式线性变换
+  \[
+    \zeta = \frac{z-a}{z-\bar a}
+  \]
+  把$D$一一地映为$|\zeta|<1$，它在$\bar D$上连续，且把实轴一一地映为$|\zeta|=1$.根据Riemann映射定理和边界对应原理，存在双全纯函数$w=g(\zeta)$，它把$|\zeta|<1$一一地映为$G$，且$g$在$|\zeta|\le1$上连续，并把$|\zeta|=1$一一地映为$\partial G$.于是，函数
+  \[
+    w = g\bigg(\frac{z-a}{z-\bar a}\bigg) = f(z)
+  \]
+  即符合引理的要求.
 \end{proof}
 
 设$f$是引理 \ref{lemma7.4.1} 中的函数，那么在$z$平面的实轴上必有$n$个点$a_1,\cdots,a_n$，使得
-\[f(a_1)=w_1,f(a_2)=w_2,\cdots,f(a_n)=w_n.\]
+\[
+  f(a_1) = w_1,f(a_2) = w_2,\cdots,f(a_n) = w_n.
+\]
 我们先弄清$f$在$a_k$点邻域中的性质.
 
 \begin{lemma}\label{lemma7.4.2}
-设$\Omega$是具有角点$w_0$的域，在$w_0$的邻域中，$\Omega$的边界由两个直线段构成，它们的交角为$\alpha\pi$.设双全纯映射$w=f(z)$把上半平面映为$\Omega$，把实轴上的点$z_0$映为$w_0$，那么在$z_0$的邻域内，$f$可表示为
-\begin{equation}\label{eq7.4.1}
-f(z)=w_0+(z-z_0)^\alpha\{c_0+c_1(z-z_0)+\cdots\},c_0\ne0.
-\end{equation}
+  设$\Omega$是具有角点$w_0$的域，在$w_0$的邻域中，$\Omega$的边界由两个直线段构成，它们的交角为$\alpha\pi$.设双全纯映射$w=f(z)$把上半平面映为$\Omega$，把实轴上的点$z_0$映为$w_0$，那么在$z_0$的邻域内，$f$可表示为
+  \begin{equation}\label{eq7.4.1}
+    f(z) = w_0 + (z-z_0)^\alpha\{c_0 + c_1(z-z_0) + \cdots\},c_0\ne0.
+  \end{equation}
 \end{lemma}
 \begin{proof}
-令$\eta=(w-w_0)^{\frac1\alpha}$，它可以在$\Omega$中分出单值的全纯分支，它把$w_0$映为原点，且把$\Omega$的两条边界线所张的角扩大成$\pi$.因此
-\begin{equation}\label{eq7.4.2}
-\eta=\eta(z)=\big(f(z)-w_0\big)^{\frac1\alpha}
-\end{equation}
-把$z_0$的邻域在上半平面中的那部分变到$\eta$平面上$\eta=0$的一个邻域的某个半平面，对应于$z$平面中实轴上的线段的是一段直线段.由引理 \ref{lemma7.4.1} 知，它连续到实轴上，故由Schwarz对称原理，$\eta=\eta(z)$可以全纯开拓到$z_0$的整个邻域中，因而在$z_0$的邻域中有展开式
-\begin{equation}\label{eq7.4.3}
-\eta(z)=b_1(z-z_0)+b_2(z-z_0)^2+\cdots,b_1\ne0,
-\end{equation}
-这里，没有常数项是因为$\eta(z_0)=0,b_1\ne0$是因为$b_1=\eta'(z_0)\ne0$. 由 \eqref{eq7.4.2} 式和 \eqref{eq7.4.3} 式即得
-\begin{equation}\label{eq7.4.4}
-\begin{aligned}
-f(z)&=w_0+\big(\eta(z)\big)^\alpha\\
-&=w_0+(z-z_0)^\alpha\{b_1+b_2(z-z_0)+\cdots\}^\alpha.
-\end{aligned}
-\end{equation}
-如果记$g(z)=b_1+b_2(z-z_0)+\cdots$，由于$g(z_0)=b_1\ne0$，故在$z_0$的邻域中$\big(g(z)\big)^\alpha$能分出单值的全纯分支，把$\big(g(z)\big)^\alpha$在$z_0$的邻域中展开成幂级数
-\[\big(g(z)\big)^\alpha=c_0+c_1(z-z_0)+\cdots.\]
-再由 \eqref{eq7.4.4} 式即得 \eqref{eq7.4.1} 式.
+  令$\eta=(w-w_0)^{\frac1\alpha}$，它可以在$\Omega$中分出单值的全纯分支，它把$w_0$映为原点，且把$\Omega$的两条边界线所张的角扩大成$\pi$.因此
+  \begin{equation}\label{eq7.4.2}
+    \eta = \eta(z) = \big(f(z)-w_0\big)^{\frac1\alpha}
+  \end{equation}
+  把$z_0$的邻域在上半平面中的那部分变到$\eta$平面上$\eta=0$的一个邻域的某个半平面，对应于$z$平面中实轴上的线段的是一段直线段.由引理 \ref{lemma7.4.1} 知，它连续到实轴上，故由Schwarz对称原理，$\eta=\eta(z)$可以全纯开拓到$z_0$的整个邻域中，因而在$z_0$的邻域中有展开式
+  \begin{equation}\label{eq7.4.3}
+    \eta(z) = b_1(z-z_0) + b_2(z-z_0)^2 + \cdots,b_1\ne0,
+  \end{equation}
+  这里，没有常数项是因为$\eta(z_0)=0,b_1\ne0$是因为$b_1=\eta'(z_0)\ne0$. 由 \eqref{eq7.4.2} 式和 \eqref{eq7.4.3} 式即得
+  \begin{equation}\label{eq7.4.4}
+    \begin{aligned}
+      f(z) & = w_0 + \big(\eta(z)\big)^\alpha\\
+      & = w_0 + (z-z_0)^\alpha\{b_1+b_2(z-z_0)+\cdots\}^\alpha.
+    \end{aligned}
+  \end{equation}
+  如果记$g(z)=b_1+b_2(z-z_0)+\cdots$，由于$g(z_0)=b_1\ne0$，故在$z_0$的邻域中$\big(g(z)\big)^\alpha$能分出单值的全纯分支，把$\big(g(z)\big)^\alpha$在$z_0$的邻域中展开成幂级数
+  \[
+    \big(g(z)\big)^\alpha = c_0 + c_1(z-z_0) + \cdots.
+  \]
+  再由 \eqref{eq7.4.4} 式即得 \eqref{eq7.4.1} 式.
 \end{proof}
 
 现在可以证明本节的主要定理：
 \begin{theorem}[（\textbf{Schwarz--Christoffel}）]\label{thm7.4.3}\index{D!定理!Schwarz--Christoffel定理}
-设双全纯函数$w=f(z)$把上半平面$D$一一地映为多角形域$G$，且$f$在$\bar D$上连续.如果$G$在其顶点$w_k$（$k=1,\cdots,n$）处的顶角是$\alpha_k\pi$（$0<\alpha_k<2$），实轴上与$w_k$对应的点是$a_k$（$k=1,\cdots,n$），那么$f$可表示为
-\begin{equation}\label{eq7.4.5}
-f(z)=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz+C_1,
-\end{equation}
-其中，$z_0,C,C_1$是三个常数.
+  设双全纯函数$w=f(z)$把上半平面$D$一一地映为多角形域$G$，且$f$在$\bar D$上连续.如果$G$在其顶点$w_k$（$k=1,\cdots,n$）处的顶角是$\alpha_k\pi$（$0<\alpha_k<2$），实轴上与$w_k$对应的点是$a_k$（$k=1,\cdots,n$），那么$f$可表示为
+  \begin{equation}\label{eq7.4.5}
+    f(z) = C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz+C_1,
+  \end{equation}
+  其中，$z_0,C,C_1$是三个常数.
 \end{theorem}
 \begin{proof}
-由于$f$把实轴一一地映为$G$的边界，所以当$z$在$(a_k,a_{k+1})$中变动时，$f(z)$在线段$w_kw_{k+1}$上变动，即$f$把直线段映为直线段.根据Schwarz对称原理，$f$可以跨过$(a_k,a_{k+1})$，全纯开拓到下半平面$D'$中去.即可以得一函数$f_k$，它满足条件：
-\begin{eenum}
-  \item $f_k$在$D\cup D'\cup(a_k,a_{k+1})$中全纯；
-  \item 当$z\in D$时，$f_k(z)=f(z),f_k$把下半平面$D'$映成$G$关于线段$w_kw_{k+1}$对称的多角形域$G'$；
-  \item 当$z\in D\cup D'\cup(a_k,a_{k+1})$时，$f_k'(z)\ne0$.
-\end{eenum}
-让$k=1,\cdots,n$，我们就得到$n$个函数$f_1,\cdots,f_n$，它们在$D$内都等于$f$，而在$D'$中是不相等的.
+  由于$f$把实轴一一地映为$G$的边界，所以当$z$在$(a_k,a_{k+1})$中变动时，$f(z)$在线段$w_kw_{k+1}$上变动，即$f$把直线段映为直线段.根据Schwarz对称原理，$f$可以跨过$(a_k,a_{k+1})$，全纯开拓到下半平面$D'$中去.即可以得一函数$f_k$，它满足条件：
+  \begin{eenum}
+    \item $f_k$在$D\cup D'\cup(a_k,a_{k+1})$中全纯；
+    \item 当$z\in D$时，$f_k(z)=f(z),f_k$把下半平面$D'$映成$G$关于线段$w_kw_{k+1}$对称的多角形域$G'$；
+    \item 当$z\in D\cup D'\cup(a_k,a_{k+1})$时，$f_k'(z)\ne0$.
+  \end{eenum}
+  让$k=1,\cdots,n$，我们就得到$n$个函数$f_1,\cdots,f_n$，它们在$D$内都等于$f$，而在$D'$中是不相等的.
 
-我们来研究$f_k$和$f_{k+1}$在$D'$中的关系. 任取$z_0\in D'$，则$\bar{z_0}\in D$，于是$f_k(z_0)$是$f(\bar{z_0})$关于线段$w_kw_{k+1}$的对称点，$f_{k+1}(z_0)$是$f(\bar{z_0})$关于线段$w_{k+1}w_{k+2}$的对称点（图 \ref{fig7.6}）.因此，$f_{k}(z_0)$可以看成是由$f_{k+1}(z_0)$经过两条直线的对称变换得到的.显然，有
-\begin{align*}
-f_k(z_0)-w_{k+1}&=\ee^{2\ii\theta}\big(f(\bar{z_0})-w_{k+1}\big)\\
-&=\ee^{2\ii(\theta+\varphi)}\big(f_{k+1}(z_0)-w_{k+1}\big)\\
-&=\ee^{2\ii\alpha_{k+1}\pi}\big(f_{k+1}(z_0)-w_{k+1}\big).
-\end{align*}
-\begin{figure}[!ht]
-\centering
-\subcaptionbox{\label{fig7.6a}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.4,
->={Stealth[width=3pt]}]
-\draw(-0.5,0)--(0,0)node[below]{$a_k$}--(1,0)node[below]{$a_{k+1}$}
---(2,0)node[below]{$a_{k+2}$}--(3,0);
-\fill(0,0)circle(0.7pt)(1,0)circle(0.7pt)(2,0)circle(0.7pt)
-(1.2,1)circle(0.7pt)node[right]{$\bar{z_0}$}
-(1.2,-1)circle(0.7pt)node[right]{$z_0$};
-\end{tikzpicture}
-}
-\subcaptionbox{\label{fig7.6b}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.4,
->={Stealth[width=3pt]}]
-\coordinate(O)at(0,0);\coordinate(A)at(30:1.2);
-\coordinate(B)at(70:2);\coordinate(C)at(100:2.3);
-\coordinate(D)at(110:1.5);\coordinate(E)at(150:2);
-\coordinate(F)at(190:1.5);\coordinate(G)at(200:2.3);
-\coordinate(H)at(230:1.9);\coordinate(I)at(265:1.2);
-\coordinate(J)at(280:2);\coordinate(K)at(320:1.5);
-\coordinate(L)at(330:2.2);\coordinate(M)at(355:2);
-\draw(O)--(A)node[above right]{$w_{k+2}$}--(B)--(C)--(D)
---(E)node[left]{$w_k$}--(F)--(G)--(H)--(I)--(O)(O)--(J)--(K)
---(L)--(M)--(A)(O)--(E);
-\coordinate(a)at(85:1.3);\coordinate(b)at(-10:1.4);
-\coordinate(c)at(-150:1.5);
-\draw(c)--(a)--(b);
-\draw[densely dashed](O)--(a)node[above]{$f(\bar{z_0})$}(O)--(b)node[below]{$f_{k+1}(z_0)$}(O)--(c)
-node[below]{$f_k(z_0)$};
-\node[fill=white,right]at(0.05,-0.12){$w_{k+1}$};
-\draw(30:0.25)arc(30:85:0.25)(85:0.2)arc(85:150:0.2);
-\draw(53:0.4)node{$\varphi$}(115:0.35)node{$\theta$};
-\end{tikzpicture}
-}
-\caption{\label{fig7.6}}
-\end{figure}
-由于$z_0$是$D'$中的任意点，故可设
-\[f_k(z)=\alpha_kf_{k+1}(z)+\beta_k,z\in D',\]
-其中，$\alpha_k=\ee^{2\ii\alpha_{k+1}\pi},\beta_k=(1-\ee^{2\ii\alpha_{k+1}\pi})w_{k+1}$，所以
-\begin{align*}
-  &f_k'(z)=\alpha_kf_{k+1}'(z),\\
-  &f_k''(z)=\alpha_k f_{k+1}''(z),
-\end{align*}
-因而
-\[\frac{f_k''(z)}{f_k'(z)}=\frac{f_{k+1}''(z)}{f_{k+1}'(z)},z\in D'.\]
-这说明$f_k$（$k=1,\cdots,n$）在$D'$中虽然都不相等，但$\frac{f_k''}{f_k'}$（$k=1,\cdots,n$）在$D'$中却都是一样的，它们在$D$中当然都等于$\frac{f''}{f'}$. 这样，我们就得到了一个单值函数$g$，它在$D'$中等于$\frac{f_k''}{f_k'}$，在$D$中
-\[g(z)=\frac{f_k''(z)}{f_k'(z)}.\]
-故$g$在$\MC$中除去$a_1,\cdots,a_n$外是全纯的.
+  我们来研究$f_k$和$f_{k+1}$在$D'$中的关系. 任取$z_0\in D'$，则$\bar{z_0}\in D$，于是$f_k(z_0)$是$f(\bar{z_0})$关于线段$w_kw_{k+1}$的对称点，$f_{k+1}(z_0)$是$f(\bar{z_0})$关于线段$w_{k+1}w_{k+2}$的对称点（图 \ref{fig7.6}）.因此，$f_{k}(z_0)$可以看成是由$f_{k+1}(z_0)$经过两条直线的对称变换得到的.显然，有
+  \begin{align*}
+    f_k(z_0) - w_{k+1} & = \ee^{2\ii\theta}\big(f(\bar{z_0}) - w_{k+1}\big)\\
+    & = \ee^{2\ii(\theta+\varphi)}\big(f_{k+1}(z_0)-w_{k+1}\big)\\
+    & = \ee^{2\ii\alpha_{k+1}\pi}\big(f_{k+1}(z_0)-w_{k+1}\big).
+  \end{align*}
+  \begin{figure}[!ht]
+    \centering
+    \subcaptionbox{\label{fig7.6a}}[0.48\textwidth]
+      {
+        \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.4,
+          >={Stealth[width=3pt]}]
+          \draw(-0.5,0)--(0,0)node[below]{$a_k$}--(1,0)node[below]{$a_{k+1}$}
+            --(2,0)node[below]{$a_{k+2}$}--(3,0);
+          \fill(0,0)circle(0.7pt)(1,0)circle(0.7pt)(2,0)circle(0.7pt)
+            (1.2,1)circle(0.7pt)node[right]{$\bar{z_0}$}
+            (1.2,-1)circle(0.7pt)node[right]{$z_0$};
+        \end{tikzpicture}
+      }
+    \subcaptionbox{\label{fig7.6b}}[0.48\textwidth]
+      {
+        \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.4,
+          >={Stealth[width=3pt]}]
+          \coordinate(O)at(0,0);\coordinate(A)at(30:1.2);
+          \coordinate(B)at(70:2);\coordinate(C)at(100:2.3);
+          \coordinate(D)at(110:1.5);\coordinate(E)at(150:2);
+          \coordinate(F)at(190:1.5);\coordinate(G)at(200:2.3);
+          \coordinate(H)at(230:1.9);\coordinate(I)at(265:1.2);
+          \coordinate(J)at(280:2);\coordinate(K)at(320:1.5);
+          \coordinate(L)at(330:2.2);\coordinate(M)at(355:2);
+          \draw(O)--(A)node[above right]{$w_{k+2}$}--(B)--(C)--(D)
+            --(E)node[left]{$w_k$}--(F)--(G)--(H)--(I)--(O)(O)--(J)--(K)
+            --(L)--(M)--(A)(O)--(E);
+          \coordinate(a)at(85:1.3);\coordinate(b)at(-10:1.4);
+          \coordinate(c)at(-150:1.5);
+          \draw(c)--(a)--(b);
+          \draw[densely dashed](O)--(a)node[above]{$f(\bar{z_0})$}(O)--(b)node[below]{$f_{k+1}(z_0)$}(O)--(c)
+            node[below]{$f_k(z_0)$};
+          \node[fill=white,right]at(0.05,-0.12){$w_{k+1}$};
+          \draw(30:0.25)arc(30:85:0.25)(85:0.2)arc(85:150:0.2);
+          \draw(53:0.4)node{$\varphi$}(115:0.35)node{$\theta$};
+        \end{tikzpicture}
+      }
+      \caption{\label{fig7.6}}
+  \end{figure}
+  由于$z_0$是$D'$中的任意点，故可设
+  \[
+    f_k(z) = \alpha_kf_{k+1}(z) + \beta_k,z\in D',
+  \]
+  其中，$\alpha_k=\ee^{2\ii\alpha_{k+1}\pi},\beta_k=(1-\ee^{2\ii\alpha_{k+1}\pi})w_{k+1}$，所以
+  \begin{align*}
+    & f_k'(z) = \alpha_kf_{k+1}'(z),\\
+    & f_k''(z) = \alpha_k f_{k+1}''(z),
+  \end{align*}
+  因而
+  \[
+    \frac{f_k''(z)}{f_k'(z)} = \frac{f_{k+1}''(z)}{f_{k+1}'(z)},z\in D'.
+  \]
+  这说明$f_k$（$k=1,\cdots,n$）在$D'$中虽然都不相等，但$\frac{f_k''}{f_k'}$（$k=1,\cdots,n$）在$D'$中却都是一样的，它们在$D$中当然都等于$\frac{f''}{f'}$. 这样，我们就得到了一个单值函数$g$，它在$D'$中等于$\frac{f_k''}{f_k'}$，在$D$中
+  \[
+    g(z) = \frac{f_k''(z)}{f_k'(z)}.
+  \]
+  故$g$在$\MC$中除去$a_1,\cdots,a_n$外是全纯的.
 
-下面我们证明，$a_k$（$k=1,\cdots,n$）是$g$的$1$阶极点.事实上，由引理 \ref{lemma7.4.2}，$f$在$a_k$的邻域中可展开为
-\[f(z)=w_k+(z-a_k)^{\alpha_k}h(z),\;h(a_k)\ne0,\]
-这里，$h$是$a_k$的邻域中的全纯函数.于是
-\begin{align*}
-f'(z)&=\alpha_k(z-a_k)^{\alpha_k-1}h(z)+(z-a_k)^{\alpha_k}h'(z)\\
-&=(z-a_k)^{\alpha_k-1}[\alpha_kh(z)+(z-a_k)h'(z)]\\
-&=(z-a_k)^{\alpha_k-1}q(z),
-\end{align*}
-这里，$q(z)=\alpha_kh(z)+(z-a_k)h'(z)$是$\alpha_k$的邻域中的全纯函数，而且$q(a_k)=\alpha_kh(a_k)\ne0$.因而
-\[f''(z)=(\alpha_k-1)(z-a_k)^{\alpha_k-2}q(z)+(z-a_k)^{\alpha_k-1}q'(z).\]
-于是，在$a_k$的邻域中有
-\begin{equation}\label{eq7.4.6}
-g(z)=\frac{f''(z)}{f'(z)}=\frac{\alpha_k-1}{z-a_k}+\frac{q'(z)}{q(z)}.
-\end{equation}
-因为$\frac{q'(z)}{q(z)}$在$a_k$的邻域中全纯，可以展开成幂级数，所以 \eqref{eq7.4.6} 式就
-是$g$在$a_k$处的Laurent展开式，它说明$a_k$是$g$的$1$阶极点，$g$在$a_k$处的残数为$\alpha_k-1$.
+  下面我们证明，$a_k$（$k=1,\cdots,n$）是$g$的$1$阶极点.事实上，由引理 \ref{lemma7.4.2}，$f$在$a_k$的邻域中可展开为
+  \[
+    f(z) = w_k + (z-a_k)^{\alpha_k}h(z),\;h(a_k)\ne0,
+  \]
+  这里，$h$是$a_k$的邻域中的全纯函数.于是
+  \begin{align*}
+    f'(z) & = \alpha_k(z-a_k)^{\alpha_k-1}h(z) + (z-a_k)^{\alpha_k}h'(z)\\
+    & = (z-a_k)^{\alpha_k-1}[\alpha_kh(z)+(z-a_k)h'(z)]\\
+    & = (z-a_k)^{\alpha_k-1}q(z),
+  \end{align*}
+  这里，$q(z)=\alpha_kh(z)+(z-a_k)h'(z)$是$\alpha_k$的邻域中的全纯函数，而且$q(a_k)=\alpha_kh(a_k)\ne0$.因而
+  \[
+    f''(z) = (\alpha_k-1)(z-a_k)^{\alpha_k-2}q(z)+(z-a_k)^{\alpha_k-1}q'(z).
+  \]
+  于是，在$a_k$的邻域中有
+  \begin{equation}\label{eq7.4.6}
+    g(z) = \frac{f''(z)}{f'(z)}=\frac{\alpha_k-1}{z-a_k}+\frac{q'(z)}{q(z)}.
+  \end{equation}
+  因为$\frac{q'(z)}{q(z)}$在$a_k$的邻域中全纯，可以展开成幂级数，所以 \eqref{eq7.4.6} 式就
+  是$g$在$a_k$处的Laurent展开式，它说明$a_k$是$g$的$1$阶极点，$g$在$a_k$处的残数为$\alpha_k-1$.
 
-再看$g$在$z=\infty$处的情况.由于$f$把$\infty$映入多角形的边界，因此$f$在$\infty$处全纯，它在$\infty$的邻域中有展开式
-\begin{align*}
-&f(z)=b_0+\frac{b_m}{z^m}+\frac{b_{m+1}}{z^{m+1}}+\cdots,b_m\ne0,\\
-&f'(z)=-\frac{mb_m}{z^{m+1}}-\frac{(m+1)b_{m+1}}{z^{m+2}}-\cdots=-\frac1{z^{m+1}}p(z),
-\end{align*}
-这里，$p$在$z=\infty$的邻域内全纯，且$p(\infty)\ne0$. 由此可得
-\[f''(z)=\frac{m+1}{z^{m+2}}p(z)-\frac1{z^{m+1}}p'(z),\]
-因而
-\[g(z)=\frac{f''(z)}{f(z)}=-\frac{m+1}z+\frac{p'(z)}{p(z)}.\]
-由此即得
-\begin{equation}\label{eq7.4.7}
-\lim_{z\to\infty}g(z)=0.
-\end{equation}
+  再看$g$在$z=\infty$处的情况.由于$f$把$\infty$映入多角形的边界，因此$f$在$\infty$处全纯，它在$\infty$的邻域中有展开式
+  \begin{align*}
+    & f(z) = b_0 + \frac{b_m}{z^m} + \frac{b_{m+1}}{z^{m+1}} + \cdots,b_m\ne0,\\
+    & f'(z) = -\frac{mb_m}{z^{m+1}} - \frac{(m+1)b_{m+1}}{z^{m+2}} - \cdots = -\frac1{z^{m+1}}p(z),
+  \end{align*}
+  这里，$p$在$z=\infty$的邻域内全纯，且$p(\infty)\ne0$. 由此可得
+  \[
+    f''(z) = \frac{m+1}{z^{m+2}}p(z) - \frac1{z^{m+1}}p'(z),
+  \]
+  因而
+  \[
+    g(z) = \frac{f''(z)}{f(z)} = -\frac{m+1}z+\frac{p'(z)}{p(z)}.
+  \]
+  由此即得
+  \begin{equation}\label{eq7.4.7}
+    \lim_{z\to\infty}g(z) = 0.
+  \end{equation}
 
-现在令
-\[G(z)=g(z)-\sum_{k=1}^n\frac{\alpha_k-1}{z-a_k},\]
-它是一个整函数，由 \eqref{eq7.4.7} 式即知$G(z)\equiv0$，即
-\[g(z)=\sum_{k=1}^n\frac{\alpha_k-1}{z-a_k}.\]
-由于在上半平面中，$g(z)=\frac{f''(z)}{f'(z)}$，因而有
-\[\frac{f''(z)}{f'(z)}=\sum_{k=1}^n\frac{\alpha_k-1}{z-a_k},z\in D.\]
-让上式两边沿上半平面内任一条从$z_0$到$z$的可求长曲线积分，可得
-\begin{align*}
-\log f'(z)&=\sum_{k=1}^n(\alpha_k-1)\log(z-a_k)+C'\\
-&=\log[C(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}],
-\end{align*}
-即
-\[f'(z)=C(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1},\]
-由此即得
-\[f(z)=C\int_{z_0}^zC(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz+C_1.\]
-这就是所要证明的.
+  现在令
+  \[
+    G(z) = g(z) - \sum_{k=1}^n\frac{\alpha_k-1}{z-a_k},
+  \]
+  它是一个整函数，由 \eqref{eq7.4.7} 式即知$G(z)\equiv0$，即
+  \[
+    g(z) = \sum_{k=1}^n\frac{\alpha_k-1}{z-a_k}.
+  \]
+  由于在上半平面中，$g(z)=\frac{f''(z)}{f'(z)}$，因而有
+  \[
+    \frac{f''(z)}{f'(z)} = \sum_{k=1}^n\frac{\alpha_k-1}{z-a_k},z\in D.
+  \]
+  让上式两边沿上半平面内任一条从$z_0$到$z$的可求长曲线积分，可得
+  \begin{align*}
+    \log f'(z) & = \sum_{k=1}^n(\alpha_k-1)\log(z-a_k)+C'\\
+    & = \log[C(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}],
+  \end{align*}
+  即
+  \[
+    f'(z) = C(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1},
+  \]
+  由此即得
+  \[
+    f(z) = C\int_{z_0}^zC(z-a_1)^{\alpha_1-1}\cdots(z-a_n)^{\alpha_n-1}\dz + C_1.
+  \]
+  这就是所要证明的.
 \end{proof}
 
 在Schwarz--Christoffel公式中，用以表达$f$的是$z$平面实轴上的点$a_1,\cdots,a_n$.但在具体问题中，通常给出的是多角形的顶点$w_k$（$k=1,\cdots,n$），而$a_k$却是未知的，如何确定$a_k$是解决问题的关键.在实际解题时，我们往往在实轴上任取三点$a_1<a_2<a_3$，使其与多角形的三个顶点$w_1,w_2,w_3$相对应，而其他的$a_4,\cdots,a_n$及$C,C_1$则由具体问题中的条件来确定.之所以能这样做，其依据是下面的定理：
 
 \begin{theorem}\label{thm7.4.4}
- 对于实轴上任意三点$a_1<a_2<a_3$，一定存在唯一的$f$，它在上半平面$D$中单叶且全纯，在$\bar D$上连续，把$D$一一地映为多角形域$G$，且把$a_1,a_2,a_3$分别映为$G$的三个顶点$w_1,w_2,w_3$.
+   对于实轴上任意三点$a_1<a_2<a_3$，一定存在唯一的$f$，它在上半平面$D$中单叶且全纯，在$\bar D$上连续，把$D$一一地映为多角形域$G$，且把$a_1,a_2,a_3$分别映为$G$的三个顶点$w_1,w_2,w_3$.
 \end{theorem}
 \begin{proof}
-根据引理 \ref{lemma7.4.1}，存在$w=\varphi(\zeta)$，它在$\zeta$平面的上半平面$\Im\zeta>0$中单叶且全纯，在$\Im\zeta\ge0$上连续，且把$\Im\zeta>0$一一地映为$G$，把$\Im\zeta=0$一一地映为$\partial G$.设$\varphi^{-1}(w_j)=\zeta_j,j=1,2,3$，且满足$\zeta_1<\zeta_2<\zeta_3$.作分式线性变换$\zeta=T(z)$，把$a_1,a_2,a_3$分别变成$\zeta_1,\zeta_2$和$\zeta_3$，于是复合函数
-\[w=\varphi\big(T(z)\big)=f(z)\]
-便满足定理的要求.
+  根据引理 \ref{lemma7.4.1}，存在$w=\varphi(\zeta)$，它在$\zeta$平面的上半平面$\Im\zeta>0$中单叶且全纯，在$\Im\zeta\ge0$上连续，且把$\Im\zeta>0$一一地映为$G$，把$\Im\zeta=0$一一地映为$\partial G$.设$\varphi^{-1}(w_j)=\zeta_j,j=1,2,3$，且满足$\zeta_1<\zeta_2<\zeta_3$.作分式线性变换$\zeta=T(z)$，把$a_1,a_2,a_3$分别变成$\zeta_1,\zeta_2$和$\zeta_3$，于是复合函数
+  \[
+    w = \varphi\big( T(z) \big) = f(z)
+  \]
+  便满足定理的要求.
 
-如果还有$w=g(z)$也满足定理的要求，那么函数$h(z)=g^{-1}\big(f(z)\big)$便把上半平面映为上半平面，且把实轴映为实轴.如果记$g(\infty)=w'$，则$w'$是多角形边界上某一点，而$f^{-1}(w')=t$，$t$是实轴上某一点，那么$h(t)=\infty$.现在$h$在$(-\infty,t)$和$(t,\infty)$上取实数值，根据对称原理，它可以全纯开拓到下半平面，因而$h\in\Aut(\MC_\infty)$.由定理 \ref{thm5.3.5}，$h$是一个分式线性变换.但$h(z_j)=z_j,j=1,2,3$，即$h$有三个不动点，因而$h(z)=z$，即$f(z)=g(z)$.这就证明了满足定理要求的函数是唯一的.
+  如果还有$w=g(z)$也满足定理的要求，那么函数$h(z)=g^{-1}\big(f(z)\big)$便把上半平面映为上半平面，且把实轴映为实轴.如果记$g(\infty)=w'$，则$w'$是多角形边界上某一点，而$f^{-1}(w')=t$，$t$是实轴上某一点，那么$h(t)=\infty$.现在$h$在$(-\infty,t)$和$(t,\infty)$上取实数值，根据对称原理，它可以全纯开拓到下半平面，因而$h\in\Aut(\MC_\infty)$.由定理 \ref{thm5.3.5}，$h$是一个分式线性变换.但$h(z_j)=z_j,j=1,2,3$，即$h$有三个不动点，因而$h(z)=z$，即$f(z)=g(z)$.这就证明了满足定理要求的函数是唯一的.
 \end{proof}
 
 如果$a_1,\cdots,a_n$中有一个是$\infty$，比如$a_n=\infty$，这时Schwarz-
 Christoffel公式是一个什么样子呢?我们有下面的
 \begin{theorem}\label{thm7.4.5}
-$f$如定理 \ref{thm7.4.3} 中所述，但与$w_n$对应的$a_n=\infty$，这时$f$可表示为
-\begin{equation}\label{eq7.4.8}
-f(z)=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_{n-1})^{\alpha_{n-1}-1}\dz+C_1.
-\end{equation}
+  $f$如定理 \ref{thm7.4.3} 中所述，但与$w_n$对应的$a_n=\infty$，这时$f$可表示为
+  \begin{equation}\label{eq7.4.8}
+    f(z) = C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_{n-1})^{\alpha_{n-1}-1}\dz + C_1.
+  \end{equation}
 \end{theorem}
 \begin{proof}
-任取$a<a_1$，作分式线性变换
-\[\zeta=T(z)=\frac1{a-z}.\]
-容易看出，它把$\Im z>0$映为$\Im\zeta>0$，把实轴上的
-\[a_1<a_2<\cdots<a_{n-1},a_n=\infty\]
-映为
-\[b_1<b_2<\cdots<b_{n-1}<b_n=0,\]
-这里，$b_j=T(a_j),j=1,\cdots,n$. 于是，函数
-\[F(\zeta)=(f\circ T^{-1})(\zeta)\]
-把上半平面$\Im\zeta>0$双全纯地映为多角形域$G$，且把$b_1,\cdots,b_n$.分别映为$w_1,\cdots,w_n$. 根据定理 \ref{thm7.4.3}，$F$可表示为
-\[F(\zeta)=C'\int_{\zeta_0}^\zeta(\tau-b_1)^{\alpha_1-1}\cdots
-(\tau-b_{n-1})^{\alpha_{n-1}-1}\tau^{\alpha_n-1}\textrm d\tau+C_1.\]
-作变量代换$\tau=\frac1{a-\eta}$，因为$b_k=\frac1{a-a_k},k=1,\cdots,n-1$，所以
-\[\tau-b_k=\frac{\eta-a_k}{(a-\eta)(a-a_k)},\;k=1,\cdots,n-1.\]
-上式就变成
-\[
-F(\zeta)=C\int_{T^{-1}(\zeta_0)}^{T^{-1}(\zeta)}(\eta-a_1)^{\alpha_1-1}\cdots(\eta-a_{n-1})
-^{\alpha_{n-1}-1}\cdot\frac1{(a-\eta)^{\alpha_1+\cdots+\alpha_n-(n-2)}}\textrm d\eta+C_1,
-\]
-这里，$C=\frac{C'}{(a-a_1)^{a_1-1}\cdots(a-a_{n-1})^{\alpha_{n-1}-1}}$. 由于$\alpha_1+\cdots+\alpha_n=n-2$，所以
-\[F(\zeta)=C\int_{T^{-1}(\zeta_0)}^{T^{-1}(\zeta)}(\eta-a_1)^{\alpha_1-1}\cdots(\eta-a_{n-1})
-^{\alpha_{n-1}-1}\textrm d\eta+C_1.\]
-由此即得
-\begin{align*}
-f(z)&=F\big(T(z)\big)\\
-&=C\int_{z_0}^z(\eta-a_1)^{\alpha_1-1}\cdots(\eta-a_{n-1})^{\alpha_{n-1}-1}\textrm d\eta+C_1.
-\end{align*}
-这就是要证明的.
+  任取$a<a_1$，作分式线性变换
+  \[
+    \zeta = T(z) = \frac1{a-z}.
+  \]
+  容易看出，它把$\Im z>0$映为$\Im\zeta>0$，把实轴上的
+  \[
+    a_1 < a_2 < \cdots < a_{n-1}, a_n = \infty
+  \]
+  映为
+  \[
+    b_1 < b_2 < \cdots < b_{n-1} < b_n = 0 ,
+  \]
+  这里，$b_j=T(a_j),j=1,\cdots,n$. 于是，函数
+  \[
+    F(\zeta) = (f\circ T^{-1})(\zeta)
+  \]
+  把上半平面$\Im\zeta>0$双全纯地映为多角形域$G$，且把$b_1,\cdots,b_n$.分别映为$w_1,\cdots,w_n$. 根据定理 \ref{thm7.4.3}，$F$可表示为
+  \[
+    F(\zeta) = C'\int_{\zeta_0}^\zeta(\tau-b_1)^{\alpha_1-1}\cdots
+    (\tau-b_{n-1})^{\alpha_{n-1}-1}\tau^{\alpha_n-1}\dif \tau+C_1.
+  \]
+  作变量代换$\tau=\frac1{a-\eta}$，因为$b_k=\frac1{a-a_k},k=1,\cdots,n-1$，所以
+  \[
+    \tau - b_k = \frac{\eta-a_k}{(a-\eta)(a-a_k)},\; k=1,\cdots,n-1.
+  \]
+  上式就变成
+  \[
+    F(\zeta) = C\int_{T^{-1}(\zeta_0)}^{T^{-1}(\zeta)}(\eta-a_1)^{\alpha_1-1}\cdots(\eta-a_{n-1})
+    ^{\alpha_{n-1}-1}\cdot\frac1{(a-\eta)^{\alpha_1+\cdots+\alpha_n-(n-2)}}\dif \eta+C_1,
+  \]
+  这里，$C=\frac{C'}{(a-a_1)^{a_1-1}\cdots(a-a_{n-1})^{\alpha_{n-1}-1}}$. 由于$\alpha_1+\cdots+\alpha_n=n-2$，所以
+  \[
+    F(\zeta) = C\int_{T^{-1}(\zeta_0)}^{T^{-1}(\zeta)}(\eta-a_1)^{\alpha_1-1}\cdots(\eta-a_{n-1})
+    ^{\alpha_{n-1}-1}\dif \eta+C_1.
+  \]
+  由此即得
+  \begin{align*}
+    f(z) & = F\big( T(z) \big)\\
+    & = C\int_{z_0}^z(\eta-a_1)^{\alpha_1-1}\cdots(\eta-a_{n-1})^{\alpha_{n-1}-1}\dif \eta+C_1.
+  \end{align*}
+  这就是要证明的.
 \end{proof}
 
 定理 \ref{thm7.4.5} 说明，如果$a_n=\infty$，那么在公式中把$(z-a_n)^{\alpha_n-1}$这个因子去掉就行了.
 
 如果多角形有一个或几个顶点在无穷远处，变换的公式应是什么样子呢?
 \begin{figure}[!ht]
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.4,
->={Stealth[width=3pt]}]
-\coordinate(O)at(0,0);\coordinate(A)at(30:2);
-\coordinate(B)at(90:1.2);\coordinate(C)at(150:1.1);
-\coordinate(D)at(210:1);\coordinate(E)at(210:2.4);
-\coordinate(F)at(210:2.8);\coordinate(G)at(256:2.1);
-\coordinate(H)at(256:2.4);\coordinate(I)at(256:1);
-\coordinate(J)at(330:1);\coordinate(K)at(-30:2.1);
-\draw(A)--(B)--(C)--(D)--(E)node[above left]{$w_k'$}--(G)node[ right]{$w_k''$}--(I)--(J)--(K)--cycle;
-\draw[densely dashed](0,0)node[above right]{$\beta_k\pi$}
---(D)node[above left]{$w_{k-1}$}(O)--(I)node[below right]{$w_{k+1}$};
-\draw(E)--(F)(G)--(H)(230:2.8)node{$w_k$};
-\begin{scope}
-\clip(D)--(E)--(G);
-\draw(E)circle(0.25);
-\node at(217:1.93){$\alpha_k'\pi$};
-\end{scope}
-\begin{scope}
-\clip(E)--(G)--(I);
-\draw(G)circle(0.25);
-\node at(246:1.8){$\alpha_k''\pi$};
-\end{scope}
+  \centering
+  \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.4,
+    >={Stealth[width=3pt]}]
+    \coordinate(O)at(0,0);\coordinate(A)at(30:2);
+    \coordinate(B)at(90:1.2);\coordinate(C)at(150:1.1);
+    \coordinate(D)at(210:1);\coordinate(E)at(210:2.4);
+    \coordinate(F)at(210:2.8);\coordinate(G)at(256:2.1);
+    \coordinate(H)at(256:2.4);\coordinate(I)at(256:1);
+    \coordinate(J)at(330:1);\coordinate(K)at(-30:2.1);
+    \draw(A)--(B)--(C)--(D)--(E)node[above left]{$w_k'$}--(G)node[ right]{$w_k''$}--(I)--(J)--(K)--cycle;
+    \draw[densely dashed](0,0)node[above right]{$\beta_k\pi$}
+       --(D)node[above left]{$w_{k-1}$}(O)--(I)node[below right]{$w_{k+1}$};
+    \draw(E)--(F)(G)--(H)(230:2.8)node{$w_k$};
+    \begin{scope}
+      \clip(D)--(E)--(G);
+      \draw(E)circle(0.25);
+      \node at(217:1.93){$\alpha_k'\pi$};
+    \end{scope}
+    \begin{scope}
+      \clip(E)--(G)--(I);
+      \draw(G)circle(0.25);
+      \node at(246:1.8){$\alpha_k''\pi$};
+    \end{scope}
 
-\end{tikzpicture}
-\caption{\label{fig7.7}}
+  \end{tikzpicture}
+  \caption{\label{fig7.7}}
 \end{figure}
 
-设$w_k=\infty$. 如图 \ref{fig7.7} 所示，在$w_{k-1}w_k$和$w_kw_{k+1}$上分别取$w_k'$和$w_k''$，连接$w_k'$和$w_k''$后得一$n+1$角形$G'$. 于是，把上半平面映为$G'$的公式为
-\[w=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_k')^{\alpha_k'-1}(z-a_k'')^{\alpha_k''-1}
-\cdots(z-a_n)^{\alpha_n-1}\dz+C_1,\]
-这里，$a_k'$和$a_k''$是$w_k'$和$w_k''$在实轴上的原像. 现在让线段$w_k'w_k''$平行移动到无穷远去，$G'$就趋于$G$，而$a_k'$和$a_k''$就趋于$\infty$点在实轴上的原像$a_k$，上面公式中的被积函数
-\[(z-a_k')^{\alpha_k'-1}(z-a_k'')^{\alpha_k''-1}\to(z-a_k)^{\alpha_k'+\alpha_k''-2}.\]
-如果直线$w_{k-1}w_k'$和$w_k''w_{k+1}$在有限点处的交角为$\beta_k\pi$，那么易知$\alpha_k'+\alpha_k''+\beta_k=1$，所以$\alpha_k'+\alpha_k''-2=-1-\beta_k$. 若记$\alpha_k=-\beta_k$，则有
-\[\alpha_k'+\alpha_k''-2=\alpha_k-1.\]
-这样，上面的公式仍可写成
-\[w=C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_k)^{\alpha_k-1}\cdots(z-a_n)^{\alpha_n-1}
-\dz+C_1.\]
-这里的$\alpha_k\pi$是顶点在无穷远处的两条边在有限点处的交角乘以$-1$.综上所述，我们得到了
+  设$w_k=\infty$. 如图 \ref{fig7.7} 所示，在$w_{k-1}w_k$和$w_kw_{k+1}$上分别取$w_k'$和$w_k''$，连接$w_k'$和$w_k''$后得一$n+1$角形$G'$. 于是，把上半平面映为$G'$的公式为
+  \[
+    w = C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_k')^{\alpha_k'-1}(z-a_k'')^{\alpha_k''-1}
+    \cdots(z-a_n)^{\alpha_n-1}\dz+C_1,
+  \]
+  这里，$a_k'$和$a_k''$是$w_k'$和$w_k''$在实轴上的原像. 现在让线段$w_k'w_k''$平行移动到无穷远去，$G'$就趋于$G$，而$a_k'$和$a_k''$就趋于$\infty$点在实轴上的原像$a_k$，上面公式中的被积函数
+  \[
+    (z-a_k')^{\alpha_k'-1}(z-a_k'')^{\alpha_k''-1}\to(z-a_k)^{\alpha_k'+\alpha_k''-2}.
+  \]
+  如果直线$w_{k-1}w_k'$和$w_k''w_{k+1}$在有限点处的交角为$\beta_k\pi$，那么易知$\alpha_k'+\alpha_k''+\beta_k=1$，所以$\alpha_k'+\alpha_k''-2=-1-\beta_k$. 若记$\alpha_k=-\beta_k$，则有
+  \[
+    \alpha_k' + \alpha_k'' - 2 = \alpha_k - 1.
+  \]
+  这样，上面的公式仍可写成
+  \[
+    w = C\int_{z_0}^z(z-a_1)^{\alpha_1-1}\cdots(z-a_k)^{\alpha_k-1}\cdots(z-a_n)^{\alpha_n-1}
+    \dz+C_1.
+  \]
+  这里的$\alpha_k\pi$是顶点在无穷远处的两条边在有限点处的交角乘以$-1$.综上所述，我们得到了
 \begin{theorem}\label{thm7.4.6}
-设$G$是有一个或几个顶点在无穷远处的多角形，如果把在$\infty$处那个顶点的顶角规定为过$\infty$点的两条边在有限点处的夹角乘以$-1$，那么Schwarz--Christoffel公式仍然成立.
+  设$G$是有一个或几个顶点在无穷远处的多角形，如果把在$\infty$处那个顶点的顶角规定为过$\infty$点的两条边在有限点处的夹角乘以$-1$，那么Schwarz--Christoffel公式仍然成立.
 \end{theorem}
 
 下面通过例子来说明Schwarz--Christoffel公式的用法.
 \begin{example}\label{thm7.4.7}
-设$G$是以$w_1,w_2,w_3$为顶点，相应的顶角为$\alpha_1\pi,\alpha_2\pi,\alpha_3\pi$（$\alpha_1+\alpha_2+\alpha_3=1$）的三角形域，求出把上半平面映为$G$的保角变换.
+  设$G$是以$w_1,w_2,w_3$为顶点，相应的顶角为$\alpha_1\pi,\alpha_2\pi,\alpha_3\pi$（$\alpha_1+\alpha_2+\alpha_3=1$）的三角形域，求出把上半平面映为$G$的保角变换.
 \end{example}
 \begin{solution}
-设所求的变换为$w=f(z)$. 在实轴上取三点$a_1=0,a_2=1,a_3=\infty$，使得$f(a_j)=w_j,j=1,2,3$. 由公式 \eqref{eq7.4.8}，有
-\begin{equation}\label{eq7.4.9}
-f(z)=C\int_0^z\zeta^{\alpha_1-1}(1-\zeta)^{\alpha_2-1}\textrm d\zeta+C_1.
-\end{equation}
-由$f(0)=w_1$，得$C_1=w_1$. 再由$f(1)=w_2$，得
-\[C=\frac{w_2-w_1}{\int_0^1t^{\alpha_1-1}(1-t)^{\alpha_2-1}\textrm dt}
-=\frac{w_2-w_1}{B(\alpha_1,\alpha_2)}.\]
-这里，$B$表示Beta函数. 由于$\alpha_1+\alpha_2+\alpha_3=1$，所以
-\[B(\alpha_1,\alpha_2)=\frac{\Gamma(\alpha_1)\Gamma(\alpha_2)}{\Gamma(\alpha_1+\alpha_2)}
-=\frac{\Gamma(\alpha_1)\Gamma(\alpha_2)}{\Gamma(1-\alpha_3)}.\]
-由余元公式，有
-\[\Gamma(\alpha_3)\Gamma(1-\alpha_3)=\frac\pi{\sin\alpha_3\pi},\]
-所以
-\[B(\alpha_1,\alpha_2)=\frac1\pi\Gamma(\alpha_1)\Gamma(\alpha_2)
-\Gamma(\alpha_3)\sin\alpha_3\pi.\]
-于是
-\[C=\frac{\pi(w_2-w_1)}{\Gamma(\alpha_1)\Gamma(\alpha_2)
-\Gamma(\alpha_3)\sin\alpha_3\pi}.\]
-将$C$和$C_1$的值代入 \eqref{eq7.4.9} 式，即得所要求的变换.
+  设所求的变换为$w=f(z)$. 在实轴上取三点$a_1=0,a_2=1,a_3=\infty$，使得$f(a_j)=w_j,j=1,2,3$. 由公式 \eqref{eq7.4.8}，有
+  \begin{equation}\label{eq7.4.9}
+    f(z) = C\int_0^z\zeta^{\alpha_1-1}(1-\zeta)^{\alpha_2-1}\dif \zeta+C_1.
+  \end{equation}
+  由$f(0)=w_1$，得$C_1=w_1$. 再由$f(1)=w_2$，得
+  \[
+    C = \frac{w_2-w_1}{\int_0^1t^{\alpha_1-1}(1-t)^{\alpha_2-1}\dif t}
+    = \frac{w_2-w_1}{B(\alpha_1,\alpha_2)}.
+  \]
+  这里，$B$表示Beta函数. 由于$\alpha_1+\alpha_2+\alpha_3=1$，所以
+  \[
+    B(\alpha_1,\alpha_2) = \frac{\Gamma(\alpha_1)\Gamma(\alpha_2)}{\Gamma(\alpha_1+\alpha_2)}
+    = \frac{\Gamma(\alpha_1)\Gamma(\alpha_2)}{\Gamma(1-\alpha_3)}.
+  \]
+  由余元公式，有
+  \[
+    \Gamma(\alpha_3)\Gamma(1-\alpha_3) = \frac\pi{\sin\alpha_3\pi},
+  \]
+  所以
+  \[
+    B(\alpha_1,\alpha_2) = \frac1\pi\Gamma(\alpha_1)\Gamma(\alpha_2)
+    \Gamma(\alpha_3)\sin\alpha_3\pi.
+  \]
+  于是
+  \[
+     C = \frac{\pi(w_2-w_1)}{\Gamma(\alpha_1)\Gamma(\alpha_2)
+    \Gamma(\alpha_3)\sin\alpha_3\pi}.
+  \]
+  将$C$和$C_1$的值代入 \eqref{eq7.4.9} 式，即得所要求的变换.
 \end{solution}
 
 \begin{example}\label{exam7.4.8}
-求一保角变换，把上半平面映为域$G=\bigg\{w:-\frac\pi2<\Re w<\frac\pi2,\Im w>0\bigg\}$（图 \ref{fig7.8}）.
+  求一保角变换，把上半平面映为域$G=\bigg\{w:-\frac\pi2<\Re w<\frac\pi2,\Im w>0\bigg\}$（图 \ref{fig7.8}）.
 \end{example}
-\noindent\begin{minipage}{0.6\textwidth}
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[thick,every node/.style =
+    {inner sep=2pt},scale=1.4, > = {Stealth[width=3pt]}]
+    \draw (-pi/2,pi) --(-pi/2,0) node[left]{$w_1$} node[below] {$-\frac\pi2$}
+    --(0,0)node[below]{$O$} -- (pi/2,0)node[below]{$\frac\pi2$} node[right]{$w_2$} -- (pi/2,pi) (0,pi)node{$w_3$};
+    \fill (0,0) circle(0.7pt);
+  \end{tikzpicture}
+  \caption{\label{fig7.8}}
+\end{figure}
+
 \begin{solution}
-把$G$看成三角形，它的三个顶点为
-\[w_1=-\frac\pi2,w_2=\frac\pi2,w_3=\infty,\]
-对应的三个角分别为$\frac\pi2,\frac\pi2$和$0$. 在实轴上取三个点$a_1=-1,a_2=1,a_3=\infty$，由公式 \eqref{eq7.4.8} 即知，把上半平面映为域$G$的变换为
-\begin{align*}
-f(z)&=C\int_0^z(z+1)^{-\frac12}(z-1)^{-\frac12}\dz+C_1\\
-&=C\int_0^z\frac{\dz}{\sqrt{z^2-1}}+C_1=C'\arcsin z+C_1.
-\end{align*}
-由$f(-1)=-\frac\pi2,f(1)=\frac\pi2$，得$C_1=0,C'=1$. 故所求的变换为
-\begin{equation*}
-w=\arcsin z.
-\end{equation*}
+  把$G$看成三角形，它的三个顶点为
+  \[
+    w_1 = -\frac\pi2, w_2 = \frac\pi2, w_3 = \infty,
+  \]
+  对应的三个角分别为$\frac\pi2,\frac\pi2$和$0$. 在实轴上取三个点$a_1=-1,a_2=1,a_3=\infty$，由公式 \eqref{eq7.4.8} 即知，把上半平面映为域$G$的变换为
+  \begin{align*}
+    f(z) & = C\int_0^z(z+1)^{-\frac12}(z-1)^{-\frac12}\dz + C_1\\
+    & = C\int_0^z\frac{\dz}{\sqrt{z^2-1}} + C_1 = C'\arcsin z + C_1.
+  \end{align*}
+  由$f(-1)=-\frac\pi2,f(1)=\frac\pi2$，得$C_1=0,C'=1$. 故所求的变换为
+  \begin{equation*}
+    w = \arcsin z. \qedhere
+  \end{equation*}
 \end{solution}
-\end{minipage}%
-\begin{minipage}{0.4\textwidth}
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.4,
->={Stealth[width=3pt]}]
-\draw(-pi/2,pi)--(-pi/2,0)node[left]{$w_1$}node[below]{$-\frac\pi2$}
---(0,0)node[below]{$O$}--(pi/2,0)node[below]{$\frac\pi2$}node[right]{$w_2$}
---(pi/2,pi)(0,pi)node{$w_3$};
-\fill(0,0)circle(0.7pt);
-\end{tikzpicture}
-\captionof{figure}{\label{fig7.8}}
-\end{minipage}
+
+
 
 \begin{example}\label{exam7.4.9}
-求一保角变换，把带状域$D=\{z:-\pi<\Im z<\pi\}$映为图 \ref{fig7.9}\subref{fig7.9b} 所示的域$G$.
+  求一保角变换，把带状域$D=\{z:-\pi<\Im z<\pi\}$映为图 \ref{fig7.9}\subref{fig7.9b} 所示的域$G$.
 \end{example}
+\begin{figure}[!ht]
+  \centering
+  \subcaptionbox{\label{fig7.9a}}[0.48\textwidth]
+    {
+      \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+        >={Stealth[width=3pt]}]
+        \draw[->](0,-2)--(0,-1)node[below right]{$\pi\ii $}--(0,0)node[below right]{$O$}--(0,1)node[above right]{$\pi\ii $}--(0,2);
+        \draw[densely dashed](-2.2,0)--(2.2,0);
+        \draw(-2.2,1)--(2.2,1)(-2.2,-1)--(2.2,-1);
+      \end{tikzpicture}
+    }
+  \subcaptionbox{\label{fig7.9b}}[0.48\textwidth]
+    {
+      \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+        >={Stealth[width=3pt]}]
+        \draw[->](0,-2)--(0,-1)node[below left]{$-h\ii $}--(0,0)node[below right]{$O$}--(0,1)node[above left]{$h\ii $}--(0,2);
+        \draw(-2.2,0)--(2.2,0);
+        \draw(-2.2,1)--(0,1)--++(30:2)(-2.2,-1)--(0,-1)--++(-30:2);
+        \draw[densely dashed](0,1)--(2.2,1)(0,-1)--(2.2,-1);
+        \draw(0.4,1)arc(0:30:0.4)(0.4,-1)arc(0:-30:0.4);
+        \draw(0.9,1.22)node{$\beta\pi$}(0.9,-1.22)node{$\beta\pi$};
+      \end{tikzpicture}
+    }
+    \caption{\label{fig7.9}}
+  \end{figure}
 \begin{solution}
-由对称性，我们只需考虑把$0<\Im z<\pi$映为图 \ref{fig7.9}\subref{fig7.9b} 中上半部分域的变换. 因为$\zeta=\ee^z$可以把$0<\Im z<\pi$映为上半平面，故只需研究把上半平面映为图 \ref{fig7.10}\subref{fig7.10b} 中的那个域$G'$.
+  由对称性，我们只需考虑把$0<\Im z<\pi$映为图 \ref{fig7.9}\subref{fig7.9b} 中上半部分域的变换. 因为$\zeta=\ee^z$可以把$0<\Im z<\pi$映为上半平面，故只需研究把上半平面映为图 \ref{fig7.10}\subref{fig7.10b} 中的那个域$G'$.
 
-\begin{figure}[!ht]
-\centering
-\subcaptionbox{\label{fig7.9a}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
->={Stealth[width=3pt]}]
-\draw[->](0,-2)--(0,-1)node[below right]{$\pi\textrm i$}--(0,0)node[below right]{$O$}--(0,1)node[above right]{$\pi\textrm i$}--(0,2);
-\draw[densely dashed](-2.2,0)--(2.2,0);
-\draw(-2.2,1)--(2.2,1)(-2.2,-1)--(2.2,-1);
-\end{tikzpicture}
-}
-\subcaptionbox{\label{fig7.9b}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
->={Stealth[width=3pt]}]
-\draw[->](0,-2)--(0,-1)node[below left]{$-h\textrm i$}--(0,0)node[below right]{$O$}--(0,1)node[above left]{$h\textrm i$}--(0,2);
-\draw(-2.2,0)--(2.2,0);
-\draw(-2.2,1)--(0,1)--++(30:2)(-2.2,-1)--(0,-1)--++(-30:2);
-\draw[densely dashed](0,1)--(2.2,1)(0,-1)--(2.2,-1);
-\draw(0.4,1)arc(0:30:0.4)(0.4,-1)arc(0:-30:0.4);
-\draw(0.9,1.22)node{$\beta\pi$}(0.9,-1.22)node{$\beta\pi$};
-\end{tikzpicture}
-}
-\caption{\label{fig7.9}}
-\end{figure}
-\begin{figure}[!ht]
-\centering
-\subcaptionbox{\label{fig7.10a}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.5,
->={Stealth[width=3pt]}]
-\draw(-1.5,0)--(-1,0)node[below]{$-1$}--(-0.5,0)node[below]{$z_1$}
---(0,0)node[below]{$O$}--(0.5,0)node[below]{$z_2$}--(1.5,0);
-\draw(0.5,0)arc(0:180:0.5);
-\draw(0,0)--(45:0.5)node[above right]{$\rho$};
-\fill(-1,0)circle(0.65pt)(0,0)circle(0.65pt);
-\end{tikzpicture}
-}
-\subcaptionbox{\label{fig7.10b}}[0.48\textwidth]
-{
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
->={Stealth[width=3pt]}]
-\draw(-3,0)node[above left]{$w_1$}--(0,0)node[below]{$O$}--(2,0)node[above right]{$w_2$};
-\draw[->](0,0)--(0,1)node[above left]{$w_3=h\textrm i$}--(0,2.5);
-\draw(-3,1)--(0,1)--++(35:2);
-\draw[densely dashed](0,1)--(2,1);
-\draw(0.4,1)arc(0:35:0.4)(0.7,1.2)node{$\beta\pi$};
-\end{tikzpicture}
-}
-\caption{\label{fig7.10}}
-\end{figure}
 
-把$G'$看成一个三角形，它的三个顶点分别为
-\[w_1=\infty,w_2=\infty,w_3=h\textrm i,\]
-相应的三个角分别为$\alpha_1=0,\alpha_2=-\beta$和$\alpha_3=\beta+1$. 让$a_1=0,a_2=\infty,a_3=-1$，由定理 \ref{thm7.4.6}，所求的变换为
-\begin{equation}\label{eq7.4.10}
-w=f(\zeta)=C\int_{-1}^\zeta z^{-1}(z+1)^\beta\textrm dz+C_1.
-\end{equation}
-因为$f(-1)=h\textrm i$，所以$C_1=h\textrm i$.
+  \begin{figure}[!ht]
+    \centering
+    \subcaptionbox{\label{fig7.10a}}[0.48\textwidth]
+      {
+        \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},scale=1.5,
+          >={Stealth[width=3pt]}]
+          \draw (-1.5,0) -- (-1,0)node[below]{$-1$} -- (-0.5,0) node[below]{$z_1$}
+            --(0,0)node[below]{$O$}--(0.5,0)node[below]{$z_2$}--(1.5,0);
+          \draw (0.5,0) arc (0:180:0.5);
+          \draw (0,0) -- (45:0.5) node[above right]{$\rho$};
+          \fill (-1,0) circle (0.65pt) (0,0) circle (0.65pt);
+       \end{tikzpicture}
+      }
+    \subcaptionbox{\label{fig7.10b}}[0.48\textwidth]
+      {
+        \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+          >={Stealth[width=3pt]}]
+          \draw (-3,0)node[above left]{$w_1$} -- (0,0)node[below]{$O$} -- (2,0)node[above right]{$w_2$};
+          \draw [->] (0,0) -- (0,1)node[above left]{$w_3=h\ii $} -- (0,2.5);
+          \draw (-3,1) -- (0,1) -- ++(35:2);
+          \draw [densely dashed] (0,1) -- (2,1);
+          \draw (0.4,1) arc (0:35:0.4) (0.7,1.2) node{$\beta\pi$};
+        \end{tikzpicture}
+      }
+      \caption{\label{fig7.10}}
+  \end{figure}
 
-现设法确定常数$C$. 以$a_1=0$为圆心、$\rho$为半径作圆，与实轴交于$z_1$和$z_2$（图 \ref{fig7.10}\subref{fig7.10a}）. 因为$z_1\in(-1,0)=(a_3,a_1),z_2\in(0,\infty)=(a_1,a_2)$，所以$f(z_1)\in w_3w_1,f(z_2)\in w_1w_2$，因而
-\begin{equation}\label{eq7.4.11}
-\Im\big(f(z_2)-f(z_1)\big)=-h.
-\end{equation}
-另一方面，如果记$\gamma_\rho=\{z:z=\rho\ee^{\ii\theta},0\le\theta\le\pi\}$，则当$z\in\gamma_\rho$时，有
-\[(1+z)^\beta=(1+\rho\ee^{\ii\theta})^\beta=1+\beta\rho\ee^{\ii\theta}+\cdots
-=1+O(\rho).\]
-于是，从 \eqref{eq7.4.10} 式可得
-\begin{align*}
-f(z_2)-f(z_1)&=C\int_{z_1}^{z_2}\frac{(1+z)^\beta}z\dz=-C\int\limits_{\gamma_\rho}
-\frac{(1+z)^\beta}z\dz\\
-&=-C\int_0^\pi\frac{(1+\rho\ee^{\ii\theta})^\beta}{\rho\ee^{\ii\theta}}
-\rho\ii\ee^{\ii\theta}\textrm d\theta\\
-&=-C\pi\ii+O(\rho),
-\end{align*}
-令$\rho\to0$，即得
-\begin{equation}\label{eq7.4.12}
-\Im\big(f(z_2)-f(z_1)\big)=-C\pi.
-\end{equation}
-比较 \eqref{eq7.4.11} 式和 \eqref{eq7.4.12} 式，即得
-\[C=\frac h\pi.\]
+  把$G'$看成一个三角形，它的三个顶点分别为
+  \[
+    w_1 = \infty, w_2 = \infty, w_3 = h\ii ,
+  \]
+  相应的三个角分别为$\alpha_1=0,\alpha_2=-\beta$和$\alpha_3=\beta+1$. 让$a_1=0,a_2=\infty,a_3=-1$，由定理 \ref{thm7.4.6}，所求的变换为
+  \begin{equation}\label{eq7.4.10}
+    w = f(\zeta) = C\int_{-1}^\zeta z^{-1}(z+1)^\beta\dif z + C_1.
+  \end{equation}
+  因为$f(-1)=h\ii $，所以$C_1=h\ii $.
 
-至此，得到把上半平面$\Im\zeta>0$映为$G'$的变换为
-\begin{equation}\label{eq7.4.13}
-w=f(\zeta)=\frac h\pi\int_{-1}^\zeta\frac{(1+z)^\beta}z\dz+\ii h.
-\end{equation}
-所以，$w=f(\ee^z)$是把$0<\Im z<\pi$映为$G'$的变换. 当$z$在实轴上时，$\ee^z$在正实轴上，因而$f(\ee^z)$取实数值，根据对称原理，$w=f(\ee^z)$把$-\pi<\Im z<\pi$映为$G$.
+  现设法确定常数$C$. 以$a_1=0$为圆心、$\rho$为半径作圆，与实轴交于$z_1$和$z_2$（图 \ref{fig7.10}\subref{fig7.10a}）. 因为$z_1\in(-1,0)=(a_3,a_1),z_2\in(0,\infty)=(a_1,a_2)$，所以$f(z_1)\in w_3w_1,f(z_2)\in w_1w_2$，因而
+  \begin{equation}\label{eq7.4.11}
+    \Im \big( f(z_2) - f(z_1) \big) = -h.
+  \end{equation}
+  另一方面，如果记$\gamma_\rho=\{z:z=\rho\ee^{\ii\theta},0\le\theta\le\pi\}$，则当$z\in\gamma_\rho$时，有
+  \[
+    (1+z)^\beta = (1+\rho\ee^{\ii\theta})^\beta = 1 + \beta\rho\ee^{\ii\theta}+\cdots
+    = 1 + O(\rho).
+  \]
+  于是，从 \eqref{eq7.4.10} 式可得
+  \begin{align*}
+    f(z_2) - f(z_1) & = C\int_{z_1}^{z_2}\frac{(1+z)^\beta}z\dz  = -C\int\limits_{\gamma_\rho}
+      \frac{(1+z)^\beta}z\dz\\
+    & = -C\int_0^\pi\frac{(1+\rho\ee^{\ii\theta})^\beta}{\rho\ee^{\ii\theta}}
+      \rho\ii\ee^{\ii\theta}\dif \theta\\
+    & = -C\pi\ii+O(\rho),
+  \end{align*}
+  令$\rho\to0$，即得
+  \begin{equation}\label{eq7.4.12}
+    \Im \big( f(z_2) - f(z_1) \big) = -C\pi.
+  \end{equation}
+  比较 \eqref{eq7.4.11} 式和 \eqref{eq7.4.12} 式，即得
+  \[
+    C = \frac h\pi.
+  \]
 
-下面来看两个特例：
+  至此，得到把上半平面$\Im\zeta>0$映为$G'$的变换为
+  \begin{equation}\label{eq7.4.13}
+    w = f(\zeta) = \frac h\pi\int_{-1}^\zeta\frac{(1+z)^\beta}z\dz + \ii h.
+  \end{equation}
+  所以，$w=f(\ee^z)$是把$0<\Im z<\pi$映为$G'$的变换. 当$z$在实轴上时，$\ee^z$在正实轴上，因而$f(\ee^z)$取实数值，根据对称原理，$w=f(\ee^z)$把$-\pi<\Im z<\pi$映为$G$.
 
-(1) 如果$\beta=1$，那么
-\[f(\zeta)=\frac h\pi\int_{-1}^\zeta\bigg(1+\frac1z\bigg)\dz+\ii h
-=\frac h\pi(\log\zeta+\zeta+1),\]
-所以
-\[w=f(\ee^z)=\frac h\pi(\ee^z+z+1),\]
-它把$-\pi<\Im z<\pi$一一地映为全平面除去两条半直线（图 \ref{fig7.11}）：$\{z:z=x\pm h\ii,-\infty<x<0\}$.
-\begin{figure}[!ht]
-\centering
-\begin{minipage}[b]{0.48\linewidth}
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
->={Stealth[width=3pt]}]
-\draw(-2,0.7)--(2,0.7)node[above]{$h\textrm i$};
-\draw(-2,-0.7)--(2,-0.7)node[below]{$-h\textrm i$};
-\draw[densely dashed](-2,0)--(2,0)node[right]{$O$};
-\fill(2,0)circle(1pt)(2,-0.7)circle(1pt)(2,0.7)circle(1pt);
-\end{tikzpicture}
-\caption{\label{fig7.11}}
-\end{minipage}\hfill
-\begin{minipage}[b]{0.48\linewidth}
-\centering
-\begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
->={Stealth[width=3pt]}]
-\draw(-2,0.7)--(2,0.7)node[right]{$h\textrm i$}--(2,2.2);
-\draw(-2,-0.7)--(2,-0.7)node[right]{$-h\textrm i$}--(2,-2.2);
-\draw[densely dashed](-2,0)--(2,0)node[right]{$O$};
-\fill(2,0)circle(1pt)(2,-0.7)circle(1pt)(2,0.7)circle(1pt);
-\end{tikzpicture}
-\caption{\label{fig7.12}}
-\end{minipage}
-\end{figure}
+  下面来看两个特例：
 
-(2) 如果$\beta=\frac12$，那么
-\begin{align*}
-f(\zeta)&=\frac h\pi\int_{-1}^\zeta\frac{\sqrt{z+1}}z\dz+\ii h\\
-&=\frac{2h}\pi\bigg[\sqrt{\zeta+1}+\log\big(\sqrt{\zeta+1}-1\big)-\frac12
-\log\zeta\bigg],
-\end{align*}
-所以
-\[w=f(\ee^z)=\frac{2h}\pi\bigg[\sqrt{\ee^z+1}+\log\big(\sqrt{\ee^z+1}-1\big)
--\frac z2\bigg],\]
-它把$-\pi<\Im z<\pi$一一地映为图 \ref{fig7.12} 所示的域.
+  (1) 如果$\beta=1$，那么
+  \[
+    f(\zeta) = \frac h\pi\int_{-1}^\zeta\bigg(1+\frac1z\bigg)\dz + \ii h
+    = \frac h\pi(\log\zeta+\zeta+1),
+  \]
+  所以
+  \[
+    w = f(\ee^z) = \frac h\pi(\ee^z+z+1),
+  \]
+  它把$-\pi<\Im z<\pi$一一地映为全平面除去两条半直线（图 \ref{fig7.11}）：$\{z:z=x\pm h\ii,-\infty<x<0\}$.
+  \begin{figure}[!ht]
+    \centering
+    \begin{minipage}[b]{0.48\linewidth}
+      \centering
+      \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+        >={Stealth[width=3pt]}]
+        \draw (-2,0.7) -- (2,0.7) node[above]{$h\ii $};
+        \draw (-2,-0.7) -- (2,-0.7) node[below]{$-h\ii $};
+        \draw [densely dashed] (-2,0) -- (2,0)node[right]{$O$};
+        \fill (2,0) circle(1pt) (2,-0.7) circle(1pt)(2,0.7)circle(1pt);
+      \end{tikzpicture}
+      \caption{\label{fig7.11}}
+    \end{minipage}\hfill
+    \begin{minipage}[b]{0.48\linewidth}
+      \centering
+      \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
+         >={Stealth[width=3pt]}]
+         \draw (-2,0.7) -- (2,0.7) node[right]{$h\ii $} -- (2,2.2);
+         \draw (-2,-0.7) -- (2,-0.7) node[right]{$-h\ii $} -- (2,-2.2);
+         \draw [densely dashed] (-2,0) -- (2,0) node[right]{$O$};
+         \fill (2,0) circle (1pt) (2,-0.7) circle (1pt) (2,0.7) circle (1pt);
+      \end{tikzpicture}
+      \caption{\label{fig7.12}}
+    \end{minipage}
+  \end{figure}
+
+  (2) 如果$\beta=\frac12$，那么
+  \begin{align*}
+    f(\zeta) & = \frac h\pi\int_{-1}^\zeta\frac{\sqrt{z+1}}z\dz+\ii h\\
+    & = \frac{2h}\pi\bigg[\sqrt{\zeta+1}+\log\big(\sqrt{\zeta+1}-1\big)-\frac12
+       \log\zeta\bigg],
+  \end{align*}
+  所以
+  \[
+    w = f(\ee^z) = \frac{2h}\pi\bigg[\sqrt{\ee^z+1} + \log\big(\sqrt{\ee^z+1}-1\big)
+    -\frac z2\bigg],
+  \]
+  它把$-\pi<\Im z<\pi$一一地映为图 \ref{fig7.12} 所示的域.
 \end{solution}
 
 \begin{xiti}
-\item 设$L_k=\big\{z=r\ee^{\ii\frac{2k\pi}n}:1\le r<\infty\big\},G=\MC\backslash
-\big(\bigcup_{k=1}^nL_k\big)$.求出将上半平面映为$G$的双全纯映射$\varphi$，使得$\varphi(\ii)=0$.
-\[\Bigg(\varphi(z)=\frac{z^2+1}{\bigg(\sum_{k=0}^{[\frac n2]}
-(-1)^k\binom n{2k}z^{n-2k}\bigg)^{\frac2n}}\Bigg)\]
-\item 证明：将$B(0,1)$映为$n$角形内部的双全纯映射$\varphi$具有形状
-\[\varphi(z)=C_0\int_{z_0}^z\prod_{k=1}^n(\zeta-a_k)^{\alpha_k-1}\textrm d\zeta+C_1,\]
-其中，$a_1,a_2,\cdots,a_n\in\partial B(0,1)$是与该$n$角形顶点相对应的点；$\alpha_1\pi,\alpha_2\pi,\cdots,\alpha_n\pi$是该$n$角形的内角；$z_0\in B(0,1)$.
-\item 设$G$是正$n$角形，$O$是它的中心，$1$是它的一个顶点.求出将$B(0,1)$映为$G$的双全纯映射$\varphi$，使得$\varphi(0)=0,\varphi'(0)>0$.
-\[\Bigg(\varphi(z)=\frac n{B(\frac1n,1-\frac2n)}\int_0^z(1-\zeta^n)^{-\frac2n}\textrm d\zeta\Bigg)\]
-\item 证明：将上半平面映为$\MC_\infty$中的$n$角形外部的单叶亚纯函数$\varphi$具有形状
-\[\varphi(z)=C_0\int_{z_0}^z\prod_{k=1}^n(\zeta-a_k)^{\alpha_k-1}
-\frac1{(\zeta-a_0)(\zeta-\bar{a_0})}\textrm d\zeta+C_1,\]
-其中，$a_1,a_2,\cdots,a_n\in\MR$是与该$n$角形顶点相对应的点；$\alpha_1\pi,\alpha_2\pi,\cdots,\alpha_n\pi$是该$n$角形的外角；$a_0=\varphi^{-1}(\infty),\Im z_0>0$.
-\item 设$G=\MC_\infty\backslash\big([0,1]\cup[0,\ee^{\ii\frac{2\pi}3}]\cup
-[0,\ee^{-\ii\frac{2\pi}3}]\big),\Im z_0>0$.求出将上半平面映为$G$的单叶亚纯映射$\varphi$，使得$\varphi(z_0)=\infty$.
-\[\bigg(\varphi(z)=\frac{[(z-z_0)^3-3y_0^2(z-x_0)]^{\frac23}}{(z-x_0)^2+y_0^2}\bigg)\]
-\item 设$L_1,L_2,\cdots,L_n$是以$O$为端点的$n$条线段，它们彼此仅在$O$处相交，$\Im a_0>0$.证明：将上半平面映为$G=\MC_\infty\backslash\big(\bigcup_{k=1}^n
-    L_k\big)$，并且将$a_0$映为$\infty$的单叶亚纯函数$\varphi$具有形状
-\[\varphi(z)=C\frac{\prod_{k=1}^n(z-a_k)^{\alpha_k}}{(z-a_0)(z-\bar{a_0})},\]
-其中，$a_1,a_2,\cdots,a_n\in\MR;\alpha_1,\alpha_2,\cdots,\alpha_n>0$，并且$\sum_{k=1}^n\alpha_k=2$.
+  \item 设$L_k=\big\{z=r\ee^{\ii\frac{2k\pi}n}:1\le r<\infty\big\},G=\MC\backslash
+     \big(\bigcup_{k=1}^nL_k\big)$.求出将上半平面映为$G$的双全纯映射$\varphi$，使得$\varphi(\ii)=0$.
+     \[
+       \Bigg(\varphi(z) = \frac{z^2+1}{\bigg(\sum_{k=0}^{[\frac n2]}
+       (-1)^k\binom n{2k}z^{n-2k}\bigg)^{\frac2n}}\Bigg)
+     \]
+  \item 证明：将$B(0,1)$映为$n$角形内部的双全纯映射$\varphi$具有形状
+      \[
+        \varphi(z) = C_0\int_{z_0}^z\prod_{k=1}^n(\zeta-a_k)^{\alpha_k-1}\dif \zeta+C_1,
+      \]
+      其中，$a_1,a_2,\cdots,a_n\in\partial B(0,1)$是与该$n$角形顶点相对应的点；$\alpha_1\pi,\alpha_2\pi,\cdots,\alpha_n\pi$是该$n$角形的内角；$z_0\in B(0,1)$.
+  \item 设$G$是正$n$角形，$O$是它的中心，$1$是它的一个顶点.求出将$B(0,1)$映为$G$的双全纯映射$\varphi$，使得$\varphi(0)=0,\varphi'(0)>0$.
+      \[
+        \Bigg(\varphi(z) = \frac n{B(\frac1n,1-\frac2n)}\int_0^z(1-\zeta^n)^{-\frac2n}\dif \zeta\Bigg)
+      \]
+  \item 证明：将上半平面映为$\MC_\infty$中的$n$角形外部的单叶亚纯函数$\varphi$具有形状
+      \[
+        \varphi(z) = C_0\int_{z_0}^z\prod_{k=1}^n(\zeta-a_k)^{\alpha_k-1}
+        \frac1{(\zeta-a_0)(\zeta-\bar{a_0})}\dif \zeta+C_1,
+      \]
+      其中，$a_1,a_2,\cdots,a_n\in\MR$是与该$n$角形顶点相对应的点；$\alpha_1\pi,\alpha_2\pi,\cdots,\alpha_n\pi$是该$n$角形的外角；$a_0=\varphi^{-1}(\infty),\Im z_0>0$.
+  \item 设$G=\MC_\infty\backslash\big([0,1]\cup[0,\ee^{\ii\frac{2\pi}3}]\cup
+      [0,\ee^{-\ii\frac{2\pi}3}]\big),\Im z_0>0$.求出将上半平面映为$G$的单叶亚纯映射$\varphi$，使得$\varphi(z_0)=\infty$.
+      \[
+        \bigg(\varphi(z) = \frac{[(z-z_0)^3-3y_0^2(z-x_0)]^{\frac23}}{(z-x_0)^2+y_0^2}\bigg)
+      \]
+  \item 设$L_1,L_2,\cdots,L_n$是以$O$为端点的$n$条线段，它们彼此仅在$O$处相交，$\Im a_0>0$.证明：将上半平面映为$G=\MC_\infty\backslash\big(\bigcup_{k=1}^n
+      L_k\big)$，并且将$a_0$映为$\infty$的单叶亚纯函数$\varphi$具有形状
+      \[
+        \varphi(z) = C\frac{\prod_{k=1}^n(z-a_k)^{\alpha_k}}{(z-a_0)(z-\bar{a_0})},
+      \]
+      其中，$a_1,a_2,\cdots,a_n\in\MR;\alpha_1,\alpha_2,\cdots,\alpha_n>0$，并且$\sum_{k=1}^n\alpha_k=2$.
 
 \end{xiti}
