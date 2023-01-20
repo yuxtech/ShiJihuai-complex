@@ -361,7 +361,7 @@ $\pp f{\bar z}=0$称为\textbf{Cauchy--Riemann 方程}\index{G!公式!Cauchy--Ri
      给出上面等式的几何意义.
   \item 设$D$是域，$n$是自然数. 证明：$f\in C^n(D)$当且仅当$\frac{\partial^nf}{\partial z^k\partial\bar z^{n-k}}$在$D$上连续，$0\le k\le n$.
   \item 设$D$是域，$f:D\to\MC\backslash(-\infty,0]$是非常数的全纯函数，则$\log |f(z)|$和$\arg f(z)$是$D$上的调和函数，而$|f(z)|$不是$D$上的调和函数.
-  \item 设$D,G$是域，$f:D\to G$是全纯函数。证明：若$u$是$G$上的调和函数.则$u\circ f$是$D$上的调和函数.
+  \item 设$D,G$是域，$f:D\to G$是全纯函数. 证明：若$u$是$G$上的调和函数.则$u\circ f$是$D$上的调和函数.
   \item 设$u$是域$D$上的调和函数，$\varphi$是$u(D)$上的实函数.证明：
        $\varphi\circ u$是$D$上的调和函数当且仅当$\varphi$是线性函数.
   \item 设$D,G$是域，$u\in C^2(G),\varphi\in H(D)$，并且$\varphi(D)\subset G$.证明：$\Delta (u\circ \varphi)=\Delta u|\varphi'|^2$.
@@ -953,7 +953,7 @@ $w=z^{\frac1n}$是$w=z^n$的反函数.因为对于一个给定的$z$，$z^{\frac
 \[
   w = \sqrt[\uproot{6}\leftroot{-2} n]{r_1^{\beta_1}\cdots r_m^{\beta_m}\ee^{\ii(\beta_1\theta_1 + \cdots + \beta_m\theta_m)}}.
 \]
-取简单闭曲线$\gamma_1$，使$a_1$在其内部，$a_2,\cdots,a_m$都在其外部。当$z$沿着$\gamma_1$的正方向走一圈时，$\theta_1$增加$2\pi$，$\theta_2,\cdots,\theta_m$都不变，$w$就变成
+取简单闭曲线$\gamma_1$，使$a_1$在其内部，$a_2,\cdots,a_m$都在其外部. 当$z$沿着$\gamma_1$的正方向走一圈时，$\theta_1$增加$2\pi$，$\theta_2,\cdots,\theta_m$都不变，$w$就变成
 \[
   w = \sqrt[\leftroot{-2}\uproot{6}n]{r_1^{\beta_1}\cdots r_m^{\beta_m}\ee^{\ii(\beta_1\theta_1+\cdots+\beta_m\theta_m)+2\pi\beta_1\ii}}
   = \ee^{\ii\frac{2\pi\beta_1}n}\sqrt[\leftroot{-2}\uproot{6}n]{r_1^{\beta_1}\cdots r_m^{\beta_m}\ee^{\ii(\beta_1\theta_1+\cdots+\beta_m\theta_m)}}.
@@ -1172,7 +1172,7 @@ $w=z^{\frac1n}$是$w=z^n$的反函数.因为对于一个给定的$z$，$z^{\frac
   & z'' = rz',\\
   & w = z''+b.
 \end{align*}
-第一个是旋转变换，第二个是伸缩变换，第三个是平移变换。这里，每一个变换都把圆周变为圆周，因此整线性变换把圆周变为圆周.对于一般的分式线性变换，不妨设$c\ne0$，于是
+第一个是旋转变换，第二个是伸缩变换，第三个是平移变换. 这里，每一个变换都把圆周变为圆周，因此整线性变换把圆周变为圆周.对于一般的分式线性变换，不妨设$c\ne0$，于是
 \[
   w = \frac{az+b}{cz+d} = \frac ac + \frac{bc-ad}{c(cz+d)}.
 \]
@@ -1308,7 +1308,7 @@ $w=z^{\frac1n}$是$w=z^n$的反函数.因为对于一个给定的$z$，$z^{\frac
   若$z_2,z_3,z_4$中有两点相同，则等式显然成立.
 \end{proof}
 
-除了交比以外，分式线性变换还有没有其他的不变量呢?当然，交比的函数仍然是不变量。下面的定理断言，此外再没有其他的不变量了.
+除了交比以外，分式线性变换还有没有其他的不变量呢?当然，交比的函数仍然是不变量. 下面的定理断言，此外再没有其他的不变量了.
 \begin{theorem}\label{thm2.5.6}
   如果$f(z_1,z_2,z_3,z_4)$是分式线性变换下的不变量，即对任意分式线性变换$T$，都有
   \begin{equation}\label{eq2.5.4}
@@ -1700,7 +1700,7 @@ $w=z^{\frac1n}$是$w=z^n$的反函数.因为对于一个给定的$z$，$z^{\frac
   \end{figure}
 \end{example}
 \begin{solution}
-  如果能找到这对偏心圆的一对公共的对称点，则把它们变为$0$和$\infty$的分式线性变换一定把这对偏心圆变成一对以原点为中心的同心圆。由于这两个偏心圆的连心线在实轴上，所以这对对称点也必在实轴上.设它们为$x_1$和$x_2$，按对称点的定义，有
+  如果能找到这对偏心圆的一对公共的对称点，则把它们变为$0$和$\infty$的分式线性变换一定把这对偏心圆变成一对以原点为中心的同心圆. 由于这两个偏心圆的连心线在实轴上，所以这对对称点也必在实轴上.设它们为$x_1$和$x_2$，按对称点的定义，有
   \[
     \left\{\begin{aligned}
     & (x_1-3)(x_2-3) = 81,\\
