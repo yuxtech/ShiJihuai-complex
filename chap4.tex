@@ -547,7 +547,7 @@
   \item 设正数列$\{a_n\}$单调收敛于零.证明：
     \begin{enuma}
       \item $\sum_{n=1}^\infty a_nz^n$的收敛半径$R\ge1$；
-      \item $\sum_{n=1}^\infty a_nz^n$在$\partial B(0,R)\backslash\{R\}$上处处收敛.
+      \item $\sum_{n=1}^\infty a_nz^n$在$\partial B(0,R)\backslash\{R\}$上处处收敛.\footnote{本题题目有误，需要将$\partial B(0,R)\backslash\{R\}$改为$\partial B(0,1)\backslash\{1\}$.}
     \end{enuma}
   \item 证明（Abel第二定理的又一说法）：若幂级数$f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n$在多角形域$G$的每个顶点处都收敛，则它必在$\bar G$上一致收敛.特别地，$f$在$\bar G$上连续.
   \item 证明：$\sum_{n=1}^\infty \frac{(-1)^{[\sqrt n]}}nz^n$在其收敛圆周$\partial B(0,1)$上处处收敛，但不绝对收敛.
@@ -959,7 +959,7 @@ $f$的展开式 \eqref{eq4.3.1} 是唯一的.因为若有展开式
 
 例如，设$f(z)=(z^2+1)(z-1)^5$，则当$z$沿着圆周$\{z:|z|=3\}$的正方向转动一圈时，$f(z)$在$w$平面上绕原点转动$7$圈.这是因为$f$在$B(0,3)$中共有$7$个零点，其中，$\pm\ii$是$1$阶零点，而$1$则是$5$阶零点.
 
-从辐角原理可以导出下面的Rouch\'e定理，它在研究全纯函数的零点分布时颇为有用. 
+从辐角原理可以导出下面的Rouch\'e定理，它在研究全纯函数的零点分布时颇为有用.
 \begin{theorem}[（\textbf{Rouch\'e}）]\label{thm4.4.3}\index{D!定理!Rouch\'e定理}
   设$f,g\in H(D)$，$\gamma$是$D$中可求长的简单闭曲线，$\gamma$的内部位于$D$中.如果当$z\in\gamma$时，有不等式
   \begin{equation}\label{eq4.4.7}
