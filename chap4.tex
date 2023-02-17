@@ -547,7 +547,7 @@
   \item 设正数列$\{a_n\}$单调收敛于零.证明：
     \begin{enuma}
       \item $\sum_{n=1}^\infty a_nz^n$的收敛半径$R\ge1$；
-      \item $\sum_{n=1}^\infty a_nz^n$在$\partial B(0,R)\backslash\{R\}$上处处收敛.\footnote{本题题目有误，需要将$\partial B(0,R)\backslash\{R\}$改为$\partial B(0,1)\backslash\{1\}$.}
+      \item $\sum_{n=1}^\infty a_nz^n$在$\partial B(0,R)\backslash\{R\}$上处处收敛.\footnote{本题题目有误，反例可取$a_n=\frac1{R^n}$，需要将$\partial B(0,R)\backslash\{R\}$改为$\partial B(0,1)\backslash\{1\}$.}
     \end{enuma}
   \item 证明（Abel第二定理的又一说法）：若幂级数$f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n$在多角形域$G$的每个顶点处都收敛，则它必在$\bar G$上一致收敛.特别地，$f$在$\bar G$上连续.
   \item 证明：$\sum_{n=1}^\infty \frac{(-1)^{[\sqrt n]}}nz^n$在其收敛圆周$\partial B(0,1)$上处处收敛，但不绝对收敛.
@@ -557,7 +557,7 @@
       \item $\varphi(z)=\sum_{n=0}^\infty\frac{a_n}{n!}z^n$是整函数；
       \item 存在正数$M$，使得
          \[
-           |\varphi^{(n)}(z)| \le \frac{M\ee^{\frac{|z|}R}}{R^n}, z\in\MC,n\in\MN.
+           |\varphi^{(n)}(z)| \le \frac{M\ee^{\frac{|z|}R}}{R^n}, z\in\MC,n\in\MN.\footnote{本题题目有误，反例可取$a_n=n$，需要将$\frac{M\ee^{\frac{|z|}R}}{R^n}$改为$\frac{M^n\ee^{\frac{|Mz|}R}}{R^n}$.}
          \]
     \end{enuma}
   \item 举例说明Abel第二定理的逆不成立.
