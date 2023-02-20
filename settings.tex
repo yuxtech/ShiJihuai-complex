@@ -21,7 +21,7 @@
 
 \usepackage{amsmath,mathrsfs}
 \usepackage{caption}
-
+\usepackage[perpage]{footmisc}
 \usepackage{extarrows}
 \usepackage{graphicx}
 
@@ -167,7 +167,7 @@ after-item-skip=0pt
 \tikz[baseline=(a.base)]\node(a)[inner sep=0.5pt,draw,circle]{$#1$};
 }
 \newcommand\closure[1]{%
-{}\mkern2mu\overline{\mkern-2mu#1}
+{}\mkern1mu\overline{\mkern-1mu#1}
 }
 \renewcommand\bar{\closure}
 
@@ -218,15 +218,37 @@ after-item-skip=0pt
 \begin{enum}
 }{\end{enum}}
 
-\usepackage[amsmath,thmmarks]{ntheorem}
-{
-\theoremstyle{nonumberplain}
-\theoremheaderfont{\bfseries}
-\theorembodyfont{\normalfont}
-\theoremsymbol{\mbox{$\Box$}}
-\newtheorem{proof}{\indent 证\,}
-\newtheorem{solution}{\indent 解\,}
+%\usepackage[amsmath,thmmarks]{ntheorem}
+%{
+%\theoremstyle{nonumberplain}
+%\theoremheaderfont{\bfseries}
+%\theorembodyfont{\normalfont}
+%\theoremsymbol{\mbox{$\Box$}}
+%\newtheorem{proof}{\indent 证\,}
+%\newtheorem{solution}{\indent 解\,}
+%}
+\usepackage{amsthm}
+\makeatletter
+\renewenvironment{proof}[1][{\bfseries 证\,}]{\par
+\pushQED{\qed}%
+\normalfont
+\trivlist
+\item\relax
+{\vspace*{-3mm}\hspace*{\parindent}#1}\hspace\labelsep\ignorespaces
+}{%
+\popQED\endtrivlist\@endpefalse
 }
+\newenvironment{solution}[1][{\bfseries 解\,}]{\par
+\pushQED{\qed}%
+\normalfont
+\trivlist
+\item\relax
+{\vspace*{-3mm}\hspace*{\parindent}#1}\hspace\labelsep\ignorespaces
+}{%
+\popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
 
 \setlist{itemsep=0pt}
 
@@ -237,10 +259,10 @@ after-item-skip=0pt
 \newcommand\pppp[3]{\frac{\partial^2 #1}{\partial #2\partial #3}}
 \newcommand\dd[2]{\frac{\mathop{}\!\mathrm d#1}{\mathop{}\!\mathrm d#2}}
 \newcommand\ddd[2]{\frac{\mathop{}\!\mathrm d^2#1}{\mathop{}\!\mathrm d#2^2}}
-\newcommand{\dif}{\mathop{}\!\mathrm{d}}
 \newcommand\dx{\mathop{}\!\mathrm dx}
 \newcommand\dy{\mathop{}\!\mathrm dy}
 \newcommand\dz{\mathop{}\!\mathrm dz}
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
 \newcommand\dzz{\mathop{}\!\mathrm d\bar z}
 \usepackage[subrefformat=parens]{subcaption}
 \DeclareMathOperator{\Arg}{Arg}
