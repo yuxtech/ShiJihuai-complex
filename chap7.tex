@@ -185,7 +185,7 @@
   \]
   那么$G_1$是$B(0,1)$中的一个单连通域，但$G_1\ne B(0,1)$.因而存在$u_0\in B(0,1),u_0\notin G_1$，由此即可引出一个矛盾.为此，令
   \[
-    v = \varphi_{u_0} = \frac{u_0-u}{1-\bar{u_0}u},
+    v = \varphi_{u_0}(u) = \frac{u_0-u}{1-\bar{u_0}u},
   \]
   于是
   \begin{align*}
@@ -227,7 +227,7 @@
       \fill(0,0)node[below left]{$O$}circle(1pt)(1.2,0.1)circle(1pt)node[below]{$u_0$};
       \draw[rotate=100](0,0)ellipse(1.2 and 0.7);
       \draw(-0.1,-0.7)node{$G_1$};
-      \draw[->](2.3,0)--node[below]{$v=\varphi_{u_0(u)}$}(3.9,0);
+      \draw[->](2.3,0)--node[below]{$v=\varphi_{u_0}(u)$}(3.9,0);
       \node at(0,-2.2){$u$};
       \begin{scope}[xshift=6.1cm]
         \draw(0,0)circle(2);
@@ -265,7 +265,7 @@
     & = \frac{s_0}{|s_0|}\frac1{1-|s_0|^2}\frac1{2\sqrt{v_0}}(1-|u_0|^2)M\\
     & = \frac{1-|u_0|^2}{2|s_0|(1-|s_0|^2)}M>0.
   \end{align*}
-  所以$w\in\MCF$. 若记$u_0=\rho\ee^{\ii\theta}$，则$v_0=-u_0=\rho\ee^{\ii(\theta+\pi)},|s_0|=\big|\sqrt{v_0}\big|=\sqrt\rho
+  所以$w\in\MCF$. 若记$u_0=\rho\ee^{\ii\theta}$，则$v_0=u_0=\rho\ee^{\ii\theta},|s_0|=\big|\sqrt{v_0}\big|=\sqrt\rho
   ,1-|s_0|^2=1-\rho$，因而
   \[
     w'(a) = \frac{1-\rho^2}{2\sqrt\rho(1-\rho)}M = \frac{1+\rho}{2\sqrt\rho}M > M.
@@ -409,7 +409,7 @@ Riemann映射定理断言，一定存在双全纯映射$f$把任一单连通域$
 
   \noindent\begin{minipage}{0.7\textwidth}\parindent=2em
     (2) \hypertarget{thm7.3.1.2}{}  现在对任意$\zeta\in\partial G$，定义
-    \[ 
+    \[
       f(\zeta) = \lim_{\substack{z\to\zeta\\z\in G}}f(z).
     \]
     这样，$f$在$\bar G$上都有了定义，我们证明$f\in C(\bar G)$.为此，只需证明对任意$\zeta\in\partial G,\lim_{\substack{\xi\to\zeta\\\xi\in \partial G}}f(\xi)=f(\zeta)$就行了.如图
