@@ -97,11 +97,11 @@ Schwarz对称原理可以推广到更一般的情形.为了叙述方便，对$\M
   \[
     F(z) = \begin{cases}
     f(z), & z\in D \cap\big(\MC_\infty^+(\gamma)\cup\gamma\big);\\
-    w_0 + \frac{\rho^2}{\bar{f\big(z_0+\frac{r^2}{\bar z-\bar a}\big)}-\bar w_0}, & z\in D\cap
+    w_0 + \frac{\rho^2}{\bar{f\big(z_0+\frac{r^2}{\bar z-\bar a}\big)}-\bar {w_0}}, & z\in D\cap
     \MC_\infty^-(\gamma),
   \end{cases}
   \]
-  由定义，$F$在$D\cap\MC_\infty^+(\gamma)$中全纯；用定理 \ref{thm6.1.2} 证明中的方法即知$F$也在$D\cap\MC_\infty^-(\gamma)$中全纯，这里用到了条件 \ref{thm6.1.3.4}. 现在证明$F$在$D$上连续.为此任取$\zeta\in D\cap\gamma$，当$z\in D\cap\MC_\infty^-(\gamma)$，且$z\to\zeta$时，总有$z_0+\frac{r^2}{\bar z-\bar a}\in D\cap\MC_\infty^+(\gamma)$，且$z_0+\frac{r^2}{\bar z-\bar a}\to\zeta$. 因而 $f\bigg(z_0+\frac{r^2}{\bar z-\bar a}\bigg)\to f(\zeta)\in\Gamma$，于是也有$  w_0+\frac{\rho^2}{\bar{f\big(z_0+\frac{r^2}{\bar z-\bar a}\big)}-\bar w_0}\to f(\zeta)$，即$F(z)\to f(\zeta)$.这就证明了$F\in C(D)$.于是由Painlev\'e原理即知$F\in H(D)$.
+  由定义，$F$在$D\cap\MC_\infty^+(\gamma)$中全纯；用定理 \ref{thm6.1.2} 证明中的方法即知$F$也在$D\cap\MC_\infty^-(\gamma)$中全纯，这里用到了条件 \ref{thm6.1.3.4}. 现在证明$F$在$D$上连续.为此任取$\zeta\in D\cap\gamma$，当$z\in D\cap\MC_\infty^-(\gamma)$，且$z\to\zeta$时，总有$z_0+\frac{r^2}{\bar z-\bar a}\in D\cap\MC_\infty^+(\gamma)$，且$z_0+\frac{r^2}{\bar z-\bar a}\to\zeta$. 因而 $f\bigg(z_0+\frac{r^2}{\bar z-\bar a}\bigg)\to f(\zeta)\in\Gamma$，于是也有$  w_0+\frac{\rho^2}{\bar{f\big(z_0+\frac{r^2}{\bar z-\bar a}\big)}-\bar {w_0}}\to f(\zeta)$，即$F(z)\to f(\zeta)$.这就证明了$F\in C(D)$.于是由Painlev\'e原理即知$F\in H(D)$.
 \end{proof}
 
 注意，在上面的证明中，我们假定$\gamma$和$\Gamma$都是$\MC$中的圆周.实际上，$\gamma$和$\Gamma$中有一条（或者两条）是直线，定理当然也成立.特别地，当$\gamma$和$\Gamma$都是实轴时，就得到定理 \ref{thm6.1.2}.
@@ -246,7 +246,7 @@ Schwarz对称原理可以推广到更一般的情形.为了叙述方便，对$\M
       \]
   \item 设$0<r<R<\infty,f$在$B(0,R)\backslash\bar{B(0,r)}$上全纯，在$B(0,R)\backslash B(0,r)$上连续.证明：若$f$在$\partial B(0,r)$上恒为零，则在$B(0,R)\backslash\bar{B(0,r)}$上也恒为零.
   \item 设$\gamma$是圆周$\partial B(a,R)$上的一段开圆弧.证明：若$f$在$B(a,R)$上全纯，在$B(a,R)\cup\gamma$上连续，并且在$\gamma$上恒为零，则$f$在$B(a,R)$上也恒为零.
-  \item 将如图 \ref{fig6.4} 所示的单连通域$D$双全纯地映为上半平面.
+  \item 将如图 \ref{fig6.4} 所示的多连通域$D$双全纯地映为上半平面.
       \begin{figure}[!ht]
         \centering
         \begin{tikzpicture}[thick,every node/.style={inner sep=2pt},
@@ -443,7 +443,7 @@ Schwarz对称原理可以推广到更一般的情形.为了叙述方便，对$\M
     B(\zeta_1,r_{\zeta_1}),\cdots,B(\zeta_m,r_{\zeta_m})
   \]
   使得
-  \[ 
+  \[
     \partial B(0,R)\subset\bigcup_{n=1}^m B(\zeta_n,r_{\zeta_n}).
   \]
   记
@@ -451,7 +451,7 @@ Schwarz对称原理可以推广到更一般的情形.为了叙述方便，对$\M
     D = B(0,R)\cup\big(\bigcup_{n=1}^mB(\zeta_n,r_{\zeta_n})\big),
   \]
   并在$D$上定义函数
-  \[  
+  \[
     g(z) = \begin{cases}
       f(z), & z \in B(0,R);\\
       f_{\zeta_k}(z), & z\in B(\zeta_k,r_{\zeta_k}),k=1,\cdots,m,
@@ -587,7 +587,7 @@ Schwarz对称原理可以推广到更一般的情形.为了叙述方便，对$\M
   设幂级数$P(z)=\sum_{n=0}^\infty a_n(z-a)^n$的收敛半径$R>0$，若$z_0\in\bar{B(0,R)}$不是$P$的奇点，则$P$能沿线段$[a,z_0]$全纯开拓；若$w_0\in\partial B(a,R)$是$P$的奇点，则$P$不能沿半径$[a,w_0]$全纯开拓.
 \end{example}
 
-\begin{example}\label{exam6.3.3} 
+\begin{example}\label{exam6.3.3}
   幂级数
   \[
     \log|z|+\ii\arg z=\sum_{n=1}^\infty\frac{(-1)^{n-1}}n(z-1)^n
