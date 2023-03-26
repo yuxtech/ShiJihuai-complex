@@ -789,7 +789,7 @@ Cauchy于1825年得到的积分定理就是定理 \ref{thm3.2.1} 这种形式，
 \begin{xiti}
   \item 设$D$是域，$f,g\in H(D)$.如果$fg'$在$D$上有原函数$\varphi$. 证明：$f'g$在$D$上有原函数$fg-\varphi$.
   \item 设$D$是域，$f$是$D$上的连续函数. 如果$f$在$D$上有原函数，则对$D$中任意可求长简单闭曲线$\gamma$，均有$\int\limits_\gamma f(z)\dz=0$.
-  \item 设$f\in C^n(\MC)\cap H(\MC)$，并且$f^{(n)}(z)\equiv0$. 证明： $f$必为次数不大于$n$的多项式.
+  \item 设$f\in C^n(\MC)\cap H(\MC)$，并且$f^{(n)}(z)\equiv0$. 证明： $f$必为次数不大于$n-1$的多项式.
   \item 设$\gamma$是从$0$到$1$且不经过$\pm\ii$的可求长曲线.证明：
     \[
       \int\limits_\gamma\frac{\dz}{1+z^2} = \frac\pi4 + k\pi,k = 0,\pm1,\pm2,\cdots.
@@ -1424,7 +1424,7 @@ $\partial,\bar\partial$作用在二次微分形式上的结果都是零：
         \pp{u(z)}x\pp{v(z)}x+\pp{u(z)}y\pp{v(z)}y\bigg)\dx\dy=\int\limits_{\partial D}
         u(z)\pp{v(z)}{\boldsymbol n}|\dz|$；
       \item $\iint\limits_D\big(u(z)\Delta v(z)-v(z)\Delta u(z)\big)\dx\dy
-        =\iint\limits_{\partial D}\bigg(u(z)\pp{v(z)}{\boldsymbol n}
+        =\int\limits_{\partial D}\bigg(u(z)\pp{v(z)}{\boldsymbol n}
         -v(z)\pp{u(z)}{\boldsymbol n}\bigg)|\dz|$.
     \end{enuma}
   \item 设$D$是由有限条可求长简单闭曲线围成的域，$f$在$\bar D$上全纯，$z\in D$. 证明：
