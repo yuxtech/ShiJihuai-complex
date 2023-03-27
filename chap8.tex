@@ -507,7 +507,7 @@ Poisson 核具有一些重要性质，它们使得Poisson积分成为解决Diric
 由定义 \ref{def8.4.1} 马上知道，每个调和函数一定是次调和的.因此，次调和函数是比调和函数更宽的一类函数，但它仍具有调和函数的一些优良性质，下面的极值特征便是其中之一.
 
 \begin{theorem}\label{thm8.4.2}
-  设$D$是$\MC$中的域，$u$是$D$上的连续实值函数. $u$是$D$上的次调和函数的充分必要条件是，对任意域$G\subset\subset D$及任意在$\bar G$上连续、在$G$内调和的函数$h$，如果$u(z)\le h(z)$在$G$上成立，那么在$G$内也有$u(z)\le h(z)$.
+  设$D$是$\MC$中的域，$u$是$D$上的连续实值函数. $u$是$D$上的次调和函数的充分必要条件是，对任意域$G\subset\subset D$及任意在$\bar G$上连续、在$G$内调和的函数$h$，如果$u(z)\le h(z)$在$\partial G$上成立，那么在$G$内也有$u(z)\le h(z)$.
 \end{theorem}
 \begin{proof}
   先证必要性.如果$u(z_0)>h(z_0)$对某个$z_0\in G$成立，令$u_1=u-h$，则$u_1(z_0)>0$. 因为$u$在$\bar G$上连续，故在$\bar G$上达到它的最大值$M$.记
@@ -541,7 +541,7 @@ Poisson 核具有一些重要性质，它们使得Poisson积分成为解决Diric
 
 作为这个定理的一个应用，我们有
 \begin{theorem}\label{thm8.4.3}
-  设$u$是单位圆盘$u$中的次调和函数，令
+  设$u$是单位圆盘$U$中的次调和函数，令
   \[
     m(r) = \frac1{2\pi}\int_0^{2\pi}u(r\ee^{\ii\theta})\dif \theta,\;0 \le r < 1,
   \]
