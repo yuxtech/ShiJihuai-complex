@@ -638,7 +638,7 @@ $\{y_n\}$都是实的Cauchy列，因而从实数域中的Cauchy收敛准则立�
 \begin{prop}\label{prop1.5.1}
   对于任意集$E$，有
   \begin{eenum}
-    \item $a\in\bar E$的充要条件是对任意$\varepsilon>0$，有\label{prop1.5.1.1}
+    \item $a\in\bar E$的充要条件是对任意$r>0$，有\label{prop1.5.1.1}
     \begin{equation}\label{eq1.5.2}
        B(a,r)\cap E\ne\varnothing,
     \end{equation}
@@ -649,7 +649,7 @@ $\{y_n\}$都是实的Cauchy列，因而从实数域中的Cauchy收敛准则立�
 \begin{proof}
 (1) 若$a\in\bar E$，则$a\in E$或$a\in E'$，不论何者发生，总有$B(a,r)\cap E\ne\varnothing$.反之，若等式 \eqref{eq1.5.2} 成立，这说明$a$或是$E$的极限点，或是$E$的孤立点，因而$a\in\bar E$.
 
-(2) 由 \ref{prop1.5.1.1} 知，$a\in(\bar E)^{\mathrm c}$当且仅当存在$\varepsilon>0$，使得$B(a,r)\cap E=\varnothing$，这说明$a$是$E^{\mathrm c}$的内点，即$a\in (E^{\mathrm c})^\circ$，因而$(\bar E)^{\mathrm c}=(E^{\mathrm c})^\circ$.再看第二个等式，$a\in (E^\circ)^{\mathrm c}$意味着$a$不是$E$的内点，即$a$是$E$的外点或边界点，因而对任意$\varepsilon>0$，总有$B(a,r)\cap E^{\mathrm c}\ne\varnothing$，由 \ref{prop1.5.1.1} 知$a\in \bar{E^{\mathrm c}}$. 因而$\bar {E^{\mathrm c}}=(E^\circ)^{\mathrm c}$.
+(2) 由 \ref{prop1.5.1.1} 知，$a\in(\bar E)^{\mathrm c}$当且仅当存在$r>0$，使得$B(a,r)\cap E=\varnothing$，这说明$a$是$E^{\mathrm c}$的内点，即$a\in (E^{\mathrm c})^\circ$，因而$(\bar E)^{\mathrm c}=(E^{\mathrm c})^\circ$.再看第二个等式，$a\in (E^\circ)^{\mathrm c}$意味着$a$不是$E$的内点，即$a$是$E$的外点或边界点，因而对任意$r>0$，总有$B(a,r)\cap E^{\mathrm c}\ne\varnothing$，由 \ref{prop1.5.1.1} 知$a\in \bar{E^{\mathrm c}}$. 因而$\bar {E^{\mathrm c}}=(E^\circ)^{\mathrm c}$.
 \end{proof}
 
 \begin{prop}\label{prop1.5.2}
@@ -658,7 +658,7 @@ $\{y_n\}$都是实的Cauchy列，因而从实数域中的Cauchy收敛准则立�
   (3) \hypertarget{prop1.5.2.3}{}$E$是闭集的充要条件是$E'\subset E$.
 \end{prop}
 \begin{proof}
-  (1) 任取$a\in E^\circ$，则由定义知道，存在$\varepsilon>0$，使得$B(a,\varepsilon)\subset E$.显然，$B(a,\varepsilon)$中的每一点都是$E$的内点，因而$B(a,\varepsilon)\subset E^\circ$，即$a$是$E^\circ$的内点.由于$a$是任意取的，所以$E^\circ$是开集.由刚才所证，$E^\circ$和$(E^{\mathrm c})^\circ$都是开集，两个开集的并当然也是开集，由等式 \eqref{eq1.5.1} 知$(\partial E)^{\mathrm c}$是开集，因而$E$是闭集.由于$(E^{\mathrm c})^\circ$是开集，由命题 \ref{prop1.5.1} 的 \ref{prop1.5.1.2}  知，$(\bar E)^{\mathrm c}$是开集，所以$\bar E$是闭集.
+  (1) 任取$a\in E^\circ$，则由定义知道，存在$r>0$，使得$B(a,r)\subset E$.显然，$B(a,r)$中的每一点都是$E$的内点，因而$B(a,r)\subset E^\circ$，即$a$是$E^\circ$的内点.由于$a$是任意取的，所以$E^\circ$是开集.由刚才所证，$E^\circ$和$(E^{\mathrm c})^\circ$都是开集，两个开集的并当然也是开集，由等式 \eqref{eq1.5.1} 知$(\partial E)^{\mathrm c}$是开集，因而$E$是闭集.由于$(E^{\mathrm c})^\circ$是开集，由命题 \ref{prop1.5.1} 的 \ref{prop1.5.1.2}  知，$(\bar E)^{\mathrm c}$是开集，所以$\bar E$是闭集.
   \par
   (2)如果$E=\bar E$，则由(1)知$\bar E$是闭集，所以$E$是闭集.反之，如果$E$是闭集，那么$E^{\mathrm c}$是开集，因而$E^{\mathrm c}=(E^{\mathrm c})^\circ$.另外，由命题 \ref{prop1.5.1} 的 \ref{prop1.5.1.2} 得$(\bar E)^{\mathrm c}=(E^{\mathrm c})^\circ$，因而$E^{\mathrm c}=(\bar E)^{\mathrm c}$，即$E=\bar E$.
   \par
